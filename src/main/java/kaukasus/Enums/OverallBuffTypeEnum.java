@@ -12,7 +12,7 @@ public enum OverallBuffTypeEnum {
     HEALTH_POINTS("Health Points"),
     ICE_RESISTANCE("Ice Resistance"),
     LIGHTNING_RESISTANCE("Lightning Resistance"),
-    MATERI_FRAGTMENT_DROP_BONUS("Materi Fragment Drop Bonus"),
+    MATERI_FRAGMENT_DROP_BONUS("Materi Fragment Drop Bonus"),
     MOVEMENT_SPEED("Movement Speed"),
     POISON_RESISTANCE("Poison Resistance"),
     RESISTANCE("All Resistance Values"),
