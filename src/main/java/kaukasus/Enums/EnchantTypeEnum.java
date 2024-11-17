@@ -7,7 +7,7 @@ public enum EnchantTypeEnum {
     ATTACK_SPEED("Attacks per Second", 0.47122),
     BLOCK_VALUE("Block Value", 0.2432),
     CRIT_VALUE("Critical Value", 0.24563),
-    DAMAGE("Damage", 0.4476),
+    DAMAGE("Damage", 0.44776),
     FIRE_RESISTANCE("Fire Resistance", 0.2696),
     HEALTH_POINTS("Health Points", 0.44537),
     ICE_RESISTANCE("Ice Resistance", 0.2696),

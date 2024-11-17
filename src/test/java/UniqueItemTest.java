@@ -7,6 +7,7 @@ import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
 import kaukasus.Items.UniqueItem;
 import kaukasus.OverallBuffs.OverallBuff;
+import kaukasus.OverallBuffs.OverallRelativeBuff;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,18 +16,18 @@ import java.util.Map;
 
 public class UniqueItemTest {
     public static void main(String[] args) {
-        Map<AbsoluteStatTypeEnum, Double> basestats = new HashMap<>();
-        basestats.put(AbsoluteStatTypeEnum.DAMAGE, 1463.431);
-        basestats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1217.356);
-        basestats.put(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 1.172);
+        Map<AbsoluteStatTypeEnum, Double> baseStats = new HashMap<>();
+        baseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1463.431);
+        baseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1217.356);
+        baseStats.put(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 1.172);
         Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats = new HashMap<>();
         uniqueBaseStats.put(AbsoluteStatTypeEnum.ARMOR, 1337.0);
         List<UniqueEnchant> uniqueEnchants = new ArrayList<>();
         uniqueEnchants.add(new UniqueEnchant(EnchantTypeEnum.MOVEMENT_SPEED, 0.25558));
         List< OverallBuff > overallBuffs = new ArrayList<>();
-        overallBuffs.add(new OverallBuff(OverallBuffTypeEnum.CRIT_VALUE, 0.1));
+        overallBuffs.add(new OverallRelativeBuff(OverallBuffTypeEnum.CRIT_VALUE, 0.1));
 
-        UniqueItem setItem = new UniqueItem("Researcher's Boots", basestats, uniqueBaseStats, uniqueEnchants, overallBuffs);
+        UniqueItem setItem = new UniqueItem("Researcher's Boots", baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs);
 
         Gem poison = new Gem(AbsoluteStatTypeEnum.POISON_RESISTANCE, 1337.0);
         setItem.addGem(poison);
