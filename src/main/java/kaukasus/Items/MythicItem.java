@@ -3,6 +3,7 @@ package kaukasus.Items;
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
+import kaukasus.Enums.ItemTypeEnum;
 import kaukasus.Enums.SetTypeEnum;
 import kaukasus.Gems.AbstractGem;
 import kaukasus.Gems.Gem;
@@ -21,9 +22,10 @@ public class MythicItem extends AbstractItem{
     private List<OverallBuff> overallBuffs;
     private SetTypeEnum set;
 
-    public MythicItem(String name, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, SetTypeEnum set){
-        super.name = name;
-        super.baseStats = baseStats;
+    public MythicItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, SetTypeEnum set){
+        this.name = name;
+        this.itemType = itemType;
+        this.baseStats = baseStats;
         this.gems = new ArrayList<>();
         this.enchants = new ArrayList<>();
         this.uniqueBaseStat = uniqueBaseStats;

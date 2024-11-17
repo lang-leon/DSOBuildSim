@@ -3,6 +3,7 @@ package kaukasus.Items;
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
+import kaukasus.Enums.ItemTypeEnum;
 import kaukasus.Gems.AbstractGem;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
@@ -20,9 +21,10 @@ public class UniqueItem extends AbstractItem{
     private List<UniqueEnchant> uniqueEnchants;
     private List<OverallBuff> overallBuffs;
 
-    public UniqueItem(String name, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs){
-        super.name = name;
-        super.baseStats = baseStats;
+    public UniqueItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs){
+        this.name = name;
+        this.itemType = itemType;
+        this.baseStats = baseStats;
         this.gems = new ArrayList<>();
         this.enchants = new ArrayList<>();
         this.uniqueBaseStat = uniqueBaseStats;
