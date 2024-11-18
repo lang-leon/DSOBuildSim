@@ -1,7 +1,6 @@
 package kaukasus.OverallBuffs;
 
 import kaukasus.Enums.AbsoluteStatTypeEnum;
-import kaukasus.Enums.OverallBuffTypeEnum;
 
 public class OverallAbsolutBuff extends OverallBuff{
 

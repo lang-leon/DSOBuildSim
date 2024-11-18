@@ -1,12 +1,14 @@
 package kaukasus.Jewels;
 
-import kaukasus.Enums.OverallBuffTypeEnum;
+import kaukasus.Enums.OverallRelativeBuffTypeEnum;
+
+import java.util.Objects;
 
 public class Jewel {
 
     private final String name;
     private final String description;
-    private OverallBuffTypeEnum type;
+    private OverallRelativeBuffTypeEnum type;
     private Double value;
 
     public Jewel(String name, String description) {
@@ -14,14 +16,14 @@ public class Jewel {
         this.description = description;
     }
 
-    public Jewel(String name, OverallBuffTypeEnum type, Double value) {
+    public Jewel(String name, OverallRelativeBuffTypeEnum type, Double value) {
         this.name = name;
         this.type = type;
         this.value = value;
         this.description = "";
     }
 
-    public Jewel(String name, OverallBuffTypeEnum type, Double value, String description) {
+    public Jewel(String name, OverallRelativeBuffTypeEnum type, Double value, String description) {
         this.name = name;
         this.type = type;
         this.value = value;
@@ -32,7 +34,7 @@ public class Jewel {
         return name;
     }
 
-    public OverallBuffTypeEnum getType() {
+    public OverallRelativeBuffTypeEnum getType() {
         return type;
     }
 
@@ -42,5 +44,17 @@ public class Jewel {
 
     public String getDescription() {
         return description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Jewel jewel = (Jewel) o;
+        return Objects.equals(name, jewel.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

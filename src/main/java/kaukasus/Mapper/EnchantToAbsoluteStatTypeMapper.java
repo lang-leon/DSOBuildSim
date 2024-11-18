@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EnchantToAbsoluteStatTypeMapper {
+
     private static final Map<EnchantTypeEnum, AbsoluteStatTypeEnum> map = new HashMap<>();
 
     static {

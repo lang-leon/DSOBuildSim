@@ -133,12 +133,10 @@ public class UniqueItem extends AbstractItem{
             AbsoluteStatTypeEnum baseValueType = EnchantToAbsoluteStatTypeMapper.getAbsoluteType(enchant.getType());
             finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType)+ totalAbsoluteStats.get(baseValueType)*enchant.getValue());
         }
-        System.out.println(finalAbsoluteStats.get(AbsoluteStatTypeEnum.MOVEMENT_SPEED));
         for (UniqueEnchant uniqueEnchant : this.uniqueEnchants){
             AbsoluteStatTypeEnum baseValueType = EnchantToAbsoluteStatTypeMapper.getAbsoluteType(uniqueEnchant.getType());
             finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType)+ totalAbsoluteStats.get(baseValueType)*uniqueEnchant.getValue());
         }
-
         return finalAbsoluteStats;
     }
 }

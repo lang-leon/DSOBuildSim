@@ -1,6 +1,6 @@
 package kaukasus.Enums;
 
-public enum ItemTypeEnum {
+public enum ItemSlotEnum {
 
     AMULET("Amulet"),
     BELT("Belt"),
@@ -10,7 +10,8 @@ public enum ItemTypeEnum {
     HELMET("Helmet"),
     ONE_HAND_WEAPON("Main Hand"),
     OFF_HAND("Off Hand"),
-    RING("Ring"),
+    RING1("Ring 1"),
+    RING2("Ring 2"),
     SHOULDERS("Shoulders"),
     TORSO("Torso"),
     TWO_HAND_WEAPON("Two Hand Weapon"),
@@ -19,7 +20,7 @@ public enum ItemTypeEnum {
 
     private final String description;
 
-    ItemTypeEnum(String description){
+    ItemSlotEnum(String description){
         this.description = description;
     }
 

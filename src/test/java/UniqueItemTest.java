@@ -2,7 +2,8 @@ import kaukasus.Enchants.Enchant;
 import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
 import kaukasus.Enums.EnchantTypeEnum;
-import kaukasus.Enums.OverallBuffTypeEnum;
+import kaukasus.Enums.ItemTypeEnum;
+import kaukasus.Enums.OverallRelativeBuffTypeEnum;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
 import kaukasus.Items.UniqueItem;
@@ -25,9 +26,9 @@ public class UniqueItemTest {
         List<UniqueEnchant> uniqueEnchants = new ArrayList<>();
         uniqueEnchants.add(new UniqueEnchant(EnchantTypeEnum.MOVEMENT_SPEED, 0.25558));
         List< OverallBuff > overallBuffs = new ArrayList<>();
-        overallBuffs.add(new OverallRelativeBuff(OverallBuffTypeEnum.CRIT_VALUE, 0.1));
+        overallBuffs.add(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.1));
 
-        UniqueItem setItem = new UniqueItem("Researcher's Boots", baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs);
+        UniqueItem setItem = new UniqueItem("Researcher's Boots", ItemTypeEnum.BOOTS, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs);
 
         Gem poison = new Gem(AbsoluteStatTypeEnum.POISON_RESISTANCE, 1337.0);
         setItem.addGem(poison);

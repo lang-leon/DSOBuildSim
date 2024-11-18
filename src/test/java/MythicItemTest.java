@@ -1,14 +1,8 @@
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enchants.UniqueEnchant;
-import kaukasus.Enums.AbsoluteStatTypeEnum;
-import kaukasus.Enums.EnchantTypeEnum;
-import kaukasus.Enums.OverallBuffTypeEnum;
-import kaukasus.Enums.SetTypeEnum;
+import kaukasus.Enums.*;
 import kaukasus.Gems.Gem;
-import kaukasus.Gems.Opal;
-import kaukasus.Items.AbstractItem;
 import kaukasus.Items.MythicItem;
-import kaukasus.Items.UniqueItem;
 import kaukasus.OverallBuffs.OverallAbsolutBuff;
 import kaukasus.OverallBuffs.OverallBuff;
 import kaukasus.OverallBuffs.OverallRelativeBuff;
@@ -27,10 +21,10 @@ public class MythicItemTest {
         Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats = new HashMap<>();
         List<UniqueEnchant> uniqueEnchants = new ArrayList<>();
         List<OverallBuff> overallBuffs = new ArrayList<>();
-        overallBuffs.add(new OverallRelativeBuff(OverallBuffTypeEnum.DAMAGE, 0.1));
+        overallBuffs.add(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.DAMAGE, 0.1));
         overallBuffs.add(new OverallAbsolutBuff(AbsoluteStatTypeEnum.DAMAGE, 5000.0));
 
-        MythicItem setItem = new MythicItem("Ancestral Glory Cloak (Mage)", baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, SetTypeEnum.SET1);
+        MythicItem setItem = new MythicItem("Ancestral Glory Cloak (Mage)", ItemTypeEnum.CLOAK, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, SetTypeEnum.SET1);
 
         Gem dmg = new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0);
         setItem.addGem(dmg);

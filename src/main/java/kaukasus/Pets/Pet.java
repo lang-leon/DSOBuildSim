@@ -1,16 +1,16 @@
 package kaukasus.Pets;
 
-import kaukasus.Enums.OverallBuffTypeEnum;
+import kaukasus.Enums.OverallRelativeBuffTypeEnum;
 
 import java.util.Map;
 
 public class Pet {
 
     String name;
-    Map<OverallBuffTypeEnum, Double> effects;
+    Map<OverallRelativeBuffTypeEnum, Double> effects;
     String specialEffect;
 
-    public Pet(String name, Map<OverallBuffTypeEnum, Double> effects, String specialEffect) {
+    public Pet(String name, Map<OverallRelativeBuffTypeEnum, Double> effects, String specialEffect) {
         this.name = name;
         this.effects = effects;
         this.specialEffect = specialEffect;
@@ -20,7 +20,7 @@ public class Pet {
         return name;
     }
 
-    public Map<OverallBuffTypeEnum, Double> getEffects() {
+    public Map<OverallRelativeBuffTypeEnum, Double> getEffects() {
         return effects;
     }
 
