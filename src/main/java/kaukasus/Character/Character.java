@@ -1205,9 +1205,6 @@ public class Character {
         characterAbsoluteStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, characterAbsoluteStats.get(AbsoluteStatTypeEnum.HEALTH_POINTS)+33347);
         characterAbsoluteStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, characterAbsoluteStats.get(AbsoluteStatTypeEnum.ATTACK_SPEED)+0.79);
 
-        int dmg = (int) (characterAbsoluteStats.get(AbsoluteStatTypeEnum.DAMAGE)-50400);
-        Double crit = characterAbsoluteStats.get(AbsoluteStatTypeEnum.CRIT_VALUE);
-
         //check for one hand or two hand jewel
         if (two_hand_weapon != null)
         {

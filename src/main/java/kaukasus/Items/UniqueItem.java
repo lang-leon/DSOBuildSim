@@ -119,19 +119,20 @@ public class UniqueItem extends AbstractItem{
         }
         for (Map.Entry<AbsoluteStatTypeEnum, Double> entry : this.uniqueBaseStat.entrySet()){
             if (totalAbsoluteStats.containsKey(entry.getKey())){
-                Double gemValue = entry.getValue();
+                Double uniqueBaseStat = entry.getValue();
                 Double totalValueOld = totalAbsoluteStats.get(entry.getKey());
-                totalAbsoluteStats.put(entry.getKey(), gemValue+totalValueOld);
+                totalAbsoluteStats.put(entry.getKey(), uniqueBaseStat+totalValueOld);
             }else{
                 totalAbsoluteStats.put(entry.getKey(), entry.getValue());
             }
         }
+        System.out.println(totalAbsoluteStats.get(AbsoluteStatTypeEnum.DAMAGE));
 
         Map<AbsoluteStatTypeEnum, Double> finalAbsoluteStats = new HashMap<>(totalAbsoluteStats);
 
         for (Enchant enchant : this.enchants){
             AbsoluteStatTypeEnum baseValueType = EnchantToAbsoluteStatTypeMapper.getAbsoluteType(enchant.getType());
-            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType)+ totalAbsoluteStats.get(baseValueType)*enchant.getValue());
+            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType) + totalAbsoluteStats.get(baseValueType)*enchant.getValue());
         }
         for (UniqueEnchant uniqueEnchant : this.uniqueEnchants){
             AbsoluteStatTypeEnum baseValueType = EnchantToAbsoluteStatTypeMapper.getAbsoluteType(uniqueEnchant.getType());

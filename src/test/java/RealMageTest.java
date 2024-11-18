@@ -126,29 +126,6 @@ public class RealMageTest {
         mage.addItem(ring, ItemSlotEnum.RING1);
         mage.addItem(ring, ItemSlotEnum.RING2);
 
-        Map<AbsoluteStatTypeEnum, Double> adornmentBaseStats = new HashMap<>();
-        adornmentBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1870.52);
-        adornmentBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 2100.146);
-        Map<AbsoluteStatTypeEnum, Double> adornmentUniqueBaseStats = new HashMap<>();
-        adornmentUniqueBaseStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, 0.060);
-        UniqueItem adornment = new UniqueItem("Sigrismarr's Eternal Grasp", ItemTypeEnum.WEAPON_ADORNMENT, adornmentBaseStats, adornmentUniqueBaseStats, List.of(), List.of());
-        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44771));
-        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44767));
-        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44775));
-        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44772));
-        Opal opal = new Opal(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0), new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0), new Gem(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 0.17));
-        adornment.addGem(opal);
-        adornment.addGem(opal);
-        adornment.addGem(opal);
-        adornment.addGem(opal);
-        adornment.addGem(opal);
-        adornment.addGem(opal);
-        adornment.addGem(opal);
-        adornment.addGem(opal);
-        adornment.addGem(opal);
-        adornment.addGem(opal);
-        mage.addItem(adornment, ItemSlotEnum.WEAPON_ADORNMENT);
-
         Map<AbsoluteStatTypeEnum, Double> helmetBaseStats = new HashMap<>();
         helmetBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1512.772);
         helmetBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1394.209);
@@ -253,6 +230,29 @@ public class RealMageTest {
         boots.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
         boots.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
         mage.addItem(boots, ItemSlotEnum.BOOTS);
+
+        Map<AbsoluteStatTypeEnum, Double> adornmentBaseStats = new HashMap<>();
+        adornmentBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1870.52);
+        adornmentBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 2100.146);
+        Map<AbsoluteStatTypeEnum, Double> adornmentUniqueBaseStats = new HashMap<>();
+        adornmentUniqueBaseStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, 0.060);
+        UniqueItem adornment = new UniqueItem("Sigrismarr's Eternal Grasp", ItemTypeEnum.WEAPON_ADORNMENT, adornmentBaseStats, adornmentUniqueBaseStats, List.of(), List.of());
+        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44771));
+        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44767));
+        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44775));
+        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44772));
+        Opal opal = new Opal(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0), new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0), new Gem(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 0.17));
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        mage.addItem(adornment, ItemSlotEnum.WEAPON_ADORNMENT);
 
         Map<AbsoluteStatTypeEnum, Double> twoHandBaseStats = new HashMap<>();
         twoHandBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 24570.982);
@@ -381,8 +381,8 @@ public class RealMageTest {
 
         mage.setEssence(0.50);
         Pet mortisPet = new Pet("Mortis Doll", Map.of(OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.3, OverallRelativeBuffTypeEnum.MANA, 0.3, OverallRelativeBuffTypeEnum.DAMAGE, 0.3), "");
-        //mage.setPet(mortisPet);
-        //mage.setCollectorBagBuff(Map.of(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.33, OverallRelativeBuffTypeEnum.RESISTANCE, 0.15, OverallRelativeBuffTypeEnum.DAMAGE, 0.06, OverallRelativeBuffTypeEnum.BLOCK_VALUE, 0.02));
+        mage.setPet(mortisPet);
+        mage.setCollectorBagBuff(Map.of(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.33, OverallRelativeBuffTypeEnum.RESISTANCE, 0.15, OverallRelativeBuffTypeEnum.DAMAGE, 0.06, OverallRelativeBuffTypeEnum.BLOCK_VALUE, 0.02));
 
         return mage;
     }

@@ -141,7 +141,7 @@ public class MythicItem extends AbstractItem{
         }
         for (UniqueEnchant uniqueEnchant : this.uniqueEnchants){
             AbsoluteStatTypeEnum baseValueType = EnchantToAbsoluteStatTypeMapper.getAbsoluteType(uniqueEnchant.getType());
-            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType)+ totalAbsoluteStats.get(baseValueType)*uniqueEnchant.getValue());
+            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType) + totalAbsoluteStats.get(baseValueType)*uniqueEnchant.getValue());
         }
 
         return finalAbsoluteStats;
