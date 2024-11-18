@@ -1,4 +1,6 @@
 import com.sun.security.jgss.GSSUtil;
+import kaukasus.Buffs.Physic;
+import kaukasus.Buffs.Tonic;
 import kaukasus.Character.Character;
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enchants.UniqueEnchant;
@@ -380,9 +382,15 @@ public class RealMageTest {
         mage.addJewelTrinket(jewelTrinket3, 3);
 
         mage.setEssence(0.50);
+
         Pet mortisPet = new Pet("Mortis Doll", Map.of(OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.3, OverallRelativeBuffTypeEnum.MANA, 0.3, OverallRelativeBuffTypeEnum.DAMAGE, 0.3), "");
         mage.setPet(mortisPet);
         mage.setCollectorBagBuff(Map.of(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.33, OverallRelativeBuffTypeEnum.RESISTANCE, 0.15, OverallRelativeBuffTypeEnum.DAMAGE, 0.06, OverallRelativeBuffTypeEnum.BLOCK_VALUE, 0.02));
+
+        Tonic tonic = new Tonic("Tonic of Vigor", AbsoluteStatTypeEnum.DAMAGE, 10496.0);
+        mage.setTonic(tonic);
+        Physic physic = new Physic("Advanced Physic of Vigor", OverallRelativeBuffTypeEnum.DAMAGE, 0.18);
+        mage.setPhysic(physic);
 
         return mage;
     }

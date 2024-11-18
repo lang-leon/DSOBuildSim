@@ -1220,8 +1220,9 @@ public class Character {
             }
         }
 
-        //essence,pets,collector buff,buffs
+        //essence
         this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.DAMAGE, this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.DAMAGE)+this.essDmg);
+        //pet, collector bag
         if (this.pet != null)
         {
             for (Map.Entry<OverallRelativeBuffTypeEnum, Double> entry : this.pet.getEffects().entrySet())
@@ -1232,6 +1233,15 @@ public class Character {
             {
                 this.characterRelativeBuffs.put(entry.getKey(), this.characterRelativeBuffs.get(entry.getKey())+entry.getValue());
             }
+        }
+        //buffs
+        if (this.tonic != null)
+        {
+            this.characterAbsoluteStats.put(this.tonic.getType(), this.characterAbsoluteStats.get(this.tonic.getType())+this.tonic.getValue());
+        }
+        if (this.physic != null)
+        {
+            this.characterRelativeBuffs.put(this.physic.getType(), this.characterRelativeBuffs.get(this.physic.getType())+this.physic.getValue());
         }
 
         //calculate final stats (absolut*relative)
