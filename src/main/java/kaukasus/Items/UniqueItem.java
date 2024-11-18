@@ -126,7 +126,6 @@ public class UniqueItem extends AbstractItem{
                 totalAbsoluteStats.put(entry.getKey(), entry.getValue());
             }
         }
-        System.out.println(totalAbsoluteStats.get(AbsoluteStatTypeEnum.DAMAGE));
 
         Map<AbsoluteStatTypeEnum, Double> finalAbsoluteStats = new HashMap<>(totalAbsoluteStats);
 
