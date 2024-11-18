@@ -16,10 +16,12 @@ public enum AbsoluteStatTypeEnum {
     MANA("Mana Points"),
     MANA_PER_SECOND("Mana Points per Second"),
     MOVEMENT_SPEED("Movement Speed"),
+    ONE_HAND_ATTACK_SPEED("One Hand Attack Speed"),
     ONE_HAND_DAMAGE("One Hand Damage"),
     POISON_RESISTANCE("Poison Resistance"),
     RESISTANCE("All Resistance Values"),
-    TWO_HAND_DAMAGE("Two Hand Damage");
+    TWO_HAND_DAMAGE("Two Hand Damage"),
+    TWO_HAND_ATTACK_SPEED("Two Hand Attack Speed");
 
 
 

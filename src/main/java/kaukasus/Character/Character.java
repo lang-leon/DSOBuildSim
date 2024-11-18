@@ -79,7 +79,6 @@ public class Character {
 
     //ess
     double essDmg = 0.0;
-    //TODO
 
     //buffs
     Tonic tonic;
@@ -87,10 +86,10 @@ public class Character {
 
 
     //wisdom tree
-
+    //todo
 
     //buffs from skill tree (f.e. blood mage)
-
+    //todo
 
     //Constructors
     public Character(CharacterClassEnum characterClass)
