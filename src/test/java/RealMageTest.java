@@ -13,6 +13,7 @@ import kaukasus.Jewels.JewelTrinket;
 import kaukasus.OverallBuffs.OverallAbsolutBuff;
 import kaukasus.OverallBuffs.OverallBuff;
 import kaukasus.OverallBuffs.OverallRelativeBuff;
+import kaukasus.Pets.Pet;
 import kaukasus.Runes.Rune;
 import kaukasus.Runes.RuneTrinket;
 import kaukasus.Runes.SpecialRune;
@@ -33,7 +34,7 @@ public class RealMageTest {
         Character mage = new Character(CharacterClassEnum.SPELLWEAVER);
 
         Map<AbsoluteStatTypeEnum, Double> amuletBaseStats = new HashMap<>();
-        amuletBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 173.466);
+        amuletBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1731.466);
         amuletBaseStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 24127.76);
         amuletBaseStats.put(AbsoluteStatTypeEnum.POISON_RESISTANCE, 3412.286);
         Map<AbsoluteStatTypeEnum, Double> amuletUniqueBaseStats = new HashMap<>();
@@ -379,6 +380,9 @@ public class RealMageTest {
         mage.addJewelTrinket(jewelTrinket3, 3);
 
         mage.setEssence(0.50);
+        Pet mortisPet = new Pet("Mortis Doll", Map.of(OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.3, OverallRelativeBuffTypeEnum.MANA, 0.3, OverallRelativeBuffTypeEnum.DAMAGE, 0.3), "");
+        //mage.setPet(mortisPet);
+        //mage.setCollectorBagBuff(Map.of(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.33, OverallRelativeBuffTypeEnum.RESISTANCE, 0.15, OverallRelativeBuffTypeEnum.DAMAGE, 0.06, OverallRelativeBuffTypeEnum.BLOCK_VALUE, 0.02));
 
         return mage;
     }

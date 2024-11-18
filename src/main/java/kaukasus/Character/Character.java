@@ -19,6 +19,7 @@ import kaukasus.Runes.RuneTrinket;
 import kaukasus.Runes.SpecialRune;
 
 import java.util.HashMap;
+import java.util.IllegalFormatCodePointException;
 import java.util.Map;
 
 public class Character {
@@ -73,6 +74,9 @@ public class Character {
     //pet
     Pet pet;
 
+    //collectors bag buffs
+    Map<OverallRelativeBuffTypeEnum, Double> collectorBagBuffs;
+
     //ess
     double essDmg = 0.0;
     //TODO
@@ -81,8 +85,6 @@ public class Character {
     Tonic tonic;
     Physic physic;
 
-    //collectors bag buffs
-    Map<OverallRelativeBuffTypeEnum, Double> collectorBagBuffs;
 
     //wisdom tree
 
@@ -418,14 +420,9 @@ public class Character {
         return collectorBagBuffs;
     }
 
-    public void addCollectorBagBuff(OverallRelativeBuffTypeEnum type, Double value)
+    public void setCollectorBagBuff(Map<OverallRelativeBuffTypeEnum, Double> collectorBagBuffs)
     {
-        this.collectorBagBuffs.put(type, value);
-    }
-
-    public void removeCollectorBagBuff(OverallRelativeBuffTypeEnum type)
-    {
-        this.collectorBagBuffs.remove(type);
+        this.collectorBagBuffs = collectorBagBuffs;
     }
 
     //stats
@@ -1209,6 +1206,7 @@ public class Character {
         characterAbsoluteStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, characterAbsoluteStats.get(AbsoluteStatTypeEnum.ATTACK_SPEED)+0.79);
 
         int dmg = (int) (characterAbsoluteStats.get(AbsoluteStatTypeEnum.DAMAGE)-50400);
+        Double crit = characterAbsoluteStats.get(AbsoluteStatTypeEnum.CRIT_VALUE);
 
         //check for one hand or two hand jewel
         if (two_hand_weapon != null)
@@ -1225,8 +1223,19 @@ public class Character {
             }
         }
 
-        //buffs,pets
+        //essence,pets,collector buff,buffs
         this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.DAMAGE, this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.DAMAGE)+this.essDmg);
+        if (this.pet != null)
+        {
+            for (Map.Entry<OverallRelativeBuffTypeEnum, Double> entry : this.pet.getEffects().entrySet())
+            {
+                this.characterRelativeBuffs.put(entry.getKey(), this.characterRelativeBuffs.get(entry.getKey())+entry.getValue());
+            }
+            for (Map.Entry<OverallRelativeBuffTypeEnum, Double> entry : this.collectorBagBuffs.entrySet())
+            {
+                this.characterRelativeBuffs.put(entry.getKey(), this.characterRelativeBuffs.get(entry.getKey())+entry.getValue());
+            }
+        }
 
         //calculate final stats (absolut*relative)
         this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.ANDERMAGIC_RESISTANCE, this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.ANDERMAGIC_RESISTANCE) + this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.RESISTANCE));

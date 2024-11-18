@@ -137,6 +137,7 @@ public class UniqueItem extends AbstractItem{
             AbsoluteStatTypeEnum baseValueType = EnchantToAbsoluteStatTypeMapper.getAbsoluteType(uniqueEnchant.getType());
             finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType)+ totalAbsoluteStats.get(baseValueType)*uniqueEnchant.getValue());
         }
+
         return finalAbsoluteStats;
     }
 }
