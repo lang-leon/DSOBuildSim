@@ -2,6 +2,7 @@ package kaukasus.Items.ActualItems;
 
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
+import kaukasus.Enums.CharacterClassEnum;
 import kaukasus.Enums.ItemTypeEnum;
 import kaukasus.Sets.SetEnumInterface;
 import kaukasus.Gems.AbstractGem;
@@ -17,8 +18,9 @@ import java.util.Map;
 public class SetItem extends AbstractItem {
     private SetEnumInterface set;
 
-    public SetItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, int itemLevel, SetEnumInterface set){
+    public SetItem(String name, CharacterClassEnum characterClassEnum, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, int itemLevel, SetEnumInterface set){
         this.name = name;
+        this.characterClass = characterClassEnum;
         this.itemType = itemType;
         this.baseStats = baseStats;
         this.set = set;

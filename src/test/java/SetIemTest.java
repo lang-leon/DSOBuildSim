@@ -1,5 +1,6 @@
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
+import kaukasus.Enums.CharacterClassEnum;
 import kaukasus.Enums.EnchantTypeEnum;
 import kaukasus.Enums.ItemTypeEnum;
 import kaukasus.Gems.Gem;
@@ -16,7 +17,7 @@ public class SetIemTest {
         basestats.put(AbsoluteStatTypeEnum.DAMAGE, 1644.883);
         basestats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1401.911);
         basestats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 20637.978);
-        SetItem setItem = new SetItem("Helmet of the Black Knight", ItemTypeEnum.HELMET, basestats, 145, SpellweaverSets.SET1);
+        SetItem setItem = new SetItem("Helmet of the Black Knight", CharacterClassEnum.SPELLWEAVER, ItemTypeEnum.HELMET, basestats, 145, SpellweaverSets.SET1);
 
         Gem poison = new Gem(AbsoluteStatTypeEnum.POISON_RESISTANCE, 1337.0);
         setItem.addGem(poison);

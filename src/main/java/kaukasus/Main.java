@@ -6,6 +6,7 @@ import kaukasus.Enums.*;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
 import kaukasus.Items.ActualItems.SetItem;
+import kaukasus.Items.ItemDatabase.SetItems.SpellweaverSetItems;
 import kaukasus.Sets.SpellweaverSets;
 
 import java.util.HashMap;
@@ -13,11 +14,16 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
+        for (int i=1; i<10; i++) System.out.println(i);
+    }
+
+    public static void test()
+    {
         Map<AbsoluteStatTypeEnum, Double> basestats = new HashMap<>();
         basestats.put(AbsoluteStatTypeEnum.DAMAGE, 1644.883);
         basestats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1401.911);
         basestats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 20637.978);
-        SetItem setItem = new SetItem("Helmet of the Black Knight", ItemTypeEnum.HELMET, basestats, 145, SpellweaverSets.SET1);
+        SetItem setItem = new SetItem("Helmet of the Black Knight", CharacterClassEnum.SPELLWEAVER, ItemTypeEnum.HELMET, basestats, 145, SpellweaverSets.SET1);
 
         Gem poison = new Gem(AbsoluteStatTypeEnum.POISON_RESISTANCE, 1337.0);
         setItem.addGem(poison);

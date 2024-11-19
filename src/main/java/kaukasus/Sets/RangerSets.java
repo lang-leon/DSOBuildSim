@@ -10,29 +10,35 @@ import java.util.Map;
 
 public enum RangerSets implements SetEnumInterface {
 
-    FORGOTTON_GLORY("Forgotton Glory", Map.of(2, new OverallDescriptionBuff("..."))),
-    ANCESTRAL_GLORY("Forgotton Glory", Map.of(2, new OverallDescriptionBuff("...")));
+    FORGOTTON_GLORY("Forgotton Glory", Map.of(2, List.of(new OverallDescriptionBuff("..."))), 145),
+    ANCESTRAL_GLORY("Forgotton Glory", Map.of(2, List.of(new OverallDescriptionBuff("..."))), 145);
 
     private final String name;
-    private final Map<Integer, OverallBuff> setBonus;
+    private Map<Integer, List<OverallBuff>> setBonus;
     private List<Item> setItems;
+    private int level;
 
-    RangerSets(String name, Map<Integer, OverallBuff> setBonus)
+    RangerSets(String name, Map<Integer, List<OverallBuff>> setBonus, int level)
     {
         this.name = name;
         this.setBonus = setBonus;
+        this.level = level;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    public Map<Integer, OverallBuff> getSetBonus() {
-        return setBonus;
+    public Map<Integer, List<OverallBuff>> getSetBonus() {
+        return this.setBonus;
     }
 
     public List<Item> getSetItems() {
-        return setItems;
+        return this.setItems;
+    }
+
+    public int getLevel() {
+        return level;
     }
 
     static
