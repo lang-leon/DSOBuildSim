@@ -8,5 +8,11 @@ public class Gem extends AbstractGem{
         super.value = value;
     }
 
+    @Override
+    public Gem copyGem()
+    {
+        return new Gem(this.type, this.value);
+    }
+
 
 }

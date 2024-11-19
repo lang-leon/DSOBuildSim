@@ -21,6 +21,8 @@ public abstract class AbstractGem {
         this.value = value;
     }
 
+    public abstract AbstractGem copyGem();
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
