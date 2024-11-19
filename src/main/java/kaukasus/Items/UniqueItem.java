@@ -21,7 +21,7 @@ public class UniqueItem extends AbstractItem{
     private List<UniqueEnchant> uniqueEnchants;
     private List<OverallBuff> overallBuffs;
 
-    public UniqueItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs){
+    public UniqueItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, int itemLevel){
         this.name = name;
         this.itemType = itemType;
         this.baseStats = baseStats;
@@ -30,6 +30,7 @@ public class UniqueItem extends AbstractItem{
         this.uniqueBaseStat = uniqueBaseStats;
         this.uniqueEnchants = uniqueEnchants;
         this.overallBuffs = overallBuffs;
+        this.itemLevel = itemLevel;
     }
 
     @Override

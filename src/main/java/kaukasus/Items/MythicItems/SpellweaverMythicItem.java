@@ -25,9 +25,10 @@ public enum SpellweaverMythicItem implements Item {
     private final List<UniqueEnchant> uniqueEnchants;
     private final List<OverallBuff> overallBuffs;
     private final CharacterClassEnum characterClass;
+    private final int itemLevel;
     private SpellweaverSets set;
 
-    SpellweaverMythicItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs) {
+    SpellweaverMythicItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, int itemLevel) {
         this.characterClass = CharacterClassEnum.SPELLWEAVER;
         this.name = name;
         this.itemType = itemType;
@@ -35,10 +36,11 @@ public enum SpellweaverMythicItem implements Item {
         this.uniqueBaseStats = uniqueBaseStats;
         this.uniqueEnchants = uniqueEnchants;
         this.overallBuffs = overallBuffs;
+        this.itemLevel = itemLevel;
     }
 
     public MythicItem getItem() {
-        return new MythicItem(this.name, this.itemType, this.baseStats, this.uniqueBaseStats, this.uniqueEnchants, this.overallBuffs, this.set);
+        return new MythicItem(this.name, this.itemType, this.baseStats, this.uniqueBaseStats, this.uniqueEnchants, this.overallBuffs, this.set, this.itemLevel);
     }
 
     public CharacterClassEnum getCharacterClass() {

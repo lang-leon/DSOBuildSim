@@ -23,7 +23,7 @@ public class MythicItem extends AbstractItem {
     private List<OverallBuff> overallBuffs;
     private SetEnum set;
 
-    public MythicItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, SetEnum set){
+    public MythicItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, SetEnum set, int itemLevel){
         this.name = name;
         this.itemType = itemType;
         this.baseStats = baseStats;
@@ -33,6 +33,7 @@ public class MythicItem extends AbstractItem {
         this.uniqueEnchants = uniqueEnchants;
         this.overallBuffs = overallBuffs;
         this.set = set;
+        this.itemLevel = itemLevel;
     }
 
     public SetEnum getSet() {

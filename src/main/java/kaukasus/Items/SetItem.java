@@ -17,13 +17,14 @@ import java.util.Map;
 public class SetItem extends AbstractItem{
     private SetEnum set;
 
-    public SetItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, SetEnum set){
+    public SetItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, SetEnum set, int itemLevel){
         this.name = name;
         this.itemType = itemType;
         this.baseStats = baseStats;
         this.set = set;
         this.gems = new ArrayList<>();
         this.enchants = new ArrayList<>();
+        this.itemLevel = itemLevel;
     }
 
     public SetEnum getSet() {
@@ -64,6 +65,7 @@ public class SetItem extends AbstractItem{
     public void removeEnchant(Enchant enchant) {
         super.removeEnchant(enchant);
     }
+
     @Override
     public Map<AbsoluteStatTypeEnum, Double> calculateTotalStats() {
         Map<AbsoluteStatTypeEnum, Double> totalAbsoluteStats = new HashMap<>();

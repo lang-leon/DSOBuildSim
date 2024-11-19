@@ -14,6 +14,7 @@ public abstract class AbstractItem {
     protected Map<AbsoluteStatTypeEnum, Double> baseStats;
     protected List<Enchant> enchants;
     protected List<AbstractGem> gems;
+    protected int itemLevel;
 
     public String getName()
     {
@@ -89,6 +90,14 @@ public abstract class AbstractItem {
     public void removeEnchant(Enchant enchant)
     {
         this.enchants.remove(enchant);
+    }
+
+    public int getItemLevel() {
+        return itemLevel;
+    }
+
+    public void setItemLevel(int itemLevel) {
+        this.itemLevel = itemLevel;
     }
 
     public abstract Map<AbsoluteStatTypeEnum, Double> calculateTotalStats();
