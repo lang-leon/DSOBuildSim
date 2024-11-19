@@ -37,4 +37,9 @@ public class Enchant {
             this.value = this.type.getMaxValue();
         }
     }
+
+    public Enchant copyEnchant()
+    {
+        return new Enchant(this.type, this.value);
+    }
 }
