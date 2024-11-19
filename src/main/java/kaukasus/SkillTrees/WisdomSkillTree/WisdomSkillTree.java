@@ -20,15 +20,15 @@ public class WisdomSkillTree extends AbstractSkillTree {
     int maxAvailablePoints;
     int currentlyUsedPoints;
 
-    public WisdomSkillTree(WisdomSubTree healthResource, WisdomSubTree attack, WisdomSubTree defense, WisdomSubTree combat, WisdomSubTree oneHandedWeapon, WisdomSubTree twoHandedWeapon, WisdomSubTree prosperity, WisdomSubTree travelMerits) {
-        this.healthResource = healthResource;
-        this.attack = attack;
-        this.defense = defense;
-        this.combat = combat;
-        this.oneHandedWeapon = oneHandedWeapon;
-        this.twoHandedWeapon = twoHandedWeapon;
-        this.prosperity = prosperity;
-        this.travelMerits = travelMerits;
+    public WisdomSkillTree() {
+        this.healthResource = WisdomSubTree.HEALTH_RESOURCE;
+        this.attack = WisdomSubTree.ATTACK;
+        this.defense = WisdomSubTree.DEFENSE;
+        this.combat = WisdomSubTree.COMBAT;
+        this.oneHandedWeapon = WisdomSubTree.ONE_HANDED_WEAPON;
+        this.twoHandedWeapon = WisdomSubTree.TWO_HANDED_WEAPON;
+        this.prosperity = WisdomSubTree.PROSPERITY;
+        this.travelMerits = WisdomSubTree.TRAVEL_MERITS;
         this.maxAvailablePoints = 2865;
         this.currentlyUsedPoints = 0;
     }
