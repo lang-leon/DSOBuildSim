@@ -2,10 +2,12 @@ import kaukasus.Enchants.Enchant;
 import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.*;
 import kaukasus.Gems.Gem;
-import kaukasus.Items.MythicItem;
+import kaukasus.Items.MythicItems.MythicItem;
 import kaukasus.OverallBuffs.OverallAbsolutBuff;
 import kaukasus.OverallBuffs.OverallBuff;
 import kaukasus.OverallBuffs.OverallRelativeBuff;
+import kaukasus.Sets.SetEnum;
+import kaukasus.Sets.SpellweaverSets;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,28 +26,28 @@ public class MythicItemTest {
         overallBuffs.add(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.DAMAGE, 0.1));
         overallBuffs.add(new OverallAbsolutBuff(AbsoluteStatTypeEnum.DAMAGE, 5000.0));
 
-        MythicItem setItem = new MythicItem("Ancestral Glory Cloak (Mage)", ItemTypeEnum.CLOAK, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, SetTypeEnum.SET1);
+        MythicItem mythicItem = new MythicItem("Ancestral Glory Cloak (Mage)", ItemTypeEnum.CLOAK, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, SpellweaverSets.SET1);
 
         Gem dmg = new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
+        mythicItem.addGem(dmg);
+        mythicItem.addGem(dmg);
+        mythicItem.addGem(dmg);
+        mythicItem.addGem(dmg);
+        mythicItem.addGem(dmg);
+        mythicItem.addGem(dmg);
+        mythicItem.addGem(dmg);
+        mythicItem.addGem(dmg);
+        mythicItem.addGem(dmg);
+        mythicItem.addGem(dmg);
 
         Enchant enchant = new Enchant(EnchantTypeEnum.DAMAGE, 0.44776);
 
-        setItem.addEnchant(enchant);
-        setItem.addEnchant(enchant);
-        setItem.addEnchant(enchant);
-        setItem.addEnchant(enchant);
+        mythicItem.addEnchant(enchant);
+        mythicItem.addEnchant(enchant);
+        mythicItem.addEnchant(enchant);
+        mythicItem.addEnchant(enchant);
 
-        Map<AbsoluteStatTypeEnum, Double> totalStats = setItem.calculateTotalStats();
+        Map<AbsoluteStatTypeEnum, Double> totalStats = mythicItem.calculateTotalStats();
         for (AbsoluteStatTypeEnum entry : totalStats.keySet()){
             System.out.println(entry + " : " + totalStats.get(entry));
         }

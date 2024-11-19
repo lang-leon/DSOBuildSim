@@ -4,7 +4,8 @@ import kaukasus.Buffs.Physic;
 import kaukasus.Buffs.Tonic;
 import kaukasus.Enums.*;
 import kaukasus.Items.AbstractItem;
-import kaukasus.Items.MythicItem;
+import kaukasus.Items.Item;
+import kaukasus.Items.MythicItems.MythicItem;
 import kaukasus.Items.UniqueItem;
 import kaukasus.Jewels.Jewel;
 import kaukasus.Jewels.JewelTrinket;
@@ -17,9 +18,11 @@ import kaukasus.Runes.AbstractRune;
 import kaukasus.Runes.Rune;
 import kaukasus.Runes.RuneTrinket;
 import kaukasus.Runes.SpecialRune;
+import kaukasus.Sets.SetEnum;
+import kaukasus.SkillTrees.WisdomSkillTree.WisdomSkillTree;
 
 import java.util.HashMap;
-import java.util.IllegalFormatCodePointException;
+import java.util.List;
 import java.util.Map;
 
 public class Character {
@@ -84,9 +87,11 @@ public class Character {
     Tonic tonic;
     Physic physic;
 
+    //sets
+    Map<SetEnum, List<Item>> sets;
 
     //wisdom tree
-    //todo
+    WisdomSkillTree wisdomSkillTree;
 
     //buffs from skill tree (f.e. blood mage)
     //todo
@@ -101,6 +106,8 @@ public class Character {
         this.characterRelativeBuffs = new HashMap<>();
         this.classSpecialStats = new HashMap<>();
         this.collectorBagBuffs = new HashMap<>();
+        this.wisdomSkillTree = new WisdomSkillTree();
+        this.sets = new HashMap<>();
 
         if (characterClass == CharacterClassEnum.SPELLWEAVER)
         {
@@ -168,78 +175,86 @@ public class Character {
     }
 
     //items
+    //todo set boni
     public void addItem(AbstractItem item, ItemSlotEnum slot)
     {
-        //todo set boni
-        if (slot == ItemSlotEnum.AMULET && item.getItemType() == ItemTypeEnum.AMULET)
+        //item.getCharacterClass()
+        if (this.characterClass == this.characterClass)
         {
-            this.amulet = item;
-        }
-        else if (slot == ItemSlotEnum.CLOAK && item.getItemType() == ItemTypeEnum.CLOAK)
-        {
-            this.cloak = item;
-        }
-        else if (slot == ItemSlotEnum.BELT && item.getItemType() == ItemTypeEnum.BELT)
-        {
-            this.belt = item;
-        }
-        else if (slot == ItemSlotEnum.RING1 && item.getItemType() == ItemTypeEnum.RING)
-        {
-            this.ring1 = item;
-        }
-        else if (slot == ItemSlotEnum.RING2 && item.getItemType() == ItemTypeEnum.RING)
-        {
-            this.ring2 = item;
-        }
-        else if (slot == ItemSlotEnum.HELMET && item.getItemType() == ItemTypeEnum.HELMET)
-        {
-            this.helmet = item;
-        }
-        else if (slot == ItemSlotEnum.SHOULDERS && item.getItemType() == ItemTypeEnum.SHOULDERS)
-        {
-            this.shoulders = item;
-        }
-        else if (slot == ItemSlotEnum.TORSO && item.getItemType() == ItemTypeEnum.TORSO)
-        {
-            this.torso = item;
-        }
-        else if (slot == ItemSlotEnum.GLOVES && item.getItemType() == ItemTypeEnum.GLOVES)
-        {
-            this.gloves = item;
-        }
-        else if (slot == ItemSlotEnum.BOOTS && item.getItemType() == ItemTypeEnum.BOOTS)
-        {
-            this.boots = item;
-        }
-        else if (slot == ItemSlotEnum.WEAPON_ADORNMENT && item.getItemType() == ItemTypeEnum.WEAPON_ADORNMENT)
-        {
-            this.weapon_adornment = item;
-        }
-        else if (slot == ItemSlotEnum.TWO_HAND_WEAPON && item.getItemType() == ItemTypeEnum.TWO_HAND_WEAPON)
-        {
-            this.two_hand_weapon = item;
-            this.one_hand_weapon = null;
-            this.off_hand =null;
-        }
-        else if (slot == ItemSlotEnum.ONE_HAND_WEAPON && item.getItemType() == ItemTypeEnum.ONE_HAND_WEAPON)
-        {
-            this.one_hand_weapon = item;
-            this.two_hand_weapon = null;
-        }
-        else if (slot == ItemSlotEnum.OFF_HAND && item.getItemType() == ItemTypeEnum.OFF_HAND)
-        {
-            this.off_hand = item;
-            this.two_hand_weapon = null;
+            if (slot == ItemSlotEnum.AMULET && item.getItemType() == ItemTypeEnum.AMULET)
+            {
+                this.amulet = item;
+            }
+            else if (slot == ItemSlotEnum.CLOAK && item.getItemType() == ItemTypeEnum.CLOAK)
+            {
+                this.cloak = item;
+            }
+            else if (slot == ItemSlotEnum.BELT && item.getItemType() == ItemTypeEnum.BELT)
+            {
+                this.belt = item;
+            }
+            else if (slot == ItemSlotEnum.RING1 && item.getItemType() == ItemTypeEnum.RING)
+            {
+                this.ring1 = item;
+            }
+            else if (slot == ItemSlotEnum.RING2 && item.getItemType() == ItemTypeEnum.RING)
+            {
+                this.ring2 = item;
+            }
+            else if (slot == ItemSlotEnum.HELMET && item.getItemType() == ItemTypeEnum.HELMET)
+            {
+                this.helmet = item;
+            }
+            else if (slot == ItemSlotEnum.SHOULDERS && item.getItemType() == ItemTypeEnum.SHOULDERS)
+            {
+                this.shoulders = item;
+            }
+            else if (slot == ItemSlotEnum.TORSO && item.getItemType() == ItemTypeEnum.TORSO)
+            {
+                this.torso = item;
+            }
+            else if (slot == ItemSlotEnum.GLOVES && item.getItemType() == ItemTypeEnum.GLOVES)
+            {
+                this.gloves = item;
+            }
+            else if (slot == ItemSlotEnum.BOOTS && item.getItemType() == ItemTypeEnum.BOOTS)
+            {
+                this.boots = item;
+            }
+            else if (slot == ItemSlotEnum.WEAPON_ADORNMENT && item.getItemType() == ItemTypeEnum.WEAPON_ADORNMENT)
+            {
+                this.weapon_adornment = item;
+            }
+            else if (slot == ItemSlotEnum.TWO_HAND_WEAPON && item.getItemType() == ItemTypeEnum.TWO_HAND_WEAPON)
+            {
+                this.two_hand_weapon = item;
+                this.one_hand_weapon = null;
+                this.off_hand =null;
+            }
+            else if (slot == ItemSlotEnum.ONE_HAND_WEAPON && item.getItemType() == ItemTypeEnum.ONE_HAND_WEAPON)
+            {
+                this.one_hand_weapon = item;
+                this.two_hand_weapon = null;
+            }
+            else if (slot == ItemSlotEnum.OFF_HAND && item.getItemType() == ItemTypeEnum.OFF_HAND)
+            {
+                this.off_hand = item;
+                this.two_hand_weapon = null;
+            }
+            else
+            {
+                throw new IllegalArgumentException("Failed to add item.");
+            }
         }
         else
         {
-            throw new IllegalArgumentException("Failed to add item.");
+            throw new IllegalArgumentException("Failed to add item, wrong character class.");
         }
     }
 
+    //todo set boni
     public void removeItem(ItemSlotEnum slot)
     {
-        //todo set boni
         switch (slot)
         {
             case AMULET -> this.amulet = null;
@@ -422,6 +437,15 @@ public class Character {
     public void setCollectorBagBuff(Map<OverallRelativeBuffTypeEnum, Double> collectorBagBuffs)
     {
         this.collectorBagBuffs = collectorBagBuffs;
+    }
+
+    //TODO editable
+    public WisdomSkillTree getWisdomSkillTree() {
+        return wisdomSkillTree;
+    }
+
+    public void setWisdomSkillTree(WisdomSkillTree wisdomSkillTree) {
+        this.wisdomSkillTree = wisdomSkillTree;
     }
 
     //stats
@@ -1197,30 +1221,58 @@ public class Character {
             }
         }
 
-        //wisdom
-
         //TODO set boni (for testing purpose manually added)
         characterAbsoluteStats.put(AbsoluteStatTypeEnum.DAMAGE, characterAbsoluteStats.get(AbsoluteStatTypeEnum.DAMAGE)+2776+5553);
         characterAbsoluteStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, characterAbsoluteStats.get(AbsoluteStatTypeEnum.HEALTH_POINTS)+33347);
         characterAbsoluteStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, characterAbsoluteStats.get(AbsoluteStatTypeEnum.ATTACK_SPEED)+0.79);
 
+        //wisdom 1/2
+        Map<AbsoluteStatTypeEnum, Double> absoluteWisdomBuffs = this.wisdomSkillTree.getAbsoluteBuffs();
+
         //check for one hand or two hand jewel
         if (two_hand_weapon != null)
         {
-            //TODO wisdom
-            this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.DAMAGE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.DAMAGE)+this.two_hand_weapon.calculateTotalStats().get(AbsoluteStatTypeEnum.DAMAGE)*this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.TWO_HAND_DAMAGE));
+            this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.DAMAGE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.DAMAGE) + absoluteWisdomBuffs.get(AbsoluteStatTypeEnum.TWO_HAND_DAMAGE) + (this.two_hand_weapon.calculateTotalStats().get(AbsoluteStatTypeEnum.DAMAGE) +
+                    absoluteWisdomBuffs.get(AbsoluteStatTypeEnum.TWO_HAND_DAMAGE)) *
+                    this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.TWO_HAND_DAMAGE));
+            this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.ATTACK_SPEED)+absoluteWisdomBuffs.get(AbsoluteStatTypeEnum.TWO_HAND_ATTACK_SPEED));
+            absoluteWisdomBuffs.remove(AbsoluteStatTypeEnum.ONE_HAND_DAMAGE);
+            absoluteWisdomBuffs.remove(AbsoluteStatTypeEnum.ONE_HAND_ATTACK_SPEED);
+            absoluteWisdomBuffs.remove(AbsoluteStatTypeEnum.TWO_HAND_DAMAGE);
+            absoluteWisdomBuffs.remove(AbsoluteStatTypeEnum.TWO_HAND_ATTACK_SPEED);
         }
-        else if (one_hand_weapon != null || off_hand != null)
+        else if (one_hand_weapon != null)
         {
-            //TODO wisdom (including off hand check)
-            if (one_hand_weapon != null)
-            {
-                this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.DAMAGE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.DAMAGE)+this.one_hand_weapon.calculateTotalStats().get(AbsoluteStatTypeEnum.DAMAGE)*this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.ONE_HAND_DAMAGE));
-            }
+            this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.DAMAGE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.DAMAGE) + absoluteWisdomBuffs.get(AbsoluteStatTypeEnum.ONE_HAND_DAMAGE) + (this.one_hand_weapon.calculateTotalStats().get(AbsoluteStatTypeEnum.DAMAGE) +
+                    absoluteWisdomBuffs.get(AbsoluteStatTypeEnum.ONE_HAND_DAMAGE)) *
+                    this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.ONE_HAND_DAMAGE));
+            this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.ATTACK_SPEED)+absoluteWisdomBuffs.get(AbsoluteStatTypeEnum.ONE_HAND_ATTACK_SPEED));
+            absoluteWisdomBuffs.remove(AbsoluteStatTypeEnum.ONE_HAND_DAMAGE);
+            absoluteWisdomBuffs.remove(AbsoluteStatTypeEnum.ONE_HAND_ATTACK_SPEED);
+            absoluteWisdomBuffs.remove(AbsoluteStatTypeEnum.TWO_HAND_DAMAGE);
+            absoluteWisdomBuffs.remove(AbsoluteStatTypeEnum.TWO_HAND_ATTACK_SPEED);
+        }
+
+        //wisdom 2/2
+        double allResistanceValue = absoluteWisdomBuffs.get(AbsoluteStatTypeEnum.RESISTANCE);
+        absoluteWisdomBuffs.remove(AbsoluteStatTypeEnum.RESISTANCE);
+        this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.FIRE_RESISTANCE)+allResistanceValue);
+        this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.ICE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.ICE_RESISTANCE)+allResistanceValue);
+        this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.LIGHTNING_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.LIGHTNING_RESISTANCE)+allResistanceValue);
+        this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.ANDERMAGIC_RESISTANCE)+allResistanceValue);
+        this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.POISON_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.POISON_RESISTANCE)+allResistanceValue);
+        for (Map.Entry<AbsoluteStatTypeEnum, Double> entry : absoluteWisdomBuffs.entrySet())
+        {
+            this.characterAbsoluteStats.put(entry.getKey(), this.characterAbsoluteStats.get(entry.getKey())+entry.getValue());
+        }
+        for (Map.Entry<OverallRelativeBuffTypeEnum, Double> entry : this.wisdomSkillTree.getRelativeBuffs().entrySet())
+        {
+            this.characterRelativeBuffs.put(entry.getKey(), this.characterRelativeBuffs.get(entry.getKey())+ entry.getValue());
         }
 
         //essence
         this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.DAMAGE, this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.DAMAGE)+this.essDmg);
+
         //pet, collector bag
         if (this.pet != null)
         {
@@ -1242,6 +1294,7 @@ public class Character {
         {
             this.characterRelativeBuffs.put(this.physic.getType(), this.characterRelativeBuffs.get(this.physic.getType())+this.physic.getValue());
         }
+
 
         //calculate final stats (absolut*relative)
         this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.ANDERMAGIC_RESISTANCE, this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.ANDERMAGIC_RESISTANCE) + this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.RESISTANCE));

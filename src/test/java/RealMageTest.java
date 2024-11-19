@@ -1,4 +1,3 @@
-import com.sun.security.jgss.GSSUtil;
 import kaukasus.Buffs.Physic;
 import kaukasus.Buffs.Tonic;
 import kaukasus.Character.Character;
@@ -7,7 +6,8 @@ import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.*;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
-import kaukasus.Items.MythicItem;
+import kaukasus.Items.MythicItems.MythicItem;
+import kaukasus.Items.MythicItems.SpellweaverMythicItem;
 import kaukasus.Items.SetItem;
 import kaukasus.Items.UniqueItem;
 import kaukasus.Jewels.Jewel;
@@ -19,15 +19,18 @@ import kaukasus.Pets.Pet;
 import kaukasus.Runes.Rune;
 import kaukasus.Runes.RuneTrinket;
 import kaukasus.Runes.SpecialRune;
+import kaukasus.Sets.SpellweaverSets;
+import kaukasus.SkillTrees.WisdomSkillTree.WisdomSkillTree;
 
 import java.util.*;
 import java.util.List;
 
 public class RealMageTest {
     public static void main(String[] args) {
+        //System.out.println(SpellweaverMythicItem.OLD_GLORY.getMythicItem().getSet());
+        //System.out.println(SpellweaverSets.FORGOTTON_GLORY.getSetItems());
+        //System.out.println(SpellweaverMythicItem.OLD_GLORY.getMythicItem().getSet());
         Character mage = testMage();
-        printStats(mage.getClassBaseStats());
-        System.out.println();
         mage.calculateFinalStats();
         printStats(mage.getCharacterFinalStats());
     }
@@ -65,7 +68,7 @@ public class RealMageTest {
         List<OverallBuff> cloakOverallBuffs = new ArrayList<>();
         cloakOverallBuffs.add(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.DAMAGE, 0.10));
         cloakOverallBuffs.add(new OverallAbsolutBuff(AbsoluteStatTypeEnum.DAMAGE, 5000.0));
-        MythicItem cloak = new MythicItem("Ancestral Glory Cloak (Mage)", ItemTypeEnum.CLOAK, cloakBaseStats, Map.of(), List.of(), cloakOverallBuffs, SetTypeEnum.SET1);
+        MythicItem cloak = SpellweaverMythicItem.ANCESTRAL_GLORY_CLOAK.getItem();
         cloak.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
         cloak.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
         cloak.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
@@ -110,29 +113,44 @@ public class RealMageTest {
         List<OverallBuff> ringOverallBuffs = new ArrayList<>();
         ringOverallBuffs.add(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.DAMAGE, 0.10));
         ringOverallBuffs.add(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.10));
-        MythicItem ring = new MythicItem("Ancestral Glory Ring", ItemTypeEnum.RING, ringBaseStats, Map.of(), List.of(), ringOverallBuffs, SetTypeEnum.SET1);
-        ring.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
-        ring.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
-        ring.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
-        ring.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
-        ring.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
-        ring.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
-        ring.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
-        ring.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
-        ring.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
-        ring.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
-        ring.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
-        ring.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
-        ring.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
-        ring.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
-        mage.addItem(ring, ItemSlotEnum.RING1);
-        mage.addItem(ring, ItemSlotEnum.RING2);
+        MythicItem ring1 = SpellweaverMythicItem.RING_OF_ANCESTRAL_GLORY.getItem();
+        ring1.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring1.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring1.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring1.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        mage.addItem(ring1, ItemSlotEnum.RING1);
+        MythicItem ring2 = SpellweaverMythicItem.RING_OF_ANCESTRAL_GLORY.getItem();
+        ring2.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring2.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring2.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring2.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        mage.addItem(ring2, ItemSlotEnum.RING2);
 
         Map<AbsoluteStatTypeEnum, Double> helmetBaseStats = new HashMap<>();
         helmetBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1512.772);
         helmetBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1394.209);
         helmetBaseStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 18258.694);
-        SetItem helmet = new SetItem("Sargon's Horns", ItemTypeEnum.HELMET, helmetBaseStats, SetTypeEnum.SET1);
+        SetItem helmet = new SetItem("Sargon's Horns", ItemTypeEnum.HELMET, helmetBaseStats, SpellweaverSets.SET1);
         helmet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.4452));
         helmet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44364));
         helmet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44483));
@@ -153,7 +171,7 @@ public class RealMageTest {
         shouldersBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1876.316);
         shouldersBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1282.912);
         shouldersBaseStats.put(AbsoluteStatTypeEnum.ANDERMAGIC_RESISTANCE, 3443.896);
-        SetItem shoulders = new SetItem("Sargon's Pauldrons", ItemTypeEnum.SHOULDERS, shouldersBaseStats, SetTypeEnum.SET1);
+        SetItem shoulders = new SetItem("Sargon's Pauldrons", ItemTypeEnum.SHOULDERS, shouldersBaseStats, SpellweaverSets.SET1);
         shoulders.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44757));
         shoulders.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44766));
         shoulders.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44757));
@@ -174,7 +192,7 @@ public class RealMageTest {
         torsoBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1631.657);
         torsoBaseStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 14232.794);
         torsoBaseStats.put(AbsoluteStatTypeEnum.ARMOR, 1639.716);
-        SetItem torso = new SetItem("Sargon's Torso", ItemTypeEnum.TORSO, torsoBaseStats, SetTypeEnum.SET1);
+        SetItem torso = new SetItem("Sargon's Torso", ItemTypeEnum.TORSO, torsoBaseStats, SpellweaverSets.SET1);
         torso.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44263));
         torso.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44415));
         torso.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44382));
@@ -195,7 +213,7 @@ public class RealMageTest {
         glovesBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1514.933);
         glovesBaseStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, 0.053);
         glovesBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1494.107);
-        SetItem gloves = new SetItem("Mighty Wrathful Seeker's Gloves", ItemTypeEnum.GLOVES, glovesBaseStats, SetTypeEnum.SET1);
+        SetItem gloves = new SetItem("Mighty Wrathful Seeker's Gloves", ItemTypeEnum.GLOVES, glovesBaseStats, SpellweaverSets.SET1);
         gloves.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44743));
         gloves.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44768));
         gloves.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44738));
@@ -216,7 +234,7 @@ public class RealMageTest {
         bootsBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1510.415);
         bootsBaseStats.put(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 1.113);
         bootsBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1168.091);
-        SetItem boots = new SetItem("Mighty Wrathful Seeker's Boots", ItemTypeEnum.BOOTS, bootsBaseStats, SetTypeEnum.SET1);
+        SetItem boots = new SetItem("Mighty Wrathful Seeker's Boots", ItemTypeEnum.BOOTS, bootsBaseStats, SpellweaverSets.SET1);
         boots.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44760));
         boots.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44763));
         boots.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44762));
@@ -381,16 +399,47 @@ public class RealMageTest {
         jewelTrinket3.addJewel(new Jewel("Jewel of Scorching Ray", "..."));
         mage.addJewelTrinket(jewelTrinket3, 3);
 
-        mage.setEssence(0.50);
+        WisdomSkillTree wisdomSkillTree = new WisdomSkillTree();
+        wisdomSkillTree.setLevel(60, 1,1);
+        wisdomSkillTree.setLevel(60, 1,2);
+
+        wisdomSkillTree.setLevel(80, 2,1);
+        wisdomSkillTree.setLevel(80, 2,2);
+        wisdomSkillTree.setLevel(40, 2,3);
+
+        wisdomSkillTree.setLevel(40, 3,1);
+        wisdomSkillTree.setLevel(80, 3,2);
+        wisdomSkillTree.setLevel(80, 3,3);
+
+        wisdomSkillTree.setLevel(1, 4,1);
+
+        wisdomSkillTree.setLevel(60, 5,1);
+        wisdomSkillTree.setLevel(60, 5,2);
+
+        wisdomSkillTree.setLevel(60, 6,1);
+        wisdomSkillTree.setLevel(60, 6,2);
+        wisdomSkillTree.setLevel(30, 6,3);
+
+        wisdomSkillTree.setLevel(15, 7,1);
+        wisdomSkillTree.setLevel(1, 7,2);
+        wisdomSkillTree.setLevel(1, 7,3);
+
+        wisdomSkillTree.setLevel(15, 8,1);
+        wisdomSkillTree.setLevel(15, 8,2);
+
+        mage.setWisdomSkillTree(wisdomSkillTree);
+
+        mage.setEssence(1.00);
 
         Pet mortisPet = new Pet("Mortis Doll", Map.of(OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.3, OverallRelativeBuffTypeEnum.MANA, 0.3, OverallRelativeBuffTypeEnum.DAMAGE, 0.3), "");
         mage.setPet(mortisPet);
         mage.setCollectorBagBuff(Map.of(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.33, OverallRelativeBuffTypeEnum.RESISTANCE, 0.15, OverallRelativeBuffTypeEnum.DAMAGE, 0.06, OverallRelativeBuffTypeEnum.BLOCK_VALUE, 0.02));
 
         Tonic tonic = new Tonic("Tonic of Vigor", AbsoluteStatTypeEnum.DAMAGE, 10496.0);
-        mage.setTonic(tonic);
+        //mage.setTonic(tonic);
         Physic physic = new Physic("Advanced Physic of Vigor", OverallRelativeBuffTypeEnum.DAMAGE, 0.18);
-        mage.setPhysic(physic);
+        //mage.setPhysic(physic);
+
 
         return mage;
     }

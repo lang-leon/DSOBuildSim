@@ -6,8 +6,9 @@ import kaukasus.Enums.*;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
 import kaukasus.Items.SetItem;
+import kaukasus.Sets.SetEnum;
+import kaukasus.Sets.SpellweaverSets;
 
-import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +18,7 @@ public class Main {
         basestats.put(AbsoluteStatTypeEnum.DAMAGE, 1644.883);
         basestats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1401.911);
         basestats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 20637.978);
-        SetItem setItem = new SetItem("Helmet of the Black Knight", ItemTypeEnum.HELMET, basestats, SetTypeEnum.SET1);
+        SetItem setItem = new SetItem("Helmet of the Black Knight", ItemTypeEnum.HELMET, basestats, SpellweaverSets.SET1);
 
         Gem poison = new Gem(AbsoluteStatTypeEnum.POISON_RESISTANCE, 1337.0);
         setItem.addGem(poison);

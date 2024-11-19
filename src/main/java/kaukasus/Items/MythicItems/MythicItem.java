@@ -1,13 +1,14 @@
-package kaukasus.Items;
+package kaukasus.Items.MythicItems;
 
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
 import kaukasus.Enums.ItemTypeEnum;
-import kaukasus.Enums.SetTypeEnum;
+import kaukasus.Sets.SetEnum;
 import kaukasus.Gems.AbstractGem;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
+import kaukasus.Items.AbstractItem;
 import kaukasus.Mapper.EnchantToAbsoluteStatTypeMapper;
 import kaukasus.OverallBuffs.OverallBuff;
 
@@ -16,13 +17,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MythicItem extends AbstractItem{
+public class MythicItem extends AbstractItem {
     private Map<AbsoluteStatTypeEnum, Double> uniqueBaseStat;
     private List<UniqueEnchant> uniqueEnchants;
     private List<OverallBuff> overallBuffs;
-    private SetTypeEnum set;
+    private SetEnum set;
 
-    public MythicItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, SetTypeEnum set){
+    public MythicItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, SetEnum set){
         this.name = name;
         this.itemType = itemType;
         this.baseStats = baseStats;
@@ -34,7 +35,7 @@ public class MythicItem extends AbstractItem{
         this.set = set;
     }
 
-    public SetTypeEnum getSet() {
+    public SetEnum getSet() {
         return set;
     }
 
