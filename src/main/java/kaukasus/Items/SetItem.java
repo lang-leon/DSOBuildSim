@@ -17,7 +17,7 @@ import java.util.Map;
 public class SetItem extends AbstractItem{
     private SetEnum set;
 
-    public SetItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, SetEnum set, int itemLevel){
+    public SetItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, int itemLevel, SetEnum set){
         this.name = name;
         this.itemType = itemType;
         this.baseStats = baseStats;

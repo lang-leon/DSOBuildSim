@@ -44,7 +44,7 @@ public class RealMageTest {
         amuletBaseStats.put(AbsoluteStatTypeEnum.POISON_RESISTANCE, 3412.286);
         Map<AbsoluteStatTypeEnum, Double> amuletUniqueBaseStats = new HashMap<>();
         amuletUniqueBaseStats.put(AbsoluteStatTypeEnum.POISON_RESISTANCE, 3406.0);
-        UniqueItem amulet = new UniqueItem("Amulet of the Kraken", ItemTypeEnum.AMULET, amuletBaseStats, amuletUniqueBaseStats, List.of(), List.of());
+        UniqueItem amulet = new UniqueItem("Amulet of the Kraken", ItemTypeEnum.AMULET, amuletBaseStats, amuletUniqueBaseStats, List.of(), List.of(), 145);
         amulet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
         amulet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
         amulet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
@@ -89,7 +89,7 @@ public class RealMageTest {
         beltBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1630.885);
         beltBaseStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 20072.654);
         beltBaseStats.put(AbsoluteStatTypeEnum.RESISTANCE, 1679.873);
-        UniqueItem belt = new UniqueItem("Belt of Zeal", ItemTypeEnum.BELT, beltBaseStats, Map.of(), List.of(new UniqueEnchant(EnchantTypeEnum.DAMAGE, 0.22384)), List.of());
+        UniqueItem belt = new UniqueItem("Belt of Zeal", ItemTypeEnum.BELT, beltBaseStats, Map.of(), List.of(new UniqueEnchant(EnchantTypeEnum.DAMAGE, 0.22384)), List.of(), 145);
         belt.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
         belt.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
         belt.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
@@ -150,7 +150,7 @@ public class RealMageTest {
         helmetBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1512.772);
         helmetBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1394.209);
         helmetBaseStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 18258.694);
-        SetItem helmet = new SetItem("Sargon's Horns", ItemTypeEnum.HELMET, helmetBaseStats, SpellweaverSets.SET1);
+        SetItem helmet = new SetItem("Sargon's Horns", ItemTypeEnum.HELMET, helmetBaseStats,145, SpellweaverSets.SET1);
         helmet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.4452));
         helmet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44364));
         helmet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44483));
@@ -171,7 +171,7 @@ public class RealMageTest {
         shouldersBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1876.316);
         shouldersBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1282.912);
         shouldersBaseStats.put(AbsoluteStatTypeEnum.ANDERMAGIC_RESISTANCE, 3443.896);
-        SetItem shoulders = new SetItem("Sargon's Pauldrons", ItemTypeEnum.SHOULDERS, shouldersBaseStats, SpellweaverSets.SET1);
+        SetItem shoulders = new SetItem("Sargon's Pauldrons", ItemTypeEnum.SHOULDERS, shouldersBaseStats, 145, SpellweaverSets.SET1);
         shoulders.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44757));
         shoulders.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44766));
         shoulders.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44757));
@@ -192,7 +192,7 @@ public class RealMageTest {
         torsoBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1631.657);
         torsoBaseStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 14232.794);
         torsoBaseStats.put(AbsoluteStatTypeEnum.ARMOR, 1639.716);
-        SetItem torso = new SetItem("Sargon's Torso", ItemTypeEnum.TORSO, torsoBaseStats, SpellweaverSets.SET1);
+        SetItem torso = new SetItem("Sargon's Torso", ItemTypeEnum.TORSO, torsoBaseStats, 145, SpellweaverSets.SET1);
         torso.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44263));
         torso.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44415));
         torso.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44382));
@@ -213,7 +213,7 @@ public class RealMageTest {
         glovesBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1514.933);
         glovesBaseStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, 0.053);
         glovesBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1494.107);
-        SetItem gloves = new SetItem("Mighty Wrathful Seeker's Gloves", ItemTypeEnum.GLOVES, glovesBaseStats, SpellweaverSets.SET1);
+        SetItem gloves = new SetItem("Mighty Wrathful Seeker's Gloves", ItemTypeEnum.GLOVES, glovesBaseStats, 145, SpellweaverSets.SET1);
         gloves.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44743));
         gloves.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44768));
         gloves.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44738));
@@ -234,7 +234,7 @@ public class RealMageTest {
         bootsBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 1510.415);
         bootsBaseStats.put(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 1.113);
         bootsBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1168.091);
-        SetItem boots = new SetItem("Mighty Wrathful Seeker's Boots", ItemTypeEnum.BOOTS, bootsBaseStats, SpellweaverSets.SET1);
+        SetItem boots = new SetItem("Mighty Wrathful Seeker's Boots", ItemTypeEnum.BOOTS, bootsBaseStats, 145, SpellweaverSets.SET1);
         boots.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44760));
         boots.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44763));
         boots.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44762));
@@ -256,7 +256,7 @@ public class RealMageTest {
         adornmentBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 2100.146);
         Map<AbsoluteStatTypeEnum, Double> adornmentUniqueBaseStats = new HashMap<>();
         adornmentUniqueBaseStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, 0.060);
-        UniqueItem adornment = new UniqueItem("Sigrismarr's Eternal Grasp", ItemTypeEnum.WEAPON_ADORNMENT, adornmentBaseStats, adornmentUniqueBaseStats, List.of(), List.of());
+        UniqueItem adornment = new UniqueItem("Sigrismarr's Eternal Grasp", ItemTypeEnum.WEAPON_ADORNMENT, adornmentBaseStats, adornmentUniqueBaseStats, List.of(), List.of(), 145);
         adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44771));
         adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44767));
         adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44775));
@@ -279,7 +279,7 @@ public class RealMageTest {
         twoHandBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 3321.515);
         Map<AbsoluteStatTypeEnum, Double> twoHandUniqueBaseStats = new HashMap<>();
         twoHandUniqueBaseStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, 0.102);
-        UniqueItem twoHand = new UniqueItem("Grimace of the Thunder Beast", ItemTypeEnum.TWO_HAND_WEAPON, twoHandBaseStats, twoHandUniqueBaseStats, List.of(), List.of());
+        UniqueItem twoHand = new UniqueItem("Grimace of the Thunder Beast", ItemTypeEnum.TWO_HAND_WEAPON, twoHandBaseStats, twoHandUniqueBaseStats, List.of(), List.of(), 145);
         twoHand.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
         twoHand.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
         twoHand.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));

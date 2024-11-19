@@ -28,7 +28,7 @@ public class UniqueItemTest {
         List< OverallBuff > overallBuffs = new ArrayList<>();
         overallBuffs.add(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.1));
 
-        UniqueItem setItem = new UniqueItem("Researcher's Boots", ItemTypeEnum.BOOTS, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs);
+        UniqueItem setItem = new UniqueItem("Researcher's Boots", ItemTypeEnum.BOOTS, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, 145);
 
         Gem poison = new Gem(AbsoluteStatTypeEnum.POISON_RESISTANCE, 1337.0);
         setItem.addGem(poison);

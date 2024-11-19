@@ -40,7 +40,7 @@ public enum SpellweaverMythicItem implements Item {
     }
 
     public MythicItem getItem() {
-        return new MythicItem(this.name, this.itemType, this.baseStats, this.uniqueBaseStats, this.uniqueEnchants, this.overallBuffs, this.set, this.itemLevel);
+        return new MythicItem(this.name, this.itemType, this.baseStats, this.uniqueBaseStats, this.uniqueEnchants, this.overallBuffs, this.itemLevel, this.set);
     }
 
     public CharacterClassEnum getCharacterClass() {
