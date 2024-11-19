@@ -1,14 +1,14 @@
 package kaukasus.Sets;
 
-import kaukasus.Items.Item;
-import kaukasus.Items.MythicItems.RangerMythicItem;
+import kaukasus.Items.ItemDatabase.Item;
+import kaukasus.Items.ItemDatabase.MythicItems.RangerMythicItem;
 import kaukasus.OverallBuffs.OverallBuff;
 import kaukasus.OverallBuffs.OverallDescriptionBuff;
 
 import java.util.List;
 import java.util.Map;
 
-public enum RangerSets implements SetEnum{
+public enum RangerSets implements SetEnumInterface {
 
     FORGOTTON_GLORY("Forgotton Glory", Map.of(2, new OverallDescriptionBuff("..."))),
     ANCESTRAL_GLORY("Forgotton Glory", Map.of(2, new OverallDescriptionBuff("...")));

@@ -1,21 +1,22 @@
-package kaukasus.Items.MythicItems;
+package kaukasus.Items.ItemDatabase.MythicItems;
 
 import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.*;
-import kaukasus.Items.Item;
+import kaukasus.Items.ItemDatabase.Item;
+import kaukasus.Items.ActualItems.MythicItem;
 import kaukasus.OverallBuffs.OverallAbsolutBuff;
 import kaukasus.OverallBuffs.OverallBuff;
 import kaukasus.OverallBuffs.OverallRelativeBuff;
-import kaukasus.Sets.RangerSets;
+import kaukasus.Sets.DragonknightSets;
 
 import java.util.List;
 import java.util.Map;
 
-public enum RangerMythicItem implements Item {
+public enum DragonknightMythicItem implements Item {
 
-    OLD_GLORY("Old Glory", ItemTypeEnum.CLOAK, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1891.513, AbsoluteStatTypeEnum.ATTACK_SPEED, 0.06, AbsoluteStatTypeEnum.HEALTH_POINTS, 49521.596), Map.of(), List.of(), List.of(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.DAMAGE, 0.1)),145),
+    OLD_GLORY("Old Glory", ItemTypeEnum.CLOAK, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1891.513, AbsoluteStatTypeEnum.ATTACK_SPEED, 0.06, AbsoluteStatTypeEnum.HEALTH_POINTS, 49521.596), Map.of(), List.of(), List.of(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.DAMAGE, 0.1)), 145),
     RING_OF_OLD_GLORY("Ring of Old Glory", ItemTypeEnum.RING, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1891.513, AbsoluteStatTypeEnum.CRIT_VALUE, 1753.505, AbsoluteStatTypeEnum.HEALTH_POINTS, 74282.408), Map.of(), List.of(), List.of(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.DAMAGE, 0.05), new OverallRelativeBuff(OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.05)),145),
-    ANCESTRAL_GLORY_CLOAK("Ancestral Glory Cloak (Ranger)", ItemTypeEnum.CLOAK, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1891.513, AbsoluteStatTypeEnum.ATTACK_SPEED, 0.06, AbsoluteStatTypeEnum.HEALTH_POINTS, 49521.596), Map.of(), List.of(), List.of(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.DAMAGE, 0.1), new OverallAbsolutBuff(AbsoluteStatTypeEnum.DAMAGE, 5000.0)),145),
+    ANCESTRAL_GLORY_CLOAK("Ancestral Glory Cloak (Dragonknight)", ItemTypeEnum.CLOAK, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1891.513, AbsoluteStatTypeEnum.ATTACK_SPEED, 0.06, AbsoluteStatTypeEnum.HEALTH_POINTS, 49521.596), Map.of(), List.of(), List.of(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.DAMAGE, 0.1), new OverallAbsolutBuff(AbsoluteStatTypeEnum.DAMAGE, 5000.0)),145),
     RING_OF_ANCESTRAL_GLORY("Ancestral Glory Ring", ItemTypeEnum.RING, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1891.513, AbsoluteStatTypeEnum.CRIT_VALUE, 1753.505, AbsoluteStatTypeEnum.HEALTH_POINTS, 74282.408), Map.of(), List.of(), List.of(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.DAMAGE, 0.1), new OverallRelativeBuff(OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.1)),145);
 
     private final String name;
@@ -26,10 +27,10 @@ public enum RangerMythicItem implements Item {
     private final List<OverallBuff> overallBuffs;
     private final CharacterClassEnum characterClass;
     private final int itemLevel;
-    private RangerSets set;
+    private DragonknightSets set;
 
-    RangerMythicItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, int itemLevel) {
-        this.characterClass = CharacterClassEnum.RANGER;
+    DragonknightMythicItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, int itemLevel) {
+        this.characterClass = CharacterClassEnum.DRAGONKNIGHT;
         this.name = name;
         this.itemType = itemType;
         this.baseStats = baseStats;
@@ -40,7 +41,7 @@ public enum RangerMythicItem implements Item {
     }
 
     public MythicItem getItem() {
-        return new MythicItem(this.name, this.itemType, this.baseStats, this.uniqueBaseStats, this.uniqueEnchants, this.overallBuffs, this.itemLevel, this.set);
+        return new MythicItem(this.name, CharacterClassEnum.DRAGONKNIGHT, this.itemType, this.baseStats, this.uniqueBaseStats, this.uniqueEnchants, this.overallBuffs, this.itemLevel, this.set);
     }
 
     public CharacterClassEnum getCharacterClass() {
@@ -49,10 +50,10 @@ public enum RangerMythicItem implements Item {
 
     static
     {
-        OLD_GLORY.set = RangerSets.FORGOTTON_GLORY;
-        RING_OF_OLD_GLORY.set = RangerSets.FORGOTTON_GLORY;
-        ANCESTRAL_GLORY_CLOAK.set = RangerSets.ANCESTRAL_GLORY;
-        RING_OF_ANCESTRAL_GLORY.set = RangerSets.ANCESTRAL_GLORY;
+        OLD_GLORY.set = DragonknightSets.FORGOTTON_GLORY;
+        RING_OF_OLD_GLORY.set = DragonknightSets.FORGOTTON_GLORY;
+        ANCESTRAL_GLORY_CLOAK.set = DragonknightSets.ANCESTRAL_GLORY;
+        RING_OF_ANCESTRAL_GLORY.set = DragonknightSets.ANCESTRAL_GLORY;
     }
 
 }

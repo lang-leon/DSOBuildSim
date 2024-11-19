@@ -1,33 +1,43 @@
-package kaukasus.Items;
+package kaukasus.Items.ActualItems;
 
 import kaukasus.Enchants.Enchant;
+import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
+import kaukasus.Enums.CharacterClassEnum;
 import kaukasus.Enums.ItemTypeEnum;
-import kaukasus.Sets.SetEnum;
+import kaukasus.Sets.SetEnumInterface;
 import kaukasus.Gems.AbstractGem;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
 import kaukasus.Mapper.EnchantToAbsoluteStatTypeMapper;
+import kaukasus.OverallBuffs.OverallBuff;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SetItem extends AbstractItem{
-    private SetEnum set;
+public class MythicItem extends AbstractItem {
+    private Map<AbsoluteStatTypeEnum, Double> uniqueBaseStat;
+    private List<UniqueEnchant> uniqueEnchants;
+    private List<OverallBuff> overallBuffs;
+    private SetEnumInterface set;
 
-    public SetItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, int itemLevel, SetEnum set){
+    public MythicItem(String name, CharacterClassEnum characterClass, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, int itemLevel, SetEnumInterface set){
         this.name = name;
+        this.characterClass = characterClass;
         this.itemType = itemType;
         this.baseStats = baseStats;
-        this.set = set;
         this.gems = new ArrayList<>();
         this.enchants = new ArrayList<>();
+        this.uniqueBaseStat = uniqueBaseStats;
+        this.uniqueEnchants = uniqueEnchants;
+        this.overallBuffs = overallBuffs;
+        this.set = set;
         this.itemLevel = itemLevel;
     }
 
-    public SetEnum getSet() {
+    public SetEnumInterface getSet() {
         return set;
     }
 
@@ -66,6 +76,30 @@ public class SetItem extends AbstractItem{
         super.removeEnchant(enchant);
     }
 
+    public Map<AbsoluteStatTypeEnum, Double> getUniqueBaseStat() {
+        return uniqueBaseStat;
+    }
+
+    public void setUniqueBaseStat(Map<AbsoluteStatTypeEnum, Double> uniqueBaseStat) {
+        this.uniqueBaseStat = uniqueBaseStat;
+    }
+
+    public List<UniqueEnchant> getUniqueEnchants() {
+        return uniqueEnchants;
+    }
+
+    public void setUniqueEnchants(List<UniqueEnchant> uniqueEnchants) {
+        this.uniqueEnchants = uniqueEnchants;
+    }
+
+    public List<OverallBuff> getOverallBuffs() {
+        return overallBuffs;
+    }
+
+    public void setOverallBuffs(List<OverallBuff> overallBuffs) {
+        this.overallBuffs = overallBuffs;
+    }
+
     @Override
     public Map<AbsoluteStatTypeEnum, Double> calculateTotalStats() {
         Map<AbsoluteStatTypeEnum, Double> totalAbsoluteStats = new HashMap<>();
@@ -92,13 +126,28 @@ public class SetItem extends AbstractItem{
                 }
             }
         }
+        for (Map.Entry<AbsoluteStatTypeEnum, Double> entry : this.uniqueBaseStat.entrySet()){
+            if (totalAbsoluteStats.containsKey(entry.getKey())){
+                Double gemValue = entry.getValue();
+                Double totalValueOld = totalAbsoluteStats.get(entry.getKey());
+                totalAbsoluteStats.put(entry.getKey(), gemValue+totalValueOld);
+            }else{
+                totalAbsoluteStats.put(entry.getKey(), entry.getValue());
+            }
+        }
+
         Map<AbsoluteStatTypeEnum, Double> finalAbsoluteStats = new HashMap<>(totalAbsoluteStats);
 
         for (Enchant enchant : this.enchants){
             AbsoluteStatTypeEnum baseValueType = EnchantToAbsoluteStatTypeMapper.getAbsoluteType(enchant.getType());
-            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType) + totalAbsoluteStats.get(baseValueType)*enchant.getValue());
+            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType)+ totalAbsoluteStats.get(baseValueType)*enchant.getValue());
+        }
+        for (UniqueEnchant uniqueEnchant : this.uniqueEnchants){
+            AbsoluteStatTypeEnum baseValueType = EnchantToAbsoluteStatTypeMapper.getAbsoluteType(uniqueEnchant.getType());
+            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType) + totalAbsoluteStats.get(baseValueType)*uniqueEnchant.getValue());
         }
 
         return finalAbsoluteStats;
     }
 }
+

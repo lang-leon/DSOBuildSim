@@ -6,10 +6,10 @@ import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.*;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
-import kaukasus.Items.MythicItems.MythicItem;
-import kaukasus.Items.MythicItems.SpellweaverMythicItem;
-import kaukasus.Items.SetItem;
-import kaukasus.Items.UniqueItem;
+import kaukasus.Items.ActualItems.MythicItem;
+import kaukasus.Items.ItemDatabase.MythicItems.SpellweaverMythicItem;
+import kaukasus.Items.ActualItems.SetItem;
+import kaukasus.Items.ActualItems.UniqueItem;
 import kaukasus.Jewels.Jewel;
 import kaukasus.Jewels.JewelTrinket;
 import kaukasus.OverallBuffs.OverallAbsolutBuff;
@@ -33,10 +33,22 @@ public class RealMageTest {
         Character mage = testMage();
         mage.calculateFinalStats();
         printStats(mage.getCharacterFinalStats());
+
+        /*
+        Map<Integer, List<Integer>>  list = new HashMap<>();
+        List<Integer> map = new ArrayList<>();
+        map.add(1);
+        map.add(2);
+        map.add(3);
+        list.put(1, map);
+        list.get(1).add(4);
+        System.out.println(list.get(1));
+         */
     }
 
     public static Character testMage() {
         Character mage = new Character(CharacterClassEnum.SPELLWEAVER);
+        mage.removeItem(ItemSlotEnum.AMULET);
 
         Map<AbsoluteStatTypeEnum, Double> amuletBaseStats = new HashMap<>();
         amuletBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 1731.466);
@@ -429,7 +441,7 @@ public class RealMageTest {
 
         mage.setWisdomSkillTree(wisdomSkillTree);
 
-        mage.setEssence(1.00);
+        mage.setEssence(0.50);
 
         Pet mortisPet = new Pet("Mortis Doll", Map.of(OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.3, OverallRelativeBuffTypeEnum.MANA, 0.3, OverallRelativeBuffTypeEnum.DAMAGE, 0.3), "");
         mage.setPet(mortisPet);

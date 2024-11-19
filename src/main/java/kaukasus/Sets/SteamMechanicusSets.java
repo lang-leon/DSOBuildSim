@@ -1,14 +1,14 @@
 package kaukasus.Sets;
 
-import kaukasus.Items.Item;
-import kaukasus.Items.MythicItems.SteamMechanicusMythicItem;
+import kaukasus.Items.ItemDatabase.Item;
+import kaukasus.Items.ItemDatabase.MythicItems.SteamMechanicusMythicItem;
 import kaukasus.OverallBuffs.OverallBuff;
 import kaukasus.OverallBuffs.OverallDescriptionBuff;
 
 import java.util.List;
 import java.util.Map;
 
-public enum SteamMechanicusSets implements SetEnum{
+public enum SteamMechanicusSets implements SetEnumInterface {
 
     FORGOTTON_GLORY("Forgotton Glory",Map.of(2, new OverallDescriptionBuff("..."))),
     ANCESTRAL_GLORY("Forgotton Glory", Map.of(2, new OverallDescriptionBuff("...")));

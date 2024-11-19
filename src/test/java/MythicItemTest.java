@@ -2,11 +2,10 @@ import kaukasus.Enchants.Enchant;
 import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.*;
 import kaukasus.Gems.Gem;
-import kaukasus.Items.MythicItems.MythicItem;
+import kaukasus.Items.ActualItems.MythicItem;
 import kaukasus.OverallBuffs.OverallAbsolutBuff;
 import kaukasus.OverallBuffs.OverallBuff;
 import kaukasus.OverallBuffs.OverallRelativeBuff;
-import kaukasus.Sets.SetEnum;
 import kaukasus.Sets.SpellweaverSets;
 
 import java.util.ArrayList;
@@ -26,7 +25,7 @@ public class MythicItemTest {
         overallBuffs.add(new OverallRelativeBuff(OverallRelativeBuffTypeEnum.DAMAGE, 0.1));
         overallBuffs.add(new OverallAbsolutBuff(AbsoluteStatTypeEnum.DAMAGE, 5000.0));
 
-        MythicItem mythicItem = new MythicItem("Ancestral Glory Cloak (Mage)", ItemTypeEnum.CLOAK, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, 145, SpellweaverSets.SET1);
+        MythicItem mythicItem = new MythicItem("Ancestral Glory Cloak (Mage)", CharacterClassEnum.SPELLWEAVER, ItemTypeEnum.CLOAK, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, 145, SpellweaverSets.SET1);
 
         Gem dmg = new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0);
         mythicItem.addGem(dmg);

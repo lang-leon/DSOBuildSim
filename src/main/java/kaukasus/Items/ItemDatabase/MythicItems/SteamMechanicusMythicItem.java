@@ -1,8 +1,9 @@
-package kaukasus.Items.MythicItems;
+package kaukasus.Items.ItemDatabase.MythicItems;
 
 import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.*;
-import kaukasus.Items.Item;
+import kaukasus.Items.ItemDatabase.Item;
+import kaukasus.Items.ActualItems.MythicItem;
 import kaukasus.OverallBuffs.OverallAbsolutBuff;
 import kaukasus.OverallBuffs.OverallBuff;
 import kaukasus.OverallBuffs.OverallRelativeBuff;
@@ -40,7 +41,7 @@ public enum SteamMechanicusMythicItem implements Item {
     }
 
     public MythicItem getItem() {
-        return new MythicItem(this.name, this.itemType, this.baseStats, this.uniqueBaseStats, this.uniqueEnchants, this.overallBuffs, this.itemLevel, this.set);
+        return new MythicItem(this.name, CharacterClassEnum.STEAM_MECHANICUS, this.itemType, this.baseStats, this.uniqueBaseStats, this.uniqueEnchants, this.overallBuffs, this.itemLevel, this.set);
     }
 
     public CharacterClassEnum getCharacterClass() {

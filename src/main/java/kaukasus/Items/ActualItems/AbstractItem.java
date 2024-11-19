@@ -1,7 +1,8 @@
-package kaukasus.Items;
+package kaukasus.Items.ActualItems;
 
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
+import kaukasus.Enums.CharacterClassEnum;
 import kaukasus.Enums.ItemTypeEnum;
 import kaukasus.Gems.AbstractGem;
 
@@ -15,6 +16,7 @@ public abstract class AbstractItem {
     protected List<Enchant> enchants;
     protected List<AbstractGem> gems;
     protected int itemLevel;
+    protected CharacterClassEnum characterClass;
 
     public String getName()
     {
@@ -98,6 +100,10 @@ public abstract class AbstractItem {
 
     public void setItemLevel(int itemLevel) {
         this.itemLevel = itemLevel;
+    }
+
+    public CharacterClassEnum getCharacterClass() {
+        return characterClass;
     }
 
     public abstract Map<AbsoluteStatTypeEnum, Double> calculateTotalStats();

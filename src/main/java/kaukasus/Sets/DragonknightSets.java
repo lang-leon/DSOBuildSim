@@ -1,14 +1,14 @@
 package kaukasus.Sets;
 
-import kaukasus.Items.Item;
-import kaukasus.Items.MythicItems.DragonknightMythicItem;
+import kaukasus.Items.ItemDatabase.Item;
+import kaukasus.Items.ItemDatabase.MythicItems.DragonknightMythicItem;
 import kaukasus.OverallBuffs.OverallBuff;
 import kaukasus.OverallBuffs.OverallDescriptionBuff;
 
 import java.util.List;
 import java.util.Map;
 
-public enum DragonknightSets implements SetEnum{
+public enum DragonknightSets implements SetEnumInterface {
 
     FORGOTTON_GLORY("Forgotton Glory", Map.of(2, new OverallDescriptionBuff("..."))),
     ANCESTRAL_GLORY("Forgotton Glory", Map.of(2, new OverallDescriptionBuff("...")));

@@ -3,10 +3,11 @@ package kaukasus.Character;
 import kaukasus.Buffs.Physic;
 import kaukasus.Buffs.Tonic;
 import kaukasus.Enums.*;
-import kaukasus.Items.AbstractItem;
-import kaukasus.Items.Item;
-import kaukasus.Items.MythicItems.MythicItem;
-import kaukasus.Items.UniqueItem;
+import kaukasus.Items.ActualItems.AbstractItem;
+import kaukasus.Items.ItemDatabase.Item;
+import kaukasus.Items.ActualItems.MythicItem;
+import kaukasus.Items.ActualItems.SetItem;
+import kaukasus.Items.ActualItems.UniqueItem;
 import kaukasus.Jewels.Jewel;
 import kaukasus.Jewels.JewelTrinket;
 import kaukasus.Mapper.AbsoluteToRelativeStatTypeMapper;
@@ -18,12 +19,10 @@ import kaukasus.Runes.AbstractRune;
 import kaukasus.Runes.Rune;
 import kaukasus.Runes.RuneTrinket;
 import kaukasus.Runes.SpecialRune;
-import kaukasus.Sets.SetEnum;
+import kaukasus.Sets.SetEnumInterface;
 import kaukasus.SkillTrees.WisdomSkillTree.WisdomSkillTree;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Character {
 
@@ -74,6 +73,9 @@ public class Character {
     AbstractItem gloves;
     AbstractItem boots;
 
+    //sets
+    Map<SetEnumInterface, List<String>> sets;
+
     //pet
     Pet pet;
 
@@ -86,9 +88,6 @@ public class Character {
     //buffs
     Tonic tonic;
     Physic physic;
-
-    //sets
-    Map<SetEnum, List<Item>> sets;
 
     //wisdom tree
     WisdomSkillTree wisdomSkillTree;
@@ -175,7 +174,6 @@ public class Character {
     }
 
     //items
-    //todo set boni
     public void addItem(AbstractItem item, ItemSlotEnum slot)
     {
         //item.getCharacterClass()
@@ -183,62 +181,328 @@ public class Character {
         {
             if (slot == ItemSlotEnum.AMULET && item.getItemType() == ItemTypeEnum.AMULET)
             {
+                if (this.amulet !=null)
+                {
+                    if (this.amulet instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.amulet).getSet()).remove(this.amulet.getName());
+                    }
+                    else if (this.amulet instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.amulet).getSet()).remove(this.amulet.getName());
+                    }
+                }
                 this.amulet = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
             }
             else if (slot == ItemSlotEnum.CLOAK && item.getItemType() == ItemTypeEnum.CLOAK)
             {
+                if (this.cloak !=null)
+                {
+                    if (this.cloak instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.cloak).getSet()).remove(this.cloak.getName());
+                    }
+                    else if (this.cloak instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.cloak).getSet()).remove(this.cloak.getName());
+                    }
+                }
                 this.cloak = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
             }
             else if (slot == ItemSlotEnum.BELT && item.getItemType() == ItemTypeEnum.BELT)
             {
+                if (this.belt !=null)
+                {
+                    if (this.belt instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.belt).getSet()).remove(this.belt.getName());
+                    }
+                    else if (this.belt instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.belt).getSet()).remove(this.belt.getName());
+                    }
+                }
                 this.belt = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
             }
             else if (slot == ItemSlotEnum.RING1 && item.getItemType() == ItemTypeEnum.RING)
             {
+                if (this.ring1 !=null)
+                {
+                    if (this.ring1 instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.ring1).getSet()).remove(this.ring1.getName());
+                    }
+                    else if (this.ring1 instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.ring1).getSet()).remove(this.ring1.getName());
+                    }
+                }
                 this.ring1 = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
             }
             else if (slot == ItemSlotEnum.RING2 && item.getItemType() == ItemTypeEnum.RING)
             {
+                if (this.ring2 !=null)
+                {
+                    if (this.ring2 instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.ring2).getSet()).remove(this.ring2.getName());
+                    }
+                    else if (this.ring2 instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.ring2).getSet()).remove(this.ring2.getName());
+                    }
+                }
                 this.ring2 = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
             }
             else if (slot == ItemSlotEnum.HELMET && item.getItemType() == ItemTypeEnum.HELMET)
             {
+                if (this.helmet !=null)
+                {
+                    if (this.helmet instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.helmet).getSet()).remove(this.helmet.getName());
+                    }
+                    else if (this.helmet instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.helmet).getSet()).remove(this.helmet.getName());
+                    }
+                }
                 this.helmet = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
             }
             else if (slot == ItemSlotEnum.SHOULDERS && item.getItemType() == ItemTypeEnum.SHOULDERS)
             {
+                if (this.shoulders !=null)
+                {
+                    if (this.shoulders instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.shoulders).getSet()).remove(this.shoulders.getName());
+                    }
+                    else if (this.shoulders instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.shoulders).getSet()).remove(this.shoulders.getName());
+                    }
+                }
                 this.shoulders = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
             }
             else if (slot == ItemSlotEnum.TORSO && item.getItemType() == ItemTypeEnum.TORSO)
             {
+                if (this.torso !=null)
+                {
+                    if (this.torso instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.torso).getSet()).remove(this.torso.getName());
+                    }
+                    else if (this.torso instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.torso).getSet()).remove(this.torso.getName());
+                    }
+                }
                 this.torso = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
             }
             else if (slot == ItemSlotEnum.GLOVES && item.getItemType() == ItemTypeEnum.GLOVES)
             {
+                if (this.gloves !=null)
+                {
+                    if (this.gloves instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.gloves).getSet()).remove(this.gloves.getName());
+                    }
+                    else if (this.gloves instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.gloves).getSet()).remove(this.gloves.getName());
+                    }
+                }
                 this.gloves = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
             }
             else if (slot == ItemSlotEnum.BOOTS && item.getItemType() == ItemTypeEnum.BOOTS)
             {
+                if (this.boots !=null)
+                {
+                    if (this.boots instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.boots).getSet()).remove(this.boots.getName());
+                    }
+                    else if (this.boots instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.boots).getSet()).remove(this.boots.getName());
+                    }
+                }
                 this.boots = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
             }
             else if (slot == ItemSlotEnum.WEAPON_ADORNMENT && item.getItemType() == ItemTypeEnum.WEAPON_ADORNMENT)
             {
+                if (this.weapon_adornment !=null)
+                {
+                    if (this.weapon_adornment instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.weapon_adornment).getSet()).remove(this.weapon_adornment.getName());
+                    }
+                    else if (this.weapon_adornment instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.weapon_adornment).getSet()).remove(this.weapon_adornment.getName());
+                    }
+                }
                 this.weapon_adornment = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
             }
             else if (slot == ItemSlotEnum.TWO_HAND_WEAPON && item.getItemType() == ItemTypeEnum.TWO_HAND_WEAPON)
             {
+                if (this.two_hand_weapon !=null)
+                {
+                    if (this.two_hand_weapon instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.two_hand_weapon).getSet()).remove(this.two_hand_weapon.getName());
+                    }
+                    else if (this.two_hand_weapon instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.two_hand_weapon).getSet()).remove(this.two_hand_weapon.getName());
+                    }
+                }
                 this.two_hand_weapon = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
                 this.one_hand_weapon = null;
                 this.off_hand =null;
             }
             else if (slot == ItemSlotEnum.ONE_HAND_WEAPON && item.getItemType() == ItemTypeEnum.ONE_HAND_WEAPON)
             {
+                if (this.one_hand_weapon !=null)
+                {
+                    if (this.one_hand_weapon instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.one_hand_weapon).getSet()).remove(this.one_hand_weapon.getName());
+                    }
+                    else if (this.one_hand_weapon instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.one_hand_weapon).getSet()).remove(this.one_hand_weapon.getName());
+                    }
+                }
                 this.one_hand_weapon = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
                 this.two_hand_weapon = null;
             }
             else if (slot == ItemSlotEnum.OFF_HAND && item.getItemType() == ItemTypeEnum.OFF_HAND)
             {
+                if (this.off_hand !=null)
+                {
+                    if (this.off_hand instanceof SetItem)
+                    {
+                        this.sets.get(((SetItem) this.off_hand).getSet()).remove(this.off_hand.getName());
+                    }
+                    else if (this.off_hand instanceof MythicItem)
+                    {
+                        this.sets.get(((MythicItem) this.off_hand).getSet()).remove(this.off_hand.getName());
+                    }
+                }
                 this.off_hand = item;
+                if (item instanceof SetItem setItem)
+                {
+                    this.sets.getOrDefault(setItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
+                else if (item instanceof MythicItem mythicItem)
+                {
+                    this.sets.getOrDefault(mythicItem.getSet(), new ArrayList<>()).add(item.getName());
+                }
                 this.two_hand_weapon = null;
             }
             else
@@ -252,25 +516,164 @@ public class Character {
         }
     }
 
-    //todo set boni
     public void removeItem(ItemSlotEnum slot)
     {
         switch (slot)
         {
-            case AMULET -> this.amulet = null;
-            case CLOAK -> this.cloak = null;
-            case BELT -> this.belt = null;
-            case RING1 -> this.ring1 = null;
-            case RING2 -> this.ring2 = null;
-            case HELMET -> this.helmet = null;
-            case SHOULDERS -> this.shoulders = null;
-            case TORSO-> this.torso = null;
-            case GLOVES -> this.gloves = null;
-            case BOOTS -> this.boots = null;
-            case WEAPON_ADORNMENT -> this.weapon_adornment = null;
-            case TWO_HAND_WEAPON -> this.two_hand_weapon = null;
-            case ONE_HAND_WEAPON -> this.one_hand_weapon = null;
-            case OFF_HAND -> this.off_hand = null;
+            case AMULET -> {
+                if (this.amulet instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.amulet).getSet()).remove(this.amulet.getName());
+                }
+                else if (this.amulet instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.amulet).getSet()).remove(this.amulet.getName());
+                }
+                this.amulet = null;
+            }
+            case CLOAK -> {
+                if (this.cloak instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.cloak).getSet()).remove(this.cloak.getName());
+                }
+                else if (this.cloak instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.cloak).getSet()).remove(this.cloak.getName());
+                }
+                this.cloak = null;
+            }
+            case BELT -> {
+                if (this.belt instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.belt).getSet()).remove(this.belt.getName());
+                }
+                else if (this.belt instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.belt).getSet()).remove(this.belt.getName());
+                }
+                this.belt = null;
+            }
+            case RING1 -> {
+                if (this.ring1 instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.ring1).getSet()).remove(this.ring1.getName());
+                }
+                else if (this.ring1 instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.ring1).getSet()).remove(this.ring1.getName());
+                }
+                this.ring1 = null;
+            }
+            case RING2 -> {
+                if (this.ring2 instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.ring2).getSet()).remove(this.ring2.getName());
+                }
+                else if (this.ring2 instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.ring2).getSet()).remove(this.ring2.getName());
+                }
+                this.ring2 = null;
+            }
+            case HELMET -> {
+                if (this.helmet instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.helmet).getSet()).remove(this.helmet.getName());
+                }
+                else if (this.helmet instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.helmet).getSet()).remove(this.helmet.getName());
+                }
+                this.helmet = null;
+            }
+            case SHOULDERS -> {
+                if (this.shoulders instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.shoulders).getSet()).remove(this.shoulders.getName());
+                }
+                else if (this.shoulders instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.shoulders).getSet()).remove(this.shoulders.getName());
+                }
+                this.shoulders = null;
+            }
+            case TORSO-> {
+                if (this.torso instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.torso).getSet()).remove(this.torso.getName());
+                }
+                else if (this.torso instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.torso).getSet()).remove(this.torso.getName());
+                }
+                this.torso = null;
+            }
+            case GLOVES -> {
+                if (this.gloves instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.gloves).getSet()).remove(this.gloves.getName());
+                }
+                else if (this.gloves instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.gloves).getSet()).remove(this.gloves.getName());
+                }
+                this.gloves = null;
+            }
+            case BOOTS -> {
+                if (this.boots instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.boots).getSet()).remove(this.boots.getName());
+                }
+                else if (this.boots instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.boots).getSet()).remove(this.boots.getName());
+                }
+                this.boots = null;
+            }
+            case WEAPON_ADORNMENT -> {
+                if (this.weapon_adornment instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.weapon_adornment).getSet()).remove(this.weapon_adornment.getName());
+                }
+                else if (this.weapon_adornment instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.weapon_adornment).getSet()).remove(this.weapon_adornment.getName());
+                }
+                this.weapon_adornment = null;
+            }
+            case TWO_HAND_WEAPON -> {
+                if (this.two_hand_weapon instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.two_hand_weapon).getSet()).remove(this.two_hand_weapon.getName());
+                }
+                else if (this.two_hand_weapon instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.two_hand_weapon).getSet()).remove(this.two_hand_weapon.getName());
+                }
+                this.two_hand_weapon = null;
+            }
+            case ONE_HAND_WEAPON -> {
+                if (this.one_hand_weapon instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.one_hand_weapon).getSet()).remove(this.one_hand_weapon.getName());
+                }
+                else if (this.one_hand_weapon instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.one_hand_weapon).getSet()).remove(this.one_hand_weapon.getName());
+                }
+                this.one_hand_weapon = null;
+            }
+            case OFF_HAND -> {
+                if (this.off_hand instanceof SetItem)
+                {
+                    this.sets.get(((SetItem) this.off_hand).getSet()).remove(this.off_hand.getName());
+                }
+                else if (this.off_hand instanceof MythicItem)
+                {
+                    this.sets.get(((MythicItem) this.off_hand).getSet()).remove(this.off_hand.getName());
+                }
+                this.off_hand = null;
+            }
         }
     }
 
@@ -1126,6 +1529,11 @@ public class Character {
             }
         }
 
+
+        //check for set boni
+
+
+
         //runes
         for (AbstractRune abstractRune : this.runeTrinket1.getRunes())
         {
@@ -1293,6 +1701,17 @@ public class Character {
         if (this.physic != null)
         {
             this.characterRelativeBuffs.put(this.physic.getType(), this.characterRelativeBuffs.get(this.physic.getType())+this.physic.getValue());
+        }
+
+        //TODO
+        //bloodmage/war skill tree buffs
+        if (this.characterClass == CharacterClassEnum.SPELLWEAVER)
+        {
+            this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.DAMAGE, this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.DAMAGE)+0.5);
+        }
+        else if (this.characterClass == CharacterClassEnum.DRAGONKNIGHT)
+        {
+            this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.ATTACK_SPEED, this.characterRelativeBuffs.get(OverallRelativeBuffTypeEnum.ATTACK_SPEED)+0.5);
         }
 
 

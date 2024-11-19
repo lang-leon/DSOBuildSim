@@ -1,14 +1,14 @@
 package kaukasus.Sets;
 
-import kaukasus.Items.Item;
-import kaukasus.Items.MythicItems.SpellweaverMythicItem;
+import kaukasus.Items.ItemDatabase.Item;
+import kaukasus.Items.ItemDatabase.MythicItems.SpellweaverMythicItem;
 import kaukasus.OverallBuffs.OverallBuff;
 import kaukasus.OverallBuffs.OverallDescriptionBuff;
 
 import java.util.List;
 import java.util.Map;
 
-public enum SpellweaverSets implements SetEnum{
+public enum SpellweaverSets implements SetEnumInterface {
 
     SET1("Forgotton Glory", Map.of()),
     FORGOTTON_GLORY("Forgotton Glory", Map.of(2, new OverallDescriptionBuff("..."))),

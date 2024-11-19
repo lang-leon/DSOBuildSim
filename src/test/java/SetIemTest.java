@@ -2,10 +2,9 @@ import kaukasus.Enchants.Enchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
 import kaukasus.Enums.EnchantTypeEnum;
 import kaukasus.Enums.ItemTypeEnum;
-import kaukasus.Sets.SetEnum;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
-import kaukasus.Items.SetItem;
+import kaukasus.Items.ActualItems.SetItem;
 import kaukasus.Sets.SpellweaverSets;
 
 import java.util.HashMap;

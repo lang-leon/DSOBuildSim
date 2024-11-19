@@ -6,7 +6,7 @@ import kaukasus.Enums.ItemTypeEnum;
 import kaukasus.Enums.OverallRelativeBuffTypeEnum;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
-import kaukasus.Items.UniqueItem;
+import kaukasus.Items.ActualItems.UniqueItem;
 import kaukasus.OverallBuffs.OverallBuff;
 import kaukasus.OverallBuffs.OverallRelativeBuff;
 

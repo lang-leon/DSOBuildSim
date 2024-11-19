@@ -1,14 +1,12 @@
-package kaukasus.Items.MythicItems;
+package kaukasus.Items.ActualItems;
 
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
 import kaukasus.Enums.ItemTypeEnum;
-import kaukasus.Sets.SetEnum;
 import kaukasus.Gems.AbstractGem;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
-import kaukasus.Items.AbstractItem;
 import kaukasus.Mapper.EnchantToAbsoluteStatTypeMapper;
 import kaukasus.OverallBuffs.OverallBuff;
 
@@ -17,13 +15,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MythicItem extends AbstractItem {
+public class UniqueItem extends AbstractItem {
+
     private Map<AbsoluteStatTypeEnum, Double> uniqueBaseStat;
     private List<UniqueEnchant> uniqueEnchants;
     private List<OverallBuff> overallBuffs;
-    private SetEnum set;
 
-    public MythicItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, int itemLevel, SetEnum set){
+    public UniqueItem(String name, ItemTypeEnum itemType, Map<AbsoluteStatTypeEnum, Double> baseStats, Map<AbsoluteStatTypeEnum, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, int itemLevel){
         this.name = name;
         this.itemType = itemType;
         this.baseStats = baseStats;
@@ -32,12 +30,7 @@ public class MythicItem extends AbstractItem {
         this.uniqueBaseStat = uniqueBaseStats;
         this.uniqueEnchants = uniqueEnchants;
         this.overallBuffs = overallBuffs;
-        this.set = set;
         this.itemLevel = itemLevel;
-    }
-
-    public SetEnum getSet() {
-        return set;
     }
 
     @Override
@@ -127,9 +120,9 @@ public class MythicItem extends AbstractItem {
         }
         for (Map.Entry<AbsoluteStatTypeEnum, Double> entry : this.uniqueBaseStat.entrySet()){
             if (totalAbsoluteStats.containsKey(entry.getKey())){
-                Double gemValue = entry.getValue();
+                Double uniqueBaseStat = entry.getValue();
                 Double totalValueOld = totalAbsoluteStats.get(entry.getKey());
-                totalAbsoluteStats.put(entry.getKey(), gemValue+totalValueOld);
+                totalAbsoluteStats.put(entry.getKey(), uniqueBaseStat+totalValueOld);
             }else{
                 totalAbsoluteStats.put(entry.getKey(), entry.getValue());
             }
@@ -139,14 +132,13 @@ public class MythicItem extends AbstractItem {
 
         for (Enchant enchant : this.enchants){
             AbsoluteStatTypeEnum baseValueType = EnchantToAbsoluteStatTypeMapper.getAbsoluteType(enchant.getType());
-            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType)+ totalAbsoluteStats.get(baseValueType)*enchant.getValue());
+            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType) + totalAbsoluteStats.get(baseValueType)*enchant.getValue());
         }
         for (UniqueEnchant uniqueEnchant : this.uniqueEnchants){
             AbsoluteStatTypeEnum baseValueType = EnchantToAbsoluteStatTypeMapper.getAbsoluteType(uniqueEnchant.getType());
-            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType) + totalAbsoluteStats.get(baseValueType)*uniqueEnchant.getValue());
+            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType)+ totalAbsoluteStats.get(baseValueType)*uniqueEnchant.getValue());
         }
 
         return finalAbsoluteStats;
     }
 }
-

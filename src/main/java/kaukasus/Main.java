@@ -5,8 +5,7 @@ import kaukasus.Enchants.Enchant;
 import kaukasus.Enums.*;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
-import kaukasus.Items.SetItem;
-import kaukasus.Sets.SetEnum;
+import kaukasus.Items.ActualItems.SetItem;
 import kaukasus.Sets.SpellweaverSets;
 
 import java.util.HashMap;
