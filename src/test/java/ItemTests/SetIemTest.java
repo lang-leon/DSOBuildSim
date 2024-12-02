@@ -1,3 +1,5 @@
+package ItemTests;
+
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
 import kaukasus.Enums.CharacterClassEnum;

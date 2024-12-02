@@ -1,3 +1,5 @@
+package ItemTests;
+
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.*;

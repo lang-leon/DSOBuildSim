@@ -11,6 +11,9 @@ import java.util.Map;
 
 public enum SpellweaverSetItems implements Item {
 
+    HELMET_OF_THE_BLACK_KNIGHT("Helmet of the Black Knight", ItemTypeEnum.HELMET, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1644.883, AbsoluteStatTypeEnum.CRIT_VALUE, 1401.911, AbsoluteStatTypeEnum.HEALTH_POINTS, 20637.978), 145),
+    SHOULDERS_OF_THE_BLACK_KNIGHT("Shoulders of the Black Knight", ItemTypeEnum.SHOULDERS, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1891.513, AbsoluteStatTypeEnum.HEALTH_POINTS, 33014.398), 145),
+    CLOAK_OF_THE_BLACK_KNIGHT("Cloak of the Black Knight", ItemTypeEnum.CLOAK, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1891.513, AbsoluteStatTypeEnum.ATTACK_SPEED, 0.06, AbsoluteStatTypeEnum.HEALTH_POINTS, 16507.200), 145),
     MIGHTY_WRATHFUL_SEEKERS_HELMET("Mighty Wrathful Seeker's Helmet", ItemTypeEnum.HELMET, Map.of(AbsoluteStatTypeEnum.HEALTH_POINTS, 20185.0, AbsoluteStatTypeEnum.ARMOR, 1068.0, AbsoluteStatTypeEnum.FIRE_RESISTANCE, 4150.0), 140),
     MIGHTY_WRATHFUL_SEEKERS_SHOULDERS("Mighty Wrathful Seeker's Shoulders", ItemTypeEnum.SHOULDERS, Map.of(AbsoluteStatTypeEnum.HEALTH_POINTS, 16145.0, AbsoluteStatTypeEnum.ICE_RESISTANCE, 4041.0, AbsoluteStatTypeEnum.BLOCK_VALUE, 1549.0), 140),
     MIGHTY_WRATHFUL_SEEKERS_TORSO("Mighty Wrathful Seeker's Torso", ItemTypeEnum.TORSO, Map.of(AbsoluteStatTypeEnum.ARMOR, 1603.0, AbsoluteStatTypeEnum.ANDERMAGIC_RESISTANCE, 6062.0, AbsoluteStatTypeEnum.BLOCK_VALUE, 1549.0), 140),
@@ -47,6 +50,9 @@ public enum SpellweaverSetItems implements Item {
 
     static
     {
+        HELMET_OF_THE_BLACK_KNIGHT.set = SpellweaverSets.BLACK_WARLORD_REGALIA;
+        SHOULDERS_OF_THE_BLACK_KNIGHT.set = SpellweaverSets.BLACK_WARLORD_REGALIA;
+        CLOAK_OF_THE_BLACK_KNIGHT.set = SpellweaverSets.BLACK_WARLORD_REGALIA;
         MIGHTY_WRATHFUL_SEEKERS_HELMET.set = SpellweaverSets.MIGHTY_VISIONARY_SEEKER;
         MIGHTY_WRATHFUL_SEEKERS_SHOULDERS.set = SpellweaverSets.MIGHTY_VISIONARY_SEEKER;
         MIGHTY_WRATHFUL_SEEKERS_TORSO.set = SpellweaverSets.MIGHTY_VISIONARY_SEEKER;

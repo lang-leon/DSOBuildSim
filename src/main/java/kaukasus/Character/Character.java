@@ -28,6 +28,7 @@ public class Character {
 
     //class
     CharacterClassEnum characterClass;
+    String name;
 
     //character base stats
     Map<AbsoluteStatTypeEnum, Double> classBaseStats;
@@ -107,6 +108,100 @@ public class Character {
         this.collectorBagBuffs = new HashMap<>();
         this.wisdomSkillTree = new WisdomSkillTree();
         this.sets = new HashMap<>();
+        this.runeTrinket1 = new RuneTrinket();
+        this.runeTrinket2 = new RuneTrinket();
+        this.runeTrinket3 = new RuneTrinket();
+        this.runeTrinket4 = new RuneTrinket();
+        this.runeTrinket5 = new RuneTrinket();
+        this.jewelTrinket1 = new JewelTrinket();
+        this.jewelTrinket2 = new JewelTrinket();
+        this.jewelTrinket3 = new JewelTrinket();
+
+        if (characterClass == CharacterClassEnum.SPELLWEAVER)
+        {
+            this.classBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 50400.0);
+            this.classBaseStats.put(AbsoluteStatTypeEnum.MANA_PER_SECOND, 12.0);
+            this.classBaseStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 150000.0);
+        }
+        else if (characterClass == CharacterClassEnum.DRAGONKNIGHT)
+        {
+            this.classBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 16800.0);
+            this.classBaseStats.put(AbsoluteStatTypeEnum.MANA_PER_SECOND, 0.0);
+            this.classBaseStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 450000.0);
+        }
+        else if (characterClass == CharacterClassEnum.RANGER)
+        {
+            this.classBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 29400.0);
+            this.classBaseStats.put(AbsoluteStatTypeEnum.MANA_PER_SECOND, 8.0);
+            this.classBaseStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 345000.0);
+        }
+        else if (characterClass == CharacterClassEnum.STEAM_MECHANICUS)
+        {
+            this.classBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 38640.0);
+            this.classBaseStats.put(AbsoluteStatTypeEnum.MANA_PER_SECOND, 3.0);
+            this.classBaseStats.put(AbsoluteStatTypeEnum.HEALTH_POINTS, 262500.0);
+        }
+
+        this.classBaseStats.put(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 5.0);
+        this.classBaseStats.put(AbsoluteStatTypeEnum.MANA, 100.0);
+        this.classBaseStats.put(AbsoluteStatTypeEnum.ATTACK_SPEED, 1.00);
+        this.classBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 0.0);
+        this.classBaseStats.put(AbsoluteStatTypeEnum.HEALTH_PER_SECOND, 0.0);
+        this.classBaseStats.put(AbsoluteStatTypeEnum.BLOCK_VALUE, 0.0);
+        this.classBaseStats.put(AbsoluteStatTypeEnum.ARMOR, 0.0);
+        this.classBaseStats.put(AbsoluteStatTypeEnum.FIRE_RESISTANCE, 0.0);
+        this.classBaseStats.put(AbsoluteStatTypeEnum.ICE_RESISTANCE, 0.0);
+        this.classBaseStats.put(AbsoluteStatTypeEnum.LIGHTNING_RESISTANCE, 0.0);
+        this.classBaseStats.put(AbsoluteStatTypeEnum.ANDERMAGIC_RESISTANCE, 0.0);
+        this.classBaseStats.put(AbsoluteStatTypeEnum.POISON_RESISTANCE, 0.0);
+
+
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.ANDERMAGIC_RESISTANCE, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.ANDERMANT_DROP_BONUS, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.ARMOR, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.BLOCK_VALUE, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.COIN_DROP_BONUS, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.DAMAGE, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.FIRE_RESISTANCE, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.HEALTH_PER_SECOND, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.HONOR_GAIN, 100.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.ICE_RESISTANCE, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.LIGHTNING_RESISTANCE, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.MANA, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.MANA_PER_SECOND, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.MATERI_FRAGMENT_DROP_BONUS, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.MOVEMENT_SPEED, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.ONE_HAND_DAMAGE, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.POISON_RESISTANCE, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.RESISTANCE, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.TWO_HAND_DAMAGE, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.WISDOM_DROP_BONUS, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffTypeEnum.XP_GAIN, 100.0);
+    }
+
+    public Character(CharacterClassEnum characterClass, String name)
+    {
+        this.characterClass = characterClass;
+        this.name = name;
+        this.classBaseStats = new HashMap<>();
+        this.characterAbsoluteStats = new HashMap<>();
+        this.characterFinalStats = new HashMap<>();
+        this.characterRelativeBuffs = new HashMap<>();
+        this.classSpecialStats = new HashMap<>();
+        this.collectorBagBuffs = new HashMap<>();
+        this.wisdomSkillTree = new WisdomSkillTree();
+        this.sets = new HashMap<>();
+        this.runeTrinket1 = new RuneTrinket();
+        this.runeTrinket2 = new RuneTrinket();
+        this.runeTrinket3 = new RuneTrinket();
+        this.runeTrinket4 = new RuneTrinket();
+        this.runeTrinket5 = new RuneTrinket();
+        this.jewelTrinket1 = new JewelTrinket();
+        this.jewelTrinket2 = new JewelTrinket();
+        this.jewelTrinket3 = new JewelTrinket();
 
         if (characterClass == CharacterClassEnum.SPELLWEAVER)
         {
@@ -193,22 +288,6 @@ public class Character {
                     }
                 }
                 this.amulet = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
             }
             else if (slot == ItemSlotEnum.CLOAK && item.getItemType() == ItemTypeEnum.CLOAK)
             {
@@ -224,22 +303,6 @@ public class Character {
                     }
                 }
                 this.cloak = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
             }
             else if (slot == ItemSlotEnum.BELT && item.getItemType() == ItemTypeEnum.BELT)
             {
@@ -255,22 +318,6 @@ public class Character {
                     }
                 }
                 this.belt = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
             }
             else if (slot == ItemSlotEnum.RING1 && item.getItemType() == ItemTypeEnum.RING)
             {
@@ -286,22 +333,6 @@ public class Character {
                     }
                 }
                 this.ring1 = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
             }
             else if (slot == ItemSlotEnum.RING2 && item.getItemType() == ItemTypeEnum.RING)
             {
@@ -317,22 +348,6 @@ public class Character {
                     }
                 }
                 this.ring2 = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
             }
             else if (slot == ItemSlotEnum.HELMET && item.getItemType() == ItemTypeEnum.HELMET)
             {
@@ -348,22 +363,6 @@ public class Character {
                     }
                 }
                 this.helmet = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
             }
             else if (slot == ItemSlotEnum.SHOULDERS && item.getItemType() == ItemTypeEnum.SHOULDERS)
             {
@@ -379,22 +378,6 @@ public class Character {
                     }
                 }
                 this.shoulders = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
             }
             else if (slot == ItemSlotEnum.TORSO && item.getItemType() == ItemTypeEnum.TORSO)
             {
@@ -410,22 +393,6 @@ public class Character {
                     }
                 }
                 this.torso = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
             }
             else if (slot == ItemSlotEnum.GLOVES && item.getItemType() == ItemTypeEnum.GLOVES)
             {
@@ -441,22 +408,6 @@ public class Character {
                     }
                 }
                 this.gloves = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
             }
             else if (slot == ItemSlotEnum.BOOTS && item.getItemType() == ItemTypeEnum.BOOTS)
             {
@@ -472,22 +423,6 @@ public class Character {
                     }
                 }
                 this.boots = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
             }
             else if (slot == ItemSlotEnum.WEAPON_ADORNMENT && item.getItemType() == ItemTypeEnum.WEAPON_ADORNMENT)
             {
@@ -503,22 +438,6 @@ public class Character {
                     }
                 }
                 this.weapon_adornment = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
             }
             else if (slot == ItemSlotEnum.TWO_HAND_WEAPON && item.getItemType() == ItemTypeEnum.TWO_HAND_WEAPON)
             {
@@ -534,22 +453,6 @@ public class Character {
                     }
                 }
                 this.two_hand_weapon = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
                 this.removeItem(ItemSlotEnum.ONE_HAND_WEAPON);
                 this.removeItem(ItemSlotEnum.OFF_HAND);
             }
@@ -567,22 +470,6 @@ public class Character {
                     }
                 }
                 this.one_hand_weapon = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
                 this.removeItem(ItemSlotEnum.TWO_HAND_WEAPON);
             }
             else if (slot == ItemSlotEnum.OFF_HAND && item.getItemType() == ItemTypeEnum.OFF_HAND)
@@ -599,27 +486,28 @@ public class Character {
                     }
                 }
                 this.off_hand = item;
-                if (item instanceof SetItem setItem)
-                {
-                    if (!this.sets.containsKey(setItem.getSet()))
-                    {
-                        this.sets.put(setItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(setItem.getSet()).add(item.getName());
-                }
-                else if (item instanceof MythicItem mythicItem)
-                {
-                    if (!this.sets.containsKey(mythicItem.getSet()))
-                    {
-                        this.sets.put(mythicItem.getSet(), new ArrayList<>());
-                    }
-                    this.sets.get(mythicItem.getSet()).add(item.getName());
-                }
                 this.removeItem(ItemSlotEnum.TWO_HAND_WEAPON);
             }
             else
             {
                 throw new IllegalArgumentException("Failed to add item.");
+            }
+
+            if (item instanceof SetItem setItem)
+            {
+                if (!this.sets.containsKey(setItem.getSet()))
+                {
+                    this.sets.put(setItem.getSet(), new ArrayList<>());
+                }
+                this.sets.get(setItem.getSet()).add(item.getName());
+            }
+            else if (item instanceof MythicItem mythicItem)
+            {
+                if (!this.sets.containsKey(mythicItem.getSet()))
+                {
+                    this.sets.put(mythicItem.getSet(), new ArrayList<>());
+                }
+                this.sets.get(mythicItem.getSet()).add(item.getName());
             }
         }
         else
@@ -972,6 +860,10 @@ public class Character {
     public CharacterClassEnum getCharacterClass()
     {
         return characterClass;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public Map<OverallRelativeBuffTypeEnum, Double> getClassSpecialStats()
@@ -1761,7 +1653,7 @@ public class Character {
             {
                 for (int i=1; i<=usedItems; i++)
                 {
-                    for (OverallBuff buff : dragonknightSet.getSetBonus().get(i))
+                    for (OverallBuff buff : dragonknightSet.getSetBonus().getOrDefault(i, List.of()))
                     {
                         if (buff instanceof OverallAbsolutBuff absolutBuff)
                         {
@@ -1778,7 +1670,7 @@ public class Character {
             {
                 for (int i=1; i<=usedItems; i++)
                 {
-                    for (OverallBuff buff : rangerSet.getSetBonus().get(i))
+                    for (OverallBuff buff : rangerSet.getSetBonus().getOrDefault(i, List.of()))
                     {
                         if (buff instanceof OverallAbsolutBuff absolutBuff)
                         {
@@ -1795,7 +1687,7 @@ public class Character {
             {
                 for (int i=1; i<=usedItems; i++)
                 {
-                    for (OverallBuff buff : steamMechanicusSet.getSetBonus().get(i))
+                    for (OverallBuff buff : steamMechanicusSet.getSetBonus().getOrDefault(i, List.of()))
                     {
                         if (buff instanceof OverallAbsolutBuff absolutBuff)
                         {
