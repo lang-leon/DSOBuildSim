@@ -7,8 +7,10 @@ import kaukasus.Enchants.Enchant;
 import kaukasus.Enums.*;
 import kaukasus.Gems.Gem;
 import kaukasus.Gems.Opal;
+import kaukasus.Items.ActualItems.MythicItem;
 import kaukasus.Items.ActualItems.SetItem;
 import kaukasus.Items.ActualItems.UniqueItem;
+import kaukasus.Items.ItemDatabase.MythicItems.DragonknightMythicItem;
 import kaukasus.Items.ItemDatabase.SetItems.DragonknightSetItems;
 import kaukasus.Items.ItemDatabase.UniqueItems.DragonknightUniqueItems;
 import kaukasus.Jewels.Jewel;
@@ -25,7 +27,7 @@ import java.util.Map;
 public class RealWarTest {
 
     public static void main(String[] args) {
-        Character war = bghWar13();
+        Character war = mortisSet();
         war.calculateFinalStats();
         printStats(war);
     }
@@ -428,6 +430,369 @@ public class RealWarTest {
 
         return dragonknight;
     }
+
+    public static Character mortisSet() {
+        Character dragonknight = new Character(CharacterClassEnum.DRAGONKNIGHT, "normal setup");
+
+        SetItem amulet = DragonknightSetItems.SEAL_OF_DEATH.getItem();
+        amulet.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        amulet.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        amulet.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        amulet.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        amulet.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        amulet.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        amulet.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        amulet.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        amulet.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        amulet.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        amulet.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        amulet.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        amulet.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        amulet.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        //dragonknight.addItem(amulet, ItemSlotEnum.AMULET);
+
+        MythicItem cloak = DragonknightMythicItem.ANCESTRAL_GLORY_CLOAK.getItem();
+        cloak.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        cloak.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        cloak.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        cloak.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        cloak.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        cloak.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        cloak.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        cloak.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        cloak.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        cloak.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        cloak.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        cloak.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        cloak.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        cloak.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        dragonknight.addItem(cloak, ItemSlotEnum.CLOAK);
+
+        UniqueItem belt = DragonknightUniqueItems.BELT_OF_ZEAL.getItem();
+        belt.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        belt.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        belt.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        belt.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        belt.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        belt.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        belt.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        belt.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        belt.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        belt.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        belt.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        belt.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        belt.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        belt.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        dragonknight.addItem(belt, ItemSlotEnum.BELT);
+
+        MythicItem ring1 = DragonknightMythicItem.RING_OF_ANCESTRAL_GLORY.getItem();
+        ring1.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring1.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring1.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring1.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring1.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        dragonknight.addItem(ring1, ItemSlotEnum.RING1);
+        MythicItem ring2 = DragonknightMythicItem.RING_OF_ANCESTRAL_GLORY.getItem();
+        ring2.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring2.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring2.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring2.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        ring2.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        dragonknight.addItem(ring2, ItemSlotEnum.RING2);
+
+        SetItem helmet = DragonknightSetItems.HELMET_OF_DEATH.getItem();
+        helmet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        helmet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        helmet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        helmet.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        helmet.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        helmet.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        helmet.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        helmet.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        helmet.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        helmet.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        helmet.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        helmet.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        helmet.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        helmet.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        dragonknight.addItem(helmet, ItemSlotEnum.HELMET);
+
+        SetItem shoulders = DragonknightSetItems.SHOULDERS_OF_THE_BLACK_KNIGHT.getItem();
+        shoulders.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        shoulders.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        shoulders.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        shoulders.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        shoulders.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        shoulders.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        shoulders.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        shoulders.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        shoulders.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        shoulders.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        shoulders.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        shoulders.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        shoulders.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        shoulders.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        dragonknight.addItem(shoulders, ItemSlotEnum.SHOULDERS);
+
+        UniqueItem torso = DragonknightUniqueItems.SIGRISMARRS_ETERNAL_WARD.getItem();
+        torso.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        torso.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        torso.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        torso.addEnchant(new Enchant(EnchantTypeEnum.HEALTH_POINTS, 0.44537));
+        torso.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        torso.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        torso.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        torso.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        torso.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        torso.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        torso.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        torso.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        torso.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        torso.addGem(new Gem(AbsoluteStatTypeEnum.HEALTH_POINTS, 5500.0));
+        dragonknight.addItem(torso, ItemSlotEnum.TORSO);
+
+        SetItem gloves = DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_GLOVES.getItem();
+        gloves.addEnchant(new Enchant(EnchantTypeEnum.CRIT_VALUE, 0.24563));
+        gloves.addEnchant(new Enchant(EnchantTypeEnum.CRIT_VALUE, 0.24563));
+        gloves.addEnchant(new Enchant(EnchantTypeEnum.CRIT_VALUE, 0.24563));
+        gloves.addEnchant(new Enchant(EnchantTypeEnum.CRIT_VALUE, 0.24563));
+        gloves.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        gloves.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        gloves.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        gloves.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        gloves.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        gloves.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        gloves.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        gloves.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        gloves.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        gloves.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        dragonknight.addItem(gloves, ItemSlotEnum.GLOVES);
+
+        SetItem boots = DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_BOOTS.getItem();
+        boots.addEnchant(new Enchant(EnchantTypeEnum.MOVEMENT_SPEED, 0.22436));
+        boots.addEnchant(new Enchant(EnchantTypeEnum.MOVEMENT_SPEED, 0.22434));
+        boots.addEnchant(new Enchant(EnchantTypeEnum.MOVEMENT_SPEED, 0.22447));
+        boots.addEnchant(new Enchant(EnchantTypeEnum.MOVEMENT_SPEED, 0.22444));
+        boots.addGem(new Gem(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 0.17));
+        boots.addGem(new Gem(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 0.17));
+        boots.addGem(new Gem(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 0.17));
+        boots.addGem(new Gem(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 0.17));
+        boots.addGem(new Gem(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 0.17));
+        boots.addGem(new Gem(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 0.17));
+        boots.addGem(new Gem(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 0.17));
+        boots.addGem(new Gem(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 0.13));
+        boots.addGem(new Gem(AbsoluteStatTypeEnum.MOVEMENT_SPEED, 2520.0));
+        boots.addGem(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0));
+        dragonknight.addItem(boots, ItemSlotEnum.BOOTS);
+
+        UniqueItem adornment = DragonknightUniqueItems.ILLUMINATING_FANGS.getItem();
+        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        adornment.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        Opal opal = new Opal(new Gem(AbsoluteStatTypeEnum.CRIT_VALUE, 2520.0), new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0), new Gem(AbsoluteStatTypeEnum.ATTACK_SPEED, 0.017));
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        adornment.addGem(opal);
+        dragonknight.addItem(adornment, ItemSlotEnum.WEAPON_ADORNMENT);
+
+        Map<AbsoluteStatTypeEnum, Double> twoHandBaseStats = new HashMap<>();
+        twoHandBaseStats.put(AbsoluteStatTypeEnum.DAMAGE, 24934.348);
+        twoHandBaseStats.put(AbsoluteStatTypeEnum.CRIT_VALUE, 2887.408);
+        UniqueItem twoHand = DragonknightUniqueItems.WINDING_THUNDER_DRAGON.getItem();
+        twoHand.setBaseStats(twoHandBaseStats);
+        twoHand.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        twoHand.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        twoHand.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        twoHand.addEnchant(new Enchant(EnchantTypeEnum.DAMAGE, 0.44776));
+        twoHand.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        twoHand.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        twoHand.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        twoHand.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        twoHand.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        twoHand.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        twoHand.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        twoHand.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        twoHand.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        twoHand.addGem(new Gem(AbsoluteStatTypeEnum.DAMAGE, 700.0));
+        dragonknight.addItem(twoHand, ItemSlotEnum.TWO_HAND_WEAPON);
+
+        RuneTrinket runeTrinket1 = new RuneTrinket();
+        runeTrinket1.addRune(new Rune("Rune of Devastation", OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065));
+        runeTrinket1.addRune(new Rune("Rune of Devastation", OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065));
+        runeTrinket1.addRune(new Rune("Rune of Devastation", OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065));
+        runeTrinket1.addRune(new Rune("Rune of Devastation", OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065));
+        runeTrinket1.addRune(new Rune("Rune of Devastation", OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065));
+        runeTrinket1.addRune(new Rune("Rune of Vigor", OverallRelativeBuffTypeEnum.DAMAGE, 0.065));
+        runeTrinket1.addRune(new Rune("Rune of Vigor", OverallRelativeBuffTypeEnum.DAMAGE, 0.065));
+        runeTrinket1.addRune(new Rune("Rune of Vigor", OverallRelativeBuffTypeEnum.DAMAGE, 0.065));
+        runeTrinket1.addRune(new Rune("Rune of Vigor", OverallRelativeBuffTypeEnum.DAMAGE, 0.065));
+        runeTrinket1.addRune(new Rune("Rune of Vigor", OverallRelativeBuffTypeEnum.DAMAGE, 0.065));
+        dragonknight.addRuneTrinket(runeTrinket1, 1);
+
+        RuneTrinket runeTrinket2 = new RuneTrinket();
+        runeTrinket2.addRune(new Rune("Rune of Celerity", OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.065));
+        runeTrinket2.addRune(new Rune("Rune of Celerity", OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.065));
+        runeTrinket2.addRune(new Rune("Rune of Celerity", OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.065));
+        runeTrinket2.addRune(new Rune("Rune of Celerity", OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.065));
+        runeTrinket2.addRune(new Rune("Rune of Celerity", OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.065));
+        runeTrinket2.addRune(new Rune("Rune of Vitality", OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065));
+        runeTrinket2.addRune(new Rune("Rune of Vitality", OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065));
+        runeTrinket2.addRune(new Rune("Rune of Vitality", OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065));
+        runeTrinket2.addRune(new Rune("Rune of Vitality", OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065));
+        runeTrinket2.addRune(new Rune("Rune of Vitality", OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065));
+        dragonknight.addRuneTrinket(runeTrinket2, 2);
+
+        RuneTrinket runeTrinket3 = new RuneTrinket();
+        runeTrinket3.addRune(new SpecialRune("Concentrated Autumn Rune", Map.of(OverallRelativeBuffTypeEnum.ANDERMANT_DROP_BONUS, 0.05, OverallRelativeBuffTypeEnum.MOVEMENT_SPEED, 0.065, OverallRelativeBuffTypeEnum.DAMAGE, 0.065), ""));
+        runeTrinket3.addRune(new SpecialRune("Concentrated Autumn Rune", Map.of(OverallRelativeBuffTypeEnum.ANDERMANT_DROP_BONUS, 0.05, OverallRelativeBuffTypeEnum.MOVEMENT_SPEED, 0.065, OverallRelativeBuffTypeEnum.DAMAGE, 0.065), ""));
+        runeTrinket3.addRune(new SpecialRune("Concentrated Autumn Rune", Map.of(OverallRelativeBuffTypeEnum.ANDERMANT_DROP_BONUS, 0.05, OverallRelativeBuffTypeEnum.MOVEMENT_SPEED, 0.065, OverallRelativeBuffTypeEnum.DAMAGE, 0.065), ""));
+        runeTrinket3.addRune(new SpecialRune("Concentrated Autumn Rune", Map.of(OverallRelativeBuffTypeEnum.ANDERMANT_DROP_BONUS, 0.05, OverallRelativeBuffTypeEnum.MOVEMENT_SPEED, 0.065, OverallRelativeBuffTypeEnum.DAMAGE, 0.065), ""));
+        runeTrinket3.addRune(new SpecialRune("Concentrated Autumn Rune", Map.of(OverallRelativeBuffTypeEnum.ANDERMANT_DROP_BONUS, 0.05, OverallRelativeBuffTypeEnum.MOVEMENT_SPEED, 0.065, OverallRelativeBuffTypeEnum.DAMAGE, 0.065), ""));
+        runeTrinket3.addRune(new SpecialRune("Concentrated Solstice Rune", Map.of(OverallRelativeBuffTypeEnum.ICE_RESISTANCE, 0.065, OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065, OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065), ""));
+        runeTrinket3.addRune(new SpecialRune("Concentrated Solstice Rune", Map.of(OverallRelativeBuffTypeEnum.ICE_RESISTANCE, 0.065, OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065, OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065), ""));
+        runeTrinket3.addRune(new SpecialRune("Concentrated Solstice Rune", Map.of(OverallRelativeBuffTypeEnum.ICE_RESISTANCE, 0.065, OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065, OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065), ""));
+        runeTrinket3.addRune(new SpecialRune("Concentrated Solstice Rune", Map.of(OverallRelativeBuffTypeEnum.ICE_RESISTANCE, 0.065, OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065, OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065), ""));
+        runeTrinket3.addRune(new SpecialRune("Concentrated Solstice Rune", Map.of(OverallRelativeBuffTypeEnum.ICE_RESISTANCE, 0.065, OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065, OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065), ""));
+        dragonknight.addRuneTrinket(runeTrinket3, 3);
+
+        RuneTrinket runeTrinket4 = new RuneTrinket();
+        runeTrinket4.addRune(new SpecialRune("Concentrated Summer Rune", Map.of(OverallRelativeBuffTypeEnum.RESISTANCE, 0.065, OverallRelativeBuffTypeEnum.DAMAGE, 0.065, OverallRelativeBuffTypeEnum.BLOCK_VALUE, 0.065), ""));
+        runeTrinket4.addRune(new Rune("Rune of Resilience", OverallRelativeBuffTypeEnum.RESISTANCE, 0.065));
+        runeTrinket4.addRune(new Rune("Rune of Resilience", OverallRelativeBuffTypeEnum.RESISTANCE, 0.065));
+        runeTrinket4.addRune(new Rune("Rune of Resilience", OverallRelativeBuffTypeEnum.RESISTANCE, 0.065));
+        runeTrinket4.addRune(new Rune("Rune of Resilience", OverallRelativeBuffTypeEnum.RESISTANCE, 0.065));
+        runeTrinket4.addRune(new Rune("Rune of Fortitude", OverallRelativeBuffTypeEnum.ARMOR, 0.065));
+        runeTrinket4.addRune(new Rune("Rune of Fortitude", OverallRelativeBuffTypeEnum.ARMOR, 0.065));
+        runeTrinket4.addRune(new Rune("Rune of Fortitude", OverallRelativeBuffTypeEnum.ARMOR, 0.065));
+        runeTrinket4.addRune(new Rune("Rune of Fortitude", OverallRelativeBuffTypeEnum.ARMOR, 0.065));
+        runeTrinket4.addRune(new Rune("Rune of Fortitude", OverallRelativeBuffTypeEnum.ARMOR, 0.065));
+        dragonknight.addRuneTrinket(runeTrinket4, 4);
+
+        RuneTrinket runeTrinket5 = new RuneTrinket();
+        runeTrinket5.addRune(new SpecialRune("Concentrated Spring Rune", Map.of(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065, OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065, OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.065), ""));
+        runeTrinket5.addRune(new SpecialRune("Concentrated Spring Rune", Map.of(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065, OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065, OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.065), ""));
+        runeTrinket5.addRune(new SpecialRune("Concentrated Spring Rune", Map.of(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065, OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065, OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.065), ""));
+        runeTrinket5.addRune(new SpecialRune("Concentrated Spring Rune", Map.of(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065, OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065, OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.065), ""));
+        runeTrinket5.addRune(new SpecialRune("Concentrated Spring Rune", Map.of(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.065, OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.065, OverallRelativeBuffTypeEnum.ATTACK_SPEED, 0.065), ""));
+        runeTrinket5.addRune(new Rune("Rune of Recharging", OverallRelativeBuffTypeEnum.MANA_PER_SECOND, 0.065));
+        runeTrinket5.addRune(new Rune("Rune of Recharging", OverallRelativeBuffTypeEnum.MANA_PER_SECOND, 0.065));
+        runeTrinket5.addRune(new Rune("Rune of Recharging", OverallRelativeBuffTypeEnum.MANA_PER_SECOND, 0.065));
+        runeTrinket5.addRune(new Rune("Rune of Recharging", OverallRelativeBuffTypeEnum.MANA_PER_SECOND, 0.065));
+        runeTrinket5.addRune(new Rune("Rune of Recharging", OverallRelativeBuffTypeEnum.MANA_PER_SECOND, 0.065));
+        dragonknight.addRuneTrinket(runeTrinket5, 5);
+
+        JewelTrinket jewelTrinket1 = new JewelTrinket();
+        jewelTrinket1.addJewel(new Jewel("Jewel of Rage", "..."));
+        jewelTrinket1.addJewel(new Jewel("Jewel of the Gem Fortune", "..."));
+        jewelTrinket1.addJewel(new Jewel("Jewel of the Eternal Wrath", "..."));
+        jewelTrinket1.addJewel(new Jewel("Jewel of the Ingredient Hunter", "..."));
+        jewelTrinket1.addJewel(new Jewel("Jewel of the Ingredient Hunter", "..."));
+        jewelTrinket1.addJewel(new Jewel("Jewel of Amplified Healing", "..."));
+        jewelTrinket1.addJewel(new Jewel("Jewel of Contribution", "..."));
+        jewelTrinket1.addJewel(new Jewel("Jewel of Encouragement", "..."));
+        jewelTrinket1.addJewel(new Jewel("Jewel of Vigor", OverallRelativeBuffTypeEnum.DAMAGE, 0.1));
+        jewelTrinket1.addJewel(new Jewel("Jewel of Ambidextrous Vigor", OverallRelativeBuffTypeEnum.TWO_HAND_DAMAGE, 0.1));
+        dragonknight.addJewelTrinket(jewelTrinket1, 1);
+
+        JewelTrinket jewelTrinket2 = new JewelTrinket();
+        jewelTrinket2.addJewel(new Jewel("Jewel of Relentlessness", "..."));
+        jewelTrinket2.addJewel(new Jewel("Jewel of Relentlessness", "..."));
+        jewelTrinket2.addJewel(new Jewel("Jewel of Relentlessness", "..."));
+        jewelTrinket2.addJewel(new Jewel("Jewel of Relentlessness", "..."));
+        jewelTrinket2.addJewel(new Jewel("Jewel of Relentlessness", "..."));
+        jewelTrinket2.addJewel(new Jewel("Jewel of Focus", "..."));
+        jewelTrinket2.addJewel(new Jewel("Jewel of Focus", "..."));
+        jewelTrinket2.addJewel(new Jewel("Jewel of Focus", "..."));
+        jewelTrinket2.addJewel(new Jewel("Jewel of Focus", "..."));
+        jewelTrinket2.addJewel(new Jewel("Jewel of Focus", "..."));
+        dragonknight.addJewelTrinket(jewelTrinket2, 2);
+
+        JewelTrinket jewelTrinket3 = new JewelTrinket();
+        jewelTrinket3.addJewel(new Jewel("Jewel of the Easter Fever", "..."));
+        jewelTrinket3.addJewel(new Jewel("Thundering Flower Jewel", "..."));
+        jewelTrinket3.addJewel(new Jewel("Jewel of Strenuousness", "..."));
+        jewelTrinket3.addJewel(new Jewel("Jewel of Fortitude", OverallRelativeBuffTypeEnum.ARMOR, 0.1));
+        jewelTrinket3.addJewel(new Jewel("Jewel of Prolongation", "..."));
+        jewelTrinket3.addJewel(new Jewel("Jewel of Scorching Ray", "..."));
+        jewelTrinket3.addJewel(new Jewel("Jewel of Vitality", OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.1));
+        jewelTrinket3.addJewel(new Jewel("Jewel of the Frozen Heart", "..."));
+        jewelTrinket3.addJewel(new Jewel("Jewel of Ghost Power", "..."));
+        jewelTrinket3.addJewel(new Jewel("Jewel of Eternal Scorn", OverallRelativeBuffTypeEnum.CRIT_VALUE, 0.15, "..."));
+        dragonknight.addJewelTrinket(jewelTrinket3, 3);
+
+        WisdomSkillTree wisdomSkillTree = new WisdomSkillTree();
+        wisdomSkillTree.setLevel(60, 1,1);
+        wisdomSkillTree.setLevel(30, 1,2);
+        wisdomSkillTree.setLevel(60, 1,3);
+
+        wisdomSkillTree.setLevel(80, 2,1);
+        wisdomSkillTree.setLevel(80, 2,2);
+        wisdomSkillTree.setLevel(40, 2,3);
+
+        wisdomSkillTree.setLevel(40, 3,1);
+        wisdomSkillTree.setLevel(80, 3,2);
+        wisdomSkillTree.setLevel(80, 3,3);
+
+        wisdomSkillTree.setLevel(1, 4,1);
+
+        wisdomSkillTree.setLevel(60, 5,1);
+        wisdomSkillTree.setLevel(60, 5,2);
+
+        wisdomSkillTree.setLevel(60, 6,1);
+        wisdomSkillTree.setLevel(60, 6,2);
+        wisdomSkillTree.setLevel(5, 6,3);
+
+        wisdomSkillTree.setLevel(1, 7,2);
+        wisdomSkillTree.setLevel(1, 7,3);
+
+        wisdomSkillTree.setLevel(15, 8,1);
+        wisdomSkillTree.setLevel(15, 8,2);
+
+        dragonknight.setWisdomSkillTree(wisdomSkillTree);
+
+        dragonknight.setEssence(0.50);
+
+        //pet + group buff + dtu jewel buff + mortis set buff
+        Pet pet = new Pet("White Paul", Map.of(OverallRelativeBuffTypeEnum.ARMOR, 0.18, OverallRelativeBuffTypeEnum.HEALTH_POINTS, -1.86, OverallRelativeBuffTypeEnum.DAMAGE, 5.0), "");
+        dragonknight.setPet(pet);
+        dragonknight.setCollectorBagBuff(Map.of(OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.33, OverallRelativeBuffTypeEnum.RESISTANCE, 0.15, OverallRelativeBuffTypeEnum.DAMAGE, 0.06, OverallRelativeBuffTypeEnum.BLOCK_VALUE, 0.02));
+
+        Tonic tonic = new Tonic("Tonic of Vitality", AbsoluteStatTypeEnum.HEALTH_POINTS, 156068.0);
+        dragonknight.setTonic(tonic);
+        Physic physic = new Physic("Advanced Physic of Vitality", OverallRelativeBuffTypeEnum.HEALTH_POINTS, 0.18);
+        dragonknight.setPhysic(physic);
+
+
+
+        return dragonknight;
+    }
+
 
     //build für bgh
 
