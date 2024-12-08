@@ -26,6 +26,8 @@ public enum DragonknightUniqueItems implements Item {
     SIGRISMARRS_ETERNAL_WARD("Sigrismarr's Eternal Ward", ItemTypeEnum.TORSO, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1644.883, AbsoluteStatTypeEnum.HEALTH_POINTS, 49521.596, AbsoluteStatTypeEnum.ARMOR, 1648.0), Map.of(AbsoluteStatTypeEnum.ICE_RESISTANCE, 3459.0), List.of(), List.of(new OverallDescriptionBuff("Increases the Smash talent by 3.")), 145),
     THE_HERALDS_BLAZING_ONSLAUGHT("The Herald's Blazing Onslaught", ItemTypeEnum.GLOVES, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1645.0, AbsoluteStatTypeEnum.FIRE_RESISTANCE, 4150.0, AbsoluteStatTypeEnum.ANDERMAGIC_RESISTANCE, 4150.0), Map.of(AbsoluteStatTypeEnum.ANDERMAGIC_RESISTANCE, 3406.0), List.of(), List.of(new OverallDescriptionBuff("Increases the Rising Vigor (III) talent by 4.")), 145),
     WINDING_THUNDER_DRAGON("Winding Thunder Dragon", ItemTypeEnum.TWO_HAND_WEAPON, Map.of(AbsoluteStatTypeEnum.DAMAGE, 26326.0, AbsoluteStatTypeEnum.CRIT_VALUE, 3506.0), Map.of(AbsoluteStatTypeEnum.ATTACK_SPEED, 0.102), List.of(), List.of(new OverallDescriptionBuff("...")), 145),
+    ILLUMINATING_FANGS("Illuminating Fangs", ItemTypeEnum.WEAPON_ADORNMENT, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1892.0, AbsoluteStatTypeEnum.ATTACK_SPEED, 0.055, AbsoluteStatTypeEnum.CRIT_VALUE, 2104.0), Map.of(), List.of(new UniqueEnchant(EnchantTypeEnum.DAMAGE, 0.67637), new UniqueEnchant(EnchantTypeEnum.CRIT_VALUE, 0.6126)), List.of(), 145),
+    AMULET_OF_THE_BLACK_KNIGHT("Amulet of the Black Knight", ItemTypeEnum.AMULET, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1645.0, AbsoluteStatTypeEnum.HEALTH_POINTS, 74283.0, AbsoluteStatTypeEnum.RESISTANCE, 1162.0), Map.of(), List.of(new UniqueEnchant(EnchantTypeEnum.DAMAGE, 0.67153)), List.of(), 145),
 
     ;
 
