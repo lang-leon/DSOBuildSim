@@ -29,6 +29,11 @@ public enum DragonknightSetItems implements Item {
     HELMET_OF_DEATH("Helmet of Death", ItemTypeEnum.HELMET, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1645.0, AbsoluteStatTypeEnum.CRIT_VALUE, 1754.0, AbsoluteStatTypeEnum.RESISTANCE, 1162.0), 145),
     SEAL_OF_DEATH("Seal of Death", ItemTypeEnum.AMULET, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1645.0, AbsoluteStatTypeEnum.CRIT_VALUE, 1402.0, AbsoluteStatTypeEnum.RESISTANCE, 1162.0), 145),
 
+
+    //sargon set
+    SARGONS_HORNS("Sargon's Horns", ItemTypeEnum.HELMET, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1644.883, AbsoluteStatTypeEnum.CRIT_VALUE, 1401.991, AbsoluteStatTypeEnum.HEALTH_POINTS, 61914.0), 145),
+    SARGONS_PAULDRONS("Sargon's Pauldrons", ItemTypeEnum.SHOULDERS, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1891.513, AbsoluteStatTypeEnum.CRIT_VALUE, 1401.991, AbsoluteStatTypeEnum.ANDERMAGIC_RESISTANCE, 4150.0), 145),
+    SARGONS_TORSO("Sargon's Torso", ItemTypeEnum.TORSO, Map.of(AbsoluteStatTypeEnum.DAMAGE, 1644.883, AbsoluteStatTypeEnum.HEALTH_POINTS, 49522.0, AbsoluteStatTypeEnum.ARMOR, 1648.0), 145),
     ;
 
     private final String name;
@@ -69,5 +74,9 @@ public enum DragonknightSetItems implements Item {
 
         HELMET_OF_DEATH.set = DragonknightSets.AT_DEATHS_DOOR;
         SEAL_OF_DEATH.set = DragonknightSets.AT_DEATHS_DOOR;
+
+        SARGONS_HORNS.set = DragonknightSets.SARGONS_IMMORTAL_TERROR_ARMOR;
+        SARGONS_PAULDRONS.set = DragonknightSets.SARGONS_IMMORTAL_TERROR_ARMOR;
+        SARGONS_TORSO.set = DragonknightSets.SARGONS_IMMORTAL_TERROR_ARMOR;
     }
 }
