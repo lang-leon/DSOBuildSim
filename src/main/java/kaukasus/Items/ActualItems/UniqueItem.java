@@ -4,6 +4,7 @@ import kaukasus.Enchants.Enchant;
 import kaukasus.Enchants.UniqueEnchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
 import kaukasus.Enums.CharacterClassEnum;
+import kaukasus.Enums.EnchantTypeEnum;
 import kaukasus.Enums.ItemTypeEnum;
 import kaukasus.Gems.AbstractGem;
 import kaukasus.Gems.Gem;

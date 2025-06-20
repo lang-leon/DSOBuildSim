@@ -42,4 +42,12 @@ public class Enchant {
     {
         return new Enchant(this.type, this.value);
     }
+
+    @Override
+    public String toString() {
+        return "Enchant{" +
+                "type=" + type +
+                ", value=" + value +
+                '}';
+    }
 }

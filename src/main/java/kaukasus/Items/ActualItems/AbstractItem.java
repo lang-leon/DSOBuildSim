@@ -3,8 +3,10 @@ package kaukasus.Items.ActualItems;
 import kaukasus.Enchants.Enchant;
 import kaukasus.Enums.AbsoluteStatTypeEnum;
 import kaukasus.Enums.CharacterClassEnum;
+import kaukasus.Enums.EnchantTypeEnum;
 import kaukasus.Enums.ItemTypeEnum;
 import kaukasus.Gems.AbstractGem;
+import kaukasus.Gems.Gem;
 
 import java.util.List;
 import java.util.Map;
@@ -50,15 +52,32 @@ public abstract class AbstractItem {
             throw new IllegalArgumentException("Can't add more than 10 gems per item.");
         }
     }
+
     public void addGems(AbstractGem gem, int amount)
     {
         if (amount>0 && amount<=10)
         {
             for (int i=0; i<amount; i++)
             {
-                addGem(gem.copyGem());
+                addGem(gem);
             }
         }
+    }
+
+    public void addGem(AbsoluteStatTypeEnum type)
+    {
+        this.addGem(new Gem(type, type.getGemMaxValue()));
+    }
+
+    public void setGems(AbsoluteStatTypeEnum type)
+    {
+        this.gems.clear();
+        for (int i=0; i<10; i++) this.addGem(new Gem(type, type.getGemMaxValue()));
+    }
+
+    public void addGems(AbsoluteStatTypeEnum type, int amount)
+    {
+        for (int i=0; i<amount; i++) this.addGem(new Gem(type, type.getGemMaxValue()));
     }
 
     public void removeGem(AbstractGem gem)
@@ -76,6 +95,17 @@ public abstract class AbstractItem {
         if (this.enchants.size()<4){
             this.enchants.add(enchant);
         }
+    }
+
+    public void addEnchant(EnchantTypeEnum type)
+    {
+        this.addEnchant(new Enchant(type, type.getMaxValue()));
+    }
+
+    public void setEnchants(EnchantTypeEnum type)
+    {
+        this.enchants.clear();
+        for (int i=0; i<4; i++) this.enchants.add(new Enchant(type, type.getMaxValue()));
     }
 
     public void addEnchants(Enchant enchant, int amount)

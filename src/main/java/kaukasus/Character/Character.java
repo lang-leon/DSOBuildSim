@@ -1640,7 +1640,18 @@ public class Character {
                     {
                         if (buff instanceof OverallAbsolutBuff absolutBuff)
                         {
-                            this.characterAbsoluteStats.put(absolutBuff.getType(), this.characterAbsoluteStats.get(absolutBuff.getType())+absolutBuff.getValue());
+                            if (((OverallAbsolutBuff) buff).getType() == AbsoluteStatTypeEnum.RESISTANCE)
+                            {
+                                this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.ANDERMAGIC_RESISTANCE)+ absolutBuff.getValue());
+                                this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.FIRE_RESISTANCE)+ absolutBuff.getValue());
+                                this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.ICE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.ICE_RESISTANCE)+ absolutBuff.getValue());
+                                this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.LIGHTNING_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.LIGHTNING_RESISTANCE)+ absolutBuff.getValue());
+                                this.characterAbsoluteStats.put(AbsoluteStatTypeEnum.POISON_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatTypeEnum.POISON_RESISTANCE)+ absolutBuff.getValue());
+                            }
+                            else
+                            {
+                                this.characterAbsoluteStats.put(absolutBuff.getType(), this.characterAbsoluteStats.get(absolutBuff.getType()) + absolutBuff.getValue());
+                            }
                         }
                         else if (buff instanceof OverallRelativeBuff relativeBuff)
                         {
