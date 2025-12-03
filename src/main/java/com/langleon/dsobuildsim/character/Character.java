@@ -147,7 +147,7 @@ public class Character {
         this.classBaseStats.put(AbsoluteStatType.CRIT_VALUE, 0.0);
         this.classBaseStats.put(AbsoluteStatType.HEALTH_PER_SECOND, 0.0);
         this.classBaseStats.put(AbsoluteStatType.BLOCK_VALUE, 0.0);
-        this.classBaseStats.put(AbsoluteStatType.ARMOR, 0.0);
+        this.classBaseStats.put(AbsoluteStatType.ARMOR_VALUE, 0.0);
         this.classBaseStats.put(AbsoluteStatType.FIRE_RESISTANCE, 0.0);
         this.classBaseStats.put(AbsoluteStatType.ICE_RESISTANCE, 0.0);
         this.classBaseStats.put(AbsoluteStatType.LIGHTNING_RESISTANCE, 0.0);
@@ -233,7 +233,7 @@ public class Character {
         this.classBaseStats.put(AbsoluteStatType.CRIT_VALUE, 0.0);
         this.classBaseStats.put(AbsoluteStatType.HEALTH_PER_SECOND, 0.0);
         this.classBaseStats.put(AbsoluteStatType.BLOCK_VALUE, 0.0);
-        this.classBaseStats.put(AbsoluteStatType.ARMOR, 0.0);
+        this.classBaseStats.put(AbsoluteStatType.ARMOR_VALUE, 0.0);
         this.classBaseStats.put(AbsoluteStatType.FIRE_RESISTANCE, 0.0);
         this.classBaseStats.put(AbsoluteStatType.ICE_RESISTANCE, 0.0);
         this.classBaseStats.put(AbsoluteStatType.LIGHTNING_RESISTANCE, 0.0);
@@ -891,7 +891,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.amulet.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -937,7 +937,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.cloak.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -983,7 +983,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.belt.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1029,7 +1029,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.ring1.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1075,7 +1075,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.ring2.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1121,7 +1121,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.helmet.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1167,7 +1167,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.shoulders.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1213,7 +1213,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.torso.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1259,7 +1259,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.gloves.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1305,7 +1305,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.boots.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1351,7 +1351,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.weapon_adornment.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1397,7 +1397,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.one_hand_weapon.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1443,7 +1443,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.off_hand.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1489,7 +1489,7 @@ public class Character {
         {
             for (Map.Entry<AbsoluteStatType, Double> entry : this.two_hand_weapon.calculateTotalStats().entrySet())
             {
-                if (entry.getKey() == AbsoluteStatType.RESISTANCE)
+                if (entry.getKey() == AbsoluteStatType.RESISTANCE_VALUE)
                 {
                     this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ entry.getValue());
                     this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ entry.getValue());
@@ -1639,7 +1639,7 @@ public class Character {
                     {
                         if (buff instanceof OverallAbsolutBuff absolutBuff)
                         {
-                            if (((OverallAbsolutBuff) buff).getType() == AbsoluteStatType.RESISTANCE)
+                            if (((OverallAbsolutBuff) buff).getType() == AbsoluteStatType.RESISTANCE_VALUE)
                             {
                                 this.characterAbsoluteStats.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE)+ absolutBuff.getValue());
                                 this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+ absolutBuff.getValue());
@@ -1740,8 +1740,8 @@ public class Character {
         }
 
         //wisdom 2/2
-        double allResistanceValue = absoluteWisdomBuffs.get(AbsoluteStatType.RESISTANCE);
-        absoluteWisdomBuffs.remove(AbsoluteStatType.RESISTANCE);
+        double allResistanceValue = absoluteWisdomBuffs.get(AbsoluteStatType.RESISTANCE_VALUE);
+        absoluteWisdomBuffs.remove(AbsoluteStatType.RESISTANCE_VALUE);
         this.characterAbsoluteStats.put(AbsoluteStatType.FIRE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.FIRE_RESISTANCE)+allResistanceValue);
         this.characterAbsoluteStats.put(AbsoluteStatType.ICE_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.ICE_RESISTANCE)+allResistanceValue);
         this.characterAbsoluteStats.put(AbsoluteStatType.LIGHTNING_RESISTANCE, this.characterAbsoluteStats.get(AbsoluteStatType.LIGHTNING_RESISTANCE)+allResistanceValue);

@@ -337,8 +337,8 @@ public class WisdomSkillTree extends AbstractSkillTree {
         absoluteBuffs.put(AbsoluteStatType.CRIT_VALUE, this.attack.getSkill(2).getCurrentLevel()*this.attack.getSkill(2).getIncreasePerLevel());
 
         absoluteBuffs.put(AbsoluteStatType.BLOCK_VALUE, this.defense.getSkill(1).getCurrentLevel()*this.defense.getSkill(1).getIncreasePerLevel());
-        absoluteBuffs.put(AbsoluteStatType.ARMOR, this.defense.getSkill(2).getCurrentLevel()*this.defense.getSkill(2).getIncreasePerLevel());
-        absoluteBuffs.put(AbsoluteStatType.RESISTANCE, this.defense.getSkill(3).getCurrentLevel()*this.defense.getSkill(3).getIncreasePerLevel());
+        absoluteBuffs.put(AbsoluteStatType.ARMOR_VALUE, this.defense.getSkill(2).getCurrentLevel()*this.defense.getSkill(2).getIncreasePerLevel());
+        absoluteBuffs.put(AbsoluteStatType.RESISTANCE_VALUE, this.defense.getSkill(3).getCurrentLevel()*this.defense.getSkill(3).getIncreasePerLevel());
 
         absoluteBuffs.put(AbsoluteStatType.ONE_HAND_DAMAGE, this.oneHandedWeapon.getSkill(1).getCurrentLevel()*this.oneHandedWeapon.getSkill(1).getIncreasePerLevel());
         absoluteBuffs.put(AbsoluteStatType.ONE_HAND_ATTACK_SPEED, this.oneHandedWeapon.getSkill(2).getCurrentLevel()*this.oneHandedWeapon.getSkill(2).getIncreasePerLevel());
