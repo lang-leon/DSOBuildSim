@@ -8,6 +8,7 @@ import com.langleon.dsobuildsim.enums.ItemType;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.Gem;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -64,25 +65,32 @@ public abstract class AbstractItem {
         }
     }
 
-    public void addGem(AbsoluteStatType type)
-    {
-        this.addGem(new Gem(type, type.getGemMaxValue()));
-    }
-
-    public void setGems(AbsoluteStatType type)
+    public void setGems(Gem gem)
     {
         this.gems.clear();
-        for (int i=0; i<10; i++) this.addGem(new Gem(type, type.getGemMaxValue()));
-    }
-
-    public void addGems(AbsoluteStatType type, int amount)
-    {
-        for (int i=0; i<amount; i++) this.addGem(new Gem(type, type.getGemMaxValue()));
+        for (int i=0; i<10; i++) this.addGem(gem.copyGem());
     }
 
     public void removeGem(AbstractGem gem)
     {
         this.gems.remove(gem);
+    }
+
+    public Map<AbsoluteStatType, Double> calculateGemStats()
+    {
+        Map<AbsoluteStatType, Double> stats = new HashMap<>();
+        for (AbstractGem gem : this.getGems()){
+            for (Map.Entry<AbsoluteStatType, Double> stat : gem.getStats().entrySet())
+            {
+                if (stats.containsKey(stat.getKey())){
+                    Double gemValue = stat.getValue();
+                    stats.compute(stat.getKey(), (k, totalValueOld) -> gemValue + totalValueOld);
+                }else{
+                    stats.put(stat.getKey(), stat.getValue());
+                }
+            }
+        }
+        return stats;
     }
 
     public List<Enchant> getEnchants()
