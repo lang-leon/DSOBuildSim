@@ -21,34 +21,34 @@ public enum DragonknightSetItems implements Item {
     CLOAK_OF_THE_END("Cloak of the End", ItemType.CLOAK, Map.of(AbsoluteStatType.DAMAGE, 1891.513, AbsoluteStatType.ATTACK_SPEED, 0.06, AbsoluteStatType.HEALTH_POINTS, 49521.596), 145),
 
     //maze of blaze set
-    ARMOR_OF_THE_FLAME_CONQUEROR("Armor of the Flame Conqueror", ItemType.TORSO, Map.of(AbsoluteStatType.ARMOR, 1603.0, AbsoluteStatType.ANDERMAGIC_RESISTANCE, 6062.0, AbsoluteStatType.BLOCK_VALUE, 1549.0), 140),
+    ARMOR_OF_THE_FLAME_CONQUEROR("Armor of the Flame Conqueror", ItemType.TORSO, Map.of(AbsoluteStatType.ARMOR_VALUE, 1603.0, AbsoluteStatType.ANDERMAGIC_RESISTANCE, 6062.0, AbsoluteStatType.BLOCK_VALUE, 1549.0), 140),
     GLOVES_OF_THE_FLAME_CONQUEROR("Gloves of the Flame Conqueror", ItemType.GLOVES, Map.of(AbsoluteStatType.DAMAGE, 1601.0, AbsoluteStatType.ATTACK_SPEED, 0.054, AbsoluteStatType.CRIT_VALUE, 1709.0), 140),
     BOOTS_OF_THE_FLAME_CONQUEROR("Boots of the Flame Conqueror", ItemType.BOOTS, Map.of(AbsoluteStatType.DAMAGE, 1601.0, AbsoluteStatType.MOVEMENT_SPEED, 1.208, AbsoluteStatType.CRIT_VALUE, 1366.0), 140),
 
     //mighty wrathful seeker set
-    MIGHTY_WRATHFUL_SEEKERS_HELMET("Mighty Wrathful Seeker's Helmet", ItemType.HELMET, Map.of(AbsoluteStatType.HEALTH_POINTS, 60555.0, AbsoluteStatType.ARMOR, 1068.0, AbsoluteStatType.FIRE_RESISTANCE, 4150.0), 140),
+    MIGHTY_WRATHFUL_SEEKERS_HELMET("Mighty Wrathful Seeker's Helmet", ItemType.HELMET, Map.of(AbsoluteStatType.HEALTH_POINTS, 60555.0, AbsoluteStatType.ARMOR_VALUE, 1068.0, AbsoluteStatType.FIRE_RESISTANCE, 4150.0), 140),
     MIGHTY_WRATHFUL_SEEKERS_SHOULDERS("Mighty Wrathful Seeker's Shoulders", ItemType.SHOULDERS, Map.of(AbsoluteStatType.HEALTH_POINTS, 48435.0, AbsoluteStatType.ICE_RESISTANCE, 4041.0, AbsoluteStatType.BLOCK_VALUE, 1549.0), 140),
-    MIGHTY_WRATHFUL_SEEKERS_TORSO("Mighty Wrathful Seeker's Torso", ItemType.TORSO, Map.of(AbsoluteStatType.ARMOR, 1603.0, AbsoluteStatType.ANDERMAGIC_RESISTANCE, 6062.0, AbsoluteStatType.BLOCK_VALUE, 1549.0), 140),
+    MIGHTY_WRATHFUL_SEEKERS_TORSO("Mighty Wrathful Seeker's Torso", ItemType.TORSO, Map.of(AbsoluteStatType.ARMOR_VALUE, 1603.0, AbsoluteStatType.ANDERMAGIC_RESISTANCE, 6062.0, AbsoluteStatType.BLOCK_VALUE, 1549.0), 140),
     MIGHTY_WRATHFUL_SEEKERS_GLOVES("Mighty Wrathful Seeker's Gloves", ItemType.GLOVES, Map.of(AbsoluteStatType.DAMAGE, 1601.0, AbsoluteStatType.ATTACK_SPEED, 0.054, AbsoluteStatType.CRIT_VALUE, 1709.0), 140),
     MIGHTY_WRATHFUL_SEEKERS_BOOTS("Mighty Wrathful Seeker's Boots", ItemType.BOOTS, Map.of(AbsoluteStatType.DAMAGE, 1601.0, AbsoluteStatType.MOVEMENT_SPEED, 1.208, AbsoluteStatType.CRIT_VALUE, 1366.0), 140),
     MIGHTY_WRATHFUL_SEEKERS_CAPE("Mighty Wrathful Seeker's Cape", ItemType.CLOAK, Map.of(AbsoluteStatType.DAMAGE, 1841.0, AbsoluteStatType.ATTACK_SPEED, 0.059, AbsoluteStatType.HEALTH_POINTS, 48435.0), 140),
 
     //mortis set
-    HELMET_OF_DEATH("Helmet of Death", ItemType.HELMET, Map.of(AbsoluteStatType.DAMAGE, 1645.0, AbsoluteStatType.CRIT_VALUE, 1754.0, AbsoluteStatType.RESISTANCE, 1162.0), 145),
-    SEAL_OF_DEATH("Seal of Death", ItemType.AMULET, Map.of(AbsoluteStatType.DAMAGE, 1645.0, AbsoluteStatType.CRIT_VALUE, 1402.0, AbsoluteStatType.RESISTANCE, 1162.0), 145),
+    HELMET_OF_DEATH("Helmet of Death", ItemType.HELMET, Map.of(AbsoluteStatType.DAMAGE, 1645.0, AbsoluteStatType.CRIT_VALUE, 1754.0, AbsoluteStatType.RESISTANCE_VALUE, 1162.0), 145),
+    SEAL_OF_DEATH("Seal of Death", ItemType.AMULET, Map.of(AbsoluteStatType.DAMAGE, 1645.0, AbsoluteStatType.CRIT_VALUE, 1402.0, AbsoluteStatType.RESISTANCE_VALUE, 1162.0), 145),
 
     //sargon set
     SARGONS_HORNS("Sargon's Horns", ItemType.HELMET, Map.of(AbsoluteStatType.DAMAGE, 1644.883, AbsoluteStatType.CRIT_VALUE, 1401.991, AbsoluteStatType.HEALTH_POINTS, 61914.0), 145),
     SARGONS_PAULDRONS("Sargon's Pauldrons", ItemType.SHOULDERS, Map.of(AbsoluteStatType.DAMAGE, 1891.513, AbsoluteStatType.CRIT_VALUE, 1401.991, AbsoluteStatType.ANDERMAGIC_RESISTANCE, 4150.0), 145),
-    SARGONS_TORSO("Sargon's Torso", ItemType.TORSO, Map.of(AbsoluteStatType.DAMAGE, 1644.883, AbsoluteStatType.HEALTH_POINTS, 49522.0, AbsoluteStatType.ARMOR, 1648.0), 145),
+    SARGONS_TORSO("Sargon's Torso", ItemType.TORSO, Map.of(AbsoluteStatType.DAMAGE, 1644.883, AbsoluteStatType.HEALTH_POINTS, 49522.0, AbsoluteStatType.ARMOR_VALUE, 1648.0), 145),
 
     //destructor set
     MACHINE_HELMET("Machine Helmet", ItemType.HELMET, Map.of(AbsoluteStatType.DAMAGE, 1645.0, AbsoluteStatType.CRIT_VALUE, 1402.0, AbsoluteStatType.HEALTH_POINTS, 61914.0), 145),
-    MACHINE_SHOULDERS("Machine Shoulders", ItemType.SHOULDERS, Map.of(AbsoluteStatType.HEALTH_POINTS, 49522.0, AbsoluteStatType.ARMOR, 1098.0, AbsoluteStatType.RESISTANCE, 1162.0), 145),
-    MACHINE_ARMOR("Machine Armor", ItemType.TORSO, Map.of(AbsoluteStatType.DAMAGE, 1645.0, AbsoluteStatType.HEALTH_POINTS, 49522.0, AbsoluteStatType.ARMOR, 1648.0), 145),
+    MACHINE_SHOULDERS("Machine Shoulders", ItemType.SHOULDERS, Map.of(AbsoluteStatType.HEALTH_POINTS, 49522.0, AbsoluteStatType.ARMOR_VALUE, 1098.0, AbsoluteStatType.RESISTANCE_VALUE, 1162.0), 145),
+    MACHINE_ARMOR("Machine Armor", ItemType.TORSO, Map.of(AbsoluteStatType.DAMAGE, 1645.0, AbsoluteStatType.HEALTH_POINTS, 49522.0, AbsoluteStatType.ARMOR_VALUE, 1648.0), 145),
     MACHINE_FISTS("Machine Fists", ItemType.GLOVES, Map.of(AbsoluteStatType.DAMAGE, 1645.0, AbsoluteStatType.ATTACK_SPEED, 0.055, AbsoluteStatType.CRIT_VALUE, 1754.0), 145),
     MACHINE_BOOTS("Machine Boots", ItemType.BOOTS, Map.of(AbsoluteStatType.DAMAGE, 1645.0, AbsoluteStatType.MOVEMENT_SPEED, 1.221, AbsoluteStatType.HEALTH_POINTS, 49522.0), 145),
-    MACHINE_BELT("Machine Belt", ItemType.BELT, Map.of(AbsoluteStatType.DAMAGE, 1645.0, AbsoluteStatType.HEALTH_POINTS, 74283.0, AbsoluteStatType.RESISTANCE, 1743.0), 145),
+    MACHINE_BELT("Machine Belt", ItemType.BELT, Map.of(AbsoluteStatType.DAMAGE, 1645.0, AbsoluteStatType.HEALTH_POINTS, 74283.0, AbsoluteStatType.RESISTANCE_VALUE, 1743.0), 145),
     LARGE_MACHINE_AXE("Large Machine Axe", ItemType.TWO_HAND_WEAPON, Map.of(AbsoluteStatType.DAMAGE, 6582.0,  AbsoluteStatType.CRIT_VALUE, 7012.0), 145),
     LARGE_MACHINE_HAMMER("Large Machine Hammer", ItemType.TWO_HAND_WEAPON, Map.of(AbsoluteStatType.DAMAGE, 13163.0,  AbsoluteStatType.CRIT_VALUE, 3506.0), 145),
     LARGE_MACHINE_BLADE("Large Machine Blade", ItemType.TWO_HAND_WEAPON, Map.of(AbsoluteStatType.DAMAGE, 6582.0, AbsoluteStatType.ATTACK_SPEED, 0.329, AbsoluteStatType.CRIT_VALUE, 3506.0), 145),

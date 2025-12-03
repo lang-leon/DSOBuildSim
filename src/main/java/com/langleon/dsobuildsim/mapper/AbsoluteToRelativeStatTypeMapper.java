@@ -12,7 +12,7 @@ public class AbsoluteToRelativeStatTypeMapper {
 
     static {
         map.put(AbsoluteStatType.ANDERMAGIC_RESISTANCE, OverallRelativeBuffType.ANDERMAGIC_RESISTANCE);
-        map.put(AbsoluteStatType.ARMOR, OverallRelativeBuffType.ARMOR);
+        map.put(AbsoluteStatType.ARMOR_VALUE, OverallRelativeBuffType.ARMOR);
         map.put(AbsoluteStatType.ATTACK_SPEED, OverallRelativeBuffType.ATTACK_SPEED);
         map.put(AbsoluteStatType.BLOCK_VALUE, OverallRelativeBuffType.BLOCK_VALUE);
         map.put(AbsoluteStatType.CRIT_VALUE, OverallRelativeBuffType.CRIT_VALUE);
@@ -26,7 +26,7 @@ public class AbsoluteToRelativeStatTypeMapper {
         map.put(AbsoluteStatType.MANA_PER_SECOND, OverallRelativeBuffType.MANA_PER_SECOND);
         map.put(AbsoluteStatType.MOVEMENT_SPEED, OverallRelativeBuffType.MOVEMENT_SPEED);
         map.put(AbsoluteStatType.POISON_RESISTANCE, OverallRelativeBuffType.POISON_RESISTANCE);
-        map.put(AbsoluteStatType.RESISTANCE, OverallRelativeBuffType.RESISTANCE);
+        map.put(AbsoluteStatType.RESISTANCE_VALUE, OverallRelativeBuffType.RESISTANCE);
     }
 
     public static OverallRelativeBuffType getRelativeType(AbsoluteStatType baseStatType){

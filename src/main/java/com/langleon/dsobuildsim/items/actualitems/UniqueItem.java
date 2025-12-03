@@ -96,35 +96,21 @@ public class UniqueItem extends AbstractItem {
 
     @Override
     public Map<AbsoluteStatType, Double> calculateTotalStats() {
-        Map<AbsoluteStatType, Double> totalAbsoluteStats = new HashMap<>();
-        totalAbsoluteStats.putAll(getBaseStats());
+        Map<AbsoluteStatType, Double> totalAbsoluteStats = new HashMap<>(getBaseStats());
 
-        for (AbstractGem gem : this.getGems()){
-            if (gem instanceof Gem){
-                if (totalAbsoluteStats.containsKey(gem.getType())){
-                    Double gemValue = gem.getValue();
-                    Double totalValueOld = totalAbsoluteStats.get(gem.getType());
-                    totalAbsoluteStats.put(gem.getType(), gemValue+totalValueOld);
-                }else{
-                    totalAbsoluteStats.put(gem.getType(), gem.getValue());
-                }
-            }else if (gem instanceof Opal){
-                for (Gem gem2 : ((Opal) gem).getGems()){
-                    if (totalAbsoluteStats.containsKey(gem2.getType())){
-                        Double gemValue = gem2.getValue();
-                        Double totalValueOld = totalAbsoluteStats.get(gem2.getType());
-                        totalAbsoluteStats.put(gem2.getType(), gemValue+totalValueOld);
-                    }else{
-                        totalAbsoluteStats.put(gem2.getType(), gem2.getValue());
-                    }
-                }
+        for (Map.Entry<AbsoluteStatType, Double> entry : super.calculateGemStats().entrySet())
+        {
+            if (totalAbsoluteStats.containsKey(entry.getKey())){
+                totalAbsoluteStats.compute(entry.getKey(), (k, totalValueOld) -> entry.getValue() + totalValueOld);
+            }else{
+                totalAbsoluteStats.put(entry.getKey(), entry.getValue());
             }
         }
+
         for (Map.Entry<AbsoluteStatType, Double> entry : this.uniqueBaseStat.entrySet()){
             if (totalAbsoluteStats.containsKey(entry.getKey())){
                 Double uniqueBaseStat = entry.getValue();
-                Double totalValueOld = totalAbsoluteStats.get(entry.getKey());
-                totalAbsoluteStats.put(entry.getKey(), uniqueBaseStat+totalValueOld);
+                totalAbsoluteStats.compute(entry.getKey(), (k, totalValueOld) -> uniqueBaseStat + totalValueOld);
             }else{
                 totalAbsoluteStats.put(entry.getKey(), entry.getValue());
             }
