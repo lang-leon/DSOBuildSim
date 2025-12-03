@@ -36,19 +36,19 @@ public class UniqueItemTest {
         ObjectMapper objectMapper = new ObjectMapper();
         InputStream is = GemTests.class.getClassLoader().getResourceAsStream("data/gems.json");
         Reader reader = new InputStreamReader(is);
-        GemData gemData = objectMapper.readValue(reader, GemData.class);
-        Gem poison = gemData.createGem(GemType.POISON_DIAMOND, 17);
+        GemFactory gemFactory = objectMapper.readValue(reader, GemFactory.class);
+        Gem poison = gemFactory.createGem(GemType.POISON_DIAMOND, 17);
         uniqueItem.addGem(poison);
         uniqueItem.addGem(poison);
         uniqueItem.addGem(poison);
-        Gem dmg = gemData.createGem(GemType.RUBY, 17);
+        Gem dmg = gemFactory.createGem(GemType.RUBY, 17);
         uniqueItem.addGem(dmg);
         uniqueItem.addGem(dmg);
         uniqueItem.addGem(dmg);
         uniqueItem.addGem(dmg);
         uniqueItem.addGem(dmg);
         uniqueItem.addGem(dmg);
-        Opal opal = gemData.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 17);
+        Opal opal = gemFactory.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 17);
         uniqueItem.addGem(opal);
 
         Enchant enchant1 = new Enchant(EnchantType.MOVEMENT_SPEED, 0.22442);

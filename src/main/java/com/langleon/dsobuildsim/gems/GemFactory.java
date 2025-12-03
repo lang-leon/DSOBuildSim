@@ -1,14 +1,13 @@
 package com.langleon.dsobuildsim.gems;
 
 import com.langleon.dsobuildsim.enums.GemType;
-import com.langleon.dsobuildsim.enums.GemUpgradeType;
 
 import java.util.Map;
 
 /**
  * Stores gem data like gem definitions (name, isOffensive, statType, statsPerTier) and upgrade costs for offensive and defensive gems.
  */
-public class GemData {
+public class GemFactory {
     private Map<GemType, GemDefinition> gems;
     private Map<Integer, Integer> offensiveUpgradeCosts;
     private Map<Integer, Integer> defensiveUpgradeCosts;
