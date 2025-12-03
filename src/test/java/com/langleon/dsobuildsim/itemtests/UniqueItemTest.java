@@ -34,7 +34,7 @@ public class UniqueItemTest {
         UniqueItem uniqueItem = new UniqueItem("Researcher's Boots", CharacterClass.SPELLWEAVER, ItemType.BOOTS, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, 145);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        InputStream is = GemTests.class.getClassLoader().getResourceAsStream("data/gems.json");
+        InputStream is = UniqueItemTest.class.getClassLoader().getResourceAsStream("data/gems.json");
         Reader reader = new InputStreamReader(is);
         GemFactory gemFactory = objectMapper.readValue(reader, GemFactory.class);
         Gem poison = gemFactory.createGem(GemType.POISON_DIAMOND, 17);

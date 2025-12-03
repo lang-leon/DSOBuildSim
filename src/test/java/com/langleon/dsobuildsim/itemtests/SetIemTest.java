@@ -5,7 +5,6 @@ import com.langleon.dsobuildsim.enchantments.Enchant;
 import com.langleon.dsobuildsim.enums.*;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.gems.GemFactory;
-import com.langleon.dsobuildsim.gems.GemTests;
 import com.langleon.dsobuildsim.gems.Opal;
 import com.langleon.dsobuildsim.items.actualitems.SetItem;
 import com.langleon.dsobuildsim.sets.SpellweaverSets;
@@ -26,7 +25,7 @@ public class SetIemTest {
         SetItem setItem = new SetItem("Helmet of the Black Knight", CharacterClass.SPELLWEAVER, ItemType.HELMET, basestats, 145, SpellweaverSets.SET1);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        InputStream is = GemTests.class.getClassLoader().getResourceAsStream("data/gems.json");
+        InputStream is = SetIemTest.class.getClassLoader().getResourceAsStream("data/gems.json");
         Reader reader = new InputStreamReader(is);
         GemFactory gemFactory = objectMapper.readValue(reader, GemFactory.class);
         Gem poison = gemFactory.createGem(GemType.POISON_DIAMOND, 17);

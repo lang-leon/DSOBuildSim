@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.gems;
 
+import com.langleon.dsobuildsim.enums.AbsoluteStatType;
 import com.langleon.dsobuildsim.enums.GemType;
 
 import java.util.Map;
@@ -14,7 +15,7 @@ public class GemFactory {
         this.config = config;
     }
 
-    public Integer getUpgradeCost(Gem gem)
+    public Integer getUpgradeCost(AbstractGem gem)
     {
         switch (gem.getGemUpgradeType())
         {
@@ -45,6 +46,6 @@ public class GemFactory {
         GemDefinition gemDefinition2 = this.config.gems().get(gemType2);
         GemDefinition gemDefinition3 = this.config.gems().get(gemType3);
         if (!config.opalUpgradeCosts().containsKey(tier)) throw new IllegalArgumentException("Invalid gem tier: " + tier + "!");
-        return new Opal(tier, Map.of(gemDefinition1.statType(), gemDefinition1.statsPerTier().get(tier), gemDefinition2.statType(), gemDefinition2.statsPerTier().get(tier) , gemDefinition3.statType(), gemDefinition3.statsPerTier().get(tier)));
+        return new Opal(tier, Map.of(gemDefinition1.statType(), gemDefinition1.statsPerTier().get(tier)*0.75, gemDefinition2.statType(), gemDefinition2.statsPerTier().get(tier)*0.75 , gemDefinition3.statType(), gemDefinition3.statsPerTier().get(tier)*0.75));
     }
 }

@@ -6,7 +6,6 @@ import com.langleon.dsobuildsim.enchantments.UniqueEnchant;
 import com.langleon.dsobuildsim.enums.*;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.gems.GemFactory;
-import com.langleon.dsobuildsim.gems.GemTests;
 import com.langleon.dsobuildsim.items.actualitems.MythicItem;
 import com.langleon.dsobuildsim.overallbuffs.OverallAbsolutBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallBuff;
@@ -37,7 +36,7 @@ public class MythicItemTest {
         MythicItem mythicItem = new MythicItem("Ancestral Glory Cloak (Mage)", CharacterClass.SPELLWEAVER, ItemType.CLOAK, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, 145, SpellweaverSets.SET1);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        InputStream is = GemTests.class.getClassLoader().getResourceAsStream("data/gems.json");
+        InputStream is = MythicItemTest.class.getClassLoader().getResourceAsStream("data/gems.json");
         Reader reader = new InputStreamReader(is);
         GemFactory gemFactory = objectMapper.readValue(reader, GemFactory.class);
         Gem dmg = gemFactory.createGem(GemType.RUBY, 17);
