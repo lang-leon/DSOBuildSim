@@ -10,8 +10,8 @@ public class GemTests {
         ObjectMapper objectMapper = new ObjectMapper();
         InputStream is = GemTests.class.getClassLoader().getResourceAsStream("data/gems.json");
         Reader reader = new InputStreamReader(is);
-        GemFactory gemFactory = objectMapper.readValue(reader, GemFactory.class);
-        System.out.println(gemFactory.getGems().keySet());
+        GemConfig gemConfig = objectMapper.readValue(reader, GemConfig.class);
+        GemFactory gemFactory = new GemFactory(gemConfig);
         Gem gem = gemFactory.createGem(GemType.RUBY, 10);
         System.out.println(gem);
         System.out.println(gemFactory.getUpgradeCost(gem)+" Dust");
