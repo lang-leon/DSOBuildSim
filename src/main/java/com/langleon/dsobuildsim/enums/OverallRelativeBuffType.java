@@ -23,7 +23,7 @@ public enum OverallRelativeBuffType {
     POISON_RESISTANCE("Poison Resistance"),
     RESISTANCE("All Resistance Values"),
     TWO_HAND_DAMAGE("Two Hand Damage"),
-    WISDOM_DROP_BONUS("Wisdom Drop Bonus"),
+    ANCIENT_WISDOM_DROP_BONUS("Ancient Wisdom Drop Bonus"),
     XP_GAIN("XP Gain");
 
 
