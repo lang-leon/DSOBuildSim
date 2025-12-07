@@ -7,10 +7,10 @@ import com.langleon.dsobuildsim.enums.RuneUpgradeType;
 import java.util.Map;
 
 public class Rune{
-    RuneType runeType;
-    int tier;
-    Map<OverallRelativeBuffType, Double> stats;
-    String description;
+    private final RuneType runeType;
+    private final int tier;
+    private final Map<OverallRelativeBuffType, Double> stats;
+    private final String description;
 
     public Rune(RuneType runeType, int tier, Map<OverallRelativeBuffType, Double> stats, String description) {
         this.runeType = runeType;
