@@ -1,6 +1,5 @@
 package com.langleon.dsobuildsim.runes;
 
-import com.langleon.dsobuildsim.enums.GemUpgradeType;
 import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
 import com.langleon.dsobuildsim.enums.RuneType;
 import com.langleon.dsobuildsim.enums.RuneUpgradeType;
