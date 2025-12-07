@@ -15,10 +15,8 @@ import com.langleon.dsobuildsim.overallbuffs.OverallAbsolutBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallRelativeBuff;
 import com.langleon.dsobuildsim.pets.Pet;
-import com.langleon.dsobuildsim.runes.AbstractRune;
 import com.langleon.dsobuildsim.runes.Rune;
 import com.langleon.dsobuildsim.runes.RuneTrinket;
-import com.langleon.dsobuildsim.runes.SpecialRune;
 import com.langleon.dsobuildsim.skilltrees.wisdomskilltree.WisdomSkillTree;
 
 import java.util.*;
@@ -177,7 +175,7 @@ public class Character {
         this.characterRelativeBuffs.put(OverallRelativeBuffType.POISON_RESISTANCE, 0.0);
         this.characterRelativeBuffs.put(OverallRelativeBuffType.RESISTANCE, 0.0);
         this.characterRelativeBuffs.put(OverallRelativeBuffType.TWO_HAND_DAMAGE, 0.0);
-        this.characterRelativeBuffs.put(OverallRelativeBuffType.WISDOM_DROP_BONUS, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffType.ANCIENT_WISDOM_DROP_BONUS, 0.0);
         this.characterRelativeBuffs.put(OverallRelativeBuffType.XP_GAIN, 100.0);
     }
 
@@ -263,7 +261,7 @@ public class Character {
         this.characterRelativeBuffs.put(OverallRelativeBuffType.POISON_RESISTANCE, 0.0);
         this.characterRelativeBuffs.put(OverallRelativeBuffType.RESISTANCE, 0.0);
         this.characterRelativeBuffs.put(OverallRelativeBuffType.TWO_HAND_DAMAGE, 0.0);
-        this.characterRelativeBuffs.put(OverallRelativeBuffType.WISDOM_DROP_BONUS, 0.0);
+        this.characterRelativeBuffs.put(OverallRelativeBuffType.ANCIENT_WISDOM_DROP_BONUS, 0.0);
         this.characterRelativeBuffs.put(OverallRelativeBuffType.XP_GAIN, 100.0);
     }
 
@@ -271,7 +269,7 @@ public class Character {
     public void addItem(AbstractItem item, ItemSlot slot)
     {
         //item.getCharacterClass()
-        if (this.characterClass == this.characterClass)
+        if (this.characterClass == item.getCharacterClass())
         {
             if (slot == ItemSlot.AMULET && item.getItemType() == ItemType.AMULET)
             {
@@ -1533,73 +1531,73 @@ public class Character {
         }
 
         //runes
-        for (AbstractRune abstractRune : this.runeTrinket1.getRunes())
+        for (Rune rune : this.runeTrinket1.getRunes())
         {
-            if (abstractRune instanceof Rune rune)
+            for (Map.Entry<OverallRelativeBuffType, Double> stat : rune.getStats().entrySet())
             {
-                this.characterRelativeBuffs.put(rune.getType(), this.characterRelativeBuffs.get(rune.getType())+rune.getValue());
-            }
-            else if (abstractRune instanceof SpecialRune specialRune)
-            {
-                for (Map.Entry<OverallRelativeBuffType, Double> entry : specialRune.getBuffs().entrySet())
+                if (this.characterRelativeBuffs.containsKey(stat.getKey()))
                 {
-                    this.characterRelativeBuffs.put(entry.getKey(), this.characterRelativeBuffs.get(entry.getKey())+entry.getValue());
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getValue()));
+                }
+                else
+                {
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getKey())+stat.getValue());
                 }
             }
         }
-        for (AbstractRune abstractRune : this.runeTrinket2.getRunes())
+        for (Rune rune : this.runeTrinket2.getRunes())
         {
-            if (abstractRune instanceof Rune rune)
+            for (Map.Entry<OverallRelativeBuffType, Double> stat : rune.getStats().entrySet())
             {
-                this.characterRelativeBuffs.put(rune.getType(), this.characterRelativeBuffs.get(rune.getType())+rune.getValue());
-            }
-            else if (abstractRune instanceof SpecialRune specialRune)
-            {
-                for (Map.Entry<OverallRelativeBuffType, Double> entry : specialRune.getBuffs().entrySet())
+                if (this.characterRelativeBuffs.containsKey(stat.getKey()))
                 {
-                    this.characterRelativeBuffs.put(entry.getKey(), this.characterRelativeBuffs.get(entry.getKey())+entry.getValue());
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getValue()));
+                }
+                else
+                {
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getKey())+stat.getValue());
                 }
             }
         }
-        for (AbstractRune abstractRune : this.runeTrinket3.getRunes())
+        for (Rune rune : this.runeTrinket3.getRunes())
         {
-            if (abstractRune instanceof Rune rune)
+            for (Map.Entry<OverallRelativeBuffType, Double> stat : rune.getStats().entrySet())
             {
-                this.characterRelativeBuffs.put(rune.getType(), this.characterRelativeBuffs.get(rune.getType())+rune.getValue());
-            }
-            else if (abstractRune instanceof SpecialRune specialRune)
-            {
-                for (Map.Entry<OverallRelativeBuffType, Double> entry : specialRune.getBuffs().entrySet())
+                if (this.characterRelativeBuffs.containsKey(stat.getKey()))
                 {
-                    this.characterRelativeBuffs.put(entry.getKey(), this.characterRelativeBuffs.get(entry.getKey())+entry.getValue());
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getValue()));
+                }
+                else
+                {
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getKey())+stat.getValue());
                 }
             }
         }
-        for (AbstractRune abstractRune : this.runeTrinket4.getRunes())
+        for (Rune rune : this.runeTrinket4.getRunes())
         {
-            if (abstractRune instanceof Rune rune)
+            for (Map.Entry<OverallRelativeBuffType, Double> stat : rune.getStats().entrySet())
             {
-                this.characterRelativeBuffs.put(rune.getType(), this.characterRelativeBuffs.get(rune.getType())+rune.getValue());
-            }
-            else if (abstractRune instanceof SpecialRune specialRune)
-            {
-                for (Map.Entry<OverallRelativeBuffType, Double> entry : specialRune.getBuffs().entrySet())
+                if (this.characterRelativeBuffs.containsKey(stat.getKey()))
                 {
-                    this.characterRelativeBuffs.put(entry.getKey(), this.characterRelativeBuffs.get(entry.getKey())+entry.getValue());
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getValue()));
+                }
+                else
+                {
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getKey())+stat.getValue());
                 }
             }
         }
-        for (AbstractRune abstractRune : this.runeTrinket5.getRunes())
+        for (Rune rune : this.runeTrinket5.getRunes())
         {
-            if (abstractRune instanceof Rune rune)
+            for (Map.Entry<OverallRelativeBuffType, Double> stat : rune.getStats().entrySet())
             {
-                this.characterRelativeBuffs.put(rune.getType(), this.characterRelativeBuffs.get(rune.getType())+rune.getValue());
-            }
-            else if (abstractRune instanceof SpecialRune specialRune)
-            {
-                for (Map.Entry<OverallRelativeBuffType, Double> entry : specialRune.getBuffs().entrySet())
+                if (this.characterRelativeBuffs.containsKey(stat.getKey()))
                 {
-                    this.characterRelativeBuffs.put(entry.getKey(), this.characterRelativeBuffs.get(entry.getKey())+entry.getValue());
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getValue()));
+                }
+                else
+                {
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getKey())+stat.getValue());
                 }
             }
         }
