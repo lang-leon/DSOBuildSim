@@ -5,9 +5,9 @@ import java.util.List;
 
 public class RuneTrinket {
 
-    private List<AbstractRune> runes;
+    private List<Rune> runes;
 
-    public RuneTrinket(List<AbstractRune> rune) {
+    public RuneTrinket(List<Rune> rune) {
         this.runes = rune;
     }
 
@@ -15,11 +15,11 @@ public class RuneTrinket {
         this.runes = new ArrayList<>();
     }
 
-    public List<AbstractRune> getRunes() {
+    public List<Rune> getRunes() {
         return this.runes;
     }
 
-    public void addRune(AbstractRune rune){
+    public void addRune(Rune rune){
         if (this.runes.size()<10){
             this.runes.add(rune);
         }else{
@@ -27,7 +27,7 @@ public class RuneTrinket {
         }
     }
 
-    public void removeRune(AbstractRune rune){
+    public void removeRune(Rune rune){
         this.runes.remove(rune);
     }
 }
