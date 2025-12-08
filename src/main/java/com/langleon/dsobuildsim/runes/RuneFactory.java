@@ -1,8 +1,8 @@
 package com.langleon.dsobuildsim.runes;
 
 import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
-import com.langleon.dsobuildsim.enums.RuneType;
-import com.langleon.dsobuildsim.enums.RuneUpgradeType;
+import com.langleon.dsobuildsim.enums.runes.RuneType;
+import com.langleon.dsobuildsim.enums.runes.RuneUpgradeType;
 
 import java.util.Map;
 

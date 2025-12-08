@@ -2,8 +2,9 @@ package com.langleon.dsobuildsim.gems;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.enums.AbsoluteStatType;
-import com.langleon.dsobuildsim.enums.GemType;
-import com.langleon.dsobuildsim.enums.GemUpgradeType;
+import com.langleon.dsobuildsim.enums.gems.GemLimitGroup;
+import com.langleon.dsobuildsim.enums.gems.GemType;
+import com.langleon.dsobuildsim.enums.gems.GemUpgradeType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,6 +36,7 @@ class GemFactoryTest {
         Assertions.assertTrue(gem.getStats().containsKey(AbsoluteStatType.DAMAGE));
         Assertions.assertEquals(1, gem.getStats().size());
         Assertions.assertEquals(15, gem.getStats().get(AbsoluteStatType.DAMAGE));
+        Assertions.assertEquals(GemLimitGroup.RUBY, gem.getGemLimitGroup());
     }
 
     @Test
