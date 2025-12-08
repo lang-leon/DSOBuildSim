@@ -1,7 +1,6 @@
 package com.langleon.dsobuildsim.gems;
 
-import com.langleon.dsobuildsim.enums.AbsoluteStatType;
-import com.langleon.dsobuildsim.enums.GemType;
+import com.langleon.dsobuildsim.enums.gems.GemType;
 
 import java.util.Map;
 
@@ -38,7 +37,7 @@ public class GemFactory {
         GemDefinition gemDefinition = this.config.gems().get(gemType);
         Double value = gemDefinition.statsPerTier().get(tier);
         if (value == null) throw new IllegalArgumentException("Invalid gem tier: " + tier + "!");
-        return new Gem(gemDefinition.gemType(), tier, Map.of(gemDefinition.statType(), gemDefinition.statsPerTier().get(tier)));
+        return new Gem(gemDefinition.gemType(), gemDefinition.gemUpgradeType(), gemDefinition.gemLimitGroup(), tier, Map.of(gemDefinition.statType(), gemDefinition.statsPerTier().get(tier)));
     }
 
     public Opal createOpal(GemType gemType1, GemType gemType2, GemType gemType3, int tier) {
