@@ -15,7 +15,7 @@ public class RuneFactory {
 
     public int getUpgradeCost(Rune rune)
     {
-        switch (rune.getRuneType().getRuneUpgradeType())
+        switch (rune.getRuneUpgradeType())
         {
             case RuneUpgradeType.OFFENSIVE -> {
                 return this.config.offensiveUpgradeCosts().get(rune.getTier());
@@ -37,6 +37,6 @@ public class RuneFactory {
         RuneDefinition runeDefinition = this.config.runes().get(runeType);
         Map<OverallRelativeBuffType, Double> stats = runeDefinition.statsPerTier().get(tier);
         if (stats == null) throw new IllegalArgumentException("Invalid rune tier: " + tier + "!");
-        return new Rune(runeType, tier, stats, runeDefinition.description());
+        return new Rune(runeType, runeDefinition.runeUpgradeType(), runeDefinition.runeLimitGroup(), tier, stats, runeDefinition.description());
     }
 }
