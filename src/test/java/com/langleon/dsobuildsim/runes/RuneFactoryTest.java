@@ -2,6 +2,9 @@ package com.langleon.dsobuildsim.runes;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.enums.*;
+import com.langleon.dsobuildsim.enums.runes.RuneLimitGroup;
+import com.langleon.dsobuildsim.enums.runes.RuneType;
+import com.langleon.dsobuildsim.enums.runes.RuneUpgradeType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

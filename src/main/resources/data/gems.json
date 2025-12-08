@@ -2,6 +2,7 @@
   "gems": {
     "RUBY": {
       "gemType": "RUBY",
+      "gemLimitGroup": "RUBY",
       "gemUpgradeType": "OFFENSIVE",
       "statType": "DAMAGE",
       "statsPerTier": {
@@ -26,6 +27,7 @@
     },
     "ONYX": {
       "gemType": "ONYX",
+      "gemLimitGroup": "ONYX",
       "gemUpgradeType": "OFFENSIVE",
       "statType": "CRIT_VALUE",
       "statsPerTier": {
@@ -50,6 +52,7 @@
     },
     "ZIRCON": {
       "gemType": "ZIRCON",
+      "gemLimitGroup": "ZIRCON",
       "gemUpgradeType": "OFFENSIVE",
       "statType": "ATTACK_SPEED",
       "statsPerTier": {
@@ -74,6 +77,7 @@
     },
     "RHODOLITE": {
       "gemType": "RHODOLITE",
+      "gemLimitGroup": "RHODOLITE",
       "gemUpgradeType": "OFFENSIVE",
       "statType": "MOVEMENT_SPEED",
       "statsPerTier": {
@@ -98,6 +102,7 @@
     },
     "AMETHYST": {
       "gemType": "AMETHYST",
+      "gemLimitGroup": "AMETHYST",
       "gemUpgradeType": "DEFENSIVE",
       "statType": "HEALTH_POINTS",
       "statsPerTier": {
@@ -122,6 +127,7 @@
     },
     "CYANITE": {
       "gemType": "CYANITE",
+      "gemLimitGroup": "CYANITE",
       "gemUpgradeType": "DEFENSIVE",
       "statType": "ARMOR_VALUE",
       "statsPerTier": {
@@ -146,6 +152,7 @@
     },
     "DIAMOND": {
       "gemType": "DIAMOND",
+      "gemLimitGroup": "DIAMOND",
       "gemUpgradeType": "DEFENSIVE",
       "statType": "RESISTANCE_VALUE",
       "statsPerTier": {
@@ -170,6 +177,7 @@
     },
     "FIRE_DIAMOND": {
       "gemType": "FIRE_DIAMOND",
+      "gemLimitGroup": "DIAMOND",
       "gemUpgradeType": "DEFENSIVE",
       "statType": "FIRE_RESISTANCE",
       "statsPerTier": {
@@ -194,6 +202,7 @@
     },
     "POISON_DIAMOND": {
       "gemType": "POISON_DIAMOND",
+      "gemLimitGroup": "DIAMOND",
       "gemUpgradeType": "DEFENSIVE",
       "statType": "POISON_RESISTANCE",
       "statsPerTier": {
@@ -218,6 +227,7 @@
     },
     "ICE_DIAMOND": {
       "gemType": "ICE_DIAMOND",
+      "gemLimitGroup": "DIAMOND",
       "gemUpgradeType": "DEFENSIVE",
       "statType": "ICE_RESISTANCE",
       "statsPerTier": {
@@ -242,6 +252,7 @@
     },
     "LIGHTNING_DIAMOND": {
       "gemType": "LIGHTNING_DIAMOND",
+      "gemLimitGroup": "DIAMOND",
       "gemUpgradeType": "DEFENSIVE",
       "statType": "LIGHTNING_RESISTANCE",
       "statsPerTier": {
@@ -266,6 +277,7 @@
     },
     "ANDERMAGIC_DIAMOND": {
       "gemType": "ANDERMAGIC_DIAMOND",
+      "gemLimitGroup": "DIAMOND",
       "gemUpgradeType": "DEFENSIVE",
       "statType": "ANDERMAGIC_RESISTANCE",
       "statsPerTier": {
@@ -290,6 +302,7 @@
     },
     "EMERALD": {
       "gemType": "EMERALD",
+      "gemLimitGroup": "EMERALD",
       "gemUpgradeType": "DEFENSIVE",
       "statType": "BLOCK_VALUE",
       "statsPerTier": {

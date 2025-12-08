@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.enchantments.Enchant;
 import com.langleon.dsobuildsim.enchantments.UniqueEnchant;
 import com.langleon.dsobuildsim.enums.*;
+import com.langleon.dsobuildsim.enums.gems.GemType;
 import com.langleon.dsobuildsim.gems.*;
 import com.langleon.dsobuildsim.items.actualitems.UniqueItem;
 import com.langleon.dsobuildsim.overallbuffs.OverallBuff;
