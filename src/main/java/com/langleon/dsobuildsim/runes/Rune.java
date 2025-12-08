@@ -1,6 +1,7 @@
 package com.langleon.dsobuildsim.runes;
 
 import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.enums.RuneType;
 import com.langleon.dsobuildsim.enums.RuneUpgradeType;
 
@@ -8,12 +9,16 @@ import java.util.Map;
 
 public class Rune{
     private final RuneType runeType;
+    private final RuneUpgradeType runeUpgradeType;
+    private final RuneLimitGroup runeLimitGroup;
     private final int tier;
     private final Map<OverallRelativeBuffType, Double> stats;
     private final String description;
 
-    public Rune(RuneType runeType, int tier, Map<OverallRelativeBuffType, Double> stats, String description) {
+    public Rune(RuneType runeType, RuneUpgradeType runeUpgradeType, RuneLimitGroup runeLimitGroup, int tier, Map<OverallRelativeBuffType, Double> stats, String description) {
         this.runeType = runeType;
+        this.runeUpgradeType = runeUpgradeType;
+        this.runeLimitGroup = runeLimitGroup;
         this.tier = tier;
         this.stats = stats;
         this.description = description;
@@ -37,7 +42,11 @@ public class Rune{
     }
 
     public RuneUpgradeType getRuneUpgradeType() {
-        return runeType.getRuneUpgradeType();
+        return runeUpgradeType;
+    }
+
+    public RuneLimitGroup getRuneLimitGroup() {
+        return runeLimitGroup;
     }
 
     public RuneType getRuneType() {
