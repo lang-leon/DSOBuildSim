@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.gems;
 
-import com.langleon.dsobuildsim.enums.GemType;
+import com.langleon.dsobuildsim.enums.gems.GemType;
 
 import java.util.Map;
 

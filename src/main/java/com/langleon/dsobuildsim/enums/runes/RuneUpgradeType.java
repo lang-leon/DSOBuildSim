@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.enums;
+package com.langleon.dsobuildsim.enums.runes;
 
 public enum RuneUpgradeType {
     OFFENSIVE("Offensive"),
