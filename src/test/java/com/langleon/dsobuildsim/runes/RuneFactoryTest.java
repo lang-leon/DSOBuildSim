@@ -24,7 +24,7 @@ class RuneFactoryTest {
     }
 
     @Test
-    void createRubyTier5()
+    void createVigorTier5()
     {
         Rune rune = runeFactory.createRune(RuneType.VIGOR, 5);
         Assertions.assertNotNull(rune);
@@ -33,6 +33,19 @@ class RuneFactoryTest {
         Assertions.assertTrue(rune.getStats().containsKey(OverallRelativeBuffType.DAMAGE));
         Assertions.assertEquals(1, rune.getStats().size());
         Assertions.assertEquals(0.065, rune.getStats().get(OverallRelativeBuffType.DAMAGE));
+    }
+
+    @Test
+    void createFireResistanceTier4()
+    {
+        Rune rune = runeFactory.createRune(RuneType.FIRE_RESILIENCE, 4);
+        Assertions.assertNotNull(rune);
+        Assertions.assertEquals(4, rune.getTier());
+        Assertions.assertEquals(RuneType.FIRE_RESILIENCE, rune.getRuneType());
+        Assertions.assertTrue(rune.getStats().containsKey(OverallRelativeBuffType.FIRE_RESISTANCE));
+        Assertions.assertEquals(1, rune.getStats().size());
+        Assertions.assertEquals(0.052, rune.getStats().get(OverallRelativeBuffType.FIRE_RESISTANCE));
+        Assertions.assertEquals(RuneLimitGroup.RESILIENCE, rune.getRuneLimitGroup());
     }
 
     @Test
