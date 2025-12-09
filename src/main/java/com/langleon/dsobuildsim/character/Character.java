@@ -1605,23 +1605,44 @@ public class Character {
         //jewels
         for (Jewel jewel : this.jewelTrinket1.getJewels())
         {
-            if (jewel.getType() != null)
+            for (Map.Entry<OverallRelativeBuffType, Double> stat : jewel.getStats().entrySet())
             {
-                this.characterRelativeBuffs.put(jewel.getType(), this.characterRelativeBuffs.get(jewel.getType())+jewel.getValue());
+                if (this.characterRelativeBuffs.containsKey(stat.getKey()))
+                {
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getValue()));
+                }
+                else
+                {
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getKey())+stat.getValue());
+                }
             }
         }
         for (Jewel jewel : this.jewelTrinket2.getJewels())
         {
-            if (jewel.getType() != null)
+            for (Map.Entry<OverallRelativeBuffType, Double> stat : jewel.getStats().entrySet())
             {
-                this.characterRelativeBuffs.put(jewel.getType(), this.characterRelativeBuffs.get(jewel.getType())+jewel.getValue());
+                if (this.characterRelativeBuffs.containsKey(stat.getKey()))
+                {
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getValue()));
+                }
+                else
+                {
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getKey())+stat.getValue());
+                }
             }
         }
         for (Jewel jewel : this.jewelTrinket3.getJewels())
         {
-            if (jewel.getType() != null)
+            for (Map.Entry<OverallRelativeBuffType, Double> stat : jewel.getStats().entrySet())
             {
-                this.characterRelativeBuffs.put(jewel.getType(), this.characterRelativeBuffs.get(jewel.getType())+jewel.getValue());
+                if (this.characterRelativeBuffs.containsKey(stat.getKey()))
+                {
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getValue()));
+                }
+                else
+                {
+                    this.characterRelativeBuffs.put(stat.getKey(), this.characterRelativeBuffs.get(stat.getKey())+stat.getValue());
+                }
             }
         }
 
