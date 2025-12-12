@@ -1,8 +1,6 @@
 package com.langleon.dsobuildsim.jewels;
 
-import com.langleon.dsobuildsim.character.Character;
 import com.langleon.dsobuildsim.enums.CharacterClass;
-import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
 import com.langleon.dsobuildsim.enums.jewels.JewelType;
 
 import java.util.Map;

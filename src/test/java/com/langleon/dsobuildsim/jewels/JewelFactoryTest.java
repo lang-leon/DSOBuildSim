@@ -43,7 +43,7 @@ public class JewelFactoryTest {
         Assertions.assertEquals(4, jewel.getTier());
         Assertions.assertEquals(JewelType.GEM_FORTUNE, jewel.getJewelType());
         Assertions.assertTrue(jewel.getStats().isEmpty());
-        Assertions.assertEquals(jewel.getDescription(),"Bosses drop 4 additional gems.");
+        Assertions.assertEquals("Bosses drop 4 additional gems.", jewel.getDescription());
     }
 
     @Test
