@@ -1,60 +1,53 @@
 package com.langleon.dsobuildsim.jewels;
 
+import com.langleon.dsobuildsim.enums.jewels.JewelType;
 import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
 
-import java.util.Objects;
+import java.util.Map;
 
 public class Jewel {
-
-    private final String name;
+    private final int tier;
+    private final JewelType jewelType;
     private final String description;
-    private OverallRelativeBuffType type;
-    private Double value;
+    private final Map<OverallRelativeBuffType, Double> stats;
 
-    public Jewel(String name, String description) {
-        this.name = name;
+    public Jewel(JewelType jewelType, int tier, Map<OverallRelativeBuffType, Double> stats, String description) {
+        this.tier = tier;
+        this.jewelType = jewelType;
         this.description = description;
+        this.stats = stats;
     }
 
-    public Jewel(String name, OverallRelativeBuffType type, Double value) {
-        this.name = name;
-        this.type = type;
-        this.value = value;
-        this.description = "";
+    public String getDisplayName()
+    {
+        String tierName;
+        switch (tier)
+        {
+            case 1 -> tierName = " (gray)";
+            case 2 -> tierName = " (green)";
+            case 3 -> tierName = " (blue)";
+            case 4 -> tierName = " (purple)";
+            case 5 -> tierName = " (orange)";
+            case 6 -> tierName = " (yellow)";
+            case 7 -> tierName = " (red)";
+            default -> tierName = "";
+        }
+        return this.jewelType+tierName;
     }
 
-    public Jewel(String name, OverallRelativeBuffType type, Double value, String description) {
-        this.name = name;
-        this.type = type;
-        this.value = value;
-        this.description = description;
+    public int getTier() {
+        return tier;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public OverallRelativeBuffType getType() {
-        return type;
-    }
-
-    public Double getValue() {
-        return value;
+    public JewelType getJewelType() {
+        return jewelType;
     }
 
     public String getDescription() {
         return description;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Jewel jewel = (Jewel) o;
-        return Objects.equals(name, jewel.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
+    public Map<OverallRelativeBuffType, Double> getStats() {
+        return stats;
     }
 }
