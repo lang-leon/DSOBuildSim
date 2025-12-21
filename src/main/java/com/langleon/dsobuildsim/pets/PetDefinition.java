@@ -1,4 +1,12 @@
 package com.langleon.dsobuildsim.pets;
 
-public class PetDefinition {
+import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.pets.PetCategory;
+import com.langleon.dsobuildsim.enums.pets.PetType;
+import com.langleon.dsobuildsim.enums.pets.PetUpgradeType;
+
+import java.util.Map;
+
+public record PetDefinition(PetType petType, PetCategory petCategory, PetUpgradeType petUpgradeType, Map<Integer, Map<OverallRelativeBuffType, Double>> statsPerTier, String description)
+{
 }
