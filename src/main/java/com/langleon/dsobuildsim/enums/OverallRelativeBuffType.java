@@ -1,12 +1,15 @@
 package com.langleon.dsobuildsim.enums;
 
 public enum OverallRelativeBuffType {
+    ANCIENT_WISDOM_DROP_BONUS("Ancient Wisdom Drop Bonus"),
     ANDERMAGIC_RESISTANCE("Andermagic Resistance"),
     ANDERMANT_DROP_BONUS("Andermant Drop Bonus"),
     ARMOR("Armor Value"),
     ATTACK_SPEED("Attack Speed"),
     BLOCK_VALUE("Block Value"),
+    CITY_MOVEMENT_SPEED("Movement Speed (only in the Urban Area"),
     COIN_DROP_BONUS("Coin Drop Bonus"),
+    COLLECTOR_BAG_BONUS("Increase collector bag bonus"),
     CRIT_VALUE("Critical Value"),
     DAMAGE("Damage"),
     FIRE_RESISTANCE("Fire Resistance"),
@@ -22,8 +25,8 @@ public enum OverallRelativeBuffType {
     ONE_HAND_DAMAGE("One Hand Damage"),
     POISON_RESISTANCE("Poison Resistance"),
     RESISTANCE("All Resistance Values"),
+    SELL_PRICE("Sell price"),
     TWO_HAND_DAMAGE("Two Hand Damage"),
-    ANCIENT_WISDOM_DROP_BONUS("Ancient Wisdom Drop Bonus"),
     XP_GAIN("XP Gain");
 
 
