@@ -4,7 +4,7 @@
       "petType": "BLUE_DRAGONSPAWN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DRAGON_SPAWN",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -26,7 +26,7 @@
       "petType": "SILVER_SCALED_DRAGONSPAWN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DRAGON_SPAWN",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -48,7 +48,7 @@
       "petType": "COPPER_SCALED_DRAGONSPAWN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DRAGON_SPAWN",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -70,7 +70,7 @@
       "petType": "DRAGONSPAWN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DRAGON_SPAWN",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -92,7 +92,7 @@
       "petType": "SPINEY_DRAGONSPAWN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DRAGON_SPAWN",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -114,7 +114,7 @@
       "petType": "LITTLE_DRAGONSPAWN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DRAGON_SPAWN",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -136,7 +136,7 @@
       "petType": "FIRE_SCALED_DRAGONSPAWN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DRAGON_SPAWN",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -158,7 +158,7 @@
       "petType": "EMBER_SCALED_DRAGONSPAWN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DRAGON_SPAWN",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -180,7 +180,7 @@
       "petType": "BRIGHTLY_SCALED_DRAGONSPAWN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DRAGON_SPAWN",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -202,7 +202,7 @@
       "petType": "EMERALD_SCALED_DRAGONSPAWN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DRAGON_SPAWN",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -224,7 +224,7 @@
       "petType": "PUDGY_DRAGONSPAWN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DRAGON_SPAWN",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -246,7 +246,7 @@
       "petType": "BATTY_GREMLIN",
       "petUpgradeType": "NORMAL",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -268,7 +268,7 @@
       "petType": "GOTH_HARE",
       "petUpgradeType": "NORMAL",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -290,7 +290,7 @@
       "petType": "HORNED_FIRE_GOBLIN",
       "petUpgradeType": "NORMAL",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -312,7 +312,7 @@
       "petType": "JUMPING_JACK_O_LANTERN",
       "petUpgradeType": "NORMAL",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -334,7 +334,7 @@
       "petType": "TINY_TROUBLEMAKER",
       "petUpgradeType": "NONE",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "2",
       "statsPerTier": {
@@ -347,7 +347,7 @@
       "petType": "TINY_TROUBLEMAKER_LUXURIANT",
       "petUpgradeType": "NONE",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
         "3": "Enables auto-pickup for gems"
       },
       "defaultTier": "3",
@@ -361,7 +361,7 @@
       "petType": "TINY_TROUBLEMAKER_ELEGANT",
       "petUpgradeType": "NONE",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
         "3": "Enables auto-pickup for Rune"
       },
       "defaultTier": "3",
@@ -375,7 +375,7 @@
       "petType": "TINY_TROUBLEMAKER_LOVELY",
       "petUpgradeType": "NONE",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
         "3": "Enables auto-pickup for Jewel"
       },
       "defaultTier": "3",
@@ -389,7 +389,7 @@
       "petType": "TINY_TROUBLEMAKER_VIVID",
       "petUpgradeType": "NONE",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "3",
       "statsPerTier": {
@@ -403,7 +403,7 @@
       "petType": "TINY_TROUBLEMAKER_TALENTED",
       "petUpgradeType": "NONE",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "4",
       "statsPerTier": {
@@ -416,7 +416,7 @@
       "petType": "TINY_TROUBLEMAKER_SUPERSTAR",
       "petUpgradeType": "NONE",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
         "5": "Enables auto-pickup for gems"
       },
       "defaultTier": "5",
@@ -430,7 +430,7 @@
       "petType": "TINY_TROUBLEMAKER_DAZZLING",
       "petUpgradeType": "NONE",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
         "4": "Enables auto-pickup for gems\nEnables auto-pickup for Rune"
       },
       "defaultTier": "4",
@@ -444,7 +444,7 @@
       "petType": "TINY_TROUBLEMAKER_CHARMING",
       "petUpgradeType": "NONE",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
         "4": "Enables auto-pickup for Jewel"
       },
       "defaultTier": "4",
@@ -459,7 +459,7 @@
       "petType": "LIVING_SKULL",
       "petUpgradeType": "NORMAL",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -481,7 +481,7 @@
       "petType": "PIRATE_KINGS_SCULL",
       "petUpgradeType": "NORMAL",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Calls your little companion",
         "3": "Calls your little companion",
         "4": "Calls your little companion",
@@ -511,7 +511,7 @@
       "petType": "MAD_EYE_SKULLY",
       "petUpgradeType": "NONE",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Duration of all stun effects on you reduced by 40%."
       },
       "defaultTier": "6",
@@ -524,7 +524,7 @@
       "petType": "LANKY_FIRE_GNOME",
       "petUpgradeType": "NORMAL",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -550,7 +550,7 @@
       "petType": "BOLSTERED_FIRE_GNOME",
       "petUpgradeType": "NORMAL",
       "petCategory": "SCOUNDRELS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -576,7 +576,7 @@
       "petType": "HACHI_DOG",
       "petUpgradeType": "NONE",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
         "6": "Enables auto-pickup for Gems, Jewels, Runes and Mystic Cubes"
       },
       "defaultTier": "6",
@@ -589,7 +589,7 @@
       "petType": "MELON_PUG",
       "petUpgradeType": "NORMAL",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
         "2": "Transforms you into a real charmer",
         "3": "Transforms you into a real charmer",
         "4": "Transforms you into a real charmer",
@@ -619,7 +619,7 @@
       "petType": "FAWN_KITTEN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -641,7 +641,7 @@
       "petType": "WONDER_MUTT",
       "petUpgradeType": "NONE",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "6",
       "statsPerTier": {
@@ -655,7 +655,7 @@
       "petType": "LITTLE_IRUSAN",
       "petUpgradeType": "NONE",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
         "6": "There is a small chance that little Irusan will cough up a hariball when you defeat monsters.\nThere is a small chance that little Irusan will cough up a ghostly hairball as long as you are on one of the Ghost Festival maps."
       },
       "defaultTier": "6",
@@ -668,7 +668,7 @@
       "petType": "BLACK_CHICKEN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -690,7 +690,7 @@
       "petType": "BROWN_CHICKEN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -712,7 +712,7 @@
       "petType": "WHITE_CHICKEN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -734,7 +734,7 @@
       "petType": "AVIATOR_CHICKEN",
       "petUpgradeType": "NORMAL",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -756,7 +756,7 @@
       "petType": "PROUD_BILLY_GOAT",
       "petUpgradeType": "NORMAL",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -778,7 +778,7 @@
       "petType": "JINDO",
       "petUpgradeType": "NORMAL",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -800,7 +800,7 @@
       "petType": "CUTE_DOGGY",
       "petUpgradeType": "NORMAL",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -822,7 +822,7 @@
       "petType": "HOPPY_BUNNY",
       "petUpgradeType": "NORMAL",
       "petCategory": "DOMESTICATED",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -844,7 +844,7 @@
       "petType": "GREEN_RAPTOR",
       "petUpgradeType": "NORMAL",
       "petCategory": "WILD_BEASTS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -866,7 +866,7 @@
       "petType": "MUTANT_RAT",
       "petUpgradeType": "NONE",
       "petCategory": "WILD_BEASTS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Reduces Boss armor and resistance values by 8%"
       },
       "defaultTier": "6",
@@ -880,7 +880,7 @@
       "petType": "CHEEKY_MONKEY",
       "petUpgradeType": "NONE",
       "petCategory": "WILD_BEASTS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "1",
       "statsPerTier": {
@@ -892,7 +892,7 @@
       "petType": "LITTLE_RAPTOR",
       "petUpgradeType": "NORMAL",
       "petCategory": "WILD_BEASTS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -914,7 +914,7 @@
       "petType": "FENNEC",
       "petUpgradeType": "NONE",
       "petCategory": "WILD_BEASTS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Duration of all stun effects on you reduced by 20%."
       },
       "defaultTier": "6",
@@ -928,7 +928,7 @@
       "petType": "RHINO_CALF",
       "petUpgradeType": "NORMAL",
       "petCategory": "WILD_BEASTS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -954,7 +954,7 @@
       "petType": "FANCY_RAT",
       "petUpgradeType": "NORMAL",
       "petCategory": "WILD_BEASTS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -976,7 +976,7 @@
       "petType": "RAT_KING",
       "petUpgradeType": "NONE",
       "petCategory": "WILD_BEASTS",
-      "description": {
+      "descriptionPerTier": {
         "6": "There is a small chance that defeated monsters will drop a lump of dirt.\nThere is a small chance that defeated monsters will drop a lump of sewers dirt as long as ýou are on one of the sewers event maps."
       },
       "defaultTier": "6",
@@ -989,7 +989,7 @@
       "petType": "LITTLE_GOLDEN_GOOSE",
       "petUpgradeType": "NONE",
       "petCategory": "WILD_BEASTS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "6",
       "statsPerTier": {
@@ -1004,7 +1004,7 @@
       "petType": "BUG_COLLECTING_JABBAX",
       "petUpgradeType": "NORMAL",
       "petCategory": "AQUATICS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1026,7 +1026,7 @@
       "petType": "TENACIOUS_DRAGON_TURTLE",
       "petUpgradeType": "NORMAL",
       "petCategory": "AQUATICS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1048,7 +1048,7 @@
       "petType": "SILVER_DRAGON_TURTLE",
       "petUpgradeType": "NORMAL",
       "petCategory": "AQUATICS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1074,7 +1074,7 @@
       "petType": "GOLDEN_DRAGON_TURTLE",
       "petUpgradeType": "NORMAL",
       "petCategory": "AQUATICS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1104,7 +1104,7 @@
       "petType": "LOVING_KRAKEN",
       "petUpgradeType": "NORMAL",
       "petCategory": "AQUATICS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1126,7 +1126,7 @@
       "petType": "BLUE_PAUL",
       "petUpgradeType": "NORMAL",
       "petCategory": "AQUATICS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1152,7 +1152,7 @@
       "petType": "PINK_PAUL",
       "petUpgradeType": "NORMAL",
       "petCategory": "AQUATICS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1178,7 +1178,7 @@
       "petType": "GREEN_PAUL",
       "petUpgradeType": "NORMAL",
       "petCategory": "AQUATICS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1204,7 +1204,7 @@
       "petType": "BLACK_PAUL",
       "petUpgradeType": "NORMAL",
       "petCategory": "AQUATICS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1230,7 +1230,7 @@
       "petType": "WHITE_PAUL",
       "petUpgradeType": "NORMAL",
       "petCategory": "AQUATICS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1256,7 +1256,7 @@
       "petType": "YELLOW_PAUL",
       "petUpgradeType": "NORMAL",
       "petCategory": "AQUATICS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1282,7 +1282,7 @@
       "petType": "SAPPHIRE_PARROT",
       "petUpgradeType": "NORMAL",
       "petCategory": "AVIANS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1304,7 +1304,7 @@
       "petType": "RUBY_PARROT",
       "petUpgradeType": "NORMAL",
       "petCategory": "AVIANS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1326,7 +1326,7 @@
       "petType": "EMERALD_PARROT",
       "petUpgradeType": "NORMAL",
       "petCategory": "AVIANS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1348,7 +1348,7 @@
       "petType": "GOLDEN_PARROT",
       "petUpgradeType": "NONE",
       "petCategory": "AVIANS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "6",
       "statsPerTier": {
@@ -1363,7 +1363,7 @@
       "petType": "SHARP_EYED_RAVEN",
       "petUpgradeType": "NORMAL",
       "petCategory": "AVIANS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1385,7 +1385,7 @@
       "petType": "FIRE_ROOSTER",
       "petUpgradeType": "NORMAL",
       "petCategory": "AVIANS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1411,7 +1411,7 @@
       "petType": "GRIM_RAVEN",
       "petUpgradeType": "NORMAL",
       "petCategory": "AVIANS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1441,7 +1441,7 @@
       "petType": "MOLTEN_FIRE_GUARD",
       "petUpgradeType": "NONE",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "6": "Reduces Boss armor and resistance values by 8%."
       },
       "defaultTier": "6",
@@ -1455,7 +1455,7 @@
       "petType": "JUMPY_SQUIRE",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1477,7 +1477,7 @@
       "petType": "VARNOK_ACTION_FIGURE",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "2": "Damage received from monsters is reduced by 4%\nReduces Boss armor and resistance values by 2%",
         "3": "Damage received from monsters is reduced by 6%\nReduces Boss armor and resistance values by 4%",
         "4": "Damage received from monsters is reduced by 0%\nReduces Boss armor and resistance values by 0%",
@@ -1503,7 +1503,7 @@
       "petType": "BEARSERKER",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1525,7 +1525,7 @@
       "petType": "EVIL_EYE",
       "petUpgradeType": "NONE",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "6",
       "statsPerTier": {
@@ -1539,7 +1539,7 @@
       "petType": "TYKE_CLOPS",
       "petUpgradeType": "NONE",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "6": "Enables auto-pickup for Mystic Cubes"
       },
       "defaultTier": "6",
@@ -1552,7 +1552,7 @@
       "petType": "GREMLIN_SQUIRE",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1574,7 +1574,7 @@
       "petType": "GOLD_SQUIRE",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1600,7 +1600,7 @@
       "petType": "HEREDUR_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss armor and resistance values by 2%",
         "3": "Reduces Boss armor and resistance values by 5%",
         "4": "Reduces Boss armor and resistance values by 0%",
@@ -1622,7 +1622,7 @@
       "petType": "BEARACH_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1644,7 +1644,7 @@
       "petType": "MEDUSA_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1666,7 +1666,7 @@
       "petType": "PROFESSOR_JULLOV",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1692,7 +1692,7 @@
       "petType": "ARACHNA_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1714,7 +1714,7 @@
       "petType": "CYCLOPS_KID",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1740,7 +1740,7 @@
       "petType": "WINTER_GNOME",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1766,7 +1766,7 @@
       "petType": "NEFATARI_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "2": "+ 7.5% cricital value during boss fights",
         "3": "+ 10% cricital value during boss fights",
         "4": "+ 22.5% cricital value during boss fights",
@@ -1788,7 +1788,7 @@
       "petType": "ASAR_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces boss armor values by 3%",
         "3": "Reduces boss armor values by 8%",
         "4": "Reduces boss armor values by 0%",
@@ -1810,7 +1810,7 @@
       "petType": "BLOODMAGE_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss fire resistance by 7%",
         "3": "Reduces Boss fire resistance by 14%",
         "4": "Reduces Boss fire resistance by 0%",
@@ -1832,7 +1832,7 @@
       "petType": "KARABOSSA_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss ice resistance by 7%",
         "3": "Reduces Boss ice resistance by 14%",
         "4": "Reduces Boss ice resistance by 0%",
@@ -1854,7 +1854,7 @@
       "petType": "MAGOTINA_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss poison resistance by 7%",
         "3": "Reduces Boss poison resistance by 14%",
         "4": "Reduces Boss poison resistance by 0%",
@@ -1877,7 +1877,7 @@
       "petType": "NIAN_BEAST_DOLL",
       "petUpgradeType": "NONE",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "6": "Increased item drop from worthy bosses"
       },
       "defaultTier": "6",
@@ -1891,7 +1891,7 @@
       "petType": "DEATH_WINK",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1917,7 +1917,7 @@
       "petType": "DRAGAN_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1945,7 +1945,7 @@
       "petType": "MORTIS_AND_SKELEDRAGON_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -1971,7 +1971,7 @@
       "petType": "MORTIS_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2001,7 +2001,7 @@
       "petType": "SARGON_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2027,7 +2027,7 @@
       "petType": "UNLEASHED_SARGON_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2053,7 +2053,7 @@
       "petType": "CAKE_MEANIE",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2083,7 +2083,7 @@
       "petType": "CAKE_BOSS",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2113,7 +2113,7 @@
       "petType": "THE_DARK_NIGHTS_DEPENDENTS",
       "petUpgradeType": "NONE",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "6",
       "statsPerTier": {
@@ -2128,7 +2128,7 @@
       "petType": "THE_END_OF_DRAGAN_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss armor values by 4%",
         "3": "Reduces Boss armor values by 8%",
         "4": "Reduces Boss armor values by 12%",
@@ -2158,7 +2158,7 @@
       "petType": "THE_SOUL_OF_DRAGAN_DOLL",
       "petUpgradeType": "NORMAL",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2184,7 +2184,7 @@
       "petType": "GUARDIAN_OF_RAVENCAW",
       "petUpgradeType": "NONE",
       "petCategory": "TAMED_FOES",
-      "description": {
+      "descriptionPerTier": {
         "6": "There is a small chance that Guardian of Ravencaw will cough up a blood pearl hen you defeat monsters. There is a small chance that Guardian of Ravencaw will cough up a soul pearl as long as you are on one of the Dragan event maps."
       },
       "defaultTier": "6",
@@ -2197,7 +2197,7 @@
       "petType": "THE_MARVELLOUS_JULIO_BOBR",
       "petUpgradeType": "NONE",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "6",
       "statsPerTier": {
@@ -2212,7 +2212,7 @@
       "petType": "JULIO_BOBR",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2242,7 +2242,7 @@
       "petType": "COLORFUL_FIREFLY",
       "petUpgradeType": "NONE",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Enables auto-pickup for gems"
       },
       "defaultTier": "6",
@@ -2256,7 +2256,7 @@
       "petType": "GOLDEN_PHOENIX",
       "petUpgradeType": "NONE",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Pet will ressurect you if you die. Cooldown lasts for one hour."
       },
       "defaultTier": "6",
@@ -2269,7 +2269,7 @@
       "petType": "WINTER_SOLSTICE_ELF",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2295,7 +2295,7 @@
       "petType": "GOLD_FAIRY",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2321,7 +2321,7 @@
       "petType": "BLAZING_PHOENIX",
       "petUpgradeType": "NONE",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Pet will ressurect you if you die. Cooldown lasts one hour."
       },
       "defaultTier": "6",
@@ -2334,7 +2334,7 @@
       "petType": "FAIRY",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2356,7 +2356,7 @@
       "petType": "DAZZLING_FIREFLY",
       "petUpgradeType": "NONE",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "6",
       "statsPerTier": {
@@ -2369,7 +2369,7 @@
       "petType": "DILIGENT_GNOME",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2391,7 +2391,7 @@
       "petType": "TEMPEST_PHOENIX",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "1",
       "statsPerTier": {
@@ -2403,7 +2403,7 @@
       "petType": "SWAN_MAIDEN",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2425,7 +2425,7 @@
       "petType": "SWIFT_HARPY",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2447,7 +2447,7 @@
       "petType": "TREASURE_COLLECTOR",
       "petUpgradeType": "NONE",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Enables auto-pickup for gems"
       },
       "defaultTier": "6",
@@ -2460,7 +2460,7 @@
       "petType": "GLOOMY_HARPY_HP1",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2482,7 +2482,7 @@
       "petType": "GLOOMY_HARPY_HP2",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2504,7 +2504,7 @@
       "petType": "GLOOMY_HARPY_CRIT1",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2526,7 +2526,7 @@
       "petType": "GLOOMY_HARPY_CRIT2",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2548,7 +2548,7 @@
       "petType": "GLOOMY_HARPY_MS1",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2569,7 +2569,7 @@
       "petType": "GLOOMY_HARPY_MS2",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2591,7 +2591,7 @@
       "petType": "GLOOMY_HARPY_CRIT3",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2613,7 +2613,7 @@
       "petType": "GLOOMY_HARPY_CRIT4",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2635,7 +2635,7 @@
       "petType": "GLOOMY_HARPY_ARMOR1",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2657,7 +2657,7 @@
       "petType": "GLOOMY_HARPY_ARMOR2",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2679,7 +2679,7 @@
       "petType": "GLOOMY_HARPY_XP",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2701,7 +2701,7 @@
       "petType": "GLOOMY_HARPY_MSCITY1",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2723,7 +2723,7 @@
       "petType": "GLOOMY_HARPY_MSCITY2",
       "petUpgradeType": "NORMAL",
       "petCategory": "FREE_SPIRITS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2745,7 +2745,7 @@
       "petType": "BLACK_ESSENCE_SPROUT",
       "petUpgradeType": "NORMAL",
       "petCategory": "AUTOMATONS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2771,7 +2771,7 @@
       "petType": "WINTER_SNOWMAN",
       "petUpgradeType": "NONE",
       "petCategory": "AUTOMATONS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "3",
       "statsPerTier": {
@@ -2784,7 +2784,7 @@
       "petType": "SUPREME_SNOWMAN",
       "petUpgradeType": "NONE",
       "petCategory": "AUTOMATONS",
-      "description": {
+      "descriptionPerTier": {
         "5": "Enables auto-pickup for gems\nEnables auto-pickup for Rune\nEnables auto-pickup for Jewel"
       },
       "defaultTier": "5",
@@ -2798,7 +2798,7 @@
       "petType": "WHITE_ESSENCE_SPROUT",
       "petUpgradeType": "NORMAL",
       "petCategory": "AUTOMATONS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2820,7 +2820,7 @@
       "petType": "BOMB_BUDDY",
       "petUpgradeType": "NORMAL",
       "petCategory": "AUTOMATONS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2842,7 +2842,7 @@
       "petType": "GREEN_ESSENCE_SPROUT",
       "petUpgradeType": "NORMAL",
       "petCategory": "AUTOMATONS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2864,7 +2864,7 @@
       "petType": "BLUE_ESSENCE_SPROUT",
       "petUpgradeType": "NORMAL",
       "petCategory": "AUTOMATONS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2886,7 +2886,7 @@
       "petType": "PURPLE_ESSENCE_SPROUT",
       "petUpgradeType": "NORMAL",
       "petCategory": "AUTOMATONS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2908,7 +2908,7 @@
       "petType": "YELLOW_ESSENCE_SPROUT",
       "petUpgradeType": "NORMAL",
       "petCategory": "AUTOMATONS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2930,7 +2930,7 @@
       "petType": "RED_ESSENCE_SPROUT",
       "petUpgradeType": "NORMAL",
       "petCategory": "AUTOMATONS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2952,7 +2952,7 @@
       "petType": "WEE_VISCANIUM_GUARDIAN",
       "petUpgradeType": "NORMAL",
       "petCategory": "AUTOMATONS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -2974,7 +2974,7 @@
       "petType": "BRONZE_LUCKY_CAT",
       "petUpgradeType": "NORMAL",
       "petCategory": "LUCKY_CATS",
-      "description": {
+      "descriptionPerTier": {
         "5": "The higher the tier of the Travel Ration to the Smugglers' Hideout, the higher the chance to get the Silvered Lucky Cat from the Assimilated Smuggler"
       },
       "defaultTier": "5",
@@ -2997,7 +2997,7 @@
       "petType": "SILVERED_LUCKY_CAT",
       "petUpgradeType": "SILVERCAT",
       "petCategory": "LUCKY_CATS",
-      "description": {
+      "descriptionPerTier": {
         "5": "The higher the tier of the Travel Ration to the Smugglers' Hideout, the higher the chance to get the Gilded Lucky Cat from the Assimilated Smuggler"
       },
       "defaultTier": "5",
@@ -3020,7 +3020,7 @@
       "petType": "GILDED_LUCKY_CAT",
       "petUpgradeType": "GILDEDCAT",
       "petCategory": "LUCKY_CATS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3042,7 +3042,7 @@
       "petType": "SUNGLASSES_LUCKY_CAT",
       "petUpgradeType": "GILDEDCAT",
       "petCategory": "LUCKY_CATS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3064,7 +3064,7 @@
       "petType": "VIGOROUS_ENIGMATIC_HATCHLING",
       "petUpgradeType": "NORMAL",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3086,7 +3086,7 @@
       "petType": "GALLANT_ENIGMATIC_HATCHLING",
       "petUpgradeType": "NORMAL",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3108,7 +3108,7 @@
       "petType": "DETERMINED_ENIGMATIC_HATCHLING",
       "petUpgradeType": "NORMAL",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3130,7 +3130,7 @@
       "petType": "SWIFT_ENIGMATIC_HATCHLING",
       "petUpgradeType": "NORMAL",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3152,7 +3152,7 @@
       "petType": "FIERY_ENIGMATIC_HATCHLING",
       "petUpgradeType": "NORMAL",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3174,7 +3174,7 @@
       "petType": "COLD_HEARTED_ENIGMATIC_HATCHLING",
       "petUpgradeType": "NORMAL",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3196,7 +3196,7 @@
       "petType": "NOXIOUS_ENIGMATIC_HATCHLING",
       "petUpgradeType": "NORMAL",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3218,7 +3218,7 @@
       "petType": "THUNDEROUS_ENIGMATIC_HATCHLING",
       "petUpgradeType": "NORMAL",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3240,7 +3240,7 @@
       "petType": "SINISTER_ENIGMATIC_HATCHLING",
       "petUpgradeType": "NORMAL",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3262,7 +3262,7 @@
       "petType": "SPIKY_ENIGMATIC_HATCHLING",
       "petUpgradeType": "NORMAL",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3284,7 +3284,7 @@
       "petType": "BUNNY_HATCH",
       "petUpgradeType": "NORMAL",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
         "2": "When you are on low health, you regenerate 40% of your Health Points. Cooldown lasts for 10 minutes.",
         "3": "When you are on low health, you regenerate 50% of your Health Points. Cooldown lasts for 10 minutes.",
         "4": "When you are on low health, you regenerate 60% of your Health Points. Cooldown lasts for 10 minutes.",
@@ -3306,7 +3306,7 @@
       "petType": "CRACKED_COMPANION",
       "petUpgradeType": "NONE",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Pet will ressurect you if you die. Cooldown lasts for one hour."
       },
       "defaultTier": "6",
@@ -3320,7 +3320,7 @@
       "petType": "SUPER_THUMPER",
       "petUpgradeType": "NONE",
       "petCategory": "ENIGMATIC_HATCHLINGS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Reduces Boss armor and resistance values by 8%"
       },
       "defaultTier": "6",
@@ -3334,7 +3334,7 @@
       "petType": "AWOKEN_LION",
       "petUpgradeType": "NONE",
       "petCategory": "AWOKEN_LION",
-      "description": {
+      "descriptionPerTier": {
         "6": "Increased item drop worthy monsters"
       },
       "defaultTier": "6",
@@ -3348,7 +3348,7 @@
       "petType": "BLUE_AWOKEN_LION",
       "petUpgradeType": "NORMAL",
       "petCategory": "AWOKEN_LION",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3378,7 +3378,7 @@
       "petType": "BLACK_AWOKEN_LION",
       "petUpgradeType": "NORMAL",
       "petCategory": "AWOKEN_LION",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "5",
       "statsPerTier": {
@@ -3408,7 +3408,7 @@
       "petType": "KUNG_FU_LION",
       "petUpgradeType": "NONE",
       "petCategory": "AWOKEN_LION",
-      "description": {
+      "descriptionPerTier": {
       },
       "defaultTier": "6",
       "statsPerTier": {
@@ -3422,7 +3422,7 @@
       "petType": "BLOOD_CLAW_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss fire resistance values by 15%",
         "3": "Reduces Boss fire resistance values by 20%",
         "4": "Reduces Boss fire resistance values by 25%",
@@ -3448,7 +3448,7 @@
       "petType": "FIRE_CLAW_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss fire resistance values by 15%",
         "3": "Reduces Boss fire resistance values by 20%",
         "4": "Reduces Boss fire resistance values by 25%",
@@ -3474,7 +3474,7 @@
       "petType": "EVIL_CLAW_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss fire resistance values by 15%",
         "3": "Reduces Boss fire resistance values by 20%",
         "4": "Reduces Boss fire resistance values by 25%",
@@ -3500,7 +3500,7 @@
       "petType": "WILD_CLAW_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss fire resistance values by 15%",
         "3": "Reduces Boss fire resistance values by 20%",
         "4": "Reduces Boss fire resistance values by 25%",
@@ -3526,7 +3526,7 @@
       "petType": "WINTER_MAGIC_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss andermagic resistance values by 15%",
         "3": "Reduces Boss andermagic resistance values by 20%",
         "4": "Reduces Boss andermagic resistance values by 25%",
@@ -3552,7 +3552,7 @@
       "petType": "ABYSSAL_MAGIC_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss andermagic resistance values by 15%",
         "3": "Reduces Boss andermagic resistance values by 20%",
         "4": "Reduces Boss andermagic resistance values by 25%",
@@ -3578,7 +3578,7 @@
       "petType": "WILD_MAGIC_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss andermagic resistance values by 15%",
         "3": "Reduces Boss andermagic resistance values by 20%",
         "4": "Reduces Boss andermagic resistance values by 25%",
@@ -3604,7 +3604,7 @@
       "petType": "EMERALD_MAGIC_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss andermagic resistance values by 15%",
         "3": "Reduces Boss andermagic resistance values by 20%",
         "4": "Reduces Boss andermagic resistance values by 25%",
@@ -3630,7 +3630,7 @@
       "petType": "PRIMITIVE_SOUL_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss armor values by 8%",
         "3": "Reduces Boss armor values by 12%",
         "4": "Reduces Boss armor values by 16%",
@@ -3656,7 +3656,7 @@
       "petType": "LIGHTNING_SOUL_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss armor values by 8%",
         "3": "Reduces Boss armor values by 12%",
         "4": "Reduces Boss armor values by 16%",
@@ -3682,7 +3682,7 @@
       "petType": "EMERALD_SOUL_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss armor values by 8%",
         "3": "Reduces Boss armor values by 12%",
         "4": "Reduces Boss armor values by 16%",
@@ -3708,7 +3708,7 @@
       "petType": "CRYSTAL_SOUL_DRAGON",
       "petUpgradeType": "NORMAL",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "2": "Reduces Boss armor values by 8%",
         "3": "Reduces Boss armor values by 12%",
         "4": "Reduces Boss armor values by 16%",
@@ -3734,7 +3734,7 @@
       "petType": "CRYSTAL_WING",
       "petUpgradeType": "NONE",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Increased item drop from worthy monsters"
       },
       "defaultTier": "6",
@@ -3750,7 +3750,7 @@
       "petType": "WING_OF_STRENGTH",
       "petUpgradeType": "NONE",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Enables auto-pickup for gems"
       },
       "defaultTier": "6",
@@ -3764,7 +3764,7 @@
       "petType": "WING_OF_WISDOM",
       "petUpgradeType": "NONE",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Enables auto-pickup for Rune"
       },
       "defaultTier": "6",
@@ -3778,7 +3778,7 @@
       "petType": "WING_OF_MYSTERY",
       "petUpgradeType": "NONE",
       "petCategory": "ANCIENT_DRAGONS",
-      "description": {
+      "descriptionPerTier": {
         "6": "Enables auto-pickup for Jewel"
       },
       "defaultTier": "6",
