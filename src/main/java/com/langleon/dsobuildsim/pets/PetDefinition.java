@@ -7,6 +7,6 @@ import com.langleon.dsobuildsim.enums.pets.PetUpgradeType;
 
 import java.util.Map;
 
-public record PetDefinition(PetType petType, PetCategory petCategory, PetUpgradeType petUpgradeType, Map<Integer, Map<OverallRelativeBuffType, Double>> statsPerTier, String description)
+public record PetDefinition(PetType petType, PetCategory petCategory, PetUpgradeType petUpgradeType, int defaultTier, Map<Integer, Map<OverallRelativeBuffType, Double>> statsPerTier, Map<Integer, String> descriptionPerTier)
 {
 }

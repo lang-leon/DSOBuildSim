@@ -44,6 +44,6 @@ public class Pet {
             res.append("+ ").append(String.format("%.2f%%", entry.getValue() * 100)).append(" ").append(entry.getKey()).append("\n");
         }
         res.append(description);
-        return res.toString();
+        return res.toString().trim();
     }
 }

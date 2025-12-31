@@ -35,6 +35,15 @@ public class PetFactory {
         PetDefinition petDefinition = this.config.pets().get(petType);
         Map<OverallRelativeBuffType, Double> stats = petDefinition.statsPerTier().get(tier);
         if (stats == null) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
-        return new Pet(petType, petDefinition.petUpgradeType(), tier, stats, petDefinition.description());
+        return new Pet(petType, petDefinition.petUpgradeType(), tier, stats, petDefinition.descriptionPerTier().getOrDefault(tier, ""));
+    }
+
+    public Pet createPet(PetType petType)
+    {
+        PetDefinition petDefinition = this.config.pets().get(petType);
+        int tier = petDefinition.defaultTier();
+        Map<OverallRelativeBuffType, Double> stats = petDefinition.statsPerTier().get(tier);
+        if (stats == null) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
+        return new Pet(petType, petDefinition.petUpgradeType(), tier, stats, petDefinition.descriptionPerTier().getOrDefault(tier, ""));
     }
 }
