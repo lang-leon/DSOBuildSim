@@ -1,19 +1,19 @@
 package com.langleon.dsobuildsim.buffs;
 
-import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.StatType;
 
 public class Physic extends AbstractBuff{
 
-    OverallRelativeBuffType type;
+    StatType type;
     Double value;
 
-    public Physic(String name, OverallRelativeBuffType type, Double value){
+    public Physic(String name, StatType type, Double value){
         this.name = name;
         this.type =type;
         this.value = value;
     }
 
-    public OverallRelativeBuffType getType() {
+    public StatType getType() {
         return type;
     }
 

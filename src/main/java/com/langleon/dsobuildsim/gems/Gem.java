@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.gems;
 
-import com.langleon.dsobuildsim.enums.AbsoluteStatType;
+import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.gems.GemLimitGroup;
 import com.langleon.dsobuildsim.enums.gems.GemType;
 import com.langleon.dsobuildsim.enums.gems.GemUpgradeType;
@@ -8,7 +8,7 @@ import com.langleon.dsobuildsim.enums.gems.GemUpgradeType;
 import java.util.Map;
 
 public class Gem extends AbstractGem{
-    public Gem(GemType gemType, GemUpgradeType gemUpgradeType, GemLimitGroup gemLimitGroup, int tier, Map<AbsoluteStatType, Double> stats) {
+    public Gem(GemType gemType, GemUpgradeType gemUpgradeType, GemLimitGroup gemLimitGroup, int tier, Map<StatType, Double> stats) {
         super.gemType = gemType;
         super.gemUpgradeType = gemUpgradeType;
         super.gemLimitGroup = gemLimitGroup;

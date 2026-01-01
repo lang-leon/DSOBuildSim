@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.pets;
 
-import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.pets.PetType;
 import java.util.Map;
 
@@ -33,7 +33,7 @@ public class PetFactory {
     public Pet createPet(PetType petType, int tier)
     {
         PetDefinition petDefinition = this.config.pets().get(petType);
-        Map<OverallRelativeBuffType, Double> stats = petDefinition.statsPerTier().get(tier);
+        Map<StatType, Double> stats = petDefinition.statsPerTier().get(tier);
         if (stats == null) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
         return new Pet(petType, petDefinition.petUpgradeType(), tier, stats, petDefinition.descriptionPerTier().getOrDefault(tier, ""));
     }
@@ -42,7 +42,7 @@ public class PetFactory {
     {
         PetDefinition petDefinition = this.config.pets().get(petType);
         int tier = petDefinition.defaultTier();
-        Map<OverallRelativeBuffType, Double> stats = petDefinition.statsPerTier().get(tier);
+        Map<StatType, Double> stats = petDefinition.statsPerTier().get(tier);
         if (stats == null) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
         return new Pet(petType, petDefinition.petUpgradeType(), tier, stats, petDefinition.descriptionPerTier().getOrDefault(tier, ""));
     }

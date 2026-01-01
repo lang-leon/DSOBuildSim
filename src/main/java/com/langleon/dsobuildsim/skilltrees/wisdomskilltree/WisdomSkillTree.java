@@ -1,7 +1,6 @@
 package com.langleon.dsobuildsim.skilltrees.wisdomskilltree;
 
-import com.langleon.dsobuildsim.enums.AbsoluteStatType;
-import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.skilltrees.AbstractSkillTree;
 
 import java.util.HashMap;
@@ -326,32 +325,32 @@ public class WisdomSkillTree extends AbstractSkillTree {
         return currentlyUsedPoints;
     }
 
-    public Map<AbsoluteStatType, Double> getAbsoluteBuffs()
+    public Map<StatType, Double> getAbsoluteBuffs()
     {
-        Map<AbsoluteStatType, Double> absoluteBuffs = new HashMap<>();
-        absoluteBuffs.put(AbsoluteStatType.HEALTH_POINTS, this.healthResource.getSkill(1).getCurrentLevel()*this.healthResource.getSkill(1).getIncreasePerLevel());
-        absoluteBuffs.put(AbsoluteStatType.HEALTH_PER_SECOND, this.healthResource.getSkill(2).getCurrentLevel()*this.healthResource.getSkill(2).getIncreasePerLevel());
-        absoluteBuffs.put(AbsoluteStatType.MANA, this.healthResource.getSkill(3).getCurrentLevel()*this.healthResource.getSkill(3).getIncreasePerLevel());
+        Map<StatType, Double> absoluteBuffs = new HashMap<>();
+        absoluteBuffs.put(StatType.HEALTH_POINTS, this.healthResource.getSkill(1).getCurrentLevel()*this.healthResource.getSkill(1).getIncreasePerLevel());
+        absoluteBuffs.put(StatType.HEALTH_PER_SECOND, this.healthResource.getSkill(2).getCurrentLevel()*this.healthResource.getSkill(2).getIncreasePerLevel());
+        absoluteBuffs.put(StatType.MANA, this.healthResource.getSkill(3).getCurrentLevel()*this.healthResource.getSkill(3).getIncreasePerLevel());
 
-        absoluteBuffs.put(AbsoluteStatType.DAMAGE, this.attack.getSkill(1).getCurrentLevel()*this.attack.getSkill(1).getIncreasePerLevel());
-        absoluteBuffs.put(AbsoluteStatType.CRIT_VALUE, this.attack.getSkill(2).getCurrentLevel()*this.attack.getSkill(2).getIncreasePerLevel());
+        absoluteBuffs.put(StatType.DAMAGE, this.attack.getSkill(1).getCurrentLevel()*this.attack.getSkill(1).getIncreasePerLevel());
+        absoluteBuffs.put(StatType.CRIT_VALUE, this.attack.getSkill(2).getCurrentLevel()*this.attack.getSkill(2).getIncreasePerLevel());
 
-        absoluteBuffs.put(AbsoluteStatType.BLOCK_VALUE, this.defense.getSkill(1).getCurrentLevel()*this.defense.getSkill(1).getIncreasePerLevel());
-        absoluteBuffs.put(AbsoluteStatType.ARMOR_VALUE, this.defense.getSkill(2).getCurrentLevel()*this.defense.getSkill(2).getIncreasePerLevel());
-        absoluteBuffs.put(AbsoluteStatType.RESISTANCE_VALUE, this.defense.getSkill(3).getCurrentLevel()*this.defense.getSkill(3).getIncreasePerLevel());
+        absoluteBuffs.put(StatType.BLOCK_VALUE, this.defense.getSkill(1).getCurrentLevel()*this.defense.getSkill(1).getIncreasePerLevel());
+        absoluteBuffs.put(StatType.ARMOR_VALUE, this.defense.getSkill(2).getCurrentLevel()*this.defense.getSkill(2).getIncreasePerLevel());
+        absoluteBuffs.put(StatType.RESISTANCE_VALUE, this.defense.getSkill(3).getCurrentLevel()*this.defense.getSkill(3).getIncreasePerLevel());
 
-        absoluteBuffs.put(AbsoluteStatType.ONE_HAND_DAMAGE, this.oneHandedWeapon.getSkill(1).getCurrentLevel()*this.oneHandedWeapon.getSkill(1).getIncreasePerLevel());
-        absoluteBuffs.put(AbsoluteStatType.ONE_HAND_ATTACK_SPEED, this.oneHandedWeapon.getSkill(2).getCurrentLevel()*this.oneHandedWeapon.getSkill(2).getIncreasePerLevel());
+        absoluteBuffs.put(StatType.ONE_HAND_DAMAGE, this.oneHandedWeapon.getSkill(1).getCurrentLevel()*this.oneHandedWeapon.getSkill(1).getIncreasePerLevel());
+        absoluteBuffs.put(StatType.ONE_HAND_ATTACK_SPEED, this.oneHandedWeapon.getSkill(2).getCurrentLevel()*this.oneHandedWeapon.getSkill(2).getIncreasePerLevel());
 
-        absoluteBuffs.put(AbsoluteStatType.TWO_HAND_DAMAGE, this.twoHandedWeapon.getSkill(1).getCurrentLevel()*this.twoHandedWeapon.getSkill(1).getIncreasePerLevel());
-        absoluteBuffs.put(AbsoluteStatType.TWO_HAND_ATTACK_SPEED, this.twoHandedWeapon.getSkill(2).getCurrentLevel()*this.twoHandedWeapon.getSkill(2).getIncreasePerLevel());
+        absoluteBuffs.put(StatType.TWO_HAND_DAMAGE, this.twoHandedWeapon.getSkill(1).getCurrentLevel()*this.twoHandedWeapon.getSkill(1).getIncreasePerLevel());
+        absoluteBuffs.put(StatType.TWO_HAND_ATTACK_SPEED, this.twoHandedWeapon.getSkill(2).getCurrentLevel()*this.twoHandedWeapon.getSkill(2).getIncreasePerLevel());
 
         return absoluteBuffs;
     }
 
-    public Map<OverallRelativeBuffType, Double> getRelativeBuffs()
+    public Map<StatType, Double> getRelativeBuffs()
     {
         WisdomSkill coins = this.prosperity.getSkill(1);
-        return Map.of(OverallRelativeBuffType.COIN_DROP_BONUS, coins.getCurrentLevel()*coins.getIncreasePerLevel()+coins.getFirstLevelBoost());
+        return Map.of(StatType.COIN_DROP_BONUS, coins.getCurrentLevel()*coins.getIncreasePerLevel()+coins.getFirstLevelBoost());
     }
 }

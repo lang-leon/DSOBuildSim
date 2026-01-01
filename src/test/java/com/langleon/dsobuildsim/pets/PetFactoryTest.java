@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.pets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.pets.PetType;
 import com.langleon.dsobuildsim.enums.pets.PetUpgradeType;
 import org.junit.jupiter.api.Assertions;
@@ -30,7 +30,7 @@ public class PetFactoryTest {
         Pet pet = petFactory.createPet(PetType.MORTIS_DOLL, 3);
         Assertions.assertNotNull(pet);
         Assertions.assertEquals(3, pet.getTier());
-        Assertions.assertEquals(0.12, pet.getStats().get(OverallRelativeBuffType.DAMAGE));
+        Assertions.assertEquals(0.12, pet.getStats().get(StatType.DAMAGE));
         Assertions.assertEquals("+ 12,00% ATTACK_SPEED\n+ 12,00% MANA\n+ 12,00% DAMAGE", pet.getDescription());
     }
 
@@ -40,7 +40,7 @@ public class PetFactoryTest {
         Pet pet = petFactory.createPet(PetType.AWOKEN_LION);
         Assertions.assertNotNull(pet);
         Assertions.assertEquals(6, pet.getTier());
-        Assertions.assertEquals(0.2, pet.getStats().get(OverallRelativeBuffType.DAMAGE));
+        Assertions.assertEquals(0.2, pet.getStats().get(StatType.DAMAGE));
         Assertions.assertEquals("+ 20,00% DAMAGE\nIncreased item drop worthy monsters", pet.getDescription());
     }
 

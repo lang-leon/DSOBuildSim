@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.gems;
 
-import com.langleon.dsobuildsim.enums.AbsoluteStatType;
+import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.gems.GemLimitGroup;
 import com.langleon.dsobuildsim.enums.gems.GemType;
 import com.langleon.dsobuildsim.enums.gems.GemUpgradeType;
@@ -14,7 +14,7 @@ public abstract class AbstractGem {
     protected GemUpgradeType gemUpgradeType;
     protected GemLimitGroup gemLimitGroup;
     protected int tier;
-    protected Map<AbsoluteStatType, Double> stats;
+    protected Map<StatType, Double> stats;
 
     public GemType getGemType() {
         return gemType;
@@ -32,7 +32,7 @@ public abstract class AbstractGem {
         return gemLimitGroup;
     }
 
-    public Map<AbsoluteStatType, Double> getStats() {
+    public Map<StatType, Double> getStats() {
         return stats;
     }
 
@@ -68,7 +68,7 @@ public abstract class AbstractGem {
     public String toString() {
         String result = getDisplayName() + '\n' +
                 "Tier: " + tier +"\n";
-        for (Map.Entry<AbsoluteStatType, Double> entry : stats.entrySet())
+        for (Map.Entry<StatType, Double> entry : stats.entrySet())
         {
             result+= entry.getKey()+": "+entry.getValue()+"\n";
         }

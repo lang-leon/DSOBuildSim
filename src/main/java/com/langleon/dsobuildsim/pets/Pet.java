@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.pets;
 
-import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.pets.PetType;
 import com.langleon.dsobuildsim.enums.pets.PetUpgradeType;
 
@@ -10,10 +10,10 @@ public class Pet {
     private final PetType petType;
     private final PetUpgradeType petUpgradeType;
     private final int tier;
-    private final Map<OverallRelativeBuffType, Double> stats;
+    private final Map<StatType, Double> stats;
     private final String description;
 
-    public Pet(PetType petType, PetUpgradeType petUpgradeType, int tier, Map<OverallRelativeBuffType, Double> stats, String description) {
+    public Pet(PetType petType, PetUpgradeType petUpgradeType, int tier, Map<StatType, Double> stats, String description) {
         this.petType = petType;
         this.petUpgradeType = petUpgradeType;
         this.tier = tier;
@@ -33,13 +33,13 @@ public class Pet {
         return tier;
     }
 
-    public Map<OverallRelativeBuffType, Double> getStats() {
+    public Map<StatType, Double> getStats() {
         return stats;
     }
 
     public String getDescription() {
         StringBuilder res = new StringBuilder();
-        for (Map.Entry<OverallRelativeBuffType, Double> entry : this.stats.entrySet())
+        for (Map.Entry<StatType, Double> entry : this.stats.entrySet())
         {
             res.append("+ ").append(String.format("%.2f%%", entry.getValue() * 100)).append(" ").append(entry.getKey()).append("\n");
         }

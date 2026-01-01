@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.runes;
 
-import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.runes.RuneType;
 import com.langleon.dsobuildsim.enums.runes.RuneUpgradeType;
 
@@ -35,7 +35,7 @@ public class RuneFactory {
     public Rune createRune(RuneType runeType, int tier)
     {
         RuneDefinition runeDefinition = this.config.runes().get(runeType);
-        Map<OverallRelativeBuffType, Double> stats = runeDefinition.statsPerTier().get(tier);
+        Map<StatType, Double> stats = runeDefinition.statsPerTier().get(tier);
         if (stats == null) throw new IllegalArgumentException("Invalid rune tier: " + tier + "!");
         return new Rune(runeType, runeDefinition.runeUpgradeType(), runeDefinition.runeLimitGroup(), tier, stats, runeDefinition.description());
     }
