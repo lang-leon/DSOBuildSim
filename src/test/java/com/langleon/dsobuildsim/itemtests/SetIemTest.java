@@ -19,10 +19,10 @@ import java.util.Map;
 
 public class SetIemTest {
     public static void main(String[] args) throws IOException {
-        Map<AbsoluteStatType, Double> basestats = new HashMap<>();
-        basestats.put(AbsoluteStatType.DAMAGE, 1644.883);
-        basestats.put(AbsoluteStatType.CRIT_VALUE, 1401.911);
-        basestats.put(AbsoluteStatType.HEALTH_POINTS, 20637.978);
+        Map<StatType, Double> basestats = new HashMap<>();
+        basestats.put(StatType.DAMAGE, 1644.883);
+        basestats.put(StatType.CRIT_VALUE, 1401.911);
+        basestats.put(StatType.HEALTH_POINTS, 20637.978);
         SetItem setItem = new SetItem("Helmet of the Black Knight", CharacterClass.SPELLWEAVER, ItemType.HELMET, basestats, 145, SpellweaverSets.SET1);
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -48,8 +48,8 @@ public class SetIemTest {
         setItem.addEnchant(enchant);
         setItem.addEnchant(enchant);
 
-        Map<AbsoluteStatType, Double> totalStats = setItem.calculateTotalStats();
-        for (AbsoluteStatType entry : totalStats.keySet()){
+        Map<StatType, Double> totalStats = setItem.calculateTotalStats();
+        for (StatType entry : totalStats.keySet()){
             System.out.println(entry + " : " + totalStats.get(entry));
         }
     }

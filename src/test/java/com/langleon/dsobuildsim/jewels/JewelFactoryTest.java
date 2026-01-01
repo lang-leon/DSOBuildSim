@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.jewels;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.jewels.JewelType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,9 +30,9 @@ public class JewelFactoryTest {
         Assertions.assertNotNull(jewel);
         Assertions.assertEquals(5, jewel.getTier());
         Assertions.assertEquals(JewelType.VIGOR, jewel.getJewelType());
-        Assertions.assertTrue(jewel.getStats().containsKey(OverallRelativeBuffType.DAMAGE));
+        Assertions.assertTrue(jewel.getStats().containsKey(StatType.DAMAGE));
         Assertions.assertEquals(1, jewel.getStats().size());
-        Assertions.assertEquals(0.1, jewel.getStats().get(OverallRelativeBuffType.DAMAGE));
+        Assertions.assertEquals(0.1, jewel.getStats().get(StatType.DAMAGE));
     }
 
     @Test
