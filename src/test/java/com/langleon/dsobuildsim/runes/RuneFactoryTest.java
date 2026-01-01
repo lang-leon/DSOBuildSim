@@ -33,9 +33,9 @@ class RuneFactoryTest {
         Assertions.assertNotNull(rune);
         Assertions.assertEquals(5, rune.getTier());
         Assertions.assertEquals(RuneType.VIGOR, rune.getRuneType());
-        Assertions.assertTrue(rune.getStats().containsKey(OverallRelativeBuffType.DAMAGE));
+        Assertions.assertTrue(rune.getStats().containsKey(StatType.DAMAGE));
         Assertions.assertEquals(1, rune.getStats().size());
-        Assertions.assertEquals(0.065, rune.getStats().get(OverallRelativeBuffType.DAMAGE));
+        Assertions.assertEquals(0.065, rune.getStats().get(StatType.DAMAGE));
     }
 
     @Test
@@ -45,9 +45,9 @@ class RuneFactoryTest {
         Assertions.assertNotNull(rune);
         Assertions.assertEquals(4, rune.getTier());
         Assertions.assertEquals(RuneType.FIRE_RESILIENCE, rune.getRuneType());
-        Assertions.assertTrue(rune.getStats().containsKey(OverallRelativeBuffType.FIRE_RESISTANCE));
+        Assertions.assertTrue(rune.getStats().containsKey(StatType.FIRE_RESISTANCE));
         Assertions.assertEquals(1, rune.getStats().size());
-        Assertions.assertEquals(0.052, rune.getStats().get(OverallRelativeBuffType.FIRE_RESISTANCE));
+        Assertions.assertEquals(0.052, rune.getStats().get(StatType.FIRE_RESISTANCE));
         Assertions.assertEquals(RuneLimitGroup.RESILIENCE, rune.getRuneLimitGroup());
     }
 

@@ -18,64 +18,64 @@ public class RealMageTest {
 
         AbstractItem amulet = SpellweaverUniqueItems.AMULET_OF_THE_KRAKEN.getItem();
         amulet.setEnchants(EnchantType.HEALTH_POINTS);
-        amulet.setGems(AbsoluteStatType.HEALTH_POINTS);
+        amulet.setGems(StatType.HEALTH_POINTS);
         mage.addItem(amulet, ItemSlot.AMULET);
 
         AbstractItem cloak = SpellweaverMythicItem.ANCESTRAL_GLORY_CLOAK.getItem();
         cloak.setEnchants(EnchantType.DAMAGE);
-        cloak.setGems(AbsoluteStatType.DAMAGE);
+        cloak.setGems(StatType.DAMAGE);
         mage.addItem(cloak, ItemSlot.CLOAK);
 
         AbstractItem belt = SpellweaverUniqueItems.BELT_OF_ZEAL.getItem();
         belt.setEnchants(EnchantType.DAMAGE);
-        belt.setGems(AbsoluteStatType.DAMAGE);
+        belt.setGems(StatType.DAMAGE);
         mage.addItem(belt, ItemSlot.BELT);
 
         AbstractItem ring1 = SpellweaverMythicItem.RING_OF_ANCESTRAL_GLORY.getItem();
         ring1.setEnchants(EnchantType.DAMAGE);
-        ring1.setGems(AbsoluteStatType.DAMAGE);
+        ring1.setGems(StatType.DAMAGE);
         mage.addItem(ring1, ItemSlot.RING1);
 
         AbstractItem ring2 = SpellweaverMythicItem.RING_OF_ANCESTRAL_GLORY.getItem();
         ring2.setEnchants(EnchantType.DAMAGE);
-        Opal opal = new Opal(new Gem(AbsoluteStatType.CRIT_VALUE, 2520.0), new Gem(AbsoluteStatType.DAMAGE, 700.0), new Gem(AbsoluteStatType.MOVEMENT_SPEED, 0.17));
+        Opal opal = new Opal(new Gem(StatType.CRIT_VALUE, 2520.0), new Gem(StatType.DAMAGE, 700.0), new Gem(StatType.MOVEMENT_SPEED, 0.17));
         ring2.addGems(opal, 10);
         mage.addItem(ring2, ItemSlot.RING2);
 
         AbstractItem helmet = SpellweaverSetItems.SARGONS_HORNS.getItem();
         helmet.setEnchants(EnchantType.HEALTH_POINTS);
-        helmet.setGems(AbsoluteStatType.HEALTH_POINTS);
+        helmet.setGems(StatType.HEALTH_POINTS);
         mage.addItem(helmet, ItemSlot.HELMET);
 
         AbstractItem shoulders = SpellweaverSetItems.SARGONS_PAULDRONS.getItem();
         shoulders.setEnchants(EnchantType.DAMAGE);
-        shoulders.setGems(AbsoluteStatType.CRIT_VALUE);
+        shoulders.setGems(StatType.CRIT_VALUE);
         mage.addItem(shoulders, ItemSlot.SHOULDERS);
 
         AbstractItem torso = SpellweaverSetItems.SARGONS_TORSO.getItem();
         torso.setEnchants(EnchantType.HEALTH_POINTS);
-        torso.setGems(AbsoluteStatType.HEALTH_POINTS);
+        torso.setGems(StatType.HEALTH_POINTS);
         mage.addItem(torso, ItemSlot.TORSO);
 
         AbstractItem gloves = SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_GLOVES.getItem();
         gloves.setEnchants(EnchantType.DAMAGE);
-        gloves.setGems(AbsoluteStatType.CRIT_VALUE);
+        gloves.setGems(StatType.CRIT_VALUE);
         mage.addItem(gloves, ItemSlot.GLOVES);
 
         AbstractItem boots = SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_BOOTS.getItem();
         boots.setEnchants(EnchantType.DAMAGE);
-        boots.addGems(AbsoluteStatType.CRIT_VALUE, 8);
-        boots.addGems(AbsoluteStatType.MOVEMENT_SPEED, 2);
+        boots.addGems(StatType.CRIT_VALUE, 8);
+        boots.addGems(StatType.MOVEMENT_SPEED, 2);
         mage.addItem(boots, ItemSlot.BOOTS);
 
         AbstractItem adornment = SpellweaverUniqueItems.SIGRISMARRS_ETERNAL_GRASP.getItem();
         adornment.setEnchants(EnchantType.DAMAGE);
-        adornment.setGems(AbsoluteStatType.DAMAGE);
+        adornment.setGems(StatType.DAMAGE);
         mage.addItem(adornment, ItemSlot.WEAPON_ADORNMENT);
 
         AbstractItem twoHand = SpellweaverUniqueItems.GRIMACE_OF_THE_THUNDER_BEAST.getItem();
         twoHand.setEnchants(EnchantType.DAMAGE);
-        twoHand.setGems(AbsoluteStatType.DAMAGE);
+        twoHand.setGems(StatType.DAMAGE);
         mage.addItem(twoHand, ItemSlot.TWO_HAND_WEAPON);
 
 
@@ -218,7 +218,7 @@ public class RealMageTest {
         mage.setPet(mortisPet);
         mage.setCollectorBagBuff(Map.of(OverallRelativeBuffType.HEALTH_POINTS, 0.33, OverallRelativeBuffType.RESISTANCE, 0.15, OverallRelativeBuffType.DAMAGE, 0.06, OverallRelativeBuffType.BLOCK_VALUE, 0.02));
 
-        Tonic tonic = new Tonic("Tonic of Vigor", AbsoluteStatType.HEALTH_POINTS, 156068.0);
+        Tonic tonic = new Tonic("Tonic of Vigor", StatType.HEALTH_POINTS, 156068.0);
         //mage.setTonic(tonic);
         Physic physic = new Physic("Advanced Physic of Vigor", OverallRelativeBuffType.HEALTH_POINTS, 0.18);
         //mage.setPhysic(physic);
@@ -230,22 +230,22 @@ public class RealMageTest {
 
     public static void printStats(Character character)
     {
-        Map<AbsoluteStatType, Double> stats = character.getCharacterFinalStats();
+        Map<StatType, Double> stats = character.getCharacterFinalStats();
         System.out.println("Character: " + character.getName());
-        System.out.printf(AbsoluteStatType.DAMAGE + ": %.2f%n", stats.get(AbsoluteStatType.DAMAGE));
-        System.out.printf(AbsoluteStatType.ATTACK_SPEED + ": %.2f%n", stats.get(AbsoluteStatType.ATTACK_SPEED));
-        System.out.printf(AbsoluteStatType.CRIT_VALUE + ": %.2f%n", stats.get(AbsoluteStatType.CRIT_VALUE));
-        System.out.printf(AbsoluteStatType.MANA + ": %.2f%n", stats.get(AbsoluteStatType.MANA));
-        System.out.printf(AbsoluteStatType.MANA_PER_SECOND + ": %.2f%n", stats.get(AbsoluteStatType.MANA_PER_SECOND));
-        System.out.printf(AbsoluteStatType.MOVEMENT_SPEED + ": %.2f%n", stats.get(AbsoluteStatType.MOVEMENT_SPEED));
-        System.out.printf(AbsoluteStatType.HEALTH_POINTS + ": %.2f%n", stats.get(AbsoluteStatType.HEALTH_POINTS));
-        System.out.printf(AbsoluteStatType.HEALTH_PER_SECOND + ": %.2f%n", stats.get(AbsoluteStatType.HEALTH_PER_SECOND));
-        System.out.printf(AbsoluteStatType.BLOCK_VALUE + ": %.2f%n", stats.get(AbsoluteStatType.BLOCK_VALUE));
-        System.out.printf(AbsoluteStatType.ARMOR_VALUE + ": %.2f%n", stats.get(AbsoluteStatType.ARMOR_VALUE));
-        System.out.printf(AbsoluteStatType.FIRE_RESISTANCE + ": %.2f%n", stats.get(AbsoluteStatType.FIRE_RESISTANCE));
-        System.out.printf(AbsoluteStatType.ICE_RESISTANCE + ": %.2f%n", stats.get(AbsoluteStatType.ICE_RESISTANCE));
-        System.out.printf(AbsoluteStatType.LIGHTNING_RESISTANCE + ": %.2f%n", stats.get(AbsoluteStatType.LIGHTNING_RESISTANCE));
-        System.out.printf(AbsoluteStatType.ANDERMAGIC_RESISTANCE + ": %.2f%n", stats.get(AbsoluteStatType.ANDERMAGIC_RESISTANCE));
-        System.out.printf(AbsoluteStatType.POISON_RESISTANCE + ": %.2f%n", stats.get(AbsoluteStatType.POISON_RESISTANCE));
+        System.out.printf(StatType.DAMAGE + ": %.2f%n", stats.get(StatType.DAMAGE));
+        System.out.printf(StatType.ATTACK_SPEED + ": %.2f%n", stats.get(StatType.ATTACK_SPEED));
+        System.out.printf(StatType.CRIT_VALUE + ": %.2f%n", stats.get(StatType.CRIT_VALUE));
+        System.out.printf(StatType.MANA + ": %.2f%n", stats.get(StatType.MANA));
+        System.out.printf(StatType.MANA_PER_SECOND + ": %.2f%n", stats.get(StatType.MANA_PER_SECOND));
+        System.out.printf(StatType.MOVEMENT_SPEED + ": %.2f%n", stats.get(StatType.MOVEMENT_SPEED));
+        System.out.printf(StatType.HEALTH_POINTS + ": %.2f%n", stats.get(StatType.HEALTH_POINTS));
+        System.out.printf(StatType.HEALTH_PER_SECOND + ": %.2f%n", stats.get(StatType.HEALTH_PER_SECOND));
+        System.out.printf(StatType.BLOCK_VALUE + ": %.2f%n", stats.get(StatType.BLOCK_VALUE));
+        System.out.printf(StatType.ARMOR_VALUE + ": %.2f%n", stats.get(StatType.ARMOR_VALUE));
+        System.out.printf(StatType.FIRE_RESISTANCE + ": %.2f%n", stats.get(StatType.FIRE_RESISTANCE));
+        System.out.printf(StatType.ICE_RESISTANCE + ": %.2f%n", stats.get(StatType.ICE_RESISTANCE));
+        System.out.printf(StatType.LIGHTNING_RESISTANCE + ": %.2f%n", stats.get(StatType.LIGHTNING_RESISTANCE));
+        System.out.printf(StatType.ANDERMAGIC_RESISTANCE + ": %.2f%n", stats.get(StatType.ANDERMAGIC_RESISTANCE));
+        System.out.printf(StatType.POISON_RESISTANCE + ": %.2f%n", stats.get(StatType.POISON_RESISTANCE));
     }
 }

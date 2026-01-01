@@ -1,18 +1,18 @@
 package com.langleon.dsobuildsim.overallbuffs;
 
-import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.StatType;
 
 public class OverallRelativeBuff extends OverallBuff{
 
-    private final OverallRelativeBuffType type;
+    private final StatType type;
     private final Double value;
 
-    public OverallRelativeBuff(OverallRelativeBuffType type, Double value) {
+    public OverallRelativeBuff(StatType type, Double value) {
         this.type = type;
         this.value = value;
     }
 
-    public OverallRelativeBuffType getType() {
+    public StatType getType() {
         return type;
     }
 

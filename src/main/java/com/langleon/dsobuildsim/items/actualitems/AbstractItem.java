@@ -1,10 +1,10 @@
 package com.langleon.dsobuildsim.items.actualitems;
 
 import com.langleon.dsobuildsim.enchantments.Enchant;
-import com.langleon.dsobuildsim.enums.AbsoluteStatType;
 import com.langleon.dsobuildsim.enums.CharacterClass;
 import com.langleon.dsobuildsim.enums.EnchantType;
 import com.langleon.dsobuildsim.enums.ItemType;
+import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.Gem;
 
@@ -15,7 +15,7 @@ import java.util.Map;
 public abstract class AbstractItem {
     protected String name;
     protected ItemType itemType;
-    protected Map<AbsoluteStatType, Double> baseStats;
+    protected Map<StatType, Double> baseStats;
     protected List<Enchant> enchants;
     protected List<AbstractGem> gems;
     protected int itemLevel;
@@ -31,12 +31,12 @@ public abstract class AbstractItem {
         return this.itemType;
     }
 
-    public Map<AbsoluteStatType, Double> getBaseStats()
+    public Map<StatType, Double> getBaseStats()
     {
         return baseStats;
     }
 
-    public void setBaseStats(Map<AbsoluteStatType, Double> baseStats)
+    public void setBaseStats(Map<StatType, Double> baseStats)
     {
         this.baseStats = baseStats;
     }
@@ -76,11 +76,11 @@ public abstract class AbstractItem {
         this.gems.remove(gem);
     }
 
-    public Map<AbsoluteStatType, Double> calculateGemStats()
+    public Map<StatType, Double> calculateGemStats()
     {
-        Map<AbsoluteStatType, Double> stats = new HashMap<>();
+        Map<StatType, Double> stats = new HashMap<>();
         for (AbstractGem gem : this.getGems()){
-            for (Map.Entry<AbsoluteStatType, Double> stat : gem.getStats().entrySet())
+            for (Map.Entry<StatType, Double> stat : gem.getStats().entrySet())
             {
                 if (stats.containsKey(stat.getKey())){
                     Double gemValue = stat.getValue();
@@ -144,5 +144,5 @@ public abstract class AbstractItem {
         return characterClass;
     }
 
-    public abstract Map<AbsoluteStatType, Double> calculateTotalStats();
+    public abstract Map<StatType, Double> calculateTotalStats();
 }

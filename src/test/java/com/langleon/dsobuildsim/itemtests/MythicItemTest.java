@@ -24,15 +24,15 @@ import java.util.Map;
 
 public class MythicItemTest {
     public static void main(String[] args) throws IOException {
-        Map<AbsoluteStatType, Double> baseStats = new HashMap<>();
-        baseStats.put(AbsoluteStatType.DAMAGE, 1891.513);
-        baseStats.put(AbsoluteStatType.ATTACK_SPEED, 0.06);
-        baseStats.put(AbsoluteStatType.HEALTH_POINTS, 16507.200);
-        Map<AbsoluteStatType, Double> uniqueBaseStats = new HashMap<>();
+        Map<StatType, Double> baseStats = new HashMap<>();
+        baseStats.put(StatType.DAMAGE, 1891.513);
+        baseStats.put(StatType.ATTACK_SPEED, 0.06);
+        baseStats.put(StatType.HEALTH_POINTS, 16507.200);
+        Map<StatType, Double> uniqueBaseStats = new HashMap<>();
         List<UniqueEnchant> uniqueEnchants = new ArrayList<>();
         List<OverallBuff> overallBuffs = new ArrayList<>();
-        overallBuffs.add(new OverallRelativeBuff(OverallRelativeBuffType.DAMAGE, 0.1));
-        overallBuffs.add(new OverallAbsolutBuff(AbsoluteStatType.DAMAGE, 5000.0));
+        overallBuffs.add(new OverallRelativeBuff(StatType.DAMAGE, 0.1));
+        overallBuffs.add(new OverallAbsolutBuff(StatType.DAMAGE, 5000.0));
 
         MythicItem mythicItem = new MythicItem("Ancestral Glory Cloak (Mage)", CharacterClass.SPELLWEAVER, ItemType.CLOAK, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, 145, SpellweaverSets.SET1);
 
@@ -59,8 +59,8 @@ public class MythicItemTest {
         mythicItem.addEnchant(enchant);
         mythicItem.addEnchant(enchant);
 
-        Map<AbsoluteStatType, Double> totalStats = mythicItem.calculateTotalStats();
-        for (AbsoluteStatType entry : totalStats.keySet()){
+        Map<StatType, Double> totalStats = mythicItem.calculateTotalStats();
+        for (StatType entry : totalStats.keySet()){
             System.out.println(entry + " : " + totalStats.get(entry));
         }
     }
