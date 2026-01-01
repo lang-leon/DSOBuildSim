@@ -1781,7 +1781,7 @@ public class Character {
         //pet, collector bag
         if (this.pet != null)
         {
-            for (Map.Entry<OverallRelativeBuffType, Double> entry : this.pet.getEffects().entrySet())
+            for (Map.Entry<OverallRelativeBuffType, Double> entry : this.pet.getStats().entrySet())
             {
                 this.characterRelativeBuffs.put(entry.getKey(), this.characterRelativeBuffs.get(entry.getKey())+entry.getValue());
             }
