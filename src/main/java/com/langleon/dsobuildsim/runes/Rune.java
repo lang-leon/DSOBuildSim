@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.runes;
 
-import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.runes.RuneLimitGroup;
 import com.langleon.dsobuildsim.enums.runes.RuneType;
 import com.langleon.dsobuildsim.enums.runes.RuneUpgradeType;
@@ -12,10 +12,10 @@ public class Rune{
     private final RuneUpgradeType runeUpgradeType;
     private final RuneLimitGroup runeLimitGroup;
     private final int tier;
-    private final Map<OverallRelativeBuffType, Double> stats;
+    private final Map<StatType, Double> stats;
     private final String description;
 
-    public Rune(RuneType runeType, RuneUpgradeType runeUpgradeType, RuneLimitGroup runeLimitGroup, int tier, Map<OverallRelativeBuffType, Double> stats, String description) {
+    public Rune(RuneType runeType, RuneUpgradeType runeUpgradeType, RuneLimitGroup runeLimitGroup, int tier, Map<StatType, Double> stats, String description) {
         this.runeType = runeType;
         this.runeUpgradeType = runeUpgradeType;
         this.runeLimitGroup = runeLimitGroup;
@@ -57,7 +57,7 @@ public class Rune{
         return tier;
     }
 
-    public Map<OverallRelativeBuffType, Double> getStats() {
+    public Map<StatType, Double> getStats() {
         return stats;
     }
 

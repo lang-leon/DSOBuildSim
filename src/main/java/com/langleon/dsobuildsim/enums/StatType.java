@@ -1,10 +1,10 @@
 package com.langleon.dsobuildsim.enums;
 
-public enum OverallRelativeBuffType {
+public enum StatType {
     ANCIENT_WISDOM_DROP_BONUS("Ancient Wisdom Drop Bonus"),
     ANDERMAGIC_RESISTANCE("Andermagic Resistance"),
     ANDERMANT_DROP_BONUS("Andermant Drop Bonus"),
-    ARMOR("Armor Value"),
+    ARMOR_VALUE("Armor Value"),
     ATTACK_SPEED("Attack Speed"),
     BLOCK_VALUE("Block Value"),
     CITY_MOVEMENT_SPEED("Movement Speed (only in the Urban Area"),
@@ -22,17 +22,19 @@ public enum OverallRelativeBuffType {
     MANA_PER_SECOND("Mana Points per Second"),
     MATERI_FRAGMENT_DROP_BONUS("Materi Fragment Drop Bonus"),
     MOVEMENT_SPEED("Movement Speed"),
+    ONE_HAND_ATTACK_SPEED("One Hand Attack Speed"),
     ONE_HAND_DAMAGE("One Hand Damage"),
     POISON_RESISTANCE("Poison Resistance"),
-    RESISTANCE("All Resistance Values"),
+    RESISTANCE_VALUE("All Resistance Values"),
     SELL_PRICE("Sell price"),
+    TWO_HAND_ATTACK_SPEED("Two Hand Attack Speed"),
     TWO_HAND_DAMAGE("Two Hand Damage"),
     XP_GAIN("XP Gain");
 
 
     private final String description;
 
-    OverallRelativeBuffType(String description){
+    StatType(String description){
         this.description = description;
     }
 

@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.jewels;
 
 import com.langleon.dsobuildsim.enums.jewels.JewelType;
-import com.langleon.dsobuildsim.enums.OverallRelativeBuffType;
+import com.langleon.dsobuildsim.enums.StatType;
 
 import java.util.Map;
 
@@ -9,9 +9,9 @@ public class Jewel {
     private final int tier;
     private final JewelType jewelType;
     private final String description;
-    private final Map<OverallRelativeBuffType, Double> stats;
+    private final Map<StatType, Double> stats;
 
-    public Jewel(JewelType jewelType, int tier, Map<OverallRelativeBuffType, Double> stats, String description) {
+    public Jewel(JewelType jewelType, int tier, Map<StatType, Double> stats, String description) {
         this.tier = tier;
         this.jewelType = jewelType;
         this.description = description;
@@ -47,7 +47,7 @@ public class Jewel {
         return description;
     }
 
-    public Map<OverallRelativeBuffType, Double> getStats() {
+    public Map<StatType, Double> getStats() {
         return stats;
     }
 }

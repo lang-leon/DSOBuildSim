@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.gems;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.enums.AbsoluteStatType;
+import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.gems.GemLimitGroup;
 import com.langleon.dsobuildsim.enums.gems.GemType;
 import com.langleon.dsobuildsim.enums.gems.GemUpgradeType;
@@ -33,9 +33,9 @@ class GemFactoryTest {
         Assertions.assertNotNull(gem);
         Assertions.assertEquals(5, gem.getTier());
         Assertions.assertEquals(GemType.RUBY, gem.getGemType());
-        Assertions.assertTrue(gem.getStats().containsKey(AbsoluteStatType.DAMAGE));
+        Assertions.assertTrue(gem.getStats().containsKey(StatType.DAMAGE));
         Assertions.assertEquals(1, gem.getStats().size());
-        Assertions.assertEquals(15, gem.getStats().get(AbsoluteStatType.DAMAGE));
+        Assertions.assertEquals(15, gem.getStats().get(StatType.DAMAGE));
         Assertions.assertEquals(GemLimitGroup.RUBY, gem.getGemLimitGroup());
     }
 
@@ -62,11 +62,11 @@ class GemFactoryTest {
         Assertions.assertNotNull(opal);
         Assertions.assertEquals(10, opal.getTier());
         Assertions.assertEquals(GemType.OPAL, opal.getGemType());
-        Assertions.assertTrue(opal.getStats().containsKey(AbsoluteStatType.DAMAGE));
+        Assertions.assertTrue(opal.getStats().containsKey(StatType.DAMAGE));
         Assertions.assertEquals(3, opal.getStats().size());
-        Assertions.assertEquals(84.75, opal.getStats().get(AbsoluteStatType.DAMAGE), 1e-6);
-        Assertions.assertEquals(562.5, opal.getStats().get(AbsoluteStatType.CRIT_VALUE), 1e-6);
-        Assertions.assertEquals(0.075, opal.getStats().get(AbsoluteStatType.MOVEMENT_SPEED), 1e-6);
+        Assertions.assertEquals(84.75, opal.getStats().get(StatType.DAMAGE), 1e-6);
+        Assertions.assertEquals(562.5, opal.getStats().get(StatType.CRIT_VALUE), 1e-6);
+        Assertions.assertEquals(0.075, opal.getStats().get(StatType.MOVEMENT_SPEED), 1e-6);
     }
 
     @Test

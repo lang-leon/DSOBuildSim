@@ -21,16 +21,16 @@ import java.util.Map;
 
 public class UniqueItemTest {
     public static void main(String[] args) throws IOException {
-        Map<AbsoluteStatType, Double> baseStats = new HashMap<>();
-        baseStats.put(AbsoluteStatType.DAMAGE, 1463.431);
-        baseStats.put(AbsoluteStatType.CRIT_VALUE, 1217.356);
-        baseStats.put(AbsoluteStatType.MOVEMENT_SPEED, 1.172);
-        Map<AbsoluteStatType, Double> uniqueBaseStats = new HashMap<>();
-        uniqueBaseStats.put(AbsoluteStatType.ARMOR_VALUE, 1337.0);
+        Map<StatType, Double> baseStats = new HashMap<>();
+        baseStats.put(StatType.DAMAGE, 1463.431);
+        baseStats.put(StatType.CRIT_VALUE, 1217.356);
+        baseStats.put(StatType.MOVEMENT_SPEED, 1.172);
+        Map<StatType, Double> uniqueBaseStats = new HashMap<>();
+        uniqueBaseStats.put(StatType.ARMOR_VALUE, 1337.0);
         List<UniqueEnchant> uniqueEnchants = new ArrayList<>();
         uniqueEnchants.add(new UniqueEnchant(EnchantType.MOVEMENT_SPEED, 0.25558));
         List< OverallBuff > overallBuffs = new ArrayList<>();
-        overallBuffs.add(new OverallRelativeBuff(OverallRelativeBuffType.CRIT_VALUE, 0.1));
+        overallBuffs.add(new OverallRelativeBuff(StatType.CRIT_VALUE, 0.1));
 
         UniqueItem uniqueItem = new UniqueItem("Researcher's Boots", CharacterClass.SPELLWEAVER, ItemType.BOOTS, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, 145);
 
@@ -62,8 +62,8 @@ public class UniqueItemTest {
         uniqueItem.addEnchant(enchant3);
         uniqueItem.addEnchant(enchant4);
 
-        Map<AbsoluteStatType, Double> totalStats = uniqueItem.calculateTotalStats();
-        for (AbsoluteStatType entry : totalStats.keySet()){
+        Map<StatType, Double> totalStats = uniqueItem.calculateTotalStats();
+        for (StatType entry : totalStats.keySet()){
             System.out.println(entry + " : " + totalStats.get(entry));
         }
     }
