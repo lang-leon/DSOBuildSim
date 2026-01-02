@@ -17,19 +17,24 @@ public enum EnchantType {
     RESISTANCE("All Resistance Values", 0.27489);
 
 
-    private final String description;
+    private final String name;
     private final Double maxValue;
 
     EnchantType(String description, Double maxValue){
-        this.description = description;
+        this.name = description;
         this.maxValue = maxValue;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
     public Double getMaxValue() {
         return maxValue;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

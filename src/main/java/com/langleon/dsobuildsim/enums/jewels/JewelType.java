@@ -51,4 +51,9 @@ public enum JewelType {
     public int getLimit() {
         return limit;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
