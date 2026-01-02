@@ -598,19 +598,19 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "ARMOR": 0.01,
+          "ARMOR_VALUE": 0.01,
           "HEALTH_POINTS": 0.06
         },
         "3": {
-          "ARMOR": 0.04,
+          "ARMOR_VALUE": 0.04,
           "HEALTH_POINTS": 0.09
         },
         "4": {
-          "ARMOR": 0.00,
+          "ARMOR_VALUE": 0.00,
           "HEALTH_POINTS": 0.00
         },
         "5": {
-          "ARMOR": 0.1,
+          "ARMOR_VALUE": 0.1,
           "HEALTH_POINTS": 0.15
         }
       }
@@ -1031,16 +1031,16 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "ARMOR": 0.04
+          "ARMOR_VALUE": 0.04
         },
         "3": {
-          "ARMOR": 0.10
+          "ARMOR_VALUE": 0.10
         },
         "4": {
-          "ARMOR": 0.16
+          "ARMOR_VALUE": 0.16
         },
         "5": {
-          "ARMOR": 0.22
+          "ARMOR_VALUE": 0.22
         }
       }
     },
@@ -1053,19 +1053,19 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "ARMOR": 0.04,
+          "ARMOR_VALUE": 0.04,
           "HEALTH_POINTS": 0.04
         },
         "3": {
-          "ARMOR": 0.10,
+          "ARMOR_VALUE": 0.10,
           "HEALTH_POINTS": 0.10
         },
         "4": {
-          "ARMOR": 0.16,
+          "ARMOR_VALUE": 0.16,
           "HEALTH_POINTS": 0.16
         },
         "5": {
-          "ARMOR": 0.22,
+          "ARMOR_VALUE": 0.22,
           "HEALTH_POINTS": 0.22
         }
       }
@@ -1079,22 +1079,22 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "ARMOR": 0.04,
+          "ARMOR_VALUE": 0.04,
           "HEALTH_POINTS": 0.04,
           "BLOCK_VALUE": 0.04
         },
         "3": {
-          "ARMOR": 0.10,
+          "ARMOR_VALUE": 0.10,
           "HEALTH_POINTS": 0.10,
           "BLOCK_VALUE": 0.10
         },
         "4": {
-          "ARMOR": 0.16,
+          "ARMOR_VALUE": 0.16,
           "HEALTH_POINTS": 0.16,
           "BLOCK_VALUE": 0.16
         },
         "5": {
-          "ARMOR": 0.22,
+          "ARMOR_VALUE": 0.22,
           "HEALTH_POINTS": 0.22,
           "BLOCK_VALUE": 0.22
         }
@@ -1235,19 +1235,19 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "ARMOR": 0.045,
+          "ARMOR_VALUE": 0.045,
           "HEALTH_POINTS": 0.08
         },
         "3": {
-          "ARMOR": 0.09,
+          "ARMOR_VALUE": 0.09,
           "HEALTH_POINTS": 0.14
         },
         "4": {
-          "ARMOR": 0.135,
+          "ARMOR_VALUE": 0.135,
           "HEALTH_POINTS": 0.22
         },
         "5": {
-          "ARMOR": 0.18,
+          "ARMOR_VALUE": 0.18,
           "HEALTH_POINTS": 0.28
         }
       }
@@ -1368,16 +1368,16 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "RESISTANCE": 0.05
+          "RESISTANCE_VALUE": 0.05
         },
         "3": {
-          "RESISTANCE": 0.11
+          "RESISTANCE_VALUE": 0.11
         },
         "4": {
-          "RESISTANCE": 0.17
+          "RESISTANCE_VALUE": 0.17
         },
         "5": {
-          "RESISTANCE": 0.23
+          "RESISTANCE_VALUE": 0.23
         }
       }
     },
@@ -1417,22 +1417,22 @@
       "statsPerTier": {
         "2": {
           "HEALTH_POINTS": 0.0,
-          "RESISTANCE": 0.0,
+          "RESISTANCE_VALUE": 0.0,
           "ANDERMANT_DROP_BONUS": 0.0
         },
         "3": {
           "HEALTH_POINTS": 0.0,
-          "RESISTANCE": 0.0,
+          "RESISTANCE_VALUE": 0.0,
           "ANDERMANT_DROP_BONUS": 0.0
         },
         "4": {
           "HEALTH_POINTS": 0.0,
-          "RESISTANCE": 0.0,
+          "RESISTANCE_VALUE": 0.0,
           "ANDERMANT_DROP_BONUS": 0.0
         },
         "5": {
           "HEALTH_POINTS": 0.20,
-          "RESISTANCE": 0.20,
+          "RESISTANCE_VALUE": 0.20,
           "ANDERMANT_DROP_BONUS": 0.15
         }
       }
@@ -1671,20 +1671,20 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "RESISTANCE": 0.02,
-          "ARMOR": 0.02
+          "RESISTANCE_VALUE": 0.02,
+          "ARMOR_VALUE": 0.02
         },
         "3": {
-          "RESISTANCE": 0.05,
-          "ARMOR": 0.05
+          "RESISTANCE_VALUE": 0.05,
+          "ARMOR_VALUE": 0.05
         },
         "4": {
-          "RESISTANCE": 0.08,
-          "ARMOR": 0.08
+          "RESISTANCE_VALUE": 0.08,
+          "ARMOR_VALUE": 0.08
         },
         "5": {
-          "RESISTANCE": 0.11,
-          "ARMOR": 0.11
+          "RESISTANCE_VALUE": 0.11,
+          "ARMOR_VALUE": 0.11
         }
       }
     },
@@ -1719,20 +1719,20 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "ARMOR": 0.04,
-          "RESISTANCE": 0.04
+          "ARMOR_VALUE": 0.04,
+          "RESISTANCE_VALUE": 0.04
         },
         "3": {
-          "ARMOR": 0.07,
-          "RESISTANCE": 0.07
+          "ARMOR_VALUE": 0.07,
+          "RESISTANCE_VALUE": 0.07
         },
         "4": {
-          "ARMOR": 0.10,
-          "RESISTANCE": 0.10
+          "ARMOR_VALUE": 0.10,
+          "RESISTANCE_VALUE": 0.10
         },
         "5": {
-          "ARMOR": 0.13,
-          "RESISTANCE": 0.13
+          "ARMOR_VALUE": 0.13,
+          "RESISTANCE_VALUE": 0.13
         }
       }
     },
@@ -2033,19 +2033,19 @@
       "statsPerTier": {
         "2": {
           "DAMAGE": 0.06,
-          "ARMOR": 0.06
+          "ARMOR_VALUE": 0.06
         },
         "3": {
           "DAMAGE": 0.12,
-          "ARMOR": 0.12
+          "ARMOR_VALUE": 0.12
         },
         "4": {
           "DAMAGE": 0.20,
-          "ARMOR": 0.20
+          "ARMOR_VALUE": 0.20
         },
         "5": {
           "DAMAGE": 0.30,
-          "ARMOR": 0.30
+          "ARMOR_VALUE": 0.30
         }
       }
     },
@@ -2119,7 +2119,7 @@
       "statsPerTier": {
         "6": {
           "DAMAGE": 0.15,
-          "ARMOR": 0.15,
+          "ARMOR_VALUE": 0.15,
           "ATTACK_SPEED": 0.15
         }
       }
@@ -2274,20 +2274,20 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "ARMOR": 0.16,
-          "RESISTANCE": 0.03
+          "ARMOR_VALUE": 0.16,
+          "RESISTANCE_VALUE": 0.03
         },
         "3": {
-          "ARMOR": 0.19,
-          "RESISTANCE": 0.06
+          "ARMOR_VALUE": 0.19,
+          "RESISTANCE_VALUE": 0.06
         },
         "4": {
-          "ARMOR": 0.22,
-          "RESISTANCE": 0.09
+          "ARMOR_VALUE": 0.22,
+          "RESISTANCE_VALUE": 0.09
         },
         "5": {
-          "ARMOR": 0.25,
-          "RESISTANCE": 0.12
+          "ARMOR_VALUE": 0.25,
+          "RESISTANCE_VALUE": 0.12
         }
       }
     },
@@ -2640,16 +2640,16 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "ARMOR": 0.05
+          "ARMOR_VALUE": 0.05
         },
         "3": {
-          "ARMOR": 0.11
+          "ARMOR_VALUE": 0.11
         },
         "4": {
-          "ARMOR": 0.17
+          "ARMOR_VALUE": 0.17
         },
         "5": {
-          "ARMOR": 0.23
+          "ARMOR_VALUE": 0.23
         }
       }
     },
@@ -2662,16 +2662,16 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "ARMOR": 0.04
+          "ARMOR_VALUE": 0.04
         },
         "3": {
-          "ARMOR": 0.10
+          "ARMOR_VALUE": 0.10
         },
         "4": {
-          "ARMOR": 0.16
+          "ARMOR_VALUE": 0.16
         },
         "5": {
-          "ARMOR": 0.22
+          "ARMOR_VALUE": 0.22
         }
       }
     },
@@ -2803,16 +2803,16 @@
       "defaultTier": "5",
       "statsPerTier": {
         "2": {
-          "RESISTANCE": 0.05
+          "RESISTANCE_VALUE": 0.05
         },
         "3": {
-          "RESISTANCE": 0.11
+          "RESISTANCE_VALUE": 0.11
         },
         "4": {
-          "RESISTANCE": 0.17
+          "RESISTANCE_VALUE": 0.17
         },
         "5": {
-          "RESISTANCE": 0.23
+          "RESISTANCE_VALUE": 0.23
         }
       }
     },
@@ -3355,22 +3355,22 @@
         "2": {
           "MOVEMENT_SPEED": 0.005,
           "HEALTH_POINTS": 0.01,
-          "ARMOR": 0.01
+          "ARMOR_VALUE": 0.01
         },
         "3": {
           "MOVEMENT_SPEED": 0.03,
           "HEALTH_POINTS": 0.04,
-          "ARMOR": 0.04
+          "ARMOR_VALUE": 0.04
         },
         "4": {
           "MOVEMENT_SPEED": 0.0525,
           "HEALTH_POINTS": 0.07,
-          "ARMOR": 0.07
+          "ARMOR_VALUE": 0.07
         },
         "5": {
           "MOVEMENT_SPEED": 0.075,
           "HEALTH_POINTS": 0.10,
-          "ARMOR": 0.10
+          "ARMOR_VALUE": 0.10
         }
       }
     },
