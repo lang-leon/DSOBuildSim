@@ -1793,11 +1793,11 @@ public class Character {
         //buffs
         if (this.tonic != null)
         {
-            this.characterAbsoluteStats.put(this.tonic.statType(), this.characterAbsoluteStats.get(this.tonic.statType())+this.tonic.value());
+            this.characterAbsoluteStats.put(this.tonic.statType(), this.characterAbsoluteStats.get(this.tonic.statType())+this.tonic.statValue());
         }
         if (this.physic != null)
         {
-            this.characterRelativeBuffs.put(this.physic.statType(), this.characterRelativeBuffs.get(this.physic.statType())+this.physic.value());
+            this.characterRelativeBuffs.put(this.physic.statType(), this.characterRelativeBuffs.get(this.physic.statType())+this.physic.statValue());
         }
 
         //TODO
