@@ -17,13 +17,18 @@ public enum ItemType {
     WEAPON_ADORNMENT("Adornment");
 
 
-    private final String description;
+    private final String name;
 
     ItemType(String description){
-        this.description = description;
+        this.name = description;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
