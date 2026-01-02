@@ -178,27 +178,27 @@
       "description": "",
       "statsPerTier": {
         "1": {
-          "RESISTANCE": 0.013,
+          "RESISTANCE_VALUE": 0.013,
           "DAMAGE": 0.013,
           "BLOCK_VALUE": 0.013
         },
         "2": {
-          "RESISTANCE": 0.026,
+          "RESISTANCE_VALUE": 0.026,
           "DAMAGE": 0.026,
           "BLOCK_VALUE": 0.026
         },
         "3": {
-          "RESISTANCE": 0.039,
+          "RESISTANCE_VALUE": 0.039,
           "DAMAGE": 0.039,
           "BLOCK_VALUE": 0.039
         },
         "4": {
-          "RESISTANCE": 0.052,
+          "RESISTANCE_VALUE": 0.052,
           "DAMAGE": 0.052,
           "BLOCK_VALUE": 0.052
         },
         "5": {
-          "RESISTANCE": 0.065,
+          "RESISTANCE_VALUE": 0.065,
           "DAMAGE": 0.065,
           "BLOCK_VALUE": 0.065
         }
@@ -323,19 +323,19 @@
       "description": "",
       "statsPerTier": {
         "1": {
-          "ARMOR": 0.013
+          "ARMOR_VALUE": 0.013
         },
         "2": {
-          "ARMOR": 0.026
+          "ARMOR_VALUE": 0.026
         },
         "3": {
-          "ARMOR": 0.039
+          "ARMOR_VALUE": 0.039
         },
         "4": {
-          "ARMOR": 0.052
+          "ARMOR_VALUE": 0.052
         },
         "5": {
-          "ARMOR": 0.065
+          "ARMOR_VALUE": 0.065
         }
       }
     },
@@ -346,26 +346,26 @@
       "description": "",
       "statsPerTier": {
         "1": {
-          "RESISTANCE": 0.013
+          "RESISTANCE_VALUE": 0.013
         },
         "2": {
-          "RESISTANCE": 0.026
+          "RESISTANCE_VALUE": 0.026
         },
         "3": {
-          "RESISTANCE": 0.039
+          "RESISTANCE_VALUE": 0.039
         },
         "4": {
-          "RESISTANCE": 0.052
+          "RESISTANCE_VALUE": 0.052
         },
         "5": {
-          "RESISTANCE": 0.065
+          "RESISTANCE_VALUE": 0.065
         }
       }
     },
     "FIRE_RESILIENCE": {
       "runeType": "FIRE_RESILIENCE",
       "runeUpgradeType": "DEFENSIVE",
-      "runeLimitGroup": "FIRE_RESILIENCE",
+      "runeLimitGroup": "RESILIENCE",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -388,7 +388,7 @@
     "ICE_RESILIENCE": {
       "runeType": "ICE_RESILIENCE",
       "runeUpgradeType": "DEFENSIVE",
-      "runeLimitGroup": "ICE_RESILIENCE",
+      "runeLimitGroup": "RESILIENCE",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -411,7 +411,7 @@
     "LIGHTNING_RESILIENCE": {
       "runeType": "LIGHTNING_RESILIENCE",
       "runeUpgradeType": "DEFENSIVE",
-      "runeLimitGroup": "LIGHTNING_RESILIENCE",
+      "runeLimitGroup": "RESILIENCE",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -434,7 +434,7 @@
     "POISON_RESILIENCE": {
       "runeType": "POISON_RESILIENCE",
       "runeUpgradeType": "DEFENSIVE",
-      "runeLimitGroup": "POISON_RESILIENCE",
+      "runeLimitGroup": "RESILIENCE",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -457,7 +457,7 @@
     "ANDERMAGIC_RESILIENCE": {
       "runeType": "ANDERMAGIC_RESILIENCE",
       "runeUpgradeType": "DEFENSIVE",
-      "runeLimitGroup": "ANDERMAGIC_RESILIENCE",
+      "runeLimitGroup": "RESILIENCE",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -696,7 +696,7 @@
       "description": "Each successful critical hit has a chance of 5% to petrify the enemy for 2 seconds",
       "statsPerTier": {
         "6": {
-          "ARMOR": 0.15,
+          "ARMOR_VALUE": 0.15,
           "FIRE_RESISTANCE": 0.05,
           "POISON_RESISTANCE": 0.05,
           "ICE_RESISTANCE": 0.05,
