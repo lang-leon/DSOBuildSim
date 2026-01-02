@@ -1,23 +1,18 @@
 package com.langleon.dsobuildsim.buffs;
 
 import com.langleon.dsobuildsim.enums.StatType;
+import com.langleon.dsobuildsim.enums.buffs.PhysicType;
 
-public class Physic extends AbstractBuff{
+public record Physic(PhysicType physicType, StatType statType, Double statValue, int tier) {
 
-    StatType type;
-    Double value;
-
-    public Physic(String name, StatType type, Double value){
-        this.name = name;
-        this.type =type;
-        this.value = value;
+    public String description()
+    {
+        return String.format("+ %.2f%% %s", statValue * 100, statType);
     }
 
-    public StatType getType() {
-        return type;
+    public String getName()
+    {
+        return physicType.getName();
     }
 
-    public Double getValue() {
-        return value;
-    }
 }
