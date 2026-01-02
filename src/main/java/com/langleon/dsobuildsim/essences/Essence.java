@@ -1,4 +1,6 @@
 package com.langleon.dsobuildsim.essences;
 
-public class Essence {
+import com.langleon.dsobuildsim.enums.essences.EssenceType;
+
+public record Essence(EssenceType essenceType, int tier, double damageIncrease, String description) {
 }
