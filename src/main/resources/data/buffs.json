@@ -147,7 +147,7 @@
   },
   "physics": {
     "VITALITY_SIMPLE": {
-      "tonicType": "VITALITY_SIMPLE",
+      "physicType": "VITALITY_SIMPLE",
       "defaultTier": "5",
       "statType": "HEALTH_POINTS",
       "statsPerTier": {
@@ -159,7 +159,7 @@
       }
     },
     "EFFICACY_SIMPLE": {
-      "tonicType": "EFFICACY_SIMPLE",
+      "physicType": "EFFICACY_SIMPLE",
       "defaultTier": "5",
       "statType": "MANA",
       "statsPerTier": {
@@ -171,7 +171,7 @@
       }
     },
     "VIGOR_SIMPLE": {
-      "tonicType": "VIGOR_SIMPLE",
+      "physicType": "VIGOR_SIMPLE",
       "defaultTier": "5",
       "statType": "DAMAGE",
       "statsPerTier": {
@@ -183,7 +183,7 @@
       }
     },
     "FORTITUDE_SIMPLE": {
-      "tonicType": "FORTITUDE_SIMPLE",
+      "physicType": "FORTITUDE_SIMPLE",
       "defaultTier": "5",
       "statType": "ARMOR_VALUE",
       "statsPerTier": {
@@ -195,7 +195,7 @@
       }
     },
     "DETERMINATION_SIMPLE": {
-      "tonicType": "DETERMINATION_SIMPLE",
+      "physicType": "DETERMINATION_SIMPLE",
       "defaultTier": "5",
       "statType": "BLOCK_VALUE",
       "statsPerTier": {
@@ -207,7 +207,7 @@
       }
     },
     "CELERITY_SIMPLE": {
-      "tonicType": "CELERITY_SIMPLE",
+      "physicType": "CELERITY_SIMPLE",
       "defaultTier": "5",
       "statType": "ATTACK_SPEED",
       "statsPerTier": {
@@ -219,7 +219,7 @@
       }
     },
     "ALACRITY_SIMPLE": {
-      "tonicType": "ALACRITY_SIMPLE",
+      "physicType": "ALACRITY_SIMPLE",
       "defaultTier": "5",
       "statType": "MOVEMENT_SPEED",
       "statsPerTier": {
@@ -231,7 +231,7 @@
       }
     },
     "PRECISION_SIMPLE": {
-      "tonicType": "PRECISION_SIMPLE",
+      "physicType": "PRECISION_SIMPLE",
       "defaultTier": "5",
       "statType": "CRIT_VALUE",
       "statsPerTier": {
@@ -243,7 +243,7 @@
       }
     },
     "RESILIENCE_FIRE_SIMPLE": {
-      "tonicType": "RESILIENCE_FIRE_SIMPLE",
+      "physicType": "RESILIENCE_FIRE_SIMPLE",
       "defaultTier": "5",
       "statType": "FIRE_RESISTANCE",
       "statsPerTier": {
@@ -255,7 +255,7 @@
       }
     },
     "RESILIENCE_POISON_SIMPLE": {
-      "tonicType": "RESILIENCE_POISON_SIMPLE",
+      "physicType": "RESILIENCE_POISON_SIMPLE",
       "defaultTier": "5",
       "statType": "POISON_RESISTANCE",
       "statsPerTier": {
@@ -267,7 +267,7 @@
       }
     },
     "RESILIENCE_ICE_SIMPLE": {
-      "tonicType": "RESILIENCE_ICE_SIMPLE",
+      "physicType": "RESILIENCE_ICE_SIMPLE",
       "defaultTier": "5",
       "statType": "ICE_RESISTANCE",
       "statsPerTier": {
@@ -279,7 +279,7 @@
       }
     },
     "RESILIENCE_LIGHTNING_SIMPLE": {
-      "tonicType": "RESILIENCE_LIGHTNING_SIMPLE",
+      "physicType": "RESILIENCE_LIGHTNING_SIMPLE",
       "defaultTier": "5",
       "statType": "LIGHTNING_RESISTANCE",
       "statsPerTier": {
@@ -291,7 +291,7 @@
       }
     },
     "RESILIENCE_ANDERMAGIC_SIMPLE": {
-      "tonicType": "RESILIENCE_ANDERMAGIC_SIMPLE",
+      "physicType": "RESILIENCE_ANDERMAGIC_SIMPLE",
       "defaultTier": "5",
       "statType": "ANDERMAGIC_RESISTANCE",
       "statsPerTier": {
@@ -303,7 +303,7 @@
       }
     },
     "VITALITY_ADVANCED": {
-      "tonicType": "VITALITY_ADVANCED",
+      "physicType": "VITALITY_ADVANCED",
       "defaultTier": "5",
       "statType": "HEALTH_POINTS",
       "statsPerTier": {
@@ -315,7 +315,7 @@
       }
     },
     "EFFICACY_ADVANCED": {
-      "tonicType": "EFFICACY_ADVANCED",
+      "physicType": "EFFICACY_ADVANCED",
       "defaultTier": "5",
       "statType": "MANA",
       "statsPerTier": {
@@ -327,7 +327,7 @@
       }
     },
     "VIGOR_ADVANCED": {
-      "tonicType": "VIGOR_ADVANCED",
+      "physicType": "VIGOR_ADVANCED",
       "defaultTier": "5",
       "statType": "DAMAGE",
       "statsPerTier": {
@@ -339,7 +339,7 @@
       }
     },
     "FORTITUDE_ADVANCED": {
-      "tonicType": "FORTITUDE_ADVANCED",
+      "physicType": "FORTITUDE_ADVANCED",
       "defaultTier": "5",
       "statType": "ARMOR_VALUE",
       "statsPerTier": {
@@ -351,7 +351,7 @@
       }
     },
     "DETERMINATION_ADVANCED": {
-      "tonicType": "DETERMINATION_ADVANCED",
+      "physicType": "DETERMINATION_ADVANCED",
       "defaultTier": "5",
       "statType": "BLOCK_VALUE",
       "statsPerTier": {
@@ -363,7 +363,7 @@
       }
     },
     "CELERITY_ADVANCED": {
-      "tonicType": "CELERITY_ADVANCED",
+      "physicType": "CELERITY_ADVANCED",
       "defaultTier": "5",
       "statType": "ATTACK_SPEED",
       "statsPerTier": {
@@ -375,7 +375,7 @@
       }
     },
     "ALACRITY_ADVANCED": {
-      "tonicType": "ALACRITY_ADVANCED",
+      "physicType": "ALACRITY_ADVANCED",
       "defaultTier": "5",
       "statType": "MOVEMENT_SPEED",
       "statsPerTier": {
@@ -387,7 +387,7 @@
       }
     },
     "PRECISION_ADVANCED": {
-      "tonicType": "PRECISION_ADVANCED",
+      "physicType": "PRECISION_ADVANCED",
       "defaultTier": "5",
       "statType": "CRIT_VALUE",
       "statsPerTier": {
@@ -399,7 +399,7 @@
       }
     },
     "RESILIENCE_FIRE_ADVANCED": {
-      "tonicType": "RESILIENCE_FIRE_ADVANCED",
+      "physicType": "RESILIENCE_FIRE_ADVANCED",
       "defaultTier": "5",
       "statType": "FIRE_RESISTANCE",
       "statsPerTier": {
@@ -411,7 +411,7 @@
       }
     },
     "RESILIENCE_POISON_ADVANCED": {
-      "tonicType": "RESILIENCE_POISON_ADVANCED",
+      "physicType": "RESILIENCE_POISON_ADVANCED",
       "defaultTier": "5",
       "statType": "POISON_RESISTANCE",
       "statsPerTier": {
@@ -423,7 +423,7 @@
       }
     },
     "RESILIENCE_ICE_ADVANCED": {
-      "tonicType": "RESILIENCE_ICE_ADVANCED",
+      "physicType": "RESILIENCE_ICE_ADVANCED",
       "defaultTier": "5",
       "statType": "ICE_RESISTANCE",
       "statsPerTier": {
@@ -435,7 +435,7 @@
       }
     },
     "RESILIENCE_LIGHTNING_ADVANCED": {
-      "tonicType": "RESILIENCE_LIGHTNING_ADVANCED",
+      "physicType": "RESILIENCE_LIGHTNING_ADVANCED",
       "defaultTier": "5",
       "statType": "LIGHTNING_RESISTANCE",
       "statsPerTier": {
@@ -447,7 +447,7 @@
       }
     },
     "RESILIENCE_ANDERMAGIC_ADVANCED": {
-      "tonicType": "RESILIENCE_ANDERMAGIC_ADVANCED",
+      "physicType": "RESILIENCE_ANDERMAGIC_ADVANCED",
       "defaultTier": "5",
       "statType": "ANDERMAGIC_RESISTANCE",
       "statsPerTier": {
