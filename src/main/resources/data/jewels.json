@@ -447,19 +447,19 @@
       "jewelType": "FORTITUDE",
       "statsPerTier": {
         "1": {
-          "ARMOR": 0.02
+          "ARMOR_VALUE": 0.02
         },
         "2": {
-          "ARMOR": 0.04
+          "ARMOR_VALUE": 0.04
         },
         "3": {
-          "ARMOR": 0.06
+          "ARMOR_VALUE": 0.06
         },
         "4": {
-          "ARMOR": 0.08
+          "ARMOR_VALUE": 0.08
         },
         "5": {
-          "ARMOR": 0.1
+          "ARMOR_VALUE": 0.1
         }
       },
       "descriptionPerClassPerTier": {
