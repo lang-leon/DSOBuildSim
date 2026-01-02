@@ -3,7 +3,7 @@ package com.langleon.dsobuildsim.enums.pets;
 public enum PetUpgradeType {
 
     NORMAL("Normal"),
-    SILVERCAT("Silver Lucky Cat"),
+    SILVERCAT("Silvered Lucky Cat"),
     GILDEDCAT("Gilded Lucky Cat"),
     NONE("None");
     ;
@@ -12,5 +12,10 @@ public enum PetUpgradeType {
 
     PetUpgradeType(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
