@@ -1,0 +1,190 @@
+{
+  "dragonStones": {
+    "GREEDSTONE_HATCHLING": {
+      "dragonStoneType": "GREEDSTONE_HATCHLING",
+      "tier": "3",
+      "stats": {
+        "ANDERMANT_DROP_BONUS": 0.005
+      },
+      "description": "+ 0.5% drop stack size of Andermant"
+    },
+    "GREEDSTONE_MIGTHY": {
+      "dragonStoneType": "GREEDSTONE_MIGTHY",
+      "tier": "4",
+      "stats": {
+        "ANDERMANT_DROP_BONUS": 0.01
+      },
+      "description": "+ 1% drop stack size of Andermant"
+    },
+    "GREEDSTONE_ELDERS": {
+      "dragonStoneType": "GREEDSTONE_ELDERS",
+      "tier": "5",
+      "stats": {
+        "ANDERMANT_DROP_BONUS": 0.02
+      },
+      "description": "+ 2% drop stack size of Andermant"
+    },
+    "POWERSTONE_HATCHLING": {
+      "dragonStoneType": "POWERSTONE_HATCHLING",
+      "tier": "3",
+      "stats": {
+        "HEALTH_POINTS": 0.025
+      },
+      "description": "+ 2.50% Health Points"
+    },
+    "POWERSTONE_MIGTHY": {
+      "dragonStoneType": "POWERSTONE_MIGTHY",
+      "tier": "4",
+      "stats": {
+        "HEALTH_POINTS": 0.05
+      },
+      "description": "+ 5.00% Health Points"
+    },
+    "POWERSTONE_ELDERS": {
+      "dragonStoneType": "POWERSTONE_ELDERS",
+      "tier": "5",
+      "stats": {
+        "HEALTH_POINTS": 0.075
+      },
+      "description": "+ 7.50% Health Points"
+    },
+    "SLOTHSTONE_HATCHLING": {
+      "dragonStoneType": "SLOTHSTONE_HATCHLING",
+      "tier": "3",
+      "stats": {
+      },
+      "description": "Condensed from a Dragon Hatchling's blood, this crystal is brimming with a faint aura of sluggishness. With the Dragon Crest inserted, enemy attack speed decreases by 1%."
+    },
+    "SLOTHSTONE_MIGTHY": {
+      "dragonStoneType": "SLOTHSTONE_MIGTHY",
+      "tier": "4",
+      "stats": {
+      },
+      "description": "Condensed from a Mighty Dragon's blood, this crystal is brimming with a faint aura of sluggishness. With the Dragon Crest inserted, enemy attack speed decreases by 2%."
+    },
+    "SLOTHSTONE_ELDERS": {
+      "dragonStoneType": "SLOTHSTONE_ELDERS",
+      "tier": "5",
+      "stats": {
+      },
+      "description": "Condensed from a Dragon Elder's blood, this crystal is brimming with a faint aura of sluggishness. With the Dragon Crest inserted, enemy attack speed decreases by 4%."
+    },
+    "TRANQUIL_STONE_HATCHLING": {
+      "dragonStoneType": "TRANQUIL_STONE_HATCHLING",
+      "tier": "3",
+      "stats": {
+      },
+      "description": "Condensed from a Dragon Hatchling's blood, this crystal is brimming with a faint aura of peace and tranquility. With the Dragon Crest inserted, enemy damage decreases by 4%."
+    },
+    "TRANQUIL_STONE_MIGTHY": {
+      "dragonStoneType": "TRANQUIL_STONE_MIGTHY",
+      "tier": "4",
+      "stats": {
+      },
+      "description": "Condensed from a Mighty Dragon's blood, this crystal is brimming with a faint aura of peace and tranquility. With the Dragon Crest inserted, enemy damage decreases by 4%."
+    },
+    "TRANQUIL_STONE_ELDERS": {
+      "dragonStoneType": "TRANQUIL_STONE_ELDERS",
+      "tier": "5",
+      "stats": {
+      },
+      "description": "Condensed from a Dragon Elder's blood, this crystal is brimming with a faint aura of peace and tranquility. With the Dragon Crest inserted, enemy damage decreases by 4%."
+    },
+    "FURYSTONE_HATCHLING": {
+      "dragonStoneType": "FURYSTONE_HATCHLING",
+      "tier": "3",
+      "stats": {
+        "ATTACK_SPEED": 0.01
+      },
+      "description": "Condensed from the blood of a Dragon Hatchling, this crystal is brimming with a faint aura of fury. With the Dragon Crest inserted, the anger consumption's percentage increases by 2% and the attack speed by 1%\n- 2% resource costs"
+    },
+    "FURYSTONE_MIGTHY": {
+      "dragonStoneType": "FURYSTONE_MIGTHY",
+      "tier": "4",
+      "stats": {
+        "ATTACK_SPEED": 0.02
+      },
+      "description": "Condensed from the blood of a Mighty Dragon, this crystal is brimming with a faint aura of fury. With the Dragon Crest inserted, the anger consumption's percentage increases by 4% and the attack speed by 2%\n- 4% resource costs"
+    },
+    "FURYSTONE_ELDERS": {
+      "dragonStoneType": "FURYSTONE_ELDERS",
+      "tier": "5",
+      "stats": {
+        "ATTACK_SPEED": 0.03
+      },
+      "description": "Condensed from the blood of a Dragon Elder, this crystal is brimming with a faint aura of fury. With the Dragon Crest inserted, the anger consumption's percentage increases by 8% and the attack speed by 3%\n- 8% resource costs"
+    },
+    "RESTLESS_STONE_HATCHLING": {
+      "dragonStoneType": "RESTLESS_STONE_HATCHLING",
+      "tier": "3",
+      "stats": {
+        "ATTACK_SPEED": 0.005,
+        "DAMAGE": -0.005
+      },
+      "description": "Condensed from a Dragon Hatchling's blood, this crystal is brimming with a faint aura of restlessness. With the Dragon Crest inserted, attack speed increases by 0.5%, damage percentage decreases by 0.5%\n- 0.50% damage."
+    },
+    "RESTLESS_STONE_MIGTHY": {
+      "dragonStoneType": "RESTLESS_STONE_MIGTHY",
+      "tier": "4",
+      "stats": {
+        "ATTACK_SPEED": 0.01,
+        "DAMAGE": -0.01
+      },
+      "description": "Condensed from a Mighty Dragon's blood, this crystal is brimming with a faint aura of restlessness. With the Dragon Crest inserted, attack speed increases by 1%, damage percentage decreases by 1%\n- 1.00% damage."
+    },
+    "RESTLESS_STONE_ELDERS": {
+      "dragonStoneType": "RESTLESS_STONE_ELDERS",
+      "tier": "5",
+      "stats": {
+        "ATTACK_SPEED": 0.015,
+        "DAMAGE": -0.015
+      },
+      "description": "Condensed from a Dragon Elder's blood, this crystal is brimming with a faint aura of restlessness. With the Dragon Crest inserted, attack speed increases by 1.5%, damage percentage decreases by 1.5%\n- 1.50% damage."
+    },
+    "FERVORSTONE_HATCHLING": {
+      "dragonStoneType": "FERVORSTONE_HATCHLING",
+      "tier": "3",
+      "stats": {
+        "DAMAGE": 0.01
+      },
+      "description": "+ 1.00% damage"
+    },
+    "FERVORSTONE_MIGTHY": {
+      "dragonStoneType": "FERVORSTONE_MIGTHY",
+      "tier": "4",
+      "stats": {
+        "DAMAGE": 0.02
+      },
+      "description": "+ 2.00% damage"
+    },
+    "FERVORSTONE_ELDERS": {
+      "dragonStoneType": "FERVORSTONE_ELDERS",
+      "tier": "5",
+      "stats": {
+        "DAMAGE": 0.03
+      },
+      "description": "+ 3.00% damage"
+    },
+    "TIMESTONE_HATCHLING": {
+      "dragonStoneType": "TIMESTONE_HATCHLING",
+      "tier": "3",
+      "stats": {
+      },
+      "description": "Condensed from a Dragon Hatchling's Blood, this crystal is brimming with a faint temporal aura. With the Dragon Crest inserted cooldown of all skills is reduced by 0.5%"
+    },
+    "TIMESTONE_MIGTHY": {
+      "dragonStoneType": "TIMESTONE_MIGTHY",
+      "tier": "4",
+      "stats": {
+      },
+      "description": "Condensed from a Mighty Dragon's Blood, this crystal is brimming with a faint temporal aura. With the Dragon Crest inserted cooldown of all skills is reduced by 1%"
+    },
+    "TIMESTONE_ELDERS": {
+      "dragonStoneType": "TIMESTONE_ELDERS",
+      "tier": "5",
+      "stats": {
+      },
+      "description": "Condensed from a Dragon Elder's Blood, this crystal is brimming with a faint temporal aura. With the Dragon Crest inserted cooldown of all skills is reduced by 2%"
+    }
+  }
+}
