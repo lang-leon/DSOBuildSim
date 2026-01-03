@@ -1,33 +1,50 @@
 package com.langleon.dsobuildsim.runes;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.langleon.dsobuildsim.enums.StatType;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RuneTrinket {
 
-    private List<Rune> runes;
-
-    public RuneTrinket(List<Rune> rune) {
-        this.runes = rune;
-    }
+    private Rune[] runes;
 
     public RuneTrinket() {
-        this.runes = new ArrayList<>();
+        runes = new Rune[10];
     }
 
-    public List<Rune> getRunes() {
-        return this.runes;
+    public Rune[] getRunes() {
+        return runes;
     }
 
-    public void addRune(Rune rune){
-        if (this.runes.size()<10){
-            this.runes.add(rune);
-        }else{
-            throw new IllegalArgumentException("Can't add more than 10 runes to a rune trinket.");
+    public Rune getRune(int slot) {
+        return runes[slot];
+    }
+
+    public void addRune(Rune rune, int slot){
+        if (rune==null) throw new IllegalArgumentException("Rune is null!");
+        if (slot<0 || slot>10) throw new IllegalArgumentException("Index out of range!");
+        runes[slot] = rune;
+    }
+
+    public void removeRune(int slot){
+        if (slot<0 || slot>10) throw new IllegalArgumentException("Index out of range!");
+        runes[slot] = null;
+    }
+
+    public Map<StatType, Double> getTotalStats()
+    {
+        Map<StatType, Double> stats = new HashMap<>();
+        for(int i=0; i<10; i++)
+        {
+            if (runes[i]!=null)
+            {
+                for(Map.Entry<StatType, Double> entry : runes[i].getStats().entrySet())
+                {
+                    stats.merge(entry.getKey(), entry.getValue(), Double::sum);
+                }
+            }
         }
-    }
-
-    public void removeRune(Rune rune){
-        this.runes.remove(rune);
+        return stats;
     }
 }
