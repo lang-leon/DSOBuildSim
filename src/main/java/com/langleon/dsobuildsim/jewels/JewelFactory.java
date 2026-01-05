@@ -40,4 +40,30 @@ public class JewelFactory {
             throw new IllegalArgumentException("Invalid jewel tier: " + tier + "!");
         return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerClassPerTier().get(characterClass).get(tier));
     }
+
+    public Jewel createJewel(JewelType jewelType)
+    {
+        JewelDefinition jewelDefinition = this.config.jewels().get(jewelType);
+        int tier = jewelDefinition.defaultTier();
+        Map<Integer, String> descriptionSpellweaver = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.SPELLWEAVER);
+        Map<Integer, String> descriptionDragonknight = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.DRAGONKNIGHT);
+        Map<Integer, String> descriptionRanger = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.RANGER);
+        Map<Integer, String> descriptionSteamMechanicus = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.STEAM_MECHANICUS);
+        if (descriptionSpellweaver.get(tier) == null && descriptionDragonknight.get(tier) == null && descriptionRanger.get(tier) == null && descriptionSteamMechanicus.get(tier) == null)
+            throw new IllegalArgumentException("Invalid jewel tier: " + tier + "!");
+        return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.SPELLWEAVER).get(tier));
+    }
+
+    public Jewel createJewel(JewelType jewelType, CharacterClass characterClass)
+    {
+        JewelDefinition jewelDefinition = this.config.jewels().get(jewelType);
+        int tier = jewelDefinition.defaultTier();
+        Map<Integer, String> descriptionSpellweaver = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.SPELLWEAVER);
+        Map<Integer, String> descriptionDragonknight = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.DRAGONKNIGHT);
+        Map<Integer, String> descriptionRanger = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.RANGER);
+        Map<Integer, String> descriptionSteamMechanicus = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.STEAM_MECHANICUS);
+        if (descriptionSpellweaver.get(tier) == null && descriptionDragonknight.get(tier) == null && descriptionRanger.get(tier) == null && descriptionSteamMechanicus.get(tier) == null)
+            throw new IllegalArgumentException("Invalid jewel tier: " + tier + "!");
+        return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerClassPerTier().get(characterClass).get(tier));
+    }
 }

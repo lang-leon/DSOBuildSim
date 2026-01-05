@@ -2,6 +2,7 @@
   "jewels": {
     "AMBIDEXTROUS_VIGOR": {
       "jewelType": "AMBIDEXTROUS_VIGOR",
+      "defaultTier": "5",
       "statsPerTier": {
         "1": {
           "TWO_HAND_DAMAGE": 0.02
@@ -52,6 +53,7 @@
     },
     "AMPLIFIED_HEALING": {
       "jewelType": "AMPLIFIED_HEALING",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -87,6 +89,7 @@
     },
     "ANDER_POWER": {
       "jewelType": "ANDER_POWER",
+      "defaultTier": "5",
       "statsPerTier": {
         "3": {
           "ANDERMANT_DROP_BONUS": 0.04
@@ -123,6 +126,7 @@
     },
     "BLACK_KNIGHT_ORDER": {
       "jewelType": "BLACK_KNIGHT_ORDER",
+      "defaultTier": "7",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -142,6 +146,7 @@
     },
     "CONTRIBUTION": {
       "jewelType": "CONTRIBUTION",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -177,6 +182,7 @@
     },
     "CONVERSE": {
       "jewelType": "CONVERSE",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -212,6 +218,7 @@
     },
     "DEXTROUS_VIGOR": {
       "jewelType": "DEXTROUS_VIGOR",
+      "defaultTier": "5",
       "statsPerTier": {
         "1": {
           "ONE_HAND_DAMAGE": 0.005
@@ -262,6 +269,7 @@
     },
     "EASTER_FEVER": {
       "jewelType": "EASTER_FEVER",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -297,6 +305,7 @@
     },
     "ENCOURAGEMENT": {
       "jewelType": "ENCOURAGEMENT",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -332,6 +341,7 @@
     },
     "ETERNAL_SCORN": {
       "jewelType": "ETERNAL_SCORN",
+      "defaultTier": "7",
       "statsPerTier": {
         "7": {
           "CRIT_VALUE": 0.15
@@ -354,6 +364,7 @@
     },
     "ETERNAL_WRATH": {
       "jewelType": "ETERNAL_WRATH",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -389,6 +400,7 @@
     },
     "FIERY_FLOWER": {
       "jewelType": "FIERY_FLOWER",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -410,6 +422,7 @@
     },
     "FOCUS": {
       "jewelType": "FOCUS",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -445,6 +458,7 @@
     },
     "FORTITUDE": {
       "jewelType": "FORTITUDE",
+      "defaultTier": "5",
       "statsPerTier": {
         "1": {
           "ARMOR_VALUE": 0.02
@@ -495,6 +509,7 @@
     },
     "FROZEN_HEART": {
       "jewelType": "FROZEN_HEART",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -530,6 +545,7 @@
     },
     "GEM_FORTUNE": {
       "jewelType": "GEM_FORTUNE",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -565,6 +581,7 @@
     },
     "GHOST_POWER": {
       "jewelType": "GHOST_POWER",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -600,6 +617,7 @@
     },
     "GLACIAL_FANG": {
       "jewelType": "GLACIAL_FANG",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -627,6 +645,7 @@
     },
     "INGREDIENT_HUNTER": {
       "jewelType": "INGREDIENT_HUNTER",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -662,6 +681,7 @@
     },
     "LASTING_HEALTH": {
       "jewelType": "LASTING_HEALTH",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -697,6 +717,7 @@
     },
     "PENT_UP_POWER": {
       "jewelType": "PENT_UP_POWER",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -732,6 +753,7 @@
     },
     "POISONOUS_THORNS": {
       "jewelType": "POISONOUS_THORNS",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -767,6 +789,7 @@
     },
     "PROLONGATION": {
       "jewelType": "PROLONGATION",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -802,6 +825,7 @@
     },
     "RAGE": {
       "jewelType": "RAGE",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -837,6 +861,7 @@
     },
     "RELENTLESSNESS": {
       "jewelType": "RELENTLESSNESS",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -872,6 +897,7 @@
     },
     "REVIVAL_BOON": {
       "jewelType": "REVIVAL_BOON",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -907,6 +933,7 @@
     },
     "SCORCHING_RAY": {
       "jewelType": "SCORCHING_RAY",
+      "defaultTier": "5",
       "statsPerTier": {
         "3": {
         },
@@ -940,6 +967,7 @@
     },
     "STRENUOUSNESS": {
       "jewelType": "STRENUOUSNESS",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -967,6 +995,7 @@
     },
     "SWIFTNESS": {
       "jewelType": "SWIFTNESS",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -1002,6 +1031,7 @@
     },
     "THUNDERING_FLOWER": {
       "jewelType": "THUNDERING_FLOWER",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -1023,6 +1053,7 @@
     },
     "VANQUISHER": {
       "jewelType": "VANQUISHER",
+      "defaultTier": "5",
       "statsPerTier": {
       },
       "descriptionPerClassPerTier": {
@@ -1058,6 +1089,7 @@
     },
     "VIGOR": {
       "jewelType": "VIGOR",
+      "defaultTier": "5",
       "statsPerTier": {
         "1": {
           "DAMAGE": 0.02
@@ -1108,6 +1140,7 @@
     },
     "VITALITY": {
       "jewelType": "VITALITY",
+      "defaultTier": "5",
       "statsPerTier": {
         "1": {
           "HEALTH_POINTS": 0.02
