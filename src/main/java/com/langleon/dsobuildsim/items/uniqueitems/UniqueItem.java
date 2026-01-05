@@ -31,7 +31,7 @@ public class UniqueItem extends AbstractItem {
         this.uniqueBaseStat = uniqueBaseStats;
         this.uniqueEnchants = uniqueEnchants;
         this.overallBuffs = overallBuffs;
-        this.itemLevel = itemLevel;
+        this.level = itemLevel;
     }
 
     @Override
