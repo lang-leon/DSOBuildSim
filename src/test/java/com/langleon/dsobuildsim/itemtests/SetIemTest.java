@@ -7,7 +7,7 @@ import com.langleon.dsobuildsim.enums.gems.GemType;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.gems.GemFactory;
 import com.langleon.dsobuildsim.gems.Opal;
-import com.langleon.dsobuildsim.items.actualitems.SetItem;
+import com.langleon.dsobuildsim.items.SetItem;
 import com.langleon.dsobuildsim.sets.SpellweaverSets;
 
 import java.io.IOException;

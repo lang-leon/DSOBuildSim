@@ -7,7 +7,7 @@ import com.langleon.dsobuildsim.enums.*;
 import com.langleon.dsobuildsim.enums.gems.GemType;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.gems.GemFactory;
-import com.langleon.dsobuildsim.items.actualitems.MythicItem;
+import com.langleon.dsobuildsim.items.MythicItem;
 import com.langleon.dsobuildsim.overallbuffs.OverallAbsolutBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallRelativeBuff;

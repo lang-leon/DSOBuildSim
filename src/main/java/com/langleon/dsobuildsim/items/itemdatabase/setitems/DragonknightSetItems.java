@@ -3,7 +3,7 @@ package com.langleon.dsobuildsim.items.itemdatabase.setitems;
 import com.langleon.dsobuildsim.enums.CharacterClass;
 import com.langleon.dsobuildsim.enums.ItemType;
 import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.items.actualitems.SetItem;
+import com.langleon.dsobuildsim.items.SetItem;
 import com.langleon.dsobuildsim.items.itemdatabase.Item;
 import com.langleon.dsobuildsim.sets.DragonknightSets;
 

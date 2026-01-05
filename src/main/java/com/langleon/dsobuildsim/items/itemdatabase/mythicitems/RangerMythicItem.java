@@ -5,7 +5,7 @@ import com.langleon.dsobuildsim.enums.CharacterClass;
 import com.langleon.dsobuildsim.enums.ItemType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.items.itemdatabase.Item;
-import com.langleon.dsobuildsim.items.actualitems.MythicItem;
+import com.langleon.dsobuildsim.items.MythicItem;
 import com.langleon.dsobuildsim.overallbuffs.OverallAbsolutBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallRelativeBuff;

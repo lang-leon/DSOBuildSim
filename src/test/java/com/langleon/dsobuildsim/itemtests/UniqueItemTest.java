@@ -6,7 +6,7 @@ import com.langleon.dsobuildsim.enchantments.UniqueEnchant;
 import com.langleon.dsobuildsim.enums.*;
 import com.langleon.dsobuildsim.enums.gems.GemType;
 import com.langleon.dsobuildsim.gems.*;
-import com.langleon.dsobuildsim.items.actualitems.UniqueItem;
+import com.langleon.dsobuildsim.items.UniqueItem;
 import com.langleon.dsobuildsim.overallbuffs.OverallBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallRelativeBuff;
 
