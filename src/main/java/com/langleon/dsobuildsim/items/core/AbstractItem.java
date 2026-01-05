@@ -1,9 +1,9 @@
-package com.langleon.dsobuildsim.items;
+package com.langleon.dsobuildsim.items.core;
 
 import com.langleon.dsobuildsim.enchantments.Enchant;
 import com.langleon.dsobuildsim.enums.CharacterClass;
 import com.langleon.dsobuildsim.enums.EnchantType;
-import com.langleon.dsobuildsim.enums.ItemType;
+import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.Gem;
@@ -14,7 +14,7 @@ import java.util.Map;
 
 public abstract class AbstractItem {
     protected String name;
-    protected ItemType itemType;
+    protected ItemSlotType itemSlotType;
     protected Map<StatType, Double> baseStats;
     protected List<Enchant> enchants;
     protected List<AbstractGem> gems;
@@ -26,9 +26,9 @@ public abstract class AbstractItem {
         return name;
     }
 
-    public ItemType getItemType()
+    public ItemSlotType getItemType()
     {
-        return this.itemType;
+        return this.itemSlotType;
     }
 
     public Map<StatType, Double> getBaseStats()

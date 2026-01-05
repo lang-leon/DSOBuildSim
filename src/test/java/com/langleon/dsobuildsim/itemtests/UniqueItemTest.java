@@ -6,7 +6,7 @@ import com.langleon.dsobuildsim.enchantments.UniqueEnchant;
 import com.langleon.dsobuildsim.enums.*;
 import com.langleon.dsobuildsim.enums.gems.GemType;
 import com.langleon.dsobuildsim.gems.*;
-import com.langleon.dsobuildsim.items.UniqueItem;
+import com.langleon.dsobuildsim.items.uniqueitems.UniqueItem;
 import com.langleon.dsobuildsim.overallbuffs.OverallBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallRelativeBuff;
 
@@ -32,7 +32,7 @@ public class UniqueItemTest {
         List< OverallBuff > overallBuffs = new ArrayList<>();
         overallBuffs.add(new OverallRelativeBuff(StatType.CRIT_VALUE, 0.1));
 
-        UniqueItem uniqueItem = new UniqueItem("Researcher's Boots", CharacterClass.SPELLWEAVER, ItemType.BOOTS, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, 145);
+        UniqueItem uniqueItem = new UniqueItem("Researcher's Boots", CharacterClass.SPELLWEAVER, ItemSlotType.BOOTS, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, 145);
 
         ObjectMapper objectMapper = new ObjectMapper();
         InputStream is = UniqueItemTest.class.getClassLoader().getResourceAsStream("data/gems.json");

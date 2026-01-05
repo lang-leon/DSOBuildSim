@@ -7,7 +7,7 @@ import com.langleon.dsobuildsim.enums.gems.GemType;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.gems.GemFactory;
 import com.langleon.dsobuildsim.gems.Opal;
-import com.langleon.dsobuildsim.items.SetItem;
+import com.langleon.dsobuildsim.items.setitems.SetItem;
 import com.langleon.dsobuildsim.sets.SpellweaverSets;
 
 import java.io.IOException;
@@ -23,7 +23,7 @@ public class SetIemTest {
         basestats.put(StatType.DAMAGE, 1644.883);
         basestats.put(StatType.CRIT_VALUE, 1401.911);
         basestats.put(StatType.HEALTH_POINTS, 20637.978);
-        SetItem setItem = new SetItem("Helmet of the Black Knight", CharacterClass.SPELLWEAVER, ItemType.HELMET, basestats, 145, SpellweaverSets.SET1);
+        SetItem setItem = new SetItem("Helmet of the Black Knight", CharacterClass.SPELLWEAVER, ItemSlotType.HELMET, basestats, 145, SpellweaverSets.SET1);
 
         ObjectMapper objectMapper = new ObjectMapper();
         InputStream is = SetIemTest.class.getClassLoader().getResourceAsStream("data/gems.json");
