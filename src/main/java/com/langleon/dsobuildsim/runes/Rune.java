@@ -6,6 +6,7 @@ import com.langleon.dsobuildsim.enums.runes.RuneType;
 import com.langleon.dsobuildsim.enums.runes.RuneUpgradeType;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class Rune{
     private final RuneType runeType;
@@ -63,5 +64,17 @@ public class Rune{
 
     public String getDescription() {
         return description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Rune rune = (Rune) o;
+        return tier == rune.tier && runeType == rune.runeType && runeUpgradeType == rune.runeUpgradeType && runeLimitGroup == rune.runeLimitGroup && Objects.equals(stats, rune.stats) && Objects.equals(description, rune.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(runeType, runeUpgradeType, runeLimitGroup, tier, stats, description);
     }
 }
