@@ -2,7 +2,7 @@ package com.langleon.dsobuildsim.enums.items;
 
 public enum SetType {
     FORGOTTEN_GLORY("Forgotten Glory"),
-    ANCESTRAL_GLORY("Ancestral Glory"),
+    ANCESTRAL_GLORY("Forgotten Glory"),
 
     ;
 

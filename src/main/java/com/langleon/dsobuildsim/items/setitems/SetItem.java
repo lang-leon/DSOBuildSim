@@ -25,7 +25,7 @@ public class SetItem extends AbstractItem {
         this.set = set;
         this.gems = new ArrayList<>();
         this.enchants = new ArrayList<>();
-        this.itemLevel = itemLevel;
+        this.level = itemLevel;
     }
 
     public SetEnumInterface getSet() {

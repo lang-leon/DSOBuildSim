@@ -1,4 +1,4 @@
 package com.langleon.dsobuildsim.enums.items;
 
-public enum UniqueItemType implements ItemType {
+public interface ItemType {
 }

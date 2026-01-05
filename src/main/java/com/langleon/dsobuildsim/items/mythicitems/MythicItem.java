@@ -33,7 +33,7 @@ public class MythicItem extends AbstractItem {
         this.uniqueEnchants = uniqueEnchants;
         this.overallBuffs = overallBuffs;
         this.set = set;
-        this.itemLevel = itemLevel;
+        this.level = itemLevel;
     }
 
     public SetEnumInterface getSet() {
