@@ -6,6 +6,6 @@ import com.langleon.dsobuildsim.enums.jewels.JewelType;
 
 import java.util.Map;
 
-public record JewelDefinition(JewelType jewelType,
+public record JewelDefinition(JewelType jewelType, int defaultTier,
                               Map<Integer, Map<StatType, Double>> statsPerTier, Map<CharacterClass, Map<Integer, String>> descriptionPerClassPerTier) {
 }

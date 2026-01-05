@@ -4,6 +4,7 @@
       "runeType": "VIGOR",
       "runeUpgradeType": "OFFENSIVE",
       "runeLimitGroup": "VIGOR",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -27,6 +28,7 @@
       "runeType": "DEVASTATION",
       "runeUpgradeType": "OFFENSIVE",
       "runeLimitGroup": "DEVASTATION",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -50,6 +52,7 @@
       "runeType": "CELERITY",
       "runeUpgradeType": "OFFENSIVE",
       "runeLimitGroup": "CELERITY",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -73,6 +76,7 @@
       "runeType": "ACCELERATION",
       "runeUpgradeType": "OFFENSIVE",
       "runeLimitGroup": "ACCELERATION",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -96,6 +100,7 @@
       "runeType": "EFFICACY",
       "runeUpgradeType": "OFFENSIVE",
       "runeLimitGroup": "EFFICACY",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -119,6 +124,7 @@
       "runeType": "RECHARGING",
       "runeUpgradeType": "OFFENSIVE",
       "runeLimitGroup": "RECHARGING",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -142,6 +148,7 @@
       "runeType": "SPRING",
       "runeUpgradeType": "OFFENSIVE",
       "runeLimitGroup": "SPRING",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -175,6 +182,7 @@
       "runeType": "SUMMER",
       "runeUpgradeType": "OFFENSIVE",
       "runeLimitGroup": "SUMMER",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -208,6 +216,7 @@
       "runeType": "AUTUMN",
       "runeUpgradeType": "OFFENSIVE",
       "runeLimitGroup": "AUTUMN",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -241,6 +250,7 @@
       "runeType": "WINTER",
       "runeUpgradeType": "OFFENSIVE",
       "runeLimitGroup": "WINTER",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -274,6 +284,7 @@
       "runeType": "VITALITY",
       "runeUpgradeType": "DEFENSIVE",
       "runeLimitGroup": "VITALITY",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -297,6 +308,7 @@
       "runeType": "REGENERATION",
       "runeUpgradeType": "DEFENSIVE",
       "runeLimitGroup": "REGENERATION",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -320,6 +332,7 @@
       "runeType": "FORTITUDE",
       "runeUpgradeType": "DEFENSIVE",
       "runeLimitGroup": "FORTITUDE",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -343,6 +356,7 @@
       "runeType": "RESILIENCE",
       "runeUpgradeType": "DEFENSIVE",
       "runeLimitGroup": "RESILIENCE",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -366,6 +380,7 @@
       "runeType": "FIRE_RESILIENCE",
       "runeUpgradeType": "DEFENSIVE",
       "runeLimitGroup": "RESILIENCE",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -389,6 +404,7 @@
       "runeType": "ICE_RESILIENCE",
       "runeUpgradeType": "DEFENSIVE",
       "runeLimitGroup": "RESILIENCE",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -412,6 +428,7 @@
       "runeType": "LIGHTNING_RESILIENCE",
       "runeUpgradeType": "DEFENSIVE",
       "runeLimitGroup": "RESILIENCE",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -435,6 +452,7 @@
       "runeType": "POISON_RESILIENCE",
       "runeUpgradeType": "DEFENSIVE",
       "runeLimitGroup": "RESILIENCE",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -458,6 +476,7 @@
       "runeType": "ANDERMAGIC_RESILIENCE",
       "runeUpgradeType": "DEFENSIVE",
       "runeLimitGroup": "RESILIENCE",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -481,6 +500,7 @@
       "runeType": "PERSISTENCE",
       "runeUpgradeType": "DEFENSIVE",
       "runeLimitGroup": "PERSISTENCE",
+      "defaultTier": "5",
       "description": "",
       "statsPerTier": {
         "1": {
@@ -504,6 +524,7 @@
       "runeType": "ANDERMANT_FEVER",
       "runeUpgradeType": "GROUP",
       "runeLimitGroup": "ANDERMANT_FEVER",
+      "defaultTier": "5",
       "description": "Increases the Andermant Fever talent by %d.",
       "statsPerTier": {
         "1": {
@@ -522,6 +543,7 @@
       "runeType": "REALM_CHANGER",
       "runeUpgradeType": "GROUP",
       "runeLimitGroup": "REALM_CHANGER",
+      "defaultTier": "5",
       "description": "Increases the Realm Changer talent by %d.",
       "statsPerTier": {
         "1": {
@@ -540,6 +562,7 @@
       "runeType": "GOLD_FEVER",
       "runeUpgradeType": "GROUP",
       "runeLimitGroup": "GOLD_FEVER",
+      "defaultTier": "5",
       "description": "Increases the Gold Fever talent by %d.",
       "statsPerTier": {
         "1": {
@@ -558,6 +581,7 @@
       "runeType": "ANXIETY_KEEPER",
       "runeUpgradeType": "GROUP",
       "runeLimitGroup": "ANXIETY_KEEPER",
+      "defaultTier": "5",
       "description": "Increases the Anxiety Keeper talent by %d.",
       "statsPerTier": {
         "1": {
@@ -576,6 +600,7 @@
       "runeType": "SCHOLAR",
       "runeUpgradeType": "GROUP",
       "runeLimitGroup": "SCHOLAR",
+      "defaultTier": "5",
       "description": "Increases the Scholar talent by %d.",
       "statsPerTier": {
         "1": {
@@ -594,6 +619,7 @@
       "runeType": "EXPERIENCE_HUNTER",
       "runeUpgradeType": "GROUP",
       "runeLimitGroup": "EXPERIENCE_HUNTER",
+      "defaultTier": "5",
       "description": "Increases the Experience Hunter talent by %d.",
       "statsPerTier": {
         "1": {
@@ -612,6 +638,7 @@
       "runeType": "MATERI_BLESSING",
       "runeUpgradeType": "BASIC",
       "runeLimitGroup": "MATERI_BLESSING",
+      "defaultTier": "5",
       "description": "+ %d%% Materi Fragment drop stack size",
       "statsPerTier": {
         "1": {
@@ -635,6 +662,7 @@
       "runeType": "WISDOM_SEEKER",
       "runeUpgradeType": "BASIC",
       "runeLimitGroup": "WISDOM_SEEKER",
+      "defaultTier": "5",
       "description": "+ %d%% Ancient Wisdom drop stack size",
       "statsPerTier": {
         "1": {
@@ -658,6 +686,7 @@
       "runeType": "INSIGHT",
       "runeUpgradeType": "BASIC",
       "runeLimitGroup": "INSIGHT",
+      "defaultTier": "5",
       "description": "+ %.2f%% experience points when defeating enemies",
       "statsPerTier": {
         "1": {
@@ -681,6 +710,7 @@
       "runeType": "RISING_VIGOR",
       "runeUpgradeType": "NONE",
       "runeLimitGroup": "PARAGON",
+      "defaultTier": "6",
       "description": "Each successful critical hit has a chance of 8% to trigger the Ghost Smoke effect, making you immune to enemies' skills and invisible to monsters for 3 seconds.\nCooldown: 15 seconds",
       "statsPerTier": {
         "6": {
@@ -693,6 +723,7 @@
       "runeType": "RISING_POWER",
       "runeUpgradeType": "NONE",
       "runeLimitGroup": "PARAGON",
+      "defaultTier": "6",
       "description": "Each successful critical hit has a chance of 5% to petrify the enemy for 2 seconds",
       "statsPerTier": {
         "6": {
@@ -708,6 +739,7 @@
       "runeType": "HOLY_STAR_SHARD",
       "runeUpgradeType": "NONE",
       "runeLimitGroup": "VARNOK",
+      "defaultTier": "7",
       "description": "Each successful critical hit has a chance of 5% to trigger the Blessing stars effect, making you immune reduce damage received from monsters by 99% for 8 seconds. Cooldown: 60 seconds",
       "statsPerTier": {
         "7": {
