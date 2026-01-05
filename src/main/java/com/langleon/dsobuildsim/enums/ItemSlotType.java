@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.enums;
 
-public enum ItemType {
+public enum ItemSlotType {
 
     AMULET("Amulet"),
     BELT("Belt"),
@@ -19,7 +19,7 @@ public enum ItemType {
 
     private final String name;
 
-    ItemType(String description){
+    ItemSlotType(String description){
         this.name = description;
     }
 

@@ -1,0 +1,5 @@
+package com.langleon.dsobuildsim.items.uniqueitems;
+
+public class UniqueItemDefinition {
+}
+

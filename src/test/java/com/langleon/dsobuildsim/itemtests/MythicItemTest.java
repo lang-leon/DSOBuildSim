@@ -7,7 +7,7 @@ import com.langleon.dsobuildsim.enums.*;
 import com.langleon.dsobuildsim.enums.gems.GemType;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.gems.GemFactory;
-import com.langleon.dsobuildsim.items.MythicItem;
+import com.langleon.dsobuildsim.items.mythicitems.MythicItem;
 import com.langleon.dsobuildsim.overallbuffs.OverallAbsolutBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallRelativeBuff;
@@ -34,7 +34,7 @@ public class MythicItemTest {
         overallBuffs.add(new OverallRelativeBuff(StatType.DAMAGE, 0.1));
         overallBuffs.add(new OverallAbsolutBuff(StatType.DAMAGE, 5000.0));
 
-        MythicItem mythicItem = new MythicItem("Ancestral Glory Cloak (Mage)", CharacterClass.SPELLWEAVER, ItemType.CLOAK, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, 145, SpellweaverSets.SET1);
+        MythicItem mythicItem = new MythicItem("Ancestral Glory Cloak (Mage)", CharacterClass.SPELLWEAVER, ItemSlotType.CLOAK, baseStats, uniqueBaseStats, uniqueEnchants, overallBuffs, 145, SpellweaverSets.SET1);
 
         ObjectMapper objectMapper = new ObjectMapper();
         InputStream is = MythicItemTest.class.getClassLoader().getResourceAsStream("data/gems.json");

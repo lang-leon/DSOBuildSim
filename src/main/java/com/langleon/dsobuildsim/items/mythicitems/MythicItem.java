@@ -1,10 +1,11 @@
-package com.langleon.dsobuildsim.items;
+package com.langleon.dsobuildsim.items.mythicitems;
 
 import com.langleon.dsobuildsim.enchantments.Enchant;
 import com.langleon.dsobuildsim.enchantments.UniqueEnchant;
 import com.langleon.dsobuildsim.enums.CharacterClass;
-import com.langleon.dsobuildsim.enums.ItemType;
+import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
+import com.langleon.dsobuildsim.items.core.AbstractItem;
 import com.langleon.dsobuildsim.sets.SetEnumInterface;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.mapper.EnchantToAbsoluteStatTypeMapper;
@@ -21,10 +22,10 @@ public class MythicItem extends AbstractItem {
     private List<OverallBuff> overallBuffs;
     private SetEnumInterface set;
 
-    public MythicItem(String name, CharacterClass characterClass, ItemType itemType, Map<StatType, Double> baseStats, Map<StatType, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, int itemLevel, SetEnumInterface set){
+    public MythicItem(String name, CharacterClass characterClass, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, Map<StatType, Double> uniqueBaseStats, List<UniqueEnchant> uniqueEnchants, List<OverallBuff> overallBuffs, int itemLevel, SetEnumInterface set){
         this.name = name;
         this.characterClass = characterClass;
-        this.itemType = itemType;
+        this.itemSlotType = itemSlotType;
         this.baseStats = baseStats;
         this.gems = new ArrayList<>();
         this.enchants = new ArrayList<>();
