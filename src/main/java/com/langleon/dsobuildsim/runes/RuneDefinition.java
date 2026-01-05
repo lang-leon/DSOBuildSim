@@ -14,6 +14,6 @@ import java.util.Map;
  *
  * Used to keep a definition for each rune type to create actual gem instances from.
  */
-public record RuneDefinition(RuneType runeType, RuneUpgradeType runeUpgradeType, RuneLimitGroup runeLimitGroup,
+public record RuneDefinition(RuneType runeType, RuneUpgradeType runeUpgradeType, RuneLimitGroup runeLimitGroup, int defaultTier,
                              Map<Integer, Map<StatType, Double>> statsPerTier, String description) {
 }
