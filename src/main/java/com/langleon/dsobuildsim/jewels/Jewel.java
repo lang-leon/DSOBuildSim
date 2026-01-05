@@ -4,6 +4,7 @@ import com.langleon.dsobuildsim.enums.jewels.JewelType;
 import com.langleon.dsobuildsim.enums.StatType;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class Jewel {
     private final int tier;
@@ -49,5 +50,17 @@ public class Jewel {
 
     public Map<StatType, Double> getStats() {
         return stats;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Jewel jewel = (Jewel) o;
+        return tier == jewel.tier && jewelType == jewel.jewelType && Objects.equals(description, jewel.description) && Objects.equals(stats, jewel.stats);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tier, jewelType, description, stats);
     }
 }
