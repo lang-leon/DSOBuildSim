@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.items.actualitems;
+package com.langleon.dsobuildsim.items;
 
 import com.langleon.dsobuildsim.enchantments.Enchant;
 import com.langleon.dsobuildsim.enchantments.UniqueEnchant;

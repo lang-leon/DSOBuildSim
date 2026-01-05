@@ -2,7 +2,7 @@ package com.langleon.dsobuildsim.items.itemdatabase.uniqueitems;
 
 import com.langleon.dsobuildsim.enchantments.UniqueEnchant;
 import com.langleon.dsobuildsim.enums.*;
-import com.langleon.dsobuildsim.items.actualitems.UniqueItem;
+import com.langleon.dsobuildsim.items.UniqueItem;
 import com.langleon.dsobuildsim.items.itemdatabase.Item;
 import com.langleon.dsobuildsim.overallbuffs.OverallBuff;
 import com.langleon.dsobuildsim.overallbuffs.OverallDescriptionBuff;
