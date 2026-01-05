@@ -1,33 +1,50 @@
 package com.langleon.dsobuildsim.jewels;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.langleon.dsobuildsim.enums.StatType;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class JewelTrinket {
 
-    private List<Jewel> jewels;
-
-    public JewelTrinket(List<Jewel> jewels) {
-        this.jewels = jewels;
-    }
+    private Jewel[] jewels;
 
     public JewelTrinket() {
-        this.jewels = new ArrayList<>();
+        jewels = new Jewel[10];
     }
 
-    public List<Jewel> getJewels() {
-        return this.jewels;
+    public Jewel[] getJewels() {
+        return jewels;
     }
 
-    public void addJewel(Jewel jewel){
-        if (this.jewels.size()<10){
-            this.jewels.add(jewel);
-        }else{
-            throw new IllegalArgumentException("Can't add more than 10 jewels to a jewel trinket.");
+    public Jewel getJewel(int slot) {
+        return jewels[slot];
+    }
+
+    public void addJewel(Jewel jewel, int slot){
+        if (jewel==null) throw new IllegalArgumentException("Jewel is null!");
+        if (slot<0 || slot>10) throw new IllegalArgumentException("Index out of range!");
+        jewels[slot] = jewel;
+    }
+
+    public void removeJewel(int slot){
+        if (slot<0 || slot>10) throw new IllegalArgumentException("Index out of range!");
+        jewels[slot] = null;
+    }
+
+    public Map<StatType, Double> getTotalStats()
+    {
+        Map<StatType, Double> stats = new HashMap<>();
+        for(int i=0; i<10; i++)
+        {
+            if (jewels[i]!=null)
+            {
+                for(Map.Entry<StatType, Double> entry : jewels[i].getStats().entrySet())
+                {
+                    stats.merge(entry.getKey(), entry.getValue(), Double::sum);
+                }
+            }
         }
-    }
-
-    public void removeJewel(Jewel jewel){
-        this.jewels.remove(jewel);
+        return stats;
     }
 }
