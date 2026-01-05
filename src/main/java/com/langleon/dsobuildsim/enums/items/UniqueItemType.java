@@ -1,4 +1,4 @@
 package com.langleon.dsobuildsim.enums.items;
 
-public class UniqueItemType {
+public enum UniqueItemType {
 }
