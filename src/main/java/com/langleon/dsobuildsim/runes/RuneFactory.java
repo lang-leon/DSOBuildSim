@@ -1,10 +1,7 @@
 package com.langleon.dsobuildsim.runes;
 
-import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.runes.RuneType;
 import com.langleon.dsobuildsim.enums.runes.RuneUpgradeType;
-
-import java.util.Map;
 
 public class RuneFactory {
     private final RuneConfig config;
@@ -35,8 +32,13 @@ public class RuneFactory {
     public Rune createRune(RuneType runeType, int tier)
     {
         RuneDefinition runeDefinition = this.config.runes().get(runeType);
-        Map<StatType, Double> stats = runeDefinition.statsPerTier().get(tier);
-        if (stats == null) throw new IllegalArgumentException("Invalid rune tier: " + tier + "!");
-        return new Rune(runeType, runeDefinition.runeUpgradeType(), runeDefinition.runeLimitGroup(), tier, stats, runeDefinition.description());
+        if (!runeDefinition.statsPerTier().containsKey(tier)) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
+        return new Rune(runeType, runeDefinition.runeUpgradeType(), runeDefinition.runeLimitGroup(), tier, runeDefinition.statsPerTier().get(tier), runeDefinition.description());
+    }
+
+    public Rune createRune(RuneType runeType)
+    {
+        RuneDefinition runeDefinition = this.config.runes().get(runeType);
+        return new Rune(runeType, runeDefinition.runeUpgradeType(), runeDefinition.runeLimitGroup(), runeDefinition.defaultTier(), runeDefinition.statsPerTier().get(runeDefinition.defaultTier()), runeDefinition.description());
     }
 }
