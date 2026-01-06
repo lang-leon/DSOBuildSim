@@ -3,9 +3,9 @@
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "RING",
+      "itemSlotType": "RING",
       "baseValues": {
         "DAMAGE": 1891.513,
         "CRIT_VALUE": 1753.505,
@@ -22,9 +22,9 @@
     "OLD_GLORY": {
       "itemType": "OLD_GLORY",
       "name": "Old Glory",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "CLOAK",
+      "itemSlotType": "CLOAK",
       "baseValues": {
         "DAMAGE": 1891.513,
         "ATTACK_SPEED": 0.060,
@@ -40,9 +40,9 @@
     "ANCESTRAL_GLORY_RING": {
       "itemType": "ANCESTRAL_GLORY_RING",
       "name": "Ancestral Glory Ring",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "RING",
+      "itemSlotType": "RING",
       "baseValues": {
         "DAMAGE": 1891.513,
         "CRIT_VALUE": 1753.505,
@@ -59,9 +59,9 @@
     "ANCESTRAL_GLORY_CLOAK": {
       "itemType": "ANCESTRAL_GLORY_CLOAK",
       "name": "Ancestral Glory Cloak (Mage)",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "CLOAK",
+      "itemSlotType": "CLOAK",
       "baseValues": {
         "DAMAGE": 1891.513,
         "ATTACK_SPEED": 0.060,
@@ -80,9 +80,9 @@
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "RING",
+      "itemSlotType": "RING",
       "baseValues": {
         "DAMAGE": 1891.513,
         "CRIT_VALUE": 1753.505,
@@ -99,9 +99,9 @@
     "OLD_GLORY": {
       "itemType": "OLD_GLORY",
       "name": "Old Glory",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "CLOAK",
+      "itemSlotType": "CLOAK",
       "baseValues": {
         "DAMAGE": 1891.513,
         "ATTACK_SPEED": 0.060,
@@ -117,9 +117,9 @@
     "ANCESTRAL_GLORY_RING": {
       "itemType": "ANCESTRAL_GLORY_RING",
       "name": "Ancestral Glory Ring",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "RING",
+      "itemSlotType": "RING",
       "baseValues": {
         "DAMAGE": 1891.513,
         "CRIT_VALUE": 1753.505,
@@ -136,9 +136,9 @@
     "ANCESTRAL_GLORY_CLOAK": {
       "itemType": "ANCESTRAL_GLORY_CLOAK",
       "name": "Ancestral Glory Cloak (Warrior)",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "CLOAK",
+      "itemSlotType": "CLOAK",
       "baseValues": {
         "DAMAGE": 1891.513,
         "ATTACK_SPEED": 0.060,
@@ -157,9 +157,9 @@
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "RING",
+      "itemSlotType": "RING",
       "baseValues": {
         "DAMAGE": 1891.513,
         "CRIT_VALUE": 1753.505,
@@ -176,9 +176,9 @@
     "OLD_GLORY": {
       "itemType": "OLD_GLORY",
       "name": "Old Glory",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "CLOAK",
+      "itemSlotType": "CLOAK",
       "baseValues": {
         "DAMAGE": 1891.513,
         "ATTACK_SPEED": 0.060,
@@ -194,9 +194,9 @@
     "ANCESTRAL_GLORY_RING": {
       "itemType": "ANCESTRAL_GLORY_RING",
       "name": "Ancestral Glory Ring",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "RING",
+      "itemSlotType": "RING",
       "baseValues": {
         "DAMAGE": 1891.513,
         "CRIT_VALUE": 1753.505,
@@ -213,9 +213,9 @@
     "ANCESTRAL_GLORY_CLOAK": {
       "itemType": "ANCESTRAL_GLORY_CLOAK",
       "name": "Ancestral Glory Cloak (Mage)",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "CLOAK",
+      "itemSlotType": "CLOAK",
       "baseValues": {
         "DAMAGE": 1891.513,
         "ATTACK_SPEED": 0.060,
@@ -234,9 +234,9 @@
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "RING",
+      "itemSlotType": "RING",
       "baseValues": {
         "DAMAGE": 1891.513,
         "CRIT_VALUE": 1753.505,
@@ -253,9 +253,9 @@
     "OLD_GLORY": {
       "itemType": "OLD_GLORY",
       "name": "Old Glory",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "CLOAK",
+      "itemSlotType": "CLOAK",
       "baseValues": {
         "DAMAGE": 1891.513,
         "ATTACK_SPEED": 0.060,
@@ -271,9 +271,9 @@
     "ANCESTRAL_GLORY_RING": {
       "itemType": "ANCESTRAL_GLORY_RING",
       "name": "Ancestral Glory Ring",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "RING",
+      "itemSlotType": "RING",
       "baseValues": {
         "DAMAGE": 1891.513,
         "CRIT_VALUE": 1753.505,
@@ -290,9 +290,9 @@
     "ANCESTRAL_GLORY_CLOAK": {
       "itemType": "ANCESTRAL_GLORY_CLOAK",
       "name": "Ancestral Glory Cloak (Archer)",
-      "level": 145,
+      "defaultLevel": 145,
       "tier": 7,
-      "itemSlot": "CLOAK",
+      "itemSlotType": "CLOAK",
       "baseValues": {
         "DAMAGE": 1891.513,
         "ATTACK_SPEED": 0.060,
