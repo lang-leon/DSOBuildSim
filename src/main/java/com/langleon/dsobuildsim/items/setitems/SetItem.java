@@ -1,92 +1,55 @@
 package com.langleon.dsobuildsim.items.setitems;
 
 import com.langleon.dsobuildsim.enchantments.Enchant;
-import com.langleon.dsobuildsim.enums.CharacterClass;
 import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
+import com.langleon.dsobuildsim.enums.items.ItemType;
+import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
-import com.langleon.dsobuildsim.sets.SetEnumInterface;
-import com.langleon.dsobuildsim.gems.AbstractGem;
-import com.langleon.dsobuildsim.mapper.EnchantToAbsoluteStatTypeMapper;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class SetItem extends AbstractItem {
-    private SetEnumInterface set;
+    private final SetType set;
 
-    public SetItem(String name, CharacterClass characterClass, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, int itemLevel, SetEnumInterface set){
+    public SetItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, SetType set){
+        this.itemType = itemType;
         this.name = name;
-        this.characterClass = characterClass;
+        this.level = level;
+        this.tier = tier;
         this.itemSlotType = itemSlotType;
-        this.baseStats = baseStats;
+        this.baseValues = baseStats;
         this.set = set;
-        this.gems = new ArrayList<>();
-        this.enchants = new ArrayList<>();
-        this.level = itemLevel;
+        this.gems = new Gem[10];
+        this.enchants = new Enchant[10];
     }
 
-    public SetEnumInterface getSet() {
+    public SetType getSet() {
         return set;
     }
 
     @Override
-    public Map<StatType, Double> getBaseStats() {
-        return super.getBaseStats();
-    }
-
-    @Override
-    public void setBaseStats(Map<StatType, Double> baseStats) {
-        super.setBaseStats(baseStats);
-    }
-
-    @Override
-    public String getName() {
-        return super.getName();
-    }
-
-    @Override
-    public List<AbstractGem> getGems() {
-        return super.getGems();
-    }
-
-    @Override
-    public List<Enchant> getEnchants() {
-        return super.getEnchants();
-    }
-
-    @Override
-    public void setEnchant(Enchant enchant) {
-        super.setEnchant(enchant);
-    }
-
-    @Override
-    public void removeEnchant(Enchant enchant) {
-        super.removeEnchant(enchant);
-    }
-
-    @Override
     public Map<StatType, Double> calculateTotalStats() {
-        Map<StatType, Double> totalAbsoluteStats = new HashMap<>(getBaseStats());
+        Map<StatType, Double> totalStats = new HashMap<>(getBaseValues());
 
+        //calculate base stats + gem stats
         for (Map.Entry<StatType, Double> entry : super.calculateGemStats().entrySet())
         {
-            if (totalAbsoluteStats.containsKey(entry.getKey())){
-                totalAbsoluteStats.compute(entry.getKey(), (k, totalValueOld) -> entry.getValue() + totalValueOld);
-            }else{
-                totalAbsoluteStats.put(entry.getKey(), entry.getValue());
+            totalStats.merge(entry.getKey(), entry.getValue(), Double::sum);
+        }
+
+        //calculate stats with enchants applied
+        Map<StatType, Double> totalEnchants = calculateEnchantStats();
+        for (Map.Entry<StatType, Double> entry : totalEnchants.entrySet())
+        {
+            if (totalStats.containsKey(entry.getKey()))
+            {
+                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * entry.getValue());
             }
         }
 
-        Map<StatType, Double> finalAbsoluteStats = new HashMap<>(totalAbsoluteStats);
-
-        for (Enchant enchant : this.enchants){
-            StatType baseValueType = EnchantToAbsoluteStatTypeMapper.getAbsoluteType(enchant.getType());
-            finalAbsoluteStats.put(baseValueType, finalAbsoluteStats.get(baseValueType) + totalAbsoluteStats.get(baseValueType)*enchant.getValue());
-        }
-
-        return finalAbsoluteStats;
+        return totalStats;
     }
 }

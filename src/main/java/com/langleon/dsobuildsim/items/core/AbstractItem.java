@@ -1,7 +1,6 @@
 package com.langleon.dsobuildsim.items.core;
 
 import com.langleon.dsobuildsim.enchantments.Enchant;
-import com.langleon.dsobuildsim.enums.EnchantType;
 import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
@@ -16,7 +15,7 @@ public abstract class AbstractItem {
     protected int level;
     protected int tier;
     protected ItemSlotType itemSlotType;
-    protected Map<StatType, Double> baseStats;
+    protected Map<StatType, Double> baseValues;
     protected Enchant[] enchants;
     protected AbstractGem[] gems;
 
@@ -30,14 +29,14 @@ public abstract class AbstractItem {
         return this.itemSlotType;
     }
 
-    public Map<StatType, Double> getBaseStats()
+    public Map<StatType, Double> getBaseValues()
     {
-        return baseStats;
+        return baseValues;
     }
 
-    public void setBaseStats(Map<StatType, Double> baseStats)
+    public void setBaseValues(Map<StatType, Double> baseValues)
     {
-        this.baseStats = baseStats;
+        this.baseValues = baseValues;
     }
 
     public AbstractGem[] getGems() {
