@@ -1,7 +1,6 @@
 package com.langleon.dsobuildsim.items.mythicitems;
 
 import com.langleon.dsobuildsim.enchantments.Enchant;
-import com.langleon.dsobuildsim.enums.EnchantType;
 import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
@@ -44,20 +43,31 @@ public class MythicItem extends AbstractItem {
 
     @Override
     public Map<StatType, Double> calculateTotalStats() {
-        Map<StatType, Double> totalBaseStats = new HashMap<>(getBaseStats());
+        Map<StatType, Double> totalStats = new HashMap<>(getBaseStats());
 
         //calculate base stats + gem stats
         for (Map.Entry<StatType, Double> entry : super.calculateGemStats().entrySet())
         {
-            totalBaseStats.merge(entry.getKey(), entry.getValue(), Double::sum);
+            totalStats.merge(entry.getKey(), entry.getValue(), Double::sum);
         }
 
+        //calculate stats with enchants applied
+        Map<StatType, Double> totalEnchants = calculateEnchantStats();
+        for (Map.Entry<StatType, Double> entry : totalEnchants.entrySet())
+        {
+            if (totalStats.containsKey(entry.getKey()))
+            {
+                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * entry.getValue());
+            }
+        }
 
-        Map<StatType, Double> finalAbsoluteStats = new HashMap<>(totalBaseStats);
-        Map<EnchantType, Double> totalEnchants = calculateEnchantStats();
+        //calculate stats with unique absolute values applied
+        for (Map.Entry<StatType, Double> entry : uniqueAbsoluteValues.entrySet())
+        {
+            totalStats.merge(entry.getKey(), entry.getValue(), Double::sum);
+        }
 
-
-        return finalAbsoluteStats;
+        return totalStats;
     }
 }
 

@@ -141,16 +141,17 @@ public abstract class AbstractItem {
         return stats;
     }
 
-    public Map<EnchantType, Double> calculateEnchantStats()
+    public Map<StatType, Double> calculateEnchantStats()
     {
-        Map<EnchantType, Double> totalEnchants = new HashMap<>();
+        Map<StatType, Double> totalEnchants = new HashMap<>();
         for (int i=0; i<4; i++){
             if (enchants[i]!=null)
             {
-                totalEnchants.merge(enchants[i].getType(), enchants[i].getValue(), Double::sum);
+                totalEnchants.merge(enchants[i].getStatType(), enchants[i].getValue(), Double::sum);
             }
         }
         return totalEnchants;
     }
+
     public abstract Map<StatType, Double> calculateTotalStats();
 }
