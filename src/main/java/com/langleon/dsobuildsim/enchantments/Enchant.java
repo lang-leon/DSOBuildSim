@@ -1,29 +1,31 @@
 package com.langleon.dsobuildsim.enchantments;
 
 import com.langleon.dsobuildsim.enums.EnchantType;
+import com.langleon.dsobuildsim.enums.StatType;
 
 public class Enchant {
-    private EnchantType type;
+    private final EnchantType enchantType;
+    private final StatType statType;
     private Double value;
 
-    public Enchant(EnchantType type, Double value){
-        this.type = type;
-        if (value <= this.type.getMaxValue()){
-            this.value = value;
-        }else{
-            this.value = this.type.getMaxValue();
-        }
+    public Enchant(EnchantType enchantType, Double value) {
+        this.enchantType = enchantType;
+        this.statType = enchantType.getStatType();
+        this.value = value;
     }
 
-    public EnchantType getType() {
-        return type;
+    public Enchant(EnchantType enchantType) {
+        this.enchantType = enchantType;
+        this.statType = enchantType.getStatType();
+        this.value = enchantType.getMaxValue();
     }
 
-    public void setType(EnchantType type) {
-        this.type = type;
-        if (this.value>type.getMaxValue()){
-            this.value = type.getMaxValue();
-        }
+    public EnchantType getEnchantType() {
+        return enchantType;
+    }
+
+    public StatType getStatType() {
+        return statType;
     }
 
     public Double getValue() {
@@ -31,23 +33,24 @@ public class Enchant {
     }
 
     public void setValue(Double value) {
-        if (value <= this.type.getMaxValue()){
+        if (value <= this.enchantType.getMaxValue()){
             this.value = value;
         }else{
-            this.value = this.type.getMaxValue();
+            this.value = this.enchantType.getMaxValue();
         }
+    }
+
+    public void setValue(Double value, boolean overrideMaxValue) {
+        if (overrideMaxValue) this.value = value;
     }
 
     public Enchant copyEnchant()
     {
-        return new Enchant(this.type, this.value);
+        return new Enchant(this.enchantType, this.value);
     }
 
     @Override
     public String toString() {
-        return "Enchant{" +
-                "type=" + type +
-                ", value=" + value +
-                '}';
+        return String.format(enchantType.getDescription(), value*100);
     }
 }
