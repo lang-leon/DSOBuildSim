@@ -21,7 +21,7 @@ public class MythicItem extends AbstractItem {
         this.level = level;
         this.tier = tier;
         this.itemSlotType = itemSlotType;
-        this.baseStats = baseStats;
+        this.baseValues = baseStats;
         this.uniqueRelativeValues = uniqueRelativeValues;
         this.uniqueAbsoluteValues = uniqueAbsoluteValues;
         this.set = set;
@@ -43,7 +43,7 @@ public class MythicItem extends AbstractItem {
 
     @Override
     public Map<StatType, Double> calculateTotalStats() {
-        Map<StatType, Double> totalStats = new HashMap<>(getBaseStats());
+        Map<StatType, Double> totalStats = new HashMap<>(getBaseValues());
 
         //calculate base stats + gem stats
         for (Map.Entry<StatType, Double> entry : super.calculateGemStats().entrySet())
