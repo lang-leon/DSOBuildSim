@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SetIemTest {
+    /*
     public static void main(String[] args) throws IOException {
         Map<StatType, Double> basestats = new HashMap<>();
         basestats.put(StatType.DAMAGE, 1644.883);
@@ -30,27 +31,28 @@ public class SetIemTest {
         Reader reader = new InputStreamReader(is);
         GemFactory gemFactory = objectMapper.readValue(reader, GemFactory.class);
         Gem poison = gemFactory.createGem(GemType.POISON_DIAMOND, 17);
-        setItem.addGem(poison);
-        setItem.addGem(poison);
-        setItem.addGem(poison);
+        setItem.setGem(poison);
+        setItem.setGem(poison);
+        setItem.setGem(poison);
         Gem dmg = gemFactory.createGem(GemType.RUBY, 17);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
-        setItem.addGem(dmg);
+        setItem.setGem(dmg);
+        setItem.setGem(dmg);
+        setItem.setGem(dmg);
+        setItem.setGem(dmg);
+        setItem.setGem(dmg);
+        setItem.setGem(dmg);
         Opal opal = gemFactory.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 17);
-        setItem.addGem(opal);
+        setItem.setGem(opal);
         Enchant enchant = new Enchant(EnchantType.CRIT_VALUE, 0.25);
-        setItem.addEnchant(enchant);
-        setItem.addEnchant(enchant);
-        setItem.addEnchant(enchant);
-        setItem.addEnchant(enchant);
+        setItem.setEnchant(enchant);
+        setItem.setEnchant(enchant);
+        setItem.setEnchant(enchant);
+        setItem.setEnchant(enchant);
 
         Map<StatType, Double> totalStats = setItem.calculateTotalStats();
         for (StatType entry : totalStats.keySet()){
             System.out.println(entry + " : " + totalStats.get(entry));
         }
     }
+     */
 }
