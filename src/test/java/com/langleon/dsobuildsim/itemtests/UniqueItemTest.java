@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 public class UniqueItemTest {
+    /*
     public static void main(String[] args) throws IOException {
         Map<StatType, Double> baseStats = new HashMap<>();
         baseStats.put(StatType.DAMAGE, 1463.431);
@@ -39,32 +40,33 @@ public class UniqueItemTest {
         Reader reader = new InputStreamReader(is);
         GemFactory gemFactory = objectMapper.readValue(reader, GemFactory.class);
         Gem poison = gemFactory.createGem(GemType.POISON_DIAMOND, 17);
-        uniqueItem.addGem(poison);
-        uniqueItem.addGem(poison);
-        uniqueItem.addGem(poison);
+        uniqueItem.setGem(poison);
+        uniqueItem.setGem(poison);
+        uniqueItem.setGem(poison);
         Gem dmg = gemFactory.createGem(GemType.RUBY, 17);
-        uniqueItem.addGem(dmg);
-        uniqueItem.addGem(dmg);
-        uniqueItem.addGem(dmg);
-        uniqueItem.addGem(dmg);
-        uniqueItem.addGem(dmg);
-        uniqueItem.addGem(dmg);
+        uniqueItem.setGem(dmg);
+        uniqueItem.setGem(dmg);
+        uniqueItem.setGem(dmg);
+        uniqueItem.setGem(dmg);
+        uniqueItem.setGem(dmg);
+        uniqueItem.setGem(dmg);
         Opal opal = gemFactory.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 17);
-        uniqueItem.addGem(opal);
+        uniqueItem.setGem(opal);
 
         Enchant enchant1 = new Enchant(EnchantType.MOVEMENT_SPEED, 0.22442);
         Enchant enchant2 = new Enchant(EnchantType.MOVEMENT_SPEED, 0.22437);
         Enchant enchant3 = new Enchant(EnchantType.MOVEMENT_SPEED, 0.22439);
         Enchant enchant4 = new Enchant(EnchantType.MOVEMENT_SPEED, 0.22442);
 
-        uniqueItem.addEnchant(enchant1);
-        uniqueItem.addEnchant(enchant2);
-        uniqueItem.addEnchant(enchant3);
-        uniqueItem.addEnchant(enchant4);
+        uniqueItem.setEnchant(enchant1);
+        uniqueItem.setEnchant(enchant2);
+        uniqueItem.setEnchant(enchant3);
+        uniqueItem.setEnchant(enchant4);
 
         Map<StatType, Double> totalStats = uniqueItem.calculateTotalStats();
         for (StatType entry : totalStats.keySet()){
             System.out.println(entry + " : " + totalStats.get(entry));
         }
     }
+     */
 }

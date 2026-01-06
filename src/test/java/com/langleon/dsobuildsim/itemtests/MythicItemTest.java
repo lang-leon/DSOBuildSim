@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MythicItemTest {
+    /*
     public static void main(String[] args) throws IOException {
         Map<StatType, Double> baseStats = new HashMap<>();
         baseStats.put(StatType.DAMAGE, 1891.513);
@@ -41,27 +42,28 @@ public class MythicItemTest {
         Reader reader = new InputStreamReader(is);
         GemFactory gemFactory = objectMapper.readValue(reader, GemFactory.class);
         Gem dmg = gemFactory.createGem(GemType.RUBY, 17);
-        mythicItem.addGem(dmg);
-        mythicItem.addGem(dmg);
-        mythicItem.addGem(dmg);
-        mythicItem.addGem(dmg);
-        mythicItem.addGem(dmg);
-        mythicItem.addGem(dmg);
-        mythicItem.addGem(dmg);
-        mythicItem.addGem(dmg);
-        mythicItem.addGem(dmg);
-        mythicItem.addGem(dmg);
+        mythicItem.setGem(dmg);
+        mythicItem.setGem(dmg);
+        mythicItem.setGem(dmg);
+        mythicItem.setGem(dmg);
+        mythicItem.setGem(dmg);
+        mythicItem.setGem(dmg);
+        mythicItem.setGem(dmg);
+        mythicItem.setGem(dmg);
+        mythicItem.setGem(dmg);
+        mythicItem.setGem(dmg);
 
         Enchant enchant = new Enchant(EnchantType.DAMAGE, 0.44776);
 
-        mythicItem.addEnchant(enchant);
-        mythicItem.addEnchant(enchant);
-        mythicItem.addEnchant(enchant);
-        mythicItem.addEnchant(enchant);
+        mythicItem.setEnchant(enchant);
+        mythicItem.setEnchant(enchant);
+        mythicItem.setEnchant(enchant);
+        mythicItem.setEnchant(enchant);
 
         Map<StatType, Double> totalStats = mythicItem.calculateTotalStats();
         for (StatType entry : totalStats.keySet()){
             System.out.println(entry + " : " + totalStats.get(entry));
         }
     }
+     */
 }

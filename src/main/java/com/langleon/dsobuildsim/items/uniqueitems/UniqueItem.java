@@ -60,8 +60,8 @@ public class UniqueItem extends AbstractItem {
     }
 
     @Override
-    public void addEnchant(Enchant enchant) {
-        super.addEnchant(enchant);
+    public void setEnchant(Enchant enchant) {
+        super.setEnchant(enchant);
     }
 
     @Override
