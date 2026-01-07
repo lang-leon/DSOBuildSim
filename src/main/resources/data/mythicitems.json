@@ -1,5 +1,5 @@
 {
-  "spellweaverMythicItems": {
+  "spellweaverItems": {
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",
@@ -76,7 +76,7 @@
       "set": "ANCESTRAL_GLORY"
     }
   },
-  "dragonknightMythicItems": {
+  "dragonknightItems": {
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",
@@ -153,7 +153,7 @@
       "set": "ANCESTRAL_GLORY"
     }
   },
-  "rangerMythicItems": {
+  "rangerItems": {
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",
@@ -230,7 +230,7 @@
       "set": "ANCESTRAL_GLORY"
     }
   },
-  "steamMechanicusMythicItems": {
+  "steamMechanicusItems": {
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",

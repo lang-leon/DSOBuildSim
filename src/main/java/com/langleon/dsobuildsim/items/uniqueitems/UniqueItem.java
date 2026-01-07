@@ -17,8 +17,9 @@ public class UniqueItem extends AbstractItem {
     private final Map<StatType, Double> uniqueBaseValues;
     private final Map<StatType, Double> uniqueRelativeValues;
     private final List<Enchant> uniqueEnchants;
+    private final String uniqueDescription;
 
-    public UniqueItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, Map<StatType, Double> uniqueBaseValues, Map<StatType, Double> uniqueRelativeValues, List<Enchant> uniqueEnchants){
+    public UniqueItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, Map<StatType, Double> uniqueBaseValues, Map<StatType, Double> uniqueRelativeValues, List<Enchant> uniqueEnchants, String uniqueDescription){
         this.itemType = itemType;
         this.name = name;
         this.level = level;
@@ -28,6 +29,7 @@ public class UniqueItem extends AbstractItem {
         this.uniqueBaseValues = uniqueBaseValues;
         this.uniqueRelativeValues = uniqueRelativeValues;
         this.uniqueEnchants = uniqueEnchants;
+        this.uniqueDescription = uniqueDescription;
         this.gems = new Gem[10];
         this.enchants = new Enchant[10];
     }
@@ -42,6 +44,10 @@ public class UniqueItem extends AbstractItem {
 
     public List<Enchant> getUniqueEnchants() {
         return uniqueEnchants;
+    }
+
+    public String getUniqueDescription() {
+        return uniqueDescription;
     }
 
     @Override
