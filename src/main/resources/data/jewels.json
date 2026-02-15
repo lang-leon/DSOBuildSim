@@ -643,6 +643,26 @@
         }
       }
     },
+    "GLORY": {
+      "jewelType": "GLORY",
+      "defaultTier": "7",
+      "statsPerTier": {
+      },
+      "descriptionPerClassPerTier": {
+        "SPELLWEAVER": {
+          "7": "This jewel will substantially enhance all \"Forgotten Glory\" set effects.\nWhen you equip all two pieces of the \"Forgotten Glory\" set, you shall gain the following effects:\n• Using Frost Wind instantly grants maximum Stirring Frost stacks."
+        },
+        "DRAGONKNIGHT": {
+          "7": "This jewel will substantially enhance all \"Forgotten Glory\" set effects.\nWhen you equip all two pieces of the \"Forgotten Glory\" set, you shall gain the following effects:\n• When you release Banner of War, immediately gain the maximum number of Battle Frenzy stacks.\n• Each stack additionally increases Mighty Wild Swing damage by 15%."
+        },
+        "RANGER": {
+          "7": "This jewel will substantially enhance all \"Forgotten Glory\" set effects.\nWhen you equip all two pieces of the \"Forgotten Glory\" set, you shall gain the following effects:\n• Explosive Arrow triggers an additional explosion with a 4.5 meter radius, dealing 100% Physical Damage to each hit enemy and applying 3 stacks of Burning."
+        },
+        "STEAM_MECHANICUS": {
+          "7": "This jewel will substantially enhance all \"Forgotten Glory\" set effects.\nWhen you equip all two pieces of the \"Forgotten Glory\" set, you shall gain the following effects:\n• Quick Shot has a 100% chance to cause your currently active Mechanical Turrets to fire 3 Ice Bullets.\n• While within the range of your Mechanical Turrets, you gain an additional 100% increased Damage."
+        }
+      }
+    },
     "INGREDIENT_HUNTER": {
       "jewelType": "INGREDIENT_HUNTER",
       "defaultTier": "5",
