@@ -2223,6 +2223,21 @@
         }
       }
     },
+    "KILLERJAW": {
+      "petType": "KILLERJAW",
+      "petUpgradeType": "NONE",
+      "petCategory": "FREE_SPIRITS",
+      "descriptionPerTier": {
+        "6": "When you are at Professor Jullov's Laboratory, each time you deliver a Liberation Key to The Liberated Greed Friend, It will have a 10% chance to additionally drop a Token of Gratitude."
+      },
+      "defaultTier": "6",
+      "statsPerTier": {
+        "6": {
+          "DAMAGE": 0.25,
+          "RESISTANCE_VALUE": 0.15
+        }
+      }
+    },
     "THE_MARVELLOUS_JULIO_BOBR": {
       "petType": "THE_MARVELLOUS_JULIO_BOBR",
       "petUpgradeType": "NONE",
