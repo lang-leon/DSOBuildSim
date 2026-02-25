@@ -56,15 +56,15 @@ public enum DragonknightSets implements SetEnumInterface {
 
     static
     {
-        ANCESTRAL_GLORY.setItems = List.of(DragonknightMythicItem.RING_OF_ANCESTRAL_GLORY, DragonknightMythicItem.ANCESTRAL_GLORY_CLOAK);
-        AT_DEATHS_DOOR.setItems = List.of(DragonknightSetItems.HELMET_OF_DEATH, DragonknightSetItems.SEAL_OF_DEATH);
-        BLACK_WARLORD_REGALIA.setItems = List.of(DragonknightSetItems.HELMET_OF_THE_BLACK_KNIGHT, DragonknightSetItems.SHOULDERS_OF_THE_BLACK_KNIGHT, DragonknightSetItems.CLOAK_OF_THE_BLACK_KNIGHT);
-        END_OF_THE_EMPIRE.setItems = List.of(DragonknightSetItems.HELMET_OF_THE_END, DragonknightSetItems.SHOULDERS_OF_THE_END, DragonknightSetItems.CLOAK_OF_THE_END);
-        FORGOTTON_GLORY.setItems = List.of(DragonknightMythicItem.OLD_GLORY, DragonknightMythicItem.RING_OF_OLD_GLORY);
-        MIGHTY_VISIONARY_SEEKER.setItems = List.of(DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_HELMET, DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_SHOULDERS, DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_TORSO, DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_GLOVES, DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_BOOTS, DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_CAPE);
-        SARGONS_IMMORTAL_TERROR_ARMOR.setItems = List.of(DragonknightSetItems.SARGONS_HORNS, DragonknightSetItems.SARGONS_PAULDRONS, DragonknightSetItems.SARGONS_TORSO);
-        MACHINE_POWER.setItems = List.of(DragonknightSetItems.MACHINE_HELMET, DragonknightSetItems.MACHINE_SHOULDERS, DragonknightSetItems.MACHINE_ARMOR, DragonknightSetItems.MACHINE_FISTS, DragonknightSetItems.MACHINE_BOOTS, DragonknightSetItems.MACHINE_BELT, DragonknightSetItems.LARGE_MACHINE_AXE, DragonknightSetItems.LARGE_MACHINE_BLADE, DragonknightSetItems.LARGE_MACHINE_HAMMER);
-        ENRAGED_EMPORER. setItems = List.of(DragonknightSetItems.ARMOR_OF_THE_FLAME_CONQUEROR, DragonknightSetItems.GLOVES_OF_THE_FLAME_CONQUEROR, DragonknightSetItems.BOOTS_OF_THE_FLAME_CONQUEROR);
-        KRANPARUS_TREASURES.setItems = List.of(DragonknightSetItems.KRANPARUS_ICY_BATTLE_MACE, DragonknightSetItems.KRANPARUS_ICY_SHIELD, DragonknightSetItems.KRANPARUS_ICY_AMULET);
+        //ANCESTRAL_GLORY.setItems = List.of(DragonknightMythicItem.RING_OF_ANCESTRAL_GLORY, DragonknightMythicItem.ANCESTRAL_GLORY_CLOAK);
+        //AT_DEATHS_DOOR.setItems = List.of(DragonknightSetItems.HELMET_OF_DEATH, DragonknightSetItems.SEAL_OF_DEATH);
+        //BLACK_WARLORD_REGALIA.setItems = List.of(DragonknightSetItems.HELMET_OF_THE_BLACK_KNIGHT, DragonknightSetItems.SHOULDERS_OF_THE_BLACK_KNIGHT, DragonknightSetItems.CLOAK_OF_THE_BLACK_KNIGHT);
+        //END_OF_THE_EMPIRE.setItems = List.of(DragonknightSetItems.HELMET_OF_THE_END, DragonknightSetItems.SHOULDERS_OF_THE_END, DragonknightSetItems.CLOAK_OF_THE_END);
+        //FORGOTTON_GLORY.setItems = List.of(DragonknightMythicItem.OLD_GLORY, DragonknightMythicItem.RING_OF_OLD_GLORY);
+        //MIGHTY_VISIONARY_SEEKER.setItems = List.of(DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_HELMET, DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_SHOULDERS, DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_TORSO, DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_GLOVES, DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_BOOTS, DragonknightSetItems.MIGHTY_WRATHFUL_SEEKERS_CAPE);
+        //SARGONS_IMMORTAL_TERROR_ARMOR.setItems = List.of(DragonknightSetItems.SARGONS_HORNS, DragonknightSetItems.SARGONS_PAULDRONS, DragonknightSetItems.SARGONS_TORSO);
+        //MACHINE_POWER.setItems = List.of(DragonknightSetItems.MACHINE_HELMET, DragonknightSetItems.MACHINE_SHOULDERS, DragonknightSetItems.MACHINE_ARMOR, DragonknightSetItems.MACHINE_FISTS, DragonknightSetItems.MACHINE_BOOTS, DragonknightSetItems.MACHINE_BELT, DragonknightSetItems.LARGE_MACHINE_AXE, DragonknightSetItems.LARGE_MACHINE_BLADE, DragonknightSetItems.LARGE_MACHINE_HAMMER);
+        //ENRAGED_EMPORER. setItems = List.of(DragonknightSetItems.ARMOR_OF_THE_FLAME_CONQUEROR, DragonknightSetItems.GLOVES_OF_THE_FLAME_CONQUEROR, DragonknightSetItems.BOOTS_OF_THE_FLAME_CONQUEROR);
+        //KRANPARUS_TREASURES.setItems = List.of(DragonknightSetItems.KRANPARUS_ICY_BATTLE_MACE, DragonknightSetItems.KRANPARUS_ICY_SHIELD, DragonknightSetItems.KRANPARUS_ICY_AMULET);
     }
 }

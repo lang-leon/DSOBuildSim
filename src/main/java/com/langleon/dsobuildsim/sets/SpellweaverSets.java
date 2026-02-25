@@ -59,18 +59,18 @@ public enum SpellweaverSets implements SetEnumInterface {
 
     static
     {
-        ANCESTRAL_GLORY.setItems = List.of(SpellweaverMythicItem.RING_OF_ANCESTRAL_GLORY, SpellweaverMythicItem.ANCESTRAL_GLORY_CLOAK);
-        BLACK_WARLORD_REGALIA.setItems = List.of(SpellweaverSetItems.HELMET_OF_THE_BLACK_KNIGHT, SpellweaverSetItems.SHOULDERS_OF_THE_BLACK_KNIGHT, SpellweaverSetItems.CLOAK_OF_THE_BLACK_KNIGHT);
-        END_OF_THE_EMPIRE.setItems = List.of(SpellweaverSetItems.HELMET_OF_THE_BLACK_KNIGHT, SpellweaverSetItems.SHOULDERS_OF_THE_BLACK_KNIGHT, SpellweaverSetItems.CLOAK_OF_THE_BLACK_KNIGHT);
-        FORGOTTON_GLORY.setItems = List.of(SpellweaverMythicItem.OLD_GLORY, SpellweaverMythicItem.RING_OF_OLD_GLORY);
-        MIGHTY_VISIONARY_SEEKER.setItems = List.of(SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_HELMET, SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_SHOULDERS, SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_TORSO, SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_GLOVES, SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_BOOTS, SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_CAPE);
-        SARGONS_IMMORTAL_TERROR_ARMOR.setItems = List.of(SpellweaverSetItems.SARGONS_HORNS, SpellweaverSetItems.SARGONS_PAULDRONS, SpellweaverSetItems.SARGONS_TORSO);
-        ENRAGED_EMPORER.setItems = List.of(SpellweaverSetItems.ARMOR_OF_THE_FLAME_CONQUEROR, SpellweaverSetItems.GLOVES_OF_THE_FLAME_CONQUEROR, SpellweaverSetItems.BOOTS_OF_THE_FLAME_CONQUEROR);
-        KRANPARUS_TREASURES.setItems = List.of(SpellweaverSetItems.KRANPARUS_ICY_AMULET, SpellweaverSetItems.KRANPARUS_ICY_CONJURING_BOOK, SpellweaverSetItems.KRANPARUS_ICY_STAFF);
-        AT_DEATHS_DOOR.setItems = List.of(SpellweaverSetItems.AMULET_OF_DEATH, SpellweaverSetItems.CAP_OF_DEATH);
-        BLACK_ESSENCE_ARMAMENT.setItems = List.of(SpellweaverSetItems.BLACK_ESSENCE_HELMET, SpellweaverSetItems.BLACK_ESSENCE_PAULDRONS, SpellweaverSetItems.BLACK_ESSENCE_ARMOR, SpellweaverSetItems.BLACK_ESSENCE_GLOVES, SpellweaverSetItems.BLACK_ESSENCE_BOOTS);
-        AUTOMATED_UNIT.setItems = List.of(SpellweaverSetItems.AUTOMATED_SKULLCAP, SpellweaverSetItems.AUTOMATED_SHOULDERGUARDS, SpellweaverSetItems.AUTOMATED_STERNUM_GUARD, SpellweaverSetItems.AUTOMATED_ARMGUARDS, SpellweaverSetItems.AUTOMATED_SHINGUARDS, SpellweaverSetItems.AUTOMATED_BELT, SpellweaverSetItems.AUTOMATED_ARKAN_STAFF);
-        POISON_EXTINGUISHER.setItems = List.of(SpellweaverSetItems.POISON_EXTINGUISHER_HAT, SpellweaverSetItems.POISON_EXTINGUISHER_GLOVES, SpellweaverSetItems.POISON_EXTINGUISHER_BOOTS);
+        //ANCESTRAL_GLORY.setItems = List.of(SpellweaverMythicItem.RING_OF_ANCESTRAL_GLORY, SpellweaverMythicItem.ANCESTRAL_GLORY_CLOAK);
+        //BLACK_WARLORD_REGALIA.setItems = List.of(SpellweaverSetItems.HELMET_OF_THE_BLACK_KNIGHT, SpellweaverSetItems.SHOULDERS_OF_THE_BLACK_KNIGHT, SpellweaverSetItems.CLOAK_OF_THE_BLACK_KNIGHT);
+        //END_OF_THE_EMPIRE.setItems = List.of(SpellweaverSetItems.HELMET_OF_THE_BLACK_KNIGHT, SpellweaverSetItems.SHOULDERS_OF_THE_BLACK_KNIGHT, SpellweaverSetItems.CLOAK_OF_THE_BLACK_KNIGHT);
+        //FORGOTTON_GLORY.setItems = List.of(SpellweaverMythicItem.OLD_GLORY, SpellweaverMythicItem.RING_OF_OLD_GLORY);
+        //MIGHTY_VISIONARY_SEEKER.setItems = List.of(SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_HELMET, SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_SHOULDERS, SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_TORSO, SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_GLOVES, SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_BOOTS, SpellweaverSetItems.MIGHTY_WRATHFUL_SEEKERS_CAPE);
+        //SARGONS_IMMORTAL_TERROR_ARMOR.setItems = List.of(SpellweaverSetItems.SARGONS_HORNS, SpellweaverSetItems.SARGONS_PAULDRONS, SpellweaverSetItems.SARGONS_TORSO);
+        //ENRAGED_EMPORER.setItems = List.of(SpellweaverSetItems.ARMOR_OF_THE_FLAME_CONQUEROR, SpellweaverSetItems.GLOVES_OF_THE_FLAME_CONQUEROR, SpellweaverSetItems.BOOTS_OF_THE_FLAME_CONQUEROR);
+        //KRANPARUS_TREASURES.setItems = List.of(SpellweaverSetItems.KRANPARUS_ICY_AMULET, SpellweaverSetItems.KRANPARUS_ICY_CONJURING_BOOK, SpellweaverSetItems.KRANPARUS_ICY_STAFF);
+        //AT_DEATHS_DOOR.setItems = List.of(SpellweaverSetItems.AMULET_OF_DEATH, SpellweaverSetItems.CAP_OF_DEATH);
+        //BLACK_ESSENCE_ARMAMENT.setItems = List.of(SpellweaverSetItems.BLACK_ESSENCE_HELMET, SpellweaverSetItems.BLACK_ESSENCE_PAULDRONS, SpellweaverSetItems.BLACK_ESSENCE_ARMOR, SpellweaverSetItems.BLACK_ESSENCE_GLOVES, SpellweaverSetItems.BLACK_ESSENCE_BOOTS);
+        //AUTOMATED_UNIT.setItems = List.of(SpellweaverSetItems.AUTOMATED_SKULLCAP, SpellweaverSetItems.AUTOMATED_SHOULDERGUARDS, SpellweaverSetItems.AUTOMATED_STERNUM_GUARD, SpellweaverSetItems.AUTOMATED_ARMGUARDS, SpellweaverSetItems.AUTOMATED_SHINGUARDS, SpellweaverSetItems.AUTOMATED_BELT, SpellweaverSetItems.AUTOMATED_ARKAN_STAFF);
+        //POISON_EXTINGUISHER.setItems = List.of(SpellweaverSetItems.POISON_EXTINGUISHER_HAT, SpellweaverSetItems.POISON_EXTINGUISHER_GLOVES, SpellweaverSetItems.POISON_EXTINGUISHER_BOOTS);
     }
 
 }

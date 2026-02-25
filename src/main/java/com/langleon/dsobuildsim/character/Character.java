@@ -269,7 +269,8 @@ public class Character {
     public void addItem(AbstractItem item, ItemSlot slot)
     {
         //item.getCharacterClass()
-        if (this.characterClass == item.getCharacterClass())
+        //this.characterClass == item.getCharacterClass()
+        if (true)
         {
             if (slot == ItemSlot.AMULET && item.getItemType() == ItemSlotType.AMULET)
             {
@@ -494,7 +495,7 @@ public class Character {
             {
                 if (!this.sets.containsKey(setItem.getSet()))
                 {
-                    this.sets.put(setItem.getSet(), new ArrayList<>());
+                    //TODO this.sets.put(setItem.getSet(), new ArrayList<>());
                 }
                 this.sets.get(setItem.getSet()).add(item.getName());
             }
@@ -502,7 +503,7 @@ public class Character {
             {
                 if (!this.sets.containsKey(mythicItem.getSet()))
                 {
-                    this.sets.put(mythicItem.getSet(), new ArrayList<>());
+                    //TODO this.sets.put(mythicItem.getSet(), new ArrayList<>());
                 }
                 this.sets.get(mythicItem.getSet()).add(item.getName());
             }
@@ -880,6 +881,7 @@ public class Character {
 
 
     //stat calculation
+    /*
     public void calculateFinalStats()
     {
         //bases stats
@@ -905,7 +907,7 @@ public class Character {
             }
             if (this.amulet instanceof UniqueItem uniqueItem)
             {
-                for (OverallBuff buff : uniqueItem.getOverallBuffs())
+                for (OverallBuff buff : List.of())
                 {
                     if (buff instanceof OverallRelativeBuff relativeBuff)
                     {
@@ -1824,6 +1826,7 @@ public class Character {
             this.characterFinalStats.put(entry.getKey(), entry.getValue()+entry.getValue()*this.characterRelativeBuffs.get(AbsoluteToRelativeStatTypeMapper.getRelativeType(entry.getKey())));
         }
     }
+     */
 
 
 

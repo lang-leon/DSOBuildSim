@@ -74,9 +74,11 @@ public enum DragonknightSetItems implements Item {
         this.itemLevel = itemLevel;
     }
 
+    /*
     public SetItem getItem() {
         return new SetItem(this.name, CharacterClass.DRAGONKNIGHT, this.itemSlotType, this.baseStats, this.itemLevel, this.set);
     }
+     */
 
     public CharacterClass getCharacterClass() {
         return characterClass;

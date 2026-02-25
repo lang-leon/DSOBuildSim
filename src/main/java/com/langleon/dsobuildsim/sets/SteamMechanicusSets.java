@@ -43,7 +43,7 @@ public enum SteamMechanicusSets implements SetEnumInterface {
 
     static
     {
-        FORGOTTON_GLORY.setItems = List.of(SteamMechanicusMythicItem.OLD_GLORY, SteamMechanicusMythicItem.RING_OF_OLD_GLORY);
-        ANCESTRAL_GLORY.setItems = List.of(SteamMechanicusMythicItem.RING_OF_ANCESTRAL_GLORY, SteamMechanicusMythicItem.ANCESTRAL_GLORY_CLOAK);
+        //FORGOTTON_GLORY.setItems = List.of(SteamMechanicusMythicItem.OLD_GLORY, SteamMechanicusMythicItem.RING_OF_OLD_GLORY);
+        //ANCESTRAL_GLORY.setItems = List.of(SteamMechanicusMythicItem.RING_OF_ANCESTRAL_GLORY, SteamMechanicusMythicItem.ANCESTRAL_GLORY_CLOAK);
     }
 }

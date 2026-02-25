@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 public enum DragonknightUniqueItems implements Item {
+/*
 
     BLUEPRINT("blueprint", ItemSlotType.AMULET, Map.of(StatType.CRIT_VALUE, 0.0, StatType.HEALTH_POINTS, 0.0, StatType.POISON_RESISTANCE, 0.0), Map.of(), List.of(), List.of(), 145),
 
@@ -63,4 +64,5 @@ public enum DragonknightUniqueItems implements Item {
     public CharacterClass getCharacterClass() {
         return characterClass;
     }
+ */
 }
