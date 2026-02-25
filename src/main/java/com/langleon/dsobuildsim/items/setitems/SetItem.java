@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.items.setitems;
 
-import com.langleon.dsobuildsim.enchantments.Enchant;
+import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
@@ -23,7 +23,7 @@ public class SetItem extends AbstractItem {
         this.baseValues = baseStats;
         this.set = set;
         this.gems = new Gem[10];
-        this.enchants = new Enchant[10];
+        this.enchantments = new Enchantment[10];
     }
 
     public SetType getSet() {

@@ -1,24 +1,5 @@
 package com.langleon.dsobuildsim.itemtests;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.enchantments.Enchant;
-import com.langleon.dsobuildsim.enchantments.UniqueEnchant;
-import com.langleon.dsobuildsim.enums.*;
-import com.langleon.dsobuildsim.enums.gems.GemType;
-import com.langleon.dsobuildsim.gems.*;
-import com.langleon.dsobuildsim.items.uniqueitems.UniqueItem;
-import com.langleon.dsobuildsim.overallbuffs.OverallBuff;
-import com.langleon.dsobuildsim.overallbuffs.OverallRelativeBuff;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class UniqueItemTest {
     /*
     public static void main(String[] args) throws IOException {

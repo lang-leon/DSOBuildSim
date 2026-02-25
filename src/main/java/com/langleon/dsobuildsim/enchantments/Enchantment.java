@@ -1,26 +1,26 @@
 package com.langleon.dsobuildsim.enchantments;
 
-import com.langleon.dsobuildsim.enums.EnchantType;
+import com.langleon.dsobuildsim.enums.EnchantmentType;
 import com.langleon.dsobuildsim.enums.StatType;
 
-public class Enchant {
-    private final EnchantType enchantType;
+public class Enchantment {
+    private final EnchantmentType enchantType;
     private final StatType statType;
     private Double value;
 
-    public Enchant(EnchantType enchantType, Double value) {
+    public Enchantment(EnchantmentType enchantType, Double value) {
         this.enchantType = enchantType;
         this.statType = enchantType.getStatType();
         this.value = value;
     }
 
-    public Enchant(EnchantType enchantType) {
+    public Enchantment(EnchantmentType enchantType) {
         this.enchantType = enchantType;
         this.statType = enchantType.getStatType();
         this.value = enchantType.getMaxValue();
     }
 
-    public EnchantType getEnchantType() {
+    public EnchantmentType getEnchantType() {
         return enchantType;
     }
 
@@ -40,13 +40,18 @@ public class Enchant {
         }
     }
 
-    public void setValue(Double value, boolean overrideMaxValue) {
+    public void setValueOverride(Double value, boolean overrideMaxValue) {
         if (overrideMaxValue) this.value = value;
     }
 
-    public Enchant copyEnchant()
+    public void setMaxValue()
     {
-        return new Enchant(this.enchantType, this.value);
+        this.value = this.enchantType.getMaxValue();
+    }
+
+    public Enchantment copyEnchant()
+    {
+        return new Enchantment(this.enchantType, this.value);
     }
 
     @Override

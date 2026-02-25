@@ -1,10 +1,9 @@
 package com.langleon.dsobuildsim.items.uniqueitems;
 
-import com.langleon.dsobuildsim.enchantments.Enchant;
+import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
-import com.langleon.dsobuildsim.enums.items.SetType;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
 
@@ -16,10 +15,10 @@ public class UniqueItem extends AbstractItem {
 
     private final Map<StatType, Double> uniqueBaseValues;
     private final Map<StatType, Double> uniqueRelativeValues;
-    private final List<Enchant> uniqueEnchants;
+    private final List<Enchantment> uniqueEnchantments;
     private final String uniqueDescription;
 
-    public UniqueItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, Map<StatType, Double> uniqueBaseValues, Map<StatType, Double> uniqueRelativeValues, List<Enchant> uniqueEnchants, String uniqueDescription){
+    public UniqueItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, Map<StatType, Double> uniqueBaseValues, Map<StatType, Double> uniqueRelativeValues, List<Enchantment> uniqueEnchantments, String uniqueDescription){
         this.itemType = itemType;
         this.name = name;
         this.level = level;
@@ -28,10 +27,10 @@ public class UniqueItem extends AbstractItem {
         this.baseValues = baseStats;
         this.uniqueBaseValues = uniqueBaseValues;
         this.uniqueRelativeValues = uniqueRelativeValues;
-        this.uniqueEnchants = uniqueEnchants;
+        this.uniqueEnchantments = uniqueEnchantments;
         this.uniqueDescription = uniqueDescription;
         this.gems = new Gem[10];
-        this.enchants = new Enchant[10];
+        this.enchantments = new Enchantment[10];
     }
 
     public Map<StatType, Double> getUniqueBaseValues() {
@@ -42,8 +41,8 @@ public class UniqueItem extends AbstractItem {
         return uniqueRelativeValues;
     }
 
-    public List<Enchant> getUniqueEnchants() {
-        return uniqueEnchants;
+    public List<Enchantment> getUniqueEnchants() {
+        return uniqueEnchantments;
     }
 
     public String getUniqueDescription() {
@@ -68,9 +67,9 @@ public class UniqueItem extends AbstractItem {
 
         //calculate item stats with enchants applied
         Map<StatType, Double> totalEnchants = calculateEnchantStats();
-        for (Enchant enchant : uniqueEnchants)
+        for (Enchantment enchantment : uniqueEnchantments)
         {
-            totalEnchants.merge(enchant.getStatType(), enchant.getValue(), Double::sum);
+            totalEnchants.merge(enchantment.getStatType(), enchantment.getValue(), Double::sum);
         }
         for (Map.Entry<StatType, Double> entry : totalEnchants.entrySet())
         {

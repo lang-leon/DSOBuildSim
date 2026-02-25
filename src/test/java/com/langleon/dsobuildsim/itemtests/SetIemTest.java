@@ -1,22 +1,5 @@
 package com.langleon.dsobuildsim.itemtests;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.enchantments.Enchant;
-import com.langleon.dsobuildsim.enums.*;
-import com.langleon.dsobuildsim.enums.gems.GemType;
-import com.langleon.dsobuildsim.gems.Gem;
-import com.langleon.dsobuildsim.gems.GemFactory;
-import com.langleon.dsobuildsim.gems.Opal;
-import com.langleon.dsobuildsim.items.setitems.SetItem;
-import com.langleon.dsobuildsim.sets.SpellweaverSets;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.HashMap;
-import java.util.Map;
-
 public class SetIemTest {
     /*
     public static void main(String[] args) throws IOException {
