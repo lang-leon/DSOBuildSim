@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 public enum RangerMythicItem implements Item {
+/*
 
     OLD_GLORY("Old Glory", ItemSlotType.CLOAK, Map.of(StatType.DAMAGE, 1891.513, StatType.ATTACK_SPEED, 0.06, StatType.HEALTH_POINTS, 49521.596), Map.of(), List.of(), List.of(new OverallRelativeBuff(StatType.DAMAGE, 0.1)),145),
     RING_OF_OLD_GLORY("Ring of Old Glory", ItemSlotType.RING, Map.of(StatType.DAMAGE, 1891.513, StatType.CRIT_VALUE, 1753.505, StatType.HEALTH_POINTS, 74282.408), Map.of(), List.of(), List.of(new OverallRelativeBuff(StatType.DAMAGE, 0.05), new OverallRelativeBuff(StatType.CRIT_VALUE, 0.05)),145),
@@ -56,5 +57,6 @@ public enum RangerMythicItem implements Item {
         ANCESTRAL_GLORY_CLOAK.set = RangerSets.ANCESTRAL_GLORY;
         RING_OF_ANCESTRAL_GLORY.set = RangerSets.ANCESTRAL_GLORY;
     }
+ */
 
 }

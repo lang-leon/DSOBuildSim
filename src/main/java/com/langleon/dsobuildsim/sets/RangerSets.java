@@ -43,7 +43,7 @@ public enum RangerSets implements SetEnumInterface {
 
     static
     {
-        FORGOTTON_GLORY.setItems = List.of(RangerMythicItem.OLD_GLORY, RangerMythicItem.RING_OF_OLD_GLORY);
-        ANCESTRAL_GLORY.setItems = List.of(RangerMythicItem.RING_OF_ANCESTRAL_GLORY, RangerMythicItem.ANCESTRAL_GLORY_CLOAK);
+        //FORGOTTON_GLORY.setItems = List.of(RangerMythicItem.OLD_GLORY, RangerMythicItem.RING_OF_OLD_GLORY);
+        //ANCESTRAL_GLORY.setItems = List.of(RangerMythicItem.RING_OF_ANCESTRAL_GLORY, RangerMythicItem.ANCESTRAL_GLORY_CLOAK);
     }
 }

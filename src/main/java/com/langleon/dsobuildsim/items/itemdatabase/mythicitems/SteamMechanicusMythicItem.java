@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 public enum SteamMechanicusMythicItem implements Item {
+/*
 
     OLD_GLORY("Old Glory", ItemSlotType.CLOAK, Map.of(StatType.DAMAGE, 1891.513, StatType.ATTACK_SPEED, 0.06, StatType.HEALTH_POINTS, 28887.598), Map.of(), List.of(), List.of(new OverallRelativeBuff(StatType.DAMAGE, 0.1)),145),
     RING_OF_OLD_GLORY("Ring of Old Glory", ItemSlotType.RING, Map.of(StatType.DAMAGE, 1891.513, StatType.CRIT_VALUE, 1753.505, StatType.HEALTH_POINTS, 43331.404), Map.of(), List.of(), List.of(new OverallRelativeBuff(StatType.DAMAGE, 0.05), new OverallRelativeBuff(StatType.CRIT_VALUE, 0.05)),145),
@@ -56,5 +57,6 @@ public enum SteamMechanicusMythicItem implements Item {
         ANCESTRAL_GLORY_CLOAK.set = SteamMechanicusSets.ANCESTRAL_GLORY;
         RING_OF_ANCESTRAL_GLORY.set = SteamMechanicusSets.ANCESTRAL_GLORY;
     }
+ */
 
 }

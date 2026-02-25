@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 public enum SpellweaverUniqueItems implements Item {
+/*
 
     BLUEPRINT("blueprint", ItemSlotType.ONE_HAND_WEAPON, Map.of(StatType.CRIT_VALUE, .0, StatType.HEALTH_POINTS, .0, StatType.POISON_RESISTANCE, .0), Map.of(), List.of(), List.of(), 145),
 
@@ -153,5 +154,6 @@ public enum SpellweaverUniqueItems implements Item {
     public CharacterClass getCharacterClass() {
         return characterClass;
     }
+ */
 
 }
