@@ -50,7 +50,7 @@ public class ItemFactory {
             case STEAM_MECHANICUS -> itemDefinition = uniqueItemConfig.steamMechanicusItems().get(itemType);
             default -> throw new IllegalArgumentException("Unsupported character class: " + characterClass);
         }
-        return new UniqueItem(itemType, itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.baseValues(), itemDefinition.uniqueBaseValues(), itemDefinition.uniqueRelativeValues(), itemDefinition.uniqueEnchants());
+        return new UniqueItem(itemType, itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.baseValues(), itemDefinition.uniqueBaseValues(), itemDefinition.uniqueRelativeValues(), itemDefinition.uniqueEnchantments());
     }
 
     public AbstractItem createItem(SetItemType itemType, CharacterClass characterClass)

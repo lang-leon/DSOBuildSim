@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.items.core;
 
-import com.langleon.dsobuildsim.enchantments.Enchant;
+import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
@@ -16,7 +16,7 @@ public abstract class AbstractItem {
     protected int tier;
     protected ItemSlotType itemSlotType;
     protected Map<StatType, Double> baseValues;
-    protected Enchant[] enchants;
+    protected Enchantment[] enchantments;
     protected AbstractGem[] gems;
 
     public String getName()
@@ -81,30 +81,30 @@ public abstract class AbstractItem {
         }
     }
 
-    public Enchant[] getEnchants()
+    public Enchantment[] getEnchants()
     {
-        return enchants;
+        return enchantments;
     }
 
-    public void setEnchant(Enchant enchant, int slot)
+    public void setEnchant(Enchantment enchantment, int slot)
     {
         if (slot>=0 && slot<10)
         {
-            enchants[slot] = enchant;
+            enchantments[slot] = enchantment;
         }else
         {
             throw new IllegalArgumentException("Invalid slot index!");
         }
     }
 
-    public void setEnchants(Enchant enchant)
+    public void setEnchants(Enchantment enchantment)
     {
-        for (int i=0; i<4; i++) enchants[i] = enchant;;
+        for (int i=0; i<4; i++) enchantments[i] = enchantment;;
     }
 
     public void removeEnchant(int slot)
     {
-        enchants[slot] = null;
+        enchantments[slot] = null;
     }
 
     public int getLevel() {
@@ -144,9 +144,9 @@ public abstract class AbstractItem {
     {
         Map<StatType, Double> totalEnchants = new HashMap<>();
         for (int i=0; i<4; i++){
-            if (enchants[i]!=null)
+            if (enchantments[i]!=null)
             {
-                totalEnchants.merge(enchants[i].getStatType(), enchants[i].getValue(), Double::sum);
+                totalEnchants.merge(enchantments[i].getStatType(), enchantments[i].getValue(), Double::sum);
             }
         }
         return totalEnchants;

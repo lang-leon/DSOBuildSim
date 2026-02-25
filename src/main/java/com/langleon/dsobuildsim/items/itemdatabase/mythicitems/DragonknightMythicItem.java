@@ -1,6 +1,5 @@
 package com.langleon.dsobuildsim.items.itemdatabase.mythicitems;
 
-import com.langleon.dsobuildsim.enchantments.UniqueEnchant;
 import com.langleon.dsobuildsim.enums.CharacterClass;
 import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;

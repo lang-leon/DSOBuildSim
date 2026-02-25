@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.enums;
 
-public enum EnchantType {
+public enum EnchantmentType {
 
     ANDERMAGIC_RESISTANCE(StatType.ANDERMAGIC_RESISTANCE, "+ %.3f%% Andermagic resistance on this item", 0.26961),
     ARMOR(StatType.ARMOR_VALUE, "+ %.3f%% amor value on this item", 0.27058),
@@ -20,7 +20,7 @@ public enum EnchantType {
     private final String description;
     private final Double maxValue;
 
-    EnchantType(StatType statType, String description, Double maxValue){
+    EnchantmentType(StatType statType, String description, Double maxValue){
         this.statType = statType;
         this.description = description;
         this.maxValue = maxValue;
