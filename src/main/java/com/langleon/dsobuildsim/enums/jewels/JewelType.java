@@ -20,6 +20,7 @@ public enum JewelType {
     GEM_FORTUNE("Jewel of Gem Fortune", 1),
     GHOST_POWER("Jewel of Ghost Power", 3),
     GLACIAL_FANG("Jewel of Glacial Fang", 1),
+    GLORY("Jewel of Glory", 1),
     INGREDIENT_HUNTER("Jewel of the Ingredient Hunter", 3),
     LASTING_HEALTH("Jewel of Lasting Health", 1),
     PENT_UP_POWER("Jewel of Pent-up Power", 1),
