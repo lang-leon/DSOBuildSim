@@ -30,7 +30,7 @@ public class UniqueItem extends AbstractItem {
         this.uniqueEnchantments = uniqueEnchantments;
         this.uniqueDescription = uniqueDescription;
         this.gems = new Gem[10];
-        this.enchantments = new Enchantment[10];
+        this.enchantments = new Enchantment[4];
     }
 
     public Map<StatType, Double> getUniqueBaseValues() {

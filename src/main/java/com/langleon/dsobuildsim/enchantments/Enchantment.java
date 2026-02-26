@@ -3,6 +3,8 @@ package com.langleon.dsobuildsim.enchantments;
 import com.langleon.dsobuildsim.enums.EnchantmentType;
 import com.langleon.dsobuildsim.enums.StatType;
 
+import java.util.Objects;
+
 public class Enchantment {
     private final EnchantmentType enchantType;
     private final StatType statType;
@@ -57,5 +59,17 @@ public class Enchantment {
     @Override
     public String toString() {
         return String.format(enchantType.getDescription(), value*100);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Enchantment that = (Enchantment) o;
+        return enchantType == that.enchantType && statType == that.statType && Objects.equals(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(enchantType, statType, value);
     }
 }

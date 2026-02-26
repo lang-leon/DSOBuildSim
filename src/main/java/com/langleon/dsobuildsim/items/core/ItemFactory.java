@@ -1,5 +1,7 @@
 package com.langleon.dsobuildsim.items.core;
 
+import com.langleon.dsobuildsim.enchantments.Enchantment;
+import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
 import com.langleon.dsobuildsim.enums.CharacterClass;
 import com.langleon.dsobuildsim.enums.items.MythicItemType;
 import com.langleon.dsobuildsim.enums.items.SetItemType;
@@ -14,6 +16,8 @@ import com.langleon.dsobuildsim.items.uniqueitems.UniqueItem;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemDefinition;
 
+import java.util.List;
+
 public class ItemFactory {
     private final MythicItemConfig mythicItemConfig;
     private final UniqueItemConfig uniqueItemConfig;
@@ -25,7 +29,7 @@ public class ItemFactory {
         this.setItemConfig = setItemConfig;
     }
 
-    public AbstractItem createItem(MythicItemType itemType, CharacterClass characterClass)
+    public MythicItem createItem(MythicItemType itemType, CharacterClass characterClass)
     {
         MythicItemDefinition itemDefinition;
         switch (characterClass)
@@ -39,7 +43,7 @@ public class ItemFactory {
         return new MythicItem(itemType, itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.baseValues(), itemDefinition.uniqueRelativeValues(), itemDefinition.uniqueAbsoluteValues(), itemDefinition.set());
     }
 
-    public AbstractItem createItem(UniqueItemType itemType, CharacterClass characterClass)
+    public UniqueItem createItem(UniqueItemType itemType, CharacterClass characterClass)
     {
         UniqueItemDefinition itemDefinition;
         switch (characterClass)
@@ -50,10 +54,11 @@ public class ItemFactory {
             case STEAM_MECHANICUS -> itemDefinition = uniqueItemConfig.steamMechanicusItems().get(itemType);
             default -> throw new IllegalArgumentException("Unsupported character class: " + characterClass);
         }
-        return new UniqueItem(itemType, itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.baseValues(), itemDefinition.uniqueBaseValues(), itemDefinition.uniqueRelativeValues(), itemDefinition.uniqueEnchantments());
+        List<Enchantment> uniqueEnchantments = itemDefinition.uniqueEnchantments().stream().map(EnchantmentDefinition::toEnchantment).toList();
+        return new UniqueItem(itemType, itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.baseValues(), itemDefinition.uniqueBaseValues(), itemDefinition.uniqueRelativeValues(), uniqueEnchantments, itemDefinition.uniqueDescription());
     }
 
-    public AbstractItem createItem(SetItemType itemType, CharacterClass characterClass)
+    public SetItem createItem(SetItemType itemType, CharacterClass characterClass)
     {
         SetItemDefinition itemDefinition;
         switch (characterClass)
