@@ -118,6 +118,9 @@ public enum PetType {
     GUARDIAN_OF_RAVENCAW("Guardian of Ravencaw"),
 
     //Free Spirits
+    IRON_PAW("Iron Paw"),
+    SOUL_OF_ATHENA("Soul of Athena"),
+    KILLERJAW("Killerjaw"),
     THE_MARVELLOUS_JULIO_BOBR("The marvellous Julio Bóbr"),
     JULIO_BOBR("Julio Bóbr"),
     COLORFUL_FIREFLY("Colorful Firefly"),
