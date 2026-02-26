@@ -1,10 +1,16 @@
 package com.langleon.dsobuildsim.enums.items;
 
 public enum MythicItemType implements ItemType {
-    RING_OF_OLD_GLORY,
+
+    //cloaks
     OLD_GLORY,
     ANCESTRAL_GLORY_CLOAK,
-    ANCESTRAL_GLORY_RING;
+
+    //rings
+    ANCESTRAL_GLORY_RING,
+    RING_OF_OLD_GLORY,
+
+    ;
 
     MythicItemType() {
     }
