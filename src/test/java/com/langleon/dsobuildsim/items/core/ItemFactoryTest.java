@@ -3,7 +3,12 @@ package com.langleon.dsobuildsim.items.core;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.enums.*;
+import com.langleon.dsobuildsim.enums.items.MythicItemType;
+import com.langleon.dsobuildsim.enums.items.SetType;
 import com.langleon.dsobuildsim.enums.items.UniqueItemType;
+import com.langleon.dsobuildsim.items.mythicitems.MythicItem;
+import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
+import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItem;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
 import org.junit.jupiter.api.Assertions;
@@ -21,16 +26,32 @@ public class ItemFactoryTest {
 
     @BeforeEach
     void setup() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        MythicItemConfig mythicItemConfig;
+        UniqueItemConfig uniqueItemConfig;
+        SetItemConfig setItemConfig;
+
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/mythicitems.json")))
+        {
+            mythicItemConfig = objectMapper.readValue(reader, MythicItemConfig.class);
+        }
+
         try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/uniqueitems.json")))
         {
-            ObjectMapper objectMapper = new ObjectMapper();
-            UniqueItemConfig uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
-            itemFactory = new ItemFactory(null, uniqueItemConfig, null);
+            uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
         }
+
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/setitems.json")))
+        {
+            setItemConfig = objectMapper.readValue(reader, SetItemConfig.class);
+        }
+
+        itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig);
     }
 
     @Test
-    void createAnniversaryTwoHandUpgraded()
+    void createAnniversaryTwoHandUpgraded() //Unique Item
     {
         UniqueItem item = itemFactory.createItem(UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED, CharacterClass.SPELLWEAVER);
         Assertions.assertEquals(item.getItemType(), UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED);
@@ -55,7 +76,7 @@ public class ItemFactoryTest {
     }
 
     @Test
-    void createBrigavikGloves()
+    void createBrigavikGloves() //Unique Item
     {
         UniqueItem item = itemFactory.createItem(UniqueItemType.BRIGAVIK_GLOVES, CharacterClass.SPELLWEAVER);
         Assertions.assertEquals(item.getItemType(), UniqueItemType.BRIGAVIK_GLOVES);
@@ -79,7 +100,7 @@ public class ItemFactoryTest {
     }
 
     @Test
-    void createRocketmanAdornment()
+    void createRocketmanAdornment() //Unique Item
     {
         UniqueItem item = itemFactory.createItem(UniqueItemType.ROCKETMAN_ADORNMENT, CharacterClass.SPELLWEAVER);
         Assertions.assertEquals(item.getItemType(), UniqueItemType.ROCKETMAN_ADORNMENT);
@@ -100,5 +121,51 @@ public class ItemFactoryTest {
         Assertions.assertEquals(item.getUniqueRelativeValues(), Map.of());
         Assertions.assertEquals(item.getUniqueEnchants(), List.of(new Enchantment(EnchantmentType.DAMAGE, 0.67637), new Enchantment(EnchantmentType.CRIT_VALUE, 0.60126)));
         Assertions.assertEquals(item.getUniqueDescription(),"");
+    }
+
+    @Test
+    void createRingOfOldGlory() //Mythic Item
+    {
+        MythicItem item = itemFactory.createItem(MythicItemType.RING_OF_OLD_GLORY, CharacterClass.SPELLWEAVER);
+        Assertions.assertEquals(item.getItemType(), MythicItemType.RING_OF_OLD_GLORY);
+        Assertions.assertEquals(item.getLevel(), 145);
+        Assertions.assertEquals(item.getName(), "Ring of Old Glory");
+        Assertions.assertEquals(item.getItemSlotType(), ItemSlotType.RING);
+        Assertions.assertEquals(item.getTier(), 7);
+        Assertions.assertEquals(item.getBaseValues(), Map.of(StatType.DAMAGE, 1891.513, StatType.CRIT_VALUE, 1753.505, StatType.HEALTH_POINTS, 24760.80));
+        for (int i = 0; i<item.getEnchants().length; i++)
+        {
+            Assertions.assertEquals(item.getEnchants()[i], null);
+        }
+        for (int i = 0; i<item.getGems().length; i++)
+        {
+            Assertions.assertEquals(item.getGems()[i], null);
+        }
+        Assertions.assertEquals(item.getUniqueAbsoluteValues(), Map.of());
+        Assertions.assertEquals(item.getUniqueRelativeValues(), Map.of(StatType.DAMAGE, 0.05, StatType.CRIT_VALUE, 0.05));
+        Assertions.assertEquals(item.getSet(), SetType.FORGOTTEN_GLORY);
+    }
+
+    @Test
+    void createAncestralGloryCloak() //Mythic Item
+    {
+        MythicItem item = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_CLOAK, CharacterClass.RANGER);
+        Assertions.assertEquals(item.getItemType(), MythicItemType.ANCESTRAL_GLORY_CLOAK);
+        Assertions.assertEquals(item.getLevel(), 145);
+        Assertions.assertEquals(item.getName(), "Ancestral Glory Cloak (Archer)");
+        Assertions.assertEquals(item.getItemSlotType(), ItemSlotType.CLOAK);
+        Assertions.assertEquals(item.getTier(), 7);
+        Assertions.assertEquals(item.getBaseValues(), Map.of(StatType.DAMAGE, 1891.513, StatType.ATTACK_SPEED, 0.06, StatType.HEALTH_POINTS, 37966.560));
+        for (int i = 0; i<item.getEnchants().length; i++)
+        {
+            Assertions.assertEquals(item.getEnchants()[i], null);
+        }
+        for (int i = 0; i<item.getGems().length; i++)
+        {
+            Assertions.assertEquals(item.getGems()[i], null);
+        }
+        Assertions.assertEquals(item.getUniqueAbsoluteValues(), Map.of(StatType.DAMAGE, 5000.0));
+        Assertions.assertEquals(item.getUniqueRelativeValues(), Map.of(StatType.DAMAGE, 0.10));
+        Assertions.assertEquals(item.getSet(), SetType.ANCESTRAL_GLORY);
     }
 }

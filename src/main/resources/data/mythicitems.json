@@ -212,7 +212,7 @@
     },
     "ANCESTRAL_GLORY_CLOAK": {
       "itemType": "ANCESTRAL_GLORY_CLOAK",
-      "name": "Ancestral Glory Cloak (Mage)",
+      "name": "Ancestral Glory Cloak (Archer)",
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "CLOAK",
@@ -289,7 +289,7 @@
     },
     "ANCESTRAL_GLORY_CLOAK": {
       "itemType": "ANCESTRAL_GLORY_CLOAK",
-      "name": "Ancestral Glory Cloak (Archer)",
+      "name": "Ancestral Glory Cloak (Dwarf)",
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "CLOAK",
