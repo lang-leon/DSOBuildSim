@@ -2,6 +2,7 @@ package com.langleon.dsobuildsim.enums.items;
 
 public enum SetType {
     AMMONS_GLEAM,
+    ANCESTRAL_GLORY,
     ANITQUE_ATLANTIS_ARMOR,
     ARMOR_OF_DARKNESS,
     AT_DEATHS_DOORSTEP,
@@ -24,6 +25,7 @@ public enum SetType {
     END_OF_THE_EMPIRE,
     ENRAGED_EMPEROR,
     EXECUTOR_OF_THE_GREAT_PLAGUES,
+    FORGOTTEN_GLORY,
     HUNTING_POWER,
     JEWELS_OF_THE_DESERT,
     JOY_OF_SPRING,
