@@ -17,7 +17,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Makes you immune to the self-damage cause by the Jewel of Poisonous Thorns' effect."
     },
@@ -36,7 +36,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "DAMAGE",
           "value": 0.67153
@@ -60,7 +60,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Frost Wind talent by 4."
     },
@@ -79,7 +79,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Realm Charger talent by 2.\n+ 2 drop stack size of Realm Fragment"
     },
@@ -98,7 +98,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Whenever you defeat enemies you will generate Protective Energy. If you heath drops below 33% the accumulated Protective Energy will generate a shield around you, increasing your armor by 2% for each stack of Protective Energy for 20 seconds."
     },
@@ -118,7 +118,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Singularity talent by 4."
     },
@@ -138,7 +138,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -159,7 +159,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -179,7 +179,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "BLOCK_VALUE",
           "value": 0.12182
@@ -203,7 +203,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -223,7 +223,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Focus buff. It regenerates 5 Resource every second for 10 seconds. The buff has a cooldown of 30 seconds."
     },
@@ -243,7 +243,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -263,7 +263,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -283,7 +283,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "BLOCK_VALUE",
           "value": 0.24364
@@ -306,7 +306,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "When your Health Points drop below 30%, you will enter the Soul Revival state, which restores 10% of your maximum Health Points every second for 10 seconds. (PVP: 3 seconds).\nCooldown: 100 seconds"
     },
@@ -327,7 +327,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -346,7 +346,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "50% less time to summon Mounts"
     },
@@ -366,7 +366,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "50% less time to summon Mounts"
     },
@@ -386,7 +386,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Fireball will shoot a dual fireball instead of the normal one. Each fireball will deal 75% of the normal fireball damage."
     },
@@ -407,7 +407,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -426,7 +426,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "LIGHTNING_RESISTANCE",
           "value": 0.12135
@@ -450,7 +450,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Teleport will petrify nearby enemies at the point of origin for 3 seconds."
     },
@@ -469,7 +469,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "HEALTH_POINTS",
           "value": 0.4415
@@ -492,7 +492,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "+ 3.0-10.0% chance of finding items from regular monsters"
     },
@@ -512,7 +512,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Lightning Strike talent by 4."
     },
@@ -531,7 +531,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "DAMAGE",
           "value": 0.22384
@@ -556,7 +556,7 @@
       "uniqueRelativeValues": {
         "RESISTANCE_VALUE": 0.1
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -575,7 +575,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "POISON_RESISTANCE",
           "value": 0.12134
@@ -599,7 +599,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -618,7 +618,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "If your Health Points drop lower than 33%, 3 Taunting Drones will appear that will taunt foes, fly away in random directions after a while and then explode. They live for 8 seconds in total - can be used once every 100 seconds."
     },
@@ -638,7 +638,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -658,7 +658,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ANDERMAGIC_RESISTANCE",
           "value": 0.26922
@@ -682,7 +682,7 @@
       "uniqueRelativeValues": {
         "DAMAGE": 0.03
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ATTACK_SPEED",
           "value": 0.46126
@@ -705,7 +705,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "If your Health Points drop lower than 33%, a Black Knight will appear that will distract foes and fight for you for 10 seconds - can be used once every 120 seconds. Only one Black Knight can be active at a time."
     },
@@ -725,7 +725,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -744,7 +744,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Reduces the duration of Frost and Freeze effects on you by 33%"
     },
@@ -763,7 +763,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Reduces the duration of Burn effects on you by 33%"
     },
@@ -783,7 +783,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -802,7 +802,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ARMOR",
           "value": 0.12155
@@ -826,7 +826,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -845,7 +845,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Reduces the duration of Poisoning effects on you by 33%"
     },
@@ -865,7 +865,7 @@
       "uniqueRelativeValues": {
         "ATTACK_SPEED": 0.05
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -885,7 +885,7 @@
       "uniqueRelativeValues": {
         "DAMAGE": 0.05
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -903,7 +903,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "When your Health Points drop below 33%, for 5 seconds your Block Value and Block Rating will be increased by milion.\nCooldown: 5 minutes"
     },
@@ -923,7 +923,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -942,7 +942,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Every successful hit has a 20% chance to spawn a snowball, dealing damage and slowing the enemy it hits."
     },
@@ -961,7 +961,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "When you defeat an enemy your critical value will be increased by 0,2%. This effect lasts for 1 Minute or until you have been defeated. This effect can stack up to 100 times."
     },
@@ -981,7 +981,7 @@
       "uniqueRelativeValues": {
         "ATTACK_SPEED": 0.02
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Resistance Values by 15% for 10 seconds."
     },
@@ -1001,7 +1001,7 @@
       "uniqueRelativeValues": {
         "DAMAGE": 0.02
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Damage by 15% for 10 seconds."
     },
@@ -1021,7 +1021,7 @@
       "uniqueRelativeValues": {
         "HEALTH_POINTS": 0.02
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Armor Value by 15% for 10 seconds."
     },
@@ -1041,7 +1041,7 @@
       "uniqueRelativeValues": {
         "MOVEMENT_SPEED": 0.02
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Movement Speed by 15% for 10 seconds."
     },
@@ -1060,7 +1060,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "RESISTANCE",
           "value": 0.27198
@@ -1085,7 +1085,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -1105,7 +1105,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -1125,7 +1125,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Frost Charge talent by 4."
     },
@@ -1145,7 +1145,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Mind Control talent by 3."
     },
@@ -1164,7 +1164,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "FIRE_RESISTANCE",
           "value": 0.12134
@@ -1187,7 +1187,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "CRIT_VALUE",
           "value": 0.24365
@@ -1211,7 +1211,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -1231,7 +1231,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "DAMAGE",
           "value": 0.22384
@@ -1255,7 +1255,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Magic Missile talent by 10.\nMagic Missile reduces the poison resistance of hit enemies by 50% for 10 seconds (PvP: 5 seconds). (Effect not stackable)"
     },
@@ -1275,7 +1275,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -1295,7 +1295,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "If your Health Points drop below 33% three Illusions of you will spawn nearby causing a Destruction towards enemies that deals 190% of your base damage as physical damage and 65% of your base damage as lightning damage. This effect has a cooldown of 60 seconds."
     },
@@ -1314,7 +1314,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ICE_RESISTANCE",
           "value": 0.12134
@@ -1338,7 +1338,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "- Singularity% cooldown time for 20.00"
     },
@@ -1357,7 +1357,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "BLOCK_VALUE",
           "value": 0.24184
@@ -1382,7 +1382,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -1401,7 +1401,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ARMOR",
           "value": 0.40632
@@ -1426,7 +1426,7 @@
       "uniqueRelativeValues": {
         "HEALTH_POINTS": 0.05
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -1447,7 +1447,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -1466,7 +1466,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ARMOR",
           "value": 0.26832
@@ -1491,7 +1491,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -1510,7 +1510,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ANDERMAGIC_RESISTANCE",
           "value": 0.12134
@@ -1535,7 +1535,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -1555,7 +1555,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Frozen Sphere talent by 3."
     },
@@ -1575,7 +1575,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Frozen Sphere talent by 10.\nFrozen Sphere has a 5% chance to petrify hit enemies."
     },
@@ -1595,7 +1595,7 @@
       "uniqueRelativeValues": {
         "ARMOR_VALUE": 0.10
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "RESISTANCE",
           "value": 0.27198
@@ -1618,7 +1618,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "HEALTH_POINTS",
           "value": 0.22295
@@ -1641,7 +1641,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "RESISTANCE",
           "value": 0.41173
@@ -1665,7 +1665,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Risig Vigor (III) talent by 4."
     },
@@ -1684,7 +1684,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ATTACK_SPEED",
           "value": 0.21679
@@ -1707,7 +1707,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "DAMAGE",
           "value": 0.44221
@@ -1730,7 +1730,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "MOVEMENT_SPEED",
           "value": 0.3846
@@ -1754,7 +1754,7 @@
       "uniqueRelativeValues": {
         "CRIT_VALUE": 0.10
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "MOVEMENT_SPEED",
           "value": 0.25558
@@ -1777,7 +1777,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "MOVEMENT_SPEED",
           "value": 0.25558
@@ -1801,7 +1801,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Price Fall (II) talent by 5."
     },
@@ -1820,7 +1820,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "MOVEMENT_SPEED",
           "value": 0.12402
@@ -1844,7 +1844,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Teleport talent by 4.0"
     },
@@ -1863,7 +1863,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases your movement speed by 25% as long as you don't get hit by enemies. Whenever you get hit the increased movement speed is deactivated for 10 seconds."
     },
@@ -1881,7 +1881,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Whenever you defeat an enemy you will get the Frenzy of the Vanquisher buff that increases your critical value by 0,1%. This effect lasts for 1 minute or until you have been defeated. It can stack up to 100 times."
     },
@@ -1900,7 +1900,7 @@
       "uniqueRelativeValues": {
         "DAMAGE": 0.05
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "CRIT_VALUE",
           "value": 0.24365
@@ -1923,7 +1923,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Fire Blast talent by 2."
     },
@@ -1941,7 +1941,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "CRIT_VALUE",
           "value": 0.11354
@@ -1964,7 +1964,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Ice Missile talent by 5."
     },
@@ -1983,7 +1983,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "DAMAGE",
           "value": 0.67637
@@ -2011,7 +2011,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Each critical hit has a 10% chance to summon a spider which will assist oyu for 10 seconds, dealing up to 50% of your base damage. Maximum number: 3 Spiders."
     },
@@ -2031,7 +2031,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -2049,7 +2049,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "If your Health Points drop lower than 33%, Flying Saifs will appear that will distract foes and fight for you for 10 seconds - can be used once every 120 seconds."
     },
@@ -2067,7 +2067,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "DAMAGE",
           "value": 0.5794
@@ -2091,7 +2091,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Each successful attack with Lightning Strike generates 5 Ghost Energies. As soon as you stack Ghost Energy 25 times you get a 50% damage bonus for 5 seconds and a Ghost Aura will be generated at your location. Every enemy within the Ghost Aura deals less damage."
     },
@@ -2109,7 +2109,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ATTACK_SPEED",
           "value": 0.22182
@@ -2131,7 +2131,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Rising Vigor (III) talent by 4."
     },
@@ -2150,7 +2150,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -2168,7 +2168,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ATTACK_SPEED",
           "value": 0.9432
@@ -2191,7 +2191,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Each critical hit with Magic Missile and Meteor generates Ghost Energy. As soon as you stack Ghost Energy 25 times you get a 50% damage bonus for 5 seconds and a Ghost Aura will be generated at your location. Each enemy within the Ghost Aura deals less damage."
     },
@@ -2210,7 +2210,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "BLOCK_VALUE",
           "value": 0.12183
@@ -2232,7 +2232,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "DAMAGE",
           "value": 0.19318
@@ -2254,7 +2254,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "BLOCK_VALUE",
           "value": 0.11622
@@ -2277,7 +2277,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Rising Vigor (III) talent by 4."
     },
@@ -2295,7 +2295,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "There is a 8% chance that the fists of Sharr Kharab will attack your enemies after using Magic Missile and cause 100% of your base damage as physical damage."
     },
@@ -2315,7 +2315,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -2336,7 +2336,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -2355,7 +2355,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Defeating an enemy has a chance to trigger a cross-shaped aura that deals up to 200% of your base damage to all enemies inside the cross depending, on how far away they are from the center of it. The damage type of the aura will change based on your chosen elemental mastery talents. Every level of your elemental mastery will increase the dealt damage by 50%."
     },
@@ -2375,7 +2375,7 @@
       "uniqueRelativeValues": {
         "DAMAGE": 0.10
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Defeating an enemy has a chance to trigger a cross-shaped aura that deals up to 250% of your base damage to all enemies inside the cross depending, on how far away they are from the center of it. The damage type of the aura will change based on your chosen elemental mastery talents. Every level of your elemental mastery will increase the dealt damage by 60%.\nWhen your Health Points drop below 33%, you will enter the Wind of Recovery state, which restores 1% of your maximum Health Points every second. It will last for 5 seconds and can be stacked up to 3 times."
     },
@@ -2393,7 +2393,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ATTACK_SPEED",
           "value": 0.94322
@@ -2416,7 +2416,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Ball Lightning talent by 2."
     },
@@ -2435,7 +2435,7 @@
       "uniqueRelativeValues": {
         "DAMAGE": 0.08
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "CRIT_VALUE",
           "value": 0.2392
@@ -2458,7 +2458,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": ""
     },
@@ -2477,7 +2477,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "When you hit an opponent, there is a 5% chance that a \"Fire Nova\" will be generated at your location. It will inflict 300% of your base damage as fire damage upon surrounding enemies - 20-second cooldown time."
     },
@@ -2496,7 +2496,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "When you hit an opponent, there is a 5% chance that a \"Lightning Nova\" will be generated at your location. It will inflict 300% of your base damage as lightning damage upon surrounding enemies - 20-second cooldown time."
     },
@@ -2515,7 +2515,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "When you hit an opponent, there is a 5% chance that a \"Poison Nova\" will be generated at your location. It will inflict 300% of your base damage as poison damage upon surrounding enemies - 20-second cooldown time."
     },
@@ -2533,7 +2533,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "ATTACK_SPEED",
           "value": 0.46856
@@ -2556,7 +2556,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Destruction talent by 2."
     },
@@ -2574,7 +2574,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "DAMAGE",
           "value": 0.19296
@@ -2596,7 +2596,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
       ],
       "uniqueDescription": "Increases the Lightning Strike talent by 5."
     },
@@ -2615,7 +2615,7 @@
       },
       "uniqueRelativeValues": {
       },
-      "uniqueEnchants": [
+      "uniqueEnchantments": [
         {
           "enchantmentType": "DAMAGE",
           "value": 0.29099
@@ -2634,24 +2634,5 @@
   },
   "steamMechanicusItems":
   {
-    "NAME": {
-      "itemType": "NAME",
-      "name": "",
-      "defaultLevel": 145,
-      "tier": 6,
-      "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.06,
-        "HEALTH_POINTS": 16507.200
-      },
-      "uniqueBaseValues": {
-      },
-      "uniqueRelativeValues": {
-      },
-      "uniqueEnchants": [
-      ],
-      "uniqueDescription": ""
-    }
   }
 }

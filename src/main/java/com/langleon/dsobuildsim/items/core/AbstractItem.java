@@ -24,9 +24,9 @@ public abstract class AbstractItem {
         return name;
     }
 
-    public ItemSlotType getItemType()
+    public ItemType getItemType()
     {
-        return this.itemSlotType;
+        return this.itemType;
     }
 
     public Map<StatType, Double> getBaseValues()

@@ -272,7 +272,7 @@ public class Character {
         //this.characterClass == item.getCharacterClass()
         if (true)
         {
-            if (slot == ItemSlot.AMULET && item.getItemType() == ItemSlotType.AMULET)
+            if (slot == ItemSlot.AMULET && item.getItemSlotType() == ItemSlotType.AMULET)
             {
                 if (this.amulet !=null)
                 {
@@ -287,7 +287,7 @@ public class Character {
                 }
                 this.amulet = item;
             }
-            else if (slot == ItemSlot.CLOAK && item.getItemType() == ItemSlotType.CLOAK)
+            else if (slot == ItemSlot.CLOAK && item.getItemSlotType() == ItemSlotType.CLOAK)
             {
                 if (this.cloak !=null)
                 {
@@ -302,7 +302,7 @@ public class Character {
                 }
                 this.cloak = item;
             }
-            else if (slot == ItemSlot.BELT && item.getItemType() == ItemSlotType.BELT)
+            else if (slot == ItemSlot.BELT && item.getItemSlotType() == ItemSlotType.BELT)
             {
                 if (this.belt !=null)
                 {
@@ -317,7 +317,7 @@ public class Character {
                 }
                 this.belt = item;
             }
-            else if (slot == ItemSlot.RING1 && item.getItemType() == ItemSlotType.RING)
+            else if (slot == ItemSlot.RING1 && item.getItemSlotType() == ItemSlotType.RING)
             {
                 if (this.ring1 !=null)
                 {
@@ -332,7 +332,7 @@ public class Character {
                 }
                 this.ring1 = item;
             }
-            else if (slot == ItemSlot.RING2 && item.getItemType() == ItemSlotType.RING)
+            else if (slot == ItemSlot.RING2 && item.getItemSlotType() == ItemSlotType.RING)
             {
                 if (this.ring2 !=null)
                 {
@@ -347,7 +347,7 @@ public class Character {
                 }
                 this.ring2 = item;
             }
-            else if (slot == ItemSlot.HELMET && item.getItemType() == ItemSlotType.HELMET)
+            else if (slot == ItemSlot.HELMET && item.getItemSlotType() == ItemSlotType.HELMET)
             {
                 if (this.helmet !=null)
                 {
@@ -362,7 +362,7 @@ public class Character {
                 }
                 this.helmet = item;
             }
-            else if (slot == ItemSlot.SHOULDERS && item.getItemType() == ItemSlotType.SHOULDERS)
+            else if (slot == ItemSlot.SHOULDERS && item.getItemSlotType() == ItemSlotType.SHOULDERS)
             {
                 if (this.shoulders !=null)
                 {
@@ -377,7 +377,7 @@ public class Character {
                 }
                 this.shoulders = item;
             }
-            else if (slot == ItemSlot.TORSO && item.getItemType() == ItemSlotType.TORSO)
+            else if (slot == ItemSlot.TORSO && item.getItemSlotType() == ItemSlotType.TORSO)
             {
                 if (this.torso !=null)
                 {
@@ -392,7 +392,7 @@ public class Character {
                 }
                 this.torso = item;
             }
-            else if (slot == ItemSlot.GLOVES && item.getItemType() == ItemSlotType.GLOVES)
+            else if (slot == ItemSlot.GLOVES && item.getItemSlotType() == ItemSlotType.GLOVES)
             {
                 if (this.gloves !=null)
                 {
@@ -407,7 +407,7 @@ public class Character {
                 }
                 this.gloves = item;
             }
-            else if (slot == ItemSlot.BOOTS && item.getItemType() == ItemSlotType.BOOTS)
+            else if (slot == ItemSlot.BOOTS && item.getItemSlotType() == ItemSlotType.BOOTS)
             {
                 if (this.boots !=null)
                 {
@@ -422,7 +422,7 @@ public class Character {
                 }
                 this.boots = item;
             }
-            else if (slot == ItemSlot.WEAPON_ADORNMENT && item.getItemType() == ItemSlotType.WEAPON_ADORNMENT)
+            else if (slot == ItemSlot.WEAPON_ADORNMENT && item.getItemSlotType() == ItemSlotType.WEAPON_ADORNMENT)
             {
                 if (this.weapon_adornment !=null)
                 {
@@ -437,7 +437,7 @@ public class Character {
                 }
                 this.weapon_adornment = item;
             }
-            else if (slot == ItemSlot.TWO_HAND_WEAPON && item.getItemType() == ItemSlotType.TWO_HAND_WEAPON)
+            else if (slot == ItemSlot.TWO_HAND_WEAPON && item.getItemSlotType() == ItemSlotType.TWO_HAND_WEAPON)
             {
                 if (this.two_hand_weapon !=null)
                 {
@@ -454,7 +454,7 @@ public class Character {
                 this.removeItem(ItemSlot.ONE_HAND_WEAPON);
                 this.removeItem(ItemSlot.OFF_HAND);
             }
-            else if (slot == ItemSlot.ONE_HAND_WEAPON && item.getItemType() == ItemSlotType.ONE_HAND_WEAPON)
+            else if (slot == ItemSlot.ONE_HAND_WEAPON && item.getItemSlotType() == ItemSlotType.ONE_HAND_WEAPON)
             {
                 if (this.one_hand_weapon !=null)
                 {
@@ -470,7 +470,7 @@ public class Character {
                 this.one_hand_weapon = item;
                 this.removeItem(ItemSlot.TWO_HAND_WEAPON);
             }
-            else if (slot == ItemSlot.OFF_HAND && item.getItemType() == ItemSlotType.OFF_HAND)
+            else if (slot == ItemSlot.OFF_HAND && item.getItemSlotType() == ItemSlotType.OFF_HAND)
             {
                 if (this.off_hand !=null)
                 {
