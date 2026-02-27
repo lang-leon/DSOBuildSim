@@ -97,7 +97,7 @@ public class SetInstance {
 
     public int getCurrentSetBonusLevel()
     {
-        return Set.of(this.equippedSetItems).size();
+        return new HashSet<>(this.equippedSetItems).size();
     }
 
     public Map<StatType, Double> getActiveBaseValues()
