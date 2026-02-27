@@ -97,6 +97,6 @@ class SetFactoryTest {
     void shouldThrowExceptionWhenAddingInvalidSetItem()
     {
         SetInstance setInstance = setFactory.createSet(SetType.JOY_OF_SPRING, CharacterClass.SPELLWEAVER);
-        Assertions.assertThrows(IllegalArgumentException.class, () -> setInstance.addSetItem(SetItemType.ALLAINCE_ONE_HAND.toString()));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> setInstance.addSetItem(SetItemType.ALLIANCE_ONE_HAND.toString()));
     }
 }

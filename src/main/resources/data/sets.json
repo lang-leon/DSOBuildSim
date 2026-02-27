@@ -196,6 +196,30 @@
       "descriptionPerTier": {
       }
     },
+    "BOND_OF_THE_ALLIANCE": {
+      "setType": "BOND_OF_THE_ALLIANCE",
+      "name": "Bond of the Alliance (WIP)",
+      "defaultLevel": 145,
+      "setItems": [
+        "ALLIANCE_AMULET",
+        "ALLIANCE_BELT",
+        "ALLIANCE_RING",
+        "ALLIANCE_ADORNMENT",
+        "ALLIANCE_ONE_HAND",
+        "ALLIANCE_MISSING"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Healing Spheres grant you Refreshed for 8 seconds\n+15% to all resistance values from Refreshed",
+        "2": "+15% critical value from Refreshed",
+        "3": "+30% attack speed from Refreshed",
+        "4": "Healing Spheres also grant you 15 Mana",
+        "5": "When you pick up a Healing Sphere you deal 150% of your base damage as Lightning Damage to all enemies around you"
+      }
+    },
     "CALAMITY_OF_THE_TWIN_QUEENS": {
       "setType": "CALAMITY_OF_THE_TWIN_QUEENS",
       "name": "Calamity of the Twin Queens",
@@ -980,7 +1004,7 @@
     },
     "THE_LEGENDARY_KINGS_ARMOR": {
       "setType": "THE_LEGENDARY_KINGS_ARMOR",
-      "name": "TThe Legendary King's Armor",
+      "name": "The Legendary King's Armor",
       "defaultLevel": 145,
       "setItems": [
         "LEGENDARY_KINGS_CLOAK",
@@ -1000,6 +1024,30 @@
       "relativeValuesPerTier": {
       },
       "descriptionPerTier": {
+      }
+    },
+    "THE_UNTOUCHABLES": {
+      "setType": "THE_UNTOUCHABLES",
+      "name": "The Untouchables",
+      "defaultLevel": 145,
+      "setItems": [
+        "UNTOUCHABLE_HELMET",
+        "UNTOUCHABLE_SHOULDERS",
+        "UNTOUCHABLE_TORSO",
+        "UNTOUCHABLE_GLOVES",
+        "UNTOUCHABLE_BOOTS",
+        "UNTOUCHABLE_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Healing Spheres grant you Invigorate for 8 seconds\n+15% armor from Invigorate",
+        "2": "+15% block value from Invigorate",
+        "3": "+30% movement speed from Invigorate",
+        "4": "+15% Health Points from Healing Spheres",
+        "5": "Provides a chance that a Healing Sphere will be created nearby when you defeat an enemy - no effect in official Arenas"
       }
     },
     "TREASURES_OF_THE_DESERT_TOMB": {
