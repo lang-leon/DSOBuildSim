@@ -24,6 +24,22 @@
         "5": "Increases the Frost Nova talent by 2."
       }
     },
+    "ANCESTRAL_GLORY": {
+      "setType": "ANCESTRAL_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "ANCESTRAL_GLORY_CLOAK",
+        "ANCESTRAL_GLORY_RING"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When executing Ice Missile, it shoots 3 projectiles, instead of 1."
+      }
+    },
     "ANITQUE_ATLANTIS_ARMOR": {
       "setType": "ANITQUE_ATLANTIS_ARMOR",
       "name": "Antique Atlantis Armor (WIP)",
@@ -472,6 +488,22 @@
       },
       "descriptionPerTier": {
         "2": "+ 10% movement speed while fighting in a Boss map\n+ 10% Resource while fighting in a boss map"
+      }
+    },
+    "FORGOTTEN_GLORY": {
+      "setType": "FORGOTTEN_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "OLD_GLORY",
+        "RING_OF_OLD_GLORY"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When executing Ice Missile, it shoots 3 projectiles, instead of 1."
       }
     },
     "HUNTING_POWER": {
@@ -1052,14 +1084,108 @@
   },
   "dragonknightSets":
   {
-
+    "ANCESTRAL_GLORY": {
+      "setType": "ANCESTRAL_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "ANCESTRAL_GLORY_CLOAK",
+        "ANCESTRAL_GLORY_RING"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When equipped with the set, Mighty Wild Swing's damage is increased by 300%.\nWhen you release Banner of War, all your damage is boosted by 200% for 10 seconds. Also refreshes the cooldowns of all the following skills:\n•Furious Battle Cry\n•Outburst\n•Dragon Hide\n•Spike Shield"
+      }
+    },
+    "FORGOTTEN_GLORY": {
+      "setType": "FORGOTTEN_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "OLD_GLORY",
+        "RING_OF_OLD_GLORY"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When equipped with the set, Mighty Wild Swing's damage is increased by 300%.\nWhen you release Banner of War, all your damage is boosted by 200% for 10 seconds. Also refreshes the cooldowns of all the following skills:\n•Furious Battle Cry\n•Outburst\n•Dragon Hide\n•Spike Shield"
+      }
+    }
   },
   "rangerSets":
   {
-
+    "ANCESTRAL_GLORY": {
+      "setType": "ANCESTRAL_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "ANCESTRAL_GLORY_CLOAK",
+        "ANCESTRAL_GLORY_RING"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When Thicket of Thorns hits an enemy, your Concentration cost are decreased to 0 and Explosive Arrow does not have cooldown for 3 seconds. (PvP: 1,5 seconds)."
+      }
+    },
+    "FORGOTTEN_GLORY": {
+      "setType": "FORGOTTEN_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "OLD_GLORY",
+        "RING_OF_OLD_GLORY"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When Thicket of Thorns hits an enemy, your Concentration cost are decreased to 0 and Explosive Arrow does not have cooldown for 3 seconds. (PvP: 1,5 seconds)."
+      }
+    }
   },
   "steamMechanicusSets":
   {
+    "ANCESTRAL_GLORY": {
+      "setType": "ANCESTRAL_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "ANCESTRAL_GLORY_CLOAK",
+        "ANCESTRAL_GLORY_RING"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "There is a 60% chance that hits with Quick Shot cause your currently active Mechanical Turret to fire 3 additional ice bullets that covers enemies in Frost for 4 seconds. Enemies covered in Frost have reduced movement and attack speed. When a Mechanical Turret is used, you get 100% Damage and 15% Critical Value while staying within the range of it."
+      }
+    },
+    "FORGOTTEN_GLORY": {
+      "setType": "FORGOTTEN_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "OLD_GLORY",
+        "RING_OF_OLD_GLORY"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "There is a 60% chance that hits with Quick Shot cause your currently active Mechanical Turret to fire 3 additional ice bullets that covers enemies in Frost for 4 seconds. Enemies covered in Frost have reduced movement and attack speed. When a Mechanical Turret is used, you get 100% Damage and 15% Critical Value while staying within the range of it."
 
+      }
+    }
   }
 }
