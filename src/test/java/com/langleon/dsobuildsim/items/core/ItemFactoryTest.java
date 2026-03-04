@@ -4,10 +4,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.enums.*;
 import com.langleon.dsobuildsim.enums.items.MythicItemType;
+import com.langleon.dsobuildsim.enums.items.SetItemType;
 import com.langleon.dsobuildsim.enums.items.SetType;
 import com.langleon.dsobuildsim.enums.items.UniqueItemType;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItem;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
+import com.langleon.dsobuildsim.items.setitems.SetItem;
 import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItem;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
@@ -167,5 +169,47 @@ public class ItemFactoryTest {
         Assertions.assertEquals(item.getUniqueAbsoluteValues(), Map.of(StatType.DAMAGE, 5000.0));
         Assertions.assertEquals(item.getUniqueRelativeValues(), Map.of(StatType.DAMAGE, 0.10));
         Assertions.assertEquals(item.getSet(), SetType.ANCESTRAL_GLORY);
+    }
+
+    @Test
+    void createSargonsHorns() //Set Item
+    {
+        SetItem item = itemFactory.createItem(SetItemType.SARGON_HELMET, CharacterClass.SPELLWEAVER);
+        Assertions.assertEquals(SetItemType.SARGON_HELMET, item.getItemType());
+        Assertions.assertEquals(145, item.getLevel());
+        Assertions.assertEquals("Sargon's Horns", item.getName());
+        Assertions.assertEquals(ItemSlotType.HELMET, item.getItemSlotType());
+        Assertions.assertEquals(0, item.getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1644.883, StatType.CRIT_VALUE, 1401.911, StatType.HEALTH_POINTS, 20637.978), item.getBaseValues());
+        for (int i = 0; i<item.getEnchants().length; i++)
+        {
+            Assertions.assertEquals(item.getEnchants()[i], null);
+        }
+        for (int i = 0; i<item.getGems().length; i++)
+        {
+            Assertions.assertEquals(item.getGems()[i], null);
+        }
+        Assertions.assertEquals(item.getSet(), SetType.SARGONS_IMMORTAL_TERROR_ARMOR);
+    }
+
+    @Test
+    void createBigPawsTwoHand() //Set Item
+    {
+        SetItem item = itemFactory.createItem(SetItemType.BIG_PAWS_TWO_HAND, CharacterClass.SPELLWEAVER);
+        Assertions.assertEquals(SetItemType.BIG_PAWS_TWO_HAND, item.getItemType());
+        Assertions.assertEquals(145, item.getLevel());
+        Assertions.assertEquals("Big Paws' Frosty Scepter", item.getName());
+        Assertions.assertEquals(ItemSlotType.TWO_HAND_WEAPON, item.getItemSlotType());
+        Assertions.assertEquals(0, item.getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 13163.139, StatType.CRIT_VALUE, 3506.0), item.getBaseValues());
+        for (int i = 0; i<item.getEnchants().length; i++)
+        {
+            Assertions.assertEquals(item.getEnchants()[i], null);
+        }
+        for (int i = 0; i<item.getGems().length; i++)
+        {
+            Assertions.assertEquals(item.getGems()[i], null);
+        }
+        Assertions.assertEquals(item.getSet(), SetType.BIG_PAWS_FROSTY_GREED);
     }
 }
