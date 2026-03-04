@@ -7,12 +7,13 @@ import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.enums.items.SetType;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
+import com.langleon.dsobuildsim.items.core.SettableItem;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class SetItem extends AbstractItem {
-    private final SetType set;
+public class SetItem extends AbstractItem implements SettableItem {
+    private final SetType setType;
 
     public SetItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, SetType set){
         this.itemType = itemType;
@@ -21,13 +22,13 @@ public class SetItem extends AbstractItem {
         this.tier = tier;
         this.itemSlotType = itemSlotType;
         this.baseValues = baseStats;
-        this.set = set;
+        this.setType = set;
         this.gems = new Gem[10];
         this.enchantments = new Enchantment[10];
     }
 
-    public SetType getSet() {
-        return set;
+    public SetType getSetType() {
+        return setType;
     }
 
     @Override
