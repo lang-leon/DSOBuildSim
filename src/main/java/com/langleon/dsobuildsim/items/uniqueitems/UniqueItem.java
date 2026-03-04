@@ -6,12 +6,13 @@ import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
+import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class UniqueItem extends AbstractItem {
+public class UniqueItem extends AbstractItem implements UniqueStatProvider {
 
     private final Map<StatType, Double> uniqueBaseValues;
     private final Map<StatType, Double> uniqueRelativeValues;
