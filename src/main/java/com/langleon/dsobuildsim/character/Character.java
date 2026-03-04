@@ -4,10 +4,10 @@ import com.langleon.dsobuildsim.buffs.Physic;
 import com.langleon.dsobuildsim.buffs.Tonic;
 import com.langleon.dsobuildsim.enums.*;
 import com.langleon.dsobuildsim.sets.*;
-import com.langleon.dsobuildsim.items.actualitems.AbstractItem;
-import com.langleon.dsobuildsim.items.actualitems.MythicItem;
-import com.langleon.dsobuildsim.items.actualitems.SetItem;
-import com.langleon.dsobuildsim.items.actualitems.UniqueItem;
+import com.langleon.dsobuildsim.items.core.AbstractItem;
+import com.langleon.dsobuildsim.items.mythicitems.MythicItem;
+import com.langleon.dsobuildsim.items.setitems.SetItem;
+import com.langleon.dsobuildsim.items.uniqueitems.UniqueItem;
 import com.langleon.dsobuildsim.jewels.Jewel;
 import com.langleon.dsobuildsim.jewels.JewelTrinket;
 import com.langleon.dsobuildsim.mapper.AbsoluteToRelativeStatTypeMapper;
@@ -269,9 +269,10 @@ public class Character {
     public void addItem(AbstractItem item, ItemSlot slot)
     {
         //item.getCharacterClass()
-        if (this.characterClass == item.getCharacterClass())
+        //this.characterClass == item.getCharacterClass()
+        if (true)
         {
-            if (slot == ItemSlot.AMULET && item.getItemType() == ItemType.AMULET)
+            if (slot == ItemSlot.AMULET && item.getItemSlotType() == ItemSlotType.AMULET)
             {
                 if (this.amulet !=null)
                 {
@@ -286,7 +287,7 @@ public class Character {
                 }
                 this.amulet = item;
             }
-            else if (slot == ItemSlot.CLOAK && item.getItemType() == ItemType.CLOAK)
+            else if (slot == ItemSlot.CLOAK && item.getItemSlotType() == ItemSlotType.CLOAK)
             {
                 if (this.cloak !=null)
                 {
@@ -301,7 +302,7 @@ public class Character {
                 }
                 this.cloak = item;
             }
-            else if (slot == ItemSlot.BELT && item.getItemType() == ItemType.BELT)
+            else if (slot == ItemSlot.BELT && item.getItemSlotType() == ItemSlotType.BELT)
             {
                 if (this.belt !=null)
                 {
@@ -316,7 +317,7 @@ public class Character {
                 }
                 this.belt = item;
             }
-            else if (slot == ItemSlot.RING1 && item.getItemType() == ItemType.RING)
+            else if (slot == ItemSlot.RING1 && item.getItemSlotType() == ItemSlotType.RING)
             {
                 if (this.ring1 !=null)
                 {
@@ -331,7 +332,7 @@ public class Character {
                 }
                 this.ring1 = item;
             }
-            else if (slot == ItemSlot.RING2 && item.getItemType() == ItemType.RING)
+            else if (slot == ItemSlot.RING2 && item.getItemSlotType() == ItemSlotType.RING)
             {
                 if (this.ring2 !=null)
                 {
@@ -346,7 +347,7 @@ public class Character {
                 }
                 this.ring2 = item;
             }
-            else if (slot == ItemSlot.HELMET && item.getItemType() == ItemType.HELMET)
+            else if (slot == ItemSlot.HELMET && item.getItemSlotType() == ItemSlotType.HELMET)
             {
                 if (this.helmet !=null)
                 {
@@ -361,7 +362,7 @@ public class Character {
                 }
                 this.helmet = item;
             }
-            else if (slot == ItemSlot.SHOULDERS && item.getItemType() == ItemType.SHOULDERS)
+            else if (slot == ItemSlot.SHOULDERS && item.getItemSlotType() == ItemSlotType.SHOULDERS)
             {
                 if (this.shoulders !=null)
                 {
@@ -376,7 +377,7 @@ public class Character {
                 }
                 this.shoulders = item;
             }
-            else if (slot == ItemSlot.TORSO && item.getItemType() == ItemType.TORSO)
+            else if (slot == ItemSlot.TORSO && item.getItemSlotType() == ItemSlotType.TORSO)
             {
                 if (this.torso !=null)
                 {
@@ -391,7 +392,7 @@ public class Character {
                 }
                 this.torso = item;
             }
-            else if (slot == ItemSlot.GLOVES && item.getItemType() == ItemType.GLOVES)
+            else if (slot == ItemSlot.GLOVES && item.getItemSlotType() == ItemSlotType.GLOVES)
             {
                 if (this.gloves !=null)
                 {
@@ -406,7 +407,7 @@ public class Character {
                 }
                 this.gloves = item;
             }
-            else if (slot == ItemSlot.BOOTS && item.getItemType() == ItemType.BOOTS)
+            else if (slot == ItemSlot.BOOTS && item.getItemSlotType() == ItemSlotType.BOOTS)
             {
                 if (this.boots !=null)
                 {
@@ -421,7 +422,7 @@ public class Character {
                 }
                 this.boots = item;
             }
-            else if (slot == ItemSlot.WEAPON_ADORNMENT && item.getItemType() == ItemType.WEAPON_ADORNMENT)
+            else if (slot == ItemSlot.WEAPON_ADORNMENT && item.getItemSlotType() == ItemSlotType.WEAPON_ADORNMENT)
             {
                 if (this.weapon_adornment !=null)
                 {
@@ -436,7 +437,7 @@ public class Character {
                 }
                 this.weapon_adornment = item;
             }
-            else if (slot == ItemSlot.TWO_HAND_WEAPON && item.getItemType() == ItemType.TWO_HAND_WEAPON)
+            else if (slot == ItemSlot.TWO_HAND_WEAPON && item.getItemSlotType() == ItemSlotType.TWO_HAND_WEAPON)
             {
                 if (this.two_hand_weapon !=null)
                 {
@@ -453,7 +454,7 @@ public class Character {
                 this.removeItem(ItemSlot.ONE_HAND_WEAPON);
                 this.removeItem(ItemSlot.OFF_HAND);
             }
-            else if (slot == ItemSlot.ONE_HAND_WEAPON && item.getItemType() == ItemType.ONE_HAND_WEAPON)
+            else if (slot == ItemSlot.ONE_HAND_WEAPON && item.getItemSlotType() == ItemSlotType.ONE_HAND_WEAPON)
             {
                 if (this.one_hand_weapon !=null)
                 {
@@ -469,7 +470,7 @@ public class Character {
                 this.one_hand_weapon = item;
                 this.removeItem(ItemSlot.TWO_HAND_WEAPON);
             }
-            else if (slot == ItemSlot.OFF_HAND && item.getItemType() == ItemType.OFF_HAND)
+            else if (slot == ItemSlot.OFF_HAND && item.getItemSlotType() == ItemSlotType.OFF_HAND)
             {
                 if (this.off_hand !=null)
                 {
@@ -494,7 +495,7 @@ public class Character {
             {
                 if (!this.sets.containsKey(setItem.getSet()))
                 {
-                    this.sets.put(setItem.getSet(), new ArrayList<>());
+                    //TODO this.sets.put(setItem.getSet(), new ArrayList<>());
                 }
                 this.sets.get(setItem.getSet()).add(item.getName());
             }
@@ -502,7 +503,7 @@ public class Character {
             {
                 if (!this.sets.containsKey(mythicItem.getSet()))
                 {
-                    this.sets.put(mythicItem.getSet(), new ArrayList<>());
+                    //TODO this.sets.put(mythicItem.getSet(), new ArrayList<>());
                 }
                 this.sets.get(mythicItem.getSet()).add(item.getName());
             }
@@ -880,6 +881,7 @@ public class Character {
 
 
     //stat calculation
+    /*
     public void calculateFinalStats()
     {
         //bases stats
@@ -905,7 +907,7 @@ public class Character {
             }
             if (this.amulet instanceof UniqueItem uniqueItem)
             {
-                for (OverallBuff buff : uniqueItem.getOverallBuffs())
+                for (OverallBuff buff : List.of())
                 {
                     if (buff instanceof OverallRelativeBuff relativeBuff)
                     {
@@ -1824,6 +1826,7 @@ public class Character {
             this.characterFinalStats.put(entry.getKey(), entry.getValue()+entry.getValue()*this.characterRelativeBuffs.get(AbsoluteToRelativeStatTypeMapper.getRelativeType(entry.getKey())));
         }
     }
+     */
 
 
 
