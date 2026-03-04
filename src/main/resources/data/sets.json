@@ -1,0 +1,1261 @@
+{
+  "spellweaverSets":
+  {
+    "AMMONS_GLEAM": {
+      "setType": "AMMONS_GLEAM",
+      "name": "Ammon's Gleam",
+      "defaultLevel": 100,
+      "setItems": [
+        "AMMONS_HELMET",
+        "AMMON_SHOULDERS",
+        "AMMON_TORSO",
+        "AMMON_GLOVES",
+        "AMMON_BOOTS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"DAMAGE": 1430.0},
+        "4": {"ARMOR_VALUE": 737.0},
+        "5": {"HEALTH_POINTS": 12917.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "Increases the Magic Missile talent by 5.",
+        "5": "Increases the Frost Nova talent by 2."
+      }
+    },
+    "ANCESTRAL_GLORY": {
+      "setType": "ANCESTRAL_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "ANCESTRAL_GLORY_CLOAK",
+        "ANCESTRAL_GLORY_RING"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When executing Ice Missile, it shoots 3 projectiles, instead of 1."
+      }
+    },
+    "ANITQUE_ATLANTIS_ARMOR": {
+      "setType": "ANITQUE_ATLANTIS_ARMOR",
+      "name": "Antique Atlantis Armor (WIP)",
+      "defaultLevel": 100,
+      "setItems": [
+      ],
+      "baseValuesPerTier": {
+        "2": {"MOVEMENT_SPEED": 0.231},
+        "3": {"RESISTANCE_VALUE": 795.0},
+        "4": {"ARMOR_VALUE": 1106.0},
+        "5": {"DAMAGE": 2859.0},
+        "6": {"CRIT_VALUE": 3831.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "ARMOR_OF_DARKNESS": {
+      "setType": "ARMOR_OF_DARKNESS",
+      "name": "Armor of Darkness",
+      "defaultLevel": 100,
+      "setItems": [
+        "HELMET_OF_DARKNESS",
+        "SHOULDERS_OF_DARKNESS",
+        "TORSO_OF_DARKNESS",
+        "GLOVES_OF_DARKNESS",
+        "BOOTS_OF_DARKNESS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"CRIT_VALUE": 1277.0},
+        "3": {"DAMAGE": 2859.0},
+        "4": {"CRIT_VALUE": 3193.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "5": "Increases the Teleport Talent by 2."
+      }
+    },
+    "AT_DEATHS_DOORSTEP": {
+      "setType": "AT_DEATHS_DOORSTEP",
+      "name": "At Death's Doorstep",
+      "defaultLevel": 145,
+      "setItems": [
+        "MORTIS_AMULET",
+        "MORTIS_HELMET"
+      ],
+      "baseValuesPerTier": {
+        "2": {"MANA": 19.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "Defeating enemies will increase your damage by 10% and reduces your max. Health Points by 5%. This effect can stack up to 50 times. There is a very low chance that this power will overwhelm you and your life will reach its end."
+      }
+    },
+    "AUTOMATED_UNIT": {
+      "setType": "AUTOMATED_UNIT",
+      "name": "Automated Unit",
+      "defaultLevel": 145,
+      "setItems": [
+        "AUTOMATED_BELT",
+        "AUTOMATED_HELMET",
+        "AUTOMATED_SHOULDERS",
+        "AUTOMATED_TORSO",
+        "AUTOMATED_GLOVES",
+        "AUTOMATED_BOOTS",
+        "AUTOMATED_TWO_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"DAMAGE": 4165.0},
+        "3": {"CRIT_VALUE": 4331.0},
+        "4": {"ATTACK_SPEED": 0.214},
+        "5": {"MANA": 29.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "BIG_PAWS_FROSTY_GREED": {
+      "setType": "BIG_PAWS_FROSTY_GREED",
+      "name": "Big Paws' Frosty Greed",
+      "defaultLevel": 145,
+      "setItems": [
+        "BIG_PAWS_CLOAK",
+        "BIG_PAWS_TWO_HAND"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"ICE_RESISTANCE": 0.1, "DAMAGE": 0.1, "MANA": 0.15, "HEALTH_POINTS": 0.1}
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "BLACK_ESSENCE_ARMAMENT": {
+      "setType": "BLACK_ESSENCE_ARMAMENT",
+      "name": "Black Essence Armament",
+      "defaultLevel": 140,
+      "setItems": [
+        "BLACK_ESSENCE_HELMET",
+        "BLACK_ESSENCE_SHOULDERS",
+        "BLACK_ESSENCE_TORSO",
+        "BLACK_ESSENCE_GLOVES",
+        "BLACK_ESSENCE_BOOTS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"RESISTANCE_VALUE": 2044.0},
+        "3": {"MANA": 19.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "Essence consumption of skills is reduced by 1. Essence costs will never be reduced below 1.",
+        "5": "15.00% chance that a skill doesn't consume any essences"
+      }
+    },
+    "BLACK_WARLORD_REGALIA": {
+      "setType": "BLACK_WARLORD_REGALIA",
+      "name": "Black Warlord Regalia",
+      "defaultLevel": 145,
+      "setItems": [
+        "DRAGAN_CLOAK",
+        "DRAGAN_HELMET",
+        "DRAGAN_SHOULDERS"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "1": {"HEALTH_POINTS": 0.15, "ARMOR_VALUE": 0.15},
+        "3": {"DAMAGE": 0.075}
+      },
+      "descriptionPerTier": {
+        "2": "- Frozen Sphere% cooldown time for 20.00\nDoubles the amount of dropped quest items for side quests.",
+        "3": "Your Frozen Spheres are doubled."
+      }
+    },
+    "BLAZING_COVER": {
+      "setType": "BLAZING_COVER",
+      "name": "Blazing Cover",
+      "defaultLevel": 140,
+      "setItems": [
+        "AZAR_HELMET",
+        "AZAR_SHOULDERS"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "1": {"ARMOR_VALUE": 0.10},
+        "2": {"HEALTH_POINTS": 0.15, "RESISTANCE_VALUE": 0.15}
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "BOND_OF_THE_ALLIANCE": {
+      "setType": "BOND_OF_THE_ALLIANCE",
+      "name": "Bond of the Alliance (WIP)",
+      "defaultLevel": 145,
+      "setItems": [
+        "ALLIANCE_AMULET",
+        "ALLIANCE_BELT",
+        "ALLIANCE_RING",
+        "ALLIANCE_ADORNMENT",
+        "ALLIANCE_ONE_HAND",
+        "ALLIANCE_MISSING"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Healing Spheres grant you Refreshed for 8 seconds\n+15% to all resistance values from Refreshed",
+        "2": "+15% critical value from Refreshed",
+        "3": "+30% attack speed from Refreshed",
+        "4": "Healing Spheres also grant you 15 Mana",
+        "5": "When you pick up a Healing Sphere you deal 150% of your base damage as Lightning Damage to all enemies around you"
+      }
+    },
+    "CALAMITY_OF_THE_TWIN_QUEENS": {
+      "setType": "CALAMITY_OF_THE_TWIN_QUEENS",
+      "name": "Calamity of the Twin Queens",
+      "defaultLevel": 145,
+      "setItems": [
+        "KARABOSSA_CLOAK",
+        "KARABOSSA_BOOTS",
+        "KARABOSSA_ADORNMENT",
+        "KARABOSSA_ONE_HAND",
+        "MAGOTINA_CLOAK",
+        "MAGOTINA_BOOTS",
+        "MAGOTINA_ADORNMENT",
+        "MAGOTINA_ONE_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"DAMAGE": 5553.0},
+        "3": {"MOVEMENT_SPEED": 0.585}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "4": "Each successful hit with any skill has a 10% chance to generate a stack of Blessing of the Twin Queens for 10 seconds. This effect can stack up to 25 times.\n+ 0.6% increased damage per stack\n+ 0.6% faster movement speed per stack"
+      }
+    },
+    "CHILLINGLY_COLD": {
+      "setType": "CHILLINGLY_COLD",
+      "name": "Chillingly Cold",
+      "defaultLevel": 145,
+      "setItems": [
+        "WINTER_AMULET",
+        "WINTER_TORSO",
+        "WINTER_GLOVES",
+        "WINTER_BOOTS"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "3": "Damage received from monsters is reduced by 20%.",
+        "4": "After using Frost Nova, casting any skill grants a Cold Chill stack (+ 5% damage per stack). Upon reaching 30 stacks, enter the Icy Wrath state for 5 seconds, increasing all your Damage by 350%, your first hit creates a Frozen Plain that deals 100% of your Base Damage as Ice Damage per second on enemies inside. The cooldown of Frost Nova is increased by 60%."
+      }
+    },
+    "CONQUEROR_OF_THE_DEEPS": {
+      "setType": "CONQUEROR_OF_THE_DEEPS",
+      "name": "Conqueror of the Deeps (WIP)",
+      "defaultLevel": 100,
+      "setItems": [
+        "DEEP_SANDS_HELMET",
+        "DEEP_SANDS_SHOULDERS",
+        "DEEP_SANDS_TORSO",
+        "DEEP_SANDS_GLOVES",
+        "DEEP_SANDS_BOOTS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"RESISTANCE_VALUE": 795.0},
+        "3": {"HEALTH_POINTS": 19375.0},
+        "4": {"MOVEMENT_SPEED": 0.347}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "5": "Periodically unleashes the Power of the Desert and adds 30% damage for 10 seconds."
+      }
+    },
+    "CUBE_SET": {
+      "setType": "CUBE_SET",
+      "name": "Grimmag's Lost Legacy",
+      "defaultLevel": 100,
+      "setItems": [
+        "CUBE_AMULET",
+        "CUBE_RING",
+        "CUBE_ADORNMENT",
+        "CUBE_ONE_HAND",
+        "CUBE_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"CRIT_VALUE": 958.0},
+        "3": {"CRIT_VALUE": 1916.0},
+        "4": {"CRIT_VALUE": 3512.0},
+        "5": {"HEALTH_POINTS": 32291.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "DAEDAL_QUAIZAH_ARMOR": {
+      "setType": "DAEDAL_QUAIZAH_ARMOR",
+      "name": "Daedal Quaizah Armor (WIP)",
+      "defaultLevel": 100,
+      "setItems": [
+        "DAEDAL_QUAIZAH_HELMET",
+        "DAEDAL_QUAIZAH_SHOULDERS",
+        "DAEDAL_QUAIZAH_TORSO",
+        "DAEDAL_QUAIZAH_GLOVES",
+        "DAEDAL_QUAIZAH_BOOTS",
+        "DAEDAL_QUAIZAH_ONE_HAND",
+        "DAEDAL_QUAIZAH_OFF_HAND",
+        "DAEDAL_QUAIZAH_TWO_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"MOVEMENT_SPEED": 0.100},
+        "3": {"RESISTANCE_VALUE": 237.0},
+        "4": {"ARMOR_VALUE": 326.0},
+        "5": {"DAMAGE": 549.0},
+        "6": {"CRIT_VALUE": 1177.0}
+
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "DARK_CORRUPTION": {
+      "setType": "DARK_CORRUPTION",
+      "name": "Dark Corruption",
+      "defaultLevel": 145,
+      "setItems": [
+        "BALOR_HELMET",
+        "BALOR_SHOULDERS",
+        "BALOR_TORSO",
+        "BALOR_TWO_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"RESISTANCE_VALUE": 1400.0},
+        "3": {"CRIT_VALUE": 3259.0},
+        "4": {"RESISTANCE_VALUE": 2800.0},
+        "5": {"CRIT_VALUE": 5432.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "DARK_EXILE": {
+      "setType": "DARK_EXILE",
+      "name": "Dark Exile",
+      "defaultLevel": 145,
+      "setItems": [
+        "DARK_EXILE_AMULET",
+        "DARK_EXILE_HELMET",
+        "DARK_EXILE_SHOULDERS",
+        "DARK_EXILE_TORSO",
+        "DARK_EXILE_ADORNMENT",
+        "DARK_EXILE_TWO_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"HEALTH_POINTS": 33347.0},
+        "3": {"DAMAGE": 4165.0},
+        "4": {"HEALTH_POINTS": 55579.0},
+        "5": {"DAMAGE": 6941.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "6": "Whenever you critically hit an enemy, there is a chance that Mortis' possessed Scythe will be conjured up, slashing through foes around you, dealing 400% of your base damage as Andermagic damage per hit and inflicts 1x bleed debuff per hit. Attacks enemies multiple times."
+      }
+    },
+    "DARK_FATE": {
+      "setType": "DARK_FATE",
+      "name": "Dark Fate",
+      "defaultLevel": 145,
+      "setItems": [
+        "DARK_FATE_CLOAK",
+        "DARK_FATE_BELT",
+        "DARK_FATE_RING1",
+        "DARK_FATE_RING2",
+        "DARK_FATE_GLOVES",
+        "DARK_FATE_BOOTS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"ARMOR_VALUE": 1983.0},
+        "3": {"CRIT_VALUE": 3248.0},
+        "4": {"ARMOR_VALUE": 3305.0},
+        "5": {"CRIT_VALUE": 5414.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "6": "When you kill an enemy, there is a chanca that a Skeledragon attacks your foes from above with its fiery breath, dealing 500% of your base damage as andermagic damage in a straight line in front of you and 800% of your base damage as andermagic damage at the end of it's path.\n Whenever the fire touches the ground, it leaves behind scorched earth, damaging enemies over time within its range for 60% of your base damage as andermagic damage per tick."
+      }
+    },
+    "DRAGANS_PROTECTIVE_ARMOR": {
+      "setType": "DRAGANS_PROTECTIVE_ARMOR",
+      "name": "Dragan's Protective Armor",
+      "defaultLevel": 145,
+      "setItems": [
+        "DRAGAN_PROTECTIVE_CLOAK",
+        "DRAGAN_PROTECTIVE_SHOULDERS",
+        "DRAGAN_PROTECTIVE_TORSO"
+      ],
+      "baseValuesPerTier": {
+        "2": {"BLOCK_VALUE": 4366.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "Each time you block you get a stack of \"Dragan's Protection\" for 5 seconds. This effect can stack up to 25 times.\n+ 1% block value per stack\n+ 1% increased armor per stack\n+ 1% increased resistance per stack"
+      }
+    },
+    "DRAGANS_RAGEFUL_ARMOR": {
+      "setType": "DRAGANS_RAGEFUL_ARMOR",
+      "name": "Dragan's Rageful Armor",
+      "defaultLevel": 145,
+      "setItems": [
+        "DRAGAN_RAGEFUL_HELMET",
+        "DRAGAN_RAGEFUL_GLOVES",
+        "DRAGAN_RAGEFUL_BOOTS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"DAMAGE": 2776.0},
+        "3": {"DAMAGE": 4165.0, "MOVEMENT_SPEED": 0.439}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "Casting Teleport will cause a beam of energy to circle around you, dealing 150% of your base damage per second as physical damage. 20-second cooldown time.\nCasting Frost Charge will cause a beam of energy to circle around you, dealing 150% of your base damage per second as physical damage. 20-second cooldown time."
+      }
+    },
+    "DRAGONSILVER": {
+      "setType": "DRAGONSILVER",
+      "name": "Dragon Silver (WIP)",
+      "defaultLevel": 100,
+      "setItems": [
+        "DRAGON_SHACKLES",
+        "BLOODTOOTH",
+        "TEAR_HOLDER"
+      ],
+      "baseValuesPerTier": {
+        "2": {"ARMOR_VALUE": 2211.0},
+        "3": {"CRIT_VALUE": 3831.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "END_OF_THE_EMPIRE": {
+      "setType": "END_OF_THE_EMPIRE",
+      "name": "End of the Empire",
+      "defaultLevel": 145,
+      "setItems": [
+        "UPGRADED_DRAGAN_CLOAK",
+        "UPGRADED_DRAGAN_HELMET",
+        "UPGRADED_DRAGAN_SHOULDERS"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "1": {"HEALTH_POINTS": 0.20, "ARMOR_VALUE": 0.20},
+        "3": {"DAMAGE": 0.10}
+      },
+      "descriptionPerTier": {
+        "2": "- Frozen Sphere% cooldown time for 20.00\nDoubles the amount of dropped quest items for side quests.",
+        "3": "Your Frozen Spheres are doubled and its cooldown will be reduced by 50%."
+      }
+    },
+    "ENRAGED_EMPEROR": {
+      "setType": "ENRAGED_EMPEROR",
+      "name": "Enraged Emperor",
+      "defaultLevel": 140,
+      "setItems": [
+        "AZAR_TORSO",
+        "AZAR_GLOVES",
+        "AZAR_BOOTS"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "1": {"HEALTH_POINTS": 0.10},
+        "2": { "CRIT_VALUE": 0.05,"ATTACK_SPEED": 0.05}
+      },
+      "descriptionPerTier": {
+        "3": "Each successful hit with Meteor applies 30% reduced Fire resistance"
+      }
+    },
+    "EXECUTOR_OF_THE_GREAT_PLAGUES": {
+      "setType": "EXECUTOR_OF_THE_GREAT_PLAGUES",
+      "name": "Executor of the Great Plagues",
+      "defaultLevel": 145,
+      "setItems": [
+        "UNDEFEATABLE_AMULET",
+        "UNDEFEATABLE_ADORNMENT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "+ 10% movement speed while fighting in a Boss map\n+ 10% Resource while fighting in a boss map"
+      }
+    },
+    "FORGOTTEN_GLORY": {
+      "setType": "FORGOTTEN_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "OLD_GLORY",
+        "RING_OF_OLD_GLORY"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When executing Ice Missile, it shoots 3 projectiles, instead of 1."
+      }
+    },
+    "HUNTING_POWER": {
+      "setType": "HUNTING_POWER",
+      "name": "Hunting Power",
+      "defaultLevel": 145,
+      "setItems": [
+        "INFERNAL_POWER",
+        "LUMINOUS_EMBRACE"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Damage received from monsters is reduced by 10%.",
+        "2": "Each hit from monsters has a chacne of 5% to reduce damage received from monsters by 50% for 5 seconds."
+      }
+    },
+    "JEWELS_OF_THE_DESERT": {
+      "setType": "JEWELS_OF_THE_DESERT",
+      "name": "Jewels of the Desert",
+      "defaultLevel": 145,
+      "setItems": [
+        "DUNE_AMULET_ARMOR",
+        "DUNE_AMULET_FIRE",
+        "DUNE_AMULET_LIGHTNING",
+        "DUNE_AMULET_POISON",
+        "DUNE_BELT_ARMOR",
+        "DUNE_BELT_FIRE",
+        "DUNE_BELT_LIGHTNING",
+        "DUNE_BELT_POISON",
+        "DUNE_ADORNMENT_AC",
+        "DUNE_ADORNMENT_DA",
+        "DUNE_ADORNMENT_DC",
+        "DUNE_ADORNMENT_DM"
+      ],
+      "baseValuesPerTier": {
+        "3": {"DAMAGE": 5553.0, "CRIT_VALUE": 4331.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Whenever you get stunned, a Sandwhirl will appear and attack your foes, inflicting 15% of your base damage upon surrounding enemies for 10 seconds - 180 seconds cooldown."
+      }
+    },
+    "JOY_OF_SPRING": {
+      "setType": "JOY_OF_SPRING",
+      "name": "Joy of Spring",
+      "defaultLevel": 145,
+      "setItems": [
+        "SPRING_RING1",
+        "SPRING_RING2",
+        "SPRING_ADORNMENT"
+      ],
+      "baseValuesPerTier": {
+        "1": {"CRIT_VALUE": 2835.0},
+        "2": {"DAMAGE": 6572.0}
+      },
+      "relativeValuesPerTier": {
+        "3": {"DAMAGE": 0.04, "CRIT_VALUE": 0.04}
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "KRANPARUS_TREASURE": {
+      "setType": "KRANPARUS_TREASURE",
+      "name": "Kranparus' Treasures",
+      "defaultLevel": 145,
+      "setItems": [
+        "KRANPARUS_AMULET",
+        "KRANPARUS_ONE_HAND",
+        "KRANPARUS_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "1": {"HEALTH_POINTS": 39954.0},
+        "3": {"DAMAGE": 1664.0, "CRIT_VALUE": 4677.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "MECHANICAL_TOOLS": {
+      "setType": "MECHANICAL_TOOLS",
+      "name": "Mechanical Tools (WIP)",
+      "defaultLevel": 140,
+      "setItems": [
+        "MECHANICAL_AMULET",
+        "MECHANICAL_BELT",
+        "MECHANICAL_RING",
+        "MECHANICAL_ADORNMENT",
+        "MECHANICAL_ONE_HAND",
+        "MECHANICAL_OFF_HAND1",
+        "MECHANICAL_OFF_HAND2"
+      ],
+      "baseValuesPerTier": {
+        "2": {"CRIT_VALUE": 4220.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "For each enemey defeated, are restored 5 points mana"
+      }
+    },
+    "MIGHT_OF_THE_WOLF_SLAYER": {
+      "setType": "MIGHT_OF_THE_WOLF_SLAYER",
+      "name": "Might of the Wolf Slayer",
+      "defaultLevel": 145,
+      "setItems": [
+        "WOLF_SLAYER_HELMET",
+        "WOLF_SLAYER_ADORNMENT",
+        "WOLF_SLAYER_ONE_HAND",
+        "WOLF_SLAYER_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"CRIT_VALUE": 2166.0},
+        "3": {"CRIT_VALUE": 4331.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "4": "There is a 10% chance to gain the Werewolf Rage buff when you critically hit an enemy, which will increase your critical value by 10%."
+      }
+    },
+    "MIGHTY_VISIONARY_SEEKER": {
+      "setType": "MIGHTY_VISIONARY_SEEKER",
+      "name": "Mighty Visionary Seeker",
+      "defaultLevel": 140,
+      "setItems": [
+        "MIGHTY_WRATHFUL_SEEKER_CLOAK",
+        "MIGHTY_WRATHFUL_SEEKER_HELMET",
+        "MIGHTY_WRATHFUL_SEEKER_SHOULDERS",
+        "MIGHTY_WRATHFUL_SEEKER_TORSO",
+        "MIGHTY_WRATHFUL_SEEKER_GLOVES",
+        "MIGHTY_WRATHFUL_SEEKER_BOOTS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"ATTACK_SPEED": 0.79},
+        "4": {"DAMAGE": 8657.0},
+        "6": {"MANA": 68.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "6": "Your Magic Missile is turned into an Ice piercing bullet and the skill Damage is turned into Ice and increased by 50%"
+      }
+    },
+    "POISON_BUSTER": {
+      "setType": "POISON_BUSTER",
+      "name": "Poison Buster",
+      "defaultLevel": 145,
+      "setItems": [
+        "POISON_BUSTER_SHOULDERS",
+        "POISON_BUSTER_TORSO",
+        "POISON_BUSTER_TWO_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"CRIT_VALUE": 6497.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "Hit enemies will suffer from the Poisonous Charge debuff that deals up to 1000% of your base damage as poison damage, 10 seconds after you have landed the first hit. The total amount of damage dealt is based on the number of hits you have scored in the initial 10 second, starting with 5% and increasing by an additional 5% with each hit."
+      }
+    },
+    "POISON_EXTINGUISHER": {
+      "setType": "POISON_EXTINGUISHER",
+      "name": "Poison Extinguisher",
+      "defaultLevel": 145,
+      "setItems": [
+        "POISON_EXTINGUISHER_HELMET",
+        "POISON_EXTINGIUSHER_GLOVES",
+        "POISON_EXTINGIUSHER_BOOTS"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "Every time you use a skill there is a 5% chance Poisonous Strength will be granted to you, increasing your damage by 25% for 10 seconds. Cooldown: 20 seconds.",
+        "3": "The damage buff of Poisonous Strength is increased to 50%."
+      }
+    },
+    "RED_DRACO_SET": {
+      "setType": "RED_DRACO_SET",
+      "name": "Red Draco Set",
+      "defaultLevel": 145,
+      "setItems": [
+        "DRACO_CLOAK",
+        "DRACO_BELT",
+        "DRACO_HELMET"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "Fireball will shoot a dual fireball instead of a normal one.\nWhile guardian of Flames is active, Fireball pierces 2 more enemies.",
+        "3": "The damage of Meteor is increased by 550%.\nFire Blast reduces the fire resistance of hit enemies by 30% for 45 seconds.\nEach time Fireball hits an enemy, is has a 70% chance to trigger a fast-falling Meteor that tracks the target."
+      }
+    },
+    "ROBUST_NORSELAND_ARMOR": {
+      "setType": "ROBUST_NORSELAND_ARMOR",
+      "name": "Robust Norseland Armor (WIP)",
+      "defaultLevel": 100,
+      "setItems": [
+        "ROBUST_NORSELAND_HELMET",
+        "ROBUST_NORSELAND_SHOULDERS",
+        "ROBUST_NORSELAND_TORSO",
+        "ROBUST_NORSELAND_GLOVES",
+        "ROBUST_NORSELAND_BOOTS",
+        "ROBUST_NORSELAND_ONE_HAND",
+        "ROBUST_NORSELAND_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"MOVEMENT_SPEED": 0.231},
+        "3": {"RESISTANCE_VALUE": 795.0},
+        "4": {"ARMOR_VALUE": 1106.0},
+        "5": {"DAMAGE": 2859.0},
+        "6": {"CRIT_VALUE": 3831.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "RUNES_OF_REGAINED_HEALTH": {
+      "setType": "RUNES_OF_REGAINED_HEALTH",
+      "name": "Runes of Regained Health",
+      "defaultLevel": 145,
+      "setItems": [
+        "BLOOD_RUNE_AMULET",
+        "BLOOD_RUNE_BELT",
+        "BLOOD_RUNE_RING",
+        "BLOOD_RUNE_TWO_HAND"
+      ],
+      "baseValuesPerTier": {
+        "1": {"HEALTH_POINTS": 22232.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "Regenerates 2.0% Health Points per second for 10 seconds when you pick up Healing Spheres.",
+        "3": "Increases your damage and attacks per second by 20% for 20 seconds when you pick up Healing Spheres.",
+        "4": "For each defeated enemy, you regenerate 2.0% of your maximum Health Points"
+      }
+    },
+    "SARGONS_IMMORTAL_SHADOW_WEAPONRY": {
+      "setType": "SARGONS_IMMORTAL_SHADOW_WEAPONRY",
+      "name": "Sargon's Immortal Shadow Weaponry",
+      "defaultLevel": 145,
+      "setItems": [
+        "SARGON_ADORNMENT",
+        "SARGON_ONE_HAND",
+        "SARGON_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"DAMAGE": 4165.0},
+        "3": {"DAMAGE": 8329.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "SARGONS_IMMORTAL_TERROR_ARMOR": {
+      "setType": "SARGONS_IMMORTAL_TERROR_ARMOR",
+      "name": "Sargon's Immortal Terror Armor",
+      "defaultLevel": 145,
+      "setItems": [
+        "SARGON_HELMET",
+        "SARGON_SHOULDERS",
+        "SARGON_TORSO"
+      ],
+      "baseValuesPerTier": {
+        "2": {"DAMAGE": 2776.0},
+        "3": {"HEALTH_POINTS": 33347.0, "DAMAGE": 5553.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "SCORN_OF_THE_DRAGON": {
+      "setType": "SCORN_OF_THE_DRAGON",
+      "name": "Scorn of the Dragon (WIP)",
+      "defaultLevel": 140,
+      "setItems": [
+        "DRAGON_SCORN_ONE_HAND",
+        "DRAGON_SCORN_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"CRIT_VALUE": 2110.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "Increases the Master of Fire talent by 1."
+      }
+    },
+    "SHADOW_REIGN": {
+      "setType": "SHADOW_REIGN",
+      "name": "Shadow Reign",
+      "defaultLevel": 145,
+      "setItems": [
+        "SHADOW_REIGN_CLOAK",
+        "SHADOW_REIGN_HELMET",
+        "SHADOW_REIGN_SHOULDERS",
+        "SHADOW_REIGN_TORSO",
+        "SHADOW_REIGN_GLOVES",
+        "SHADOW_REIGN_BOOTS",
+        "SHADOW_REIGN_ONE_HAND",
+        "SHADOW_REIGN_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"HEALTH_POINTS": 33347.0},
+        "3": {"RESISTANCE_VALUE": 2800.0},
+        "4": {"ARMOR_VALUE": 3305.0},
+        "6": {"DAMAGE": 8239.0},
+        "7": {"CRIT_VALUE": 6497.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "8": "Each usage of Teleport or Frost Charge generates Dark Hatred. As soon as you stack Dark Hatred 16 times, a massive andermagic explosion occurs, dealing 1200% of your base damage as Andermagic damage to foes around you. You get the Dark Hatred Eruption buff that frees you from any debuff, heals you completely and fills up your Mana and resets all your skill cooldowns, while granting the Shield of Hatred buff, which protects you from any debuff for 10 seconds. Cooldown: 120 seconds."
+      }
+    },
+    "SPLENDID_DURIAN_ARMOR": {
+      "setType": "SPLENDID_DURIAN_ARMOR",
+      "name": "Splendid Durian Armor (WIP)",
+      "defaultLevel": 100,
+      "setItems": [
+        "SPLENDID_DURIAN_HELMET",
+        "SPLENDID_DURIAN_SHOULDERS",
+        "SPLENDID_DURIAN_TORSO",
+        "SPLENDID_DURIAN_GLOVES",
+        "SPLENDID_DURIAN_BOOTS",
+        "SPLENDID_DURIAN_ONE_HAND",
+        "SPLENDID_DURIAN_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"MOVEMENT_SPEED": 0.231},
+        "3": {"RESISTANCE_VALUE": 795.0},
+        "4": {"ARMOR_VALUE": 1106.0},
+        "5": {"DAMAGE": 2859.0},
+        "6": {"CRIT_VALUE": 3831.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "STELLAR_WALKER": {
+      "setType": "STELLAR_WALKER",
+      "name": "Stellar Walker",
+      "defaultLevel": 140,
+      "setItems": [
+        "STELLAR_WALKER_CLOAK",
+        "STELLAR_WALKER_HELMET",
+        "STELLAR_WALKER_SHOULDERS",
+        "STELLAR_WALKER_TORSO",
+        "STELLAR_WALKER_GLOVES",
+        "STELLAR_WALKER_BOOTS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"ATTACK_SPEED": 0.79},
+        "4": {"DAMAGE": 8657.0},
+        "6": {"MANA": 68.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "4": "For every 100 points of Mana consumed, you will enter a Instinct Awakening state. Increase damage by 10% and increase the Concentration cost of all skills by 5% for 5 seconds, stacking up to 10 times.",
+        "6": "Your Magic Missile is turned into an Ice piercing bullet and the skill Damage is turned into Ice and increased by 50%"
+      }
+    },
+    "SUMMER_SOUVENIR_KINGSHILL": {
+      "setType": "SUMMER_SOUVENIR_KINGSHILL",
+      "name": "Summer Souvenir - Kingshill",
+      "defaultLevel": 145,
+      "setItems": [
+        "KINGSHILL_SOUVENIR_BELT",
+        "KINGSHILL_SOUVENIR_ADORNMENT",
+        "KINGSHILL_SOUVENIR_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"DAMAGE": 4407.0},
+        "3": {"HEALTH_POINTS": 53044.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "Your skills now deal fire damage."
+      }
+    },
+    "SUN_AUSPICES": {
+      "setType": "SUN_AUSPICES",
+      "name": "Sun Auspices (WIP)",
+      "defaultLevel": 100,
+      "setItems": [
+        "TAYAZ_HELMET",
+        "TAYAZ_SHOULDERS",
+        "TAYAZ_TORSO",
+        "TAYAZ_GLOVES",
+        "TAYAZ_BOOTS",
+        "TAYAZ_ONE_HAND",
+        "TAYAZ_OFF_HAND1",
+        "TAYAZ_OFF_HAND2",
+        "TAYAZ_TWO_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"MOVEMENT_SPEED": 0.231},
+        "3": {"RESISTANCE_VALUE": 795.0},
+        "4": {"ARMOR_VALUE": 1106.0},
+        "5": {"CRIT_VALUE": 2554.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "6": "When you are hit, there is a 35% chance to gods may punish some of your foes with 100% of your base damage. 5 second cooldown time."
+      }
+    },
+    "TEMPLE_GUARDIAN_FEDERATION": {
+      "setType": "TEMPLE_GUARDIAN_FEDERATION",
+      "name": "Temple Guardian Federation",
+      "defaultLevel": 140,
+      "setItems": [
+        "TEMPLE_GUARDIAN_HELMET",
+        "TEMPLE_GUARDIAN_SHOULDERS",
+        "TEMPLE_GUARDIAN_TORSO_ANDERMAGIC",
+        "TEMPLE_GUARDIAN_TORSO_ARMOR",
+        "TEMPLE_GUARDIAN_TORSO_FIRE",
+        "TEMPLE_GUARDIAN_TORSO_ICE",
+        "TEMPLE_GUARDIAN_TORSO_POISON",
+        "TEMPLE_GUARDIAN_GLOVES",
+        "TEMPLE_GUARDIAN_BOOTS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"ARMOR_VALUE": 1286.0},
+        "3": {"DAMAGE": 2702.0},
+        "4": {"RESISTANCE_VALUE": 2044.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "5": "If you sustain a hit when your Health Points are lower than 33%, a Temple Guardian will appear and fight in your honor for 30 seconds. This guardian has a cooldown time of 150 seconds."
+      }
+    },
+    "TEMPERED_MYRDOSCH_ARMOR": {
+      "setType": "TEMPERED_MYRDOSCH_ARMOR",
+      "name": "Tempered Myrdosch Armor (WIP)",
+      "defaultLevel": 100,
+      "setItems": [
+        "TEMPERED_MYRDOSCH_HELMET",
+        "TEMPERED_MYRDOSCH_SHOULDERS",
+        "TEMPERED_MYRDOSCH_TORSO",
+        "TEMPERED_MYRDOSCH_GLOVES",
+        "TEMPERED_MYRDOSCH_BOOTS",
+        "TEMPERED_MYRDOSCH_ONE_HAND",
+        "TEMPERED_MYRDOSCH_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"MOVEMENT_SPEED": 0.231},
+        "3": {"RESISTANCE_VALUE": 795.0},
+        "4": {"ARMOR_VALUE": 1106.0},
+        "5": {"DAMAGE": 2859.0},
+        "6": {"CRIT_VALUE": 3831.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "THE_LEGENDARY_KINGS_ARMOR": {
+      "setType": "THE_LEGENDARY_KINGS_ARMOR",
+      "name": "The Legendary King's Armor",
+      "defaultLevel": 145,
+      "setItems": [
+        "LEGENDARY_KINGS_CLOAK",
+        "LEGENDARY_KINGS_HELMET",
+        "LEGENDARY_KINGS_SHOULDERS",
+        "LEGENDARY_KINGS_TORSO",
+        "LEGENDARY_KINGS_GLOVES",
+        "LEGENDARY_KINGS_BOOTS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"DAMAGE": 2776.0},
+        "3": {"HEALTH_POINTS": 33347.0},
+        "4": {"DAMAGE": 5553.0},
+        "5": {"HEALTH_POINTS": 55579.0},
+        "6": {"DAMAGE": 8329.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "THE_UNTOUCHABLES": {
+      "setType": "THE_UNTOUCHABLES",
+      "name": "The Untouchables",
+      "defaultLevel": 145,
+      "setItems": [
+        "UNTOUCHABLE_HELMET",
+        "UNTOUCHABLE_SHOULDERS",
+        "UNTOUCHABLE_TORSO",
+        "UNTOUCHABLE_GLOVES",
+        "UNTOUCHABLE_BOOTS",
+        "UNTOUCHABLE_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Healing Spheres grant you Invigorate for 8 seconds\n+15% armor from Invigorate",
+        "2": "+15% block value from Invigorate",
+        "3": "+30% movement speed from Invigorate",
+        "4": "+15% Health Points from Healing Spheres",
+        "5": "Provides a chance that a Healing Sphere will be created nearby when you defeat an enemy - no effect in official Arenas"
+      }
+    },
+    "TREASURES_OF_THE_DEEP": {
+      "setType": "TREASURES_OF_THE_DEEP",
+      "name": "Treasures of the Deep",
+      "defaultLevel": 140,
+      "setItems": [
+        "DEEP_SEA_AMULET",
+        "DEEP_SEA_RING",
+        "DEEP_SEA_ADORNMENT",
+        "DEEP_SEA_ONE_HAND",
+        "DEEP_SEA_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"HEALTH_POINTS": 16308.0},
+        "3": {"RESISTANCE_VALUE": 1363.0},
+        "4": {"MOVEMENT_SPEED": 0.362},
+        "5": {"CRIT_VALUE": 4234.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "TREASURES_OF_THE_DESERT_TOMB": {
+      "setType": "TREASURES_OF_THE_DESERT_TOMB",
+      "name": "Treasures of the Desert Tomb (WIP)",
+      "defaultLevel": 100,
+      "setItems": [
+        "DESERT_TOMB_CLOAK",
+        "DESERT_TOMB_ONE_HAND",
+        "DESERT_TOMB_OFF_HAND",
+        "DESERT_TOMB_TWO_HAND"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "Periodically unleashes the Hastiness of the Desert which adds 30% attack speed for 10 seconds."
+      }
+    },
+    "VISIONARY_SEEKER": {
+      "setType": "VISIONARY_SEEKER",
+      "name": "Visionary Seeker",
+      "defaultLevel": 140,
+      "setItems": [
+        "WRATHFUL_SEEKER_CLOAK",
+        "WRATHFUL_SEEKER_HELMET",
+        "WRATHFUL_SEEKER_SHOULDERS",
+        "WRATHFUL_SEEKER_TORSO",
+        "WRATHFUL_SEEKER_GLOVES",
+        "WRATHFUL_SEEKER_BOOTS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"ATTACK_SPEED": 0.355},
+        "4": {"DAMAGE": 7626.0},
+        "6": {"MANA": 47.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "WITCH_SEEKER_GEAR": {
+      "setType": "WITCH_SEEKER_GEAR",
+      "name": "Witch Seeker Gear",
+      "defaultLevel": 145,
+      "setItems": [
+        "WITCH_SEEKER_BELT",
+        "WITCH_SEEKER_HELMET",
+        "WITCH_SEEKER_SHOULDERS",
+        "WITCH_SEEKER_TORSO"
+      ],
+      "baseValuesPerTier": {
+        "2": {"ATTACK_SPEED": 0.17},
+        "3": {"DAMAGE": 5553.0},
+        "4": {"MANA": 19.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
+    "WORLD_DROP_SET": {
+      "setType": "WORLD_DROP_SET",
+      "name": "Roshan's Wisdom",
+      "defaultLevel": 145,
+      "setItems": [
+        "WORLD_DROP_BELT",
+        "WORLD_DROP_GLOVES",
+        "WORLD_DROP_BOOTS"
+      ],
+      "baseValuesPerTier": {
+        "2": {"HEALTH_POINTS": 22232.0},
+        "3": {"DAMAGE": 2776.0, "BLOCK_VALUE": 3056}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "+ 15% movement speed for 5 seconds upon defeating an enemy"
+      }
+    }
+  },
+  "dragonknightSets":
+  {
+    "ANCESTRAL_GLORY": {
+      "setType": "ANCESTRAL_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "ANCESTRAL_GLORY_CLOAK",
+        "ANCESTRAL_GLORY_RING"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When equipped with the set, Mighty Wild Swing's damage is increased by 300%.\nWhen you release Banner of War, all your damage is boosted by 200% for 10 seconds. Also refreshes the cooldowns of all the following skills:\n•Furious Battle Cry\n•Outburst\n•Dragon Hide\n•Spike Shield"
+      }
+    },
+    "FORGOTTEN_GLORY": {
+      "setType": "FORGOTTEN_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "OLD_GLORY",
+        "RING_OF_OLD_GLORY"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When equipped with the set, Mighty Wild Swing's damage is increased by 300%.\nWhen you release Banner of War, all your damage is boosted by 200% for 10 seconds. Also refreshes the cooldowns of all the following skills:\n•Furious Battle Cry\n•Outburst\n•Dragon Hide\n•Spike Shield"
+      }
+    }
+  },
+  "rangerSets":
+  {
+    "ANCESTRAL_GLORY": {
+      "setType": "ANCESTRAL_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "ANCESTRAL_GLORY_CLOAK",
+        "ANCESTRAL_GLORY_RING"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When Thicket of Thorns hits an enemy, your Concentration cost are decreased to 0 and Explosive Arrow does not have cooldown for 3 seconds. (PvP: 1,5 seconds)."
+      }
+    },
+    "FORGOTTEN_GLORY": {
+      "setType": "FORGOTTEN_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "OLD_GLORY",
+        "RING_OF_OLD_GLORY"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "When Thicket of Thorns hits an enemy, your Concentration cost are decreased to 0 and Explosive Arrow does not have cooldown for 3 seconds. (PvP: 1,5 seconds)."
+      }
+    }
+  },
+  "steamMechanicusSets":
+  {
+    "ANCESTRAL_GLORY": {
+      "setType": "ANCESTRAL_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "ANCESTRAL_GLORY_CLOAK",
+        "ANCESTRAL_GLORY_RING"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "There is a 60% chance that hits with Quick Shot cause your currently active Mechanical Turret to fire 3 additional ice bullets that covers enemies in Frost for 4 seconds. Enemies covered in Frost have reduced movement and attack speed. When a Mechanical Turret is used, you get 100% Damage and 15% Critical Value while staying within the range of it."
+      }
+    },
+    "FORGOTTEN_GLORY": {
+      "setType": "FORGOTTEN_GLORY",
+      "name": "Forgotten Glory",
+      "defaultLevel": 145,
+      "setItems": [
+        "OLD_GLORY",
+        "RING_OF_OLD_GLORY"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "There is a 60% chance that hits with Quick Shot cause your currently active Mechanical Turret to fire 3 additional ice bullets that covers enemies in Frost for 4 seconds. Enemies covered in Frost have reduced movement and attack speed. When a Mechanical Turret is used, you get 100% Damage and 15% Critical Value while staying within the range of it."
+
+      }
+    }
+  }
+}
