@@ -5,6 +5,7 @@ import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
 import com.langleon.dsobuildsim.items.core.SetBonusProvider;
@@ -28,7 +29,7 @@ public class MythicItem extends AbstractItem implements SetBonusProvider, Unique
         this.uniqueRelativeValues = uniqueRelativeValues;
         this.uniqueAbsoluteValues = uniqueAbsoluteValues;
         this.setType = set;
-        this.gems = new Gem[10];
+        this.gems = new AbstractGem[10];
         this.enchantments = new Enchantment[10];
     }
 

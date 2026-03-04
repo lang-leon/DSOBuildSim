@@ -4,6 +4,7 @@ import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
+import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
@@ -30,7 +31,7 @@ public class UniqueItem extends AbstractItem implements UniqueStatProvider {
         this.uniqueRelativeValues = uniqueRelativeValues;
         this.uniqueEnchantments = uniqueEnchantments;
         this.uniqueDescription = uniqueDescription;
-        this.gems = new Gem[10];
+        this.gems = new AbstractGem[10];
         this.enchantments = new Enchantment[4];
     }
 
