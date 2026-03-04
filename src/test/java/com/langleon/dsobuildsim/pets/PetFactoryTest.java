@@ -30,7 +30,7 @@ public class PetFactoryTest {
         Pet pet = petFactory.createPet(PetType.MORTIS_DOLL, 3);
         Assertions.assertNotNull(pet);
         Assertions.assertEquals(3, pet.getTier());
-        Assertions.assertEquals(0.12, pet.getStats().get(StatType.DAMAGE));
+        Assertions.assertEquals(0.12, pet.getRelativeStats().get(StatType.DAMAGE));
         Assertions.assertEquals("+ 12,00% Attack Speed\n+ 12,00% Mana Points\n+ 12,00% Damage", pet.getDescription());
     }
 
@@ -40,7 +40,7 @@ public class PetFactoryTest {
         Pet pet = petFactory.createPet(PetType.AWOKEN_LION);
         Assertions.assertNotNull(pet);
         Assertions.assertEquals(6, pet.getTier());
-        Assertions.assertEquals(0.2, pet.getStats().get(StatType.DAMAGE));
+        Assertions.assertEquals(0.2, pet.getRelativeStats().get(StatType.DAMAGE));
         Assertions.assertEquals("+ 20,00% Damage\nIncreased item drop worthy monsters", pet.getDescription());
     }
 

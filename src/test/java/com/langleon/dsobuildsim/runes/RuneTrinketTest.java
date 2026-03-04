@@ -78,7 +78,7 @@ public class RuneTrinketTest {
         runeTrinket.addRune(dragonStoneFactory.createRune(RuneType.WINTER, 5),7);
         runeTrinket.addRune(dragonStoneFactory.createRune(RuneType.WINTER, 5),8);
         runeTrinket.addRune(dragonStoneFactory.createRune(RuneType.ACCELERATION, 2),9);
-        Map<StatType, Double> stats = runeTrinket.getTotalStats();
+        Map<StatType, Double> stats = runeTrinket.getTotalRelativeStats();
         Assertions.assertEquals(6, stats.size());
         Assertions.assertTrue(stats.containsKey(StatType.HEALTH_POINTS));
         Assertions.assertTrue(stats.containsKey(StatType.CRIT_VALUE));

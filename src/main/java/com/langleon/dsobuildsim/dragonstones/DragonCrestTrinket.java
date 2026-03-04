@@ -40,7 +40,7 @@ public class DragonCrestTrinket {
         this.dragonStones = dragonStones;
     }
 
-    public Map<StatType, Double> getTotalStats()
+    public Map<StatType, Double> getTotalRelativeStats()
     {
         Map<StatType, Double> stats = new HashMap<>();
         for(int i=0; i<10; i++)
