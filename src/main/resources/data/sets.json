@@ -593,8 +593,8 @@
       "descriptionPerTier": {
       }
     },
-    "KRANPARUS_TREASURE": {
-      "setType": "KRANPARUS_TREASURE",
+    "KRANPARUS_TREASURES": {
+      "setType": "KRANPARUS_TREASURES",
       "name": "Kranparus' Treasures",
       "defaultLevel": 145,
       "setItems": [

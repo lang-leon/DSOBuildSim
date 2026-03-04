@@ -33,8 +33,14 @@ public class MythicItem extends AbstractItem implements SetBonusProvider, Unique
         this.enchantments = new Enchantment[10];
     }
 
+    @Override
     public SetType getSetType() {
         return setType;
+    }
+
+    @Override
+    public String getSetItemIdentifier() {
+        return this.itemType.toString();
     }
 
     public Map<StatType, Double> getUniqueRelativeValues() {
