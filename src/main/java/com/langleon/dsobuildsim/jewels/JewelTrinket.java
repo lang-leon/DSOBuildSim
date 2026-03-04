@@ -38,7 +38,7 @@ public class JewelTrinket {
         this.jewels = jewels;
     }
 
-    public Map<StatType, Double> getTotalStats()
+    public Map<StatType, Double> getTotalRelativeStats()
     {
         Map<StatType, Double> stats = new HashMap<>();
         for(int i=0; i<10; i++)
