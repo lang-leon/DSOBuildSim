@@ -2,6 +2,6 @@ package com.langleon.dsobuildsim.items.core;
 
 import com.langleon.dsobuildsim.enums.items.SetType;
 
-public interface SettableItem {
+public interface SetBonusProvider {
     SetType getSetType();
 }

@@ -7,12 +7,13 @@ import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.enums.items.SetType;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
-import com.langleon.dsobuildsim.items.core.SettableItem;
+import com.langleon.dsobuildsim.items.core.SetBonusProvider;
+import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class MythicItem extends AbstractItem implements SettableItem {
+public class MythicItem extends AbstractItem implements SetBonusProvider, UniqueStatProvider {
     private final Map<StatType, Double> uniqueRelativeValues;
     private final Map<StatType, Double> uniqueAbsoluteValues;
     private final SetType setType;

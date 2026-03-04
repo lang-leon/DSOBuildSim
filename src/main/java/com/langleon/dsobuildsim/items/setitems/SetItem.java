@@ -7,12 +7,12 @@ import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.enums.items.SetType;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
-import com.langleon.dsobuildsim.items.core.SettableItem;
+import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class SetItem extends AbstractItem implements SettableItem {
+public class SetItem extends AbstractItem implements SetBonusProvider {
     private final SetType setType;
 
     public SetItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, SetType set){
