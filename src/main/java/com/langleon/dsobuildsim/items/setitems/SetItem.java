@@ -28,8 +28,14 @@ public class SetItem extends AbstractItem implements SetBonusProvider {
         this.enchantments = new Enchantment[10];
     }
 
+    @Override
     public SetType getSetType() {
         return setType;
+    }
+
+    @Override
+    public String getSetItemIdentifier() {
+        return this.itemType.toString();
     }
 
     @Override

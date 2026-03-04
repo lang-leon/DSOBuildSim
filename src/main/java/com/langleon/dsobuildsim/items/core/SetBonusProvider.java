@@ -4,4 +4,5 @@ import com.langleon.dsobuildsim.enums.items.SetType;
 
 public interface SetBonusProvider {
     SetType getSetType();
+    String getSetItemIdentifier();
 }
