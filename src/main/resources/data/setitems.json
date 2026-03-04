@@ -52,6 +52,19 @@
       },
       "set": "DARK_EXILE"
     },
+    "DEEP_SEA_AMULET": {
+      "itemType": "DEEP_SEA_AMULET",
+      "name": "Deep Sea Star Amulet",
+      "defaultLevel": 140,
+      "tier": 0,
+      "itemSlotType": "AMULET",
+      "baseValues": {
+        "HEALTH_POINTS": 24217.0,
+        "ARMOR_VALUE": 1068.0,
+        "BLOCK_VALUE": 1936.0
+      },
+      "set": "TREASURES_OF_THE_DEEP"
+    },
     "DRAGON_SHACKLES": {
       "itemType": "DRAGON_SHACKLES",
       "name": "Dragon Shackles (WIP)",
@@ -610,6 +623,19 @@
         "RESISTANCE_VALUE": 1162.0
       },
       "set": "DARK_FATE"
+    },
+    "DEEP_SEA_RING": {
+      "itemType": "DEEP_SEA_RING",
+      "name": "Deep Sea Chitin Ring",
+      "defaultLevel": 140,
+      "tier": 0,
+      "itemSlotType": "RING",
+      "baseValues": {
+        "HEALTH_POINTS": 24217.0,
+        "ARMOR_VALUE": 1068.0,
+        "BLOCK_VALUE": 1936.0
+      },
+      "set": "TREASURES_OF_THE_DEEP"
     },
     "INFERNAL_POWER": {
       "itemType": "INFERNAL_POWER",
@@ -2529,6 +2555,18 @@
       },
       "set": "DARK_EXILE"
     },
+    "DEEP_SEA_ADORNMENT": {
+      "itemType": "DEEP_SEA_ADORNMENT",
+      "name": "Crystal Pearl of the Deep",
+      "defaultLevel": 140,
+      "tier": 0,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "baseValues": {
+        "ATTACK_SPEED": 0.054,
+        "CRIT_VALUE": 2050.0
+      },
+      "set": "TREASURES_OF_THE_DEEP"
+    },
     "DUNE_ADORNMENT_AC":  {
       "itemType": "DUNE_ADORNMENT_AC",
       "name": "Ornament of the Dunes (AS/Crit)",
@@ -2721,6 +2759,18 @@
         "CRIT_VALUE": 0.0
       },
       "set": "DAEDAL_QUAIZAH_ARMOR"
+    },
+    "DEEP_SEA_ONE_HAND": {
+      "itemType": "DEEP_SEA_ONE_HAND",
+      "name": "Deep Sea Calamary Staff",
+      "defaultLevel": 140,
+      "tier": 0,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "baseValues": {
+        "DAMAGE": 2001.0,
+        "ATTACK_SPEED": 0.432
+      },
+      "set": "TREASURES_OF_THE_DEEP"
     },
     "DESERT_TOMB_ONE_HAND": {
       "itemType": "DESERT_TOMB_ONE_HAND",
@@ -2920,6 +2970,19 @@
         "BLOCK_VALUE": 0.0
       },
       "set": "DAEDAL_QUAIZAH_ARMOR"
+    },
+    "DEEP_SEA_OFF_HAND": {
+      "itemType": "DEEP_SEA_OFF_HAND",
+      "name": "Deep Sea Orbis Jellyfish",
+      "defaultLevel": 140,
+      "tier": 0,
+      "itemSlotType": "OFF_HAND",
+      "baseValues": {
+        "HEALTH_POINTS": 32297.0,
+        "ARMOR_VALUE": 2137.0,
+        "BLOCK_VALUE": 46460.0
+      },
+      "set": "TREASURES_OF_THE_DEEP"
     },
     "DESERT_TOMB_OFF_HAND": {
       "itemType": "DESERT_TOMB_OFF_HAND",
