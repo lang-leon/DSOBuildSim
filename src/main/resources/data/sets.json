@@ -1050,6 +1050,28 @@
         "5": "Provides a chance that a Healing Sphere will be created nearby when you defeat an enemy - no effect in official Arenas"
       }
     },
+    "TREASURES_OF_THE_DEEP": {
+      "setType": "TREASURES_OF_THE_DEEP",
+      "name": "Treasures of the Deep",
+      "defaultLevel": 140,
+      "setItems": [
+        "DEEP_SEA_AMULET",
+        "DEEP_SEA_RING",
+        "DEEP_SEA_ADORNMENT",
+        "DEEP_SEA_ONE_HAND",
+        "DEEP_SEA_OFF_HAND"
+      ],
+      "baseValuesPerTier": {
+        "2": {"HEALTH_POINTS": 16308.0},
+        "3": {"RESISTANCE_VALUE": 1363.0},
+        "4": {"MOVEMENT_SPEED": 0.362},
+        "5": {"CRIT_VALUE": 4234.0}
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+      }
+    },
     "TREASURES_OF_THE_DESERT_TOMB": {
       "setType": "TREASURES_OF_THE_DESERT_TOMB",
       "name": "Treasures of the Desert Tomb (WIP)",
