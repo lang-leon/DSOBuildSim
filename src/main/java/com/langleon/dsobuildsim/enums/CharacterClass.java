@@ -1,7 +1,6 @@
 package com.langleon.dsobuildsim.enums;
 
 import java.util.Map;
-import java.util.concurrent.StructuredTaskScope;
 
 public enum CharacterClass {
 
