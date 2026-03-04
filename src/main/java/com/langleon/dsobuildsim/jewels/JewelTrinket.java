@@ -32,6 +32,12 @@ public class JewelTrinket {
         jewels[slot] = null;
     }
 
+    public void updateJewels(Jewel[] jewels)
+    {
+        if (jewels.length!=10) throw new IllegalArgumentException("Invalid array length!");
+        this.jewels = jewels;
+    }
+
     public Map<StatType, Double> getTotalStats()
     {
         Map<StatType, Double> stats = new HashMap<>();
