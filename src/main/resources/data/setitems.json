@@ -1245,19 +1245,6 @@
       },
       "set": "BLACK_WARLORD_REGALIA"
     },
-    "GLOWING_SAPPHIRE_SHOULDERS": {
-      "itemType": "GLOWING_SAPPHIRE_SHOULDERS",
-      "name": "Glowing Sapphire Shoulders (WIP)",
-      "defaultLevel": 140,
-      "tier": 0,
-      "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1401.911,
-        "HEALTH_POINTS": 16507.200
-      },
-      "set": "TODO/WIP"
-    },
     "LEGENDARY_KINGS_SHOULDERS": {
       "itemType": "LEGENDARY_KINGS_SHOULDERS",
       "name": "Legendary Kings Shoulders",
@@ -1595,19 +1582,6 @@
       },
       "set": "DRAGANS_PROTECTIVE_ARMOR"
     },
-    "GLOWING_SAPPHIRE_TORSO": {
-      "itemType": "GLOWING_SAPPHIRE_TORSO",
-      "name": "",
-      "defaultLevel": 145,
-      "tier": 0,
-      "itemSlotType": "TORSO",
-      "baseValues": {
-        "ARMOR_VALUE": 1648.043,
-        "ANDERMAGIC_RESISTANCE": 6225.969,
-        "BLOCK_VALUE": 1589.428
-      },
-      "set": "TODO/WIP"
-    },
     "LEGENDARY_KINGS_TORSO": {
       "itemType": "LEGENDARY_KINGS_TORSO",
       "name": "The Legendary King's Fortitude",
@@ -1751,7 +1725,7 @@
       },
       "set": "TEMPLE_GUARDIAN_FEDERATION"
     },
-    "TEMPLE_GUARDIAN_TORSO_ARMOR": {
+    "TEMPLE_GUARDIAN_TORSO_HEALTH": {
       "itemType": "TEMPLE_GUARDIAN_TORSO_HEALTH",
       "name": "Temple Guardian Heart (Health)",
       "defaultLevel": 140,
@@ -2454,7 +2428,7 @@
       "set": "TEMPLE_GUARDIAN_FEDERATION"
     },
     "TEMPERED_MYRDOSCH_BOOTS": {
-      "itemType": "TEMPERED_MYRDOSCH_ARMOR",
+      "itemType": "TEMPERED_MYRDOSCH_BOOTS",
       "name": "Tempered Myrdosch Boots (WIP)",
       "defaultLevel": 100,
       "tier": 0,
@@ -3295,18 +3269,6 @@
 
   },
   "steamMechanicusItems": {
-    "NAME": {
-      "itemType": "NAME",
-      "name": "",
-      "defaultLevel": 145,
-      "tier": 0,
-      "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "DAMAGE": 13163.139,
-        "ATTACK_SPEED": 0.329,
-        "CRIT_VALUE": 3506.0
-      },
-      "set": "TWO_HAND_WEAPON"
-    }
+
   }
 }
