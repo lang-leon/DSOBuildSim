@@ -7,18 +7,12 @@ import com.langleon.dsobuildsim.dragonstones.DragonStone;
 import com.langleon.dsobuildsim.enums.*;
 import com.langleon.dsobuildsim.enums.items.SetType;
 import com.langleon.dsobuildsim.essences.Essence;
-import com.langleon.dsobuildsim.items.core.SettableItem;
+import com.langleon.dsobuildsim.items.core.SetBonusProvider;
+import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 import com.langleon.dsobuildsim.sets.*;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
-import com.langleon.dsobuildsim.items.mythicitems.MythicItem;
-import com.langleon.dsobuildsim.items.setitems.SetItem;
-import com.langleon.dsobuildsim.items.uniqueitems.UniqueItem;
 import com.langleon.dsobuildsim.jewels.Jewel;
 import com.langleon.dsobuildsim.jewels.JewelTrinket;
-import com.langleon.dsobuildsim.mapper.AbsoluteToRelativeStatTypeMapper;
-import com.langleon.dsobuildsim.overallbuffs.OverallAbsolutBuff;
-import com.langleon.dsobuildsim.overallbuffs.OverallBuff;
-import com.langleon.dsobuildsim.overallbuffs.OverallRelativeBuff;
 import com.langleon.dsobuildsim.pets.Pet;
 import com.langleon.dsobuildsim.runes.Rune;
 import com.langleon.dsobuildsim.runes.RuneTrinket;
@@ -27,6 +21,8 @@ import com.langleon.dsobuildsim.skilltrees.wisdomskilltree.WisdomSkillTree;
 import java.util.*;
 
 public class Character {
+
+    private final SetFactory setFactory;
 
     private final CharacterClass characterClass;
     private String name;
@@ -48,8 +44,10 @@ public class Character {
     private WisdomSkillTree wisdomSkillTree;
 
     //default constructor
-    public Character(CharacterClass characterClass)
+    public Character(CharacterClass characterClass, SetFactory setFactory)
     {
+        this.setFactory = setFactory;
+
         this.characterClass = characterClass;
         this.name = characterClass.getClassName();
 
@@ -117,10 +115,21 @@ public class Character {
         return dragonCrestTrinket;
     }
 
-    public void equipItem(AbstractItem item, ItemSlot slot)
+    public void equipItem(ItemSlot slot, AbstractItem item)
     {
         if (item.getItemSlotType() != slot.getAllowedItemType()) throw new IllegalArgumentException("Item "+item.getName()+" not allowed in slot "+slot+"!");
 
+        AbstractItem oldItem = this.equippedItems.get(slot);
+        if (oldItem instanceof SetBonusProvider oldSetItem) {
+            updateEquippedSetsOnRemoval(oldSetItem);
+        }
+
+        this.equippedItems.put(slot, item);
+        if (item instanceof SetBonusProvider settableItem)
+        {
+            SetInstance setInstance = this.equippedSets.computeIfAbsent(settableItem.getSetType(), k -> this.setFactory.createSet(settableItem.getSetType(), CharacterClass.SPELLWEAVER));
+            setInstance.addSetItem(settableItem.getSetItemIdentifier());
+        }
     }
 
     public void unequipItem(ItemSlot slot)
@@ -128,14 +137,14 @@ public class Character {
         AbstractItem removedItem = this.equippedItems.remove(slot);
         if (removedItem != null)
         {
-            if (removedItem instanceof SettableItem settableItem)
+            if (removedItem instanceof SetBonusProvider settableItem)
             {
                 this.updateEquippedSetsOnRemoval(settableItem);
             }
         }
     }
 
-    private void updateEquippedSetsOnRemoval(SettableItem settableItem)
+    private void updateEquippedSetsOnRemoval(SetBonusProvider settableItem)
     {
         SetInstance setInstance = this.equippedSets.get(settableItem.getSetType());
 
@@ -195,5 +204,117 @@ public class Character {
 
     public void setWisdomSkillTree(WisdomSkillTree wisdomSkillTree) {
         this.wisdomSkillTree = wisdomSkillTree;
+    }
+
+    public Map<StatType, Double> calculateCharacterStats()
+    {
+        Map<StatType, Double> baseStats = this.calculateTotalBaseStats();
+        Map<StatType, Double> relativeBonusStats = this.calculateTotalRelativeStats();
+
+        if (this.equippedItems.containsKey(ItemSlot.ONE_HAND_WEAPON))
+        {
+            Double absoluteOneHandDamage = baseStats.getOrDefault(StatType.ONE_HAND_DAMAGE, 0.0);
+            baseStats.remove(StatType.ONE_HAND_DAMAGE);
+            Double relativeOneHandDamage = relativeBonusStats.getOrDefault(StatType.ONE_HAND_DAMAGE, 0.0);
+            relativeBonusStats.remove(StatType.ONE_HAND_DAMAGE);
+            double bonusOneHandDamage = this.equippedItems.get(ItemSlot.ONE_HAND_WEAPON).calculateTotalStats().get(StatType.DAMAGE) * relativeOneHandDamage;
+            bonusOneHandDamage += absoluteOneHandDamage * (1 + relativeOneHandDamage);
+            baseStats.merge(StatType.DAMAGE, bonusOneHandDamage, Double::sum);
+
+            Double absoluteOneHandAttackSpeed = baseStats.getOrDefault(StatType.ONE_HAND_ATTACK_SPEED, 0.0);
+            baseStats.remove(StatType.ONE_HAND_ATTACK_SPEED);
+            baseStats.merge(StatType.ATTACK_SPEED, absoluteOneHandAttackSpeed, Double::sum);
+        }
+        else if (this.equippedItems.containsKey(ItemSlot.TWO_HAND_WEAPON))
+        {
+            Double absoluteTwoHandDamage = baseStats.getOrDefault(StatType.TWO_HAND_DAMAGE, 0.0);
+            baseStats.remove(StatType.TWO_HAND_DAMAGE);
+            Double relativeTwoHandDamage = relativeBonusStats.getOrDefault(StatType.TWO_HAND_DAMAGE, 0.0);
+            relativeBonusStats.remove(StatType.TWO_HAND_DAMAGE);
+            double bonusTwoHandDamage = this.equippedItems.get(ItemSlot.TWO_HAND_WEAPON).calculateTotalStats().get(StatType.DAMAGE) * relativeTwoHandDamage;
+            bonusTwoHandDamage += absoluteTwoHandDamage * (1 + relativeTwoHandDamage);
+            baseStats.merge(StatType.DAMAGE, bonusTwoHandDamage, Double::sum);
+
+            Double absoluteTwoHandAttackSpeed = baseStats.getOrDefault(StatType.TWO_HAND_ATTACK_SPEED, 0.0);
+            baseStats.remove(StatType.TWO_HAND_ATTACK_SPEED);
+            baseStats.merge(StatType.ATTACK_SPEED, absoluteTwoHandAttackSpeed, Double::sum);
+        }
+
+        Map<StatType, Double> finalStats = new HashMap<>();
+
+        baseStats.forEach(((statType, baseValue) -> {
+            double relativeBonus = relativeBonusStats.getOrDefault(statType, 0.0);
+            double finalValue = baseValue * (1 + relativeBonus);
+
+            finalStats.put(statType, finalValue);
+        }));
+
+        return finalStats;
+    }
+
+    private Map<StatType, Double> calculateTotalBaseStats()
+    {
+        Map<StatType, Double> baseStats = new HashMap<>();
+        this.characterClass.getClassBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
+        this.wisdomSkillTree.getAbsoluteBuffs().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
+        this.calculateTotalItemBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
+        this.equippedSets.forEach((setType, setInstance) -> setInstance.getActiveBaseValues().forEach((key, value) -> baseStats.merge(key, value, Double::sum)));
+        if (this.tonic != null) baseStats.merge(this.tonic.statType(), this.tonic.statValue(), Double::sum);
+
+        Double resistanceValue = baseStats.remove(StatType.RESISTANCE_VALUE);
+        baseStats.merge(StatType.FIRE_RESISTANCE, resistanceValue, Double::sum);
+        baseStats.merge(StatType.ICE_RESISTANCE, resistanceValue, Double::sum);
+        baseStats.merge(StatType.LIGHTNING_RESISTANCE, resistanceValue, Double::sum);
+        baseStats.merge(StatType.POISON_RESISTANCE, resistanceValue, Double::sum);
+        baseStats.merge(StatType.ANDERMAGIC_RESISTANCE, resistanceValue, Double::sum);
+
+        return baseStats;
+    }
+
+    private Map<StatType, Double> calculateTotalItemBaseStats()
+    {
+        Map<StatType, Double> itemsTotalStats = new HashMap<>();
+        for (AbstractItem entry : equippedItems.values())
+        {
+            entry.calculateTotalStats().forEach((key, value) -> itemsTotalStats.merge(key, value, Double::sum));
+        }
+        return itemsTotalStats;
+    }
+
+    private Map<StatType, Double> calculateTotalRelativeStats()
+    {
+        Map<StatType, Double> relativeBonusStats = new HashMap<>();
+        this.characterClass.getClassRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+        this.calculateTotalItemRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+        this.equippedSets.forEach((setType, setInstance) -> setInstance.getActiveRelativeValues().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum)));
+        this.runeTrinkets.forEach(trinket -> trinket.getTotalRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum)));
+        this.jewelTrinkets.forEach(trinket -> trinket.getTotalRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum)));
+        this.dragonCrestTrinket.getTotalRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+        if (this.pet !=null)
+        {
+            this.pet.getRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+            this.collectorBagBuffs.forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+        }
+        if (this.essence != null) relativeBonusStats.merge(StatType.DAMAGE, this.essence.damageIncrease(), Double::sum);
+        if (this.physic != null) relativeBonusStats.merge(this.physic.statType(), this.physic.statValue(), Double::sum);
+
+        Double resistanceValue = relativeBonusStats.remove(StatType.RESISTANCE_VALUE);
+        relativeBonusStats.merge(StatType.FIRE_RESISTANCE, resistanceValue, Double::sum);
+        relativeBonusStats.merge(StatType.ICE_RESISTANCE, resistanceValue, Double::sum);
+        relativeBonusStats.merge(StatType.LIGHTNING_RESISTANCE, resistanceValue, Double::sum);
+        relativeBonusStats.merge(StatType.POISON_RESISTANCE, resistanceValue, Double::sum);
+        relativeBonusStats.merge(StatType.ANDERMAGIC_RESISTANCE, resistanceValue, Double::sum);
+
+        return relativeBonusStats;
+    }
+
+    private Map<StatType, Double> calculateTotalItemRelativeStats()
+    {
+        Map<StatType, Double> itemsTotalStats = new HashMap<>();
+        for (AbstractItem entry : equippedItems.values())
+        {
+            if (entry instanceof UniqueStatProvider) ((UniqueStatProvider) entry).getUniqueRelativeValues().forEach((key, value) -> itemsTotalStats.merge(key, value, Double::sum));
+        }
+        return itemsTotalStats;
     }
 }
