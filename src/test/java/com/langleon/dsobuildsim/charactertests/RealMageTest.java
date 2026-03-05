@@ -230,7 +230,7 @@ public class RealMageTest {
 
     public static void printStats(Character character)
     {
-        Map<StatType, Double> stats = character.getCharacterFinalStats();
+        Map<StatType, Double> stats = character.calculateCharacterStats();
         System.out.println("Character: " + character.getName());
         System.out.printf(StatType.DAMAGE + ": %.2f%n", stats.get(StatType.DAMAGE));
         System.out.printf(StatType.ATTACK_SPEED + ": %.2f%n", stats.get(StatType.ATTACK_SPEED));
