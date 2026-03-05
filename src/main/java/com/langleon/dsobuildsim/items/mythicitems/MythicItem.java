@@ -67,7 +67,7 @@ public class MythicItem extends AbstractItem implements SetBonusProvider, Unique
         {
             if (totalStats.containsKey(entry.getKey()))
             {
-                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * entry.getValue());
+                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * (entry.getValue()+1));
             }
         }
 
