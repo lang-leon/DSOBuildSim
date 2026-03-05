@@ -15,8 +15,17 @@ public enum ItemSlot {
     SHOULDERS("Shoulders", ItemSlotType.SHOULDERS),
     TORSO("Torso", ItemSlotType.TORSO),
     TWO_HAND_WEAPON("Two Hand Weapon", ItemSlotType.TWO_HAND_WEAPON),
-    WEAPON_ADORNMENT("Adornment", ItemSlotType.WEAPON_ADORNMENT);
-
+    WEAPON_ADORNMENT("Adornment", ItemSlotType.WEAPON_ADORNMENT),
+    SOUL_COMPANION_AMULET("Amulet (Soul Companion)", ItemSlotType.SOUL_COMPANION_AMULET),
+    SOUL_COMPANION_BELT("Belt (Soul Companion)", ItemSlotType.SOUL_COMPANION_BELT),
+    SOUL_COMPANION_BOOTS("Boots (Soul Companion)", ItemSlotType.SOUL_COMPANION_BOOTS),
+    SOUL_COMPANION_CLOAK("Cloak (Soul Companion)", ItemSlotType.SOUL_COMPANION_CLOAK),
+    SOUL_COMPANION_GLOVES("Gloves (Soul Companion)", ItemSlotType.SOUL_COMPANION_GLOVES),
+    SOUL_COMPANION_HELMET("Helmet (Soul Companion)", ItemSlotType.SOUL_COMPANION_HELMET),
+    SOUL_COMPANION_RING1("Ring 1 (Soul Companion)", ItemSlotType.SOUL_COMPANION_RING),
+    SOUL_COMPANION_RING2("Ring 2 (Soul Companion)", ItemSlotType.SOUL_COMPANION_RING),
+    SOUL_COMPANION_SHOULDERS("Shoulders (Soul Companion)", ItemSlotType.SOUL_COMPANION_SHOULDERS),
+    SOUL_COMPANION_TORSO("Torso (Soul Companion)", ItemSlotType.SOUL_COMPANION_TORSO);
 
     private final String name;
     private final ItemSlotType allowedItemType;
