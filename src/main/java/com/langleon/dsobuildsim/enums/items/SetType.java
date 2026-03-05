@@ -56,6 +56,9 @@ public enum SetType {
     VISIONARY_SEEKER,
     WITCH_SEEKER_GEAR,
     WORLD_DROP_SET,
+
+    //Soul Companion
+    SOUL_DESTRUCTION;
     ;
 
 }
