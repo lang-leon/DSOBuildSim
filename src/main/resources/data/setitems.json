@@ -3258,17 +3258,144 @@
         "ATTACK_SPEED": 0.235
       },
       "set": "SUN_AUSPICES"
+    },
+    "SOUL_DESTRUCTION_AMULET": {
+      "itemType": "SOUL_DESTRUCTION_AMULET",
+      "name": "Soul Destruction Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "baseValues": {
+        "DAMAGE": 847.04
+      },
+      "set": "SOUL_DESTRUCTION"
+    },
+    "SOUL_DESTRUCTION_CLOAK": {
+      "itemType": "SOUL_DESTRUCTION_CLOAK",
+      "name": "Soul Destruction Cloak",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "baseValues": {
+        "HEALTH_POINTS": 14386.028
+      },
+      "set": "SOUL_DESTRUCTION"
+    },
+    "SOUL_DESTRUCTION_BELT": {
+      "itemType": "SOUL_DESTRUCTION_BELT",
+      "name": "Soul Destruction Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "baseValues": {
+        "HEALTH_POINTS": 14386.028
+      },
+      "set": "SOUL_DESTRUCTION"
     }
-
-
   },
   "dragonknightItems": {
-
+    "SOUL_DESTRUCTION_AMULET": {
+      "itemType": "SOUL_DESTRUCTION_AMULET",
+      "name": "Soul Destruction Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "baseValues": {
+        "DAMAGE": 847.04
+      },
+      "set": "SOUL_DESTRUCTION"
+    },
+    "SOUL_DESTRUCTION_CLOAK": {
+      "itemType": "SOUL_DESTRUCTION_CLOAK",
+      "name": "Soul Destruction Cloak",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "baseValues": {
+        "HEALTH_POINTS": 43158.084
+      },
+      "set": "SOUL_DESTRUCTION"
+    },
+    "SOUL_DESTRUCTION_BELT": {
+      "itemType": "SOUL_DESTRUCTION_BELT",
+      "name": "Soul Destruction Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "baseValues": {
+        "HEALTH_POINTS": 43158.084
+      },
+      "set": "SOUL_DESTRUCTION"
+    }
   },
   "rangerItems": {
-
+    "SOUL_DESTRUCTION_AMULET": {
+      "itemType": "SOUL_DESTRUCTION_AMULET",
+      "name": "Soul Destruction Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "baseValues": {
+        "DAMAGE": 847.04
+      },
+      "set": "SOUL_DESTRUCTION"
+    },
+    "SOUL_DESTRUCTION_CLOAK": {
+      "itemType": "SOUL_DESTRUCTION_CLOAK",
+      "name": "Soul Destruction Cloak",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "baseValues": {
+        "HEALTH_POINTS": 33087.864
+      },
+      "set": "SOUL_DESTRUCTION"
+    },
+    "SOUL_DESTRUCTION_BELT": {
+      "itemType": "SOUL_DESTRUCTION_BELT",
+      "name": "Soul Destruction Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "baseValues": {
+        "HEALTH_POINTS": 33087.864
+      },
+      "set": "SOUL_DESTRUCTION"
+    }
   },
   "steamMechanicusItems": {
-
+    "SOUL_DESTRUCTION_AMULET": {
+      "itemType": "SOUL_DESTRUCTION_AMULET",
+      "name": "Soul Destruction Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "baseValues": {
+        "DAMAGE": 847.04
+      },
+      "set": "SOUL_DESTRUCTION"
+    },
+    "SOUL_DESTRUCTION_CLOAK": {
+      "itemType": "SOUL_DESTRUCTION_CLOAK",
+      "name": "Soul Destruction Cloak",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "baseValues": {
+        "HEALTH_POINTS": 25175.548
+      },
+      "set": "SOUL_DESTRUCTION"
+    },
+    "SOUL_DESTRUCTION_BELT": {
+      "itemType": "SOUL_DESTRUCTION_BELT",
+      "name": "Soul Destruction Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "baseValues": {
+        "HEALTH_POINTS": 25175.548
+      },
+      "set": "SOUL_DESTRUCTION"
+    }
   }
 }

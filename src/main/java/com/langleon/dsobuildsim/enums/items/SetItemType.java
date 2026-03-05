@@ -284,5 +284,10 @@ public enum SetItemType implements ItemType {
     TAYAZ_TWO_HAND,
 
     //unknown
-    ALLIANCE_MISSING
+    ALLIANCE_MISSING,
+
+    //Soul Companion
+    SOUL_DESTRUCTION_AMULET,
+    SOUL_DESTRUCTION_CLOAK,
+    SOUL_DESTRUCTION_BELT;
 }

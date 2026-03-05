@@ -1150,6 +1150,25 @@
       "descriptionPerTier": {
         "3": "+ 15% movement speed for 5 seconds upon defeating an enemy"
       }
+    },
+    "SOUL_DESTRUCTION": {
+      "setType": "SOUL_DESTRUCTION",
+      "name": "Soul Destruction",
+      "defaultLevel": 100,
+      "setItems": [
+        "SOUL_DESTRUCTION_AMULET",
+        "SOUL_DESTRUCTION_CLOAK",
+        "SOUL_DESTRUCTION_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "3": "All your skills deal 250% increased damage to enemies affected by Mark of Desolation and reduce their attack speed by 50%."
+      }
     }
   },
   "dragonknightSets":
@@ -1184,6 +1203,25 @@
       },
       "descriptionPerTier": {
         "2": "When equipped with the set, Mighty Wild Swing's damage is increased by 300%.\nWhen you release Banner of War, all your damage is boosted by 200% for 10 seconds. Also refreshes the cooldowns of all the following skills:\n•Furious Battle Cry\n•Outburst\n•Dragon Hide\n•Spike Shield"
+      }
+    },
+    "SOUL_DESTRUCTION": {
+      "setType": "SOUL_DESTRUCTION",
+      "name": "Soul Destruction",
+      "defaultLevel": 100,
+      "setItems": [
+        "SOUL_DESTRUCTION_AMULET",
+        "SOUL_DESTRUCTION_CLOAK",
+        "SOUL_DESTRUCTION_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "3": "All your skills deal 300% increased damage to enemies affected by Mark of Desolation and reduce their attack speed by 50%."
       }
     }
   },
@@ -1220,6 +1258,25 @@
       "descriptionPerTier": {
         "2": "When Thicket of Thorns hits an enemy, your Concentration cost are decreased to 0 and Explosive Arrow does not have cooldown for 3 seconds. (PvP: 1,5 seconds)."
       }
+    },
+    "SOUL_DESTRUCTION": {
+      "setType": "SOUL_DESTRUCTION",
+      "name": "Soul Destruction",
+      "defaultLevel": 100,
+      "setItems": [
+        "SOUL_DESTRUCTION_AMULET",
+        "SOUL_DESTRUCTION_CLOAK",
+        "SOUL_DESTRUCTION_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "3": "All your skills deal 325% increased damage to enemies affected by Mark of Desolation and reduce their attack speed by 50%."
+      }
     }
   },
   "steamMechanicusSets":
@@ -1255,6 +1312,25 @@
       "descriptionPerTier": {
         "2": "There is a 60% chance that hits with Quick Shot cause your currently active Mechanical Turret to fire 3 additional ice bullets that covers enemies in Frost for 4 seconds. Enemies covered in Frost have reduced movement and attack speed. When a Mechanical Turret is used, you get 100% Damage and 15% Critical Value while staying within the range of it."
 
+      }
+    },
+    "SOUL_DESTRUCTION": {
+      "setType": "SOUL_DESTRUCTION",
+      "name": "Soul Destruction",
+      "defaultLevel": 100,
+      "setItems": [
+        "SOUL_DESTRUCTION_AMULET",
+        "SOUL_DESTRUCTION_CLOAK",
+        "SOUL_DESTRUCTION_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "3": "All your skills deal 250% increased damage to enemies affected by Mark of Desolation and reduce their attack speed by 50%."
       }
     }
   }
