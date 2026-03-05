@@ -34,7 +34,13 @@ public class DragonCrestTrinket {
         dragonStones[slot] = null;
     }
 
-    public Map<StatType, Double> getTotalStats()
+    public void updateDragonStones(DragonStone[] dragonStones)
+    {
+        if (dragonStones.length!=10) throw new IllegalArgumentException("Invalid array length!");
+        this.dragonStones = dragonStones;
+    }
+
+    public Map<StatType, Double> getTotalRelativeStats()
     {
         Map<StatType, Double> stats = new HashMap<>();
         for(int i=0; i<10; i++)

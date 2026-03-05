@@ -32,7 +32,13 @@ public class RuneTrinket {
         runes[slot] = null;
     }
 
-    public Map<StatType, Double> getTotalStats()
+    public void updateRunes(Rune[] runes)
+    {
+        if (runes.length!=10) throw new IllegalArgumentException("Invalid array length!");
+        this.runes = runes;
+    }
+
+    public Map<StatType, Double> getTotalRelativeStats()
     {
         Map<StatType, Double> stats = new HashMap<>();
         for(int i=0; i<10; i++)

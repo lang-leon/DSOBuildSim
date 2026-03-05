@@ -79,7 +79,7 @@ public class JewelTrinketTest {
         jewelTrinket.addJewel(jewelFactory.createJewel(JewelType.ETERNAL_SCORN,7),7);
         jewelTrinket.addJewel(jewelFactory.createJewel(JewelType.GEM_FORTUNE, 2),8);
         jewelTrinket.addJewel(jewelFactory.createJewel(JewelType.VITALITY, 5),9);
-        Map<StatType, Double> stats = jewelTrinket.getTotalStats();
+        Map<StatType, Double> stats = jewelTrinket.getTotalRelativeStats();
         Assertions.assertEquals(3, stats.size());
         Assertions.assertTrue(stats.containsKey(StatType.HEALTH_POINTS));
         Assertions.assertTrue(stats.containsKey(StatType.CRIT_VALUE));

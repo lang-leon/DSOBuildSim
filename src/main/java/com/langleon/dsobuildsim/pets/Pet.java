@@ -33,7 +33,7 @@ public class Pet {
         return tier;
     }
 
-    public Map<StatType, Double> getStats() {
+    public Map<StatType, Double> getRelativeStats() {
         return stats;
     }
 

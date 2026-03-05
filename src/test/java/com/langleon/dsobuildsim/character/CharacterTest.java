@@ -1,0 +1,261 @@
+package com.langleon.dsobuildsim.character;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.dragonstones.DragonStone;
+import com.langleon.dsobuildsim.dragonstones.DragonStoneConfig;
+import com.langleon.dsobuildsim.dragonstones.DragonStoneFactory;
+import com.langleon.dsobuildsim.enchantments.Enchantment;
+import com.langleon.dsobuildsim.enums.CharacterClass;
+import com.langleon.dsobuildsim.enums.EnchantmentType;
+import com.langleon.dsobuildsim.enums.ItemSlot;
+import com.langleon.dsobuildsim.enums.StatType;
+import com.langleon.dsobuildsim.enums.dragonstones.DragonStoneType;
+import com.langleon.dsobuildsim.enums.essences.EssenceType;
+import com.langleon.dsobuildsim.enums.gems.GemType;
+import com.langleon.dsobuildsim.enums.items.MythicItemType;
+import com.langleon.dsobuildsim.enums.items.SetItemType;
+import com.langleon.dsobuildsim.enums.items.UniqueItemType;
+import com.langleon.dsobuildsim.enums.jewels.JewelType;
+import com.langleon.dsobuildsim.enums.pets.PetType;
+import com.langleon.dsobuildsim.enums.runes.RuneType;
+import com.langleon.dsobuildsim.essences.EssenceConfig;
+import com.langleon.dsobuildsim.essences.EssenceFactory;
+import com.langleon.dsobuildsim.gems.GemConfig;
+import com.langleon.dsobuildsim.gems.GemFactory;
+import com.langleon.dsobuildsim.items.core.AbstractItem;
+import com.langleon.dsobuildsim.items.core.ItemFactory;
+import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
+import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
+import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
+import com.langleon.dsobuildsim.jewels.Jewel;
+import com.langleon.dsobuildsim.jewels.JewelConfig;
+import com.langleon.dsobuildsim.jewels.JewelFactory;
+import com.langleon.dsobuildsim.pets.PetConfig;
+import com.langleon.dsobuildsim.pets.PetFactory;
+import com.langleon.dsobuildsim.runes.Rune;
+import com.langleon.dsobuildsim.runes.RuneConfig;
+import com.langleon.dsobuildsim.runes.RuneFactory;
+import com.langleon.dsobuildsim.sets.SetConfig;
+import com.langleon.dsobuildsim.sets.SetFactory;
+import com.langleon.dsobuildsim.skilltrees.wisdomskilltree.WisdomSkillTree;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Map;
+
+public class CharacterTest {
+
+    private ItemFactory itemFactory;
+    private EssenceFactory essenceFactory;
+    private DragonStoneFactory dragonStoneFactory;
+    private GemFactory gemFactory;
+    private JewelFactory jewelFactory;
+    private PetFactory petFactory;
+    private RuneFactory runeFactory;
+    private SetFactory setFactory;
+
+    @BeforeEach
+    void setup() throws IOException
+    {
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/essences.json")))
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            EssenceConfig essenceConfig = objectMapper.readValue(reader, EssenceConfig.class);
+            essenceFactory = new EssenceFactory(essenceConfig);
+        }
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/dragonstones.json")))
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            DragonStoneConfig dragonStoneConfig = objectMapper.readValue(reader, DragonStoneConfig.class);
+            dragonStoneFactory = new DragonStoneFactory(dragonStoneConfig);
+        }
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/gems.json")))
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            GemConfig gemConfig = objectMapper.readValue(reader, GemConfig.class);
+            gemFactory = new GemFactory(gemConfig);
+        }
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/jewels.json")))
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            JewelConfig jewelConfig = objectMapper.readValue(reader, JewelConfig.class);
+            jewelFactory = new JewelFactory(jewelConfig);
+        }
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/pets.json")))
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            PetConfig petConfig = objectMapper.readValue(reader, PetConfig.class);
+            petFactory = new PetFactory(petConfig);
+        }
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/runes.json")))
+        {
+            ObjectMapper objectMapper = new ObjectMapper();
+            RuneConfig runeConfig = objectMapper.readValue(reader, RuneConfig.class);
+            runeFactory = new RuneFactory(runeConfig);
+        }
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/sets.json"))) {
+            ObjectMapper objectMapper = new ObjectMapper();
+            SetConfig setConfig = objectMapper.readValue(reader, SetConfig.class);
+            setFactory = new SetFactory(setConfig);
+        }
+        ObjectMapper objectMapper = new ObjectMapper();
+        MythicItemConfig mythicItemConfig;
+        UniqueItemConfig uniqueItemConfig;
+        SetItemConfig setItemConfig;
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/mythicitems.json")))
+        {
+            mythicItemConfig = objectMapper.readValue(reader, MythicItemConfig.class);
+        }
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/uniqueitems.json")))
+        {
+            uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
+        }
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/setitems.json")))
+        {
+            setItemConfig = objectMapper.readValue(reader, SetItemConfig.class);
+        }
+        itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig);
+
+    }
+
+    @Test
+    void createCharacterAndCalculateStats()
+    {
+        Character character = createCharacter();
+        Map<StatType, Double> stats = character.calculateCharacterStats();
+        Assertions.assertEquals(1293650.548, stats.get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(4.456, stats.get(StatType.ATTACK_SPEED), 0.001);
+        Assertions.assertEquals(402855.711, stats.get(StatType.CRIT_VALUE), 0.001);
+        Assertions.assertEquals(100.000, stats.get(StatType.MANA), 0.001);
+        Assertions.assertEquals(12.000, stats.get(StatType.MANA_PER_SECOND), 0.001);
+        Assertions.assertEquals(13.130, stats.get(StatType.MOVEMENT_SPEED), 0.001);
+        Assertions.assertEquals(2829236.014, stats.get(StatType.HEALTH_POINTS), 0.001);
+        Assertions.assertEquals(9900.000, stats.get(StatType.HEALTH_PER_SECOND), 0.001);
+        Assertions.assertEquals(319956.940, stats.get(StatType.BLOCK_VALUE), 0.001);
+        Assertions.assertEquals(44480.716, stats.get(StatType.ARMOR_VALUE), 0.001);
+        Assertions.assertEquals(57414.388, stats.get(StatType.FIRE_RESISTANCE), 0.001);
+        Assertions.assertEquals(68587.847, stats.get(StatType.ICE_RESISTANCE), 0.001);
+        Assertions.assertEquals(57414.388, stats.get(StatType.LIGHTNING_RESISTANCE), 0.001);
+        Assertions.assertEquals(67811.756, stats.get(StatType.ANDERMAGIC_RESISTANCE), 0.001);
+        Assertions.assertEquals(57414.388, stats.get(StatType.POISON_RESISTANCE), 0.001);
+    }
+
+    private Character createCharacter()
+    {
+        Character character = new Character(CharacterClass.SPELLWEAVER, setFactory);
+        character.updateRuneTrinket(0, new Rune[]{runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION),});
+        character.updateRuneTrinket(1, new Rune[]{runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER),});
+        character.updateRuneTrinket(2, new Rune[]{runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER),});
+        character.updateRuneTrinket(3, new Rune[]{runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY),});
+        character.updateRuneTrinket(4, new Rune[]{runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION),});
+        character.updateRuneTrinket(5, new Rune[]{runeFactory.createRune(RuneType.HOLY_STAR_SHARD), runeFactory.createRune(RuneType.RISING_VIGOR), runeFactory.createRune(RuneType.FORTITUDE), runeFactory.createRune(RuneType.FORTITUDE), runeFactory.createRune(RuneType.FORTITUDE), runeFactory.createRune(RuneType.ANDERMANT_FEVER), runeFactory.createRune(RuneType.REALM_CHANGER), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE),});
+
+        character.updateJewelTrinket(0, new Jewel[]{jewelFactory.createJewel(JewelType.ETERNAL_SCORN, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.GLORY, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.RAGE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.AMPLIFIED_HEALING, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FROZEN_HEART, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.GEM_FORTUNE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.ETERNAL_WRATH, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER),});
+        character.updateJewelTrinket(1, new Jewel[]{jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.VIGOR, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.AMBIDEXTROUS_VIGOR, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.VITALITY, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.ENCOURAGEMENT, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.CONTRIBUTION, CharacterClass.SPELLWEAVER),});
+        character.updateJewelTrinket(2, new Jewel[]{jewelFactory.createJewel(JewelType.LASTING_HEALTH, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.CONVERSE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FIERY_FLOWER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.STRENUOUSNESS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FORTITUDE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.PROLONGATION, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.REVIVAL_BOON, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.EASTER_FEVER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.SCORCHING_RAY, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.PENT_UP_POWER, CharacterClass.SPELLWEAVER),});
+
+        character.updateDragonCrestTrinket(new DragonStone[]{dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_ELDERS), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_ELDERS), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING), null, null, null, null, null});
+
+        AbstractItem amulet = itemFactory.createItem(SetItemType.WINTER_AMULET, CharacterClass.SPELLWEAVER);
+        amulet.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
+        amulet.setGems(gemFactory.createGem(GemType.AMETHYST, 17));
+        character.equipItem(ItemSlot.AMULET, amulet);
+
+        AbstractItem cloak = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_CLOAK, CharacterClass.SPELLWEAVER);
+        cloak.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
+        cloak.setGems(gemFactory.createGem(GemType.RUBY, 17));
+        character.equipItem(ItemSlot.CLOAK, cloak);
+
+        AbstractItem belt = itemFactory.createItem(UniqueItemType.BELT_OF_ZEAL, CharacterClass.SPELLWEAVER);
+        belt.setBaseValues(Map.of(StatType.DAMAGE, 1630.885, StatType.HEALTH_POINTS, 20072.654, StatType.RESISTANCE_VALUE, 1679.873));
+        belt.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
+        belt.setGems(gemFactory.createGem(GemType.RUBY, 17));
+        character.equipItem(ItemSlot.BELT, belt);
+
+        AbstractItem ring1 = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_RING, CharacterClass.SPELLWEAVER);
+        ring1.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
+        ring1.setGems(gemFactory.createGem(GemType.AMETHYST, 17));
+        character.equipItem(ItemSlot.RING1, ring1);
+
+        AbstractItem ring2 = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_RING, CharacterClass.SPELLWEAVER);
+        ring2.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
+        ring2.setGems(gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17));
+        character.equipItem(ItemSlot.RING2, ring2);
+
+        AbstractItem helmet = itemFactory.createItem(SetItemType.STELLAR_WALKER_HELMET, CharacterClass.SPELLWEAVER);
+        helmet.setBaseValues(Map.of(StatType.DAMAGE, 1426.117, StatType.CRIT_VALUE, 1298.723, StatType.HEALTH_POINTS, 19630.458));
+        helmet.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
+        helmet.setGems(gemFactory.createGem(GemType.AMETHYST, 17));
+        character.equipItem(ItemSlot.HELMET, helmet);
+
+        AbstractItem shoulders = itemFactory.createItem(SetItemType.STELLAR_WALKER_SHOULDERS, CharacterClass.SPELLWEAVER);
+        shoulders.setBaseValues(Map.of(StatType.DAMAGE, 1639.564, StatType.CRIT_VALUE, 1361.727, StatType.HEALTH_POINTS, 15625.218));
+        shoulders.setEnchants(new Enchantment(EnchantmentType.BLOCK_VALUE));
+        shoulders.setGems(gemFactory.createGem(GemType.EMERALD, 17));
+        character.equipItem(ItemSlot.SHOULDERS, shoulders);
+
+        AbstractItem torso = itemFactory.createItem(SetItemType.WINTER_TORSO, CharacterClass.SPELLWEAVER);
+        torso.setEnchants(new Enchantment(EnchantmentType.BLOCK_VALUE));
+        torso.setGems(gemFactory.createGem(GemType.EMERALD, 17));
+        character.equipItem(ItemSlot.TORSO, torso);
+
+        AbstractItem gloves = itemFactory.createItem(SetItemType.WINTER_GLOVES, CharacterClass.SPELLWEAVER);
+        gloves.setEnchants(new Enchantment(EnchantmentType.CRIT_VALUE));
+        gloves.setGems(gemFactory.createGem(GemType.ONYX, 17));
+        character.equipItem(ItemSlot.GLOVES, gloves);
+
+        AbstractItem boots = itemFactory.createItem(SetItemType.WINTER_BOOTS, CharacterClass.SPELLWEAVER);
+        boots.setEnchant(new Enchantment(EnchantmentType.MOVEMENT_SPEED), 0);
+        boots.setEnchant(new Enchantment(EnchantmentType.MOVEMENT_SPEED), 1);
+        boots.setEnchant(new Enchantment(EnchantmentType.DAMAGE), 2);
+        boots.setEnchant(new Enchantment(EnchantmentType.DAMAGE), 3);
+        boots.setGems(gemFactory.createGem(GemType.ONYX, 17));
+        boots.setGem(gemFactory.createGem(GemType.RHODOLITE, 17), 0);
+        boots.setGem(gemFactory.createGem(GemType.EMERALD, 17), 9);
+        character.equipItem(ItemSlot.BOOTS, boots);
+
+        AbstractItem adornment = itemFactory.createItem(UniqueItemType.SIGRISMARRS_ADORNMENT, CharacterClass.SPELLWEAVER);
+        adornment.setBaseValues(Map.of(StatType.DAMAGE, 1870.52, StatType.CRIT_VALUE, 2100.146));
+        adornment.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
+        adornment.setGems(gemFactory.createGem(GemType.RUBY, 17));
+        character.equipItem(ItemSlot.WEAPON_ADORNMENT, adornment);
+
+        AbstractItem twohand = itemFactory.createItem(UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED, CharacterClass.SPELLWEAVER);
+        twohand.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
+        twohand.setGems(gemFactory.createGem(GemType.RUBY, 17));
+        character.equipItem(ItemSlot.TWO_HAND_WEAPON, twohand);
+
+        character.setEssence(essenceFactory.createEssence(EssenceType.VIGOR, 3));
+
+        character.setPet(petFactory.createPet(PetType.THE_SOUL_OF_DRAGAN_DOLL));
+
+        WisdomSkillTree wisdomSkillTree = new WisdomSkillTree();;
+        wisdomSkillTree.setLevel(60, 1, 1);
+        wisdomSkillTree.setLevel(60, 1, 2);
+        wisdomSkillTree.setLevel(80, 2, 1);
+        wisdomSkillTree.setLevel(80, 2, 2);
+        wisdomSkillTree.setLevel(40, 2, 3);
+        wisdomSkillTree.setLevel(80, 3, 1);
+        wisdomSkillTree.setLevel(60, 3, 2);
+        wisdomSkillTree.setLevel(60, 3, 3);
+        wisdomSkillTree.setLevel(1, 4, 1);
+        wisdomSkillTree.setLevel(60, 5, 1);
+        wisdomSkillTree.setLevel(60, 5, 2);
+        wisdomSkillTree.setLevel(60, 6, 1);
+        wisdomSkillTree.setLevel(30, 6, 2);
+        wisdomSkillTree.setLevel(60, 6, 3);
+        wisdomSkillTree.setLevel(15, 7, 1);
+        wisdomSkillTree.setLevel(1, 7, 2);
+        wisdomSkillTree.setLevel(1, 7, 3);
+        wisdomSkillTree.setLevel(15, 8, 1);
+        wisdomSkillTree.setLevel(15, 8, 2);
+        character.setWisdomSkillTree(wisdomSkillTree);
+
+        character.setCollectorBagBuffs(Map.of(StatType.RESISTANCE_VALUE, 0.15, StatType.BLOCK_VALUE, 0.02, StatType.DAMAGE, 0.06, StatType.HEALTH_POINTS, 0.33));
+
+        return character;
+    }
+}

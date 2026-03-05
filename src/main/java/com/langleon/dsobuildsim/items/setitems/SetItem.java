@@ -5,14 +5,16 @@ import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
+import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class SetItem extends AbstractItem {
-    private final SetType set;
+public class SetItem extends AbstractItem implements SetBonusProvider {
+    private final SetType setType;
 
     public SetItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, SetType set){
         this.itemType = itemType;
@@ -21,13 +23,19 @@ public class SetItem extends AbstractItem {
         this.tier = tier;
         this.itemSlotType = itemSlotType;
         this.baseValues = baseStats;
-        this.set = set;
-        this.gems = new Gem[10];
+        this.setType = set;
+        this.gems = new AbstractGem[10];
         this.enchantments = new Enchantment[10];
     }
 
-    public SetType getSet() {
-        return set;
+    @Override
+    public SetType getSetType() {
+        return setType;
+    }
+
+    @Override
+    public String getSetItemIdentifier() {
+        return this.itemType.toString();
     }
 
     @Override
@@ -46,7 +54,7 @@ public class SetItem extends AbstractItem {
         {
             if (totalStats.containsKey(entry.getKey()))
             {
-                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * entry.getValue());
+                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * (entry.getValue()+1));
             }
         }
 

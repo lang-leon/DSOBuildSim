@@ -44,7 +44,7 @@ public class GemFactory {
         GemDefinition gemDefinition1 = this.config.gems().get(gemType1);
         GemDefinition gemDefinition2 = this.config.gems().get(gemType2);
         GemDefinition gemDefinition3 = this.config.gems().get(gemType3);
-        if (!config.opalUpgradeCosts().containsKey(tier)) throw new IllegalArgumentException("Invalid gem tier: " + tier + "!");
+        if (!(config.opalUpgradeCosts().containsKey(tier) || tier==17)) throw new IllegalArgumentException("Invalid gem tier: " + tier + "!");
         return new Opal(tier, Map.of(gemDefinition1.statType(), gemDefinition1.statsPerTier().get(tier)*0.75, gemDefinition2.statType(), gemDefinition2.statsPerTier().get(tier)*0.75 , gemDefinition3.statType(), gemDefinition3.statsPerTier().get(tier)*0.75));
     }
 }

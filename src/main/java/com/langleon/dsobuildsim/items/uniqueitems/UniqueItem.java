@@ -4,14 +4,16 @@ import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
+import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
+import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class UniqueItem extends AbstractItem {
+public class UniqueItem extends AbstractItem implements UniqueStatProvider {
 
     private final Map<StatType, Double> uniqueBaseValues;
     private final Map<StatType, Double> uniqueRelativeValues;
@@ -29,7 +31,7 @@ public class UniqueItem extends AbstractItem {
         this.uniqueRelativeValues = uniqueRelativeValues;
         this.uniqueEnchantments = uniqueEnchantments;
         this.uniqueDescription = uniqueDescription;
-        this.gems = new Gem[10];
+        this.gems = new AbstractGem[10];
         this.enchantments = new Enchantment[4];
     }
 
@@ -75,7 +77,7 @@ public class UniqueItem extends AbstractItem {
         {
             if (totalStats.containsKey(entry.getKey()))
             {
-                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * entry.getValue());
+                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * (entry.getValue()+1));
             }
         }
 
