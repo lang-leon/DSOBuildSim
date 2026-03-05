@@ -5,15 +5,19 @@ import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
+import com.langleon.dsobuildsim.items.core.SetBonusProvider;
+import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class MythicItem extends AbstractItem {
+public class MythicItem extends AbstractItem implements SetBonusProvider, UniqueStatProvider {
     private final Map<StatType, Double> uniqueRelativeValues;
     private final Map<StatType, Double> uniqueAbsoluteValues;
-    private final SetType set;
+    private final SetType setType;
 
     public MythicItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, Map<StatType, Double> uniqueRelativeValues, Map<StatType, Double> uniqueAbsoluteValues, SetType set){
         this.itemType = itemType;
@@ -24,13 +28,19 @@ public class MythicItem extends AbstractItem {
         this.baseValues = baseStats;
         this.uniqueRelativeValues = uniqueRelativeValues;
         this.uniqueAbsoluteValues = uniqueAbsoluteValues;
-        this.set = set;
-        this.gems = new Gem[10];
+        this.setType = set;
+        this.gems = new AbstractGem[10];
         this.enchantments = new Enchantment[10];
     }
 
-    public SetType getSet() {
-        return set;
+    @Override
+    public SetType getSetType() {
+        return setType;
+    }
+
+    @Override
+    public String getSetItemIdentifier() {
+        return this.itemType.toString();
     }
 
     public Map<StatType, Double> getUniqueRelativeValues() {
@@ -57,7 +67,7 @@ public class MythicItem extends AbstractItem {
         {
             if (totalStats.containsKey(entry.getKey()))
             {
-                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * entry.getValue());
+                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * (entry.getValue()+1));
             }
         }
 

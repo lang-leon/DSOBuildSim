@@ -145,7 +145,7 @@ public class ItemFactoryTest {
         }
         Assertions.assertEquals(item.getUniqueAbsoluteValues(), Map.of());
         Assertions.assertEquals(item.getUniqueRelativeValues(), Map.of(StatType.DAMAGE, 0.05, StatType.CRIT_VALUE, 0.05));
-        Assertions.assertEquals(item.getSet(), SetType.FORGOTTEN_GLORY);
+        Assertions.assertEquals(item.getSetType(), SetType.FORGOTTEN_GLORY);
     }
 
     @Test
@@ -168,7 +168,7 @@ public class ItemFactoryTest {
         }
         Assertions.assertEquals(item.getUniqueAbsoluteValues(), Map.of(StatType.DAMAGE, 5000.0));
         Assertions.assertEquals(item.getUniqueRelativeValues(), Map.of(StatType.DAMAGE, 0.10));
-        Assertions.assertEquals(item.getSet(), SetType.ANCESTRAL_GLORY);
+        Assertions.assertEquals(item.getSetType(), SetType.ANCESTRAL_GLORY);
     }
 
     @Test
@@ -189,7 +189,7 @@ public class ItemFactoryTest {
         {
             Assertions.assertEquals(item.getGems()[i], null);
         }
-        Assertions.assertEquals(item.getSet(), SetType.SARGONS_IMMORTAL_TERROR_ARMOR);
+        Assertions.assertEquals(item.getSetType(), SetType.SARGONS_IMMORTAL_TERROR_ARMOR);
     }
 
     @Test
@@ -210,6 +210,6 @@ public class ItemFactoryTest {
         {
             Assertions.assertEquals(item.getGems()[i], null);
         }
-        Assertions.assertEquals(item.getSet(), SetType.BIG_PAWS_FROSTY_GREED);
+        Assertions.assertEquals(item.getSetType(), SetType.BIG_PAWS_FROSTY_GREED);
     }
 }

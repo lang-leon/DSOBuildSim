@@ -78,7 +78,7 @@ public class DragonCrestTrinketTest {
         dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.FURYSTONE_ELDERS),7);
         dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE_ELDERS),8);
         dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE_ELDERS),9);
-        Map<StatType, Double> stats = dragonCrest.getTotalStats();
+        Map<StatType, Double> stats = dragonCrest.getTotalRelativeStats();
         Assertions.assertEquals(4, stats.size());
         Assertions.assertTrue(stats.containsKey(StatType.HEALTH_POINTS));
         Assertions.assertTrue(stats.containsKey(StatType.ANDERMANT_DROP_BONUS));
