@@ -77,7 +77,7 @@ public class UniqueItem extends AbstractItem implements UniqueStatProvider {
         {
             if (totalStats.containsKey(entry.getKey()))
             {
-                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * entry.getValue());
+                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * (entry.getValue()+1));
             }
         }
 

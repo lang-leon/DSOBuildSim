@@ -54,7 +54,7 @@ public class SetItem extends AbstractItem implements SetBonusProvider {
         {
             if (totalStats.containsKey(entry.getKey()))
             {
-                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * entry.getValue());
+                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * (entry.getValue()+1));
             }
         }
 

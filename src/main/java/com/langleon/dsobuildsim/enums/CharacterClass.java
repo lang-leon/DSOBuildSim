@@ -11,7 +11,7 @@ public enum CharacterClass {
             Map.of(StatType.DAMAGE, 29400.0, StatType.ATTACK_SPEED, 1.0, StatType.MANA, 100.0, StatType.MANA_PER_SECOND, 8.0, StatType.MOVEMENT_SPEED, 5.0, StatType.HEALTH_POINTS, 345000.0),
             Map.of(StatType.HONOR_GAIN, 1.00, StatType.XP_GAIN, 1.00)),
     SPELLWEAVER("Spellweaver",
-            Map.of(StatType.DAMAGE, 50400.0, StatType.ATTACK_SPEED, 1.0, StatType.MANA, 100.0, StatType.MANA_PER_SECOND, 12.0, StatType.MOVEMENT_SPEED, 5.0, StatType.HEALTH_POINTS, 150000.0),
+            Map.of(StatType.DAMAGE, 51850.0, StatType.ATTACK_SPEED, 1.0, StatType.MANA, 100.0, StatType.MANA_PER_SECOND, 12.0, StatType.MOVEMENT_SPEED, 5.0, StatType.HEALTH_POINTS, 152500.0),
             Map.of(StatType.DAMAGE, 0.50, StatType.HONOR_GAIN, 1.00, StatType.XP_GAIN, 1.00)),
     STEAM_MECHANICUS("Steam Mechanicus",
             Map.of(StatType.DAMAGE, 38640.0, StatType.ATTACK_SPEED, 1.0, StatType.MANA, 100.0, StatType.MANA_PER_SECOND, 3.0, StatType.MOVEMENT_SPEED, 5.0, StatType.HEALTH_POINTS, 262500.0),
