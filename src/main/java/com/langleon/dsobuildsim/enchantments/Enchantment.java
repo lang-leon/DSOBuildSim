@@ -42,7 +42,7 @@ public class Enchantment {
         }
     }
 
-    public void setValueOverride(Double value, boolean overrideMaxValue) {
+    public void setValue(Double value, boolean overrideMaxValue) {
         if (overrideMaxValue) this.value = value;
     }
 
