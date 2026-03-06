@@ -30,7 +30,7 @@ public class DragonStoneFactoryTest {
     @Test
     void createHatchlingsPowerstone()
     {
-        DragonStone dragonStone = dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING);
+        DragonStone dragonStone = dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3);
         Assertions.assertNotNull(dragonStone);
         Assertions.assertEquals(3, dragonStone.tier());
         Assertions.assertTrue(dragonStone.stats().containsKey(StatType.HEALTH_POINTS));
@@ -41,7 +41,7 @@ public class DragonStoneFactoryTest {
     @Test
     void createMightyGreedstone()
     {
-        DragonStone dragonStone = dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE_MIGTHY);
+        DragonStone dragonStone = dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE, 4);
         Assertions.assertNotNull(dragonStone);
         Assertions.assertEquals(4, dragonStone.tier());
         Assertions.assertTrue(dragonStone.stats().containsKey(StatType.ANDERMANT_DROP_BONUS));
@@ -52,7 +52,7 @@ public class DragonStoneFactoryTest {
     @Test
     void createEldersRestlessStone()
     {
-        DragonStone dragonStone = dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE_ELDERS);
+        DragonStone dragonStone = dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE, 5);
         Assertions.assertNotNull(dragonStone);
         Assertions.assertEquals(5, dragonStone.tier());
         Assertions.assertTrue(dragonStone.stats().containsKey(StatType.DAMAGE));
