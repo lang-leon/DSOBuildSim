@@ -8,6 +8,7 @@ import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.core.AbstractItem;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
+import com.langleon.dsobuildsim.utils.MapUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -37,6 +38,11 @@ public class UniqueItem extends AbstractItem implements UniqueStatProvider {
 
     public Map<StatType, Double> getUniqueBaseValues() {
         return uniqueBaseValues;
+    }
+
+    public void updateUniqueBaseValues(Map<StatType, Double> newUniqueBaseValues)
+    {
+        MapUtils.replaceExisting(this.uniqueBaseValues, newUniqueBaseValues);
     }
 
     public Map<StatType, Double> getUniqueRelativeValues() {
