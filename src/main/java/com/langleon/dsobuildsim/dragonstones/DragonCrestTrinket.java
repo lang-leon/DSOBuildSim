@@ -2,7 +2,7 @@ package com.langleon.dsobuildsim.dragonstones;
 
 import com.langleon.dsobuildsim.enums.StatType;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 public class DragonCrestTrinket {
@@ -42,7 +42,7 @@ public class DragonCrestTrinket {
 
     public Map<StatType, Double> getTotalRelativeStats()
     {
-        Map<StatType, Double> stats = new HashMap<>();
+        Map<StatType, Double> stats = new EnumMap<>(StatType.class);
         for(int i=0; i<10; i++)
         {
             if (dragonStones[i]!=null)

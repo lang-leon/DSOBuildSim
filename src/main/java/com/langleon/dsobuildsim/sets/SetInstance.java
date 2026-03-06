@@ -111,7 +111,7 @@ public class SetInstance {
     public Map<StatType, Double> getActiveBaseValues()
     {
         int equippedSetItems = getCurrentSetBonusLevel();
-        Map<StatType, Double> totalBaseValues = new HashMap<>();
+        Map<StatType, Double> totalBaseValues = new EnumMap<>(StatType.class);
 
         for (int i=1; i<=equippedSetItems; i++)
         {
@@ -128,7 +128,7 @@ public class SetInstance {
 
     public Map<StatType, Double> getActiveRelativeValues() {
         int equippedSetItems = getCurrentSetBonusLevel();
-        Map<StatType, Double> totalRelativeValues = new HashMap<>();
+        Map<StatType, Double> totalRelativeValues = new EnumMap<>(StatType.class);
 
         for (int i = 1; i <= equippedSetItems; i++) {
             Map<StatType, Double> currentTierStats = relativeValuesPerTier.get(i);

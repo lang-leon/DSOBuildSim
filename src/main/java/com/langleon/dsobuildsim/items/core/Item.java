@@ -7,7 +7,7 @@ import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.utils.MapUtils;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 public abstract class Item {
@@ -128,7 +128,7 @@ public abstract class Item {
 
     public Map<StatType, Double> calculateGemStats()
     {
-        Map<StatType, Double> stats = new HashMap<>();
+        Map<StatType, Double> stats = new EnumMap<>(StatType.class);
         for (int i=0; i<10; i++){
             if (gems[i]!=null)
             {
@@ -143,7 +143,7 @@ public abstract class Item {
 
     public Map<StatType, Double> calculateEnchantStats()
     {
-        Map<StatType, Double> totalEnchants = new HashMap<>();
+        Map<StatType, Double> totalEnchants = new EnumMap<>(StatType.class);
         for (int i=0; i<4; i++){
             if (enchantments[i]!=null)
             {
