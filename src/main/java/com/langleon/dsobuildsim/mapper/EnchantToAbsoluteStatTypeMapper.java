@@ -3,12 +3,12 @@ package com.langleon.dsobuildsim.mapper;
 import com.langleon.dsobuildsim.enums.EnchantmentType;
 import com.langleon.dsobuildsim.enums.StatType;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 public class EnchantToAbsoluteStatTypeMapper {
 
-    private static final Map<EnchantmentType, StatType> map = new HashMap<>();
+    private static final Map<EnchantmentType, StatType> map = new EnumMap<>(EnchantmentType.class);
 
     static {
         map.put(EnchantmentType.ANDERMAGIC_RESISTANCE, StatType.ANDERMAGIC_RESISTANCE);

@@ -61,10 +61,10 @@ public class Character {
         }
         this.dragonCrestTrinket = new DragonCrestTrinket();
 
-        this.equippedItems = new HashMap<>();
-        this.equippedSets = new HashMap<>();
+        this.equippedItems = new EnumMap<>(ItemSlot.class);
+        this.equippedSets = new EnumMap<>(SetType.class);
 
-        this.collectorBagBuffs = new HashMap<>();
+        this.collectorBagBuffs = new EnumMap<>(StatType.class);
         this.wisdomSkillTree = new WisdomSkillTree();
     }
 
@@ -240,7 +240,7 @@ public class Character {
             baseStats.merge(StatType.ATTACK_SPEED, absoluteTwoHandAttackSpeed, Double::sum);
         }
 
-        Map<StatType, Double> finalStats = new HashMap<>();
+        Map<StatType, Double> finalStats = new EnumMap<>(StatType.class);
 
         baseStats.forEach(((statType, baseValue) -> {
             double relativeBonus = relativeBonusStats.getOrDefault(statType, 0.0);
@@ -254,7 +254,7 @@ public class Character {
 
     private Map<StatType, Double> calculateTotalBaseStats()
     {
-        Map<StatType, Double> baseStats = new HashMap<>();
+        Map<StatType, Double> baseStats = new EnumMap<>(StatType.class);
         this.characterClass.getClassBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
         this.wisdomSkillTree.getAbsoluteBuffs().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
         this.calculateTotalItemBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
@@ -273,7 +273,7 @@ public class Character {
 
     private Map<StatType, Double> calculateTotalItemBaseStats()
     {
-        Map<StatType, Double> itemsTotalStats = new HashMap<>();
+        Map<StatType, Double> itemsTotalStats = new EnumMap<>(StatType.class);
         for (Item entry : equippedItems.values())
         {
             entry.calculateTotalStats().forEach((key, value) -> itemsTotalStats.merge(key, value, Double::sum));
@@ -283,7 +283,7 @@ public class Character {
 
     private Map<StatType, Double> calculateTotalRelativeStats()
     {
-        Map<StatType, Double> relativeBonusStats = new HashMap<>();
+        Map<StatType, Double> relativeBonusStats = new EnumMap<>(StatType.class);
         this.characterClass.getClassRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
         this.calculateTotalItemRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
         this.equippedSets.forEach((setType, setInstance) -> setInstance.getActiveRelativeValues().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum)));
@@ -310,7 +310,7 @@ public class Character {
 
     private Map<StatType, Double> calculateTotalItemRelativeStats()
     {
-        Map<StatType, Double> itemsTotalStats = new HashMap<>();
+        Map<StatType, Double> itemsTotalStats = new EnumMap<>(StatType.class);
         for (Item entry : equippedItems.values())
         {
             if (entry instanceof UniqueStatProvider) ((UniqueStatProvider) entry).getUniqueRelativeValues().forEach((key, value) -> itemsTotalStats.merge(key, value, Double::sum));

@@ -10,7 +10,7 @@ import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 public class MythicItem extends Item implements SetBonusProvider, UniqueStatProvider {
@@ -52,7 +52,8 @@ public class MythicItem extends Item implements SetBonusProvider, UniqueStatProv
 
     @Override
     public Map<StatType, Double> calculateTotalStats() {
-        Map<StatType, Double> totalStats = new HashMap<>(getBaseValues());
+        Map<StatType, Double> totalStats = new EnumMap<>(StatType.class);
+        totalStats.putAll(getBaseValues());
 
         //calculate base stats + gem stats
         for (Map.Entry<StatType, Double> entry : super.calculateGemStats().entrySet())

@@ -3,7 +3,7 @@ package com.langleon.dsobuildsim.skilltrees.wisdomskilltree;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.skilltrees.AbstractSkillTree;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 public class WisdomSkillTree extends AbstractSkillTree {
@@ -327,7 +327,7 @@ public class WisdomSkillTree extends AbstractSkillTree {
 
     public Map<StatType, Double> getAbsoluteBuffs()
     {
-        Map<StatType, Double> absoluteBuffs = new HashMap<>();
+        Map<StatType, Double> absoluteBuffs = new EnumMap<>(StatType.class);
         absoluteBuffs.put(StatType.HEALTH_POINTS, this.healthResource.getSkill(1).getCurrentLevel()*this.healthResource.getSkill(1).getIncreasePerLevel());
         absoluteBuffs.put(StatType.HEALTH_PER_SECOND, this.healthResource.getSkill(2).getCurrentLevel()*this.healthResource.getSkill(2).getIncreasePerLevel());
         absoluteBuffs.put(StatType.MANA, this.healthResource.getSkill(3).getCurrentLevel()*this.healthResource.getSkill(3).getIncreasePerLevel());
