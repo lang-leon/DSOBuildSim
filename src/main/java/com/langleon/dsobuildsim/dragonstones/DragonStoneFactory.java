@@ -10,9 +10,9 @@ public class DragonStoneFactory {
         this.config = config;
     }
 
-    public DragonStone createDragonStone(DragonStoneType dragonStoneType)
+    public DragonStone createDragonStone(DragonStoneType dragonStoneType, int tier)
     {
         DragonStoneDefinition dragonStoneDefinition = this.config.dragonStones().get(dragonStoneType);
-        return new DragonStone(dragonStoneType, dragonStoneDefinition.tier(), dragonStoneDefinition.stats(), dragonStoneDefinition.description());
+        return new DragonStone(dragonStoneType, tier, dragonStoneDefinition.statsPerTier().get(tier), dragonStoneDefinition.descriptionPerTier().get(tier));
     }
 }

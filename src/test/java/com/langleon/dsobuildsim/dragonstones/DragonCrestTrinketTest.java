@@ -37,18 +37,18 @@ public class DragonCrestTrinketTest {
     void testAddDragonStones()
     {
         DragonCrestTrinket dragonCrest = new DragonCrestTrinket();
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING),2);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE_MIGTHY),9);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE_ELDERS),3);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3),2);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE, 4),9);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE, 5),3);
         DragonStone[] dragonStones = dragonCrest.getDragonStones();
         Assertions.assertNotNull(dragonStones);
-        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING), dragonStones[2]);
-        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE_MIGTHY), dragonStones[9]);
-        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE_ELDERS), dragonStones[3]);
+        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonStones[2]);
+        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE, 4), dragonStones[9]);
+        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE, 5), dragonStones[3]);
         Assertions.assertNull(dragonStones[1]);
-        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING), dragonCrest.getDragonStone(2));
-        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE_MIGTHY), dragonCrest.getDragonStone(9));
-        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE_ELDERS), dragonCrest.getDragonStone(3));
+        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonCrest.getDragonStone(2));
+        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE, 4), dragonCrest.getDragonStone(9));
+        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE, 5), dragonCrest.getDragonStone(3));
         Assertions.assertNull(dragonCrest.getDragonStone(1));
     }
 
@@ -56,10 +56,10 @@ public class DragonCrestTrinketTest {
     void testRemoveDragonStones()
     {
         DragonCrestTrinket dragonCrest = new DragonCrestTrinket();
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING),2);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE_MIGTHY),9);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE_ELDERS),3);
-        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE_ELDERS), dragonCrest.getDragonStone(3));
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3),2);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE, 4),9);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE, 5),3);
+        Assertions.assertEquals(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE, 5), dragonCrest.getDragonStone(3));
         dragonCrest.removeDragonStone(3);
         Assertions.assertNull(dragonCrest.getDragonStone(3));
     }
@@ -68,16 +68,16 @@ public class DragonCrestTrinketTest {
     void testGetTotalStats()
     {
         DragonCrestTrinket dragonCrest = new DragonCrestTrinket();
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING),0);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING),1);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_MIGTHY),1);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE_ELDERS),3);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE_ELDERS),4);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE_ELDERS),5);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.FURYSTONE_ELDERS),6);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.FURYSTONE_ELDERS),7);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE_ELDERS),8);
-        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE_ELDERS),9);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3),0);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3),1);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 4),1);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE, 5),3);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE, 5),4);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.GREEDSTONE, 5),5);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.FURYSTONE, 5),6);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.FURYSTONE, 5),7);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE, 5),8);
+        dragonCrest.addDragonStone(dragonStoneFactory.createDragonStone(DragonStoneType.RESTLESS_STONE, 5),9);
         Map<StatType, Double> stats = dragonCrest.getTotalRelativeStats();
         Assertions.assertEquals(4, stats.size());
         Assertions.assertTrue(stats.containsKey(StatType.HEALTH_POINTS));

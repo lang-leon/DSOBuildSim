@@ -5,5 +5,5 @@ import com.langleon.dsobuildsim.enums.dragonstones.DragonStoneType;
 
 import java.util.Map;
 
-public record DragonStoneDefinition(DragonStoneType dragonStoneType, Integer tier, Map<StatType, Double> stats, String description) {
+public record DragonStoneDefinition(DragonStoneType dragonStoneType, Integer defaultTier, Map<Integer, Map<StatType, Double>> statsPerTier, Map<Integer, String> descriptionPerTier) {
 }
