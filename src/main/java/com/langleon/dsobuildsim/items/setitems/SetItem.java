@@ -6,14 +6,13 @@ import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.enums.items.SetType;
 import com.langleon.dsobuildsim.gems.AbstractGem;
-import com.langleon.dsobuildsim.gems.Gem;
-import com.langleon.dsobuildsim.items.core.AbstractItem;
+import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class SetItem extends AbstractItem implements SetBonusProvider {
+public class SetItem extends Item implements SetBonusProvider {
     private final SetType setType;
 
     public SetItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, SetType set){

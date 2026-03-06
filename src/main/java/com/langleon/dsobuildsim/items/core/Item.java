@@ -10,7 +10,7 @@ import com.langleon.dsobuildsim.utils.MapUtils;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class AbstractItem {
+public abstract class Item {
     protected ItemType itemType;
     protected String name;
     protected int level;

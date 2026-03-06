@@ -20,7 +20,7 @@ import com.langleon.dsobuildsim.essences.EssenceConfig;
 import com.langleon.dsobuildsim.essences.EssenceFactory;
 import com.langleon.dsobuildsim.gems.GemConfig;
 import com.langleon.dsobuildsim.gems.GemFactory;
-import com.langleon.dsobuildsim.items.core.AbstractItem;
+import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.ItemFactory;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
 import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
@@ -87,55 +87,55 @@ public class Main {
 
         kauka.updateDragonCrestTrinket(new DragonStone[]{dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_ELDERS), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_ELDERS), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE_HATCHLING), null, null, null, null, null});
 
-        AbstractItem amulet = itemFactory.createItem(SetItemType.WINTER_AMULET, CharacterClass.SPELLWEAVER);
+        Item amulet = itemFactory.createItem(SetItemType.WINTER_AMULET, CharacterClass.SPELLWEAVER);
         amulet.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
         amulet.setGems(gemFactory.createGem(GemType.AMETHYST, 17));
         kauka.equipItem(ItemSlot.AMULET, amulet);
 
-        AbstractItem cloak = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_CLOAK, CharacterClass.SPELLWEAVER);
+        Item cloak = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_CLOAK, CharacterClass.SPELLWEAVER);
         cloak.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
         cloak.setGems(gemFactory.createGem(GemType.RUBY, 17));
         kauka.equipItem(ItemSlot.CLOAK, cloak);
 
-        AbstractItem belt = itemFactory.createItem(UniqueItemType.BELT_OF_ZEAL, CharacterClass.SPELLWEAVER);
+        Item belt = itemFactory.createItem(UniqueItemType.BELT_OF_ZEAL, CharacterClass.SPELLWEAVER);
         belt.updateBaseValues(Map.of(StatType.DAMAGE, 1630.885, StatType.HEALTH_POINTS, 20072.654, StatType.RESISTANCE_VALUE, 1679.873));
         belt.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
         belt.setGems(gemFactory.createGem(GemType.RUBY, 17));
         kauka.equipItem(ItemSlot.BELT, belt);
 
-        AbstractItem ring1 = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_RING, CharacterClass.SPELLWEAVER);
+        Item ring1 = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_RING, CharacterClass.SPELLWEAVER);
         ring1.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
         ring1.setGems(gemFactory.createGem(GemType.AMETHYST, 17));
         kauka.equipItem(ItemSlot.RING1, ring1);
 
-        AbstractItem ring2 = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_RING, CharacterClass.SPELLWEAVER);
+        Item ring2 = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_RING, CharacterClass.SPELLWEAVER);
         ring2.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
         ring2.setGems(gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17));
         kauka.equipItem(ItemSlot.RING2, ring2);
 
-        AbstractItem helmet = itemFactory.createItem(SetItemType.STELLAR_WALKER_HELMET, CharacterClass.SPELLWEAVER);
+        Item helmet = itemFactory.createItem(SetItemType.STELLAR_WALKER_HELMET, CharacterClass.SPELLWEAVER);
         helmet.updateBaseValues(Map.of(StatType.DAMAGE, 1426.117, StatType.CRIT_VALUE, 1298.723, StatType.HEALTH_POINTS, 19630.458));
         helmet.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
         helmet.setGems(gemFactory.createGem(GemType.AMETHYST, 17));
         kauka.equipItem(ItemSlot.HELMET, helmet);
 
-        AbstractItem shoulders = itemFactory.createItem(SetItemType.STELLAR_WALKER_SHOULDERS, CharacterClass.SPELLWEAVER);
+        Item shoulders = itemFactory.createItem(SetItemType.STELLAR_WALKER_SHOULDERS, CharacterClass.SPELLWEAVER);
         shoulders.updateBaseValues(Map.of(StatType.DAMAGE, 1639.564, StatType.CRIT_VALUE, 1361.727, StatType.HEALTH_POINTS, 15625.218));
         shoulders.setEnchants(new Enchantment(EnchantmentType.BLOCK_VALUE));
         shoulders.setGems(gemFactory.createGem(GemType.EMERALD, 17));
         kauka.equipItem(ItemSlot.SHOULDERS, shoulders);
 
-        AbstractItem torso = itemFactory.createItem(SetItemType.WINTER_TORSO, CharacterClass.SPELLWEAVER);
+        Item torso = itemFactory.createItem(SetItemType.WINTER_TORSO, CharacterClass.SPELLWEAVER);
         torso.setEnchants(new Enchantment(EnchantmentType.BLOCK_VALUE));
         torso.setGems(gemFactory.createGem(GemType.EMERALD, 17));
         kauka.equipItem(ItemSlot.TORSO, torso);
 
-        AbstractItem gloves = itemFactory.createItem(SetItemType.WINTER_GLOVES, CharacterClass.SPELLWEAVER);
+        Item gloves = itemFactory.createItem(SetItemType.WINTER_GLOVES, CharacterClass.SPELLWEAVER);
         gloves.setEnchants(new Enchantment(EnchantmentType.CRIT_VALUE));
         gloves.setGems(gemFactory.createGem(GemType.ONYX, 17));
         kauka.equipItem(ItemSlot.GLOVES, gloves);
 
-        AbstractItem boots = itemFactory.createItem(SetItemType.WINTER_BOOTS, CharacterClass.SPELLWEAVER);
+        Item boots = itemFactory.createItem(SetItemType.WINTER_BOOTS, CharacterClass.SPELLWEAVER);
         boots.setEnchant(new Enchantment(EnchantmentType.MOVEMENT_SPEED), 0);
         boots.setEnchant(new Enchantment(EnchantmentType.MOVEMENT_SPEED), 1);
         boots.setEnchant(new Enchantment(EnchantmentType.DAMAGE), 2);
@@ -145,13 +145,13 @@ public class Main {
         boots.setGem(gemFactory.createGem(GemType.EMERALD, 17), 9);
         kauka.equipItem(ItemSlot.BOOTS, boots);
 
-        AbstractItem adornment = itemFactory.createItem(UniqueItemType.SIGRISMARRS_ADORNMENT, CharacterClass.SPELLWEAVER);
+        Item adornment = itemFactory.createItem(UniqueItemType.SIGRISMARRS_ADORNMENT, CharacterClass.SPELLWEAVER);
         adornment.updateBaseValues(Map.of(StatType.DAMAGE, 1870.52, StatType.CRIT_VALUE, 2100.146));
         adornment.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
         adornment.setGems(gemFactory.createGem(GemType.RUBY, 17));
         kauka.equipItem(ItemSlot.WEAPON_ADORNMENT, adornment);
 
-        AbstractItem twohand = itemFactory.createItem(UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED, CharacterClass.SPELLWEAVER);
+        Item twohand = itemFactory.createItem(UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED, CharacterClass.SPELLWEAVER);
         twohand.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
         twohand.setGems(gemFactory.createGem(GemType.RUBY, 17));
         kauka.equipItem(ItemSlot.TWO_HAND_WEAPON, twohand);
