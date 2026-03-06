@@ -10,7 +10,7 @@ import com.langleon.dsobuildsim.essences.Essence;
 import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 import com.langleon.dsobuildsim.sets.*;
-import com.langleon.dsobuildsim.items.core.AbstractItem;
+import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.jewels.Jewel;
 import com.langleon.dsobuildsim.jewels.JewelTrinket;
 import com.langleon.dsobuildsim.pets.Pet;
@@ -31,7 +31,7 @@ public class Character {
     private List<JewelTrinket> jewelTrinkets;
     private DragonCrestTrinket dragonCrestTrinket;
 
-    private Map<ItemSlot, AbstractItem> equippedItems;
+    private Map<ItemSlot, Item> equippedItems;
     private Map<SetType, SetInstance> equippedSets;
 
     private Pet pet;
@@ -115,11 +115,11 @@ public class Character {
         return dragonCrestTrinket;
     }
 
-    public void equipItem(ItemSlot slot, AbstractItem item)
+    public void equipItem(ItemSlot slot, Item item)
     {
         if (item.getItemSlotType() != slot.getAllowedItemType()) throw new IllegalArgumentException("Item "+item.getName()+" not allowed in slot "+slot+"!");
 
-        AbstractItem oldItem = this.equippedItems.get(slot);
+        Item oldItem = this.equippedItems.get(slot);
         if (oldItem instanceof SetBonusProvider oldSetItem) {
             updateEquippedSetsOnRemoval(oldSetItem);
         }
@@ -134,7 +134,7 @@ public class Character {
 
     public void unequipItem(ItemSlot slot)
     {
-        AbstractItem removedItem = this.equippedItems.remove(slot);
+        Item removedItem = this.equippedItems.remove(slot);
         if (removedItem != null)
         {
             if (removedItem instanceof SetBonusProvider settableItem)
@@ -274,7 +274,7 @@ public class Character {
     private Map<StatType, Double> calculateTotalItemBaseStats()
     {
         Map<StatType, Double> itemsTotalStats = new HashMap<>();
-        for (AbstractItem entry : equippedItems.values())
+        for (Item entry : equippedItems.values())
         {
             entry.calculateTotalStats().forEach((key, value) -> itemsTotalStats.merge(key, value, Double::sum));
         }
@@ -311,7 +311,7 @@ public class Character {
     private Map<StatType, Double> calculateTotalItemRelativeStats()
     {
         Map<StatType, Double> itemsTotalStats = new HashMap<>();
-        for (AbstractItem entry : equippedItems.values())
+        for (Item entry : equippedItems.values())
         {
             if (entry instanceof UniqueStatProvider) ((UniqueStatProvider) entry).getUniqueRelativeValues().forEach((key, value) -> itemsTotalStats.merge(key, value, Double::sum));
         }
