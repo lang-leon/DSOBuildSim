@@ -5,6 +5,7 @@ import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.gems.AbstractGem;
+import com.langleon.dsobuildsim.utils.MapUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,9 +35,9 @@ public abstract class AbstractItem {
         return baseValues;
     }
 
-    public void setBaseValues(Map<StatType, Double> baseValues)
+    public void updateBaseValues(Map<StatType, Double> newBaseValues)
     {
-        this.baseValues = baseValues;
+        MapUtils.replaceExisting(this.baseValues, newBaseValues);
     }
 
     public AbstractGem[] getGems() {

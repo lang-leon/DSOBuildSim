@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 class SetFactoryTest {
 
@@ -20,7 +21,7 @@ class SetFactoryTest {
 
     @BeforeEach
     void setup() throws IOException {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/sets.json"))) {
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/sets.json")))) {
             ObjectMapper objectMapper = new ObjectMapper();
             SetConfig setConfig = objectMapper.readValue(reader, SetConfig.class);
             setFactory = new SetFactory(setConfig);
@@ -98,5 +99,23 @@ class SetFactoryTest {
     {
         SetInstance setInstance = setFactory.createSet(SetType.JOY_OF_SPRING, CharacterClass.SPELLWEAVER);
         Assertions.assertThrows(IllegalArgumentException.class, () -> setInstance.addSetItem(SetItemType.ALLIANCE_ONE_HAND.toString()));
+    }
+
+    @Test
+    void updateSetBonusValues()
+    {
+        SetInstance setInstance = setFactory.createSet(SetType.STELLAR_WALKER, CharacterClass.SPELLWEAVER);
+        Assertions.assertEquals(Map.of(StatType.ATTACK_SPEED, 0.79), setInstance.getBaseValues(2));
+        setInstance.updateBaseValues(Map.of(StatType.ATTACK_SPEED, 0.45), 2);
+        Assertions.assertEquals(Map.of(StatType.ATTACK_SPEED, 0.45), setInstance.getBaseValues(2));
+    }
+
+    @Test
+    void shouldThrowOnUpdateWithInvalidKeys()
+    {
+        SetInstance setInstance = setFactory.createSet(SetType.STELLAR_WALKER, CharacterClass.SPELLWEAVER);
+        Assertions.assertEquals(Map.of(StatType.ATTACK_SPEED, 0.79), setInstance.getBaseValues(2));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> setInstance.updateBaseValues(Map.of(StatType.DAMAGE, 1337.0), 2));
+        Assertions.assertEquals(Map.of(StatType.ATTACK_SPEED, 0.79), setInstance.getBaseValues(2));
     }
 }

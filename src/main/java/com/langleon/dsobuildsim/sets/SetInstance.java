@@ -2,6 +2,7 @@ package com.langleon.dsobuildsim.sets;
 
 import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.utils.MapUtils;
 
 import java.util.*;
 
@@ -51,9 +52,16 @@ public class SetInstance {
         return baseValuesPerTier.get(tier);
     }
 
-    public void setBaseValues(Map<StatType, Double> stats, int tier)
+    public void updateBaseValues(Map<StatType, Double> stats, int tier)
     {
-        this.baseValuesPerTier.put(tier, stats);
+        if (this.baseValuesPerTier.containsKey(tier))
+        {
+            MapUtils.replaceExisting(this.baseValuesPerTier.get(tier), stats);
+        }
+        else
+        {
+            throw new IllegalArgumentException("No set bonus for "+tier+" items equipped.");
+        }
     }
 
     public Map<Integer, Map<StatType, Double>> getRelativeValuesPerTier() {
