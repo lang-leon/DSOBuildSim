@@ -2,7 +2,7 @@ package com.langleon.dsobuildsim.jewels;
 
 import com.langleon.dsobuildsim.enums.StatType;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 public class JewelTrinket {
@@ -40,7 +40,7 @@ public class JewelTrinket {
 
     public Map<StatType, Double> getTotalRelativeStats()
     {
-        Map<StatType, Double> stats = new HashMap<>();
+        Map<StatType, Double> stats = new EnumMap<>(StatType.class);
         for(int i=0; i<10; i++)
         {
             if (jewels[i]!=null)

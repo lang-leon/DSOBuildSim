@@ -9,7 +9,7 @@ import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 public class SetItem extends Item implements SetBonusProvider {
@@ -39,7 +39,8 @@ public class SetItem extends Item implements SetBonusProvider {
 
     @Override
     public Map<StatType, Double> calculateTotalStats() {
-        Map<StatType, Double> totalStats = new HashMap<>(getBaseValues());
+        Map<StatType, Double> totalStats = new EnumMap<>(StatType.class);
+        totalStats.putAll(getBaseValues());
 
         //calculate base stats + gem stats
         for (Map.Entry<StatType, Double> entry : super.calculateGemStats().entrySet())
