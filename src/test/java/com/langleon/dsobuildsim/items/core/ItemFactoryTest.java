@@ -213,4 +213,25 @@ public class ItemFactoryTest {
         }
         Assertions.assertEquals(SetType.BIG_PAWS_FROSTY_GREED, item.getSetType());
     }
+
+
+    @Test
+    void createAndUpdateItemBaseStats()
+    {
+        SetItem item = itemFactory.createItem(SetItemType.SARGON_HELMET, CharacterClass.SPELLWEAVER);
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1644.883, StatType.CRIT_VALUE, 1401.911, StatType.HEALTH_POINTS, 20637.978), item.getBaseValues());
+        Map<StatType, Double> updatedValues = Map.of(StatType.DAMAGE, 1500.0, StatType.CRIT_VALUE, 1350.0);
+        item.updateBaseValues(updatedValues);
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1500.0, StatType.CRIT_VALUE, 1350.0, StatType.HEALTH_POINTS, 20637.978), item.getBaseValues());
+    }
+
+    @Test
+    void shouldThrowOnUpdateWithInvalidKeys()
+    {
+        SetItem item = itemFactory.createItem(SetItemType.SARGON_HELMET, CharacterClass.SPELLWEAVER);
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1644.883, StatType.CRIT_VALUE, 1401.911, StatType.HEALTH_POINTS, 20637.978), item.getBaseValues());
+        Map<StatType, Double> updatedValues = Map.of(StatType.DAMAGE, 1500.0, StatType.MANA, 13.0, StatType.MOVEMENT_SPEED, 0.5);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> item.updateBaseValues(updatedValues));
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1644.883, StatType.CRIT_VALUE, 1401.911, StatType.HEALTH_POINTS, 20637.978), item.getBaseValues());
+    }
 }
