@@ -170,7 +170,7 @@ public class CharacterTest {
         character.equipItem(ItemSlot.CLOAK, cloak);
 
         AbstractItem belt = itemFactory.createItem(UniqueItemType.BELT_OF_ZEAL, CharacterClass.SPELLWEAVER);
-        belt.setBaseValues(Map.of(StatType.DAMAGE, 1630.885, StatType.HEALTH_POINTS, 20072.654, StatType.RESISTANCE_VALUE, 1679.873));
+        belt.updateBaseValues(Map.of(StatType.DAMAGE, 1630.885, StatType.HEALTH_POINTS, 20072.654, StatType.RESISTANCE_VALUE, 1679.873));
         belt.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
         belt.setGems(gemFactory.createGem(GemType.RUBY, 17));
         character.equipItem(ItemSlot.BELT, belt);
@@ -186,13 +186,13 @@ public class CharacterTest {
         character.equipItem(ItemSlot.RING2, ring2);
 
         AbstractItem helmet = itemFactory.createItem(SetItemType.STELLAR_WALKER_HELMET, CharacterClass.SPELLWEAVER);
-        helmet.setBaseValues(Map.of(StatType.DAMAGE, 1426.117, StatType.CRIT_VALUE, 1298.723, StatType.HEALTH_POINTS, 19630.458));
+        helmet.updateBaseValues(Map.of(StatType.DAMAGE, 1426.117, StatType.CRIT_VALUE, 1298.723, StatType.HEALTH_POINTS, 19630.458));
         helmet.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
         helmet.setGems(gemFactory.createGem(GemType.AMETHYST, 17));
         character.equipItem(ItemSlot.HELMET, helmet);
 
         AbstractItem shoulders = itemFactory.createItem(SetItemType.STELLAR_WALKER_SHOULDERS, CharacterClass.SPELLWEAVER);
-        shoulders.setBaseValues(Map.of(StatType.DAMAGE, 1639.564, StatType.CRIT_VALUE, 1361.727, StatType.HEALTH_POINTS, 15625.218));
+        shoulders.updateBaseValues(Map.of(StatType.DAMAGE, 1639.564, StatType.CRIT_VALUE, 1361.727, StatType.HEALTH_POINTS, 15625.218));
         shoulders.setEnchants(new Enchantment(EnchantmentType.BLOCK_VALUE));
         shoulders.setGems(gemFactory.createGem(GemType.EMERALD, 17));
         character.equipItem(ItemSlot.SHOULDERS, shoulders);
@@ -218,7 +218,7 @@ public class CharacterTest {
         character.equipItem(ItemSlot.BOOTS, boots);
 
         AbstractItem adornment = itemFactory.createItem(UniqueItemType.SIGRISMARRS_ADORNMENT, CharacterClass.SPELLWEAVER);
-        adornment.setBaseValues(Map.of(StatType.DAMAGE, 1870.52, StatType.CRIT_VALUE, 2100.146));
+        adornment.updateBaseValues(Map.of(StatType.DAMAGE, 1870.52, StatType.CRIT_VALUE, 2100.146));
         adornment.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
         adornment.setGems(gemFactory.createGem(GemType.RUBY, 17));
         character.equipItem(ItemSlot.WEAPON_ADORNMENT, adornment);
