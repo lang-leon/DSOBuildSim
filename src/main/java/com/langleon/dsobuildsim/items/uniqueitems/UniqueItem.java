@@ -9,7 +9,8 @@ import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 import com.langleon.dsobuildsim.utils.MapUtils;
 
-import java.util.HashMap;
+import java.util.EnumMap;
+
 import java.util.List;
 import java.util.Map;
 
@@ -58,7 +59,8 @@ public class UniqueItem extends Item implements UniqueStatProvider {
 
     @Override
     public Map<StatType, Double> calculateTotalStats() {
-        Map<StatType, Double> totalStats = new HashMap<>(getBaseValues());
+        Map<StatType, Double> totalStats = new EnumMap<>(StatType.class);
+        totalStats.putAll(getBaseValues());
 
         //add unique base stats
         for (Map.Entry<StatType, Double> entry : uniqueBaseValues.entrySet())
