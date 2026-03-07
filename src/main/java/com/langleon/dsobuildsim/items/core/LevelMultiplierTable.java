@@ -15,11 +15,6 @@ public class LevelMultiplierTable {
         this.multipliersPerLevel = multipliersPerLevel;
     }
 
-    public EnumMap<StatType, Double> getMultipliersForLevel(int level)
-    {
-        return multipliersPerLevel.getOrDefault(level, new EnumMap<>(StatType.class));
-    }
-
     public Double getMultiplier(int level, StatType statType)
     {
         return multipliersPerLevel.getOrDefault(level, new EnumMap<>(StatType.class)).getOrDefault(statType, 0.0);

@@ -7,7 +7,6 @@ import com.langleon.dsobuildsim.enums.items.SetType;
 import com.langleon.dsobuildsim.items.core.ItemDefinition;
 
 import java.util.EnumMap;
-import java.util.Map;
 
 public record MythicItemDefinition (MythicItemType itemType, String name, int defaultLevel, int tier, ItemSlotType itemSlotType, EnumMap<StatType, Double> rawBaseValues, EnumMap<StatType, Double> uniqueRelativeValues, EnumMap<StatType, Double> uniqueAbsoluteValues, SetType set) implements ItemDefinition {
 }

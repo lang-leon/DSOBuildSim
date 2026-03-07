@@ -239,7 +239,7 @@ public class CharacterTest {
 
         character.setPet(petFactory.createPet(PetType.THE_SOUL_OF_DRAGAN_DOLL));
 
-        WisdomSkillTree wisdomSkillTree = new WisdomSkillTree();;
+        WisdomSkillTree wisdomSkillTree = new WisdomSkillTree();
         wisdomSkillTree.setLevel(60, 1, 1);
         wisdomSkillTree.setLevel(60, 1, 2);
         wisdomSkillTree.setLevel(80, 2, 1);
