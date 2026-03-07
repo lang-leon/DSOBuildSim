@@ -7,10 +7,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80,
-        "POISON_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111,
+        "POISON_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
         "MOVEMENT_SPEED": 0.168
@@ -27,10 +27,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
       },
@@ -50,10 +50,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80,
-        "POISON_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111,
+        "POISON_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
         "POISON_RESISTANCE": 3406.00
@@ -70,10 +70,10 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "HEALTH_POINTS": 24217.0,
-        "ARMOR_VALUE": 1068.0,
-        "RESISTANCE_VALUE": 1131.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
       },
@@ -89,10 +89,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 0.489,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "ARMOR_VALUE": 0.998
       },
       "uniqueBaseValues": {
       },
@@ -108,10 +108,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
         "POISON_RESISTANCE": 592.0
@@ -128,10 +128,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "ARMOR_VALUE": 1098.0,
-        "BLOCK_VALUE": 1987.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
       },
       "uniqueBaseValues": {
         "ARMOR_VALUE": 1921.0
@@ -148,10 +148,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
         "DAMAGE": 2584.0,
@@ -169,10 +169,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "ARMOR_VALUE": 1098.0,
-        "BLOCK_VALUE": 1987.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
       },
       "uniqueBaseValues": {
         "ARMOR_VALUE": 640.0
@@ -193,10 +193,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1162.0,
-        "BLOCK_VALUE": 1987.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.78
       },
       "uniqueBaseValues": {
         "HEALTH_POINTS": 43615.0
@@ -213,10 +213,10 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "CRIT_VALUE": 1034.0,
-        "HEALTH_POINTS": 14386.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
         "MANA": 3.0
@@ -233,10 +233,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
         "HEALTH_PER_SECOND": 14734.086
@@ -249,14 +249,14 @@
     },
     "SARGONS_SHADOW_AMULET": {
       "itemType": "SARGONS_SHADOW_AMULET",
-      "name": "",
+      "name": "Sargon's Shadow Amulet",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 0.489,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
         "DAMAGE": 3771.0
@@ -273,10 +273,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "ARMOR_VALUE": 1098.0,
-        "BLOCK_VALUE": 1987.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
       },
       "uniqueBaseValues": {
         "ARMOR_VALUE": 1281.0
@@ -297,10 +297,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
       },
@@ -316,10 +316,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.06,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
       },
       "uniqueBaseValues": {
         "DAMAGE": 1959,
@@ -337,10 +337,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "ARMOR_VALUE": 1373.0,
-        "RESISTANCE_VALUE": 1452.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 1.248,
+        "RESISTANCE_VALUE": 1.37
       },
       "uniqueBaseValues": {
       },
@@ -352,14 +352,14 @@
     },
     "GWENFARAS_CLOAK": {
       "itemType": "GWENFARAS_CLOAK",
-      "name": "",
+      "name": "Gwenfara's Ghostly Shroud",
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "ARMOR_VALUE": 1373.0,
-        "RESISTANCE_VALUE": 1452.0,
-        "BLOCK_VALUE": 2384.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.248,
+        "RESISTANCE_VALUE": 1.37,
+        "BLOCK_VALUE": 2.136
       },
       "uniqueBaseValues": {
         "MOVEMENT_SPEED": 0.252
@@ -376,10 +376,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 2104.0,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885,
+        "HEALTH_POINTS": 2.074
       },
       "uniqueBaseValues": {
         "HEALTH_POINTS": 21383.0
@@ -396,10 +396,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 2104.0,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885,
+        "HEALTH_POINTS": 2.074
       },
       "uniqueBaseValues": {
         "CRIT_VALUE": 1624.0,
@@ -417,10 +417,10 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "HEALTH_POINTS": 14386.0,
-        "ARMOR_VALUE": 766.0,
-        "LIGHTNING_RESISTANCE": 2945.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 1.248,
+        "LIGHTNING_RESISTANCE": 4.894
       },
       "uniqueBaseValues": {
       },
@@ -440,10 +440,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "POISON_RESISTANCE": 5188.0,
-        "BLOCK_VALUE": 2384.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "POISON_RESISTANCE": 4.894,
+        "BLOCK_VALUE": 2.136
       },
       "uniqueBaseValues": {
         "MOVEMENT_SPEED": 0.084
@@ -456,14 +456,14 @@
     },
     "MERCILESS_TERROR": {
       "itemType": "MERCILESS_TERROR",
-      "name": "",
+      "name": "Merciless Terror",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "HEALTH_POINTS": 24217.0,
-        "ARMOR_VALUE": 1335.0,
-        "LIGHTNING_RESISTANCE": 5052.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 1.248,
+        "LIGHTNING_RESISTANCE": 4.894
       },
       "uniqueBaseValues": {
       },
@@ -479,14 +479,14 @@
     },
     "WINTER_FESTIVAL_BAG": {
       "itemType": "WINTER_FESTIVAL_BAG",
-      "name": "",
+      "name": "Winter Festival Bag",
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1452.0,
-        "BLOCK_VALUE": 2384.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.37,
+        "BLOCK_VALUE": 2.136
       },
       "uniqueBaseValues": {
       },
@@ -502,10 +502,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "LIGHTNING_RESISTANCE": 6225.969
+      "rawBaseValues": {
+       "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "LIGHTNING_RESISTANCE": 5.873
       },
       "uniqueBaseValues": {
         "LIGHTNING_RESISTANCE": 4941.0
@@ -522,10 +522,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1742.805
+      "rawBaseValues": {
+       "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.644
       },
       "uniqueBaseValues": {
       },
@@ -545,10 +545,10 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "FIRE_RESISTANCE": 6062.0,
-        "ICE_RESISTANCE": 6062.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "FIRE_RESISTANCE": 5.873,
+        "ICE_RESISTANCE": 5.873
       },
       "uniqueBaseValues": {
         "BLOCK_VALUE": 2069.0
@@ -566,10 +566,10 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "HEALTH_POINTS": 14386.0,
-        "ARMOR_VALUE": 919.0,
-        "POISON_RESISTANCE": 3534.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 1.498,
+        "POISON_RESISTANCE": 5.873
       },
       "uniqueBaseValues": {
       },
@@ -589,10 +589,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "ARMOR_VALUE": 1098.0,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
         "ARMOR_VALUE": 2562.0
@@ -609,10 +609,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
       },
@@ -628,10 +628,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1162.0,
-        "BLOCK_VALUE": 1987.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.78
       },
       "uniqueBaseValues": {
         "HEALTH_PER_SECOND": 9208.802
@@ -648,10 +648,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "HEALTH_POINTS": 24760.80,
-        "ANDERMAGIC_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 3.111,
+        "ANDERMAGIC_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
         "DAMAGE": 2612.0
@@ -668,14 +668,14 @@
     },
     "BRIGAVIK_RING": {
       "itemType": "BRIGAVIK_RING",
-      "name": " Signet of Memory",
+      "name": "Signet of Memory",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "ATTACK_SPEED": 0.059,
-        "CRIT_VALUE": 1709.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "CRIT_VALUE": 1.571
       },
       "uniqueBaseValues": {
       },
@@ -696,10 +696,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
       },
@@ -715,10 +715,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "HEALTH_POINTS": 24760.80,
-        "BLOCK_VALUE": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 3.111,
+        "BLOCK_VALUE": 1.78
       },
       "uniqueBaseValues": {
         "HEALTH_PER_SECOND": 9208.802
@@ -735,10 +735,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "HEALTH_POINTS": 24760.80,
-        "ICE_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 3.111,
+        "ICE_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
       },
@@ -754,10 +754,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "HEALTH_POINTS": 24760.80,
-        "FIRE_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 3.111,
+        "FIRE_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
       },
@@ -773,10 +773,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "ARMOR_VALUE": 1098.0,
-        "BLOCK_VALUE": 1987.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
       },
       "uniqueBaseValues": {
         "BLOCK_VALUE": 4225.0
@@ -793,10 +793,10 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "HEALTH_POINTS": 14386.0,
-        "ARMOR_VALUE": 612.0,
-        "RESISTANCE_VALUE": 660.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
       },
@@ -816,10 +816,10 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "CRIT_VALUE": 1709.0,
-        "HEALTH_POINTS": 24217.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
         "ATTACK_SPEED": 0.149
@@ -836,10 +836,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80,
-        "POISON_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111,
+        "POISON_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
       },
@@ -855,10 +855,10 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "CRIT_VALUE": 1709.0,
-        "HEALTH_POINTS": 24217.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
       },
@@ -875,10 +875,10 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "CRIT_VALUE": 1709.0,
-        "HEALTH_POINTS": 24217.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
       },
@@ -895,9 +895,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "HEALTH_POINTS": 49522.0,
-        "BLOCK_VALUE": 1987.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.222,
+        "BLOCK_VALUE": 1.78
       },
       "uniqueBaseValues": {
       },
@@ -913,10 +913,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
+      "rawBaseValues": {
         "MOVEMENT_SPEED": 0.732,
-        "HEALTH_POINTS": 24760.80,
-        "BLOCK_VALUE": 1987.0
+        "HEALTH_POINTS": 3.111,
+        "BLOCK_VALUE": 1.78
       },
       "uniqueBaseValues": {
         "MANA": 19
@@ -933,10 +933,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
       },
@@ -948,14 +948,14 @@
     },
     "RING_OF_ZEAL": {
       "itemType": "RING_OF_ZEAL",
-      "name": "",
+      "name": "Ring of Zeal",
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
       },
@@ -971,10 +971,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
       },
@@ -991,10 +991,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
       },
@@ -1011,10 +1011,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
       },
@@ -1031,10 +1031,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueBaseValues": {
       },
@@ -1051,10 +1051,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "RING",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "BLOCK_VALUE": 1987.0,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "BLOCK_VALUE": 1.78,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
       },
@@ -1074,10 +1074,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "HEALTH_POINTS": 20637.978,
-        "ARMOR_VALUE": 1098.0,
-        "ANDERMAGIC_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998,
+        "ANDERMAGIC_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
         "ARMOR_VALUE": 1281.0,
@@ -1095,10 +1095,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 20637.978,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998
       },
       "uniqueBaseValues": {
         "RESISTANCE_VALUE": 2029.0
@@ -1115,10 +1115,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1401.911,
-        "BLOCK_VALUE": 1589.428
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "BLOCK_VALUE": 1.424
       },
       "uniqueBaseValues": {
         "ICE_RESISTANCE": 3406.0
@@ -1135,10 +1135,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998
       },
       "uniqueBaseValues": {
         "MANA": 10.0
@@ -1155,10 +1155,10 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "HEALTH_POINTS": 14386.0,
-        "ARMOR_VALUE": 612.0,
-        "FIRE_RESISTANCE": 2356.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "FIRE_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
       },
@@ -1174,14 +1174,14 @@
     },
     "SPEECHLESS_TERROR": {
       "itemType": "SPEECHLESS_TERROR",
-      "name": "",
-      "defaultLevel": 145,
+      "name": "Speechless Terror",
+      "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "CRIT_VALUE": 1401.911,
-        "HEALTH_POINTS": 20637.978,
-        "FIRE_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593,
+        "FIRE_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
       },
@@ -1197,14 +1197,14 @@
     },
     "STRAW_HAT": {
       "itemType": "STRAW_HAT",
-      "name": "",
+      "name": "Straw Hat",
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 0.489,
-        "HEALTH_POINTS": 20637.978
+      "rawBaseValues": {
+       "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 2.593
       },
       "uniqueBaseValues": {
         "HEALTH_PER_SECOND": 11050.562
@@ -1221,10 +1221,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 20637.978,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+       "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998
       },
       "uniqueBaseValues": {
         "MOVEMENT_SPEED": 0.168
@@ -1245,10 +1245,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "HEALTH_POINTS": 16507.200,
-        "POISON_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 2.074,
+        "POISON_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
         "POISON_RESISTANCE": 4865.0
@@ -1265,10 +1265,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1098.0,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
         "MOVEMENT_SPEED": 0.336
@@ -1285,10 +1285,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ARMOR_VALUE": 1098.0,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
         "ANDERMAGIC_RESISTANCE": 2433.0
@@ -1305,10 +1305,10 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 9591.0,
-        "FIRE_RESISTANCE": 2356.0,
-        "BLOCK_VALUE": 937.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "FIRE_RESISTANCE": 3.915,
+        "BLOCK_VALUE": 1.424
       },
       "uniqueBaseValues": {
       },
@@ -1328,10 +1328,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "ARMOR_VALUE": 1098.0,
-        "RESISTANCE_VALUE": 1162.0,
-        "BLOCK_VALUE": 1589.428
+      "rawBaseValues": {
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.424
       },
       "uniqueBaseValues": {
         "MANA": 5.0
@@ -1345,13 +1345,13 @@
     "TERRIBAL_TRIBUNAL": {
       "itemType": "TERRIBAL_TRIBUNAL",
       "name": "Terrible Tribunal",
-      "defaultLevel": 145,
+      "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "ARMOR_VALUE": 1098.0,
-        "ICE_RESISTANCE": 4150.0,
-        "BLOCK_VALUE": 1589.428
+      "rawBaseValues": {
+        "ARMOR_VALUE": 0.998,
+        "ICE_RESISTANCE": 3.915,
+        "BLOCK_VALUE": 1.424
       },
       "uniqueBaseValues": {
       },
@@ -1371,10 +1371,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998
       },
       "uniqueBaseValues": {
         "CRIT_VALUE": 1396.0,
@@ -1392,10 +1392,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1648.043
+      "rawBaseValues": {
+       "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "uniqueBaseValues": {
       },
@@ -1415,10 +1415,10 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "HEALTH_POINTS": 16145.0,
-        "ARMOR_VALUE": 1603.0,
-        "RESISTANCE_VALUE": 1697.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498,
+        "RESISTANCE_VALUE": 1.644
       },
       "uniqueBaseValues": {
         "HEALTH_PER_SECOND": 3615.886
@@ -1436,10 +1436,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1648.043
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "uniqueBaseValues": {
         "ATTACK_SPEED": 0.106,
@@ -1457,10 +1457,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "CRIT_VALUE": 1366.0,
-        "ARMOR_VALUE": 1603.0,
-        "ANDERMAGIC_RESISTANCE": 6062.0
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.256,
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873
       },
       "uniqueBaseValues": {
       },
@@ -1480,10 +1480,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 0.489,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 2.074
       },
       "uniqueBaseValues": {
         "MANA": 36.0,
@@ -1501,10 +1501,10 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "ARMOR_VALUE": 919.0,
-        "ANDERMAGIC_RESISTANCE": 3534.0,
-        "BLOCK_VALUE": 937.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873,
+        "BLOCK_VALUE": 1.424
       },
       "uniqueBaseValues": {
       },
@@ -1524,10 +1524,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1648.043
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "uniqueBaseValues": {
         "RESISTANCE_VALUE": 1375.0,
@@ -1545,10 +1545,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1648.043
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "uniqueBaseValues": {
         "ICE_RESISTANCE": 3459.0
@@ -1565,10 +1565,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "ATTACK_SPEED": 0.055,
-        "CRIT_VALUE": 1753.505,
-        "LIGHTNING_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571,
+        "LIGHTNING_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
         "LIGHTNING_RESISTANCE": 4865.0
@@ -1585,10 +1585,10 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "MOVEMENT_SPEED": 0.484,
-        "ARMOR_VALUE": 1068.0,
-        "RESISTANCE_VALUE": 1131.0
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.00872,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
       },
@@ -1609,10 +1609,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1098.0,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
       },
@@ -1632,10 +1632,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ATTACK_SPEED": 0.055,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
       },
@@ -1655,10 +1655,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "FIRE_RESISTANCE": 4150.0,
-        "ANDERMAGIC_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "FIRE_RESISTANCE": 3.915,
+        "ANDERMAGIC_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
         "ANDERMAGIC_RESISTANCE": 3406.0
@@ -1675,10 +1675,10 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "ATTACK_SPEED": 0.039,
-        "CRIT_VALUE": 1034.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
       },
       "uniqueBaseValues": {
       },
@@ -1698,10 +1698,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ATTACK_SPEED": 0.055,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "ARMOR_VALUE": 0.998
       },
       "uniqueBaseValues": {
       },
@@ -1721,10 +1721,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "MOVEMENT_SPEED": 1.221,
-        "HEALTH_POINTS": 16507.200,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074,
+        "RESISTANCE_VALUE": 1.096
       },
       "uniqueBaseValues": {
       },
@@ -1744,10 +1744,10 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "MOVEMENT_SPEED": 1.208,
-        "CRIT_VALUE": 1366.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "CRIT_VALUE": 1.256
       },
       "uniqueBaseValues": {
       },
@@ -1768,10 +1768,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "MOVEMENT_SPEED": 1.221,
-        "ARMOR_VALUE": 1098.0,
-        "POISON_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "ARMOR_VALUE": 0.998,
+        "POISON_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
       },
@@ -1791,10 +1791,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "MOVEMENT_SPEED": 1.221,
-        "ARMOR_VALUE": 1098.0,
-        "FIRE_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "ARMOR_VALUE": 0.998,
+        "FIRE_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
         "FIRE_RESISTANCE": 2433.0
@@ -1811,10 +1811,10 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 847.0,
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
         "MOVEMENT_SPEED": 0.965,
-        "CRIT_VALUE": 827.0
+        "CRIT_VALUE": 1.256
       },
       "uniqueBaseValues": {
       },
@@ -1834,10 +1834,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "MOVEMENT_SPEED": 1.221,
-        "HEALTH_POINTS": 16507.200,
-        "ANDERMAGIC_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074,
+        "ANDERMAGIC_RESISTANCE": 3.915
       },
       "uniqueBaseValues": {
         "ANDERMAGIC_RESISTANCE": 3892.0
@@ -1850,14 +1850,14 @@
     },
     "LAPIS_LAZULI_BOOTS": {
       "itemType": "LAPIS_LAZULI_BOOTS",
-      "name": "",
+      "name": "Lapis Lazuli ",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "MOVEMENT_SPEED": 1.208,
-        "HEALTH_POINTS": 16145.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "uniqueBaseValues": {
       },
@@ -1873,9 +1873,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "ATTACK_SPEED": 0.055,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
       },
@@ -1891,9 +1891,9 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "CRIT_VALUE": 2050.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
       },
@@ -1914,9 +1914,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "ATTACK_SPEED": 0.055,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
         "DAMAGE": 1306.0
@@ -1933,9 +1933,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 974.0,
-        "CRIT_VALUE": 1241.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
       },
@@ -1955,9 +1955,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
         "ATTACK_SPEED": 0.060
@@ -1974,10 +1974,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.055,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
       },
@@ -2001,10 +2001,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2057.0,
-        "ATTACK_SPEED": 0.220,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00347,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
         "DAMAGE": 1842.0
@@ -2021,9 +2021,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2057.0,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
         "CRIT_VALUE": 2166.0,
@@ -2041,9 +2041,9 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2001.0,
-        "ATTACK_SPEED": 0.432
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
       },
       "uniqueBaseValues": {
       },
@@ -2059,9 +2059,9 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 1059.0,
-        "ATTACK_SPEED": 0.313
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
       },
       "uniqueBaseValues": {
       },
@@ -2081,13 +2081,13 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2057.0,
-        "ATTACK_SPEED": 0.220,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00347,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
-        "CRIT_VALUE": 2104.0
+        "CRIT_VALUE": 1.885
       },
       "uniqueRelativeValues": {
       },
@@ -2101,9 +2101,9 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
+      "rawBaseValues": {
         "ATTACK_SPEED": 0.157,
-        "CRIT_VALUE": 1241.0
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
       },
@@ -2123,9 +2123,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 3292.0,
-        "ATTACK_SPEED": 0.220
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00347
       },
       "uniqueBaseValues": {
       },
@@ -2137,13 +2137,13 @@
     },
     "WORLD_DROP_ONE_HAND": {
       "itemType": "WORLD_DROP_ONE_HAND",
-      "name": "",
+      "name": "Starlight",
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2057.0,
-        "ATTACK_SPEED": 0.439
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
       },
       "uniqueBaseValues": {
         "MANA": 19.0
@@ -2160,9 +2160,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "ATTACK_SPEED": 0.109,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
       },
@@ -2182,9 +2182,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "ATTACK_SPEED": 0.109,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
         "CRIT_VALUE": 2166.0
@@ -2201,10 +2201,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "ARMOR_VALUE": 1644.883,
-        "RESISTANCE_VALUE": 2324.0,
-        "BLOCK_VALUE": 47683.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.997,
+        "RESISTANCE_VALUE": 2.192,
+        "BLOCK_VALUE": 42.72
       },
       "uniqueBaseValues": {
       },
@@ -2224,9 +2224,9 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "DAMAGE": 1695.0,
-        "ATTACK_SPEED": 0.078
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00173
       },
       "uniqueBaseValues": {
       },
@@ -2246,9 +2246,9 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "HEALTH_POINTS": 19186.0,
-        "BLOCK_VALUE": 28117.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 4.149,
+        "BLOCK_VALUE": 42.72
       },
       "uniqueBaseValues": {
       },
@@ -2268,9 +2268,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "DAMAGE": 3292.0,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
         "ATTACK_SPEED": 0.043
@@ -2287,9 +2287,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "ATTACK_SPEED": 0.109,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
       },
       "uniqueBaseValues": {
       },
@@ -2305,10 +2305,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "HEALTH_POINTS": 33022.0,
-        "ARMOR_VALUE": 2197.0,
-        "BLOCK_VALUE": 47683.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 4.149,
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
       },
       "uniqueBaseValues": {
         "HEALTH_POINTS": 44463.0
@@ -2325,10 +2325,10 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "HEALTH_POINTS": 33022.0,
-        "ARMOR_VALUE": 2197.0,
-        "BLOCK_VALUE": 47683.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 4.149,
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
       },
       "uniqueBaseValues": {
         "MANA": 7.0,
@@ -2346,9 +2346,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 26326.278,
-        "CRIT_VALUE": 3505.894
+      "rawBaseValues": {
+        "DAMAGE": 12.916,
+        "CRIT_VALUE": 3.141
       },
       "uniqueBaseValues": {
         "ATTACK_SPEED": 0.102
@@ -2365,9 +2365,9 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 26326.278,
-        "CRIT_VALUE": 3505.894
+      "rawBaseValues": {
+        "DAMAGE": 12.916,
+        "CRIT_VALUE": 3.141
       },
       "uniqueBaseValues": {
         "ATTACK_SPEED": 0.102
@@ -2385,9 +2385,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6581.569,
-        "ATTACK_SPEED": 0.329
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
       },
       "uniqueBaseValues": {
       },
@@ -2407,9 +2407,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 13163.139,
-        "CRIT_VALUE": 3505.894
+      "rawBaseValues": {
+        "DAMAGE": 6.458,
+        "CRIT_VALUE": 3.141
       },
       "uniqueBaseValues": {
         "DAMAGE": 2754.0
@@ -2423,12 +2423,12 @@
     "BRIGAVIK_TWO_HAND": {
       "itemType": "BRIGAVIK_TWO_HAND",
       "name": "Wisdom Seeker",
-      "defaultLevel": 145,
+      "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6021.0,
-        "CRIT_VALUE": 6405.0
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
       },
       "uniqueBaseValues": {
       },
@@ -2449,9 +2449,9 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6405.0,
-        "ATTACK_SPEED": 0.324
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
       },
       "uniqueBaseValues": {
         "RESISTANCE_VALUE": 3799.0
@@ -2468,9 +2468,9 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6405.0,
-        "ATTACK_SPEED": 0.324
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
       },
       "uniqueBaseValues": {
         "FIRE_RESISTANCE": 8886.0
@@ -2487,9 +2487,9 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6405.0,
-        "ATTACK_SPEED": 0.324
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
       },
       "uniqueBaseValues": {
         "LIGHTNING_RESISTANCE": 8886.0
@@ -2506,9 +2506,9 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6405.0,
-        "ATTACK_SPEED": 0.324
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
       },
       "uniqueBaseValues": {
         "POISON_RESISTANCE": 8886.0
@@ -2525,9 +2525,9 @@
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6405.0,
-        "ATTACK_SPEED": 0.324
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
       },
       "uniqueBaseValues": {
       },
@@ -2547,9 +2547,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 13163.139,
-        "ATTACK_SPEED": 0.165
+      "rawBaseValues": {
+        "DAMAGE": 6.458,
+        "ATTACK_SPEED": 0.0026
       },
       "uniqueBaseValues": {
         "FIRE_RESISTANCE": 4563.0
@@ -2566,9 +2566,9 @@
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 3389.0,
-        "CRIT_VALUE": 4135.0
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
       },
       "uniqueBaseValues": {
       },
@@ -2588,8 +2588,8 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 13163.139
+      "rawBaseValues": {
+        "DAMAGE": 6.458
       },
       "uniqueBaseValues": {
         "ATTACK_SPEED": 0.048
@@ -2606,9 +2606,9 @@
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6581.569,
-        "CRIT_VALUE": 7012.0
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
       },
       "uniqueBaseValues": {
         "ATTACK_SPEED": 0.082

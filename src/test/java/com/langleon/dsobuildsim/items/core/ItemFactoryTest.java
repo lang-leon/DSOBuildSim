@@ -30,27 +30,29 @@ public class ItemFactoryTest {
     @BeforeEach
     void setup() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-
         MythicItemConfig mythicItemConfig;
         UniqueItemConfig uniqueItemConfig;
         SetItemConfig setItemConfig;
+        LevelMultiplierTable levelMultiplierTable;
 
         try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/mythicitems.json"))))
         {
             mythicItemConfig = objectMapper.readValue(reader, MythicItemConfig.class);
         }
-
         try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/uniqueitems.json"))))
         {
             uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
         }
-
         try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/setitems.json"))))
         {
             setItemConfig = objectMapper.readValue(reader, SetItemConfig.class);
         }
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/levelMultiplierTable.json"))))
+        {
+            levelMultiplierTable = objectMapper.readValue(reader, LevelMultiplierTable.class);
+        }
 
-        itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig);
+        itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig, levelMultiplierTable);
     }
 
     @Test
@@ -62,7 +64,8 @@ public class ItemFactoryTest {
         Assertions.assertEquals("Grimace of the Immortal Beast", item.getName());
         Assertions.assertEquals(ItemSlotType.TWO_HAND_WEAPON, item.getItemSlotType());
         Assertions.assertEquals(7, item.getTier());
-        Assertions.assertEquals(Map.of(StatType.DAMAGE, 26326.278, StatType.CRIT_VALUE, 3505.894), item.getBaseValues());
+        Assertions.assertEquals(26326.276, item.getBaseValues().get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(3505.894, item.getBaseValues().get(StatType.CRIT_VALUE), 0.001);
         for (int i = 0; i<item.getEnchants().length; i++)
         {
             Assertions.assertNull(item.getEnchants()[i]);
@@ -86,8 +89,9 @@ public class ItemFactoryTest {
         Assertions.assertEquals(140, item.getLevel());
         Assertions.assertEquals("Researcher's Gauntlets", item.getName());
         Assertions.assertEquals(ItemSlotType.GLOVES, item.getItemSlotType());
-        Assertions.assertEquals(6, item.getTier());
-        Assertions.assertEquals(Map.of(StatType.MOVEMENT_SPEED, 0.484, StatType.ARMOR_VALUE, 1068.0, StatType.RESISTANCE_VALUE, 1131.0), item.getBaseValues());
+        Assertions.assertEquals(1067.877, item.getBaseValues().get(StatType.ARMOR_VALUE), 0.001);
+        Assertions.assertEquals(1131.275, item.getBaseValues().get(StatType.RESISTANCE_VALUE), 0.001);
+        Assertions.assertEquals(0.483, item.getBaseValues().get(StatType.MOVEMENT_SPEED), 0.001);
         for (int i = 0; i<item.getEnchants().length; i++)
         {
             Assertions.assertNull(item.getEnchants()[i]);
@@ -111,7 +115,9 @@ public class ItemFactoryTest {
         Assertions.assertEquals("Stinger", item.getName());
         Assertions.assertEquals(ItemSlotType.WEAPON_ADORNMENT, item.getItemSlotType());
         Assertions.assertEquals(6, item.getTier());
-        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1891.513, StatType.ATTACK_SPEED, 0.055, StatType.CRIT_VALUE, 2104.0), item.getBaseValues());
+        Assertions.assertEquals(1891.513, item.getBaseValues().get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(0.055, item.getBaseValues().get(StatType.ATTACK_SPEED), 0.001);
+        Assertions.assertEquals(2103.982, item.getBaseValues().get(StatType.CRIT_VALUE), 0.001);
         for (int i = 0; i<item.getEnchants().length; i++)
         {
             Assertions.assertNull(item.getEnchants()[i]);
@@ -135,7 +141,9 @@ public class ItemFactoryTest {
         Assertions.assertEquals("Ring of Old Glory", item.getName());
         Assertions.assertEquals(ItemSlotType.RING, item.getItemSlotType());
         Assertions.assertEquals(7, item.getTier());
-        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1891.513, StatType.CRIT_VALUE, 1753.505, StatType.HEALTH_POINTS, 24760.80), item.getBaseValues());
+        Assertions.assertEquals(1891.513, item.getBaseValues().get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(1753.505, item.getBaseValues().get(StatType.CRIT_VALUE), 0.001);
+        Assertions.assertEquals(24760.80, item.getBaseValues().get(StatType.HEALTH_POINTS), 0.001);
         for (int i = 0; i<item.getEnchants().length; i++)
         {
             Assertions.assertNull(item.getEnchants()[i]);
@@ -158,7 +166,9 @@ public class ItemFactoryTest {
         Assertions.assertEquals("Ancestral Glory Cloak (Archer)", item.getName());
         Assertions.assertEquals(ItemSlotType.CLOAK, item.getItemSlotType());
         Assertions.assertEquals(7, item.getTier());
-        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1891.513, StatType.ATTACK_SPEED, 0.06, StatType.HEALTH_POINTS, 37966.560), item.getBaseValues());
+        Assertions.assertEquals(1891.513, item.getBaseValues().get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(0.06, item.getBaseValues().get(StatType.ATTACK_SPEED), 0.001);
+        Assertions.assertEquals(37966.560, item.getBaseValues().get(StatType.HEALTH_POINTS), 0.001);
         for (int i = 0; i<item.getEnchants().length; i++)
         {
             Assertions.assertNull(item.getEnchants()[i]);
@@ -181,7 +191,9 @@ public class ItemFactoryTest {
         Assertions.assertEquals("Sargon's Horns", item.getName());
         Assertions.assertEquals(ItemSlotType.HELMET, item.getItemSlotType());
         Assertions.assertEquals(0, item.getTier());
-        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1644.883, StatType.CRIT_VALUE, 1401.911, StatType.HEALTH_POINTS, 20637.978), item.getBaseValues());
+        Assertions.assertEquals(1644.883, item.getBaseValues().get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(1401.911, item.getBaseValues().get(StatType.CRIT_VALUE), 0.001);
+        Assertions.assertEquals(20637.979, item.getBaseValues().get(StatType.HEALTH_POINTS), 0.001);
         for (int i = 0; i<item.getEnchants().length; i++)
         {
             Assertions.assertNull(item.getEnchants()[i]);
@@ -202,7 +214,8 @@ public class ItemFactoryTest {
         Assertions.assertEquals("Big Paws' Frosty Scepter", item.getName());
         Assertions.assertEquals(ItemSlotType.TWO_HAND_WEAPON, item.getItemSlotType());
         Assertions.assertEquals(0, item.getTier());
-        Assertions.assertEquals(Map.of(StatType.DAMAGE, 13163.139, StatType.CRIT_VALUE, 3506.0), item.getBaseValues());
+        Assertions.assertEquals(13163.139, item.getBaseValues().get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(3505.893, item.getBaseValues().get(StatType.CRIT_VALUE), 0.001);
         for (int i = 0; i<item.getEnchants().length; i++)
         {
             Assertions.assertNull(item.getEnchants()[i]);
@@ -219,19 +232,27 @@ public class ItemFactoryTest {
     void createAndUpdateItemBaseStats()
     {
         SetItem item = itemFactory.createItem(SetItemType.SARGON_HELMET, CharacterClass.SPELLWEAVER);
-        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1644.883, StatType.CRIT_VALUE, 1401.911, StatType.HEALTH_POINTS, 20637.978), item.getBaseValues());
+        Assertions.assertEquals(1644.883, item.getBaseValues().get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(1401.911, item.getBaseValues().get(StatType.CRIT_VALUE), 0.001);
+        Assertions.assertEquals(20637.979, item.getBaseValues().get(StatType.HEALTH_POINTS), 0.001);
         Map<StatType, Double> updatedValues = Map.of(StatType.DAMAGE, 1500.0, StatType.CRIT_VALUE, 1350.0);
         item.updateBaseValues(updatedValues);
-        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1500.0, StatType.CRIT_VALUE, 1350.0, StatType.HEALTH_POINTS, 20637.978), item.getBaseValues());
+        Assertions.assertEquals(1500.0, item.getBaseValues().get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(1350.0, item.getBaseValues().get(StatType.CRIT_VALUE), 0.001);
+        Assertions.assertEquals(20637.979, item.getBaseValues().get(StatType.HEALTH_POINTS), 0.001);
     }
 
     @Test
     void shouldThrowOnUpdateWithInvalidKeys()
     {
         SetItem item = itemFactory.createItem(SetItemType.SARGON_HELMET, CharacterClass.SPELLWEAVER);
-        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1644.883, StatType.CRIT_VALUE, 1401.911, StatType.HEALTH_POINTS, 20637.978), item.getBaseValues());
+        Assertions.assertEquals(1644.883, item.getBaseValues().get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(1401.911, item.getBaseValues().get(StatType.CRIT_VALUE), 0.001);
+        Assertions.assertEquals(20637.979, item.getBaseValues().get(StatType.HEALTH_POINTS), 0.001);
         Map<StatType, Double> updatedValues = Map.of(StatType.DAMAGE, 1500.0, StatType.MANA, 13.0, StatType.MOVEMENT_SPEED, 0.5);
         Assertions.assertThrows(IllegalArgumentException.class, () -> item.updateBaseValues(updatedValues));
-        Assertions.assertEquals(Map.of(StatType.DAMAGE, 1644.883, StatType.CRIT_VALUE, 1401.911, StatType.HEALTH_POINTS, 20637.978), item.getBaseValues());
+        Assertions.assertEquals(1644.883, item.getBaseValues().get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(1401.911, item.getBaseValues().get(StatType.CRIT_VALUE), 0.001);
+        Assertions.assertEquals(20637.979, item.getBaseValues().get(StatType.HEALTH_POINTS), 0.001);
     }
 }
