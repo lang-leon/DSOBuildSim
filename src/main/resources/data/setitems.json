@@ -6,10 +6,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "set": "BOND_OF_THE_ALLIANCE"
     },
@@ -19,10 +19,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "RUNES_OF_REGAINED_HEALTH"
     },
@@ -32,10 +32,10 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "CRIT_VALUE": 1034.0,
-        "HEALTH_POINTS": 14386.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "set": "CUBE_SET"
     },
@@ -45,10 +45,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 0.489,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 3.111
       },
       "set": "DARK_EXILE"
     },
@@ -58,23 +58,23 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "HEALTH_POINTS": 24217.0,
-        "ARMOR_VALUE": 1068.0,
-        "BLOCK_VALUE": 1936.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
       },
       "set": "TREASURES_OF_THE_DEEP"
     },
     "DRAGON_SHACKLES": {
       "itemType": "DRAGON_SHACKLES",
-      "name": "Dragon Shackles (WIP)",
+      "name": "Dragon Shackles",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "MOVEMENT_SPEED": 0.386,
-        "CRIT_VALUE": 1034.0,
-        "ARMOR_VALUE": 612.0
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.00872,
+        "CRIT_VALUE": 1.571,
+        "ARMOR_VALUE": 0.998
       },
       "set": "DRAGONSILVER"
     },
@@ -84,10 +84,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -97,10 +97,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "FIRE_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "FIRE_RESISTANCE": 3.915
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -110,10 +110,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "LIGHTNING_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "LIGHTNING_RESISTANCE": 3.915
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -123,10 +123,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "POISON_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "POISON_RESISTANCE": 3.915
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -136,10 +136,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "ICE_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "ICE_RESISTANCE": 3.915
       },
       "set": "KRANPARUS_TREASURES"
     },
@@ -149,10 +149,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "CRIT_VALUE": 1709.0,
-        "HEALTH_POINTS": 24217.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "set": "MECHANICAL_TOOLS"
     },
@@ -162,10 +162,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1753.505,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "AT_DEATHS_DOORSTEP"
     },
@@ -175,10 +175,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "set": "EXECUTOR_OF_THE_GREAT_PLAGUES"
     },
@@ -188,10 +188,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "AMULET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 0.489,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 3.111
       },
       "set": "CHILLINGLY_COLD"
     },
@@ -201,36 +201,36 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "ATTACK_SPEED": 0.06,
-        "MOVEMENT_SPEED": 0.732,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00095,
+        "MOVEMENT_SPEED": 0.01307,
+        "CRIT_VALUE": 1.885
       },
       "set": "DARK_FATE"
     },
     "DESERT_TOMB_CLOAK": {
       "itemType": "DESERT_TOMB_CLOAK",
-      "name": "Cloak of the Desert Tomb (WIP)",
+      "name": "Cloak of the Desert Tomb",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "HEALTH_POINTS": 14386.0,
-        "ARMOR_VALUE": 766.0,
-        "BLOCK_VALUE": 1406.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 1.248,
+        "BLOCK_VALUE": 2.136
       },
       "set": "TREASURES_OF_THE_DESERT_TOMB"
     },
     "DRACO_CLOAK": {
       "itemType": "DRACO_CLOAK",
-      "name": "",
+      "name": "Draco's Cape",
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.06,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
       },
       "set": "RED_DRACO_SET"
     },
@@ -240,10 +240,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.06,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
       },
       "set": "BLACK_WARLORD_REGALIA"
     },
@@ -253,10 +253,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "ARMOR_VALUE": 1373.0,
-        "RESISTANCE_VALUE": 1452.0,
-        "BLOCK_VALUE": 2384.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.248,
+        "RESISTANCE_VALUE": 1.37,
+        "BLOCK_VALUE": 2.136
       },
       "set": "DRAGANS_PROTECTIVE_ARMOR"
     },
@@ -266,10 +266,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "ATTACK_SPEED": 0.06,
-        "MOVEMENT_SPEED": 0.732,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00095,
+        "MOVEMENT_SPEED": 0.01307,
+        "CRIT_VALUE": 1.885
       },
       "set": "CALAMITY_OF_THE_TWIN_QUEENS"
     },
@@ -279,10 +279,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 2104.0,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885,
+        "HEALTH_POINTS": 2.074
       },
       "set": "BIG_PAWS_FROSTY_GREED"
     },
@@ -292,10 +292,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.06,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
       },
       "set": "THE_LEGENDARY_KINGS_ARMOR"
     },
@@ -305,23 +305,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "MOVEMENT_SPEED": 0.489,
-        "ARMOR_VALUE": 1373.0,
-        "BLOCK_VALUE": 2384.0
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.00872,
+        "ARMOR_VALUE": 1.248,
+        "BLOCK_VALUE": 2.136
       },
       "set": "CALAMITY_OF_THE_TWIN_QUEENS"
     },
     "MIGHTY_WRATHFUL_SEEKER_CLOAK": {
       "itemType": "MIGHTY_WRATHFUL_SEEKER_CLOAK",
-      "name": "",
+      "name": "Mighty Wrathful Seeker's Cape",
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "ATTACK_SPEED": 0.059,
-        "HEALTH_POINTS": 16145.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
       },
       "set": "MIGHTY_VISIONARY_SEEKER"
     },
@@ -331,23 +331,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.06,
-        "MOVEMENT_SPEED": 0.732
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "MOVEMENT_SPEED": 0.01307
       },
       "set": "SHADOW_REIGN"
     },
     "STELLAR_WALKER_CLOAK": {
       "itemType": "STELLAR_WALKER_CLOAK",
-      "name": "",
+      "name": "Stellar Walker's Cape",
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "ATTACK_SPEED": 0.059,
-        "HEALTH_POINTS": 16145.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
       },
       "set": "STELLAR_WALKER"
     },
@@ -357,23 +357,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.06,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
       },
       "set": "END_OF_THE_EMPIRE"
     },
     "WRATHFUL_SEEKER_CLOAK": {
       "itemType": "WRATHFUL_SEEKER_CLOAK",
-      "name": "",
+      "name": "Wrathful Seeker's Cape",
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "ATTACK_SPEED": 0.059,
-        "HEALTH_POINTS": 16145.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
       },
       "set": "VISIONARY_SEEKER"
     },
@@ -383,10 +383,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1742.805
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.37
       },
       "set": "BOND_OF_THE_ALLIANCE"
     },
@@ -396,10 +396,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1742.805
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.37
       },
       "set": "AUTOMATED_UNIT"
     },
@@ -409,10 +409,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1742.805
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.37
       },
       "set": "RUNES_OF_REGAINED_HEALTH"
     },
@@ -422,10 +422,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "FIRE_RESISTANCE": 6225.969,
-        "LIGHTNING_RESISTANCE": 6225.969
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "FIRE_RESISTANCE": 4.894,
+        "LIGHTNING_RESISTANCE": 4.894
       },
       "set": "DARK_FATE"
     },
@@ -435,10 +435,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1742.805
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.37
       },
       "set": "RED_DRACO_SET"
     },
@@ -448,10 +448,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "ARMOR_VALUE": 1648.043
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 1.248
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -461,10 +461,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "FIRE_RESISTANCE": 6225.969
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "FIRE_RESISTANCE": 4.894
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -474,10 +474,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "LIGHTNING_RESISTANCE": 6225.969
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "LIGHTNING_RESISTANCE": 4.894
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -487,10 +487,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "POISON_RESISTANCE": 6225.969
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "POISON_RESISTANCE": 4.894
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -500,10 +500,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1742.805
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.37
       },
       "set": "SUMMER_SOUVENIR_KINGSHILL"
     },
@@ -513,10 +513,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "HEALTH_POINTS": 24217.0,
-        "RESISTANCE_VALUE": 1697.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.37
       },
       "set": "MECHANICAL_TOOLS"
     },
@@ -526,10 +526,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "RESISTANCE_VALUE": 1742.805
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.37
       },
       "set": "WITCH_SEEKER_GEAR"
     },
@@ -539,10 +539,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BELT",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 24760.80,
-        "BLOCK_VALUE": 2384.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "BLOCK_VALUE": 2.136
       },
       "set": "WORLD_DROP_SET"
     },
@@ -552,36 +552,36 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "CRIT_VALUE": 1709.0,
-        "HEALTH_POINTS": 24217.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "set": "BOND_OF_THE_ALLIANCE"
     },
     "BLOOD_RUNE_RING": {
       "itemType": "BLOOD_RUNE_RING",
-      "name": "",
+      "name": "Blood Rune Ring",
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "MOVEMENT_SPEED": 0.732,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "MOVEMENT_SPEED": 0.01307,
+        "HEALTH_POINTS": 3.111
       },
       "set": "RUNES_OF_REGAINED_HEALTH"
     },
     "BLOODTOOTH": {
       "itemType": "BLOODTOOTH",
-      "name": "Bloodtooth (WIP)",
+      "name": "Bloodtooth",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 974.0,
-        "CRIT_VALUE": 1034.0,
-        "HEALTH_POINTS": 14386.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "set": "DRAGONSILVER"
     },
@@ -591,10 +591,10 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "CRIT_VALUE": 1034.0,
-        "HEALTH_POINTS": 14386.0,
-        "BLOCK_VALUE": 1172.0
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111,
+        "BLOCK_VALUE": 1.78
       },
       "set": "CUBE_SET"
     },
@@ -604,10 +604,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "ICE_RESISTANCE": 4150.0,
-        "POISON_RESISTANCE": 4150.0,
-        "BLOCK_VALUE": 1987.0
+      "rawBaseValues": {
+        "ICE_RESISTANCE": 3.915,
+        "POISON_RESISTANCE": 3.915,
+        "BLOCK_VALUE": 1.78
       },
       "set": "DARK_FATE"
     },
@@ -617,10 +617,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "HEALTH_POINTS": 24760.80,
-        "ARMOR_VALUE": 1098.0,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "DARK_FATE"
     },
@@ -630,35 +630,35 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "HEALTH_POINTS": 24217.0,
-        "ARMOR_VALUE": 1068.0,
-        "BLOCK_VALUE": 1936.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
       },
       "set": "TREASURES_OF_THE_DEEP"
     },
     "INFERNAL_POWER": {
       "itemType": "INFERNAL_POWER",
-      "name": "",
+      "name": "Infernal Power",
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "set": "HUNTING_POWER"
     },
     "LUMINOUS_EMBRACE": {
       "itemType": "LUMINOUS_EMBRACE",
-      "name": "",
+      "name": "Luminous Embrace",
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "HEALTH_POINTS": 49521.60,
-        "BLOCK_VALUE": 1987.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.222,
+        "BLOCK_VALUE": 1.78
       },
       "set": "HUNTING_POWER"
     },
@@ -668,10 +668,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "CRIT_VALUE": 1709.0,
-        "HEALTH_POINTS": 24217.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "set": "MECHANICAL_TOOLS"
     },
@@ -681,10 +681,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "set": "JOY_OF_SPRING"
     },
@@ -694,23 +694,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "MOVEMENT_SPEED": 0.732,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.01307,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "set": "JOY_OF_SPRING"
     },
     "TEAR_HOLDER": {
       "itemType": "TEAR_HOLDER",
-      "name": "Tear Holde (WIP)",
+      "name": "Tear Holde",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 974.0,
-        "ATTACK_SPEED": 0.043,
-        "ARMOR_VALUE": 612.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "ARMOR_VALUE": 0.998
       },
       "set": "DRAGONSILVER"
     },
@@ -720,23 +720,23 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "HEALTH_POINTS": 11991.0,
-        "ARMOR_VALUE": 612.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998
       },
       "set": "AMMONS_GLEAM"
     },
     "ANTIQUE_ATLANTIS_HELMET": {
       "itemType": "ANTIQUE_ATLANTIS_HELMET",
-      "name": "Antique Atlantis Helmet (WIP)",
+      "name": "Antique Atlantis Helmet",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "CRIT_VALUE": 827.0,
-        "HEALTH_POINTS": 11991.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "ANITQUE_ATLANTIS_ARMOR"
     },
@@ -746,10 +746,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1401.911,
-        "HEALTH_POINTS": 20637.978
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "AUTOMATED_UNIT"
     },
@@ -759,10 +759,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "CRIT_VALUE": 1366.0,
-        "HEALTH_POINTS": 20185.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "BLAZING_COVER"
     },
@@ -772,10 +772,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1401.911,
-        "HEALTH_POINTS": 20637.978
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "DARK_CORRUPTION"
     },
@@ -785,23 +785,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "HEALTH_POINTS": 20185.0,
-        "ARMOR_VALUE": 1068.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998
       },
       "set": "BLACK_ESSENCE_ARMAMENT"
     },
     "DAEDAL_QUAIZAH_HELMET": {
       "itemType": "DAEDAL_QUAIZAH_HELMET",
-      "name": "Daedal Quaizah Helmet (TODO)",
-      "defaultLevel": 0,
+      "name": "Daedal Quaizah Helmet",
+      "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 0.0,
-        "CRIT_VALUE": 0.0,
-        "HEALTH_POINTS": 0.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "DAEDAL_QUAIZAH_ARMOR"
     },
@@ -811,23 +811,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ARMOR_VALUE": 1098.0,
-        "ANDERMAGIC_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ARMOR_VALUE": 0.998,
+        "ANDERMAGIC_RESISTANCE": 3.915
       },
       "set": "DARK_EXILE"
     },
     "DEEP_SANDS_HELMET": {
       "itemType": "DEEP_SANDS_HELMET",
-      "name": "Helmet of the Deep Sands (WIP)",
+      "name": "Helmet of the Deep Sands",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "HEALTH_POINTS": 11991.0,
-        "BLOCK_VALUE": 937.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.593,
+        "BLOCK_VALUE": 1.424
       },
       "set": "CONQUEROR_OF_THE_DEEPS"
     },
@@ -837,10 +837,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1401.911,
-        "HEALTH_POINTS": 20637.978
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "RED_DRACO_SET"
     },
@@ -850,10 +850,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1401.911,
-        "HEALTH_POINTS": 20637.978
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "BLACK_WARLORD_REGALIA"
     },
@@ -863,23 +863,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 0.489,
-        "HEALTH_POINTS": 20637.978
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 2.593
       },
       "set": "DRAGANS_RAGEFUL_ARMOR"
     },
     "HELMET_OF_DARKNESS": {
       "itemType": "HELMET_OF_DARKNESS",
-      "name": "Helmet Of Darkness (WIP)",
+      "name": "Helmet Of Darkness",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "CRIT_VALUE": 827.0,
-        "HEALTH_POINTS": 11991.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "ARMOR_OF_DARKNESS"
     },
@@ -889,10 +889,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 20637.978,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998
       },
       "set": "THE_LEGENDARY_KINGS_ARMOR"
     },
@@ -902,10 +902,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "HEALTH_POINTS": 20185.0,
-        "ARMOR_VALUE": 1068.0,
-        "FIRE_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998,
+        "FIRE_RESISTANCE": 3.915
       },
       "set": "MIGHTY_VISIONARY_SEEKER"
     },
@@ -915,10 +915,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1401.911,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "AT_DEATHS_DOORSTEP"
     },
@@ -928,23 +928,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "MOVEMENT_SPEED": 0.489,
-        "HEALTH_POINTS": 20637.978,
-        "POISON_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 2.593,
+        "POISON_RESISTANCE": 3.915
       },
       "set": "POISON_EXTINGUISHER"
     },
     "ROBUST_NORSELAND_HELMET": {
       "itemType": "ROBUST_NORSELAND_HELMET",
-      "name": "Robust Norseland Helmet (WIP)",
+      "name": "Robust Norseland Helmet",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "CRIT_VALUE": 827.0,
-        "HEALTH_POINTS": 11991.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "ROBUST_NORSELAND_ARMOR"
     },
@@ -954,10 +954,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1401.911,
-        "HEALTH_POINTS": 20637.978
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "SARGONS_IMMORTAL_TERROR_ARMOR"
     },
@@ -967,23 +967,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 20637.978,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998
       },
       "set": "SHADOW_REIGN"
     },
     "SPLENDID_DURIAN_HELMET": {
       "itemType": "SPLENDID_DURIAN_HELMET",
-      "name": "Splendid Durian Helmet (WIP)",
+      "name": "Splendid Durian Helmet",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "CRIT_VALUE": 827.0,
-        "HEALTH_POINTS": 11991.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "SPLENDID_DURIAN_ARMOR"
     },
@@ -993,23 +993,23 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "CRIT_VALUE": 1366.0,
-        "HEALTH_POINTS": 20185.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "STELLAR_WALKER"
     },
     "TAYAZ_HELMET": {
       "itemType": "TAYAZ_HELMET",
-      "name": "Tayaz Sacred Mask (WIP)",
+      "name": "Tayaz Sacred Mask",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "CRIT_VALUE": 827.0,
-        "HEALTH_POINTS": 11991.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "SUN_AUSPICES"
     },
@@ -1019,23 +1019,23 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "HEALTH_POINTS": 20185.0,
-        "ARMOR_VALUE": 1068.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998
       },
       "set": "TEMPLE_GUARDIAN_FEDERATION"
     },
     "TEMPERED_MYRDOSCH_HELMET": {
       "itemType": "TEMPERED_MYRDOSCH_HELMET",
-      "name": "Tempered Myrdosch Helmet (WIP)",
+      "name": "Tempered Myrdosch Helmet",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "CRIT_VALUE": 827.0,
-        "HEALTH_POINTS": 11991.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "TEMPERED_MYRDOSCH_ARMOR"
     },
@@ -1045,10 +1045,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ARMOR_VALUE": 1098.0,
-        "BLOCK_VALUE": 1589.428
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.424
       },
       "set": "THE_UNTOUCHABLES"
     },
@@ -1058,10 +1058,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1401.911,
-        "HEALTH_POINTS": 20637.978
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
       },
       "set": "END_OF_THE_EMPIRE"
     },
@@ -1071,10 +1071,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "CRIT_VALUE": 1401.911,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "WITCH_SEEKER_GEAR"
     },
@@ -1084,10 +1084,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "CRIT_VALUE": 1401.911,
-        "HEALTH_POINTS": 20637.978,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998
       },
       "set": "MIGHT_OF_THE_WOLF_SLAYER"
     },
@@ -1097,10 +1097,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "HELMET",
-      "baseValues": {
-        "HEALTH_POINTS": 20185.0,
-        "ARMOR_VALUE": 1068.0,
-        "FIRE_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998,
+        "FIRE_RESISTANCE": 3.915
       },
       "set": "VISIONARY_SEEKER"
     },
@@ -1110,23 +1110,23 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 9591.0,
-        "ARMOR_VALUE": 612.0,
-        "RESISTANCE_VALUE": 660.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "AMMONS_GLEAM"
     },
     "ANIQUE_ATLANTIS_SHOULDERS": {
       "itemType": "ANIQUE_ATLANTIS_SHOULDERS",
-      "name": "Anique Atlantis Pauldrons (WIP)",
+      "name": "Anique Atlantis Pauldrons",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "ARMOR_VALUE": 612.0,
-        "RESISTANCE_VALUE": 660.0,
-        "BLOCK_VALUE": 937.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.424
       },
       "set": "ANITQUE_ATLANTIS_ARMOR"
     },
@@ -1136,10 +1136,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1098.0,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "AUTOMATED_UNIT"
     },
@@ -1149,9 +1149,9 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "HEALTH_POINTS": 32284.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 4.148
       },
       "set": "BLAZING_COVER"
     },
@@ -1161,10 +1161,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1098.0,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "DARK_CORRUPTION"
     },
@@ -1174,23 +1174,23 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 16145.0,
-        "ARMOR_VALUE": 1068.0,
-        "RESISTANCE_VALUE": 1131.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "BLACK_ESSENCE_ARMAMENT"
     },
     "DAEDAL_QUAIZAH_SHOULDERS": {
       "itemType": "DAEDAL_QUAIZAH_SHOULDERS",
-      "name": "Daedal Quaizah Shoulders (WIP)",
-      "defaultLevel": 0,
+      "name": "Daedal Quaizah Shoulders",
+      "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 0.0,
-        "CRIT_VALUE": 0.0,
-        "HEALTH_POINTS": 0.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.074
       },
       "set": "DAEDAL_QUAIZAH_ARMOR"
     },
@@ -1200,23 +1200,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1098.0,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "DARK_EXILE"
     },
     "DEEP_SANDS_SHOULDERS": {
       "itemType": "DEEP_SANDS_SHOULDERS",
-      "name": "Pauldrons of the Deep Sands (WIP)",
+      "name": "Pauldrons of the Deep Sands",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 9591.0,
-        "RESISTANCE_VALUE": 660.0,
-        "BLOCK_VALUE": 937.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.424
       },
       "set": "CONQUEROR_OF_THE_DEEPS"
     },
@@ -1226,10 +1226,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 16507.200,
-        "RESISTANCE_VALUE": 1162.0,
-        "BLOCK_VALUE": 1589.428
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.424
       },
       "set": "DRAGANS_PROTECTIVE_ARMOR"
     },
@@ -1239,9 +1239,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "HEALTH_POINTS": 33014.398
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 4.148
       },
       "set": "BLACK_WARLORD_REGALIA"
     },
@@ -1251,10 +1251,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1098.0,
-        "RESISTANCE_VALUE": 1162.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "THE_LEGENDARY_KINGS_ARMOR"
     },
@@ -1264,10 +1264,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 16145.0,
-        "ICE_RESISTANCE": 4041.0,
-        "BLOCK_VALUE": 1549.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ICE_RESISTANCE": 3.915,
+        "BLOCK_VALUE": 1.424
       },
       "set": "MIGHTY_VISIONARY_SEEKER"
     },
@@ -1277,23 +1277,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "CRIT_VALUE": 1401.911,
-        "ARMOR_VALUE": 1098.0,
-        "POISON_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.256,
+        "ARMOR_VALUE": 0.998,
+        "POISON_RESISTANCE": 3.915
       },
       "set": "POISON_BUSTER"
     },
     "ROBUST_NORSELAND_SHOULDERS": {
       "itemType": "ROBUST_NORSELAND_SHOULDERS",
-      "name": "Robust Norseland Pauldrons (WIP)",
+      "name": "Robust Norseland Pauldrons",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "ARMOR_VALUE": 612.0,
-        "RESISTANCE_VALUE": 660.0,
-        "BLOCK_VALUE": 937.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.424
       },
       "set": "ROBUST_NORSELAND_ARMOR"
     },
@@ -1303,10 +1303,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1401.911,
-        "ANDERMAGIC_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.256,
+        "ANDERMAGIC_RESISTANCE": 3.915
       },
       "set": "SARGONS_IMMORTAL_TERROR_ARMOR"
     },
@@ -1316,36 +1316,36 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "HEALTH_POINTS": 16507.200,
-        "BLOCK_VALUE": 1589.428
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 2.074,
+        "BLOCK_VALUE": 1.424
       },
       "set": "SHADOW_REIGN"
     },
     "SHOULDERS_OF_DARKNESS": {
       "itemType": "SHOULDERS_OF_DARKNESS",
-      "name": "Shoulders Of Darkness (WIP)",
+      "name": "Shoulders Of Darkness",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 974.0,
-        "CRIT_VALUE": 827.0,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.074
       },
       "set": "ARMOR_OF_DARKNESS"
     },
     "SPLENDID_DURIAN_SHOULDERS": {
       "itemType": "SPLENDID_DURIAN_SHOULDERS",
-      "name": "Splendid Durian Pauldrons (WIP)",
+      "name": "Splendid Durian Pauldrons",
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "ARMOR_VALUE": 612.0,
-        "RESISTANCE_VALUE": 660.0,
-        "BLOCK_VALUE": 937.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.424
       },
       "set": "SPLENDID_DURIAN_ARMOR"
     },
@@ -1355,23 +1355,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "CRIT_VALUE": 1366.0,
-        "HEALTH_POINTS": 16145.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.074
       },
       "set": "STELLAR_WALKER"
     },
     "TAYAZ_SHOULDERS": {
       "itemType": "TAYAZ_SHOULDERS",
-      "name": "Tayaz Sacred Pauldrons (WIP)",
+      "name": "Tayaz Sacred Pauldrons",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "ARMOR_VALUE": 612.0,
-        "RESISTANCE_VALUE": 660.0,
-        "BLOCK_VALUE": 937.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.424
       },
       "set": "SUN_AUSPICES"
     },
@@ -1381,36 +1381,36 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "ARMOR_VALUE": 1068.0,
-        "RESISTANCE_VALUE": 1131.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
       },
       "set": "TEMPLE_GUARDIAN_FEDERATION"
     },
     "TEMPERED_MYRDOSCH_SHOULDERS": {
       "itemType": "TEMPERED_MYRDOSCH_SHOULDERS",
-      "name": "Tempered Myrdosch Pauldrons (WIP)",
+      "name": "Tempered Myrdosch Pauldrons",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "ARMOR_VALUE": 612.0,
-        "RESISTANCE_VALUE": 660.0,
-        "BLOCK_VALUE": 937.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.424
       },
       "set": "TEMPERED_MYRDOSCH_ARMOR"
     },
     "UNTOUCHABLE_SHOULDERS": {
       "itemType": "UNTOUCHABLE_SHOULDERS",
-      "name": "Shourd of the Untouchables",
+      "name": "Shroud of the Untouchables",
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998
       },
       "set": "THE_UNTOUCHABLES"
     },
@@ -1420,9 +1420,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "HEALTH_POINTS": 33014.398
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 4.148
       },
       "set": "END_OF_THE_EMPIRE"
     },
@@ -1432,10 +1432,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998
       },
       "set": "WITCH_SEEKER_GEAR"
     },
@@ -1445,10 +1445,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "SHOULDERS",
-      "baseValues": {
-        "HEALTH_POINTS": 16145.0,
-        "ICE_RESISTANCE": 4041.0,
-        "BLOCK_VALUE": 1549.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ICE_RESISTANCE": 3.915,
+        "BLOCK_VALUE": 1.424
       },
       "set": "VISIONARY_SEEKER"
     },
@@ -1458,23 +1458,23 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "HEALTH_POINTS": 9591.0,
-        "ARMOR_VALUE": 919.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "set": "AMMONS_GLEAM"
     },
     "ANIQUE_ATLANTIS_TORSO": {
       "itemType": "ANIQUE_ATLANTIS_TORSO",
-      "name": "Antique Atlantis Breastplate (WIP)",
+      "name": "Antique Atlantis Breastplate",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "HEALTH_POINTS": 9591.0,
-        "ARMOR_VALUE": 919.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "set": "ANITQUE_ATLANTIS_ARMOR"
     },
@@ -1484,10 +1484,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1648.043
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.248
       },
       "set": "AUTOMATED_UNIT"
     },
@@ -1497,10 +1497,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "ARMOR_VALUE": 1603.0,
-        "ANDERMAGIC_RESISTANCE": 6062.0,
-        "BLOCK_VALUE": 1549.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873,
+        "BLOCK_VALUE": 1.424
       },
       "set": "ENRAGED_EMPEROR"
     },
@@ -1510,10 +1510,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1648.043
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.248
       },
       "set": "DARK_CORRUPTION"
     },
@@ -1523,23 +1523,23 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "HEALTH_POINTS": 16145.0,
-        "ARMOR_VALUE": 1603.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "set": "BLACK_ESSENCE_ARMAMENT"
     },
     "DAEDAL_QUAIZAH_TORSO": {
       "itemType": "DAEDAL_QUAIZAH_TORSO",
-      "name": "Daedal Quaizah Torso (WIP)",
-      "defaultLevel": 0,
+      "name": "Daedal Quaizah Torso",
+      "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "ARMOR_VALUE": 0.0,
-        "ANDERMAGIC_RESISTANCE": 0.0,
-        "BLOCK_VALUE": 0.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873,
+        "BLOCK_VALUE": 1.424
       },
       "set": "DAEDAL_QUAIZAH_ARMOR"
     },
@@ -1549,23 +1549,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "CRIT_VALUE": 1401.911,
-        "ARMOR_VALUE": 1648.043,
-        "BLOCK_VALUE": 1589.428
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.256,
+        "ARMOR_VALUE": 1.248,
+        "BLOCK_VALUE": 1.424
       },
       "set": "DARK_EXILE"
     },
     "DEEP_SANDS_TORSO": {
       "itemType": "DEEP_SANDS_TORSO",
-      "name": "Armor of the Deep Sands (WIP)",
+      "name": "Armor of the Deep Sands",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "HEALTH_POINTS": 9591.0,
-        "ARMOR_VALUE": 919.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "set": "CONQUEROR_OF_THE_DEEPS"
     },
@@ -1575,10 +1575,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ARMOR_VALUE": 1648.043,
-        "BLOCK_VALUE": 1589.428
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ARMOR_VALUE": 1.248,
+        "BLOCK_VALUE": 1.424
       },
       "set": "DRAGANS_PROTECTIVE_ARMOR"
     },
@@ -1588,10 +1588,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1648.043
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.248
       },
       "set": "THE_LEGENDARY_KINGS_ARMOR"
     },
@@ -1601,10 +1601,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "ARMOR_VALUE": 1603.0,
-        "ANDERMAGIC_RESISTANCE": 6062.0,
-        "BLOCK_VALUE": 1549.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873,
+        "BLOCK_VALUE": 1.424
       },
       "set": "MIGHTY_VISIONARY_SEEKER"
     },
@@ -1614,23 +1614,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "CRIT_VALUE": 1401.911,
-        "ARMOR_VALUE": 1648.043,
-        "POISON_RESISTANCE": 6225.969
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.256,
+        "ARMOR_VALUE": 1.248,
+        "POISON_RESISTANCE": 4.894
       },
       "set": "POISON_BUSTER"
     },
     "ROBUST_NORSELAND_TORSO": {
       "itemType": "ROBUST_NORSELAND_TORSO",
-      "name": "Robust Norseland Harness (WIP)",
+      "name": "Robust Norseland Harness",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "HEALTH_POINTS": 9591.0,
-        "ARMOR_VALUE": 919.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "set": "ROBUST_NORSELAND_ARMOR"
     },
@@ -1640,10 +1640,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1648.043
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.248
       },
       "set": "SARGONS_IMMORTAL_TERROR_ARMOR"
     },
@@ -1653,23 +1653,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ARMOR_VALUE": 1648.043,
-        "RESISTANCE_VALUE": 1742.805
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ARMOR_VALUE": 1.248,
+        "RESISTANCE_VALUE": 1.37
       },
       "set": "SHADOW_REIGN"
     },
     "SPLENDID_DURIAN_TORSO": {
       "itemType": "SPLENDID_DURIAN_TORSO",
-      "name": "Splendid Durian Chestplate (WIP)",
+      "name": "Splendid Durian Chestplate",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "HEALTH_POINTS": 9591.0,
-        "ARMOR_VALUE": 919.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "set": "SPLENDID_DURIAN_ARMOR"
     },
@@ -1679,23 +1679,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "ARMOR_VALUE": 1603.0,
-        "RESISTANCE_VALUE": 1697.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ARMOR_VALUE": 1.498,
+        "RESISTANCE_VALUE": 1.37
       },
       "set": "STELLAR_WALKER"
     },
     "TAYAZ_TORSO": {
       "itemType": "TAYAZ_TORSO",
-      "name": "Tayaz Sacred Breast Plate (WIP)",
+      "name": "Tayaz Sacred Breast Plate",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "HEALTH_POINTS": 9591.0,
-        "ARMOR_VALUE": 919.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "set": "SUN_AUSPICES"
     },
@@ -1705,10 +1705,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "ARMOR_VALUE": 1603.0,
-        "ANDERMAGIC_RESISTANCE": 6062.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873
       },
       "set": "TEMPLE_GUARDIAN_FEDERATION"
     },
@@ -1718,10 +1718,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "ARMOR_VALUE": 1603.0,
-        "ICE_RESISTANCE": 6062.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ARMOR_VALUE": 1.498,
+        "ICE_RESISTANCE": 5.873
       },
       "set": "TEMPLE_GUARDIAN_FEDERATION"
     },
@@ -1731,10 +1731,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "HEALTH_POINTS": 16145.0,
-        "ARMOR_VALUE": 1603.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "set": "TEMPLE_GUARDIAN_FEDERATION"
     },
@@ -1744,10 +1744,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "ARMOR_VALUE": 1603.0,
-        "ICE_RESISTANCE": 6062.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ARMOR_VALUE": 1.498,
+        "ICE_RESISTANCE": 5.873
       },
       "set": "TEMPLE_GUARDIAN_FEDERATION"
     },
@@ -1757,36 +1757,36 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "ARMOR_VALUE": 1603.0,
-        "POISON_RESISTANCE": 6062.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ARMOR_VALUE": 1.498,
+        "POISON_RESISTANCE": 5.873
       },
       "set": "TEMPLE_GUARDIAN_FEDERATION"
     },
     "TEMPERED_MYRDOSCH_TORSO": {
       "itemType": "TEMPERED_MYRDOSCH_TORSO",
-      "name": "Tempered Myrdosch Breastplate (WIP)",
+      "name": "Tempered Myrdosch Breastplate",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "HEALTH_POINTS": 9591.0,
-        "ARMOR_VALUE": 919.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
       },
       "set": "TEMPERED_MYRDOSCH_ARMOR"
     },
     "TORSO_OF_DARKNESS": {
       "itemType": "TORSO_OF_DARKNESS",
-      "name": "Heart of Darkness (WIP)",
+      "name": "Heart of Darkness",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "CRIT_VALUE": 827.0,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.074
       },
       "set": "ARMOR_OF_DARKNESS"
     },
@@ -1796,10 +1796,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ARMOR_VALUE": 1648.043,
-        "RESISTANCE_VALUE": 1742.805
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ARMOR_VALUE": 1.248,
+        "RESISTANCE_VALUE": 1.37
       },
       "set": "THE_UNTOUCHABLES"
     },
@@ -1809,10 +1809,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "ARMOR_VALUE": 1648.043,
-        "ANDERMAGIC_RESISTANCE": 6225.969,
-        "BLOCK_VALUE": 1589.428
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.248,
+        "ANDERMAGIC_RESISTANCE": 4.894,
+        "BLOCK_VALUE": 1.424
       },
       "set": "CHILLINGLY_COLD"
     },
@@ -1822,10 +1822,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1648.043
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.248
       },
       "set": "WITCH_SEEKER_GEAR"
     },
@@ -1835,10 +1835,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "TORSO",
-      "baseValues": {
-        "ARMOR_VALUE": 1603.0,
-        "ANDERMAGIC_RESISTANCE": 6062.0,
-        "BLOCK_VALUE": 1549.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873,
+        "BLOCK_VALUE": 1.424
       },
       "set": "VISIONARY_SEEKER"
     },
@@ -1848,23 +1848,23 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "HEALTH_POINTS": 9591.0,
-        "ARMOR_VALUE": 612.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998
       },
       "set": "AMMONS_GLEAM"
     },
     "ANIQUE_ATLANTIS_GLOVES": {
       "itemType": "ANIQUE_ATLANTIS_GLOVES",
-      "name": "Antique Atlantis Gauntles (WIP)",
+      "name": "Antique Atlantis Gauntles",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "ATTACK_SPEED": 0.039,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "HEALTH_POINTS": 2.074
       },
       "set": "ANITQUE_ATLANTIS_ARMOR"
     },
@@ -1874,10 +1874,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ATTACK_SPEED": 0.055,
-        "CRIT_VALUE": 1753.505
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
       },
       "set": "AUTOMATED_UNIT"
     },
@@ -1887,10 +1887,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "ATTACK_SPEED": 0.054,
-        "CRIT_VALUE": 1709.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
       },
       "set": "ENRAGED_EMPEROR"
     },
@@ -1900,23 +1900,23 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "ATTACK_SPEED": 0.054,
-        "ARMOR_VALUE": 1068.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "ARMOR_VALUE": 0.998
       },
       "set": "BLACK_ESSENCE_ARMAMENT"
     },
     "DAEDAL_QUAIZAH_GLOVES": {
       "itemType": "DAEDAL_QUAIZAH_GLOVES",
-      "name": "Daedal Quaizah Gloves (WIP)",
-      "defaultLevel": 0,
+      "name": "Daedal Quaizah Gloves",
+      "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 0.0,
-        "ATTACK_SPEED": 0.0,
-        "CRIT_VALUE": 0.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
       },
       "set": "DAEDAL_QUAIZAH_ARMOR"
     },
@@ -1926,23 +1926,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ATTACK_SPEED": 0.055,
-        "CRIT_VALUE": 1753.505
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
       },
       "set": "DARK_FATE"
     },
     "DEEP_SANDS_GLOVES": {
       "itemType": "DEEP_SANDS_GLOVES",
-      "name": "Gauntlets of the Deep Sands (WIP)",
+      "name": "Gauntlets of the Deep Sands",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "ATTACK_SPEED": 0.039,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "HEALTH_POINTS": 2.074
       },
       "set": "CONQUEROR_OF_THE_DEEPS"
     },
@@ -1952,23 +1952,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ATTACK_SPEED": 0.055,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "HEALTH_POINTS": 2.074
       },
       "set": "DRAGANS_RAGEFUL_ARMOR"
     },
     "GLOVES_OF_DARKNESS": {
       "itemType": "GLOVES_OF_DARKNESS",
-      "name": "Grip of Darkness (WIP)",
+      "name": "Grip of Darkness",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "ATTACK_SPEED": 0.039,
-        "CRIT_VALUE": 1034.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
       },
       "set": "ARMOR_OF_DARKNESS"
     },
@@ -1978,10 +1978,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ATTACK_SPEED": 0.055,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "HEALTH_POINTS": 2.074
       },
       "set": "THE_LEGENDARY_KINGS_ARMOR"
     },
@@ -1991,10 +1991,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "ATTACK_SPEED": 0.054,
-        "CRIT_VALUE": 1709.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
       },
       "set": "MIGHTY_VISIONARY_SEEKER"
     },
@@ -2004,23 +2004,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "ATTACK_SPEED": 0.055,
-        "MOVEMENT_SPEED": 0.489,
-        "POISON_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "MOVEMENT_SPEED": 0.00872,
+        "POISON_RESISTANCE": 3.915
       },
       "set": "POISON_EXTINGUISHER"
     },
     "ROBUST_NORSELAND_GLOVES": {
       "itemType": "ROBUST_NORSELAND_GLOVES",
-      "name": "Robust Norseland Gloves (WIP)",
+      "name": "Robust Norseland Gloves",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "ATTACK_SPEED": 0.039,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "HEALTH_POINTS": 2.074
       },
       "set": "ROBUST_NORSELAND_ARMOR"
     },
@@ -2030,23 +2030,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "ATTACK_SPEED": 0.055,
-        "RESISTANCE_VALUE": 1162.0,
-        "BLOCK_VALUE": 1987.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.78
       },
       "set": "SHADOW_REIGN"
     },
     "SPLENDID_DURIAN_GLOVES": {
       "itemType": "SPLENDID_DURIAN_GLOVES",
-      "name": "Splendid Durian Gloves (WIP)",
+      "name": "Splendid Durian Gloves",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "ATTACK_SPEED": 0.039,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "HEALTH_POINTS": 2.074
       },
       "set": "SPLENDID_DURIAN_ARMOR"
     },
@@ -2056,23 +2056,23 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "ATTACK_SPEED": 0.054,
-        "CRIT_VALUE": 1709.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
       },
       "set": "STELLAR_WALKER"
     },
     "TAYAZ_GLOVES": {
       "itemType": "TAYAZ_GLOVES",
-      "name": "Tayaz Sacred Bracers (WIP)",
+      "name": "Tayaz Sacred Bracers",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "MOVEMENT_SPEED": 0.386,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 2.074
       },
       "set": "SUN_AUSPICES"
     },
@@ -2082,23 +2082,23 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "ATTACK_SPEED": 0.054,
-        "HEALTH_POINTS": 16145.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "HEALTH_POINTS": 2.074
       },
       "set": "TEMPLE_GUARDIAN_FEDERATION"
     },
     "TEMPERED_MYRDOSCH_GLOVES": {
       "itemType": "TEMPERED_MYRDOSCH_GLOVES",
-      "name": "Tempered Myrdosch Gloves (WIP)",
+      "name": "Tempered Myrdosch Gloves",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "ATTACK_SPEED": 0.039,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "HEALTH_POINTS": 2.074
       },
       "set": "TEMPERED_MYRDOSCH_ARMOR"
     },
@@ -2108,10 +2108,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ATTACK_SPEED": 0.055,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "HEALTH_POINTS": 2.074
       },
       "set": "THE_UNTOUCHABLES"
     },
@@ -2121,10 +2121,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "ATTACK_SPEED": 0.055,
-        "CRIT_VALUE": 1753.505
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
       },
       "set": "CHILLINGLY_COLD"
     },
@@ -2134,10 +2134,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "BLOCK_VALUE": 1987.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "BLOCK_VALUE": 1.78
       },
       "set": "WORLD_DROP_SET"
     },
@@ -2147,10 +2147,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "GLOVES",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "ATTACK_SPEED": 0.054,
-        "CRIT_VALUE": 1709.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
       },
       "set": "VISIONARY_SEEKER"
     },
@@ -2160,23 +2160,23 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "MOVEMENT_SPEED": 0.965,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "AMMONS_GLEAM"
     },
     "ANIQUE_ATLANTIS_BOOTS": {
       "itemType": "ANIQUE_ATLANTIS_BOOTS",
-      "name": "Antique Atlantis Sandals (WIP)",
+      "name": "Antique Atlantis Sandals",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "MOVEMENT_SPEED": 0.965,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "ANITQUE_ATLANTIS_ARMOR"
     },
@@ -2186,10 +2186,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 1.22,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "AUTOMATED_UNIT"
     },
@@ -2199,10 +2199,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "MOVEMENT_SPEED": 1.208,
-        "CRIT_VALUE": 1366.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "CRIT_VALUE": 1.256
       },
       "set": "ENRAGED_EMPEROR"
     },
@@ -2212,36 +2212,36 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "MOVEMENT_SPEED": 1.208,
-        "HEALTH_POINTS": 16145.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "BLACK_ESSENCE_ARMAMENT"
     },
     "BOOTS_OF_DARKNESS": {
       "itemType": "BOOTS_OF_DARKNESS",
-      "name": "Trace of Darkness (WIP)",
+      "name": "Trace of Darkness",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "CRIT_VALUE": 827.0,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.074
       },
       "set": "ARMOR_OF_DARKNESS"
     },
     "DAEDAL_QUAIZAH_BOOTS": {
       "itemType": "DAEDAL_QUAIZAH_BOOTS",
-      "name": "Daedak Quaizah Boots (WIP)",
-      "defaultLevel": 0,
+      "name": "Daedak Quaizah Boots",
+      "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 0.0,
-        "MOVEMENT_SPEED": 0.0,
-        "CRIT_VALUE": 0.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "CRIT_VALUE": 1.256
       },
       "set": "DAEDAL_QUAIZAH_ARMOR"
     },
@@ -2251,23 +2251,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 1.22,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "DARK_FATE"
     },
     "DEEP_SANDS_BOOTS": {
       "itemType": "DEEP_SANDS_BOOTS",
-      "name": "Boots of the Deep Sands (WIP)",
+      "name": "Boots of the Deep Sands",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "MOVEMENT_SPEED": 0.965,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "CONQUEROR_OF_THE_DEEPS"
     },
@@ -2277,10 +2277,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 1.22,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "ARMOR_VALUE": 0.998
       },
       "set": "DRAGANS_RAGEFUL_ARMOR"
     },
@@ -2290,10 +2290,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "MOVEMENT_SPEED": 1.22,
-        "CRIT_VALUE": 1401.911,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.074
       },
       "set": "CALAMITY_OF_THE_TWIN_QUEENS"
     },
@@ -2303,10 +2303,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "MOVEMENT_SPEED": 1.22,
-        "HEALTH_POINTS": 16507.200,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998
       },
       "set": "THE_LEGENDARY_KINGS_ARMOR"
     },
@@ -2316,10 +2316,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 1.22,
-        "BLOCK_VALUE": 1589.428
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "BLOCK_VALUE": 1.424
       },
       "set": "CALAMITY_OF_THE_TWIN_QUEENS"
     },
@@ -2329,10 +2329,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "MOVEMENT_SPEED": 1.208,
-        "CRIT_VALUE": 1366.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "CRIT_VALUE": 1.256
       },
       "set": "MIGHTY_VISIONARY_SEEKER"
     },
@@ -2342,23 +2342,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "POISON_RESISTANCE": 4150.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "POISON_RESISTANCE": 3.915
       },
       "set": "POISON_EXTINGUISHER"
     },
     "ROBUST_NORSELAND_BOOTS": {
       "itemType": "ROBUST_NORSELAND_BOOTS",
-      "name": "Robust Norseland Boots (WIP)",
+      "name": "Robust Norseland Boots",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "MOVEMENT_SPEED": 0.965,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "ROBUST_NORSELAND_ARMOR"
     },
@@ -2368,23 +2368,23 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 1.22,
-        "ARMOR_VALUE": 1098.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "ARMOR_VALUE": 0.998
       },
       "set": "SHADOW_REIGN"
     },
     "SPLENDID_DURIAN_BOOTS": {
       "itemType": "SPLENDID_DURIAN_BOOTS",
-      "name": "Splendid Durian Boots (WIP)",
+      "name": "Splendid Durian Boots",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "MOVEMENT_SPEED": 0.965,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "SPLENDID_DURIAN_ARMOR"
     },
@@ -2394,23 +2394,23 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "MOVEMENT_SPEED": 1.208,
-        "CRIT_VALUE": 1366.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "CRIT_VALUE": 1.256
       },
       "set": "STELLAR_WALKER"
     },
     "TAYAZ_BOOTS": {
       "itemType": "TAYAZ_BOOTS",
-      "name": "Tayaz Sacred Greaves (WIP)",
+      "name": "Tayaz Sacred Greaves",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "MOVEMENT_SPEED": 0.965,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "SUN_AUSPICES"
     },
@@ -2420,23 +2420,23 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "MOVEMENT_SPEED": 1.208,
-        "HEALTH_POINTS": 16145.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "TEMPLE_GUARDIAN_FEDERATION"
     },
     "TEMPERED_MYRDOSCH_BOOTS": {
       "itemType": "TEMPERED_MYRDOSCH_BOOTS",
-      "name": "Tempered Myrdosch Boots (WIP)",
+      "name": "Tempered Myrdosch Boots",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 847.0,
-        "MOVEMENT_SPEED": 0.965,
-        "HEALTH_POINTS": 9591.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "TEMPERED_MYRDOSCH_ARMOR"
     },
@@ -2446,10 +2446,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 1.22,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
       },
       "set": "THE_UNTOUCHABLES"
     },
@@ -2459,10 +2459,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "MOVEMENT_SPEED": 1.22,
-        "CRIT_VALUE": 1401.911
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "CRIT_VALUE": 1.256
       },
       "set": "CHILLINGLY_COLD"
     },
@@ -2472,10 +2472,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1644.883,
-        "HEALTH_POINTS": 16507.200,
-        "BLOCK_VALUE": 1589.428
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "BLOCK_VALUE": 1.424
       },
       "set": "WORLD_DROP_SET"
     },
@@ -2485,10 +2485,10 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "BOOTS",
-      "baseValues": {
-        "DAMAGE": 1601.0,
-        "MOVEMENT_SPEED": 1.208,
-        "CRIT_VALUE": 1366.0
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "CRIT_VALUE": 1.256
       },
       "set": "VISIONARY_SEEKER"
     },
@@ -2498,9 +2498,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "ATTACK_SPEED": 0.055,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
       },
       "set": "BOND_OF_THE_ALLIANCE"
     },
@@ -2510,9 +2510,9 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 974.0,
-        "CRIT_VALUE": 1241.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
       },
       "set": "CUBE_SET"
     },
@@ -2522,10 +2522,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "MOVEMENT_SPEED": 0.732,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "MOVEMENT_SPEED": 0.01307,
+        "CRIT_VALUE": 1.885
       },
       "set": "DARK_EXILE"
     },
@@ -2535,9 +2535,9 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "ATTACK_SPEED": 0.054,
-        "CRIT_VALUE": 2050.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
       },
       "set": "TREASURES_OF_THE_DEEP"
     },
@@ -2547,9 +2547,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "ATTACK_SPEED": 0.055,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -2559,9 +2559,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.055
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00087
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -2571,9 +2571,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -2583,9 +2583,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "MOVEMENT_SPEED": 0.732
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "MOVEMENT_SPEED": 0.01307
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -2595,9 +2595,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "MOVEMENT_SPEED": 0.732,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.01307,
+        "CRIT_VALUE": 1.885
       },
       "set": "CALAMITY_OF_THE_TWIN_QUEENS"
     },
@@ -2607,9 +2607,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
       },
       "set": "SUMMER_SOUVENIR_KINGSHILL"
     },
@@ -2619,9 +2619,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "ATTACK_SPEED": 0.055,
-        "MOVEMENT_SPEED": 0.732
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "MOVEMENT_SPEED": 0.01307
       },
       "set": "CALAMITY_OF_THE_TWIN_QUEENS"
     },
@@ -2631,9 +2631,9 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 1841.0,
-        "CRIT_VALUE": 2050.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
       },
       "set": "MECHANICAL_TOOLS"
     },
@@ -2643,9 +2643,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
       },
       "set": "SARGONS_IMMORTAL_SHADOW_WEAPONRY"
     },
@@ -2655,9 +2655,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
       },
       "set": "JOY_OF_SPRING"
     },
@@ -2667,9 +2667,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "ATTACK_SPEED": 0.055,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
       },
       "set": "EXECUTOR_OF_THE_GREAT_PLAGUES"
     },
@@ -2679,9 +2679,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "WEAPON_ADORNMENT",
-      "baseValues": {
-        "ATTACK_SPEED": 0.055,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
       },
       "set": "MIGHT_OF_THE_WOLF_SLAYER"
     },
@@ -2691,21 +2691,21 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2057.0,
-        "ATTACK_SPEED": 0.439
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00694
       },
       "set": "BOND_OF_THE_ALLIANCE"
     },
     "ANIQUE_ATLANTIS_ONE_HAND": {
       "itemType": "ANIQUE_ATLANTIS_ONE_HAND",
-      "name": "Antique Atlantis Staff (WIP)",
+      "name": "Antique Atlantis Staff",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 1695.0,
-        "ATTACK_SPEED": 0.157
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00347
       },
       "set": "ANITQUE_ATLANTIS_ARMOR"
     },
@@ -2715,9 +2715,9 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 1695.0,
-        "ATTACK_SPEED": 0.157
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00347
       },
       "set": "CUBE_SET"
     },
@@ -2727,7 +2727,7 @@
       "defaultLevel": 0,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
+      "rawBaseValues": {
         "DAMAGE": 0.0,
         "ATTACK_SPEED": 0.0,
         "CRIT_VALUE": 0.0
@@ -2740,21 +2740,21 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2001.0,
-        "ATTACK_SPEED": 0.432
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
       },
       "set": "TREASURES_OF_THE_DEEP"
     },
     "DESERT_TOMB_ONE_HAND": {
       "itemType": "DESERT_TOMB_ONE_HAND",
-      "name": "Wand of the Desert Tomb (WIP)",
+      "name": "Wand of the Desert Tomb",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 1695.0,
-        "ATTACK_SPEED": 0.157
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00347
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -2764,9 +2764,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2057.0,
-        "ATTACK_SPEED": 0.439
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00694
       },
       "set": "SCORN_OF_THE_DRAGON"
     },
@@ -2776,9 +2776,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2057.0,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
       },
       "set": "CALAMITY_OF_THE_TWIN_QUEENS"
     },
@@ -2788,9 +2788,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 3292.0,
-        "ATTACK_SPEED": 0.220
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00347
       },
       "set": "KRANPARUS_TREASURES"
     },
@@ -2800,9 +2800,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2057.513,
-        "ATTACK_SPEED": 0.220
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00347
       },
       "set": "CALAMITY_OF_THE_TWIN_QUEENS"
     },
@@ -2812,21 +2812,21 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2001.0,
-        "ATTACK_SPEED": 0.432
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
       },
       "set": "MECHANICAL_TOOLS"
     },
     "ROBUST_NORSELAND_ONE_HAND": {
       "itemType": "ROBUST_NORSELAND_ONE_HAND",
-      "name": "Robust Norseland Staff (WIP)",
+      "name": "Robust Norseland Staff",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 1059.0,
-        "CRIT_VALUE": 1241.0
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "CRIT_VALUE": 1.885
       },
       "set": "ROBUST_NORSELAND_ARMOR"
     },
@@ -2836,9 +2836,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 3292.0,
-        "ATTACK_SPEED": 0.220
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00347
       },
       "set": "SARGONS_IMMORTAL_SHADOW_WEAPONRY"
     },
@@ -2848,46 +2848,46 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 3292.0,
-        "ATTACK_SPEED": 0.220,
-        "CRIT_VALUE": 1051.0
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00347,
+        "CRIT_VALUE": 0.942
       },
       "set": "SHADOW_REIGN"
     },
     "SPLENDID_DURIAN_ONE_HAND": {
       "itemType": "SPLENDID_DURIAN_ONE_HAND",
-      "name": "Splendid Durian Staff (WIP)",
+      "name": "Splendid Durian Staff",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 1695.0,
-        "ATTACK_SPEED": 0.157
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00347
       },
       "set": "SPLENDID_DURIAN_ARMOR"
     },
     "TAYAZ_ONE_HAND": {
       "itemType": "TAYAZ_ONE_HAND",
-      "name": "Tayaz Sun Staff (WIP)",
+      "name": "Tayaz Sun Staff",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 1059.0,
-        "ATTACK_SPEED": 0.313
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
       },
       "set": "SUN_AUSPICES"
     },
     "TEMPERED_MYRDOSCH_ONE_HAND": {
       "itemType": "TEMPERED_MYRDOSCH_ONE_HAND",
-      "name": "Tempered Myrdosch Staff (WIP)",
+      "name": "Tempered Myrdosch Staff",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 1059.0,
-        "ATTACK_SPEED": 0.313
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
       },
       "set": "TEMPERED_MYRDOSCH_ARMOR"
     },
@@ -2897,33 +2897,33 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "ONE_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 2057.0,
-        "ATTACK_SPEED": 0.220,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00347,
+        "CRIT_VALUE": 1.885
       },
       "set": "MIGHT_OF_THE_WOLF_SLAYER"
     },
     "ANIQUE_ATLANTIS_OFF_HAND": {
       "itemType": "ANIQUE_ATLANTIS_OFF_HAND",
-      "name": "Antique Atlantis Orb (WIP)",
+      "name": "Antique Atlantis Orb",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "ARMOR_VALUE": 1225.0,
-        "RESISTANCE_VALUE": 1319.0,
-        "BLOCK_VALUE": 28117.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.997,
+        "RESISTANCE_VALUE": 2.192,
+        "BLOCK_VALUE": 42.72
       },
       "set": "ANITQUE_ATLANTIS_ARMOR"
     },
     "CUBE_OFF_HAND": {
       "itemType": "CUBE_OFF_HAND",
       "name": "Grimmag's Lost Crystal Ball (WIP)",
-      "defaultLevel": 100,
+      "defaultLevel": 0,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
+      "rawBaseValues": {
         "HEALTH_POINTS": 0.0,
         "ARMOR_VALUE": 0.0,
         "RESISTANCE_VALUE": 0.0,
@@ -2937,7 +2937,7 @@
       "defaultLevel": 0,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
+      "rawBaseValues": {
         "HEALTH_POINTS": 0.0,
         "ARMOR_VALUE": 0.0,
         "RESISTANCE_VALUE": 0.0,
@@ -2951,23 +2951,23 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "HEALTH_POINTS": 32297.0,
-        "ARMOR_VALUE": 2137.0,
-        "BLOCK_VALUE": 46460.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 4.149,
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
       },
       "set": "TREASURES_OF_THE_DEEP"
     },
     "DESERT_TOMB_OFF_HAND": {
       "itemType": "DESERT_TOMB_OFF_HAND",
-      "name": "Orb of the Desert Tomb (WIP)",
+      "name": "Orb of the Desert Tomb",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "HEALTH_POINTS": 19186.0,
-        "ARMOR_VALUE": 1225.0,
-        "BLOCK_VALUE": 28117.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 4.149,
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -2977,9 +2977,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "DAMAGE": 3292.0,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "CRIT_VALUE": 1.885
       },
       "set": "SCORN_OF_THE_DRAGON"
     },
@@ -2989,9 +2989,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "ARMOR_VALUE": 2197.0,
-        "BLOCK_VALUE": 47683.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
       },
       "set": "SUMMER_SOUVENIR_KINGSHILL"
     },
@@ -3001,10 +3001,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "DAMAGE": 3292.0,
-        "ATTACK_SPEED": 0.109,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
       },
       "set": "KRANPARUS_TREASURES"
     },
@@ -3014,9 +3014,9 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "DAMAGE": 3204.0,
-        "CRIT_VALUE": 2050.0
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "CRIT_VALUE": 1.885
       },
       "set": "MECHANICAL_TOOLS"
     },
@@ -3026,22 +3026,22 @@
       "defaultLevel": 140,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "ARMOR_VALUE": 2137.0,
-        "BLOCK_VALUE": 46460.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
       },
       "set": "MECHANICAL_TOOLS"
     },
     "ROBUST_NORSELAND_OFF_HAND": {
       "itemType": "ROBUST_NORSELAND_OFF_HAND",
-      "name": "Robust Norseland Orb (WIP)",
+      "name": "Robust Norseland Orb",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "ARMOR_VALUE": 1225.0,
-        "RESISTANCE_VALUE": 1319.0,
-        "BLOCK_VALUE": 28117.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.997,
+        "RESISTANCE_VALUE": 2.192,
+        "BLOCK_VALUE": 42.72
       },
       "set": "ROBUST_NORSELAND_ARMOR"
     },
@@ -3051,10 +3051,10 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "DAMAGE": 3292.0,
-        "ATTACK_SPEED": 0.109,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
       },
       "set": "SARGONS_IMMORTAL_SHADOW_WEAPONRY"
     },
@@ -3064,62 +3064,62 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "DAMAGE": 3292.0,
-        "ATTACK_SPEED": 0.109,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
       },
       "set": "SHADOW_REIGN"
     },
     "SPLENDID_DURIAN_OFF_HAND": {
       "itemType": "SPLENDID_DURIAN_OFF_HAND",
-      "name": "Splendid Durian Orb (WIP)",
+      "name": "Splendid Durian Orb",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "ARMOR_VALUE": 1225.0,
-        "RESISTANCE_VALUE": 1319.0,
-        "BLOCK_VALUE": 28117.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.997,
+        "RESISTANCE_VALUE": 2.192,
+        "BLOCK_VALUE": 42.72
       },
       "set": "SPLENDID_DURIAN_ARMOR"
     },
     "TAYAZ_OFF_HAND1": {
       "itemType": "TAYAZ_OFF_HAND1",
-      "name": "Tayaz Sun Scrolls (WIP)",
+      "name": "Tayaz Sun Scrolls",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "DAMAGE": 1695.0,
-        "ATTACK_SPEED": 0.078,
-        "CRIT_VALUE": 1241.0
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
       },
       "set": "SUN_AUSPICES"
     },
     "TAYAZ_OFF_HAND2": {
       "itemType": "TAYAZ_OFF_HAND2",
-      "name": "Tayaz Sun Orb (WIP)",
+      "name": "Tayaz Sun Orb",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "HEALTH_POINTS": 19186.0,
-        "ARMOR_VALUE": 1225.0,
-        "BLOCK_VALUE": 28117.0
+      "rawBaseValues": {
+        "HEALTH_POINTS": 4.149,
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
       },
       "set": "SUN_AUSPICES"
     },
     "TEMPERED_MYRDOSCH_OFF_HAND": {
       "itemType": "TEMPERED_MYRDOSCH_OFF_HAND",
-      "name": "Tempered Myrdosch Orb (WIP)",
+      "name": "Tempered Myrdosch Orb",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "ARMOR_VALUE": 1225.0,
-        "RESISTANCE_VALUE": 1319.0,
-        "BLOCK_VALUE": 28117.0
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.997,
+        "RESISTANCE_VALUE": 2.192,
+        "BLOCK_VALUE": 42.72
       },
       "set": "TEMPERED_MYRDOSCH_ARMOR"
     },
@@ -3129,20 +3129,20 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
-        "DAMAGE": 3292.0,
-        "ATTACK_SPEED": 0.109,
-        "CRIT_VALUE": 2104.0
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
       },
       "set": "MIGHT_OF_THE_WOLF_SLAYER"
     },
-    "UNTOUCHABLE_OFF_HAND": {
+    "UNTOUCHABLE_OFF_HAND":   {
       "itemType": "UNTOUCHABLE_OFF_HAND",
       "name": "Defense of the Untoucheables (WIP)",
-      "defaultLevel": 140,
+      "defaultLevel": 0,
       "tier": 0,
       "itemSlotType": "OFF_HAND",
-      "baseValues": {
+      "rawBaseValues": {
         "HEALTH_POINTS": 0.0,
         "ARMOR_VALUE": 0.0,
         "RESISTANCE_VALUE": 0.0,
@@ -3156,9 +3156,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6581.569,
-        "CRIT_VALUE": 7012.0
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
       },
       "set": "AUTOMATED_UNIT"
     },
@@ -3168,9 +3168,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6581.569,
-        "CRIT_VALUE": 7012.0
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
       },
       "set": "DARK_CORRUPTION"
     },
@@ -3180,9 +3180,9 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 13163.139,
-        "CRIT_VALUE": 3506.0
+      "rawBaseValues": {
+        "DAMAGE": 6.458,
+        "CRIT_VALUE": 3.141
       },
       "set": "BIG_PAWS_FROSTY_GREED"
     },
@@ -3192,19 +3192,19 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6581.569,
-        "ATTACK_SPEED": 0.329
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
       },
       "set": "RUNES_OF_REGAINED_HEALTH"
     },
     "DAEDAL_QUAIZAH_TWO_HAND": {
       "itemType": "DAEDAL_QUAIZAH_TWO_HAND",
-      "name": "Daedal Quaizah Two Hand",
+      "name": "Daedal Quaizah Two Hand (WIP)",
       "defaultLevel": 0,
       "tier": 0,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
+      "rawBaseValues": {
         "DAMAGE": 0.0,
         "ATTACK_SPEED": 0.0,
         "CRIT_VALUE": 0.0
@@ -3217,21 +3217,21 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6581.569,
-        "ATTACK_SPEED": 0.329
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
       },
       "set": "DARK_EXILE"
     },
     "DESERT_TOMB_TWO_HAND": {
       "itemType": "DESERT_TOMB_TWO_HAND",
-      "name": "Long Staff of the Desert Tomb (WIP)",
+      "name": "Long Staff of the Desert Tomb",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 3389.0,
-        "CRIT_VALUE": 4135.0
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -3241,21 +3241,21 @@
       "defaultLevel": 145,
       "tier": 0,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 6581.569,
-        "CRIT_VALUE": 7012.0
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
       },
       "set": "POISON_BUSTER"
     },
     "TAYAZ_TWO_HAND": {
       "itemType": "TAYAZ_TWO_HAND",
-      "name": "Tall Tayaz Sun Staff (WIP)",
+      "name": "Tall Tayaz Sun Staff",
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "TWO_HAND_WEAPON",
-      "baseValues": {
-        "DAMAGE": 3389.0,
-        "ATTACK_SPEED": 0.235
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 0.0052
       },
       "set": "SUN_AUSPICES"
     },
@@ -3265,8 +3265,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_AMULET",
-      "baseValues": {
-        "DAMAGE": 847.04
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
       },
       "set": "SOUL_DESTRUCTION"
     },
@@ -3276,8 +3276,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_CLOAK",
-      "baseValues": {
-        "HEALTH_POINTS": 14386.028
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111
       },
       "set": "SOUL_DESTRUCTION"
     },
@@ -3287,8 +3287,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_BELT",
-      "baseValues": {
-        "HEALTH_POINTS": 14386.028
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111
       },
       "set": "SOUL_DESTRUCTION"
     }
@@ -3300,8 +3300,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_AMULET",
-      "baseValues": {
-        "DAMAGE": 847.04
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
       },
       "set": "SOUL_DESTRUCTION"
     },
@@ -3311,8 +3311,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_CLOAK",
-      "baseValues": {
-        "HEALTH_POINTS": 43158.084
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333
       },
       "set": "SOUL_DESTRUCTION"
     },
@@ -3322,8 +3322,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_BELT",
-      "baseValues": {
-        "HEALTH_POINTS": 43158.084
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333
       },
       "set": "SOUL_DESTRUCTION"
     }
@@ -3335,8 +3335,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_AMULET",
-      "baseValues": {
-        "DAMAGE": 847.04
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
       },
       "set": "SOUL_DESTRUCTION"
     },
@@ -3346,8 +3346,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_CLOAK",
-      "baseValues": {
-        "HEALTH_POINTS": 33087.864
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.93753
       },
       "set": "SOUL_DESTRUCTION"
     },
@@ -3357,8 +3357,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_BELT",
-      "baseValues": {
-        "HEALTH_POINTS": 33087.864
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.93753
       },
       "set": "SOUL_DESTRUCTION"
     }
@@ -3370,8 +3370,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_AMULET",
-      "baseValues": {
-        "DAMAGE": 847.04
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
       },
       "set": "SOUL_DESTRUCTION"
     },
@@ -3381,8 +3381,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_CLOAK",
-      "baseValues": {
-        "HEALTH_POINTS": 25175.548
+      "rawBaseValues": {
+        "HEALTH_POINTS": 5.44425
       },
       "set": "SOUL_DESTRUCTION"
     },
@@ -3392,8 +3392,8 @@
       "defaultLevel": 100,
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_BELT",
-      "baseValues": {
-        "HEALTH_POINTS": 25175.548
+      "rawBaseValues": {
+        "HEALTH_POINTS": 5.44425
       },
       "set": "SOUL_DESTRUCTION"
     }
