@@ -17,58 +17,49 @@ import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemDefinition;
 
 import java.util.List;
+import java.util.Map;
 
 public class ItemFactory {
     private final MythicItemConfig mythicItemConfig;
     private final UniqueItemConfig uniqueItemConfig;
     private final SetItemConfig setItemConfig;
+    private final LevelMultiplierTable levelMultiplierTable;
 
-    public ItemFactory(MythicItemConfig mythicItemConfig, UniqueItemConfig uniqueItemConfig, SetItemConfig setItemConfig) {
+    public ItemFactory(MythicItemConfig mythicItemConfig, UniqueItemConfig uniqueItemConfig, SetItemConfig setItemConfig, LevelMultiplierTable levelMultiplierTable) {
         this.mythicItemConfig = mythicItemConfig;
         this.uniqueItemConfig = uniqueItemConfig;
         this.setItemConfig = setItemConfig;
+        this.levelMultiplierTable = levelMultiplierTable;
     }
 
     public MythicItem createItem(MythicItemType itemType, CharacterClass characterClass)
     {
-        MythicItemDefinition itemDefinition;
-        switch (characterClass)
-        {
-            case SPELLWEAVER -> itemDefinition = mythicItemConfig.spellweaverItems().get(itemType);
-            case DRAGONKNIGHT -> itemDefinition = mythicItemConfig.dragonknightItems().get(itemType);
-            case RANGER -> itemDefinition = mythicItemConfig.rangerItems().get(itemType);
-            case STEAM_MECHANICUS -> itemDefinition = mythicItemConfig.steamMechanicusItems().get(itemType);
-            default -> throw new IllegalArgumentException("Unsupported character class: " + characterClass);
-        }
-        return new MythicItem(itemType, itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.baseValues(), itemDefinition.uniqueRelativeValues(), itemDefinition.uniqueAbsoluteValues(), itemDefinition.set());
+        MythicItemDefinition itemDefinition = this.getDefinitionForClass(characterClass, mythicItemConfig.spellweaverItems(), mythicItemConfig.dragonknightItems(), mythicItemConfig.rangerItems(), mythicItemConfig.steamMechanicusItems(), itemType);
+        return new MythicItem(itemDefinition, levelMultiplierTable, itemDefinition.uniqueRelativeValues(), itemDefinition.uniqueAbsoluteValues(), itemDefinition.set());
     }
 
     public UniqueItem createItem(UniqueItemType itemType, CharacterClass characterClass)
     {
-        UniqueItemDefinition itemDefinition;
-        switch (characterClass)
-        {
-            case SPELLWEAVER -> itemDefinition = uniqueItemConfig.spellweaverItems().get(itemType);
-            case DRAGONKNIGHT -> itemDefinition = uniqueItemConfig.dragonknightItems().get(itemType);
-            case RANGER -> itemDefinition = uniqueItemConfig.rangerItems().get(itemType);
-            case STEAM_MECHANICUS -> itemDefinition = uniqueItemConfig.steamMechanicusItems().get(itemType);
-            default -> throw new IllegalArgumentException("Unsupported character class: " + characterClass);
-        }
+        UniqueItemDefinition itemDefinition = this.getDefinitionForClass(characterClass, uniqueItemConfig.spellweaverItems(), uniqueItemConfig.dragonknightItems(), uniqueItemConfig.rangerItems(), uniqueItemConfig.steamMechanicusItems(), itemType);
         List<Enchantment> uniqueEnchantments = itemDefinition.uniqueEnchantments().stream().map(EnchantmentDefinition::toEnchantment).toList();
-        return new UniqueItem(itemType, itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.baseValues(), itemDefinition.uniqueBaseValues(), itemDefinition.uniqueRelativeValues(), uniqueEnchantments, itemDefinition.uniqueDescription());
+        return new UniqueItem(itemDefinition, levelMultiplierTable, itemDefinition.uniqueBaseValues(), itemDefinition.uniqueRelativeValues(), uniqueEnchantments, itemDefinition.uniqueDescription());
     }
 
     public SetItem createItem(SetItemType itemType, CharacterClass characterClass)
     {
-        SetItemDefinition itemDefinition;
-        switch (characterClass)
+        SetItemDefinition itemDefinition = this.getDefinitionForClass(characterClass, setItemConfig.spellweaverItems(), setItemConfig.dragonknightItems(), setItemConfig.rangerItems(), setItemConfig.steamMechanicusItems(), itemType);
+        return new SetItem(itemDefinition, levelMultiplierTable,  itemDefinition.set());
+    }
+
+    private <K, T> T getDefinitionForClass(CharacterClass characterClass, Map<K, T> spellweaverItems, Map<K, T> dragonknightItems, Map<K, T> rangerItems, Map<K, T> steamMechanicusItems, K itemType)
+    {
+        return switch (characterClass)
         {
-            case SPELLWEAVER -> itemDefinition = setItemConfig.spellweaverItems().get(itemType);
-            case DRAGONKNIGHT -> itemDefinition = setItemConfig.dragonknightItems().get(itemType);
-            case RANGER -> itemDefinition = setItemConfig.rangerItems().get(itemType);
-            case STEAM_MECHANICUS -> itemDefinition = setItemConfig.steamMechanicusItems().get(itemType);
+            case SPELLWEAVER -> spellweaverItems.get(itemType);
+            case DRAGONKNIGHT -> dragonknightItems.get(itemType);
+            case RANGER -> rangerItems.get(itemType);
+            case STEAM_MECHANICUS -> steamMechanicusItems.get(itemType);
             default -> throw new IllegalArgumentException("Unsupported character class: " + characterClass);
-        }
-        return new SetItem(itemType, itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.baseValues(), itemDefinition.set());
+        };
     }
 }

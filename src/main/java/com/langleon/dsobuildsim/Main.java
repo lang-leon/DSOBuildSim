@@ -22,6 +22,7 @@ import com.langleon.dsobuildsim.gems.GemConfig;
 import com.langleon.dsobuildsim.gems.GemFactory;
 import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.ItemFactory;
+import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
 import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
@@ -40,36 +41,39 @@ import com.langleon.dsobuildsim.skilltrees.wisdomskilltree.WisdomSkillTree;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Map;
+import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        var reader = new InputStreamReader(Main.class.getResourceAsStream("/data/runes.json"));
+        var reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/runes.json")));
         ObjectMapper objectMapper = new ObjectMapper();
         RuneConfig runeConfig = objectMapper.readValue(reader, RuneConfig.class);
         RuneFactory runeFactory = new RuneFactory(runeConfig);
-        reader = new InputStreamReader(Main.class.getResourceAsStream("/data/jewels.json"));
+        reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/jewels.json")));
         JewelConfig jewelConfig = objectMapper.readValue(reader, JewelConfig.class);
         JewelFactory jewelFactory = new JewelFactory(jewelConfig);
-        reader = new InputStreamReader(Main.class.getResourceAsStream("/data/dragonstones.json"));
+        reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/dragonstones.json")));
         DragonStoneConfig dragonStoneConfig = objectMapper.readValue(reader, DragonStoneConfig.class);
         DragonStoneFactory dragonStoneFactory = new DragonStoneFactory(dragonStoneConfig);
-        reader = new InputStreamReader(Main.class.getResourceAsStream("/data/mythicitems.json"));
+        reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/mythicitems.json")));
         MythicItemConfig mythicItemConfig = objectMapper.readValue(reader, MythicItemConfig.class);
-        reader = new InputStreamReader(Main.class.getResourceAsStream("/data/uniqueitems.json"));
+        reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/uniqueitems.json")));
         UniqueItemConfig uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
-        reader = new InputStreamReader(Main.class.getResourceAsStream("/data/setitems.json"));
+        reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/setitems.json")));
         SetItemConfig setItemConfig = objectMapper.readValue(reader, SetItemConfig.class);
-        ItemFactory itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig);
-        reader = new InputStreamReader(Main.class.getResourceAsStream("/data/gems.json"));
+        reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/levelMultiplierTable.json")));
+        LevelMultiplierTable levelMultiplierTable = objectMapper.readValue(reader, LevelMultiplierTable.class);
+        ItemFactory itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig, levelMultiplierTable);
+        reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/gems.json")));
         GemConfig gemConfig = objectMapper.readValue(reader, GemConfig.class);
         GemFactory gemFactory = new GemFactory(gemConfig);
-        reader = new InputStreamReader(Main.class.getResourceAsStream("/data/essences.json"));
+        reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/essences.json")));
         EssenceConfig essenceConfig = objectMapper.readValue(reader, EssenceConfig.class);
         EssenceFactory essenceFactory = new EssenceFactory(essenceConfig);
-        reader = new InputStreamReader(Main.class.getResourceAsStream("/data/pets.json"));
+        reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/pets.json")));
         PetConfig petConfig = objectMapper.readValue(reader, PetConfig.class);
         PetFactory petFactory = new PetFactory(petConfig);
-        reader = new InputStreamReader(Main.class.getResourceAsStream("/data/sets.json"));
+        reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/sets.json")));
         SetConfig setConfig = objectMapper.readValue(reader, SetConfig.class);
         SetFactory setFactory = new SetFactory(setConfig);
 
@@ -160,7 +164,7 @@ public class Main {
 
         kauka.setPet(petFactory.createPet(PetType.THE_SOUL_OF_DRAGAN_DOLL));
 
-        WisdomSkillTree wisdomSkillTree = new WisdomSkillTree();;
+        WisdomSkillTree wisdomSkillTree = new WisdomSkillTree();
         wisdomSkillTree.setLevel(60, 1, 1);
         wisdomSkillTree.setLevel(60, 1, 2);
         wisdomSkillTree.setLevel(80, 2, 1);

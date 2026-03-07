@@ -1,12 +1,9 @@
 package com.langleon.dsobuildsim.items.setitems;
 
-import com.langleon.dsobuildsim.enchantments.Enchantment;
-import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.enums.items.SetType;
-import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.items.core.Item;
+import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 
 import java.util.EnumMap;
@@ -15,16 +12,9 @@ import java.util.Map;
 public class SetItem extends Item implements SetBonusProvider {
     private final SetType setType;
 
-    public SetItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, SetType set){
-        this.itemType = itemType;
-        this.name = name;
-        this.level = level;
-        this.tier = tier;
-        this.itemSlotType = itemSlotType;
-        this.baseValues = baseStats;
+    public SetItem(SetItemDefinition itemDefinition, LevelMultiplierTable levelMultipliers, SetType set){
+        super(itemDefinition, levelMultipliers);
         this.setType = set;
-        this.gems = new AbstractGem[10];
-        this.enchantments = new Enchantment[10];
     }
 
     @Override
@@ -34,7 +24,7 @@ public class SetItem extends Item implements SetBonusProvider {
 
     @Override
     public String getSetItemIdentifier() {
-        return this.itemType.toString();
+        return this.itemDefinition.itemType().toString();
     }
 
     @Override
@@ -54,7 +44,7 @@ public class SetItem extends Item implements SetBonusProvider {
         {
             if (totalStats.containsKey(entry.getKey()))
             {
-                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * (entry.getValue()+1));
+                totalStats.computeIfPresent(entry.getKey(), (_, oldVal) -> oldVal * (entry.getValue()+1));
             }
         }
 

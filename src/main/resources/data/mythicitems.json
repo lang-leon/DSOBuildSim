@@ -6,10 +6,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.05,
@@ -25,10 +25,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.060,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10
@@ -43,10 +43,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 24760.80
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10,
@@ -62,10 +62,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.060,
-        "HEALTH_POINTS": 16507.200
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10
@@ -83,10 +83,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 74282.408
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.05,
@@ -102,10 +102,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.060,
-        "HEALTH_POINTS": 49521.596
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 6.222
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10
@@ -120,10 +120,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 74282.408
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10,
@@ -139,10 +139,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.060,
-        "HEALTH_POINTS": 49521.596
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 6.222
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10
@@ -160,10 +160,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 56949.840
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 7.1553
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.05,
@@ -179,10 +179,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.060,
-        "HEALTH_POINTS": 37966.560
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 4.7702
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10
@@ -197,10 +197,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 56949.840
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 7.1553
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10,
@@ -216,10 +216,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.060,
-        "HEALTH_POINTS": 37966.560
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 4.7702
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10
@@ -237,10 +237,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 43331.404
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 5.44425
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.05,
@@ -256,10 +256,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.060,
-        "HEALTH_POINTS": 28887.598
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 3.6295
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10
@@ -274,10 +274,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "RING",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "CRIT_VALUE": 1753.505,
-        "HEALTH_POINTS": 43331.404
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 5.44425
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10,
@@ -293,10 +293,10 @@
       "defaultLevel": 145,
       "tier": 7,
       "itemSlotType": "CLOAK",
-      "baseValues": {
-        "DAMAGE": 1891.513,
-        "ATTACK_SPEED": 0.060,
-        "HEALTH_POINTS": 28887.598
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 3.6295
       },
       "uniqueRelativeValues": {
         "DAMAGE": 0.10
