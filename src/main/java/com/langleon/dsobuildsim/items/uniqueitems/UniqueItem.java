@@ -1,11 +1,9 @@
 package com.langleon.dsobuildsim.items.uniqueitems;
 
 import com.langleon.dsobuildsim.enchantments.Enchantment;
-import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.items.ItemType;
-import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.items.core.Item;
+import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 import com.langleon.dsobuildsim.utils.MapUtils;
 
@@ -21,19 +19,12 @@ public class UniqueItem extends Item implements UniqueStatProvider {
     private final List<Enchantment> uniqueEnchantments;
     private final String uniqueDescription;
 
-    public UniqueItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, Map<StatType, Double> uniqueBaseValues, Map<StatType, Double> uniqueRelativeValues, List<Enchantment> uniqueEnchantments, String uniqueDescription){
-        this.itemType = itemType;
-        this.name = name;
-        this.level = level;
-        this.tier = tier;
-        this.itemSlotType = itemSlotType;
-        this.baseValues = baseStats;
+    public UniqueItem(UniqueItemDefinition itemDefinition, LevelMultiplierTable levelMultipliers, Map<StatType, Double> uniqueBaseValues, Map<StatType, Double> uniqueRelativeValues, List<Enchantment> uniqueEnchantments, String uniqueDescription){
+        super(itemDefinition, levelMultipliers);
         this.uniqueBaseValues = uniqueBaseValues;
         this.uniqueRelativeValues = uniqueRelativeValues;
         this.uniqueEnchantments = uniqueEnchantments;
         this.uniqueDescription = uniqueDescription;
-        this.gems = new AbstractGem[10];
-        this.enchantments = new Enchantment[4];
     }
 
     public Map<StatType, Double> getUniqueBaseValues() {

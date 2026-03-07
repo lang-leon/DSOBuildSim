@@ -1,14 +1,8 @@
 package com.langleon.dsobuildsim.items.mythicitems;
 
-import com.langleon.dsobuildsim.enchantments.Enchantment;
-import com.langleon.dsobuildsim.enums.ItemSlotType;
 import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.items.ItemType;
 import com.langleon.dsobuildsim.enums.items.SetType;
-import com.langleon.dsobuildsim.gems.AbstractGem;
-import com.langleon.dsobuildsim.items.core.Item;
-import com.langleon.dsobuildsim.items.core.SetBonusProvider;
-import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
+import com.langleon.dsobuildsim.items.core.*;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -18,18 +12,11 @@ public class MythicItem extends Item implements SetBonusProvider, UniqueStatProv
     private final Map<StatType, Double> uniqueAbsoluteValues;
     private final SetType setType;
 
-    public MythicItem(ItemType itemType, String name, int level, int tier, ItemSlotType itemSlotType, Map<StatType, Double> baseStats, Map<StatType, Double> uniqueRelativeValues, Map<StatType, Double> uniqueAbsoluteValues, SetType set){
-        this.itemType = itemType;
-        this.name = name;
-        this.level = level;
-        this.tier = tier;
-        this.itemSlotType = itemSlotType;
-        this.baseValues = baseStats;
+    public MythicItem(MythicItemDefinition itemDefinition, LevelMultiplierTable levelMultipliers, Map<StatType, Double> uniqueRelativeValues, Map<StatType, Double> uniqueAbsoluteValues, SetType set){
+        super(itemDefinition, levelMultipliers);
         this.uniqueRelativeValues = uniqueRelativeValues;
         this.uniqueAbsoluteValues = uniqueAbsoluteValues;
         this.setType = set;
-        this.gems = new AbstractGem[10];
-        this.enchantments = new Enchantment[10];
     }
 
     @Override
@@ -39,7 +26,7 @@ public class MythicItem extends Item implements SetBonusProvider, UniqueStatProv
 
     @Override
     public String getSetItemIdentifier() {
-        return this.itemType.toString();
+        return this.itemDefinition.itemType().toString();
     }
 
     public Map<StatType, Double> getUniqueRelativeValues() {

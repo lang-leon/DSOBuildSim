@@ -11,23 +11,31 @@ import java.util.EnumMap;
 import java.util.Map;
 
 public abstract class Item {
-    protected ItemType itemType;
-    protected String name;
+    protected final ItemDefinition itemDefinition;
+    protected final LevelMultiplierTable levelMultipliers;
     protected int level;
-    protected int tier;
-    protected ItemSlotType itemSlotType;
     protected Map<StatType, Double> baseValues;
     protected Enchantment[] enchantments;
     protected AbstractGem[] gems;
 
+    public Item(ItemDefinition itemDefinition, LevelMultiplierTable levelMultipliers) {
+        this.itemDefinition = itemDefinition;
+        this.levelMultipliers = levelMultipliers;
+        this.level = itemDefinition.defaultLevel();
+        this.itemDefinition.rawBaseValues().forEach((statType, value) ->
+                baseValues.put(statType, value * this.levelMultipliers.getMultiplier(level, statType)));
+        this.gems = new AbstractGem[10];
+        this.enchantments = new Enchantment[10];
+    }
+
     public String getName()
     {
-        return name;
+        return this.itemDefinition.name();
     }
 
     public ItemType getItemType()
     {
-        return this.itemType;
+        return this.itemDefinition.itemType();
     }
 
     public Map<StatType, Double> getBaseValues()
@@ -118,12 +126,12 @@ public abstract class Item {
 
     public int getTier()
     {
-        return tier;
+        return this.itemDefinition.tier();
     }
 
     public ItemSlotType getItemSlotType()
     {
-        return itemSlotType;
+        return this.itemDefinition.itemSlotType();
     }
 
     public Map<StatType, Double> calculateGemStats()
