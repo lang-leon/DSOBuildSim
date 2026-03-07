@@ -22,6 +22,7 @@ public abstract class Item {
         this.itemDefinition = itemDefinition;
         this.levelMultipliers = levelMultipliers;
         this.level = itemDefinition.defaultLevel();
+        this.baseValues = new EnumMap<>(StatType.class);
         this.itemDefinition.rawBaseValues().forEach((statType, value) ->
                 baseValues.put(statType, value * this.levelMultipliers.getMultiplier(level, statType)));
         this.gems = new AbstractGem[10];

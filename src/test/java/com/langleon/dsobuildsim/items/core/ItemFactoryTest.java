@@ -30,27 +30,29 @@ public class ItemFactoryTest {
     @BeforeEach
     void setup() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-
         MythicItemConfig mythicItemConfig;
         UniqueItemConfig uniqueItemConfig;
         SetItemConfig setItemConfig;
+        LevelMultiplierTable levelMultiplierTable;
 
         try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/mythicitems.json"))))
         {
             mythicItemConfig = objectMapper.readValue(reader, MythicItemConfig.class);
         }
-
         try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/uniqueitems.json"))))
         {
             uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
         }
-
         try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/setitems.json"))))
         {
             setItemConfig = objectMapper.readValue(reader, SetItemConfig.class);
         }
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/levelMultiplierTable.json"))))
+        {
+            levelMultiplierTable = objectMapper.readValue(reader, LevelMultiplierTable.class);
+        }
 
-        itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig);
+        itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig, levelMultiplierTable);
     }
 
     @Test
