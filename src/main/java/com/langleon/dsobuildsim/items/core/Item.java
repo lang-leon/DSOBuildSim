@@ -109,7 +109,7 @@ public abstract class Item {
 
     public void setEnchants(Enchantment enchantment)
     {
-        for (int i=0; i<4; i++) enchantments[i] = enchantment;;
+        for (int i=0; i<4; i++) enchantments[i] = enchantment;
     }
 
     public void removeEnchant(int slot)
@@ -123,6 +123,12 @@ public abstract class Item {
 
     public void setLevel(int level) {
         this.level = level;
+
+        baseValues.forEach(((statType, currentValue) -> {
+            double maxValue = itemDefinition.rawBaseValues().get(statType) * levelMultipliers.getMultiplier(level, statType);
+            if (currentValue > maxValue)
+                baseValues.put(statType, maxValue);
+        }));
     }
 
     public int getTier()

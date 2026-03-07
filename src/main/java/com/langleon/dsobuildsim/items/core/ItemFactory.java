@@ -3,7 +3,6 @@ package com.langleon.dsobuildsim.items.core;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
 import com.langleon.dsobuildsim.enums.CharacterClass;
-import com.langleon.dsobuildsim.enums.StatType;
 import com.langleon.dsobuildsim.enums.items.MythicItemType;
 import com.langleon.dsobuildsim.enums.items.SetItemType;
 import com.langleon.dsobuildsim.enums.items.UniqueItemType;
@@ -17,7 +16,6 @@ import com.langleon.dsobuildsim.items.uniqueitems.UniqueItem;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemDefinition;
 
-import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 

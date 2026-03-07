@@ -54,7 +54,7 @@ public class MythicItem extends Item implements SetBonusProvider, UniqueStatProv
         {
             if (totalStats.containsKey(entry.getKey()))
             {
-                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * (entry.getValue()+1));
+                totalStats.computeIfPresent(entry.getKey(), (_, oldVal) -> oldVal * (entry.getValue()+1));
             }
         }
 

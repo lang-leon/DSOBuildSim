@@ -75,7 +75,7 @@ public class UniqueItem extends Item implements UniqueStatProvider {
         {
             if (totalStats.containsKey(entry.getKey()))
             {
-                totalStats.computeIfPresent(entry.getKey(), (k, oldVal) -> oldVal * (entry.getValue()+1));
+                totalStats.computeIfPresent(entry.getKey(), (_, oldVal) -> oldVal * (entry.getValue()+1));
             }
         }
 
