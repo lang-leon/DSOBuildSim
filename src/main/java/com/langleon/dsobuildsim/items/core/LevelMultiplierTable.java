@@ -1,24 +1,27 @@
 package com.langleon.dsobuildsim.items.core;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.langleon.dsobuildsim.enums.StatType;
 
 import java.util.EnumMap;
 import java.util.Map;
 
 public class LevelMultiplierTable {
-    private final Map<Integer, EnumMap<StatType, Double>> multiplierPerLevel;
+    private final Map<Integer, EnumMap<StatType, Double>> multipliersPerLevel;
 
-    public LevelMultiplierTable(Map<Integer, EnumMap<StatType, Double>> multiplierPerLevel) {
-        this.multiplierPerLevel = multiplierPerLevel;
+    @JsonCreator
+    public LevelMultiplierTable(@JsonProperty("multipliersPerLevel") Map<Integer, EnumMap<StatType, Double>> multipliersPerLevel) {
+        this.multipliersPerLevel = multipliersPerLevel;
     }
 
     public EnumMap<StatType, Double> getMultipliersForLevel(int level)
     {
-        return multiplierPerLevel.getOrDefault(level, new EnumMap<>(StatType.class));
+        return multipliersPerLevel.getOrDefault(level, new EnumMap<>(StatType.class));
     }
 
     public Double getMultiplier(int level, StatType statType)
     {
-        return multiplierPerLevel.getOrDefault(level, new EnumMap<>(StatType.class)).getOrDefault(statType, 0.0);
+        return multipliersPerLevel.getOrDefault(level, new EnumMap<>(StatType.class)).getOrDefault(statType, 0.0);
     }
 }

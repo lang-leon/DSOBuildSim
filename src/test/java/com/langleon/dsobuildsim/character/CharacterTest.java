@@ -24,6 +24,7 @@ import com.langleon.dsobuildsim.gems.GemConfig;
 import com.langleon.dsobuildsim.gems.GemFactory;
 import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.ItemFactory;
+import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
 import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
@@ -45,6 +46,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Map;
+import java.util.Objects;
 
 public class CharacterTest {
 
@@ -60,43 +62,43 @@ public class CharacterTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/essences.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/essences.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             EssenceConfig essenceConfig = objectMapper.readValue(reader, EssenceConfig.class);
             essenceFactory = new EssenceFactory(essenceConfig);
         }
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/dragonstones.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/dragonstones.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             DragonStoneConfig dragonStoneConfig = objectMapper.readValue(reader, DragonStoneConfig.class);
             dragonStoneFactory = new DragonStoneFactory(dragonStoneConfig);
         }
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/gems.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/gems.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             GemConfig gemConfig = objectMapper.readValue(reader, GemConfig.class);
             gemFactory = new GemFactory(gemConfig);
         }
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/jewels.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/jewels.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             JewelConfig jewelConfig = objectMapper.readValue(reader, JewelConfig.class);
             jewelFactory = new JewelFactory(jewelConfig);
         }
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/pets.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/pets.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             PetConfig petConfig = objectMapper.readValue(reader, PetConfig.class);
             petFactory = new PetFactory(petConfig);
         }
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/runes.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/runes.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             RuneConfig runeConfig = objectMapper.readValue(reader, RuneConfig.class);
             runeFactory = new RuneFactory(runeConfig);
         }
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/sets.json"))) {
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/sets.json")))) {
             ObjectMapper objectMapper = new ObjectMapper();
             SetConfig setConfig = objectMapper.readValue(reader, SetConfig.class);
             setFactory = new SetFactory(setConfig);
@@ -105,19 +107,24 @@ public class CharacterTest {
         MythicItemConfig mythicItemConfig;
         UniqueItemConfig uniqueItemConfig;
         SetItemConfig setItemConfig;
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/mythicitems.json")))
+        LevelMultiplierTable levelMultiplierTable;
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/mythicitems.json"))))
         {
             mythicItemConfig = objectMapper.readValue(reader, MythicItemConfig.class);
         }
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/uniqueitems.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/uniqueitems.json"))))
         {
             uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
         }
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/setitems.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/setitems.json"))))
         {
             setItemConfig = objectMapper.readValue(reader, SetItemConfig.class);
         }
-        itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig);
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/levelMultiplierTable.json"))))
+        {
+            levelMultiplierTable = objectMapper.readValue(reader, LevelMultiplierTable.class);
+        }
+        itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig, levelMultiplierTable);
 
     }
 
