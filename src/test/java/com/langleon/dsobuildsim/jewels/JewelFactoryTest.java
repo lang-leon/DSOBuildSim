@@ -1,6 +1,7 @@
 package com.langleon.dsobuildsim.jewels;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.common.StatType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,7 +26,7 @@ public class JewelFactoryTest {
     @Test
     void createVigorTier5()
     {
-        Jewel jewel = jewelFactory.createJewel(JewelType.VIGOR, 5);
+        Jewel jewel = jewelFactory.createJewel(JewelType.VIGOR, CharacterClass.SPELLWEAVER, 5);
         Assertions.assertNotNull(jewel);
         Assertions.assertEquals(5, jewel.getTier());
         Assertions.assertEquals(JewelType.VIGOR, jewel.getJewelType());
@@ -37,7 +38,7 @@ public class JewelFactoryTest {
     @Test
     void createGemFortune4()
     {
-        Jewel jewel = jewelFactory.createJewel(JewelType.GEM_FORTUNE, 4);
+        Jewel jewel = jewelFactory.createJewel(JewelType.GEM_FORTUNE, CharacterClass.SPELLWEAVER, 4);
         Assertions.assertNotNull(jewel);
         Assertions.assertEquals(4, jewel.getTier());
         Assertions.assertEquals(JewelType.GEM_FORTUNE, jewel.getJewelType());
@@ -48,14 +49,14 @@ public class JewelFactoryTest {
     @Test
     void testUpgradeCosts()
     {
-        Jewel jewel = jewelFactory.createJewel(JewelType.VIGOR, 4);
+        Jewel jewel = jewelFactory.createJewel(JewelType.VIGOR, CharacterClass.SPELLWEAVER, 4);
         Assertions.assertEquals(27750, jewelFactory.getUpgradeCost(jewel));
     }
 
     @Test
     void throwsOnInvalidTier()
     {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> jewelFactory.createJewel(JewelType.VIGOR, -1));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> jewelFactory.createJewel(JewelType.BLACK_KNIGHT_ORDER, 5));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> jewelFactory.createJewel(JewelType.VIGOR, CharacterClass.SPELLWEAVER, -1));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> jewelFactory.createJewel(JewelType.BLACK_KNIGHT_ORDER, CharacterClass.SPELLWEAVER, 5));
     }
 }
