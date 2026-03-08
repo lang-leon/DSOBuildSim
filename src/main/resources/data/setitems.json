@@ -424,8 +424,8 @@
       "itemSlotType": "BELT",
       "rawBaseValues": {
         "DAMAGE": 0.807,
-        "FIRE_RESISTANCE": 4.894,
-        "LIGHTNING_RESISTANCE": 4.894
+        "FIRE_RESISTANCE": 5.873,
+        "LIGHTNING_RESISTANCE": 5.873
       },
       "set": "DARK_FATE"
     },
@@ -451,7 +451,7 @@
       "rawBaseValues": {
         "DAMAGE": 0.807,
         "HEALTH_POINTS": 3.111,
-        "ARMOR_VALUE": 1.248
+        "ARMOR_VALUE": 1.498
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -464,7 +464,7 @@
       "rawBaseValues": {
         "DAMAGE": 0.807,
         "HEALTH_POINTS": 3.111,
-        "FIRE_RESISTANCE": 4.894
+        "FIRE_RESISTANCE": 5.873
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -477,7 +477,7 @@
       "rawBaseValues": {
         "DAMAGE": 0.807,
         "HEALTH_POINTS": 3.111,
-        "LIGHTNING_RESISTANCE": 4.894
+        "LIGHTNING_RESISTANCE": 5.873
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -490,7 +490,7 @@
       "rawBaseValues": {
         "DAMAGE": 0.807,
         "HEALTH_POINTS": 3.111,
-        "POISON_RESISTANCE": 4.894
+        "POISON_RESISTANCE": 5.873
       },
       "set": "JEWELS_OF_THE_DESERT"
     },
@@ -1487,7 +1487,7 @@
       "rawBaseValues": {
         "DAMAGE": 0.807,
         "HEALTH_POINTS": 2.074,
-        "ARMOR_VALUE": 1.248
+        "ARMOR_VALUE": 1.498
       },
       "set": "AUTOMATED_UNIT"
     },
@@ -1513,7 +1513,7 @@
       "rawBaseValues": {
         "DAMAGE": 0.807,
         "HEALTH_POINTS": 2.074,
-        "ARMOR_VALUE": 1.248
+        "ARMOR_VALUE": 1.498
       },
       "set": "DARK_CORRUPTION"
     },
@@ -1551,7 +1551,7 @@
       "itemSlotType": "TORSO",
       "rawBaseValues": {
         "CRIT_VALUE": 1.256,
-        "ARMOR_VALUE": 1.248,
+        "ARMOR_VALUE": 1.498,
         "BLOCK_VALUE": 1.424
       },
       "set": "DARK_EXILE"
@@ -1577,7 +1577,7 @@
       "itemSlotType": "TORSO",
       "rawBaseValues": {
         "DAMAGE": 0.807,
-        "ARMOR_VALUE": 1.248,
+        "ARMOR_VALUE": 1.498,
         "BLOCK_VALUE": 1.424
       },
       "set": "DRAGANS_PROTECTIVE_ARMOR"
@@ -1591,7 +1591,7 @@
       "rawBaseValues": {
         "DAMAGE": 0.807,
         "HEALTH_POINTS": 2.074,
-        "ARMOR_VALUE": 1.248
+        "ARMOR_VALUE": 1.498
       },
       "set": "THE_LEGENDARY_KINGS_ARMOR"
     },
@@ -1616,8 +1616,8 @@
       "itemSlotType": "TORSO",
       "rawBaseValues": {
         "CRIT_VALUE": 1.256,
-        "ARMOR_VALUE": 1.248,
-        "POISON_RESISTANCE": 4.894
+        "ARMOR_VALUE": 1.498,
+        "POISON_RESISTANCE": 5.873
       },
       "set": "POISON_BUSTER"
     },
@@ -1643,7 +1643,7 @@
       "rawBaseValues": {
         "DAMAGE": 0.807,
         "HEALTH_POINTS": 2.074,
-        "ARMOR_VALUE": 1.248
+        "ARMOR_VALUE": 1.498
       },
       "set": "SARGONS_IMMORTAL_TERROR_ARMOR"
     },
@@ -1655,7 +1655,7 @@
       "itemSlotType": "TORSO",
       "rawBaseValues": {
         "DAMAGE": 0.807,
-        "ARMOR_VALUE": 1.248,
+        "ARMOR_VALUE": 1.498,
         "RESISTANCE_VALUE": 1.37
       },
       "set": "SHADOW_REIGN"
@@ -1798,7 +1798,7 @@
       "itemSlotType": "TORSO",
       "rawBaseValues": {
         "DAMAGE": 0.807,
-        "ARMOR_VALUE": 1.248,
+        "ARMOR_VALUE": 1.498,
         "RESISTANCE_VALUE": 1.37
       },
       "set": "THE_UNTOUCHABLES"
@@ -1810,8 +1810,8 @@
       "tier": 7,
       "itemSlotType": "TORSO",
       "rawBaseValues": {
-        "ARMOR_VALUE": 1.248,
-        "ANDERMAGIC_RESISTANCE": 4.894,
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873,
         "BLOCK_VALUE": 1.424
       },
       "set": "CHILLINGLY_COLD"
@@ -1825,7 +1825,7 @@
       "rawBaseValues": {
         "DAMAGE": 0.807,
         "HEALTH_POINTS": 2.074,
-        "ARMOR_VALUE": 1.248
+        "ARMOR_VALUE": 1.498
       },
       "set": "WITCH_SEEKER_GEAR"
     },

@@ -132,26 +132,31 @@ public class CharacterTest {
     {
         Character character = createCharacter();
         Map<StatType, Double> stats = character.calculateCharacterStats();
-        Assertions.assertEquals(1293650.548, stats.get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(1293650.530, stats.get(StatType.DAMAGE), 0.001);
         Assertions.assertEquals(4.456, stats.get(StatType.ATTACK_SPEED), 0.001);
-        Assertions.assertEquals(402855.711, stats.get(StatType.CRIT_VALUE), 0.001);
+        Assertions.assertEquals(402855.712, stats.get(StatType.CRIT_VALUE), 0.001);
         Assertions.assertEquals(100.000, stats.get(StatType.MANA), 0.001);
         Assertions.assertEquals(12.000, stats.get(StatType.MANA_PER_SECOND), 0.001);
-        Assertions.assertEquals(13.130, stats.get(StatType.MOVEMENT_SPEED), 0.001);
-        Assertions.assertEquals(2829236.014, stats.get(StatType.HEALTH_POINTS), 0.001);
+        Assertions.assertEquals(13.131, stats.get(StatType.MOVEMENT_SPEED), 0.001);
+        Assertions.assertEquals(2829236.011, stats.get(StatType.HEALTH_POINTS), 0.001);
         Assertions.assertEquals(9900.000, stats.get(StatType.HEALTH_PER_SECOND), 0.001);
         Assertions.assertEquals(319956.940, stats.get(StatType.BLOCK_VALUE), 0.001);
         Assertions.assertEquals(44480.716, stats.get(StatType.ARMOR_VALUE), 0.001);
-        Assertions.assertEquals(57414.388, stats.get(StatType.FIRE_RESISTANCE), 0.001);
-        Assertions.assertEquals(68587.847, stats.get(StatType.ICE_RESISTANCE), 0.001);
-        Assertions.assertEquals(57414.388, stats.get(StatType.LIGHTNING_RESISTANCE), 0.001);
+        Assertions.assertEquals(48819.419, stats.get(StatType.FIRE_RESISTANCE), 0.001);
+        Assertions.assertEquals(89215.770, stats.get(StatType.ICE_RESISTANCE), 0.001);
+        Assertions.assertEquals(48819.419, stats.get(StatType.LIGHTNING_RESISTANCE), 0.001);
         Assertions.assertEquals(67811.756, stats.get(StatType.ANDERMAGIC_RESISTANCE), 0.001);
-        Assertions.assertEquals(57414.388, stats.get(StatType.POISON_RESISTANCE), 0.001);
+        Assertions.assertEquals(48819.419, stats.get(StatType.POISON_RESISTANCE), 0.001);
     }
 
     private Character createCharacter()
     {
         Character character = new Character(CharacterClass.SPELLWEAVER, setFactory);
+
+        character.setExperienceBonusPathLevel(5);
+        character.setElementalMasteryType(MasteryType.ICE);
+        character.setElementalMasteryLevel(3);
+
         character.updateRuneTrinket(0, new Rune[]{runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION),});
         character.updateRuneTrinket(1, new Rune[]{runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER),});
         character.updateRuneTrinket(2, new Rune[]{runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER),});
