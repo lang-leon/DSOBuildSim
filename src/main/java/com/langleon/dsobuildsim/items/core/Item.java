@@ -63,12 +63,10 @@ public abstract class Item {
         }
     }
 
-    public void setGems(AbstractGem gem)
+    public void updateGems(AbstractGem[] gems)
     {
-        for (int i=0; i<10; i++)
-        {
-            gems[i]=gem;
-        }
+        if (gems.length!=10) throw new IllegalArgumentException("Invalid array length!");
+        this.gems = gems;
     }
 
     public void removeGem(int slot)
