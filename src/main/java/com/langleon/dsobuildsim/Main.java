@@ -3,6 +3,7 @@ package com.langleon.dsobuildsim;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.character.Character;
 import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.character.MasteryType;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dragonstones.DragonStone;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneConfig;
@@ -81,6 +82,11 @@ public class Main {
         SetFactory setFactory = new SetFactory(setConfig);
 
         Character kauka = new Character(CharacterClass.SPELLWEAVER, setFactory);
+
+        kauka.setExperienceBonusPathLevel(5);
+        kauka.setElementalMasteryType(MasteryType.ICE);
+        kauka.setElementalMasteryLevel(3);
+
         kauka.updateRuneTrinket(0, new Rune[]{runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION),});
         kauka.updateRuneTrinket(1, new Rune[]{runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER),});
         kauka.updateRuneTrinket(2, new Rune[]{runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER),});
