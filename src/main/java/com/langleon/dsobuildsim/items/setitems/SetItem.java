@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.items.setitems;
 
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.core.SetBonusProvider;

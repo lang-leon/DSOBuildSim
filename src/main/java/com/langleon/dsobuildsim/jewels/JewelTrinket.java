@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.jewels;
 
-import com.langleon.dsobuildsim.enums.StatType;
+import com.langleon.dsobuildsim.common.StatType;
 
 import java.util.EnumMap;
 import java.util.Map;

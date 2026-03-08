@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.runes;
 
-import com.langleon.dsobuildsim.enums.runes.RuneType;
+import com.langleon.dsobuildsim.runes.enums.RuneType;
 
 import java.util.Map;
 

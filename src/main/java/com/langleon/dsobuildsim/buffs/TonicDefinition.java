@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.buffs;
 
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.buffs.TonicType;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.buffs.enums.TonicType;
 
 import java.util.Map;
 

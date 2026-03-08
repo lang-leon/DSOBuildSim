@@ -1,9 +1,9 @@
 package com.langleon.dsobuildsim.buffs;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.buffs.PhysicType;
-import com.langleon.dsobuildsim.enums.buffs.TonicType;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.buffs.enums.PhysicType;
+import com.langleon.dsobuildsim.buffs.enums.TonicType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

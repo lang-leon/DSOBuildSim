@@ -2,10 +2,11 @@ package com.langleon.dsobuildsim.character;
 
 import com.langleon.dsobuildsim.buffs.Physic;
 import com.langleon.dsobuildsim.buffs.Tonic;
+import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dragonstones.DragonCrestTrinket;
 import com.langleon.dsobuildsim.dragonstones.DragonStone;
-import com.langleon.dsobuildsim.enums.*;
-import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
+import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.essences.Essence;
 import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
