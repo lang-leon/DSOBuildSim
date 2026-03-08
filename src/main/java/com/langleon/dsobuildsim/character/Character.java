@@ -154,7 +154,7 @@ public class Character {
             int newCount = entry.getValue();
 
             if (globalCount - oldCount + newCount > group.getLimit()) {
-                throw new IllegalArgumentException("Gem limit exceeded for " + group + ".");
+                throw new IllegalArgumentException("Rune limit exceeded for " + group + ".");
             }
         }
 
@@ -182,7 +182,7 @@ public class Character {
             int newCount = entry.getValue();
 
             if (globalCount - oldCount + newCount > group.getLimit()) {
-                throw new IllegalArgumentException("Gem limit exceeded for " + group + ".");
+                throw new IllegalArgumentException("Jewel limit exceeded for " + group + ".");
             }
         }
 
