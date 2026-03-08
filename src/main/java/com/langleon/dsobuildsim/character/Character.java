@@ -5,7 +5,13 @@ import com.langleon.dsobuildsim.buffs.Tonic;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dragonstones.DragonCrestTrinket;
 import com.langleon.dsobuildsim.dragonstones.DragonStone;
+import com.langleon.dsobuildsim.gems.AbstractGem;
+import com.langleon.dsobuildsim.gems.Gem;
+import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
+import com.langleon.dsobuildsim.items.core.enums.ItemSlotType;
+import com.langleon.dsobuildsim.jewels.JewelType;
+import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.essences.Essence;
 import com.langleon.dsobuildsim.items.core.SetBonusProvider;
@@ -20,6 +26,7 @@ import com.langleon.dsobuildsim.runes.RuneTrinket;
 import com.langleon.dsobuildsim.skilltrees.wisdomskilltree.WisdomSkillTree;
 
 import java.util.*;
+import java.util.function.Function;
 
 public class Character {
 
@@ -39,6 +46,9 @@ public class Character {
 
     private Map<ItemSlot, Item> equippedItems;
     private Map<SetType, SetInstance> equippedSets;
+    private Map<GemLimitGroup, Integer> gemLimits;
+    private Map<RuneLimitGroup, Integer> runeLimits;
+    private Map<JewelType, Integer> jewelLimits;
 
     private Pet pet;
     private Map<StatType, Double> collectorBagBuffs;
@@ -60,6 +70,9 @@ public class Character {
         this.elementalMasteryLevel = 0;
         this.experienceBonusPath = false;
         this.experienceBonusPathLevel = 0;
+        this.gemLimits = new EnumMap<>(GemLimitGroup.class);
+        this.runeLimits = new EnumMap<>(RuneLimitGroup.class);
+        this.jewelLimits = new EnumMap<>(JewelType.class);
 
         this.runeTrinkets = new ArrayList<>(7);
         for (int i = 0; i < 7; i++) {
@@ -121,11 +134,6 @@ public class Character {
         this.experienceBonusPathLevel = level;
     }
 
-    public void updateRuneTrinket(int index, Rune[] runes)
-    {
-        this.runeTrinkets.get(index).updateRunes(runes);
-    }
-
     public List<RuneTrinket> getRuneTrinkets() {
         return runeTrinkets;
     }
@@ -134,9 +142,24 @@ public class Character {
         return runeTrinkets.get(index);
     }
 
-    public void updateJewelTrinket(int index, Jewel[] jewels)
+    public void updateRuneTrinket(int index, Rune[] runes)
     {
-        this.jewelTrinkets.get(index).updateJewels(jewels);
+        Map<RuneLimitGroup, Integer> oldRunes = this.countByLimitGroup(this.runeTrinkets.get(index).getRunes(), Rune::getRuneLimitGroup, RuneLimitGroup.class);
+        Map<RuneLimitGroup, Integer> newRunes = this.countByLimitGroup(runes, Rune::getRuneLimitGroup, RuneLimitGroup.class);
+
+        for (Map.Entry<RuneLimitGroup, Integer> entry : newRunes.entrySet()) {
+            RuneLimitGroup group = entry.getKey();
+            int globalCount = this.runeLimits.getOrDefault(group, 0);
+            int oldCount = oldRunes.getOrDefault(group, 0);
+            int newCount = entry.getValue();
+
+            if (globalCount - oldCount + newCount > group.getLimit()) {
+                throw new IllegalArgumentException("Gem limit exceeded for " + group + ".");
+            }
+        }
+
+        this.updateGlobalLimits(oldRunes, newRunes, this.runeLimits);
+        this.runeTrinkets.get(index).updateRunes(runes);
     }
 
     public List<JewelTrinket> getJewelTrinkets() {
@@ -147,13 +170,33 @@ public class Character {
         return jewelTrinkets.get(index);
     }
 
-    public void updateDragonCrestTrinket(DragonStone[] dragonStones)
+    public void updateJewelTrinket(int index, Jewel[] jewels)
     {
-        this.dragonCrestTrinket.updateDragonStones(dragonStones);
+        Map<JewelType, Integer> oldJewels = this.countByLimitGroup(this.jewelTrinkets.get(index).getJewels(), Jewel::getJewelType, JewelType.class);
+        Map<JewelType, Integer> newJewels = this.countByLimitGroup(jewels, Jewel::getJewelType, JewelType.class);
+
+        for (Map.Entry<JewelType, Integer> entry : newJewels.entrySet()) {
+            JewelType group = entry.getKey();
+            int globalCount = this.jewelLimits.getOrDefault(group, 0);
+            int oldCount = oldJewels.getOrDefault(group, 0);
+            int newCount = entry.getValue();
+
+            if (globalCount - oldCount + newCount > group.getLimit()) {
+                throw new IllegalArgumentException("Gem limit exceeded for " + group + ".");
+            }
+        }
+
+        this.updateGlobalLimits(oldJewels, newJewels, this.jewelLimits);
+        this.jewelTrinkets.get(index).updateJewels(jewels);
     }
 
     public DragonCrestTrinket getDragonCrestTrinket() {
         return dragonCrestTrinket;
+    }
+
+    public void updateDragonCrestTrinket(DragonStone[] dragonStones)
+    {
+        this.dragonCrestTrinket.updateDragonStones(dragonStones);
     }
 
     public void equipItem(ItemSlot slot, Item item)
@@ -182,6 +225,55 @@ public class Character {
             {
                 this.updateEquippedSetsOnRemoval(settableItem);
             }
+        }
+    }
+
+    public void updateItemGems(ItemSlot slot, AbstractGem[] gems)
+    {
+        Item eqippedItem = this.equippedItems.get(slot);
+        if (eqippedItem == null) throw new IllegalArgumentException("Can't update gems for non equipped item in slot "+slot+".");
+        Map<GemLimitGroup, Integer> oldGems = this.countByLimitGroup(eqippedItem.getGems(), AbstractGem::getGemLimitGroup, GemLimitGroup.class);
+        Map<GemLimitGroup, Integer> newGems = this.countByLimitGroup(gems, AbstractGem::getGemLimitGroup, GemLimitGroup.class);
+
+        for (Map.Entry<GemLimitGroup, Integer> entry : newGems.entrySet()) {
+            GemLimitGroup group = entry.getKey();
+            int globalCount = this.gemLimits.getOrDefault(group, 0);
+            int oldCount = oldGems.getOrDefault(group, 0);
+            int newCount = entry.getValue();
+
+            if (globalCount - oldCount + newCount > group.getLimit()) {
+                throw new IllegalArgumentException("Gem limit exceeded for " + group + ".");
+            }
+        }
+
+        this.updateGlobalLimits(oldGems, newGems, this.gemLimits);
+        this.equippedItems.get(slot).updateGems(gems);
+    }
+
+    private <T, G extends Enum<G>> Map<G, Integer> countByLimitGroup(T[] items, Function<T, G> groupExtractor, Class<G> enumClass)
+    {
+        Map<G, Integer> result = new EnumMap<>(enumClass);
+
+        for (T item : items)
+        {
+            if (item == null) continue;
+            result.merge(groupExtractor.apply(item), 1, Integer::sum);
+        }
+
+        return result;
+    }
+
+    private <G extends Enum<G>> void updateGlobalLimits(Map<G, Integer> oldCount, Map<G, Integer> newCount, Map<G, Integer> globalCount)
+    {
+        for (Map.Entry<G, Integer> entry : oldCount.entrySet()) {
+            globalCount.computeIfPresent(entry.getKey(), (_, amount) -> {
+                int result = amount - entry.getValue();
+                return result <= 0 ? null : result;
+            });
+        }
+
+        for (Map.Entry<G, Integer> entry : newCount.entrySet()) {
+            globalCount.merge(entry.getKey(), entry.getValue(), Integer::sum);
         }
     }
 
