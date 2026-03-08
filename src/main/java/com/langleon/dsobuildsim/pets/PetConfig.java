@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.pets;
 
-import com.langleon.dsobuildsim.enums.pets.PetType;
+import com.langleon.dsobuildsim.pets.enums.PetType;
 
 import java.util.Map;
 

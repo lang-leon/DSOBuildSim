@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.items.mythicitems;
 
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.items.core.*;
 
 import java.util.EnumMap;

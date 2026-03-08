@@ -1,4 +1,6 @@
-package com.langleon.dsobuildsim.enums;
+package com.langleon.dsobuildsim.character;
+
+import com.langleon.dsobuildsim.common.StatType;
 
 import java.util.Map;
 

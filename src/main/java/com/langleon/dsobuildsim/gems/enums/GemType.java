@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.enums.gems;
+package com.langleon.dsobuildsim.gems.enums;
 
 public enum GemType {
     RUBY("Ruby"),

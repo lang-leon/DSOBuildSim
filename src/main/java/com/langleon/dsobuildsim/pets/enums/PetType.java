@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.enums.pets;
+package com.langleon.dsobuildsim.pets.enums;
 
 public enum PetType {
     //Dragon Spawn

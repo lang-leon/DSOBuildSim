@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.enums;
+package com.langleon.dsobuildsim.common;
 
 public enum StatType {
     ANCIENT_WISDOM_DROP_BONUS("Ancient Wisdom Drop Bonus"),

@@ -1,8 +1,7 @@
 package com.langleon.dsobuildsim.dragonstones;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.dragonstones.DragonStoneType;
+import com.langleon.dsobuildsim.common.StatType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,7 +1,6 @@
 package com.langleon.dsobuildsim.sets;
 
-import com.langleon.dsobuildsim.enums.CharacterClass;
-import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.character.CharacterClass;
 
 public class SetFactory {
     private final SetConfig setConfig;

@@ -1,9 +1,9 @@
 package com.langleon.dsobuildsim.pets;
 
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.pets.PetCategory;
-import com.langleon.dsobuildsim.enums.pets.PetType;
-import com.langleon.dsobuildsim.enums.pets.PetUpgradeType;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.pets.enums.PetCategory;
+import com.langleon.dsobuildsim.pets.enums.PetType;
+import com.langleon.dsobuildsim.pets.enums.PetUpgradeType;
 
 import java.util.Map;
 

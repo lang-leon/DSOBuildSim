@@ -1,9 +1,9 @@
 package com.langleon.dsobuildsim.gems;
 
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.gems.GemLimitGroup;
-import com.langleon.dsobuildsim.enums.gems.GemType;
-import com.langleon.dsobuildsim.enums.gems.GemUpgradeType;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
+import com.langleon.dsobuildsim.gems.enums.GemType;
+import com.langleon.dsobuildsim.gems.enums.GemUpgradeType;
 
 import java.util.Map;
 

@@ -1,4 +1,6 @@
-package com.langleon.dsobuildsim.enums;
+package com.langleon.dsobuildsim.enchantments;
+
+import com.langleon.dsobuildsim.common.StatType;
 
 public enum EnchantmentType {
 
