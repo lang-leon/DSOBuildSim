@@ -5,6 +5,6 @@ import com.langleon.dsobuildsim.common.StatType;
 
 import java.util.Map;
 
-public record JewelDefinition(JewelType jewelType, int defaultTier,
-                              Map<Integer, Map<StatType, Double>> statsPerTier, Map<CharacterClass, Map<Integer, String>> descriptionPerClassPerTier) {
+public record JewelDefinition(JewelType jewelType, String name, int defaultTier,
+                              Map<Integer, Map<StatType, Double>> statsPerTier, Map<Integer, String> descriptionPerTier) {
 }

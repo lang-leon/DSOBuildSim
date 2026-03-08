@@ -16,53 +16,33 @@ public class JewelFactory {
         return this.config.upgradeCosts().get(jewel.getTier());
     }
 
-    public Jewel createJewel(JewelType jewelType, int tier)
-    {
-        JewelDefinition jewelDefinition = this.config.jewels().get(jewelType);
-        Map<Integer, String> descriptionSpellweaver = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.SPELLWEAVER);
-        Map<Integer, String> descriptionDragonknight = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.DRAGONKNIGHT);
-        Map<Integer, String> descriptionRanger = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.RANGER);
-        Map<Integer, String> descriptionSteamMechanicus = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.STEAM_MECHANICUS);
-        if (descriptionSpellweaver.get(tier) == null && descriptionDragonknight.get(tier) == null && descriptionRanger.get(tier) == null && descriptionSteamMechanicus.get(tier) == null)
-            throw new IllegalArgumentException("Invalid jewel tier: " + tier + "!");
-        return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.SPELLWEAVER).get(tier));
-    }
-
-    public Jewel createJewel(JewelType jewelType, int tier, CharacterClass characterClass)
-    {
-        JewelDefinition jewelDefinition = this.config.jewels().get(jewelType);
-        Map<Integer, String> descriptionSpellweaver = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.SPELLWEAVER);
-        Map<Integer, String> descriptionDragonknight = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.DRAGONKNIGHT);
-        Map<Integer, String> descriptionRanger = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.RANGER);
-        Map<Integer, String> descriptionSteamMechanicus = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.STEAM_MECHANICUS);
-        if (descriptionSpellweaver.get(tier) == null && descriptionDragonknight.get(tier) == null && descriptionRanger.get(tier) == null && descriptionSteamMechanicus.get(tier) == null)
-            throw new IllegalArgumentException("Invalid jewel tier: " + tier + "!");
-        return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerClassPerTier().get(characterClass).get(tier));
-    }
-
-    public Jewel createJewel(JewelType jewelType)
-    {
-        JewelDefinition jewelDefinition = this.config.jewels().get(jewelType);
-        int tier = jewelDefinition.defaultTier();
-        Map<Integer, String> descriptionSpellweaver = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.SPELLWEAVER);
-        Map<Integer, String> descriptionDragonknight = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.DRAGONKNIGHT);
-        Map<Integer, String> descriptionRanger = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.RANGER);
-        Map<Integer, String> descriptionSteamMechanicus = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.STEAM_MECHANICUS);
-        if (descriptionSpellweaver.get(tier) == null && descriptionDragonknight.get(tier) == null && descriptionRanger.get(tier) == null && descriptionSteamMechanicus.get(tier) == null)
-            throw new IllegalArgumentException("Invalid jewel tier: " + tier + "!");
-        return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.SPELLWEAVER).get(tier));
-    }
-
     public Jewel createJewel(JewelType jewelType, CharacterClass characterClass)
     {
-        JewelDefinition jewelDefinition = this.config.jewels().get(jewelType);
+        JewelDefinition jewelDefinition = null;
+        switch (characterClass)
+        {
+            case SPELLWEAVER -> jewelDefinition = this.config.spellweaverJewels().get(jewelType);
+            case DRAGONKNIGHT -> jewelDefinition = this.config.dragonknightJewels().get(jewelType);
+            case RANGER -> jewelDefinition = this.config.rangerJewels().get(jewelType);
+            case STEAM_MECHANICUS -> jewelDefinition = this.config.steamMechanicusJewels().get(jewelType);
+        }
         int tier = jewelDefinition.defaultTier();
-        Map<Integer, String> descriptionSpellweaver = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.SPELLWEAVER);
-        Map<Integer, String> descriptionDragonknight = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.DRAGONKNIGHT);
-        Map<Integer, String> descriptionRanger = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.RANGER);
-        Map<Integer, String> descriptionSteamMechanicus = jewelDefinition.descriptionPerClassPerTier().get(CharacterClass.STEAM_MECHANICUS);
-        if (descriptionSpellweaver.get(tier) == null && descriptionDragonknight.get(tier) == null && descriptionRanger.get(tier) == null && descriptionSteamMechanicus.get(tier) == null)
+        return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerTier().get(tier));
+    }
+
+    public Jewel createJewel(JewelType jewelType, CharacterClass characterClass, int tier)
+    {
+        JewelDefinition jewelDefinition = null;
+        switch (characterClass)
+        {
+            case SPELLWEAVER -> jewelDefinition = this.config.spellweaverJewels().get(jewelType);
+            case DRAGONKNIGHT -> jewelDefinition = this.config.dragonknightJewels().get(jewelType);
+            case RANGER -> jewelDefinition = this.config.rangerJewels().get(jewelType);
+            case STEAM_MECHANICUS -> jewelDefinition = this.config.steamMechanicusJewels().get(jewelType);
+        }
+        Map<Integer, String> description = jewelDefinition.descriptionPerTier();
+        if (description.get(tier) == null)
             throw new IllegalArgumentException("Invalid jewel tier: " + tier + "!");
-        return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerClassPerTier().get(characterClass).get(tier));
+        return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerTier().get(tier));
     }
 }
