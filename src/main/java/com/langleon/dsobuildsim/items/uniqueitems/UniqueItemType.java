@@ -1,4 +1,6 @@
-package com.langleon.dsobuildsim.enums.items;
+package com.langleon.dsobuildsim.items.uniqueitems;
+
+import com.langleon.dsobuildsim.items.core.ItemType;
 
 public enum UniqueItemType implements ItemType {
     //amulets

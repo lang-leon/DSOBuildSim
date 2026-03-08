@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.enums.dragonstones;
+package com.langleon.dsobuildsim.dragonstones;
 
 public enum DragonStoneType {
     GREEDSTONE,

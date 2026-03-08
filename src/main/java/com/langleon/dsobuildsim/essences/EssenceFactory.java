@@ -1,7 +1,5 @@
 package com.langleon.dsobuildsim.essences;
 
-import com.langleon.dsobuildsim.enums.essences.EssenceType;
-
 public class EssenceFactory {
     private final EssenceConfig config;
 

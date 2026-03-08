@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.skilltrees.wisdomskilltree;
 
-import com.langleon.dsobuildsim.enums.StatType;
+import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.skilltrees.AbstractSkillTree;
 
 import java.util.EnumMap;

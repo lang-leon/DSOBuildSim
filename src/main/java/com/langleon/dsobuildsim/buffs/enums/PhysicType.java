@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.enums.buffs;
+package com.langleon.dsobuildsim.buffs.enums;
 
 public enum PhysicType {
     //Simple Physics

@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.enums.jewels;
+package com.langleon.dsobuildsim.jewels;
 
 public enum JewelType {
 

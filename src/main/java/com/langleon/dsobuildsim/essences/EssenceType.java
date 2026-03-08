@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.enums.essences;
+package com.langleon.dsobuildsim.essences;
 
 public enum EssenceType {
     VIGOR("Essence of Vigor"),

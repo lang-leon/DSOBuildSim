@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.enums;
+package com.langleon.dsobuildsim.items.core.enums;
 
 public enum ItemSlotType {
 

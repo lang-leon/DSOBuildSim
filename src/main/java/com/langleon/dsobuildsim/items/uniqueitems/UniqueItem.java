@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.items.uniqueitems;
 
 import com.langleon.dsobuildsim.enchantments.Enchantment;
-import com.langleon.dsobuildsim.enums.StatType;
+import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;

@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.enums.items;
+package com.langleon.dsobuildsim.sets;
 
 public enum SetType {
     AMMONS_GLEAM,

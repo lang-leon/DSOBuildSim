@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.pets;
 
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.pets.PetType;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.pets.enums.PetType;
 import java.util.Map;
 
 public class PetFactory {

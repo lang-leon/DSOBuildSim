@@ -1,9 +1,9 @@
 package com.langleon.dsobuildsim.runes;
 
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.runes.RuneLimitGroup;
-import com.langleon.dsobuildsim.enums.runes.RuneType;
-import com.langleon.dsobuildsim.enums.runes.RuneUpgradeType;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
+import com.langleon.dsobuildsim.runes.enums.RuneType;
+import com.langleon.dsobuildsim.runes.enums.RuneUpgradeType;
 
 import java.util.Map;
 import java.util.Objects;
