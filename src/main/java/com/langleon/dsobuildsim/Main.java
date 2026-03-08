@@ -12,6 +12,7 @@ import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.enchantments.EnchantmentType;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneType;
 import com.langleon.dsobuildsim.essences.EssenceType;
+import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.enums.GemType;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
@@ -81,97 +82,95 @@ public class Main {
         SetConfig setConfig = objectMapper.readValue(reader, SetConfig.class);
         SetFactory setFactory = new SetFactory(setConfig);
 
-        Character kauka = new Character(CharacterClass.SPELLWEAVER, setFactory);
+        Character character = new Character(CharacterClass.SPELLWEAVER, setFactory);
 
-        kauka.setExperienceBonusPathLevel(5);
-        kauka.setElementalMasteryType(MasteryType.ICE);
-        kauka.setElementalMasteryLevel(3);
+        character.setExperienceBonusPathLevel(5);
+        character.setElementalMasteryType(MasteryType.ICE);
+        character.setElementalMasteryLevel(3);
 
-        kauka.updateRuneTrinket(0, new Rune[]{runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION),});
-        kauka.updateRuneTrinket(1, new Rune[]{runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER),});
-        kauka.updateRuneTrinket(2, new Rune[]{runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER),});
-        kauka.updateRuneTrinket(3, new Rune[]{runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY),});
-        kauka.updateRuneTrinket(4, new Rune[]{runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION),});
-        kauka.updateRuneTrinket(5, new Rune[]{runeFactory.createRune(RuneType.HOLY_STAR_SHARD), runeFactory.createRune(RuneType.RISING_VIGOR), runeFactory.createRune(RuneType.FORTITUDE), runeFactory.createRune(RuneType.FORTITUDE), runeFactory.createRune(RuneType.FORTITUDE), runeFactory.createRune(RuneType.ANDERMANT_FEVER), runeFactory.createRune(RuneType.REALM_CHANGER), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE),});
+        character.updateRuneTrinket(0, new Rune[]{runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION), runeFactory.createRune(RuneType.DEVASTATION),});
+        character.updateRuneTrinket(1, new Rune[]{runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SPRING), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER), runeFactory.createRune(RuneType.SUMMER),});
+        character.updateRuneTrinket(2, new Rune[]{runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.AUTUMN), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER), runeFactory.createRune(RuneType.WINTER),});
+        character.updateRuneTrinket(3, new Rune[]{runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY),});
+        character.updateRuneTrinket(4, new Rune[]{runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.PERSISTENCE), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION), runeFactory.createRune(RuneType.ACCELERATION),});
+        character.updateRuneTrinket(5, new Rune[]{runeFactory.createRune(RuneType.HOLY_STAR_SHARD), runeFactory.createRune(RuneType.RISING_VIGOR), runeFactory.createRune(RuneType.FORTITUDE), runeFactory.createRune(RuneType.FORTITUDE), runeFactory.createRune(RuneType.FORTITUDE), runeFactory.createRune(RuneType.ANDERMANT_FEVER), runeFactory.createRune(RuneType.REALM_CHANGER), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE),});
 
-        kauka.updateJewelTrinket(0, new Jewel[]{jewelFactory.createJewel(JewelType.ETERNAL_SCORN, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.GLORY, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.RAGE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.AMPLIFIED_HEALING, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FROZEN_HEART, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.GEM_FORTUNE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.ETERNAL_WRATH, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER),});
-        kauka.updateJewelTrinket(1, new Jewel[]{jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.VIGOR, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.AMBIDEXTROUS_VIGOR, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.VITALITY, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.ENCOURAGEMENT, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.CONTRIBUTION, CharacterClass.SPELLWEAVER),});
-        kauka.updateJewelTrinket(2, new Jewel[]{jewelFactory.createJewel(JewelType.LASTING_HEALTH, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.CONVERSE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FIERY_FLOWER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.STRENUOUSNESS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FORTITUDE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.PROLONGATION, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.REVIVAL_BOON, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.EASTER_FEVER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.SCORCHING_RAY, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.PENT_UP_POWER, CharacterClass.SPELLWEAVER),});
+        character.updateJewelTrinket(0, new Jewel[]{jewelFactory.createJewel(JewelType.ETERNAL_SCORN, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.GLORY, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.RAGE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.AMPLIFIED_HEALING, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FROZEN_HEART, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.GEM_FORTUNE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.ETERNAL_WRATH, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER),});
+        character.updateJewelTrinket(1, new Jewel[]{jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.VIGOR, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.AMBIDEXTROUS_VIGOR, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.VITALITY, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.ENCOURAGEMENT, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.CONTRIBUTION, CharacterClass.SPELLWEAVER),});
+        character.updateJewelTrinket(2, new Jewel[]{jewelFactory.createJewel(JewelType.LASTING_HEALTH, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.CONVERSE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FIERY_FLOWER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.STRENUOUSNESS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FORTITUDE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.PROLONGATION, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.REVIVAL_BOON, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.EASTER_FEVER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.SCORCHING_RAY, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.PENT_UP_POWER, CharacterClass.SPELLWEAVER),});
 
-        kauka.updateDragonCrestTrinket(new DragonStone[]{dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 5), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 5), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), null, null, null, null, null});
+        character.updateDragonCrestTrinket(new DragonStone[]{dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 5), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 5), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), null, null, null, null, null});
 
         Item amulet = itemFactory.createItem(SetItemType.WINTER_AMULET, CharacterClass.SPELLWEAVER);
         amulet.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
-        amulet.setGems(gemFactory.createGem(GemType.AMETHYST, 17));
-        kauka.equipItem(ItemSlot.AMULET, amulet);
+        character.equipItem(ItemSlot.AMULET, amulet);
+        character.updateItemGems(ItemSlot.AMULET, new AbstractGem[]{gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17),gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17)});
 
         Item cloak = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_CLOAK, CharacterClass.SPELLWEAVER);
         cloak.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
-        cloak.setGems(gemFactory.createGem(GemType.RUBY, 17));
-        kauka.equipItem(ItemSlot.CLOAK, cloak);
+        character.equipItem(ItemSlot.CLOAK, cloak);
+        character.updateItemGems(ItemSlot.CLOAK, new AbstractGem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17),gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
 
         Item belt = itemFactory.createItem(UniqueItemType.BELT_OF_ZEAL, CharacterClass.SPELLWEAVER);
         belt.updateBaseValues(Map.of(StatType.DAMAGE, 1630.885, StatType.HEALTH_POINTS, 20072.654, StatType.RESISTANCE_VALUE, 1679.873));
         belt.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
-        belt.setGems(gemFactory.createGem(GemType.RUBY, 17));
-        kauka.equipItem(ItemSlot.BELT, belt);
+        character.equipItem(ItemSlot.BELT, belt);
+        character.updateItemGems(ItemSlot.BELT, new AbstractGem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17),gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
 
         Item ring1 = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_RING, CharacterClass.SPELLWEAVER);
         ring1.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
-        ring1.setGems(gemFactory.createGem(GemType.AMETHYST, 17));
-        kauka.equipItem(ItemSlot.RING1, ring1);
+        character.equipItem(ItemSlot.RING1, ring1);
+        character.updateItemGems(ItemSlot.RING1, new AbstractGem[]{gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17),gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17)});
 
         Item ring2 = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_RING, CharacterClass.SPELLWEAVER);
         ring2.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
-        ring2.setGems(gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17));
-        kauka.equipItem(ItemSlot.RING2, ring2);
+        character.equipItem(ItemSlot.RING2, ring2);
+        character.updateItemGems(ItemSlot.RING2, new AbstractGem[]{gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17)});
 
         Item helmet = itemFactory.createItem(SetItemType.STELLAR_WALKER_HELMET, CharacterClass.SPELLWEAVER);
         helmet.updateBaseValues(Map.of(StatType.DAMAGE, 1426.117, StatType.CRIT_VALUE, 1298.723, StatType.HEALTH_POINTS, 19630.458));
         helmet.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
-        helmet.setGems(gemFactory.createGem(GemType.AMETHYST, 17));
-        kauka.equipItem(ItemSlot.HELMET, helmet);
+        character.equipItem(ItemSlot.HELMET, helmet);
+        character.updateItemGems(ItemSlot.HELMET, new AbstractGem[]{gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17),gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17)});
 
         Item shoulders = itemFactory.createItem(SetItemType.STELLAR_WALKER_SHOULDERS, CharacterClass.SPELLWEAVER);
         shoulders.updateBaseValues(Map.of(StatType.DAMAGE, 1639.564, StatType.CRIT_VALUE, 1361.727, StatType.HEALTH_POINTS, 15625.218));
         shoulders.setEnchants(new Enchantment(EnchantmentType.BLOCK_VALUE));
-        shoulders.setGems(gemFactory.createGem(GemType.EMERALD, 17));
-        kauka.equipItem(ItemSlot.SHOULDERS, shoulders);
+        character.equipItem(ItemSlot.SHOULDERS, shoulders);
+        character.updateItemGems(ItemSlot.SHOULDERS, new AbstractGem[]{gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17),gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17)});
 
         Item torso = itemFactory.createItem(SetItemType.WINTER_TORSO, CharacterClass.SPELLWEAVER);
         torso.setEnchants(new Enchantment(EnchantmentType.BLOCK_VALUE));
-        torso.setGems(gemFactory.createGem(GemType.EMERALD, 17));
-        kauka.equipItem(ItemSlot.TORSO, torso);
+        character.equipItem(ItemSlot.TORSO, torso);
+        character.updateItemGems(ItemSlot.TORSO, new AbstractGem[]{gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17),gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17)});
 
         Item gloves = itemFactory.createItem(SetItemType.WINTER_GLOVES, CharacterClass.SPELLWEAVER);
         gloves.setEnchants(new Enchantment(EnchantmentType.CRIT_VALUE));
-        gloves.setGems(gemFactory.createGem(GemType.ONYX, 17));
-        kauka.equipItem(ItemSlot.GLOVES, gloves);
+        character.equipItem(ItemSlot.GLOVES, gloves);
+        character.updateItemGems(ItemSlot.GLOVES, new AbstractGem[]{gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17),gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17)});
 
         Item boots = itemFactory.createItem(SetItemType.WINTER_BOOTS, CharacterClass.SPELLWEAVER);
         boots.setEnchant(new Enchantment(EnchantmentType.MOVEMENT_SPEED), 0);
         boots.setEnchant(new Enchantment(EnchantmentType.MOVEMENT_SPEED), 1);
         boots.setEnchant(new Enchantment(EnchantmentType.DAMAGE), 2);
         boots.setEnchant(new Enchantment(EnchantmentType.DAMAGE), 3);
-        boots.setGems(gemFactory.createGem(GemType.ONYX, 17));
-        boots.setGem(gemFactory.createGem(GemType.RHODOLITE, 17), 0);
-        boots.setGem(gemFactory.createGem(GemType.EMERALD, 17), 9);
-        kauka.equipItem(ItemSlot.BOOTS, boots);
+        character.equipItem(ItemSlot.BOOTS, boots);
+        character.updateItemGems(ItemSlot.BOOTS, new AbstractGem[]{gemFactory.createGem(GemType.RHODOLITE, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17),gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17)});
 
         Item adornment = itemFactory.createItem(UniqueItemType.SIGRISMARRS_ADORNMENT, CharacterClass.SPELLWEAVER);
         adornment.updateBaseValues(Map.of(StatType.DAMAGE, 1870.52, StatType.CRIT_VALUE, 2100.146));
         adornment.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
-        adornment.setGems(gemFactory.createGem(GemType.RUBY, 17));
-        kauka.equipItem(ItemSlot.WEAPON_ADORNMENT, adornment);
+        character.equipItem(ItemSlot.WEAPON_ADORNMENT, adornment);
+        character.updateItemGems(ItemSlot.WEAPON_ADORNMENT, new AbstractGem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17),gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
 
         Item twohand = itemFactory.createItem(UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED, CharacterClass.SPELLWEAVER);
         twohand.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
-        twohand.setGems(gemFactory.createGem(GemType.RUBY, 17));
-        kauka.equipItem(ItemSlot.TWO_HAND_WEAPON, twohand);
+        character.equipItem(ItemSlot.TWO_HAND_WEAPON, twohand);
+        character.updateItemGems(ItemSlot.TWO_HAND_WEAPON, new AbstractGem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17),gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
 
-        kauka.setEssence(essenceFactory.createEssence(EssenceType.VIGOR, 3));
+        character.setEssence(essenceFactory.createEssence(EssenceType.VIGOR, 3));
 
-        kauka.setPet(petFactory.createPet(PetType.THE_SOUL_OF_DRAGAN_DOLL));
+        character.setPet(petFactory.createPet(PetType.THE_SOUL_OF_DRAGAN_DOLL));
 
         WisdomSkillTree wisdomSkillTree = new WisdomSkillTree();
         wisdomSkillTree.setLevel(60, 1, 1);
@@ -193,11 +192,12 @@ public class Main {
         wisdomSkillTree.setLevel(1, 7, 3);
         wisdomSkillTree.setLevel(15, 8, 1);
         wisdomSkillTree.setLevel(15, 8, 2);
-        kauka.setWisdomSkillTree(wisdomSkillTree);
+        character.setWisdomSkillTree(wisdomSkillTree);
 
-        kauka.setCollectorBagBuffs(Map.of(StatType.RESISTANCE_VALUE, 0.15, StatType.BLOCK_VALUE, 0.02, StatType.DAMAGE, 0.06, StatType.HEALTH_POINTS, 0.33));
+        character.setCollectorBagBuffs(Map.of(StatType.RESISTANCE_VALUE, 0.15, StatType.BLOCK_VALUE, 0.02, StatType.DAMAGE, 0.06, StatType.HEALTH_POINTS, 0.33));
+        character.setCollectorBagBuffs(Map.of(StatType.RESISTANCE_VALUE, 0.15, StatType.BLOCK_VALUE, 0.02, StatType.DAMAGE, 0.06, StatType.HEALTH_POINTS, 0.33));
 
-        printStats(kauka.calculateCharacterStats());
+        printStats(character.calculateCharacterStats());
     }
 
     public static void printStats(Map<StatType, Double> stats)
