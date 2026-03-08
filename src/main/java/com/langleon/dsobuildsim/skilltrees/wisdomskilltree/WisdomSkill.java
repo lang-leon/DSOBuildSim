@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.skilltrees.wisdomskilltree;
 
-import com.langleon.dsobuildsim.enums.StatType;
+import com.langleon.dsobuildsim.common.StatType;
 
 public enum WisdomSkill {
 

@@ -1,10 +1,9 @@
 package com.langleon.dsobuildsim.sets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.enums.CharacterClass;
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.items.SetItemType;
-import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

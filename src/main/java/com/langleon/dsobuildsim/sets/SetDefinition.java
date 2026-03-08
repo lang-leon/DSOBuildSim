@@ -1,7 +1,6 @@
 package com.langleon.dsobuildsim.sets;
 
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.common.StatType;
 
 import java.util.Map;
 import java.util.Set;

@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.items.core;
 
-import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.sets.SetType;
 
 public interface SetBonusProvider {
     SetType getSetType();

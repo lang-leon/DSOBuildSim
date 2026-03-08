@@ -1,7 +1,5 @@
 package com.langleon.dsobuildsim.dragonstones;
 
-import com.langleon.dsobuildsim.enums.dragonstones.DragonStoneType;
-
 public class DragonStoneFactory {
 
     private final DragonStoneConfig config;

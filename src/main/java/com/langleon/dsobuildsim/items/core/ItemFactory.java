@@ -2,10 +2,10 @@ package com.langleon.dsobuildsim.items.core;
 
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
-import com.langleon.dsobuildsim.enums.CharacterClass;
-import com.langleon.dsobuildsim.enums.items.MythicItemType;
-import com.langleon.dsobuildsim.enums.items.SetItemType;
-import com.langleon.dsobuildsim.enums.items.UniqueItemType;
+import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
+import com.langleon.dsobuildsim.items.setitems.SetItemType;
+import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItem;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemDefinition;
