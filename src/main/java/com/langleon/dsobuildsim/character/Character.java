@@ -28,6 +28,11 @@ public class Character {
     private final CharacterClass characterClass;
     private String name;
 
+    private MasteryType elementalMasteryType;
+    private int elementalMasteryLevel; // 0-10
+    private boolean experienceBonusPath;
+    private int experienceBonusPathLevel;
+
     private List<RuneTrinket> runeTrinkets;
     private List<JewelTrinket> jewelTrinkets;
     private DragonCrestTrinket dragonCrestTrinket;
@@ -51,6 +56,10 @@ public class Character {
 
         this.characterClass = characterClass;
         this.name = characterClass.getClassName();
+        this.elementalMasteryType = MasteryType.NONE;
+        this.elementalMasteryLevel = 0;
+        this.experienceBonusPath = false;
+        this.experienceBonusPathLevel = 0;
 
         this.runeTrinkets = new ArrayList<>(7);
         for (int i = 0; i < 7; i++) {
@@ -79,6 +88,37 @@ public class Character {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public MasteryType getElementalMasteryType() {
+        return elementalMasteryType;
+    }
+
+    public void setElementalMasteryType(MasteryType masteryType) {
+        this.elementalMasteryType = masteryType;
+    }
+
+    public int getElementalMasteryLevel() {
+        return elementalMasteryLevel;
+    }
+
+    public void setElementalMasteryLevel(int masteryLevel) {
+        if (masteryLevel < 0 || masteryLevel > 10) throw new IllegalArgumentException("Experience skill tree bonus level must be in range 0-10.");
+        this.elementalMasteryLevel = masteryLevel;
+    }
+
+    public boolean isExperienceBonusPath() {
+        return experienceBonusPath;
+    }
+
+    public int getExperienceBonusPathLevel() {
+        return experienceBonusPathLevel;
+    }
+
+    public void setExperienceBonusPathLevel(int level) {
+        if (level < 0 || level > 5) throw new IllegalArgumentException("Experience skill tree bonus level must be in range 0-5.");
+        this.experienceBonusPath = level != 0;
+        this.experienceBonusPathLevel = level;
     }
 
     public void updateRuneTrinket(int index, Rune[] runes)
@@ -286,6 +326,7 @@ public class Character {
     {
         Map<StatType, Double> relativeBonusStats = new EnumMap<>(StatType.class);
         this.characterClass.getClassRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+        this.calculateExperienceSkillTreeRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
         this.calculateTotalItemRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
         this.equippedSets.forEach((setType, setInstance) -> setInstance.getActiveRelativeValues().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum)));
         this.runeTrinkets.forEach(trinket -> trinket.getTotalRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum)));
@@ -307,6 +348,41 @@ public class Character {
         relativeBonusStats.merge(StatType.ANDERMAGIC_RESISTANCE, resistanceValue, Double::sum);
 
         return relativeBonusStats;
+    }
+
+    private Map<StatType, Double> calculateExperienceSkillTreeRelativeStats()
+    {
+        Map<StatType, Double> relativeStats = new EnumMap<>(StatType.class);
+
+        if (experienceBonusPath && experienceBonusPathLevel >= 1)
+        {
+            switch (this.characterClass)
+            {
+                case SPELLWEAVER -> relativeStats.put(StatType.DAMAGE, 0.3 + (experienceBonusPathLevel-1) * 0.05);
+                case DRAGONKNIGHT -> relativeStats.put(StatType.ATTACK_SPEED, 0.3 + (experienceBonusPathLevel-1) * 0.05);
+            }
+        }
+
+        if (elementalMasteryType == MasteryType.NONE || elementalMasteryLevel <= 0) {
+            return relativeStats;
+        }
+
+        double masteryResValue = 0.5 + (elementalMasteryLevel-1) * 0.05;
+        StatType masteryResType = switch (elementalMasteryType)
+        {
+            case FIRE -> StatType.FIRE_RESISTANCE;
+            case ICE -> StatType.ICE_RESISTANCE;
+            case LIGHTNING -> StatType.LIGHTNING_RESISTANCE;
+            case POISON -> StatType.POISON_RESISTANCE;
+            default -> null;
+        };
+        relativeStats.put(masteryResType, masteryResValue);
+
+        for (StatType stat : List.of(StatType.FIRE_RESISTANCE, StatType.ICE_RESISTANCE, StatType.LIGHTNING_RESISTANCE, StatType.POISON_RESISTANCE))
+        {
+            if (stat!=masteryResType) relativeStats.put(stat, -0.25);
+        }
+        return relativeStats;
     }
 
     private Map<StatType, Double> calculateTotalItemRelativeStats()
