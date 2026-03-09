@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.buffs.enums;
 
-public enum TonicType {
+public enum TonicType implements BuffType{
     VITALITY("Tonic of Vitality"),
     EFFICACY("Tonic of Efficacy"),
     VIGOR("Tonic of Vigor"),
@@ -22,11 +22,6 @@ public enum TonicType {
     }
 
     public String getName() {
-        return name;
-    }
-
-    @Override
-    public String toString() {
         return name;
     }
 }
