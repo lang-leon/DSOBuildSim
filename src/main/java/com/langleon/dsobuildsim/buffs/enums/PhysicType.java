@@ -30,7 +30,6 @@ public enum PhysicType implements BuffType{
     RESILIENCE_ICE_ADVANCED("Advanced Physic of Resilience (Ice)"),
     RESILIENCE_LIGHTNING_ADVANCED("Advanced Physic of Resilience (Lightning)"),
     RESILIENCE_ANDERMAGIC_ADVANCED("Advanced Physic of Resilience (Andermagic)");
-    ;
 
     private final String name;
 

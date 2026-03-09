@@ -16,20 +16,20 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Map;
+import java.util.Objects;
 
 public class BuffResolverTest {
 
-    private BuffFactory buffFactory;
     private BuffResolver buffResolver;
 
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/buffs.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/buffs.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             BuffConfig buffConfig = objectMapper.readValue(reader, BuffConfig.class);
-            buffFactory = new BuffFactory(buffConfig);
+            BuffFactory buffFactory = new BuffFactory(buffConfig);
             buffResolver = new BuffResolver(buffFactory);
         }
     }
