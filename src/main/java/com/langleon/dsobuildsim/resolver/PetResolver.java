@@ -5,9 +5,6 @@ import com.langleon.dsobuildsim.pets.Pet;
 import com.langleon.dsobuildsim.pets.PetFactory;
 import com.langleon.dsobuildsim.pets.enums.PetType;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class PetResolver {
 
     private final PetFactory petFactory;
