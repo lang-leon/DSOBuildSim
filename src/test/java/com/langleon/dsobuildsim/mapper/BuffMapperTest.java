@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Map;
+import java.util.Objects;
 
 public class BuffMapperTest {
 
@@ -21,7 +22,7 @@ public class BuffMapperTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/buffs.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/buffs.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             buffConfig = objectMapper.readValue(reader, BuffConfig.class);
