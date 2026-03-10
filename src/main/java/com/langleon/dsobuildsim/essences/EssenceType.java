@@ -37,8 +37,7 @@ public enum EssenceType {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
+    public String getName() {
         return name;
     }
 }
