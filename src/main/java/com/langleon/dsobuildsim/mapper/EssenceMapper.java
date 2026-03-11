@@ -7,6 +7,6 @@ public class EssenceMapper {
 
     public static EssenceDTO from(EssenceDefinition essence)
     {
-        return new EssenceDTO(essence.essenceType().toString(), essence.essenceType().getName(), essence.defaultTier(), essence.damagePerTier(), essence.descriptionPerTier());
+        return new EssenceDTO(essence.essenceType(), essence.essenceType().getName(), essence.defaultTier(), essence.damagePerTier(), essence.descriptionPerTier());
     }
 }

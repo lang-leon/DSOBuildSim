@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dto.PetDTO;
 import com.langleon.dsobuildsim.pets.PetConfig;
+import com.langleon.dsobuildsim.pets.enums.PetCategory;
 import com.langleon.dsobuildsim.pets.enums.PetType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,8 +39,8 @@ public class PetMapperTest {
                 4, Map.of(StatType.XP_GAIN, 0.25),
                 5, Map.of(StatType.XP_GAIN, 0.35)
         );
-        Assertions.assertEquals("BLUE_DRAGONSPAWN", petDTO.petType());
-        Assertions.assertEquals("DRAGON_SPAWN", petDTO.petCategory());
+        Assertions.assertEquals(PetType.BLUE_DRAGONSPAWN, petDTO.petType());
+        Assertions.assertEquals(PetCategory.DRAGON_SPAWN, petDTO.petCategory());
         Assertions.assertEquals("Blue Dragonspawn", petDTO.name());
         Assertions.assertEquals(5, petDTO.tier());
         Assertions.assertEquals(statsPerTier, petDTO.stats());

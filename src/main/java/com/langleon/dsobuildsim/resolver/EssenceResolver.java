@@ -13,11 +13,11 @@ public class EssenceResolver {
         this.essenceFactory = essenceFactory;
     }
 
-    public Essence resolve(EssenceDTO essenceDTO)
+    public Essence resolveEssence(EssenceDTO essenceDTO)
     {
         try
         {
-            EssenceType essenceType = EssenceType.valueOf(essenceDTO.essenceType());
+            EssenceType essenceType = essenceDTO.essenceType();
             return essenceFactory.createEssence(essenceType, essenceDTO.tier());
         }
         catch (IllegalArgumentException e)

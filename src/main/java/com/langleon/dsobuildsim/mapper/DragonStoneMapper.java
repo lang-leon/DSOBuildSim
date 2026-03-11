@@ -7,6 +7,6 @@ public class DragonStoneMapper {
 
     public static DragonStoneDTO from(DragonStoneDefinition definition)
     {
-        return new DragonStoneDTO(definition.dragonStoneType().toString(), definition.dragonStoneType().getName(), definition.defaultTier(), definition.statsPerTier(), definition.descriptionPerTier());
+        return new DragonStoneDTO(definition.dragonStoneType(), definition.dragonStoneType().getName(), definition.defaultTier(), definition.statsPerTier(), definition.descriptionPerTier());
     }
 }
