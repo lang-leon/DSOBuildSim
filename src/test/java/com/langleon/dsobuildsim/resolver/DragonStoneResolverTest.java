@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -43,5 +44,23 @@ public class DragonStoneResolverTest {
         Assertions.assertEquals(4, dragonStone.tier());
         Assertions.assertEquals(Map.of(StatType.HEALTH_POINTS, 0.05), dragonStone.stats());
         Assertions.assertEquals("+ 5.00% Health Points", dragonStone.description());
+    }
+
+    @Test
+    void shouldResolveDragonStonesFromDragonStoneDTOs()
+    {
+        DragonStoneDTO dragonStoneDTO1 = new DragonStoneDTO(DragonStoneType.POWERSTONE, "Powerstone", 4,  Map.of(4, Map.of(StatType.HEALTH_POINTS, 0.05)), Map.of(4, "+ 5.00% Health Points"));
+        DragonStoneDTO dragonStoneDTO2 = new DragonStoneDTO(DragonStoneType.GREEDSTONE, "Greedstone", 4,  Map.of(4, Map.of(StatType.HEALTH_POINTS, 0.05)), Map.of(4, "+ 5.00% Health Points"));
+        List<DragonStoneDTO> dragonStoneDTOs = List.of(dragonStoneDTO1, dragonStoneDTO2);
+        List<DragonStone> dragonStones = resolver.resolveDragonStones(dragonStoneDTOs);
+
+        Assertions.assertEquals(DragonStoneType.POWERSTONE, dragonStones.getFirst().dragonStoneType());
+        Assertions.assertEquals(4, dragonStones.getFirst().tier());
+        Assertions.assertEquals(Map.of(StatType.HEALTH_POINTS, 0.05), dragonStones.getFirst().stats());
+        Assertions.assertEquals("+ 5.00% Health Points", dragonStones.getFirst().description());
+        Assertions.assertEquals(DragonStoneType.GREEDSTONE, dragonStones.get(1).dragonStoneType());
+        Assertions.assertEquals(4, dragonStones.get(1).tier());
+        Assertions.assertEquals(Map.of(StatType.ANDERMANT_DROP_BONUS, 0.01), dragonStones.get(1).stats());
+        Assertions.assertEquals("+ 1% drop stack size of Andermant", dragonStones.get(1).description());
     }
 }

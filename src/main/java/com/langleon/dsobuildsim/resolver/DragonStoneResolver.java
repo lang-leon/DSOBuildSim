@@ -5,6 +5,8 @@ import com.langleon.dsobuildsim.dragonstones.DragonStoneFactory;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneType;
 import com.langleon.dsobuildsim.dto.DragonStoneDTO;
 
+import java.util.List;
+
 public class DragonStoneResolver {
 
     private final DragonStoneFactory dragonStoneFactory;
@@ -24,5 +26,13 @@ public class DragonStoneResolver {
         {
             throw new IllegalArgumentException("Unknown dragonstone type: " + dragonStoneDTO.dragonStoneType(), e);
         }
+    }
+
+    public List<DragonStone> resolveDragonStones(List<DragonStoneDTO> dtos)
+    {
+        if (dtos == null) return List.of();
+        return dtos.stream()
+                .map(this::resolveDragonStone)
+                .toList();
     }
 }

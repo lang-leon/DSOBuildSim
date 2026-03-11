@@ -7,6 +7,8 @@ import com.langleon.dsobuildsim.gems.GemFactory;
 import com.langleon.dsobuildsim.gems.Opal;
 import com.langleon.dsobuildsim.gems.enums.GemType;
 
+import java.util.List;
+
 public class GemResolver {
 
     private final GemFactory gemFactory;
@@ -15,7 +17,7 @@ public class GemResolver {
         this.gemFactory = gemFactory;
     }
 
-    public Gem resolve(GemDTO gemDTO)
+    public Gem resolveGem(GemDTO gemDTO)
     {
         try
         {
@@ -27,7 +29,15 @@ public class GemResolver {
         }
     }
 
-    public Opal resolve(OpalDTO opalDTO)
+    public List<Gem> resolveGems(List<GemDTO> dtos)
+    {
+        if (dtos == null) return List.of();
+        return dtos.stream()
+                .map(this::resolveGem)
+                .toList();
+    }
+
+    public Opal resolveOpal(OpalDTO opalDTO)
     {
         try
         {
@@ -40,5 +50,13 @@ public class GemResolver {
         {
             throw new IllegalArgumentException("Unknown gem type combination: " + opalDTO.gemType1() + ", "+ opalDTO.gemType2() +", "+opalDTO.gemType3()+".", e);
         }
+    }
+
+    public List<Opal> resolveOpals(List<OpalDTO> dtos)
+    {
+        if (dtos == null) return List.of();
+        return dtos.stream()
+                .map(this::resolveOpal)
+                .toList();
     }
 }
