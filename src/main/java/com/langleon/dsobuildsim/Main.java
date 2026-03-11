@@ -9,8 +9,9 @@ import com.langleon.dsobuildsim.dragonstones.DragonStone;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneConfig;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneFactory;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
-import com.langleon.dsobuildsim.enchantments.EnchantmentType;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneType;
+import com.langleon.dsobuildsim.enchantments.EnchantmentConfig;
+import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
 import com.langleon.dsobuildsim.essences.EssenceType;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.enums.GemType;
@@ -81,6 +82,8 @@ public class Main {
         reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/sets.json")));
         SetConfig setConfig = objectMapper.readValue(reader, SetConfig.class);
         SetFactory setFactory = new SetFactory(setConfig);
+        reader = new InputStreamReader(Objects.requireNonNull(Main.class.getResourceAsStream("/data/enchantments.json")));
+        EnchantmentConfig enchantmentConfig = objectMapper.readValue(reader, EnchantmentConfig.class);
 
         Character character = new Character(CharacterClass.SPELLWEAVER, setFactory);
 
@@ -101,70 +104,76 @@ public class Main {
 
         character.updateDragonCrestTrinket(new DragonStone[]{dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 5), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 5), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), null, null, null, null, null});
 
+        EnchantmentDefinition enchantDefHP = enchantmentConfig.enchantments().get(StatType.HEALTH_POINTS);
+        EnchantmentDefinition enchantDefDMG = enchantmentConfig.enchantments().get(StatType.DAMAGE);
+        EnchantmentDefinition enchantDefCrit = enchantmentConfig.enchantments().get(StatType.CRIT_VALUE);
+        EnchantmentDefinition enchantDefBlock = enchantmentConfig.enchantments().get(StatType.BLOCK_VALUE);
+        EnchantmentDefinition enchantDefMS = enchantmentConfig.enchantments().get(StatType.MOVEMENT_SPEED);
+
         Item amulet = itemFactory.createItem(SetItemType.WINTER_AMULET, CharacterClass.SPELLWEAVER);
-        amulet.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
+        amulet.setEnchants(new Enchantment(enchantDefHP.statType(), enchantDefHP.value()));
         character.equipItem(ItemSlot.AMULET, amulet);
         character.updateItemGems(ItemSlot.AMULET, new AbstractGem[]{gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17),gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17)});
 
         Item cloak = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_CLOAK, CharacterClass.SPELLWEAVER);
-        cloak.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
+        cloak.setEnchants(new Enchantment(enchantDefDMG.statType(), enchantDefDMG.value()));
         character.equipItem(ItemSlot.CLOAK, cloak);
         character.updateItemGems(ItemSlot.CLOAK, new AbstractGem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17),gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
 
         Item belt = itemFactory.createItem(UniqueItemType.BELT_OF_ZEAL, CharacterClass.SPELLWEAVER);
         belt.updateBaseValues(Map.of(StatType.DAMAGE, 1630.885, StatType.HEALTH_POINTS, 20072.654, StatType.RESISTANCE_VALUE, 1679.873));
-        belt.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
+        belt.setEnchants(new Enchantment(enchantDefDMG.statType(), enchantDefDMG.value()));
         character.equipItem(ItemSlot.BELT, belt);
         character.updateItemGems(ItemSlot.BELT, new AbstractGem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17),gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
 
         Item ring1 = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_RING, CharacterClass.SPELLWEAVER);
-        ring1.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
+        ring1.setEnchants(new Enchantment(enchantDefHP.statType(), enchantDefHP.value()));
         character.equipItem(ItemSlot.RING1, ring1);
         character.updateItemGems(ItemSlot.RING1, new AbstractGem[]{gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17),gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17)});
 
         Item ring2 = itemFactory.createItem(MythicItemType.ANCESTRAL_GLORY_RING, CharacterClass.SPELLWEAVER);
-        ring2.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
+        ring2.setEnchants(new Enchantment(enchantDefDMG.statType(), enchantDefDMG.value()));
         character.equipItem(ItemSlot.RING2, ring2);
         character.updateItemGems(ItemSlot.RING2, new AbstractGem[]{gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17), gemFactory.createOpal(GemType.ONYX, GemType.RUBY, GemType.EMERALD, 17)});
 
         Item helmet = itemFactory.createItem(SetItemType.STELLAR_WALKER_HELMET, CharacterClass.SPELLWEAVER);
         helmet.updateBaseValues(Map.of(StatType.DAMAGE, 1426.117, StatType.CRIT_VALUE, 1298.723, StatType.HEALTH_POINTS, 19630.458));
-        helmet.setEnchants(new Enchantment(EnchantmentType.HEALTH_POINTS));
+        helmet.setEnchants(new Enchantment(enchantDefHP.statType(), enchantDefHP.value()));
         character.equipItem(ItemSlot.HELMET, helmet);
         character.updateItemGems(ItemSlot.HELMET, new AbstractGem[]{gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17),gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17)});
 
         Item shoulders = itemFactory.createItem(SetItemType.STELLAR_WALKER_SHOULDERS, CharacterClass.SPELLWEAVER);
         shoulders.updateBaseValues(Map.of(StatType.DAMAGE, 1639.564, StatType.CRIT_VALUE, 1361.727, StatType.HEALTH_POINTS, 15625.218));
-        shoulders.setEnchants(new Enchantment(EnchantmentType.BLOCK_VALUE));
+        shoulders.setEnchants(new Enchantment(enchantDefBlock.statType(), enchantDefBlock.value()));
         character.equipItem(ItemSlot.SHOULDERS, shoulders);
         character.updateItemGems(ItemSlot.SHOULDERS, new AbstractGem[]{gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17),gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17)});
 
         Item torso = itemFactory.createItem(SetItemType.WINTER_TORSO, CharacterClass.SPELLWEAVER);
-        torso.setEnchants(new Enchantment(EnchantmentType.BLOCK_VALUE));
+        torso.setEnchants(new Enchantment(enchantDefBlock.statType(), enchantDefBlock.value()));
         character.equipItem(ItemSlot.TORSO, torso);
         character.updateItemGems(ItemSlot.TORSO, new AbstractGem[]{gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17),gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17)});
 
         Item gloves = itemFactory.createItem(SetItemType.WINTER_GLOVES, CharacterClass.SPELLWEAVER);
-        gloves.setEnchants(new Enchantment(EnchantmentType.CRIT_VALUE));
+        gloves.setEnchants(new Enchantment(enchantDefCrit.statType(), enchantDefCrit.value()));
         character.equipItem(ItemSlot.GLOVES, gloves);
         character.updateItemGems(ItemSlot.GLOVES, new AbstractGem[]{gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17),gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17)});
 
         Item boots = itemFactory.createItem(SetItemType.WINTER_BOOTS, CharacterClass.SPELLWEAVER);
-        boots.setEnchant(new Enchantment(EnchantmentType.MOVEMENT_SPEED), 0);
-        boots.setEnchant(new Enchantment(EnchantmentType.MOVEMENT_SPEED), 1);
-        boots.setEnchant(new Enchantment(EnchantmentType.DAMAGE), 2);
-        boots.setEnchant(new Enchantment(EnchantmentType.DAMAGE), 3);
+        boots.setEnchant(new Enchantment(enchantDefMS.statType(), enchantDefMS.value()), 0);
+        boots.setEnchant(new Enchantment(enchantDefMS.statType(), enchantDefMS.value()), 1);
+        boots.setEnchant(new Enchantment(enchantDefDMG.statType(), enchantDefDMG.value()), 2);
+        boots.setEnchant(new Enchantment(enchantDefDMG.statType(), enchantDefDMG.value()), 3);
         character.equipItem(ItemSlot.BOOTS, boots);
         character.updateItemGems(ItemSlot.BOOTS, new AbstractGem[]{gemFactory.createGem(GemType.RHODOLITE, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17),gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17)});
 
         Item adornment = itemFactory.createItem(UniqueItemType.SIGRISMARRS_ADORNMENT, CharacterClass.SPELLWEAVER);
         adornment.updateBaseValues(Map.of(StatType.DAMAGE, 1870.52, StatType.CRIT_VALUE, 2100.146));
-        adornment.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
+        adornment.setEnchants(new Enchantment(enchantDefDMG.statType(), enchantDefDMG.value()));
         character.equipItem(ItemSlot.WEAPON_ADORNMENT, adornment);
         character.updateItemGems(ItemSlot.WEAPON_ADORNMENT, new AbstractGem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17),gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
 
         Item twohand = itemFactory.createItem(UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED, CharacterClass.SPELLWEAVER);
-        twohand.setEnchants(new Enchantment(EnchantmentType.DAMAGE));
+        twohand.setEnchants(new Enchantment(enchantDefDMG.statType(), enchantDefDMG.value()));
         character.equipItem(ItemSlot.TWO_HAND_WEAPON, twohand);
         character.updateItemGems(ItemSlot.TWO_HAND_WEAPON, new AbstractGem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17),gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
 
