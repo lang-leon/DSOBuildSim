@@ -14,7 +14,7 @@ public class JewelResolver {
         this.jewelFactory = jewelFactory;
     }
     
-    public Jewel resolve(JewelDTO jewelDTO)
+    public Jewel resolveJewel(JewelDTO jewelDTO)
     {
         try
         {
@@ -26,9 +26,9 @@ public class JewelResolver {
         }
     }
 
-    public List<Jewel> resolve(List<JewelDTO> jewelDTOs)
+    public List<Jewel> resolveJewels(List<JewelDTO> jewelDTOs)
     {
         if (jewelDTOs==null) return List.of();
-        return jewelDTOs.stream().map(this::resolve).toList();
+        return jewelDTOs.stream().map(this::resolveJewel).toList();
     }
 }
