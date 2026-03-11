@@ -7,6 +7,6 @@ public class PetMapper {
 
     public static PetDTO from(PetDefinition pet)
     {
-        return new PetDTO(pet.petType().toString(), pet.petCategory().toString(), pet.petType().getName(), pet.defaultTier(), pet.statsPerTier(), pet.descriptionPerTier());
+        return new PetDTO(pet.petType(), pet.petCategory(), pet.petType().getName(), pet.defaultTier(), pet.statsPerTier(), pet.descriptionPerTier());
     }
 }

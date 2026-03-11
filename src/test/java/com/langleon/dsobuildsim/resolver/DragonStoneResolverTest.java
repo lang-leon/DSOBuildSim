@@ -35,7 +35,7 @@ public class DragonStoneResolverTest {
     @Test
     void shouldResolveDragonStoneFromDragonStoneDTO()
     {
-        DragonStoneDTO dto = new DragonStoneDTO("POWERSTONE", "Powerstone", 4,  Map.of(4, Map.of(StatType.HEALTH_POINTS, 0.05)), Map.of(4, "+ 5.00% Health Points"));
+        DragonStoneDTO dto = new DragonStoneDTO(DragonStoneType.POWERSTONE, "Powerstone", 4,  Map.of(4, Map.of(StatType.HEALTH_POINTS, 0.05)), Map.of(4, "+ 5.00% Health Points"));
 
         DragonStone dragonStone = resolver.resolveDragonStone(dto);
 
