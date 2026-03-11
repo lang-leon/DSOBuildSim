@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
-import com.langleon.dsobuildsim.enchantments.EnchantmentType;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlotType;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
 import com.langleon.dsobuildsim.items.setitems.SetItemType;
@@ -105,7 +104,7 @@ public class ItemFactoryTest {
         }
         Assertions.assertEquals(Map.of(), item.getUniqueBaseValues());
         Assertions.assertEquals(Map.of(StatType.ARMOR_VALUE, 0.10), item.getUniqueRelativeValues());
-        Assertions.assertEquals(List.of(new Enchantment(EnchantmentType.RESISTANCE, 0.27198)), item.getUniqueEnchants());
+        Assertions.assertEquals(List.of(new Enchantment(StatType.RESISTANCE_VALUE, 0.27198)), item.getUniqueEnchants());
         Assertions.assertEquals("", item.getUniqueDescription());
     }
 
@@ -131,7 +130,7 @@ public class ItemFactoryTest {
         }
         Assertions.assertEquals(Map.of(), item.getUniqueBaseValues());
         Assertions.assertEquals(Map.of(), item.getUniqueRelativeValues());
-        Assertions.assertEquals(List.of(new Enchantment(EnchantmentType.DAMAGE, 0.67637), new Enchantment(EnchantmentType.CRIT_VALUE, 0.60126)), item.getUniqueEnchants());
+        Assertions.assertEquals(List.of(new Enchantment(StatType.DAMAGE, 0.67637), new Enchantment(StatType.CRIT_VALUE, 0.60126)), item.getUniqueEnchants());
         Assertions.assertEquals("", item.getUniqueDescription());
     }
 
