@@ -17,12 +17,12 @@ public class DragonStoneResolver {
     {
         try
         {
-            DragonStoneType dragonStoneType = DragonStoneType.valueOf(dragonStoneDTO.dragonStoneType());
+            DragonStoneType dragonStoneType = dragonStoneDTO.dragonStoneType();
             return dragonStoneFactory.createDragonStone(dragonStoneType, dragonStoneDTO.tier());
         }
         catch (IllegalArgumentException e)
         {
-            throw new IllegalArgumentException("Unknown pet type: " + dragonStoneDTO.dragonStoneType(), e);
+            throw new IllegalArgumentException("Unknown dragonstone type: " + dragonStoneDTO.dragonStoneType(), e);
         }
     }
 }
