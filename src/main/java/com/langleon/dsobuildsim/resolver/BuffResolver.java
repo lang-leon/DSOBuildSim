@@ -24,7 +24,7 @@ public class BuffResolver {
         }
         catch (IllegalArgumentException e)
         {
-            throw new IllegalArgumentException("Unknown physic type: " + buffDTO.type(), e);
+            throw new IllegalArgumentException("Unknown tonic type: " + buffDTO.type(), e);
         }
     }
 
