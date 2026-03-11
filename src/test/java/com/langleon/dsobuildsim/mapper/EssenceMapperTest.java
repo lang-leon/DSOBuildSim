@@ -31,7 +31,7 @@ public class EssenceMapperTest {
     {
         EssenceDTO essenceDTO = EssenceMapper.from(essenceConfig.essences().get(EssenceType.BLAZING));
 
-        Assertions.assertEquals("BLAZING", essenceDTO.essenceType());
+        Assertions.assertEquals(EssenceType.BLAZING, essenceDTO.essenceType());
         Assertions.assertEquals("Blazing Essence of Vigor", essenceDTO.name());
         Assertions.assertEquals(5, essenceDTO.tier());
         Assertions.assertEquals(Map.of(5, 6.00), essenceDTO.damage());

@@ -17,7 +17,7 @@ public class PetResolver {
     {
         try
         {
-            PetType petType = PetType.valueOf(petDTO.petType());
+            PetType petType = petDTO.petType();
             return petFactory.createPet(petType, petDTO.tier());
         }
         catch (IllegalArgumentException e)

@@ -34,8 +34,8 @@ public class EssenceResolverTest {
     @Test
     void shouldResolveEssenceFromEssenceDTO()
     {
-        EssenceDTO essenceDTO = new EssenceDTO("BLAZING", "Blazing Essence of Vigor", 5, Map.of(5, 6.00), Map.of(5, "600.00% increased damage\nNo effect in official arenas."));
-        Essence essence = essenceResolver.resolve(essenceDTO);
+        EssenceDTO essenceDTO = new EssenceDTO(EssenceType.BLAZING, "Blazing Essence of Vigor", 5, Map.of(5, 6.00), Map.of(5, "600.00% increased damage\nNo effect in official arenas."));
+        Essence essence = essenceResolver.resolveEssence(essenceDTO);
 
         Assertions.assertEquals(EssenceType.BLAZING, essence.essenceType());
         Assertions.assertEquals(5, essence.tier());

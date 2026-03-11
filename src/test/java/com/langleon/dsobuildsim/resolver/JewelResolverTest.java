@@ -39,7 +39,7 @@ public class JewelResolverTest {
     {
         JewelDTO jewelDTO = new JewelDTO(JewelType.VIGOR, "Jewel of Vigor", 4, CharacterClass.SPELLWEAVER, Map.of(4, Map.of(StatType.DAMAGE, 0.08)), Map.of(4, "+ 8.00% damage"));
 
-        Jewel jewel = jewelResolver.resolve(jewelDTO);
+        Jewel jewel = jewelResolver.resolveJewel(jewelDTO);
 
         Assertions.assertEquals(JewelType.VIGOR, jewel.getJewelType());
         Assertions.assertEquals(4, jewel.getTier());
@@ -53,7 +53,7 @@ public class JewelResolverTest {
         JewelDTO jewelDTO1 = new JewelDTO(JewelType.VIGOR, "Jewel of Vigor", 4, CharacterClass.SPELLWEAVER, Map.of(4, Map.of(StatType.DAMAGE, 0.08)), Map.of(4, "+ 8.00% damage"));
         JewelDTO jewelDTO2 = new JewelDTO(JewelType.VITALITY, "Jewel of Vitality", 3, CharacterClass.SPELLWEAVER, Map.of(3, Map.of(StatType.DAMAGE, 0.06)), Map.of(3, "+ 6.00% health points"));
 
-        List<Jewel> jewels = jewelResolver.resolve(List.of(jewelDTO1, jewelDTO2));
+        List<Jewel> jewels = jewelResolver.resolveJewels(List.of(jewelDTO1, jewelDTO2));
 
         Assertions.assertEquals(JewelType.VIGOR, jewels.getFirst().getJewelType());
         Assertions.assertEquals(4, jewels.getFirst().getTier());

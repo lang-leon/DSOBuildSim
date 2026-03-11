@@ -38,7 +38,7 @@ public class PetResolverTest {
     @Test
     void shouldResolvePetFromPetDTO()
     {
-        PetDTO petDTO = new PetDTO("BLUE_DRAGONSPAWN", "DRAGON_SPAWN", "Blue Dragonspawn", 4, Map.of(4, Map.of(StatType.XP_GAIN, 0.25)), Map.of());
+        PetDTO petDTO = new PetDTO(PetType.BLUE_DRAGONSPAWN, PetCategory.DRAGON_SPAWN, "Blue Dragonspawn", 4, Map.of(4, Map.of(StatType.XP_GAIN, 0.25)), Map.of());
 
         Pet pet = petResolver.resolvePet(petDTO);
         Map<Integer, Map<StatType, Double>> statsPerTier = Map.of(4, Map.of(StatType.XP_GAIN, 0.25));

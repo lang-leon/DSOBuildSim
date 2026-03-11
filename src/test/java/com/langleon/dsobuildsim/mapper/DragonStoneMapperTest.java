@@ -39,7 +39,7 @@ public class DragonStoneMapperTest {
         );
         Map<Integer, String> descriptionPerTier = Map.of(3, "+ 2.50% Health Points", 4, "+ 5.00% Health Points", 5, "+ 7.50% Health Points");
 
-        Assertions.assertEquals("POWERSTONE", dto.dragonStoneType());
+        Assertions.assertEquals(DragonStoneType.POWERSTONE, dto.dragonStoneType());
         Assertions.assertEquals("Powerstone", dto.name());
         Assertions.assertEquals(5, dto.tier());
         Assertions.assertEquals(statsPerTier, dto.stats());
