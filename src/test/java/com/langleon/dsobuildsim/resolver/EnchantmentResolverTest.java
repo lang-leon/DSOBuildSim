@@ -6,7 +6,7 @@ import com.langleon.dsobuildsim.enchantments.Enchantment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
+import java.util.Set;
 
 public class EnchantmentResolverTest {
 
@@ -26,12 +26,12 @@ public class EnchantmentResolverTest {
     {
         EnchantmentDTO dto1 = new EnchantmentDTO(StatType.DAMAGE, 0.4321);
         EnchantmentDTO dto2 = new EnchantmentDTO(StatType.HEALTH_POINTS, 0.321);
-        List<EnchantmentDTO> enchantmentDTOs = List.of(dto1, dto2);
-        List<Enchantment> enchantments = EnchantmentResolver.resolveEnchantments(enchantmentDTOs);
+        Set<EnchantmentDTO> enchantmentDTOs = Set.of(dto1, dto2);
+        Set<Enchantment> enchantments = EnchantmentResolver.resolveEnchantments(enchantmentDTOs);
 
-        Assertions.assertEquals(StatType.DAMAGE, enchantments.getFirst().getStatType());
-        Assertions.assertEquals(0.4321, enchantments.getFirst().getValue());
-        Assertions.assertEquals(StatType.HEALTH_POINTS, enchantments.get(1).getStatType());
-        Assertions.assertEquals(0.321, enchantments.get(1).getValue());
+        Assertions.assertTrue(enchantments.stream()
+                .anyMatch(e -> e.getStatType() == StatType.DAMAGE && e.getValue() == 0.4321));
+        Assertions.assertTrue(enchantments.stream()
+                .anyMatch(e -> e.getStatType() == StatType.HEALTH_POINTS && e.getValue() == 0.321));
     }
 }

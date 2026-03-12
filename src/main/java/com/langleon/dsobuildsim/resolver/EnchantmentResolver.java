@@ -3,7 +3,8 @@ package com.langleon.dsobuildsim.resolver;
 import com.langleon.dsobuildsim.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 
-import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class EnchantmentResolver {
 
@@ -12,11 +13,11 @@ public class EnchantmentResolver {
         return new Enchantment(enchantmentDTO.statType(), enchantmentDTO.value());
     }
 
-    public static List<Enchantment> resolveEnchantments(List<EnchantmentDTO> dtos)
+    public static Set<Enchantment> resolveEnchantments(Set<EnchantmentDTO> dtos)
     {
-        if (dtos == null) return List.of();
+        if (dtos == null) return Set.of();
         return dtos.stream()
                 .map(EnchantmentResolver::resolveEnchantment)
-                .toList();
+                .collect(Collectors.toSet());
     }
 }
