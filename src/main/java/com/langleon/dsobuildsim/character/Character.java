@@ -6,10 +6,8 @@ import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dragonstones.DragonCrestTrinket;
 import com.langleon.dsobuildsim.dragonstones.DragonStone;
 import com.langleon.dsobuildsim.gems.AbstractGem;
-import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
-import com.langleon.dsobuildsim.items.core.enums.ItemSlotType;
 import com.langleon.dsobuildsim.jewels.JewelType;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.sets.SetType;
@@ -201,7 +199,7 @@ public class Character {
 
     public void equipItem(ItemSlot slot, Item item)
     {
-        if (item.getItemSlotType() != slot.getAllowedItemType()) throw new IllegalArgumentException("Item "+item.getName()+" not allowed in slot "+slot+"!");
+        if (item.getItemSlotType() != slot.getAllowedItemType()) throw new IllegalArgumentException("Item "+item.getItemType()+" not allowed in slot "+slot+"!");
 
         Item oldItem = this.equippedItems.get(slot);
         if (oldItem instanceof SetBonusProvider oldSetItem) {
@@ -247,7 +245,7 @@ public class Character {
         }
 
         this.updateGlobalLimits(oldGems, newGems, this.gemLimits);
-        this.equippedItems.get(slot).updateGems(gems);
+        this.equippedItems.get(slot).setGems(gems);
     }
 
     private <T, G extends Enum<G>> Map<G, Integer> countByLimitGroup(T[] items, Function<T, G> groupExtractor, Class<G> enumClass)
