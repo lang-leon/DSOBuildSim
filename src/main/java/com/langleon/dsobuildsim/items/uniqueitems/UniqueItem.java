@@ -3,49 +3,44 @@ package com.langleon.dsobuildsim.items.uniqueitems;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.items.core.Item;
-import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
+import com.langleon.dsobuildsim.items.core.ItemType;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
-import com.langleon.dsobuildsim.utils.MapUtils;
 
 import java.util.EnumMap;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class UniqueItem extends Item implements UniqueStatProvider {
 
     private final Map<StatType, Double> uniqueBaseValues;
     private final Map<StatType, Double> uniqueRelativeValues;
-    private final List<Enchantment> uniqueEnchantments;
-    private final String uniqueDescription;
+    private final Set<Enchantment> uniqueEnchantments;
+    private final UniqueItemType itemType;
 
-    public UniqueItem(UniqueItemDefinition itemDefinition, LevelMultiplierTable levelMultipliers, Map<StatType, Double> uniqueBaseValues, Map<StatType, Double> uniqueRelativeValues, List<Enchantment> uniqueEnchantments, String uniqueDescription){
-        super(itemDefinition, levelMultipliers);
+    public UniqueItem(UniqueItemDefinition itemDefinition, Map<StatType, Double> baseValues, int level, Map<StatType, Double> uniqueBaseValues, Set<Enchantment> uniqueEnchantments){
+        super(itemDefinition.itemSlotType(), baseValues, level);
+        this.itemType = itemDefinition.itemType();
         this.uniqueBaseValues = uniqueBaseValues;
-        this.uniqueRelativeValues = uniqueRelativeValues;
+        this.uniqueRelativeValues = itemDefinition.uniqueRelativeValues();
         this.uniqueEnchantments = uniqueEnchantments;
-        this.uniqueDescription = uniqueDescription;
+    }
+
+    @Override
+    public ItemType getItemType() {
+        return this.itemType;
     }
 
     public Map<StatType, Double> getUniqueBaseValues() {
         return uniqueBaseValues;
     }
 
-    public void updateUniqueBaseValues(Map<StatType, Double> newUniqueBaseValues)
-    {
-        MapUtils.replaceExisting(this.uniqueBaseValues, newUniqueBaseValues);
-    }
-
     public Map<StatType, Double> getUniqueRelativeValues() {
         return uniqueRelativeValues;
     }
 
-    public List<Enchantment> getUniqueEnchants() {
+    public Set<Enchantment> getUniqueEnchants() {
         return uniqueEnchantments;
-    }
-
-    public String getUniqueDescription() {
-        return uniqueDescription;
     }
 
     @Override

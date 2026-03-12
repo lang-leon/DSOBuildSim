@@ -10,33 +10,21 @@ import java.util.EnumMap;
 import java.util.Map;
 
 public abstract class Item {
-    protected final ItemDefinition itemDefinition;
-    protected final LevelMultiplierTable levelMultipliers;
     protected int level;
+    protected final ItemSlotType itemSlotType;
     protected Map<StatType, Double> baseValues;
     protected Enchantment[] enchantments;
     protected AbstractGem[] gems;
 
-    public Item(ItemDefinition itemDefinition, LevelMultiplierTable levelMultipliers) {
-        this.itemDefinition = itemDefinition;
-        this.levelMultipliers = levelMultipliers;
-        this.level = itemDefinition.defaultLevel();
-        this.baseValues = new EnumMap<>(StatType.class);
-        this.itemDefinition.rawBaseValues().forEach((statType, value) ->
-                baseValues.put(statType, value * this.levelMultipliers.getMultiplier(level, statType)));
+    public Item(ItemSlotType itemSlotType, Map<StatType, Double> actualBaseValues, int level) {
+        this.itemSlotType = itemSlotType;
+        this.baseValues = new EnumMap<>(actualBaseValues);
+        this.level = level;
         this.gems = new AbstractGem[10];
-        this.enchantments = new Enchantment[10];
+        this.enchantments = new Enchantment[4];
     }
 
-    public String getName()
-    {
-        return this.itemDefinition.name();
-    }
-
-    public ItemType getItemType()
-    {
-        return this.itemDefinition.itemType();
-    }
+    public abstract ItemType getItemType();
 
     public Map<StatType, Double> getBaseValues()
     {
@@ -52,90 +40,30 @@ public abstract class Item {
         return gems;
     }
 
-    public void setGem(AbstractGem gem, int slot)
-    {
-        if (slot>=0 && slot<10)
-        {
-            gems[slot] = gem;
-        }else
-        {
-            throw new IllegalArgumentException("Invalid slot index!");
-        }
-    }
-
-    public void updateGems(AbstractGem[] gems)
+    public void setGems(AbstractGem[] gems)
     {
         if (gems.length!=10) throw new IllegalArgumentException("Invalid array length!");
         this.gems = gems;
     }
 
-    public void removeGem(int slot)
-    {
-        if (slot>=0 && slot<10)
-        {
-            gems[slot] = null;
-        }else
-        {
-            throw new IllegalArgumentException("Invalid slot index!");
-        }
-    }
-
-    public void removeGems()
-    {
-        for (int i=0; i<10; i++)
-        {
-            gems[i]=null;
-        }
-    }
-
-    public Enchantment[] getEnchants()
+    public Enchantment[] getEnchantments()
     {
         return enchantments;
     }
 
-    public void setEnchant(Enchantment enchantment, int slot)
+    public void setEnchantments(Enchantment[] enchantments)
     {
-        if (slot>=0 && slot<10)
-        {
-            enchantments[slot] = enchantment;
-        }else
-        {
-            throw new IllegalArgumentException("Invalid slot index!");
-        }
-    }
-
-    public void setEnchants(Enchantment enchantment)
-    {
-        for (int i=0; i<4; i++) enchantments[i] = enchantment;
-    }
-
-    public void removeEnchant(int slot)
-    {
-        enchantments[slot] = null;
+        if (enchantments.length!=4) throw new IllegalArgumentException("Invalid array length!");
+        this.enchantments = enchantments;
     }
 
     public int getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
-
-        baseValues.forEach(((statType, currentValue) -> {
-            double maxValue = itemDefinition.rawBaseValues().get(statType) * levelMultipliers.getMultiplier(level, statType);
-            if (currentValue > maxValue)
-                baseValues.put(statType, maxValue);
-        }));
-    }
-
-    public int getTier()
-    {
-        return this.itemDefinition.tier();
-    }
-
     public ItemSlotType getItemSlotType()
     {
-        return this.itemDefinition.itemSlotType();
+        return this.itemSlotType;
     }
 
     public Map<StatType, Double> calculateGemStats()

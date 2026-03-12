@@ -1,17 +1,20 @@
 package com.langleon.dsobuildsim.character;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.gems.GemConfig;
 import com.langleon.dsobuildsim.gems.GemFactory;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.gems.enums.GemType;
+import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.ItemFactory;
 import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
 import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
+import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
 import com.langleon.dsobuildsim.jewels.Jewel;
@@ -97,11 +100,11 @@ public class EquipmentLimitTest {
     @Test
     void updateItemGems_succeedsIfWithinGemLimit() throws NoSuchFieldException, IllegalAccessException {
         Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory);
-        character.equipItem(ItemSlot.AMULET, itemFactory.createItem(UniqueItemType.SARGONS_SHADOW_AMULET, CharacterClass.SPELLWEAVER));
+        character.equipItem(ItemSlot.AMULET, itemFactory.createItem(SetItemType.WINTER_AMULET, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.MOVEMENT_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
         character.updateItemGems(ItemSlot.AMULET, new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
-        character.equipItem(ItemSlot.CLOAK, itemFactory.createItem(UniqueItemType.CLOAK_OF_HEROES, CharacterClass.SPELLWEAVER));
+        character.equipItem(ItemSlot.CLOAK, itemFactory.createItem(SetItemType.DRAGAN_CLOAK, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.ATTACK_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
         character.updateItemGems(ItemSlot.CLOAK, new Gem[]{gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17), gemFactory.createGem(GemType.AMETHYST, 17)});
-        character.equipItem(ItemSlot.BELT, itemFactory.createItem(UniqueItemType.BELT_OF_ZEAL, CharacterClass.SPELLWEAVER));
+        character.equipItem(ItemSlot.BELT, itemFactory.createItem(SetItemType.DRACO_BELT, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.RESISTANCE_VALUE, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
         character.updateItemGems(ItemSlot.BELT, new Gem[]{gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.ONYX, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17), gemFactory.createGem(GemType.EMERALD, 17)});
 
         Field gemLimitsField = Character.class.getDeclaredField("gemLimits");
@@ -115,20 +118,45 @@ public class EquipmentLimitTest {
     }
 
     @Test
+    void equipItem_updateItemGems_throwsIfGemLimitExceeded()
+    {
+        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory);
+        Item amulet = itemFactory.createItem(SetItemType.WINTER_AMULET, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.MOVEMENT_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145);
+        amulet.setGems(new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
+        character.equipItem(ItemSlot.AMULET, amulet);
+        Item cloak = itemFactory.createItem(SetItemType.DRAGAN_CLOAK, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.ATTACK_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145);
+        cloak.setGems(new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
+        character.equipItem(ItemSlot.CLOAK, cloak);
+        Item belt = itemFactory.createItem(SetItemType.DRACO_BELT, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.RESISTANCE_VALUE, 0.0, StatType.HEALTH_POINTS, 0.0), 145);
+        belt.setGems(new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
+        character.equipItem(ItemSlot.BELT, belt);
+        Item ring1 = itemFactory.createItem(SetItemType.BLOOD_RUNE_RING, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.MOVEMENT_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145);
+        ring1.setGems(new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
+        character.equipItem(ItemSlot.RING1, ring1);
+        Item ring2 = itemFactory.createItem(SetItemType.BLOOD_RUNE_RING, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.MOVEMENT_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145);
+        ring2.setGems(new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
+        character.equipItem(ItemSlot.RING2, ring2);
+        Item gloves = itemFactory.createItem(SetItemType.AZAR_GLOVES, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.ATTACK_SPEED, 0.0, StatType.CRIT_VALUE, 0.0), 145);
+        gloves.setGems(new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> character.equipItem(ItemSlot.GLOVES, gloves));
+    }
+
+    @Test
     void updateItemGems_throwsIfGemLimitExceeded()
     {
         Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory);
-        character.equipItem(ItemSlot.AMULET, itemFactory.createItem(UniqueItemType.SARGONS_SHADOW_AMULET, CharacterClass.SPELLWEAVER));
+        character.equipItem(ItemSlot.AMULET, itemFactory.createItem(SetItemType.WINTER_AMULET, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.MOVEMENT_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
         character.updateItemGems(ItemSlot.AMULET, new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
-        character.equipItem(ItemSlot.CLOAK, itemFactory.createItem(UniqueItemType.CLOAK_OF_HEROES, CharacterClass.SPELLWEAVER));
+        character.equipItem(ItemSlot.CLOAK, itemFactory.createItem(SetItemType.DRAGAN_CLOAK, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.ATTACK_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
         character.updateItemGems(ItemSlot.CLOAK, new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
-        character.equipItem(ItemSlot.BELT, itemFactory.createItem(UniqueItemType.BELT_OF_ZEAL, CharacterClass.SPELLWEAVER));
+        character.equipItem(ItemSlot.BELT, itemFactory.createItem(SetItemType.DRACO_BELT, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.RESISTANCE_VALUE, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
         character.updateItemGems(ItemSlot.BELT, new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
-        character.equipItem(ItemSlot.RING1, itemFactory.createItem(UniqueItemType.RING_OF_WINTER, CharacterClass.SPELLWEAVER));
+        character.equipItem(ItemSlot.RING1, itemFactory.createItem(SetItemType.BLOOD_RUNE_RING, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.MOVEMENT_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
         character.updateItemGems(ItemSlot.RING1, new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
-        character.equipItem(ItemSlot.RING2, itemFactory.createItem(UniqueItemType.RING_OF_RENEWAL, CharacterClass.SPELLWEAVER));
+        character.equipItem(ItemSlot.RING2, itemFactory.createItem(SetItemType.BLOOD_RUNE_RING, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.MOVEMENT_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
         character.updateItemGems(ItemSlot.RING2, new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
-        character.equipItem(ItemSlot.GLOVES, itemFactory.createItem(UniqueItemType.GLOVE_OF_ZEAL, CharacterClass.SPELLWEAVER));
+        character.equipItem(ItemSlot.GLOVES, itemFactory.createItem(SetItemType.AZAR_GLOVES, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.ATTACK_SPEED, 0.0, StatType.CRIT_VALUE, 0.0), 145));
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> character.updateItemGems(ItemSlot.GLOVES, new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)}));
     }

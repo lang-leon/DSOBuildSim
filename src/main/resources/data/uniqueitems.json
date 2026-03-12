@@ -38,7 +38,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.67153
         }
       ],
@@ -181,7 +181,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "BLOCK_VALUE",
+          "statType": "BLOCK_VALUE",
           "value": 0.12182
         }
       ],
@@ -285,7 +285,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "BLOCK_VALUE",
+          "statType": "BLOCK_VALUE",
           "value": 0.24364
         }
       ],
@@ -428,7 +428,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "LIGHTNING_RESISTANCE",
+          "statType": "LIGHTNING_RESISTANCE",
           "value": 0.12135
         }
       ],
@@ -471,7 +471,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "HEALTH_POINTS",
+          "statType": "HEALTH_POINTS",
           "value": 0.4415
         }
       ],
@@ -533,7 +533,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.22384
         }
       ],
@@ -577,7 +577,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "POISON_RESISTANCE",
+          "statType": "POISON_RESISTANCE",
           "value": 0.12134
         }
       ],
@@ -660,7 +660,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ANDERMAGIC_RESISTANCE",
+          "statType": "ANDERMAGIC_RESISTANCE",
           "value": 0.26922
         }
       ],
@@ -684,7 +684,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ATTACK_SPEED",
+          "statType": "ATTACK_SPEED",
           "value": 0.46126
         }
       ],
@@ -804,7 +804,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ARMOR",
+          "statType": "ARMOR_VALUE",
           "value": 0.12155
         }
       ],
@@ -1062,7 +1062,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "RESISTANCE",
+          "statType": "RESISTANCE_VALUE",
           "value": 0.27198
         }
       ],
@@ -1166,7 +1166,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "FIRE_RESISTANCE",
+          "statType": "FIRE_RESISTANCE",
           "value": 0.12134
         }
       ],
@@ -1189,7 +1189,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "CRIT_VALUE",
+          "statType": "CRIT_VALUE",
           "value": 0.24365
         }
       ],
@@ -1233,7 +1233,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.22384
         }
       ],
@@ -1316,7 +1316,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ICE_RESISTANCE",
+          "statType": "ICE_RESISTANCE",
           "value": 0.12134
         }
       ],
@@ -1359,7 +1359,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "BLOCK_VALUE",
+          "statType": "BLOCK_VALUE",
           "value": 0.24184
         }
       ],
@@ -1403,7 +1403,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ARMOR",
+          "statType": "ARMOR_VALUE",
           "value": 0.40632
         }
       ],
@@ -1468,7 +1468,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ARMOR",
+          "statType": "ARMOR_VALUE",
           "value": 0.26832
         }
       ],
@@ -1512,7 +1512,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ANDERMAGIC_RESISTANCE",
+          "statType": "ANDERMAGIC_RESISTANCE",
           "value": 0.12134
         }
       ],
@@ -1597,7 +1597,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "RESISTANCE",
+          "statType": "RESISTANCE_VALUE",
           "value": 0.27198
         }
       ],
@@ -1620,7 +1620,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "HEALTH_POINTS",
+          "statType": "HEALTH_POINTS",
           "value": 0.22295
         }
       ],
@@ -1643,7 +1643,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "RESISTANCE",
+          "statType": "RESISTANCE_VALUE",
           "value": 0.41173
         }
       ],
@@ -1686,7 +1686,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ATTACK_SPEED",
+          "statType": "ATTACK_SPEED",
           "value": 0.21679
         }
       ],
@@ -1709,7 +1709,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.44221
         }
       ],
@@ -1732,7 +1732,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "MOVEMENT_SPEED",
+          "statType": "MOVEMENT_SPEED",
           "value": 0.3846
         }
       ],
@@ -1756,7 +1756,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "MOVEMENT_SPEED",
+          "statType": "MOVEMENT_SPEED",
           "value": 0.25558
         }
       ],
@@ -1779,7 +1779,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "MOVEMENT_SPEED",
+          "statType": "MOVEMENT_SPEED",
           "value": 0.25558
         }
       ],
@@ -1822,7 +1822,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "MOVEMENT_SPEED",
+          "statType": "MOVEMENT_SPEED",
           "value": 0.12402
         }
       ],
@@ -1902,7 +1902,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "CRIT_VALUE",
+          "statType": "CRIT_VALUE",
           "value": 0.24365
         }
       ],
@@ -1943,7 +1943,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "CRIT_VALUE",
+          "statType": "CRIT_VALUE",
           "value": 0.11354
         }
       ],
@@ -1985,11 +1985,11 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.67637
         },
         {
-          "enchantmentType": "CRIT_VALUE",
+          "statType": "CRIT_VALUE",
           "value": 0.60126
         }
       ],
@@ -2069,7 +2069,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.5794
         }
       ],
@@ -2111,7 +2111,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ATTACK_SPEED",
+          "statType": "ATTACK_SPEED",
           "value": 0.22182
         }
       ],
@@ -2170,7 +2170,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ATTACK_SPEED",
+          "statType": "ATTACK_SPEED",
           "value": 0.9432
         }
       ],
@@ -2212,7 +2212,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "BLOCK_VALUE",
+          "statType": "BLOCK_VALUE",
           "value": 0.12183
         }
       ],
@@ -2234,7 +2234,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.19318
         }
       ],
@@ -2256,7 +2256,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "BLOCK_VALUE",
+          "statType": "BLOCK_VALUE",
           "value": 0.11622
         }
       ],
@@ -2395,7 +2395,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ATTACK_SPEED",
+          "statType": "ATTACK_SPEED",
           "value": 0.94322
         }
       ],
@@ -2437,7 +2437,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "CRIT_VALUE",
+          "statType": "CRIT_VALUE",
           "value": 0.2392
         }
       ],
@@ -2535,7 +2535,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ATTACK_SPEED",
+          "statType": "ATTACK_SPEED",
           "value": 0.46856
         }
       ],
@@ -2576,7 +2576,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.19296
         }
       ],
@@ -2617,7 +2617,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.29099
         }
       ],
