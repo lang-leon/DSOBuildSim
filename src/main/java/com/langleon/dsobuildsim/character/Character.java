@@ -212,6 +212,19 @@ public class Character {
             SetInstance setInstance = this.equippedSets.computeIfAbsent(settableItem.getSetType(), k -> this.setFactory.createSet(settableItem.getSetType(), CharacterClass.SPELLWEAVER));
             setInstance.addSetItem(settableItem.getSetItemIdentifier());
         }
+
+        Map<GemLimitGroup, Integer> newGems = this.countByLimitGroup(item.getGems(), AbstractGem::getGemLimitGroup, GemLimitGroup.class);
+        for (Map.Entry<GemLimitGroup, Integer> entry : newGems.entrySet()) {
+            GemLimitGroup group = entry.getKey();
+            int globalCount = this.gemLimits.getOrDefault(group, 0);
+            int newCount = entry.getValue();
+
+            if (globalCount + newCount > group.getLimit()) {
+                throw new IllegalArgumentException("Gem limit exceeded for " + group + ".");
+            }
+        }
+
+        this.updateGlobalLimits(Map.of(), newGems, this.gemLimits);
     }
 
     public void unequipItem(ItemSlot slot)
