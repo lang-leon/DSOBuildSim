@@ -52,6 +52,8 @@ public class GameDataMapper {
 
         List<BuffDTO> physics = config.physics().stream().map(BuffMapper::from).toList();
 
-        return new GameDataDTO(config.classStats(), items, sets, jewels, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics);
+        LevelMultiplierTableDTO levelMultiplierTable = LevelMultiplierTableMapper.from(config.levelMultiplierTable());
+
+        return new GameDataDTO(config.classStats(), items, sets, jewels, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable);
     }
 }
