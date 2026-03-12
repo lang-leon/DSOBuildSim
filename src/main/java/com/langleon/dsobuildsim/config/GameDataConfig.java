@@ -9,6 +9,7 @@ import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
 import com.langleon.dsobuildsim.essences.EssenceDefinition;
 import com.langleon.dsobuildsim.gems.GemDefinition;
 import com.langleon.dsobuildsim.items.core.ItemDefinition;
+import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
 import com.langleon.dsobuildsim.jewels.JewelDefinition;
 import com.langleon.dsobuildsim.pets.PetDefinition;
 import com.langleon.dsobuildsim.runes.RuneDefinition;
@@ -29,6 +30,7 @@ public record GameDataConfig(
         List<PetDefinition> pets,
         List<EssenceDefinition> essences,
         List<TonicDefinition> tonics,
-        List<PhysicDefinition> physics
+        List<PhysicDefinition> physics,
+        LevelMultiplierTable levelMultiplierTable
 ) {
 }

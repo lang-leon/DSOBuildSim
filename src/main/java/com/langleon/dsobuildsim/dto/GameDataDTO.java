@@ -17,7 +17,8 @@ public record GameDataDTO (
         List<PetDTO> pets,
         List<EssenceDTO> essences,
         List<BuffDTO> tonics,
-        List<BuffDTO> physics
+        List<BuffDTO> physics,
+        LevelMultiplierTableDTO levelMultiplierTable
         )
 {
 }
