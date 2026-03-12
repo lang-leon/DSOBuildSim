@@ -8,6 +8,7 @@ import com.langleon.dsobuildsim.sets.SetType;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public record ItemDefinitionDTO(
         ItemCategory itemCategory,
@@ -19,10 +20,10 @@ public record ItemDefinitionDTO(
         Map<StatType, Double> rawBaseValues,
 
         //optional fields depending on category
+        Map<StatType, Double> uniqueBaseValues,
         Map<StatType, Double> uniqueRelativeValues,
         Map<StatType, Double> uniqueAbsoluteValues,
-        Map<StatType, Double> uniqueBaseValues,
-        List<EnchantmentDTO> uniqueEnchantments,
+        Set<EnchantmentDTO> uniqueEnchantments,
         String uniqueDescription,
 
         SetType set
