@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.runes;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
@@ -18,7 +18,7 @@ class RuneFactoryTest {
 
     @BeforeEach
     void setup() throws IOException {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/runes.json")))
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/runes.json")))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             RuneConfig runeConfig = objectMapper.readValue(reader, RuneConfig.class);

@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.resolver;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dto.RuneDTO;
 import com.langleon.dsobuildsim.runes.Rune;
@@ -25,7 +25,7 @@ public class RuneResolverTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/runes.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/runes.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             RuneConfig runeConfig = objectMapper.readValue(reader, RuneConfig.class);

@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.resolver;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dto.JewelDTO;
@@ -25,7 +25,7 @@ public class JewelResolverTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/jewels.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/jewels.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             JewelConfig jewelConfig = objectMapper.readValue(reader, JewelConfig.class);

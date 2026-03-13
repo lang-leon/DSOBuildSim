@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.mapper;
 
 import com.langleon.dsobuildsim.character.CharacterClass;
-import com.langleon.dsobuildsim.config.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.dto.*;
 
 import java.util.List;

@@ -1,8 +1,5 @@
 package com.langleon.dsobuildsim.resolver;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.buffs.BuffConfig;
-import com.langleon.dsobuildsim.buffs.BuffFactory;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dto.PetDTO;
 import com.langleon.dsobuildsim.pets.Pet;
@@ -13,6 +10,7 @@ import com.langleon.dsobuildsim.pets.enums.PetType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import tools.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -26,7 +24,7 @@ public class PetResolverTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/pets.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/pets.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             PetConfig petConfig = objectMapper.readValue(reader, PetConfig.class);
