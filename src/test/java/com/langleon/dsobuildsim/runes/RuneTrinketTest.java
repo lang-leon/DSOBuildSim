@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.runes;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
 import org.junit.jupiter.api.Assertions;
@@ -18,7 +18,7 @@ public class RuneTrinketTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/runes.json")))
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/runes.json")))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             RuneConfig dragonStoneConfig = objectMapper.readValue(reader, RuneConfig.class);

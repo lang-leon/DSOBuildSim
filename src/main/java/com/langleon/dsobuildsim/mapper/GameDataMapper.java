@@ -1,40 +1,41 @@
 package com.langleon.dsobuildsim.mapper;
 
 import com.langleon.dsobuildsim.character.CharacterClass;
-import com.langleon.dsobuildsim.config.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.dto.*;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class GameDataMapper {
 
     public static GameDataDTO toDTO(GameDataConfig config)
     {
-        Map<CharacterClass, List<ItemDefinitionDTO>> items = config.items().entrySet().stream()
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        e -> e.getValue().stream()
-                                .map(ItemDefinitionMapper::from)
-                                .toList()
-                ));
+        Map<CharacterClass, List<ItemDefinitionDTO>> items =
+                Arrays.stream(CharacterClass.values())
+                        .collect(Collectors.toMap(
+                                clazz -> clazz,
+                                clazz -> Stream.of(
+                                                config.mythicItems().get(clazz),
+                                                config.setItems().get(clazz),
+                                                config.uniqueItems().get(clazz)
+                                        )
+                                        .filter(Objects::nonNull)
+                                        .flatMap(List::stream)
+                                        .map(ItemDefinitionMapper::from)
+                                        .toList()
+                        ));
 
-        Map<CharacterClass, List<SetDTO>> sets = config.sets().entrySet().stream()
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        e -> e.getValue().stream()
-                                .map(SetMapper::from)
-                                .toList()
-                ));
+        Map<CharacterClass, List<SetDTO>> sets =
+                mapPerClass(config.sets(), SetMapper::from);
 
-        Map<CharacterClass, List<JewelDTO>> jewels = config.jewels().entrySet().stream()
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        e -> e.getValue().stream()
-                                .map(JewelMapper::from)
-                                .toList()
-                ));
+        Map<CharacterClass, List<JewelDTO>> jewels =
+                mapPerClass(config.jewels(), JewelMapper::from);
 
         List<EnchantmentDTO> enchantments = config.enchantments().stream().map(EnchantmentMapper::from).toList();
 
@@ -55,5 +56,16 @@ public class GameDataMapper {
         LevelMultiplierTableDTO levelMultiplierTable = LevelMultiplierTableMapper.from(config.levelMultiplierTable());
 
         return new GameDataDTO(config.classStats(), items, sets, jewels, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable);
+    }
+
+    private static <S, T> Map<CharacterClass, List<T>> mapPerClass(Map<CharacterClass, List<S>> source, Function<S, T> mapper)
+    {
+        return source.entrySet().stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        e -> e.getValue().stream()
+                                .map(mapper)
+                                .toList()
+                ));
     }
 }

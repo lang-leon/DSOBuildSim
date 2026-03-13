@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.essences;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,7 @@ public class EssenceFactoryTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/essences.json")))
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/essences.json")))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             EssenceConfig essenceConfig = objectMapper.readValue(reader, EssenceConfig.class);

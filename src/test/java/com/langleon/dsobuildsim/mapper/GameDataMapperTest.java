@@ -1,10 +1,10 @@
 package com.langleon.dsobuildsim.mapper;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.buffs.BuffConfig;
 import com.langleon.dsobuildsim.character.CharacterClass;
-import com.langleon.dsobuildsim.config.ClassStatsConfig;
-import com.langleon.dsobuildsim.config.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.ClassStatsConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneConfig;
 import com.langleon.dsobuildsim.dto.*;
 import com.langleon.dsobuildsim.enchantments.EnchantmentConfig;
@@ -50,66 +50,66 @@ public class GameDataMapperTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/essences.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/essences.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             essenceConfig = objectMapper.readValue(reader, EssenceConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/dragonstones.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/dragonstones.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             dragonStoneConfig = objectMapper.readValue(reader, DragonStoneConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/gems.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/gems.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             gemConfig = objectMapper.readValue(reader, GemConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/jewels.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/jewels.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             jewelConfig = objectMapper.readValue(reader, JewelConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/pets.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/pets.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             petConfig = objectMapper.readValue(reader, PetConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/runes.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/runes.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             runeConfig = objectMapper.readValue(reader, RuneConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/sets.json")))) {
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/sets.json")))) {
             ObjectMapper objectMapper = new ObjectMapper();
             setConfig = objectMapper.readValue(reader, SetConfig.class);
         }
         ObjectMapper objectMapper = new ObjectMapper();
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/mythicitems.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/mythicitems.json"))))
         {
             mythicItemConfig = objectMapper.readValue(reader, MythicItemConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/uniqueitems.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/uniqueitems.json"))))
         {
             uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/setitems.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/setitems.json"))))
         {
             setItemConfig = objectMapper.readValue(reader, SetItemConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/levelMultiplierTable.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/levelMultiplierTable.json"))))
         {
             levelMultiplierTable = objectMapper.readValue(reader, LevelMultiplierTable.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/enchantments.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/enchantments.json"))))
         {
             enchantmentConfig = objectMapper.readValue(reader, EnchantmentConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/buffs.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/buffs.json"))))
         {
             buffConfig = objectMapper.readValue(reader, BuffConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/classStats.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/classStats.json"))))
         {
             classStatsConfig = objectMapper.readValue(reader, ClassStatsConfig.class);
         }

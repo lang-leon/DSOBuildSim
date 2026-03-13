@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.jewels;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.dragonstones.DragonCrestTrinket;
 import com.langleon.dsobuildsim.common.StatType;
@@ -19,7 +19,7 @@ public class JewelTrinketTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/jewels.json")))
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/jewels.json")))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             JewelConfig jewelConfig = objectMapper.readValue(reader, JewelConfig.class);
