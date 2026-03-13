@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.mapper;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.buffs.BuffConfig;
 import com.langleon.dsobuildsim.buffs.enums.PhysicType;
 import com.langleon.dsobuildsim.buffs.enums.TonicType;
@@ -22,7 +22,7 @@ public class BuffMapperTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/buffs.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/buffs.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             buffConfig = objectMapper.readValue(reader, BuffConfig.class);

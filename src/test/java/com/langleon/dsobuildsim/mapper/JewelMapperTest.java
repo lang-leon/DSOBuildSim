@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.mapper;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dto.JewelDTO;
 import com.langleon.dsobuildsim.jewels.JewelConfig;
@@ -19,7 +19,7 @@ public class JewelMapperTest {
 
     @BeforeEach
     void setup() throws IOException {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/jewels.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/jewels.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             jewelConfig = objectMapper.readValue(reader, JewelConfig.class);

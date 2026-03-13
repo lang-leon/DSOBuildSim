@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.gems;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.gems.enums.GemType;
@@ -8,6 +8,7 @@ import com.langleon.dsobuildsim.gems.enums.GemUpgradeType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import tools.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,7 +19,7 @@ class GemFactoryTest {
 
     @BeforeEach
     void setup() throws IOException {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/gems.json")))
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/gems.json")))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             GemConfig gemConfig = objectMapper.readValue(reader, GemConfig.class);

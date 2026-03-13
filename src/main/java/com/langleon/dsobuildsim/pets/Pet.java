@@ -41,7 +41,7 @@ public class Pet {
         StringBuilder res = new StringBuilder();
         for (Map.Entry<StatType, Double> entry : this.stats.entrySet())
         {
-            res.append("+ ").append(String.format("%.2f%%", entry.getValue() * 100)).append(" ").append(entry.getKey()).append("\n");
+            res.append("+ ").append(String.format("%.2f%%", entry.getValue() * 100)).append(" ").append(entry.getKey().getName()).append("\n");
         }
         res.append(description);
         return res.toString().trim();
