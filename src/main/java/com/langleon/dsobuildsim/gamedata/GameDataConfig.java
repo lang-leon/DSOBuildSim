@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.config;
+package com.langleon.dsobuildsim.gamedata;
 
 import com.langleon.dsobuildsim.buffs.PhysicDefinition;
 import com.langleon.dsobuildsim.buffs.TonicDefinition;
