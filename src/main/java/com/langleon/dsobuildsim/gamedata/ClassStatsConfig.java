@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.config;
+package com.langleon.dsobuildsim.gamedata;
 
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.dto.ClassStatsDTO;
