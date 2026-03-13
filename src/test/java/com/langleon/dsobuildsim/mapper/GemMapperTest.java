@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.mapper;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dto.GemDTO;
 import com.langleon.dsobuildsim.gems.GemConfig;
@@ -21,7 +21,7 @@ public class GemMapperTest {
 
     @BeforeEach
     void setup() throws IOException {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/gems.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/gems.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             gemConfig = objectMapper.readValue(reader, GemConfig.class);

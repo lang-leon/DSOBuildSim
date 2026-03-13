@@ -29,21 +29,15 @@ public enum CharacterClass {
         this.classRelativeStats = classRelativeStats;
     }
 
-    public String getClassName() {
+    public String getName() {
         return className;
     }
 
-    public Map<StatType, Double> getClassBaseStats() {
+    public Map<StatType, Double> getBaseStats() {
         return classBaseStats;
     }
 
-    public Map<StatType, Double> getClassRelativeStats() {
+    public Map<StatType, Double> getRelativeStats() {
         return classRelativeStats;
     }
-
-    @Override
-    public String toString() {
-        return className;
-    }
-
 }

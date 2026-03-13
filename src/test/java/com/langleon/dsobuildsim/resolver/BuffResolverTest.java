@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.resolver;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.buffs.BuffConfig;
 import com.langleon.dsobuildsim.buffs.BuffFactory;
 import com.langleon.dsobuildsim.buffs.Physic;
@@ -25,7 +25,7 @@ public class BuffResolverTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/buffs.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/buffs.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             BuffConfig buffConfig = objectMapper.readValue(reader, BuffConfig.class);

@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.dragonstones;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +16,7 @@ public class DragonStoneFactoryTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/dragonstones.json")))
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/dragonstones.json")))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             DragonStoneConfig dragonStoneConfig = objectMapper.readValue(reader, DragonStoneConfig.class);

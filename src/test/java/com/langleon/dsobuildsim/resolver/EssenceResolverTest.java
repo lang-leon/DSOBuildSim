@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.resolver;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.dto.EssenceDTO;
 import com.langleon.dsobuildsim.essences.Essence;
 import com.langleon.dsobuildsim.essences.EssenceConfig;
@@ -22,7 +22,7 @@ public class EssenceResolverTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/essences.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/essences.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             EssenceConfig essenceConfig = objectMapper.readValue(reader, EssenceConfig.class);

@@ -63,7 +63,7 @@ public class Character {
         this.setFactory = setFactory;
 
         this.characterClass = characterClass;
-        this.name = characterClass.getClassName();
+        this.name = characterClass.getName();
         this.elementalMasteryType = MasteryType.NONE;
         this.elementalMasteryLevel = 0;
         this.experienceBonusPath = false;
@@ -399,7 +399,7 @@ public class Character {
     private Map<StatType, Double> calculateTotalBaseStats()
     {
         Map<StatType, Double> baseStats = new EnumMap<>(StatType.class);
-        this.characterClass.getClassBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
+        this.characterClass.getBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
         this.wisdomSkillTree.getAbsoluteBuffs().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
         this.calculateTotalItemBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
         this.equippedSets.forEach((setType, setInstance) -> setInstance.getActiveBaseValues().forEach((key, value) -> baseStats.merge(key, value, Double::sum)));
@@ -428,7 +428,7 @@ public class Character {
     private Map<StatType, Double> calculateTotalRelativeStats()
     {
         Map<StatType, Double> relativeBonusStats = new EnumMap<>(StatType.class);
-        this.characterClass.getClassRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+        this.characterClass.getRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
         this.calculateExperienceSkillTreeRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
         this.calculateTotalItemRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
         this.equippedSets.forEach((setType, setInstance) -> setInstance.getActiveRelativeValues().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum)));

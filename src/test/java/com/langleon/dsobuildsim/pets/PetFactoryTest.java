@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.pets;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.pets.enums.PetType;
 import com.langleon.dsobuildsim.pets.enums.PetUpgradeType;
@@ -16,7 +16,7 @@ public class PetFactoryTest {
 
     @BeforeEach
     void setup() throws IOException {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/pets.json")))
+        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/pets.json")))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             PetConfig petConfig = objectMapper.readValue(reader, PetConfig.class);
@@ -31,7 +31,7 @@ public class PetFactoryTest {
         Assertions.assertNotNull(pet);
         Assertions.assertEquals(3, pet.getTier());
         Assertions.assertEquals(0.12, pet.getRelativeStats().get(StatType.DAMAGE));
-        Assertions.assertEquals("+ 12,00% Attack Speed\n+ 12,00% Mana Points\n+ 12,00% Damage", pet.getDescription());
+        Assertions.assertEquals("+ 12,00% Attack Speed\n+ 12,00% Damage\n+ 12,00% Mana Points", pet.getDescription());
     }
 
     @Test

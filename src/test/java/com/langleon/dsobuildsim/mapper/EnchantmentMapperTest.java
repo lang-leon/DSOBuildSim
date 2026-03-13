@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.mapper;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.enchantments.EnchantmentConfig;
@@ -18,7 +18,7 @@ public class EnchantmentMapperTest {
 
     @BeforeEach
     void setup() throws IOException {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/enchantments.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/enchantments.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             config = objectMapper.readValue(reader, EnchantmentConfig.class);

@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.items.core;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
@@ -21,7 +21,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -38,19 +37,19 @@ public class ItemFactoryTest {
         SetItemConfig setItemConfig;
         LevelMultiplierTable levelMultiplierTable;
 
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/mythicitems.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/mythicitems.json"))))
         {
             mythicItemConfig = objectMapper.readValue(reader, MythicItemConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/uniqueitems.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/uniqueitems.json"))))
         {
             uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/setitems.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/setitems.json"))))
         {
             setItemConfig = objectMapper.readValue(reader, SetItemConfig.class);
         }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/levelMultiplierTable.json"))))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/levelMultiplierTable.json"))))
         {
             levelMultiplierTable = objectMapper.readValue(reader, LevelMultiplierTable.class);
         }

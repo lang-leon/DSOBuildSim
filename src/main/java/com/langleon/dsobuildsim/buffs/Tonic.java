@@ -7,7 +7,7 @@ public record Tonic(TonicType tonicType, StatType statType, Double statValue, in
 
     public String description()
     {
-        return String.format("+ %.0f %s", statValue, statType);
+        return String.format("+ %.0f %s", statValue, statType.getName());
     }
 
     public String getName()
