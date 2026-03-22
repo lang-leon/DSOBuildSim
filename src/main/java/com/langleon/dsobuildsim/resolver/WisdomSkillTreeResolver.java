@@ -14,7 +14,7 @@ public class WisdomSkillTreeResolver {
         this.wisdomFactory = wisdomFactory;
     }
 
-    private WisdomSkillTree resolveWisdomSkillTree(WisdomSkillTreeDTO wisdomSkillTreeDTO)
+    public WisdomSkillTree resolveWisdomSkillTree(WisdomSkillTreeDTO wisdomSkillTreeDTO)
     {
         WisdomSkillTree wisdomSkillTree = wisdomFactory.createTree();
 
