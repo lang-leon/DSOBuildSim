@@ -19,7 +19,7 @@ public class WisdomSkill {
     }
 
     public void setCurrentLevel(int currentLevel) {
-        if (currentLevel < 0) throw new IllegalArgumentException("Level can't be lower than 0");
+        if (currentLevel < 0 || currentLevel > wisdomSkillDefinition.maxLevel()) throw new IllegalArgumentException("Level must be between: 0 and "+wisdomSkillDefinition.maxLevel());
         this.currentLevel = currentLevel;
     }
 
