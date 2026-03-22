@@ -1,7 +1,7 @@
 {
   "wisdomGroups": {
     "HEALTH_RESOURCE": {
-      "wisdomGroup": "HEALTH_RESOURCE",
+      "wisdomGroupType": "HEALTH_RESOURCE",
       "name": "Health/Resource",
       "maxLevel": 150,
       "wisdomSkills": [
@@ -11,7 +11,7 @@
       ]
     },
     "ATTACK": {
-      "wisdomGroup": "ATTACK",
+      "wisdomGroupType": "ATTACK",
       "name": "Attack",
       "maxLevel": 200,
       "wisdomSkills": [
@@ -21,7 +21,7 @@
       ]
     },
     "DEFENSE": {
-      "wisdomGroup": "DEFENSE",
+      "wisdomGroupType": "DEFENSE",
       "name": "Defense",
       "maxLevel": 200,
       "wisdomSkills": [
@@ -31,7 +31,7 @@
       ]
     },
     "COMBAT": {
-      "wisdomGroup": "COMBAT",
+      "wisdomGroupType": "COMBAT",
       "name": "Combat",
       "maxLevel": 1,
       "wisdomSkills": [
@@ -41,7 +41,7 @@
       ]
     },
     "ONE_HANDED_WEAPON": {
-      "wisdomGroup": "ONE_HANDED_WEAPON",
+      "wisdomGroupType": "ONE_HANDED_WEAPON",
       "name": "One-handed Weapon",
       "maxLevel": 150,
       "wisdomSkills": [
@@ -51,7 +51,7 @@
       ]
     },
     "TWO_HANDED_WEAPON": {
-      "wisdomGroup": "TWO_HANDED_WEAPON",
+      "wisdomGroupType": "TWO_HANDED_WEAPON",
       "name": "Two-handed Weapon",
       "maxLevel": 150,
       "wisdomSkills": [
@@ -61,7 +61,7 @@
       ]
     },
     "PROSPERITY": {
-      "wisdomGroup": "PROSPERITY",
+      "wisdomGroupType": "PROSPERITY",
       "name": "Prosperity",
       "maxLevel": 152,
       "wisdomSkills": [
@@ -71,7 +71,7 @@
       ]
     },
     "TRAVEL_MERITS": {
-      "wisdomGroup": "TRAVEL_MERITS",
+      "wisdomGroupType": "TRAVEL_MERITS",
       "name": "Travel Merits",
       "maxLevel": 45,
       "wisdomSkills": [
