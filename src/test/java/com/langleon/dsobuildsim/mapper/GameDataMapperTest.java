@@ -6,6 +6,9 @@ import com.langleon.dsobuildsim.items.setitems.SetItemDefinition;
 import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemDefinition;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.buffs.BuffConfig;
 import com.langleon.dsobuildsim.character.CharacterClass;
@@ -52,7 +55,8 @@ public class GameDataMapperTest {
     private EnchantmentConfig enchantmentConfig;
     private BuffConfig buffConfig;
     private ClassStatsConfig classStatsConfig;
-    LevelMultiplierTable levelMultiplierTable;
+    private LevelMultiplierTable levelMultiplierTable;
+    private WisdomSkillTreeConfig wisdomSkillTreeConfig;
 
     @BeforeEach
     void setup() throws IOException
@@ -120,6 +124,17 @@ public class GameDataMapperTest {
         {
             classStatsConfig = objectMapper.readValue(reader, ClassStatsConfig.class);
         }
+        WisdomSkillConfig wisdomSkillConfig;
+        WisdomGroupConfig wisdomGroupConfig;
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomSkills.json"))))
+        {
+            wisdomSkillConfig = objectMapper.readValue(reader, WisdomSkillConfig.class);
+        }
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomGroups.json"))))
+        {
+            wisdomGroupConfig = objectMapper.readValue(reader, WisdomGroupConfig.class);
+        }
+        wisdomSkillTreeConfig = new WisdomSkillTreeConfig(wisdomSkillConfig.wisdomSkills(), wisdomGroupConfig.wisdomGroups());
     }
 
     @Test
@@ -159,6 +174,8 @@ public class GameDataMapperTest {
         jewels.put(CharacterClass.SPELLWEAVER, jewelConfig.spellweaverJewels().values().stream().toList());
         jewels.put(CharacterClass.STEAM_MECHANICUS, jewelConfig.steamMechanicusJewels().values().stream().toList());
 
+
+
         GameDataConfig config = new GameDataConfig(
                 classStats,
                 mythicItems,
@@ -174,7 +191,8 @@ public class GameDataMapperTest {
                 essenceConfig.essences().values().stream().toList(),
                 buffConfig.tonics().values().stream().toList(),
                 buffConfig.physics().values().stream().toList(),
-                levelMultiplierTable
+                levelMultiplierTable,
+                wisdomSkillTreeConfig
         );
         GameDataDTO dto = GameDataMapper.toDTO(config);
 

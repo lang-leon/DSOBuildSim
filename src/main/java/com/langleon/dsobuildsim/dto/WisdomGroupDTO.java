@@ -9,7 +9,6 @@ public record WisdomGroupDTO(
         WisdomGroupType type,
         String name,
         int maxLevel,
-        int currentLevel,
         EnumMap<WisdomSkillType, WisdomSkillDTO> wisdomSkills
         ) {
 }
