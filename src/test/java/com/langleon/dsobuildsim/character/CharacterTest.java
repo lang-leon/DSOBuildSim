@@ -1,5 +1,11 @@
 package com.langleon.dsobuildsim.character;
 
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeFactory;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.dragonstones.DragonStone;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneConfig;
@@ -39,7 +45,7 @@ import com.langleon.dsobuildsim.runes.RuneConfig;
 import com.langleon.dsobuildsim.runes.RuneFactory;
 import com.langleon.dsobuildsim.sets.SetConfig;
 import com.langleon.dsobuildsim.sets.SetFactory;
-import com.langleon.dsobuildsim.skilltrees.wisdomskilltree.WisdomSkillTree;
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTree;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -60,6 +66,7 @@ public class CharacterTest {
     private PetFactory petFactory;
     private RuneFactory runeFactory;
     private SetFactory setFactory;
+    private WisdomSkillTreeFactory wisdomSkillTreeFactory;
     private EnchantmentConfig enchantmentConfig;
 
     @BeforeEach
@@ -128,11 +135,21 @@ public class CharacterTest {
             levelMultiplierTable = objectMapper.readValue(reader, LevelMultiplierTable.class);
         }
         itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig, levelMultiplierTable);
-        
         try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/enchantments.json"))))
         {
             enchantmentConfig = objectMapper.readValue(reader, EnchantmentConfig.class);
         }
+        WisdomSkillConfig wisdomSkillConfig;
+        WisdomGroupConfig wisdomGroupConfig;
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomSkills.json"))))
+        {
+            wisdomSkillConfig = objectMapper.readValue(reader, WisdomSkillConfig.class);
+        }
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomGroups.json"))))
+        {
+            wisdomGroupConfig = objectMapper.readValue(reader, WisdomGroupConfig.class);
+        }
+        wisdomSkillTreeFactory = new WisdomSkillTreeFactory(new WisdomSkillTreeConfig(wisdomSkillConfig.wisdomSkills(), wisdomGroupConfig.wisdomGroups()));
     }
 
     @Test
@@ -159,7 +176,7 @@ public class CharacterTest {
 
     private Character createCharacter()
     {
-        Character character = new Character(CharacterClass.SPELLWEAVER, setFactory);
+        Character character = new Character(CharacterClass.SPELLWEAVER, setFactory, wisdomSkillTreeFactory);
 
         character.setExperienceBonusPathLevel(5);
         character.setElementalMasteryType(MasteryType.ICE);
@@ -252,27 +269,26 @@ public class CharacterTest {
 
         character.setPet(petFactory.createPet(PetType.THE_SOUL_OF_DRAGAN_DOLL));
 
-        WisdomSkillTree wisdomSkillTree = new WisdomSkillTree();
-        wisdomSkillTree.setLevel(60, 1, 1);
-        wisdomSkillTree.setLevel(60, 1, 2);
-        wisdomSkillTree.setLevel(80, 2, 1);
-        wisdomSkillTree.setLevel(80, 2, 2);
-        wisdomSkillTree.setLevel(40, 2, 3);
-        wisdomSkillTree.setLevel(80, 3, 1);
-        wisdomSkillTree.setLevel(60, 3, 2);
-        wisdomSkillTree.setLevel(60, 3, 3);
-        wisdomSkillTree.setLevel(1, 4, 1);
-        wisdomSkillTree.setLevel(60, 5, 1);
-        wisdomSkillTree.setLevel(60, 5, 2);
-        wisdomSkillTree.setLevel(60, 6, 1);
-        wisdomSkillTree.setLevel(30, 6, 2);
-        wisdomSkillTree.setLevel(60, 6, 3);
-        wisdomSkillTree.setLevel(15, 7, 1);
-        wisdomSkillTree.setLevel(1, 7, 2);
-        wisdomSkillTree.setLevel(1, 7, 3);
-        wisdomSkillTree.setLevel(15, 8, 1);
-        wisdomSkillTree.setLevel(15, 8, 2);
-        character.setWisdomSkillTree(wisdomSkillTree);
+        WisdomSkillTree wisdomSkillTree = character.getWisdomSkillTree();
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.HEALTH_RESOURCE, WisdomSkillType.RISING_VIGOR, 60);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.HEALTH_RESOURCE, WisdomSkillType.VIVACIOUS_VITALITY, 60);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.ATTACK, WisdomSkillType.RISING_POWER, 80);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.ATTACK, WisdomSkillType.DECISIVE_STRIKE, 80);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.ATTACK, WisdomSkillType.HANGMANS_PRIDE, 40);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.DEFENSE, WisdomSkillType.STURDY_SHIELD, 80);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.DEFENSE, WisdomSkillType.HARD_AS_A_ROCK, 60);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.DEFENSE, WisdomSkillType.ELEMENTAL_PROTECTION, 60);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.COMBAT, WisdomSkillType.SECOND_CHANCE, 1);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.ONE_HANDED_WEAPON, WisdomSkillType.DEXTROUS_SMITING, 60);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.ONE_HANDED_WEAPON, WisdomSkillType.DEXTROUS_AGILITY, 60);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.TWO_HANDED_WEAPON, WisdomSkillType.AMBIDEXTROUS_SMITING, 60);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.TWO_HANDED_WEAPON, WisdomSkillType.AMBIDEXTROUS_AGILITY, 30);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.TWO_HANDED_WEAPON, WisdomSkillType.LIFETIME_THIEF, 60);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.PROSPERITY, WisdomSkillType.BONANZA, 15);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.PROSPERITY, WisdomSkillType.PEDDLER, 1);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.PROSPERITY, WisdomSkillType.PORTABLE_WORKBENCH, 1);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.TRAVEL_MERITS, WisdomSkillType.HOME_SWEET_HOME, 15);
+        wisdomSkillTree.setSkillLevel(WisdomGroupType.TRAVEL_MERITS, WisdomSkillType.ON_HORSEBACK, 15);
 
         character.setCollectorBagBuffs(Map.of(StatType.RESISTANCE_VALUE, 0.15, StatType.BLOCK_VALUE, 0.02, StatType.DAMAGE, 0.06, StatType.HEALTH_POINTS, 0.33));
 

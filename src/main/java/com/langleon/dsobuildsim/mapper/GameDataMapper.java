@@ -55,7 +55,9 @@ public class GameDataMapper {
 
         LevelMultiplierTableDTO levelMultiplierTable = LevelMultiplierTableMapper.from(config.levelMultiplierTable());
 
-        return new GameDataDTO(config.classStats(), items, sets, jewels, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable);
+        WisdomSkillTreeDTO wisdomSkillTree = WisdomSkillTreeMapper.from(config.wisdomSkillConfig());
+
+        return new GameDataDTO(config.classStats(), items, sets, jewels, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkillTree);
     }
 
     private static <S, T> Map<CharacterClass, List<T>> mapPerClass(Map<CharacterClass, List<S>> source, Function<S, T> mapper)

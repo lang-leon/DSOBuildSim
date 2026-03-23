@@ -1,5 +1,9 @@
 package com.langleon.dsobuildsim.character;
 
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeFactory;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.gems.Gem;
@@ -43,6 +47,7 @@ public class EquipmentLimitTest {
     private JewelFactory jewelFactory;
     private RuneFactory runeFactory;
     private SetFactory setFactory;
+    private WisdomSkillTreeFactory wisdomSkillTreeFactory;
 
     @BeforeEach
     void setup() throws IOException
@@ -92,12 +97,23 @@ public class EquipmentLimitTest {
             levelMultiplierTable = objectMapper.readValue(reader, LevelMultiplierTable.class);
         }
         itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig, levelMultiplierTable);
+        WisdomSkillConfig wisdomSkillConfig;
+        WisdomGroupConfig wisdomGroupConfig;
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomSkills.json"))))
+        {
+            wisdomSkillConfig = objectMapper.readValue(reader, WisdomSkillConfig.class);
+        }
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomGroups.json"))))
+        {
+            wisdomGroupConfig = objectMapper.readValue(reader, WisdomGroupConfig.class);
+        }
+        wisdomSkillTreeFactory = new WisdomSkillTreeFactory(new WisdomSkillTreeConfig(wisdomSkillConfig.wisdomSkills(), wisdomGroupConfig.wisdomGroups()));
     }
 
     // Gems
     @Test
     void updateItemGems_succeedsIfWithinGemLimit() throws NoSuchFieldException, IllegalAccessException {
-        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory);
+        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory, wisdomSkillTreeFactory);
         character.equipItem(ItemSlot.AMULET, itemFactory.createItem(SetItemType.WINTER_AMULET, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.MOVEMENT_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
         character.updateItemGems(ItemSlot.AMULET, new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
         character.equipItem(ItemSlot.CLOAK, itemFactory.createItem(SetItemType.DRAGAN_CLOAK, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.ATTACK_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
@@ -118,7 +134,7 @@ public class EquipmentLimitTest {
     @Test
     void equipItem_updateItemGems_throwsIfGemLimitExceeded()
     {
-        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory);
+        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory, wisdomSkillTreeFactory);
         Item amulet = itemFactory.createItem(SetItemType.WINTER_AMULET, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.MOVEMENT_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145);
         amulet.setGems(new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
         character.equipItem(ItemSlot.AMULET, amulet);
@@ -143,7 +159,7 @@ public class EquipmentLimitTest {
     @Test
     void updateItemGems_throwsIfGemLimitExceeded()
     {
-        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory);
+        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory, wisdomSkillTreeFactory);
         character.equipItem(ItemSlot.AMULET, itemFactory.createItem(SetItemType.WINTER_AMULET, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.MOVEMENT_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
         character.updateItemGems(ItemSlot.AMULET, new Gem[]{gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17), gemFactory.createGem(GemType.RUBY, 17)});
         character.equipItem(ItemSlot.CLOAK, itemFactory.createItem(SetItemType.DRAGAN_CLOAK, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 0.0, StatType.ATTACK_SPEED, 0.0, StatType.HEALTH_POINTS, 0.0), 145));
@@ -162,7 +178,7 @@ public class EquipmentLimitTest {
     // Runes
     @Test
     void updateRuneTrinket_succeedsIfWithinRuneLimit() throws IllegalAccessException, NoSuchFieldException {
-        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory);
+        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory, wisdomSkillTreeFactory);
         character.updateRuneTrinket(0, new Rune[]{runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY)});
         character.updateRuneTrinket(1, new Rune[]{runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.CELERITY), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE)});
         character.updateRuneTrinket(2, new Rune[]{runeFactory.createRune(RuneType.MATERI_BLESSING), runeFactory.createRune(RuneType.MATERI_BLESSING), runeFactory.createRune(RuneType.MATERI_BLESSING), runeFactory.createRune(RuneType.MATERI_BLESSING), runeFactory.createRune(RuneType.MATERI_BLESSING), runeFactory.createRune(RuneType.WISDOM_SEEKER), runeFactory.createRune(RuneType.WISDOM_SEEKER), runeFactory.createRune(RuneType.WISDOM_SEEKER), runeFactory.createRune(RuneType.WISDOM_SEEKER), runeFactory.createRune(RuneType.WISDOM_SEEKER)});
@@ -182,7 +198,7 @@ public class EquipmentLimitTest {
     @Test
     void updateRuneTrinket_throwsIfRuneLimitExceeded()
     {
-        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory);
+        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory, wisdomSkillTreeFactory);
         Assertions.assertThrows(IllegalArgumentException.class, () -> character.updateRuneTrinket(0, new Rune[]{runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR)}));
         Assertions.assertThrows(IllegalArgumentException.class, () -> character.updateRuneTrinket(0, new Rune[]{runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.RESILIENCE), runeFactory.createRune(RuneType.FIRE_RESILIENCE), runeFactory.createRune(RuneType.FIRE_RESILIENCE), runeFactory.createRune(RuneType.FIRE_RESILIENCE), runeFactory.createRune(RuneType.FIRE_RESILIENCE), runeFactory.createRune(RuneType.ICE_RESILIENCE), runeFactory.createRune(RuneType.ICE_RESILIENCE)}));
         Assertions.assertThrows(IllegalArgumentException.class, () -> character.updateRuneTrinket(0, new Rune[]{runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VIGOR), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.VITALITY), runeFactory.createRune(RuneType.RISING_VIGOR), runeFactory.createRune(RuneType.RISING_POWER)}));
@@ -191,7 +207,7 @@ public class EquipmentLimitTest {
     // Jewels
     @Test
     void updateJewelTrinket_succeedsIfWithinJewelLimit() throws IllegalAccessException, NoSuchFieldException {
-        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory);
+        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory, wisdomSkillTreeFactory);
         character.updateJewelTrinket(0, new Jewel[]{jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.RAGE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.SCORCHING_RAY, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.ETERNAL_SCORN, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.ETERNAL_WRATH, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.AMBIDEXTROUS_VIGOR, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.VITALITY, CharacterClass.SPELLWEAVER)});
 
         Field jewelLimitsField = Character.class.getDeclaredField("jewelLimits");
@@ -211,7 +227,7 @@ public class EquipmentLimitTest {
     @Test
     void updateJewelTrinket_throwsIfJewelLimitExceeded()
     {
-        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory);
+        Character character = new Character(CharacterClass.SPELLWEAVER, this.setFactory, wisdomSkillTreeFactory);
         character.updateJewelTrinket(0, new Jewel[]{jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.RAGE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.SCORCHING_RAY, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.ETERNAL_SCORN, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.ETERNAL_WRATH, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.GEM_FORTUNE, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.AMBIDEXTROUS_VIGOR, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.VITALITY, CharacterClass.SPELLWEAVER)});
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> character.updateJewelTrinket(1, new Jewel[]{jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.BLACK_KNIGHT_ORDER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.VIGOR, CharacterClass.SPELLWEAVER), jewelFactory.createJewel(JewelType.GLORY, CharacterClass.SPELLWEAVER)}));
