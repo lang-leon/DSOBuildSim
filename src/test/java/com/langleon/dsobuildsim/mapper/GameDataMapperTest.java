@@ -1,5 +1,14 @@
 package com.langleon.dsobuildsim.mapper;
 
+import com.langleon.dsobuildsim.items.mythicitems.MythicItemDefinition;
+import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
+import com.langleon.dsobuildsim.items.setitems.SetItemDefinition;
+import com.langleon.dsobuildsim.items.setitems.SetItemType;
+import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemDefinition;
+import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.buffs.BuffConfig;
 import com.langleon.dsobuildsim.character.CharacterClass;
@@ -29,6 +38,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class GameDataMapperTest {
 
@@ -45,7 +55,8 @@ public class GameDataMapperTest {
     private EnchantmentConfig enchantmentConfig;
     private BuffConfig buffConfig;
     private ClassStatsConfig classStatsConfig;
-    LevelMultiplierTable levelMultiplierTable;
+    private LevelMultiplierTable levelMultiplierTable;
+    private WisdomSkillTreeConfig wisdomSkillTreeConfig;
 
     @BeforeEach
     void setup() throws IOException
@@ -113,6 +124,17 @@ public class GameDataMapperTest {
         {
             classStatsConfig = objectMapper.readValue(reader, ClassStatsConfig.class);
         }
+        WisdomSkillConfig wisdomSkillConfig;
+        WisdomGroupConfig wisdomGroupConfig;
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomSkills.json"))))
+        {
+            wisdomSkillConfig = objectMapper.readValue(reader, WisdomSkillConfig.class);
+        }
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomGroups.json"))))
+        {
+            wisdomGroupConfig = objectMapper.readValue(reader, WisdomGroupConfig.class);
+        }
+        wisdomSkillTreeConfig = new WisdomSkillTreeConfig(wisdomSkillConfig.wisdomSkills(), wisdomGroupConfig.wisdomGroups());
     }
 
     @Test
@@ -124,27 +146,21 @@ public class GameDataMapperTest {
         classStats.put(CharacterClass.SPELLWEAVER, classStatsConfig.classStats().get(CharacterClass.SPELLWEAVER));
         classStats.put(CharacterClass.STEAM_MECHANICUS, classStatsConfig.classStats().get(CharacterClass.STEAM_MECHANICUS));
 
-        Map<CharacterClass, List<ItemDefinition>> items = new EnumMap<>(CharacterClass.class);
-        List<ItemDefinition> dkItems = new ArrayList<>();
-        dkItems.addAll(mythicItemConfig.dragonknightItems().values().stream().toList());
-        dkItems.addAll(setItemConfig.dragonknightItems().values().stream().toList());
-        dkItems.addAll(uniqueItemConfig.dragonknightItems().values().stream().toList());
-        items.put(CharacterClass.DRAGONKNIGHT, dkItems);
-        List<ItemDefinition> rangerItems = new ArrayList<>();
-        rangerItems.addAll(mythicItemConfig.rangerItems().values().stream().toList());
-        rangerItems.addAll(setItemConfig.rangerItems().values().stream().toList());
-        rangerItems.addAll(uniqueItemConfig.rangerItems().values().stream().toList());
-        items.put(CharacterClass.RANGER, rangerItems);
-        List<ItemDefinition> mageItems = new ArrayList<>();
-        mageItems.addAll(mythicItemConfig.spellweaverItems().values().stream().toList());
-        mageItems.addAll(setItemConfig.spellweaverItems().values().stream().toList());
-        mageItems.addAll(uniqueItemConfig.spellweaverItems().values().stream().toList());
-        items.put(CharacterClass.SPELLWEAVER, mageItems);
-        List<ItemDefinition> dwarfItems = new ArrayList<>();
-        dwarfItems.addAll(mythicItemConfig.steamMechanicusItems().values().stream().toList());
-        dwarfItems.addAll(setItemConfig.steamMechanicusItems().values().stream().toList());
-        dwarfItems.addAll(uniqueItemConfig.steamMechanicusItems().values().stream().toList());
-        items.put(CharacterClass.STEAM_MECHANICUS, dwarfItems);
+        Map<CharacterClass, List<MythicItemDefinition>> mythicItems = new EnumMap<>(CharacterClass.class);
+        Map<CharacterClass, List<SetItemDefinition>> setItems = new EnumMap<>(CharacterClass.class);
+        Map<CharacterClass, List<UniqueItemDefinition>> uniqueItems = new EnumMap<>(CharacterClass.class);
+        mythicItems.put(CharacterClass.DRAGONKNIGHT, mythicItemConfig.dragonknightItems().values().stream().toList());
+        setItems.put(CharacterClass.DRAGONKNIGHT, setItemConfig.dragonknightItems().values().stream().toList());
+        uniqueItems.put(CharacterClass.DRAGONKNIGHT, uniqueItemConfig.dragonknightItems().values().stream().toList());
+        mythicItems.put(CharacterClass.RANGER, mythicItemConfig.rangerItems().values().stream().toList());
+        setItems.put(CharacterClass.RANGER, setItemConfig.rangerItems().values().stream().toList());
+        uniqueItems.put(CharacterClass.RANGER, uniqueItemConfig.rangerItems().values().stream().toList());
+        mythicItems.put(CharacterClass.SPELLWEAVER, mythicItemConfig.spellweaverItems().values().stream().toList());
+        setItems.put(CharacterClass.SPELLWEAVER, setItemConfig.spellweaverItems().values().stream().toList());
+        uniqueItems.put(CharacterClass.SPELLWEAVER, uniqueItemConfig.spellweaverItems().values().stream().toList());
+        mythicItems.put(CharacterClass.STEAM_MECHANICUS, mythicItemConfig.steamMechanicusItems().values().stream().toList());
+        setItems.put(CharacterClass.STEAM_MECHANICUS, setItemConfig.steamMechanicusItems().values().stream().toList());
+        uniqueItems.put(CharacterClass.STEAM_MECHANICUS, uniqueItemConfig.steamMechanicusItems().values().stream().toList());
 
         Map<CharacterClass, List<SetDefinition>> sets = new EnumMap<>(CharacterClass.class);
         sets.put(CharacterClass.DRAGONKNIGHT, setConfig.dragonknightSets().values().stream().toList());
@@ -158,9 +174,13 @@ public class GameDataMapperTest {
         jewels.put(CharacterClass.SPELLWEAVER, jewelConfig.spellweaverJewels().values().stream().toList());
         jewels.put(CharacterClass.STEAM_MECHANICUS, jewelConfig.steamMechanicusJewels().values().stream().toList());
 
+
+
         GameDataConfig config = new GameDataConfig(
                 classStats,
-                items,
+                mythicItems,
+                setItems,
+                uniqueItems,
                 sets,
                 jewels,
                 enchantmentConfig.enchantments().values().stream().toList(),
@@ -171,7 +191,8 @@ public class GameDataMapperTest {
                 essenceConfig.essences().values().stream().toList(),
                 buffConfig.tonics().values().stream().toList(),
                 buffConfig.physics().values().stream().toList(),
-                levelMultiplierTable
+                levelMultiplierTable,
+                wisdomSkillTreeConfig
         );
         GameDataDTO dto = GameDataMapper.toDTO(config);
 
@@ -180,13 +201,26 @@ public class GameDataMapperTest {
         classStats2.put(CharacterClass.RANGER, classStatsConfig.classStats().get(CharacterClass.RANGER));
         classStats2.put(CharacterClass.SPELLWEAVER, classStatsConfig.classStats().get(CharacterClass.SPELLWEAVER));
         classStats2.put(CharacterClass.STEAM_MECHANICUS, classStatsConfig.classStats().get(CharacterClass.STEAM_MECHANICUS));
-        Map<CharacterClass, List<ItemDefinitionDTO>> items2 = config.items().entrySet().stream()
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        e -> e.getValue().stream()
-                                .map(ItemDefinitionMapper::from)
-                                .toList()
-                ));
+        Map<CharacterClass, List<ItemDefinitionDTO>> items2 = new HashMap<>();
+
+        Stream.of(
+                config.mythicItems(),
+                config.setItems(),
+                config.uniqueItems()
+        ).forEach(source ->
+                source.forEach((clazz, items) ->
+                        items2.merge(
+                                clazz,
+                                items.stream().map(ItemDefinitionMapper::from).toList(),
+                                (a, b) -> {
+                                    List<ItemDefinitionDTO> merged = new ArrayList<>(a);
+                                    merged.addAll(b);
+                                    return merged;
+                                }
+                        )
+                )
+        );
+
         Map<CharacterClass, List<SetDTO>> sets2 = config.sets().entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
