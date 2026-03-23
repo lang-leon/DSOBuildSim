@@ -13,6 +13,9 @@ import com.langleon.dsobuildsim.jewels.JewelConfig;
 import com.langleon.dsobuildsim.pets.PetConfig;
 import com.langleon.dsobuildsim.runes.RuneConfig;
 import com.langleon.dsobuildsim.sets.SetConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
 import org.springframework.stereotype.Component;
 import tools.jackson.databind.ObjectMapper;
 
@@ -92,6 +95,21 @@ public class GameDataLoader {
     public LevelMultiplierTable loadLevelMultiplierTable()
     {
         return load("/gamedata/levelMultiplierTable.json", LevelMultiplierTable.class);
+    }
+
+    public WisdomSkillConfig loadWisdomSkillConfig()
+    {
+        return load("/gamedata/wisdomSkills.json", WisdomSkillConfig.class);
+    }
+
+    public WisdomGroupConfig loadWisdomGroupConfig()
+    {
+        return load("/gamedata/wisdomGroups.json", WisdomGroupConfig.class);
+    }
+
+    public WisdomSkillTreeConfig loadWisdomSkillTreeConfig()
+    {
+        return new WisdomSkillTreeConfig(loadWisdomSkillConfig().wisdomSkills(), loadWisdomGroupConfig().wisdomGroups());
     }
 
     private <T> T load(String path, Class<T> clazz)

@@ -18,7 +18,8 @@ public record GameDataDTO (
         List<EssenceDTO> essences,
         List<BuffDTO> tonics,
         List<BuffDTO> physics,
-        LevelMultiplierTableDTO levelMultiplierTable
+        LevelMultiplierTableDTO levelMultiplierTable,
+        WisdomSkillTreeDTO wisdomSkillTree
         )
 {
 }

@@ -71,7 +71,8 @@ public class GameDataBuilder {
                 loader.loadEssenceConfig().essences().values().stream().toList(),
                 buffConfig.tonics().values().stream().toList(),
                 buffConfig.physics().values().stream().toList(),
-                loader.loadLevelMultiplierTable()
+                loader.loadLevelMultiplierTable(),
+                loader.loadWisdomSkillTreeConfig()
         );
     }
 

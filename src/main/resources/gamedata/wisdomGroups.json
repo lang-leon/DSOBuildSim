@@ -1,0 +1,84 @@
+{
+  "wisdomGroups": {
+    "HEALTH_RESOURCE": {
+      "wisdomGroupType": "HEALTH_RESOURCE",
+      "name": "Health/Resource",
+      "maxLevel": 150,
+      "wisdomSkills": [
+        "RISING_VIGOR",
+        "VIVACIOUS_VITALITY",
+        "CONJURED_DISTILLATION"
+      ]
+    },
+    "ATTACK": {
+      "wisdomGroupType": "ATTACK",
+      "name": "Attack",
+      "maxLevel": 200,
+      "wisdomSkills": [
+        "RISING_POWER",
+        "DECISIVE_STRIKE",
+        "HANGMANS_PRIDE"
+      ]
+    },
+    "DEFENSE": {
+      "wisdomGroupType": "DEFENSE",
+      "name": "Defense",
+      "maxLevel": 200,
+      "wisdomSkills": [
+        "STURDY_SHIELD",
+        "HARD_AS_A_ROCK",
+        "ELEMENTAL_PROTECTION"
+      ]
+    },
+    "COMBAT": {
+      "wisdomGroupType": "COMBAT",
+      "name": "Combat",
+      "maxLevel": 1,
+      "wisdomSkills": [
+        "SECOND_CHANCE",
+        "EMERGENCY_RESERVES",
+        "ENERGETIC_FORCE"
+      ]
+    },
+    "ONE_HANDED_WEAPON": {
+      "wisdomGroupType": "ONE_HANDED_WEAPON",
+      "name": "One-handed Weapon",
+      "maxLevel": 150,
+      "wisdomSkills": [
+        "DEXTROUS_SMITING",
+        "DEXTROUS_AGILITY",
+        "A_HANDFUL_OF_RESOURCES"
+      ]
+    },
+    "TWO_HANDED_WEAPON": {
+      "wisdomGroupType": "TWO_HANDED_WEAPON",
+      "name": "Two-handed Weapon",
+      "maxLevel": 150,
+      "wisdomSkills": [
+        "AMBIDEXTROUS_SMITING",
+        "AMBIDEXTROUS_AGILITY",
+        "LIFETIME_THIEF"
+      ]
+    },
+    "PROSPERITY": {
+      "wisdomGroupType": "PROSPERITY",
+      "name": "Prosperity",
+      "maxLevel": 152,
+      "wisdomSkills": [
+        "BONANZA",
+        "PEDDLER",
+        "PORTABLE_WORKBENCH"
+      ]
+    },
+    "TRAVEL_MERITS": {
+      "wisdomGroupType": "TRAVEL_MERITS",
+      "name": "Travel Merits",
+      "maxLevel": 45,
+      "wisdomSkills": [
+        "HOME_SWEET_HOME",
+        "ON_HORSEBACK",
+        "RACING_SLIPPERS"
+      ]
+    }
+  }
+}

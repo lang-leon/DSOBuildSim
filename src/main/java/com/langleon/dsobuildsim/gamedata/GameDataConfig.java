@@ -8,18 +8,15 @@ import com.langleon.dsobuildsim.dto.ClassStatsDTO;
 import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
 import com.langleon.dsobuildsim.essences.EssenceDefinition;
 import com.langleon.dsobuildsim.gems.GemDefinition;
-import com.langleon.dsobuildsim.items.core.ItemDefinition;
 import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
-import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemDefinition;
-import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
 import com.langleon.dsobuildsim.items.setitems.SetItemDefinition;
-import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemDefinition;
 import com.langleon.dsobuildsim.jewels.JewelDefinition;
 import com.langleon.dsobuildsim.pets.PetDefinition;
 import com.langleon.dsobuildsim.runes.RuneDefinition;
 import com.langleon.dsobuildsim.sets.SetDefinition;
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
 
 import java.util.List;
 import java.util.Map;
@@ -39,6 +36,7 @@ public record GameDataConfig(
         List<EssenceDefinition> essences,
         List<TonicDefinition> tonics,
         List<PhysicDefinition> physics,
-        LevelMultiplierTable levelMultiplierTable
+        LevelMultiplierTable levelMultiplierTable,
+        WisdomSkillTreeConfig wisdomSkillConfig
 ) {
 }
