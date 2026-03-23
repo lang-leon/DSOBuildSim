@@ -21,7 +21,8 @@ import com.langleon.dsobuildsim.jewels.JewelTrinket;
 import com.langleon.dsobuildsim.pets.Pet;
 import com.langleon.dsobuildsim.runes.Rune;
 import com.langleon.dsobuildsim.runes.RuneTrinket;
-import com.langleon.dsobuildsim.skilltrees.wisdomskilltree.WisdomSkillTree;
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTree;
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeFactory;
 
 import java.util.*;
 import java.util.function.Function;
@@ -58,7 +59,7 @@ public class Character {
     private WisdomSkillTree wisdomSkillTree;
 
     //default constructor
-    public Character(CharacterClass characterClass, SetFactory setFactory)
+    public Character(CharacterClass characterClass, SetFactory setFactory, WisdomSkillTreeFactory wisdomSkillTreeFactory)
     {
         this.setFactory = setFactory;
 
@@ -86,7 +87,7 @@ public class Character {
         this.equippedSets = new EnumMap<>(SetType.class);
 
         this.collectorBagBuffs = new EnumMap<>(StatType.class);
-        this.wisdomSkillTree = new WisdomSkillTree();
+        this.wisdomSkillTree = wisdomSkillTreeFactory.createTree();
     }
 
     public CharacterClass getCharacterClass() {
@@ -400,7 +401,7 @@ public class Character {
     {
         Map<StatType, Double> baseStats = new EnumMap<>(StatType.class);
         this.characterClass.getBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
-        this.wisdomSkillTree.getAbsoluteBuffs().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
+        this.wisdomSkillTree.calculateStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
         this.calculateTotalItemBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
         this.equippedSets.forEach((setType, setInstance) -> setInstance.getActiveBaseValues().forEach((key, value) -> baseStats.merge(key, value, Double::sum)));
         if (this.tonic != null) baseStats.merge(this.tonic.statType(), this.tonic.statValue(), Double::sum);
