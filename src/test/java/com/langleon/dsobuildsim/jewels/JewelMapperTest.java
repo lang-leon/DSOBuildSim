@@ -1,10 +1,8 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.jewels;
 
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dto.JewelDTO;
-import com.langleon.dsobuildsim.jewels.JewelConfig;
-import com.langleon.dsobuildsim.jewels.JewelType;
+import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,7 +27,7 @@ public class JewelMapperTest {
     @Test
     void shouldMapJewelDefinitionToJewelDTO()
     {
-        JewelDTO jewelDTO = JewelMapper.from(jewelConfig.spellweaverJewels().get(JewelType.VIGOR));
+        JewelDefinitionDTO jewelDTO = JewelMapper.from(jewelConfig.spellweaverJewels().get(JewelType.VIGOR));
 
         Map<Integer, Map<StatType, Double>> statsPerTier = Map.of(
                 1, Map.of(StatType.DAMAGE, 0.02),
