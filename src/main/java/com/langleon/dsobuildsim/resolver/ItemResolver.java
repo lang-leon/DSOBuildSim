@@ -1,6 +1,7 @@
 package com.langleon.dsobuildsim.resolver;
 
-import com.langleon.dsobuildsim.dto.EnchantmentDTO;
+import com.langleon.dsobuildsim.enchantments.EnchantmentFactory;
+import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.dto.GemDTO;
 import com.langleon.dsobuildsim.dto.ItemDTO;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
@@ -15,12 +16,10 @@ public class ItemResolver {
 
     private final ItemFactory itemFactory;
     private final GemResolver gemResolver;
-    private final EnchantmentResolver enchantmentResolver;
 
-    public ItemResolver(ItemFactory itemFactory, GemResolver gemResolver, EnchantmentResolver enchantmentResolver) {
+    public ItemResolver(ItemFactory itemFactory, GemResolver gemResolver) {
         this.itemFactory = itemFactory;
         this.gemResolver = gemResolver;
-        this.enchantmentResolver = enchantmentResolver;
     }
 
     public Item resolveItem(ItemDTO itemDTO)
@@ -30,7 +29,7 @@ public class ItemResolver {
         {
             case MYTHIC -> item = itemFactory.createItem((MythicItemType) itemDTO.itemType(), itemDTO.characterClass(), itemDTO.baseValues(), itemDTO.level());
             case SET -> item = itemFactory.createItem((SetItemType) itemDTO.itemType(), itemDTO.characterClass(), itemDTO.baseValues(), itemDTO.level());
-            case UNIQUE -> item = itemFactory.createItem((UniqueItemType) itemDTO.itemType(), itemDTO.characterClass(), itemDTO.baseValues(), itemDTO.level(), itemDTO.uniqueBaseValues(), enchantmentResolver.resolveEnchantments(itemDTO.uniqueEnchantments()));
+            case UNIQUE -> item = itemFactory.createItem((UniqueItemType) itemDTO.itemType(), itemDTO.characterClass(), itemDTO.baseValues(), itemDTO.level(), itemDTO.uniqueBaseValues(), EnchantmentFactory.fromDTOList(itemDTO.uniqueEnchantments()));
             default -> throw new IllegalArgumentException("Invalid item category "+itemDTO.itemCategory());
         }
 
@@ -51,7 +50,7 @@ public class ItemResolver {
             for (int i=0; i < itemDTO.gems().length && i < 10; i++)
             {
                 EnchantmentDTO enchantmentDTO = itemDTO.enchantments()[i];
-                if (enchantmentDTO != null) enchantments[i] = enchantmentResolver.resolveEnchantment(enchantmentDTO);
+                if (enchantmentDTO != null) enchantments[i] = EnchantmentFactory.fromDTO(enchantmentDTO);
             }
         }
         item.setEnchantments(enchantments);

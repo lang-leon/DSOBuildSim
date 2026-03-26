@@ -1,12 +1,12 @@
 package com.langleon.dsobuildsim.dto;
 
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.items.core.ItemType;
 import com.langleon.dsobuildsim.items.core.enums.ItemCategory;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlotType;
 import com.langleon.dsobuildsim.sets.SetType;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 

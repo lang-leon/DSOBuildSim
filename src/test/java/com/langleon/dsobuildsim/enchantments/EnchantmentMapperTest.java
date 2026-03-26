@@ -1,9 +1,8 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.enchantments;
 
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dto.EnchantmentDTO;
-import com.langleon.dsobuildsim.enchantments.EnchantmentConfig;
+import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

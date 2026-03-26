@@ -21,6 +21,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -60,7 +61,7 @@ public class ItemFactoryTest {
     @Test
     void createAnniversaryTwoHandUpgraded() //Unique Item
     {
-        UniqueItem item = itemFactory.createItem(UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 26326.276, StatType.CRIT_VALUE, 3505.894), 145, Map.of(StatType.ATTACK_SPEED, 0.102), Set.of());
+        UniqueItem item = itemFactory.createItem(UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 26326.276, StatType.CRIT_VALUE, 3505.894), 145, Map.of(StatType.ATTACK_SPEED, 0.102), List.of());
         Assertions.assertEquals(UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED, item.getItemType());
         Assertions.assertEquals(145, item.getLevel());
         Assertions.assertEquals(ItemSlotType.TWO_HAND_WEAPON, item.getItemSlotType());
@@ -76,13 +77,13 @@ public class ItemFactoryTest {
         }
         Assertions.assertEquals(item.getUniqueBaseValues(), Map.of(StatType.ATTACK_SPEED, 0.102));
         Assertions.assertEquals(item.getUniqueRelativeValues(), Map.of(StatType.DAMAGE, 0.10));
-        Assertions.assertEquals(item.getUniqueEnchants(), Set.of());
+        Assertions.assertEquals(item.getUniqueEnchants(), List.of());
     }
 
     @Test
     void createBrigavikGloves() //Unique Item
     {
-        UniqueItem item = itemFactory.createItem(UniqueItemType.BRIGAVIK_GLOVES, CharacterClass.SPELLWEAVER, Map.of(StatType.ARMOR_VALUE, 1067.877, StatType.RESISTANCE_VALUE, 1131.275, StatType.MOVEMENT_SPEED, 0.483), 140, Map.of(), Set.of(new Enchantment(StatType.RESISTANCE_VALUE, 0.27198)));
+        UniqueItem item = itemFactory.createItem(UniqueItemType.BRIGAVIK_GLOVES, CharacterClass.SPELLWEAVER, Map.of(StatType.ARMOR_VALUE, 1067.877, StatType.RESISTANCE_VALUE, 1131.275, StatType.MOVEMENT_SPEED, 0.483), 140, Map.of(), List.of(new Enchantment(StatType.RESISTANCE_VALUE, 0.27198)));
         Assertions.assertEquals(UniqueItemType.BRIGAVIK_GLOVES, item.getItemType());
         Assertions.assertEquals(140, item.getLevel());
         Assertions.assertEquals(ItemSlotType.GLOVES, item.getItemSlotType());
@@ -99,13 +100,13 @@ public class ItemFactoryTest {
         }
         Assertions.assertEquals(Map.of(), item.getUniqueBaseValues());
         Assertions.assertEquals(Map.of(StatType.ARMOR_VALUE, 0.10), item.getUniqueRelativeValues());
-        Assertions.assertEquals(Set.of(new Enchantment(StatType.RESISTANCE_VALUE, 0.27198)), item.getUniqueEnchants());
+        Assertions.assertEquals(List.of(new Enchantment(StatType.RESISTANCE_VALUE, 0.27198)), item.getUniqueEnchants());
     }
 
     @Test
     void createRocketmanAdornment() //Unique Item
     {
-        UniqueItem item = itemFactory.createItem(UniqueItemType.ROCKETMAN_ADORNMENT, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 1891.513, StatType.ATTACK_SPEED, 0.055, StatType.CRIT_VALUE, 2103.982), 145, Map.of(), Set.of(new Enchantment(StatType.DAMAGE, 0.67637), new Enchantment(StatType.CRIT_VALUE, 0.60126)));
+        UniqueItem item = itemFactory.createItem(UniqueItemType.ROCKETMAN_ADORNMENT, CharacterClass.SPELLWEAVER, Map.of(StatType.DAMAGE, 1891.513, StatType.ATTACK_SPEED, 0.055, StatType.CRIT_VALUE, 2103.982), 145, Map.of(), List.of(new Enchantment(StatType.DAMAGE, 0.67637), new Enchantment(StatType.CRIT_VALUE, 0.60126)));
         Assertions.assertEquals(UniqueItemType.ROCKETMAN_ADORNMENT, item.getItemType());
         Assertions.assertEquals(145, item.getLevel());;
         Assertions.assertEquals(ItemSlotType.WEAPON_ADORNMENT, item.getItemSlotType());
@@ -122,7 +123,7 @@ public class ItemFactoryTest {
         }
         Assertions.assertEquals(Map.of(), item.getUniqueBaseValues());
         Assertions.assertEquals(Map.of(), item.getUniqueRelativeValues());
-        Assertions.assertEquals(Set.of(new Enchantment(StatType.DAMAGE, 0.67637), new Enchantment(StatType.CRIT_VALUE, 0.60126)), item.getUniqueEnchants());
+        Assertions.assertEquals(List.of(new Enchantment(StatType.DAMAGE, 0.67637), new Enchantment(StatType.CRIT_VALUE, 0.60126)), item.getUniqueEnchants());
     }
 
     @Test

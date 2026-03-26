@@ -1,7 +1,6 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.enchantments;
 
-import com.langleon.dsobuildsim.dto.EnchantmentDTO;
-import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
+import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 
 public class EnchantmentMapper {
 
