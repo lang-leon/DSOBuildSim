@@ -1,21 +1,16 @@
-package com.langleon.dsobuildsim.resolver;
+package com.langleon.dsobuildsim.buffs;
 
+import com.langleon.dsobuildsim.buffs.dto.BuffInstanceDTO;
 import tools.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.buffs.BuffConfig;
-import com.langleon.dsobuildsim.buffs.BuffFactory;
-import com.langleon.dsobuildsim.buffs.Physic;
-import com.langleon.dsobuildsim.buffs.Tonic;
 import com.langleon.dsobuildsim.buffs.enums.PhysicType;
 import com.langleon.dsobuildsim.buffs.enums.TonicType;
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dto.BuffDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Map;
 import java.util.Objects;
 
 public class BuffResolverTest {
@@ -37,7 +32,7 @@ public class BuffResolverTest {
     @Test
     void shouldResolveTonicFromBuffDTO()
     {
-        BuffDTO buffDTO = new BuffDTO("VIGOR", "Tonic of Vigor", 4, StatType.DAMAGE, Map.of(4, 8397.0));
+        BuffInstanceDTO buffDTO = new BuffInstanceDTO("VIGOR", 4);
 
         Tonic tonic = buffResolver.resolveTonic(buffDTO);
 
@@ -51,7 +46,7 @@ public class BuffResolverTest {
     @Test
     void shouldResolvePhysicFromBuffDTO()
     {
-        BuffDTO buffDTO = new BuffDTO("VITALITY_SIMPLE", "Simple Physic of Vitality", 4, StatType.HEALTH_POINTS, Map.of(4, 0.07));
+        BuffInstanceDTO buffDTO = new BuffInstanceDTO("VITALITY_SIMPLE", 4);
 
         Physic physic = buffResolver.resolvePhysic(buffDTO);
 
