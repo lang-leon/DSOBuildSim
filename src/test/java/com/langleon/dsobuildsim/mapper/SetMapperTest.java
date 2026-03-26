@@ -1,8 +1,9 @@
 package com.langleon.dsobuildsim.mapper;
 
+import com.langleon.dsobuildsim.sets.SetMapper;
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dto.SetDTO;
+import com.langleon.dsobuildsim.sets.dto.SetDTO;
 import com.langleon.dsobuildsim.sets.SetConfig;
 import com.langleon.dsobuildsim.sets.SetType;
 import org.junit.jupiter.api.Assertions;
