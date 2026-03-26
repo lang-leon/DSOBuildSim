@@ -1,11 +1,9 @@
-package com.langleon.dsobuildsim.resolver;
+package com.langleon.dsobuildsim.buffs;
 
-import com.langleon.dsobuildsim.buffs.BuffFactory;
-import com.langleon.dsobuildsim.buffs.Physic;
-import com.langleon.dsobuildsim.buffs.Tonic;
+import com.langleon.dsobuildsim.buffs.dto.BuffInstanceDTO;
 import com.langleon.dsobuildsim.buffs.enums.PhysicType;
 import com.langleon.dsobuildsim.buffs.enums.TonicType;
-import com.langleon.dsobuildsim.dto.BuffDTO;
+import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
 
 public class BuffResolver {
 
@@ -15,7 +13,7 @@ public class BuffResolver {
         this.buffFactory = buffFactory;
     }
 
-    public Tonic resolveTonic(BuffDTO buffDTO)
+    public Tonic resolveTonic(BuffInstanceDTO buffDTO)
     {
         try
         {
@@ -28,7 +26,7 @@ public class BuffResolver {
         }
     }
 
-    public Physic resolvePhysic(BuffDTO buffDTO)
+    public Physic resolvePhysic(BuffInstanceDTO buffDTO)
     {
         try
         {
