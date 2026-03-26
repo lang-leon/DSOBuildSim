@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.essences;
 
+import com.langleon.dsobuildsim.essences.dto.EssenceInstanceDTO;
 import tools.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Objects;
 
 public class EssenceFactoryTest {
 
@@ -15,7 +17,7 @@ public class EssenceFactoryTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/essences.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/essences.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             EssenceConfig essenceConfig = objectMapper.readValue(reader, EssenceConfig.class);
@@ -34,19 +36,21 @@ public class EssenceFactoryTest {
     }
 
     @Test
-    void createFireEssenceDefaultTier()
-    {
-        Essence essence = essenceFactory.createEssence(EssenceType.ELEMENTAL_FIRE);
-        Assertions.assertNotNull(essence);
-        Assertions.assertEquals(5, essence.tier());
-        Assertions.assertEquals(0.00, essence.damageIncrease());
-        Assertions.assertEquals("Deals 300% of your skill's base damage as additional fire damage\nNo effect in official arenas.", essence.description());
-    }
-
-    @Test
     void throwsOnInvalidTier()
     {
         Assertions.assertThrows(IllegalArgumentException.class, () ->  essenceFactory.createEssence(EssenceType.BLAZING, -1));
         Assertions.assertThrows(IllegalArgumentException.class, () ->  essenceFactory.createEssence(EssenceType.STELLAR_GOLD, 5));
+    }
+
+    @Test
+    void shouldResolveEssenceFromEssenceDTO()
+    {
+        EssenceInstanceDTO essenceDTO = new EssenceInstanceDTO(EssenceType.BLAZING, 5);
+        Essence essence = essenceFactory.fromDTO(essenceDTO);
+
+        Assertions.assertEquals(EssenceType.BLAZING, essence.essenceType());
+        Assertions.assertEquals(5, essence.tier());
+        Assertions.assertEquals(6.0, essence.damageIncrease());
+        Assertions.assertEquals("600.00% increased damage\nNo effect in official arenas.", essence.description());
     }
 }
