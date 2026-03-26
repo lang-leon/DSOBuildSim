@@ -1,9 +1,8 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.runes;
 
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dto.RuneDTO;
-import com.langleon.dsobuildsim.runes.RuneConfig;
+import com.langleon.dsobuildsim.runes.dto.RuneDefinitionDTO;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
 import org.junit.jupiter.api.Assertions;
@@ -32,7 +31,7 @@ public class RuneMapperTest {
     @Test
     void shouldMapRuneDefinitionToRuneDTO()
     {
-        RuneDTO runeDTO = RuneMapper.from(runeConfig.runes().get(RuneType.VIGOR));
+        RuneDefinitionDTO runeDTO = RuneMapper.from(runeConfig.runes().get(RuneType.VIGOR));
         Map<Integer, Map<StatType, Double>> stats = Map.of(
                 1, Map.of(StatType.DAMAGE, 0.013),
                 2, Map.of(StatType.DAMAGE, 0.026),
@@ -43,7 +42,7 @@ public class RuneMapperTest {
 
         Assertions.assertEquals(RuneType.VIGOR, runeDTO.runeType());
         Assertions.assertEquals(RuneLimitGroup.VIGOR, runeDTO.runeLimitGroup());
-        Assertions.assertEquals(5, runeDTO.tier());
+        Assertions.assertEquals(5, runeDTO.defaultTier());
         Assertions.assertEquals(stats, runeDTO.statsPerTier());
     }
 }
