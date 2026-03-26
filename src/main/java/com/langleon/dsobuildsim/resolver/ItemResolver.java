@@ -2,7 +2,9 @@ package com.langleon.dsobuildsim.resolver;
 
 import com.langleon.dsobuildsim.enchantments.EnchantmentFactory;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
-import com.langleon.dsobuildsim.dto.GemDTO;
+import com.langleon.dsobuildsim.gems.AbstractGem;
+import com.langleon.dsobuildsim.gems.GemFactory;
+import com.langleon.dsobuildsim.gems.dto.AbstractGemInstanceDTO;
 import com.langleon.dsobuildsim.dto.ItemDTO;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.gems.Gem;
@@ -15,11 +17,11 @@ import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
 public class ItemResolver {
 
     private final ItemFactory itemFactory;
-    private final GemResolver gemResolver;
+    private final GemFactory gemFactory;
 
-    public ItemResolver(ItemFactory itemFactory, GemResolver gemResolver) {
+    public ItemResolver(ItemFactory itemFactory, GemFactory gemFactory) {
         this.itemFactory = itemFactory;
-        this.gemResolver = gemResolver;
+        this.gemFactory = gemFactory;
     }
 
     public Item resolveItem(ItemDTO itemDTO)
@@ -33,13 +35,13 @@ public class ItemResolver {
             default -> throw new IllegalArgumentException("Invalid item category "+itemDTO.itemCategory());
         }
 
-        Gem[] gems = new Gem[10];
+        AbstractGem[] gems = new Gem[10];
         if (itemDTO.gems() != null)
         {
             for (int i=0; i < itemDTO.gems().length && i < 10; i++)
             {
-                GemDTO gemDTO = itemDTO.gems()[i];
-                if (gemDTO != null) gems[i] = gemResolver.resolveGem(gemDTO);
+                AbstractGemInstanceDTO gemDTO = itemDTO.gems()[i];
+                if (gemDTO != null) gems[i] = gemFactory.fromDTO(gemDTO);
             }
         }
         item.setGems(gems);
