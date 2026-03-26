@@ -267,7 +267,7 @@ public class CharacterTest {
 
         character.setEssence(essenceFactory.createEssence(EssenceType.VIGOR, 3));
 
-        character.setPet(petFactory.createPet(PetType.THE_SOUL_OF_DRAGAN_DOLL));
+        character.setPet(petFactory.createPet(PetType.THE_SOUL_OF_DRAGAN_DOLL, 5));
 
         WisdomSkillTree wisdomSkillTree = character.getWisdomSkillTree();
         wisdomSkillTree.setSkillLevel(WisdomGroupType.HEALTH_RESOURCE, WisdomSkillType.RISING_VIGOR, 60);
