@@ -1,9 +1,8 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.gems;
 
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dto.GemDTO;
-import com.langleon.dsobuildsim.gems.GemConfig;
+import com.langleon.dsobuildsim.gems.dto.GemDefinitionDTO;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.gems.enums.GemType;
 import org.junit.jupiter.api.Assertions;
@@ -31,7 +30,7 @@ public class GemMapperTest {
     @Test
     void shouldMapGemDefinitionToGemDTO()
     {
-        GemDTO gemDTO = GemMapper.from(gemConfig.gems().get(GemType.RUBY));
+        GemDefinitionDTO gemDTO = GemMapper.from(gemConfig.gems().get(GemType.RUBY));
 
         Map<Integer, Double> statsPerTier = Map.ofEntries(
                 Map.entry(1, 2.0),
