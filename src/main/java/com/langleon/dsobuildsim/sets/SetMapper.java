@@ -1,7 +1,6 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.sets;
 
-import com.langleon.dsobuildsim.dto.SetDTO;
-import com.langleon.dsobuildsim.sets.SetDefinition;
+import com.langleon.dsobuildsim.sets.dto.SetDTO;
 
 public class SetMapper {
 

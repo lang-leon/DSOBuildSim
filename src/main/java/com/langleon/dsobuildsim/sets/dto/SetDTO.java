@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.dto;
+package com.langleon.dsobuildsim.sets.dto;
 
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.sets.SetType;
