@@ -1,10 +1,8 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.dragonstones;
 
+import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dragonstones.DragonStoneConfig;
-import com.langleon.dsobuildsim.dragonstones.DragonStoneType;
-import com.langleon.dsobuildsim.dto.DragonStoneDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,7 +28,7 @@ public class DragonStoneMapperTest {
     @Test
     void shouldMapDragonStoneDefinitionToDragonStoneDTO()
     {
-        DragonStoneDTO dto = DragonStoneMapper.from(config.dragonStones().get(DragonStoneType.POWERSTONE));
+        DragonStoneDefinitionDTO dto = DragonStoneMapper.from(config.dragonStones().get(DragonStoneType.POWERSTONE));
 
         Map<Integer, Map<StatType, Double>> statsPerTier = Map.of(
                 3, Map.of(StatType.HEALTH_POINTS, 0.025),
@@ -41,7 +39,7 @@ public class DragonStoneMapperTest {
 
         Assertions.assertEquals(DragonStoneType.POWERSTONE, dto.dragonStoneType());
         Assertions.assertEquals("Powerstone", dto.name());
-        Assertions.assertEquals(5, dto.tier());
+        Assertions.assertEquals(5, dto.defaultTier());
         Assertions.assertEquals(statsPerTier, dto.stats());
         Assertions.assertEquals(descriptionPerTier, dto.description());
     }
