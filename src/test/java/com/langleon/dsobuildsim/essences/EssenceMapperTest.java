@@ -1,9 +1,7 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.essences;
 
 import tools.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.dto.EssenceDTO;
-import com.langleon.dsobuildsim.essences.EssenceConfig;
-import com.langleon.dsobuildsim.essences.EssenceType;
+import com.langleon.dsobuildsim.essences.dto.EssenceDefinitionDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,11 +27,11 @@ public class EssenceMapperTest {
     @Test
     void shouldMapEssenceDefinitionToEssenceDTO()
     {
-        EssenceDTO essenceDTO = EssenceMapper.from(essenceConfig.essences().get(EssenceType.BLAZING));
+        EssenceDefinitionDTO essenceDTO = EssenceMapper.from(essenceConfig.essences().get(EssenceType.BLAZING));
 
         Assertions.assertEquals(EssenceType.BLAZING, essenceDTO.essenceType());
         Assertions.assertEquals("Blazing Essence of Vigor", essenceDTO.name());
-        Assertions.assertEquals(5, essenceDTO.tier());
+        Assertions.assertEquals(5, essenceDTO.defaultTier());
         Assertions.assertEquals(Map.of(5, 6.00), essenceDTO.damage());
         Assertions.assertEquals("600.00% increased damage\nNo effect in official arenas.", essenceDTO.description().get(5));
     }
