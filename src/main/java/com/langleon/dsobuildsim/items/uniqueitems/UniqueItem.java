@@ -3,14 +3,13 @@ package com.langleon.dsobuildsim.items.uniqueitems;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.items.core.Item;
-import com.langleon.dsobuildsim.items.core.ItemType;
+import com.langleon.dsobuildsim.items.core.enums.ItemType;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 
 import java.util.EnumMap;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class UniqueItem extends Item implements UniqueStatProvider {
 

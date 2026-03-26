@@ -1,15 +1,14 @@
-package com.langleon.dsobuildsim.resolver;
+package com.langleon.dsobuildsim.items.core;
 
+import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.enchantments.EnchantmentFactory;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.GemFactory;
 import com.langleon.dsobuildsim.gems.dto.AbstractGemInstanceDTO;
-import com.langleon.dsobuildsim.dto.ItemDTO;
+import com.langleon.dsobuildsim.items.dto.ItemDTO;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.gems.Gem;
-import com.langleon.dsobuildsim.items.core.Item;
-import com.langleon.dsobuildsim.items.core.ItemFactory;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
 import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
@@ -24,14 +23,14 @@ public class ItemResolver {
         this.gemFactory = gemFactory;
     }
 
-    public Item resolveItem(ItemDTO itemDTO)
+    public Item fromDTO(ItemDTO itemDTO, CharacterClass characterClass)
     {
         Item item;
         switch (itemDTO.itemCategory())
         {
-            case MYTHIC -> item = itemFactory.createItem((MythicItemType) itemDTO.itemType(), itemDTO.characterClass(), itemDTO.baseValues(), itemDTO.level());
-            case SET -> item = itemFactory.createItem((SetItemType) itemDTO.itemType(), itemDTO.characterClass(), itemDTO.baseValues(), itemDTO.level());
-            case UNIQUE -> item = itemFactory.createItem((UniqueItemType) itemDTO.itemType(), itemDTO.characterClass(), itemDTO.baseValues(), itemDTO.level(), itemDTO.uniqueBaseValues(), EnchantmentFactory.fromDTOList(itemDTO.uniqueEnchantments()));
+            case MYTHIC -> item = itemFactory.createItem((MythicItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level());
+            case SET -> item = itemFactory.createItem((SetItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level());
+            case UNIQUE -> item = itemFactory.createItem((UniqueItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level(), itemDTO.uniqueBaseValues(), EnchantmentFactory.fromDTOList(itemDTO.uniqueEnchantments()));
             default -> throw new IllegalArgumentException("Invalid item category "+itemDTO.itemCategory());
         }
 

@@ -1,8 +1,8 @@
-package com.langleon.dsobuildsim.dto;
+package com.langleon.dsobuildsim.items.dto;
 
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
-import com.langleon.dsobuildsim.items.core.ItemType;
+import com.langleon.dsobuildsim.items.core.enums.ItemType;
 import com.langleon.dsobuildsim.items.core.enums.ItemCategory;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlotType;
 import com.langleon.dsobuildsim.sets.SetType;

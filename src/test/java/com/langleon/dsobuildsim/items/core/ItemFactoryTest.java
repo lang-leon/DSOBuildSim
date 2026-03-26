@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.items.core;
 
+import com.langleon.dsobuildsim.gamedata.LevelMultiplierTable;
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.common.StatType;
@@ -24,7 +25,6 @@ import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 public class ItemFactoryTest {
 

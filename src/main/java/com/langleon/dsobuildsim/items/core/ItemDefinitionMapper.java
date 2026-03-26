@@ -1,9 +1,8 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.items.core;
 
 import com.langleon.dsobuildsim.enchantments.EnchantmentMapper;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
-import com.langleon.dsobuildsim.dto.ItemDefinitionDTO;
-import com.langleon.dsobuildsim.items.core.ItemDefinition;
+import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
 import com.langleon.dsobuildsim.items.core.enums.ItemCategory;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemDefinition;
 import com.langleon.dsobuildsim.items.setitems.SetItemDefinition;
