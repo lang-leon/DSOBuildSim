@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.controller;
 
-import com.langleon.dsobuildsim.dto.GameDataDTO;
+import com.langleon.dsobuildsim.gamedata.dto.GameDataDTO;
 import com.langleon.dsobuildsim.service.GameDataService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

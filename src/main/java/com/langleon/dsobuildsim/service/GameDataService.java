@@ -1,8 +1,8 @@
 package com.langleon.dsobuildsim.service;
 
-import com.langleon.dsobuildsim.dto.GameDataDTO;
+import com.langleon.dsobuildsim.gamedata.dto.GameDataDTO;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
-import com.langleon.dsobuildsim.mapper.GameDataMapper;
+import com.langleon.dsobuildsim.gamedata.GameDataMapper;
 import org.springframework.stereotype.Service;
 
 @Service

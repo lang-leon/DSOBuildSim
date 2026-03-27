@@ -1,7 +1,10 @@
 package com.langleon.dsobuildsim.jewels;
 
 import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
+import com.langleon.dsobuildsim.jewels.dto.JewelInstanceDTO;
 
+import java.util.List;
 import java.util.Map;
 
 public class JewelFactory {
@@ -14,20 +17,6 @@ public class JewelFactory {
     public int getUpgradeCost(Jewel jewel)
     {
         return this.config.upgradeCosts().get(jewel.getTier());
-    }
-
-    public Jewel createJewel(JewelType jewelType, CharacterClass characterClass)
-    {
-        JewelDefinition jewelDefinition = null;
-        switch (characterClass)
-        {
-            case SPELLWEAVER -> jewelDefinition = this.config.spellweaverJewels().get(jewelType);
-            case DRAGONKNIGHT -> jewelDefinition = this.config.dragonknightJewels().get(jewelType);
-            case RANGER -> jewelDefinition = this.config.rangerJewels().get(jewelType);
-            case STEAM_MECHANICUS -> jewelDefinition = this.config.steamMechanicusJewels().get(jewelType);
-        }
-        int tier = jewelDefinition.defaultTier();
-        return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerTier().get(tier));
     }
 
     public Jewel createJewel(JewelType jewelType, CharacterClass characterClass, int tier)
@@ -44,5 +33,23 @@ public class JewelFactory {
         if (description.get(tier) == null)
             throw new IllegalArgumentException("Invalid jewel tier: " + tier + "!");
         return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerTier().get(tier));
+    }
+
+    public Jewel fromDTO(JewelInstanceDTO jewelDTO, CharacterClass characterClass)
+    {
+        try
+        {
+            return this.createJewel(jewelDTO.jewelType(), characterClass, jewelDTO.tier());
+        }
+        catch (IllegalArgumentException e)
+        {
+            throw new IllegalArgumentException("Unknown jewel type: " + jewelDTO.jewelType(), e);
+        }
+    }
+
+    public List<Jewel> fromDTOList(List<JewelInstanceDTO> jewelDTOs, CharacterClass characterClass)
+    {
+        if (jewelDTOs==null) return List.of();
+        return jewelDTOs.stream().map(dto -> fromDTO(dto, characterClass)).toList();
     }
 }
