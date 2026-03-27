@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.items.core;
+package com.langleon.dsobuildsim.gamedata;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

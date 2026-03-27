@@ -1,8 +1,7 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.gamedata;
 
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dto.LevelMultiplierTableDTO;
-import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
+import com.langleon.dsobuildsim.gamedata.dto.LevelMultiplierTableDTO;
 
 import java.util.EnumMap;
 import java.util.Map;
