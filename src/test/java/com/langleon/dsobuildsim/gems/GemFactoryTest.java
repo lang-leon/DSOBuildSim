@@ -2,6 +2,7 @@ package com.langleon.dsobuildsim.gems;
 
 
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.gems.dto.*;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.gems.enums.GemType;
 import com.langleon.dsobuildsim.gems.enums.GemUpgradeType;
@@ -12,6 +13,9 @@ import tools.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 class GemFactoryTest {
 
@@ -19,7 +23,7 @@ class GemFactoryTest {
 
     @BeforeEach
     void setup() throws IOException {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/gems.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/gems.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             GemConfig gemConfig = objectMapper.readValue(reader, GemConfig.class);
@@ -83,5 +87,61 @@ class GemFactoryTest {
     {
         Assertions.assertThrows(IllegalArgumentException.class, () -> gemFactory.createGem(GemType.RUBY, -1));
         Assertions.assertThrows(IllegalArgumentException.class, () -> gemFactory.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 5));
+    }
+
+    @Test
+    void shouldResolveGemFromGemDTO()
+    {
+        GemInstanceDTO gemDTO = new GemInstanceDTO(GemType.RUBY, 16);
+
+        AbstractGem gem = gemFactory.fromDTO(gemDTO);
+
+        Assertions.assertEquals(GemType.RUBY, gem.getGemType());
+        Assertions.assertEquals(16, gem.getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 600.0), gem.getStats());
+    }
+
+    @Test
+    void shouldResolveGemsFromGemDTOs()
+    {
+        GemInstanceDTO gemDTO1 = new GemInstanceDTO(GemType.RUBY, 16);
+        GemInstanceDTO gemDTO2 = new GemInstanceDTO(GemType.AMETHYST, 16);
+        List<AbstractGemInstanceDTO> gemDTOs = List.of(gemDTO1, gemDTO2);
+        List<AbstractGem> gems = gemFactory.fromDTOList(gemDTOs);
+
+        Assertions.assertEquals(GemType.RUBY, gems.getFirst().getGemType());
+        Assertions.assertEquals(16, gems.getFirst().getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 600.0), gems.getFirst().getStats());
+        Assertions.assertEquals(GemType.AMETHYST, gems.get(1).getGemType());
+        Assertions.assertEquals(16, gems.get(1).getTier());
+        Assertions.assertEquals(Map.of(StatType.HEALTH_POINTS, 4900.0), gems.get(1).getStats());
+    }
+
+    @Test
+    void shouldResolveOpalFromOpalDTO()
+    {
+        OpalInstanceDTO opalDTO = new OpalInstanceDTO(GemType.RUBY, GemType.ONYX, GemType.AMETHYST, 16);
+
+        AbstractGem opal = gemFactory.fromDTO(opalDTO);
+
+        Assertions.assertEquals(GemType.OPAL, opal.getGemType());
+        Assertions.assertEquals(16, opal.getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 450.0, StatType.CRIT_VALUE, 1687.5, StatType.HEALTH_POINTS, 3675.0), opal.getStats());
+    }
+
+    @Test
+    void shouldResolveOpalsFromOpalDTOs()
+    {
+        OpalInstanceDTO opalDTO1 = new OpalInstanceDTO(GemType.RUBY, GemType.ONYX, GemType.AMETHYST, 16);
+        OpalInstanceDTO opalDTO2 = new OpalInstanceDTO(GemType.RUBY, GemType.ONYX, GemType.ZIRCON, 16);
+        List<AbstractGemInstanceDTO> opalDTOs = List.of(opalDTO1, opalDTO2);
+        List<AbstractGem> opals = gemFactory.fromDTOList(opalDTOs);
+
+        Assertions.assertEquals(GemType.OPAL, opals.getFirst().getGemType());
+        Assertions.assertEquals(16, opals.getFirst().getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 450.0, StatType.CRIT_VALUE, 1687.5, StatType.HEALTH_POINTS, 3675.0), opals.getFirst().getStats());
+        Assertions.assertEquals(GemType.OPAL, opals.get(1).getGemType());
+        Assertions.assertEquals(16, opals.get(1).getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 450.0, StatType.CRIT_VALUE, 1687.5, StatType.ATTACK_SPEED, 0.012), opals.get(1).getStats());
     }
 }

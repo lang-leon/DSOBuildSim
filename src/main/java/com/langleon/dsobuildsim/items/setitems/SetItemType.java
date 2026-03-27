@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.items.setitems;
 
-import com.langleon.dsobuildsim.items.core.ItemType;
+import com.langleon.dsobuildsim.items.core.enums.ItemType;
 
 public enum SetItemType implements ItemType {
     //amulets

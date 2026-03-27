@@ -3,22 +3,22 @@ package com.langleon.dsobuildsim.items.uniqueitems;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.items.core.Item;
-import com.langleon.dsobuildsim.items.core.ItemType;
+import com.langleon.dsobuildsim.items.core.enums.ItemType;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 
 import java.util.EnumMap;
 
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class UniqueItem extends Item implements UniqueStatProvider {
 
     private final Map<StatType, Double> uniqueBaseValues;
     private final Map<StatType, Double> uniqueRelativeValues;
-    private final Set<Enchantment> uniqueEnchantments;
+    private final List<Enchantment> uniqueEnchantments;
     private final UniqueItemType itemType;
 
-    public UniqueItem(UniqueItemDefinition itemDefinition, Map<StatType, Double> baseValues, int level, Map<StatType, Double> uniqueBaseValues, Set<Enchantment> uniqueEnchantments){
+    public UniqueItem(UniqueItemDefinition itemDefinition, Map<StatType, Double> baseValues, int level, Map<StatType, Double> uniqueBaseValues, List<Enchantment> uniqueEnchantments){
         super(itemDefinition.itemSlotType(), baseValues, level);
         this.itemType = itemDefinition.itemType();
         this.uniqueBaseValues = uniqueBaseValues;
@@ -39,7 +39,7 @@ public class UniqueItem extends Item implements UniqueStatProvider {
         return uniqueRelativeValues;
     }
 
-    public Set<Enchantment> getUniqueEnchants() {
+    public List<Enchantment> getUniqueEnchants() {
         return uniqueEnchantments;
     }
 

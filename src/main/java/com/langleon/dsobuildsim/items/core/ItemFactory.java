@@ -4,6 +4,7 @@ import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
+import com.langleon.dsobuildsim.gamedata.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
 import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
@@ -18,8 +19,8 @@ import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemDefinition;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class ItemFactory {
@@ -43,7 +44,7 @@ public class ItemFactory {
         return new MythicItem(itemDefinition, baseValues, level);
     }
 
-    public UniqueItem createItem(UniqueItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, Map<StatType, Double> uniqueBaseValues, Set<Enchantment> uniqueEnchantments)
+    public UniqueItem createItem(UniqueItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, Map<StatType, Double> uniqueBaseValues, List<Enchantment> uniqueEnchantments)
     {
         UniqueItemDefinition itemDefinition = this.getDefinitionForClass(characterClass, uniqueItemConfig.spellweaverItems(), uniqueItemConfig.dragonknightItems(), uniqueItemConfig.rangerItems(), uniqueItemConfig.steamMechanicusItems(), itemType);
         this.checkBaseValues(itemDefinition, level, baseValues);
@@ -109,7 +110,7 @@ public class ItemFactory {
         }
     }
 
-    private void checkUniqueEnchantments(UniqueItemDefinition itemDefinition, Set<Enchantment> enchantments)
+    private void checkUniqueEnchantments(UniqueItemDefinition itemDefinition, List<Enchantment> enchantments)
     {
         if (enchantments.size() != itemDefinition.uniqueEnchantments().size()) throw new IllegalArgumentException("Unique enchantment amount invalid");
 
