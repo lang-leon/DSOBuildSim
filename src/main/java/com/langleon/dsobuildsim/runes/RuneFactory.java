@@ -1,7 +1,10 @@
 package com.langleon.dsobuildsim.runes;
 
+import com.langleon.dsobuildsim.runes.dto.RuneInstanceDTO;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
 import com.langleon.dsobuildsim.runes.enums.RuneUpgradeType;
+
+import java.util.List;
 
 public class RuneFactory {
     private final RuneConfig config;
@@ -36,9 +39,23 @@ public class RuneFactory {
         return new Rune(runeType, runeDefinition.runeUpgradeType(), runeDefinition.runeLimitGroup(), tier, runeDefinition.statsPerTier().get(tier), runeDefinition.description());
     }
 
-    public Rune createRune(RuneType runeType)
+    public Rune fromDTO(RuneInstanceDTO runeDTO)
     {
-        RuneDefinition runeDefinition = this.config.runes().get(runeType);
-        return new Rune(runeType, runeDefinition.runeUpgradeType(), runeDefinition.runeLimitGroup(), runeDefinition.defaultTier(), runeDefinition.statsPerTier().get(runeDefinition.defaultTier()), runeDefinition.description());
+        try
+        {
+            return this.createRune(runeDTO.runeType(), runeDTO.tier());
+        }
+        catch (IllegalArgumentException e)
+        {
+            throw new IllegalArgumentException("Unknown rune type: " + runeDTO.runeType(), e);
+        }
+    }
+
+    public List<Rune> fromDTOList(List<RuneInstanceDTO> dtos)
+    {
+        if (dtos == null) return List.of();
+        return dtos.stream()
+                .map(this::fromDTO)
+                .toList();
     }
 }
