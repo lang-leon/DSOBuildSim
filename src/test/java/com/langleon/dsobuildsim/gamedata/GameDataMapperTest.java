@@ -1,26 +1,40 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.gamedata;
 
+import com.langleon.dsobuildsim.buffs.BuffMapper;
+import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
+import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
+import com.langleon.dsobuildsim.dragonstones.DragonStoneMapper;
+import com.langleon.dsobuildsim.enchantments.EnchantmentMapper;
+import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
+import com.langleon.dsobuildsim.essences.EssenceMapper;
+import com.langleon.dsobuildsim.essences.dto.EssenceDefinitionDTO;
+import com.langleon.dsobuildsim.gamedata.dto.ClassStatsDTO;
+import com.langleon.dsobuildsim.gamedata.dto.GameDataDTO;
+import com.langleon.dsobuildsim.gems.GemMapper;
+import com.langleon.dsobuildsim.gems.dto.GemDefinitionDTO;
+import com.langleon.dsobuildsim.items.core.ItemDefinitionMapper;
+import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemDefinition;
-import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
 import com.langleon.dsobuildsim.items.setitems.SetItemDefinition;
-import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemDefinition;
-import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
+import com.langleon.dsobuildsim.jewels.JewelMapper;
+import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
+import com.langleon.dsobuildsim.pets.PetMapper;
+import com.langleon.dsobuildsim.pets.dto.PetDefinitionDTO;
+import com.langleon.dsobuildsim.runes.RuneMapper;
+import com.langleon.dsobuildsim.runes.dto.RuneDefinitionDTO;
+import com.langleon.dsobuildsim.sets.SetMapper;
+import com.langleon.dsobuildsim.sets.dto.SetDTO;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.buffs.BuffConfig;
 import com.langleon.dsobuildsim.character.CharacterClass;
-import com.langleon.dsobuildsim.gamedata.ClassStatsConfig;
-import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneConfig;
-import com.langleon.dsobuildsim.dto.*;
 import com.langleon.dsobuildsim.enchantments.EnchantmentConfig;
 import com.langleon.dsobuildsim.essences.EssenceConfig;
 import com.langleon.dsobuildsim.gems.GemConfig;
-import com.langleon.dsobuildsim.items.core.ItemDefinition;
-import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
 import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
@@ -228,7 +242,7 @@ public class GameDataMapperTest {
                                 .map(SetMapper::from)
                                 .toList()
                 ));
-        Map<CharacterClass, List<JewelDTO>> jewels2 = config.jewels().entrySet().stream()
+        Map<CharacterClass, List<JewelDefinitionDTO>> jewels2 = config.jewels().entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
                         e -> e.getValue().stream()
@@ -236,13 +250,13 @@ public class GameDataMapperTest {
                                 .toList()
                 ));
         List<EnchantmentDTO> enchantments = config.enchantments().stream().map(EnchantmentMapper::from).toList();
-        List<GemDTO> gems = config.gems().stream().map(GemMapper::from).toList();
-        List<RuneDTO> runes = config.runes().stream().map(RuneMapper::from).toList();
-        List<DragonStoneDTO> dragonStones = config.dragonStones().stream().map(DragonStoneMapper::from).toList();
-        List<PetDTO> pets = config.pets().stream().map(PetMapper::from).toList();
-        List<EssenceDTO> essences = config.essences().stream().map(EssenceMapper::from).toList();
-        List<BuffDTO> tonics = config.tonics().stream().map(BuffMapper::from).toList();
-        List<BuffDTO> physics = config.physics().stream().map(BuffMapper::from).toList();
+        List<GemDefinitionDTO> gems = config.gems().stream().map(GemMapper::from).toList();
+        List<RuneDefinitionDTO> runes = config.runes().stream().map(RuneMapper::from).toList();
+        List<DragonStoneDefinitionDTO> dragonStones = config.dragonStones().stream().map(DragonStoneMapper::from).toList();
+        List<PetDefinitionDTO> pets = config.pets().stream().map(PetMapper::from).toList();
+        List<EssenceDefinitionDTO> essences = config.essences().stream().map(EssenceMapper::from).toList();
+        List<BuffDefinitionDTO> tonics = config.tonics().stream().map(BuffMapper::from).toList();
+        List<BuffDefinitionDTO> physics = config.physics().stream().map(BuffMapper::from).toList();
 
         Assertions.assertEquals(classStats2, dto.characterClassClassStats());
         Assertions.assertEquals(items2, dto.items());

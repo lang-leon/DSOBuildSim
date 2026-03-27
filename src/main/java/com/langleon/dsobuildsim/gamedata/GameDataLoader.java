@@ -5,7 +5,6 @@ import com.langleon.dsobuildsim.dragonstones.DragonStoneConfig;
 import com.langleon.dsobuildsim.enchantments.EnchantmentConfig;
 import com.langleon.dsobuildsim.essences.EssenceConfig;
 import com.langleon.dsobuildsim.gems.GemConfig;
-import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
 import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
