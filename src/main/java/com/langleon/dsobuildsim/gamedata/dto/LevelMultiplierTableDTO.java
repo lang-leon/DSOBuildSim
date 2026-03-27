@@ -1,4 +1,4 @@
-package com.langleon.dsobuildsim.dto;
+package com.langleon.dsobuildsim.gamedata.dto;
 
 import com.langleon.dsobuildsim.common.StatType;
 
