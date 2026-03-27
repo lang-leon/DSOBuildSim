@@ -1,8 +1,9 @@
-package com.langleon.dsobuildsim.dto;
+package com.langleon.dsobuildsim.character.dto;
 
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.character.MasteryType;
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.dto.*;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
 
 import java.util.List;
