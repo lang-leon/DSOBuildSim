@@ -1,14 +1,12 @@
-package com.langleon.dsobuildsim.dto;
+package com.langleon.dsobuildsim.wisdomskilltree.dto.instance;
 
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 
 import java.util.EnumMap;
 
-public record WisdomGroupDTO(
+public record WisdomGroupInstanceDTO(
         WisdomGroupType type,
-        String name,
-        int maxLevel,
-        EnumMap<WisdomSkillType, WisdomSkillDTO> wisdomSkills
-        ) {
+        EnumMap<WisdomSkillType, WisdomSkillInstanceDTO> wisdomSkills
+) {
 }

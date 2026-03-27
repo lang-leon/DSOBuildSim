@@ -1,9 +1,9 @@
-package com.langleon.dsobuildsim.dto;
+package com.langleon.dsobuildsim.wisdomskilltree.dto.definition;
 
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 
-public record WisdomSkillDTO(
+public record WisdomSkillDefinitionDTO(
         WisdomSkillType type,
         String name,
         int maxLevel,
