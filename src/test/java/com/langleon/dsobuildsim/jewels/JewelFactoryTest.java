@@ -1,5 +1,7 @@
 package com.langleon.dsobuildsim.jewels;
 
+import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
+import com.langleon.dsobuildsim.jewels.dto.JewelInstanceDTO;
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.common.StatType;
@@ -9,6 +11,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
+import java.util.Map;
 
 public class JewelFactoryTest {
     private JewelFactory jewelFactory;
@@ -58,5 +62,36 @@ public class JewelFactoryTest {
     {
         Assertions.assertThrows(IllegalArgumentException.class, () -> jewelFactory.createJewel(JewelType.VIGOR, CharacterClass.SPELLWEAVER, -1));
         Assertions.assertThrows(IllegalArgumentException.class, () -> jewelFactory.createJewel(JewelType.BLACK_KNIGHT_ORDER, CharacterClass.SPELLWEAVER, 5));
+    }
+
+    @Test
+    void shouldResolveJewelFromJewelDTO()
+    {
+        JewelInstanceDTO jewelDTO = new JewelInstanceDTO(JewelType.VIGOR, 4);
+
+        Jewel jewel = jewelFactory.fromDTO(jewelDTO, CharacterClass.SPELLWEAVER);
+
+        Assertions.assertEquals(JewelType.VIGOR, jewel.getJewelType());
+        Assertions.assertEquals(4, jewel.getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 0.08), jewel.getStats());
+        Assertions.assertEquals("+ 8.00% damage", jewel.getDescription());
+    }
+
+    @Test
+    void shouldResolveJewelsFromJewelDTOs()
+    {
+        JewelInstanceDTO jewelDTO1 = new JewelInstanceDTO(JewelType.VIGOR, 4);
+        JewelInstanceDTO jewelDTO2 = new JewelInstanceDTO(JewelType.VITALITY, 3);
+
+        List<Jewel> jewels = jewelFactory.fromDTOList(List.of(jewelDTO1, jewelDTO2), CharacterClass.SPELLWEAVER);
+
+        Assertions.assertEquals(JewelType.VIGOR, jewels.getFirst().getJewelType());
+        Assertions.assertEquals(4, jewels.getFirst().getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 0.08), jewels.getFirst().getStats());
+        Assertions.assertEquals("+ 8.00% damage", jewels.getFirst().getDescription());
+        Assertions.assertEquals(JewelType.VITALITY, jewels.get(1).getJewelType());
+        Assertions.assertEquals(3, jewels.get(1).getTier());
+        Assertions.assertEquals(Map.of(StatType.HEALTH_POINTS, 0.06), jewels.get(1).getStats());
+        Assertions.assertEquals("+ 6.00% Health points", jewels.get(1).getDescription());
     }
 }

@@ -1,6 +1,8 @@
 package com.langleon.dsobuildsim.pets;
 
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.pets.dto.PetDefinitionDTO;
+import com.langleon.dsobuildsim.pets.dto.PetInstanceDTO;
 import com.langleon.dsobuildsim.pets.enums.PetType;
 import java.util.Map;
 
@@ -38,12 +40,16 @@ public class PetFactory {
         return new Pet(petType, petDefinition.petUpgradeType(), tier, stats, petDefinition.descriptionPerTier().getOrDefault(tier, ""));
     }
 
-    public Pet createPet(PetType petType)
+    public Pet fromDTO(PetInstanceDTO petDTO)
     {
-        PetDefinition petDefinition = this.config.pets().get(petType);
-        int tier = petDefinition.defaultTier();
-        Map<StatType, Double> stats = petDefinition.statsPerTier().get(tier);
-        if (stats == null) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
-        return new Pet(petType, petDefinition.petUpgradeType(), tier, stats, petDefinition.descriptionPerTier().getOrDefault(tier, ""));
+        try
+        {
+            PetType petType = petDTO.petType();
+            return this.createPet(petType, petDTO.tier());
+        }
+        catch (IllegalArgumentException e)
+        {
+            throw new IllegalArgumentException("Unknown pet type: " + petDTO.petType(), e);
+        }
     }
 }

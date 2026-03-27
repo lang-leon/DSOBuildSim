@@ -2,7 +2,7 @@ package com.langleon.dsobuildsim.service;
 
 import com.langleon.dsobuildsim.buffs.BuffConfig;
 import com.langleon.dsobuildsim.character.CharacterClass;
-import com.langleon.dsobuildsim.dto.ClassStatsDTO;
+import com.langleon.dsobuildsim.gamedata.dto.ClassStatsDTO;
 import com.langleon.dsobuildsim.gamedata.ClassStatsConfig;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.gamedata.GameDataLoader;

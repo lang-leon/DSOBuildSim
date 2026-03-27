@@ -12,7 +12,7 @@ public class BuffFactory {
     public Tonic createTonic(TonicType tonicType, int tier)
     {
         TonicDefinition tonicDefinition = this.config.tonics().get(tonicType);
-        if (!tonicDefinition.statsPerTier().containsKey(tier)) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
+        if (!tonicDefinition.statsPerTier().containsKey(tier)) throw new IllegalArgumentException("Invalid pet defaultTier: " + tier + "!");
         return new Tonic(tonicType, tonicDefinition.statType(), tonicDefinition.statsPerTier().get(tier), tier);
     }
 
@@ -25,7 +25,7 @@ public class BuffFactory {
     public Physic createPhysic(PhysicType physicType, int tier)
     {
         PhysicDefinition physicDefinition = this.config.physics().get(physicType);
-        if (!physicDefinition.statsPerTier().containsKey(tier)) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
+        if (!physicDefinition.statsPerTier().containsKey(tier)) throw new IllegalArgumentException("Invalid pet defaultTier: " + tier + "!");
         return new Physic(physicType, physicDefinition.statType(), physicDefinition.statsPerTier().get(tier), tier);
     }
 
