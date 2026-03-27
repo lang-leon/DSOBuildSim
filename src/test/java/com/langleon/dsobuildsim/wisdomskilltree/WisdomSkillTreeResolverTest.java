@@ -1,12 +1,8 @@
-package com.langleon.dsobuildsim.resolver;
+package com.langleon.dsobuildsim.wisdomskilltree;
 
-import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dto.WisdomGroupDTO;
-import com.langleon.dsobuildsim.dto.WisdomSkillDTO;
-import com.langleon.dsobuildsim.dto.WisdomSkillTreeDTO;
-import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTree;
-import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
-import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeFactory;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomGroupInstanceDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomSkillInstanceDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomSkillTreeInstanceDTO;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
@@ -45,15 +41,15 @@ public class WisdomSkillTreeResolverTest {
     @Test
     void shouldResolveFromWisdomSkillTreeDTOtoWisdomSkillTree()
     {
-        EnumMap<WisdomSkillType, WisdomSkillDTO> health = new EnumMap<>(WisdomSkillType.class);
-        health.put(WisdomSkillType.RISING_VIGOR, new WisdomSkillDTO(WisdomSkillType.RISING_VIGOR, "Rising Vigor", 80, 13, 3, StatType.HEALTH_POINTS, 123, 123, ""));
-        health.put(WisdomSkillType.VIVACIOUS_VITALITY, new WisdomSkillDTO(WisdomSkillType.RISING_VIGOR, "Vivacious Vitality", 80, 15, 3, StatType.HEALTH_PER_SECOND, 123, 123, ""));
-        health.put(WisdomSkillType.CONJURED_DISTILLATION, new WisdomSkillDTO(WisdomSkillType.RISING_VIGOR, "Conjured Distillation", 80, 17, 3, StatType.MANA, 123, 123, ""));
+        EnumMap<WisdomSkillType, WisdomSkillInstanceDTO> health = new EnumMap<>(WisdomSkillType.class);
+        health.put(WisdomSkillType.RISING_VIGOR, new WisdomSkillInstanceDTO(WisdomSkillType.RISING_VIGOR, 13));
+        health.put(WisdomSkillType.VIVACIOUS_VITALITY, new WisdomSkillInstanceDTO(WisdomSkillType.RISING_VIGOR, 15));
+        health.put(WisdomSkillType.CONJURED_DISTILLATION, new WisdomSkillInstanceDTO(WisdomSkillType.RISING_VIGOR, 17));
 
-        EnumMap<WisdomGroupType, WisdomGroupDTO> wisdomGroups = new EnumMap<>(WisdomGroupType.class);
-        wisdomGroups.put(WisdomGroupType.HEALTH_RESOURCE, new WisdomGroupDTO(WisdomGroupType.HEALTH_RESOURCE, "Health/Resource", 150, health));
+        EnumMap<WisdomGroupType, WisdomGroupInstanceDTO> wisdomGroups = new EnumMap<>(WisdomGroupType.class);
+        wisdomGroups.put(WisdomGroupType.HEALTH_RESOURCE, new WisdomGroupInstanceDTO(WisdomGroupType.HEALTH_RESOURCE, health));
 
-        WisdomSkillTreeDTO wisdomSkillTreeDTO = new WisdomSkillTreeDTO(wisdomGroups);
+        WisdomSkillTreeInstanceDTO wisdomSkillTreeDTO = new WisdomSkillTreeInstanceDTO(wisdomGroups);
         WisdomSkillTree wisdomSkillTree = wisdomSkillTreeResolver.resolveWisdomSkillTree(wisdomSkillTreeDTO);
 
         Assertions.assertEquals(8, wisdomSkillTree.getWisdomGroups().size());

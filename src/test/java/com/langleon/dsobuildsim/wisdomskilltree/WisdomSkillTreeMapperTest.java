@@ -1,9 +1,8 @@
-package com.langleon.dsobuildsim.mapper;
+package com.langleon.dsobuildsim.wisdomskilltree;
 
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dto.WisdomSkillDTO;
-import com.langleon.dsobuildsim.dto.WisdomSkillTreeDTO;
-import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillDefinitionDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillTreeDefinitionDTO;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
@@ -41,11 +40,11 @@ public class WisdomSkillTreeMapperTest {
     @Test
     void shouldMapDefinitionToDTO()
     {
-        WisdomSkillTreeDTO wisdomSkillTreeDTO = WisdomSkillTreeMapper.from(wisdomSkillTreeConfig);
+        WisdomSkillTreeDefinitionDTO wisdomSkillTreeDTO = WisdomSkillTreeMapper.from(wisdomSkillTreeConfig);
 
         Assertions.assertEquals(8, wisdomSkillTreeDTO.wisdomGroups().size());
         Assertions.assertEquals(3, wisdomSkillTreeDTO.wisdomGroups().get(WisdomGroupType.ATTACK).wisdomSkills().size());
-        WisdomSkillDTO wisdomSkill = wisdomSkillTreeDTO.wisdomGroups().get(WisdomGroupType.ATTACK).wisdomSkills().get(WisdomSkillType.RISING_POWER);
+        WisdomSkillDefinitionDTO wisdomSkill = wisdomSkillTreeDTO.wisdomGroups().get(WisdomGroupType.ATTACK).wisdomSkills().get(WisdomSkillType.RISING_POWER);
         Assertions.assertEquals(80, wisdomSkill.maxLevel());
         Assertions.assertEquals(0, wisdomSkill.currentLevel());
         Assertions.assertEquals(StatType.DAMAGE, wisdomSkill.statType());
