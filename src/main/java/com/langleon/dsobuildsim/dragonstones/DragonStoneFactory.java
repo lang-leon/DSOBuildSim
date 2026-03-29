@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.dragonstones;
 
+import com.langleon.dsobuildsim.dragonstones.dto.DragonCrestTrinketDTO;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneInstanceDTO;
 
 import java.util.List;
@@ -29,5 +30,10 @@ public class DragonStoneFactory {
         return dtos.stream()
                 .map(this::fromDTO)
                 .toList();
+    }
+
+    public DragonCrestTrinket fromDTO(DragonCrestTrinketDTO dragonCrest)
+    {
+        return new DragonCrestTrinket(fromDTOList(dragonCrest.dragonStones()));
     }
 }
