@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Map;
+import java.util.Objects;
 
 public class JewelTrinketTest {
 
@@ -19,19 +20,12 @@ public class JewelTrinketTest {
     @BeforeEach
     void setup() throws IOException
     {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/jewels.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/jewels.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             JewelConfig jewelConfig = objectMapper.readValue(reader, JewelConfig.class);
             jewelFactory = new JewelFactory(jewelConfig);
         }
-    }
-
-    @Test
-    void testDragonCrestCreation()
-    {
-        DragonCrestTrinket jewelTrinket = new DragonCrestTrinket();
-        Assertions.assertNotNull(jewelTrinket);
     }
 
     @Test
