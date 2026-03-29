@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.character;
 
+import com.langleon.dsobuildsim.dragonstones.*;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeFactory;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
@@ -7,16 +8,12 @@ import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 import tools.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.dragonstones.DragonStone;
-import com.langleon.dsobuildsim.dragonstones.DragonStoneConfig;
-import com.langleon.dsobuildsim.dragonstones.DragonStoneFactory;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.enchantments.EnchantmentConfig;
 import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dragonstones.DragonStoneType;
 import com.langleon.dsobuildsim.essences.EssenceType;
 import com.langleon.dsobuildsim.gems.enums.GemType;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
@@ -176,7 +173,10 @@ public class CharacterTest {
 
     private Character createCharacter()
     {
-        Character character = new Character(CharacterClass.SPELLWEAVER, setFactory, wisdomSkillTreeFactory);
+        DragonCrestTrinket dragonCrest = new DragonCrestTrinket(List.of(dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 5), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 5), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3)));
+
+        Character character = new Character(CharacterClass.SPELLWEAVER, setFactory, wisdomSkillTreeFactory,
+                dragonCrest);
 
         character.setExperienceBonusPathLevel(5);
         character.setElementalMasteryType(MasteryType.ICE);
@@ -192,8 +192,6 @@ public class CharacterTest {
         character.updateJewelTrinket(0, new Jewel[]{jewelFactory.createJewel(JewelType.ETERNAL_SCORN, CharacterClass.SPELLWEAVER, 7), jewelFactory.createJewel(JewelType.GLORY, CharacterClass.SPELLWEAVER, 7), jewelFactory.createJewel(JewelType.RAGE, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.AMPLIFIED_HEALING, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.FROZEN_HEART, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.GEM_FORTUNE, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.ETERNAL_WRATH, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.INGREDIENT_HUNTER, CharacterClass.SPELLWEAVER, 5),});
         character.updateJewelTrinket(1, new Jewel[]{jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.FOCUS, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.VIGOR, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.AMBIDEXTROUS_VIGOR, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.VITALITY, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.ENCOURAGEMENT, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.CONTRIBUTION, CharacterClass.SPELLWEAVER, 5),});
         character.updateJewelTrinket(2, new Jewel[]{jewelFactory.createJewel(JewelType.LASTING_HEALTH, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.CONVERSE, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.FLOWER, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.STRENUOUSNESS, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.FORTITUDE, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.PROLONGATION, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.REVIVAL_BOON, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.EASTER_FEVER, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.SCORCHING_RAY, CharacterClass.SPELLWEAVER, 5), jewelFactory.createJewel(JewelType.PENT_UP_POWER, CharacterClass.SPELLWEAVER, 5),});
-
-        character.updateDragonCrestTrinket(new DragonStone[]{dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 5), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 5), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), dragonStoneFactory.createDragonStone(DragonStoneType.POWERSTONE, 3), null, null, null, null, null});
 
         EnchantmentDefinition enchantDefHP = enchantmentConfig.enchantments().get(StatType.HEALTH_POINTS);
         EnchantmentDefinition enchantDefDMG = enchantmentConfig.enchantments().get(StatType.DAMAGE);
