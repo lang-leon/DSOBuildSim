@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.runes;
 
-import com.langleon.dsobuildsim.runes.dto.RuneDefinitionDTO;
 import com.langleon.dsobuildsim.runes.dto.RuneInstanceDTO;
+import com.langleon.dsobuildsim.runes.dto.RuneTrinketDTO;
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 class RuneFactoryTest {
 
@@ -22,7 +23,7 @@ class RuneFactoryTest {
 
     @BeforeEach
     void setup() throws IOException {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/runes.json")))
+        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/runes.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
             RuneConfig runeConfig = objectMapper.readValue(reader, RuneConfig.class);
@@ -124,5 +125,55 @@ class RuneFactoryTest {
         Assertions.assertEquals(RuneLimitGroup.VITALITY, runes.get(1).getRuneLimitGroup());
         Assertions.assertEquals(4, runes.get(1).getTier());
         Assertions.assertEquals(Map.of(StatType.HEALTH_POINTS, 0.052), runes.get(1).getStats());
+    }
+
+    @Test
+    void shouldResolveRuneTrinketFromRuneTrinketDTO()
+    {
+        RuneInstanceDTO runeDTO1 = new RuneInstanceDTO(RuneType.VIGOR, 4);
+        RuneInstanceDTO runeDTO2 = new RuneInstanceDTO(RuneType.VITALITY, 4);
+        RuneTrinketDTO runeTrinketDTO = new RuneTrinketDTO(List.of(runeDTO1, runeDTO2));
+
+        RuneTrinket runeTrinket = runeFactory.fromTrinketDTO(runeTrinketDTO);
+
+        Assertions.assertEquals(RuneType.VIGOR, runeTrinket.getRunes().getFirst().getRuneType());
+        Assertions.assertEquals(RuneLimitGroup.VIGOR, runeTrinket.getRunes().getFirst().getRuneLimitGroup());
+        Assertions.assertEquals(4, runeTrinket.getRunes().getFirst().getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 0.052), runeTrinket.getRunes().getFirst().getStats());
+        Assertions.assertEquals(RuneType.VITALITY, runeTrinket.getRunes().get(1).getRuneType());
+        Assertions.assertEquals(RuneLimitGroup.VITALITY, runeTrinket.getRunes().get(1).getRuneLimitGroup());
+        Assertions.assertEquals(4, runeTrinket.getRunes().get(1).getTier());
+        Assertions.assertEquals(Map.of(StatType.HEALTH_POINTS, 0.052), runeTrinket.getRunes().get(1).getStats());
+    }
+
+    @Test
+    void shouldResolveRuneTrinketFromRuneTrinketDTOs()
+    {
+        RuneInstanceDTO runeDTO1 = new RuneInstanceDTO(RuneType.VIGOR, 4);
+        RuneInstanceDTO runeDTO2 = new RuneInstanceDTO(RuneType.VITALITY, 4);
+        RuneTrinketDTO runeTrinketDTO1 = new RuneTrinketDTO(List.of(runeDTO1, runeDTO2));
+        RuneInstanceDTO runeDTO3 = new RuneInstanceDTO(RuneType.RESILIENCE, 4);
+        RuneInstanceDTO runeDTO4 = new RuneInstanceDTO(RuneType.CELERITY, 4);
+        RuneTrinketDTO runeTrinketDTO2 = new RuneTrinketDTO(List.of(runeDTO3, runeDTO4));
+
+        List<RuneTrinket> runeTrinkets = runeFactory.fromTrinketDTOList(List.of(runeTrinketDTO1, runeTrinketDTO2));
+
+        Assertions.assertEquals(RuneType.VIGOR, runeTrinkets.getFirst().getRunes().getFirst().getRuneType());
+        Assertions.assertEquals(RuneLimitGroup.VIGOR, runeTrinkets.getFirst().getRunes().getFirst().getRuneLimitGroup());
+        Assertions.assertEquals(4, runeTrinkets.getFirst().getRunes().getFirst().getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 0.052), runeTrinkets.getFirst().getRunes().getFirst().getStats());
+        Assertions.assertEquals(RuneType.VITALITY, runeTrinkets.getFirst().getRunes().get(1).getRuneType());
+        Assertions.assertEquals(RuneLimitGroup.VITALITY, runeTrinkets.getFirst().getRunes().get(1).getRuneLimitGroup());
+        Assertions.assertEquals(4, runeTrinkets.getFirst().getRunes().get(1).getTier());
+        Assertions.assertEquals(Map.of(StatType.HEALTH_POINTS, 0.052), runeTrinkets.getFirst().getRunes().get(1).getStats());
+
+        Assertions.assertEquals(RuneType.RESILIENCE, runeTrinkets.get(1).getRunes().getFirst().getRuneType());
+        Assertions.assertEquals(RuneLimitGroup.RESILIENCE, runeTrinkets.get(1).getRunes().getFirst().getRuneLimitGroup());
+        Assertions.assertEquals(4, runeTrinkets.get(1).getRunes().getFirst().getTier());
+        Assertions.assertEquals(Map.of(StatType.RESISTANCE_VALUE, 0.052), runeTrinkets.get(1).getRunes().getFirst().getStats());
+        Assertions.assertEquals(RuneType.CELERITY, runeTrinkets.get(1).getRunes().get(1).getRuneType());
+        Assertions.assertEquals(RuneLimitGroup.CELERITY, runeTrinkets.get(1).getRunes().get(1).getRuneLimitGroup());
+        Assertions.assertEquals(4, runeTrinkets.get(1).getRunes().get(1).getTier());
+        Assertions.assertEquals(Map.of(StatType.ATTACK_SPEED, 0.052), runeTrinkets.get(1).getRunes().get(1).getStats());
     }
 }
