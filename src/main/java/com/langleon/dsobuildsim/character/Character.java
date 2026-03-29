@@ -41,7 +41,7 @@ public class Character {
 
     private List<RuneTrinket> runeTrinkets;
     private List<JewelTrinket> jewelTrinkets;
-    private DragonCrestTrinket dragonCrestTrinket;
+    private final DragonCrestTrinket dragonCrestTrinket;
 
     private Map<ItemSlot, Item> equippedItems;
     private Map<SetType, SetInstance> equippedSets;
@@ -59,7 +59,8 @@ public class Character {
     private WisdomSkillTree wisdomSkillTree;
 
     //default constructor
-    public Character(CharacterClass characterClass, SetFactory setFactory, WisdomSkillTreeFactory wisdomSkillTreeFactory)
+    public Character(CharacterClass characterClass, SetFactory setFactory, WisdomSkillTreeFactory wisdomSkillTreeFactory,
+                     DragonCrestTrinket dragonCrest)
     {
         this.setFactory = setFactory;
 
@@ -81,7 +82,7 @@ public class Character {
         for (int i = 0; i < 3; i++) {
             jewelTrinkets.add(new JewelTrinket());
         }
-        this.dragonCrestTrinket = new DragonCrestTrinket();
+        this.dragonCrestTrinket = dragonCrest;
 
         this.equippedItems = new EnumMap<>(ItemSlot.class);
         this.equippedSets = new EnumMap<>(SetType.class);
@@ -191,11 +192,6 @@ public class Character {
 
     public DragonCrestTrinket getDragonCrestTrinket() {
         return dragonCrestTrinket;
-    }
-
-    public void updateDragonCrestTrinket(DragonStone[] dragonStones)
-    {
-        this.dragonCrestTrinket.updateDragonStones(dragonStones);
     }
 
     public void equipItem(ItemSlot slot, Item item)
