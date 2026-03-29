@@ -1,8 +1,8 @@
 package com.langleon.dsobuildsim.jewels;
 
 import com.langleon.dsobuildsim.character.CharacterClass;
-import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
 import com.langleon.dsobuildsim.jewels.dto.JewelInstanceDTO;
+import com.langleon.dsobuildsim.jewels.dto.JewelTrinketDTO;
 
 import java.util.List;
 import java.util.Map;
@@ -51,5 +51,14 @@ public class JewelFactory {
     {
         if (jewelDTOs==null) return List.of();
         return jewelDTOs.stream().map(dto -> fromDTO(dto, characterClass)).toList();
+    }
+
+    public JewelTrinket fromTrinketDTO(JewelTrinketDTO jewelTrinketDTO, CharacterClass characterClass){
+        return new JewelTrinket(this.fromDTOList(jewelTrinketDTO.jewels(), characterClass));
+    }
+
+    public List<JewelTrinket> fromTrinketDTOs(List<JewelTrinketDTO> jewelTrinketDTOs, CharacterClass characterClass)
+    {
+        return jewelTrinketDTOs.stream().map(dto -> fromTrinketDTO(dto, characterClass)).toList();
     }
 }
