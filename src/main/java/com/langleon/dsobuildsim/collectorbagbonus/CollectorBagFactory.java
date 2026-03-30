@@ -4,6 +4,7 @@ import com.langleon.dsobuildsim.collectorbagbonus.collectorbagbonus.CollectorBag
 import com.langleon.dsobuildsim.collectorbagbonus.collectorbagbonus.CollectorBagBonusDefinition;
 import com.langleon.dsobuildsim.collectorbagbonus.collectorbagcategorybonus.CollectorBagCategoryBonus;
 import com.langleon.dsobuildsim.collectorbagbonus.collectorbagcategorybonus.CollectorBagCategoryBonusDefinition;
+import com.langleon.dsobuildsim.collectorbagbonus.dto.instance.CollectorBagCategoryBonusInstanceDTO;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagBonusType;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagTier;
@@ -38,5 +39,18 @@ public class CollectorBagFactory {
         }
 
         return new CollectorBagCategoryBonus(category, bonuses);
+    }
+
+    public CollectorBagCategoryBonus fromDTO(CollectorBagCategoryBonusInstanceDTO dto)
+    {
+        return createCollectorBagCategoryBonus(dto.category(), dto.tier());
+    }
+
+    public List<CollectorBagCategoryBonus> fromDTOList(List<CollectorBagCategoryBonusInstanceDTO> dtos)
+    {
+        if (dtos == null) return List.of();
+        return dtos.stream()
+                .map(this::fromDTO)
+                .toList();
     }
 }
