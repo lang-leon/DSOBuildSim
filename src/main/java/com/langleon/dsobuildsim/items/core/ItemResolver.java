@@ -6,12 +6,18 @@ import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.GemFactory;
 import com.langleon.dsobuildsim.gems.dto.AbstractGemInstanceDTO;
-import com.langleon.dsobuildsim.items.dto.ItemDTO;
+import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
+import com.langleon.dsobuildsim.items.dto.ItemInstanceDTO;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
 import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
+
+import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
 
 public class ItemResolver {
 
@@ -23,39 +29,34 @@ public class ItemResolver {
         this.gemFactory = gemFactory;
     }
 
-    public Item fromDTO(ItemDTO itemDTO, CharacterClass characterClass)
+    public Item fromDTO(ItemInstanceDTO itemDTO, CharacterClass characterClass)
     {
-        Item item;
+        List<AbstractGem> gems = gemFactory.fromDTOList(Arrays.stream(itemDTO.gems()).toList());
+        List<Enchantment> enchantments = EnchantmentFactory.fromDTOList(Arrays.stream(itemDTO.enchantments()).toList());
+
         switch (itemDTO.itemCategory())
         {
-            case MYTHIC -> item = itemFactory.createItem((MythicItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level());
-            case SET -> item = itemFactory.createItem((SetItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level());
-            case UNIQUE -> item = itemFactory.createItem((UniqueItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level(), itemDTO.uniqueBaseValues(), EnchantmentFactory.fromDTOList(itemDTO.uniqueEnchantments()));
+            case MYTHIC -> {
+            return itemFactory.createItem((MythicItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level(), gems, enchantments);
+        }
+            case SET -> {
+            return itemFactory.createItem((SetItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level(), gems, enchantments);
+        }
+            case UNIQUE -> {
+            return itemFactory.createItem((UniqueItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level(), gems, enchantments, itemDTO.uniqueBaseValues(), EnchantmentFactory.fromDTOList(itemDTO.uniqueEnchantments()));
+        }
             default -> throw new IllegalArgumentException("Invalid item category "+itemDTO.itemCategory());
         }
+    }
 
-        AbstractGem[] gems = new Gem[10];
-        if (itemDTO.gems() != null)
-        {
-            for (int i=0; i < itemDTO.gems().length && i < 10; i++)
-            {
-                AbstractGemInstanceDTO gemDTO = itemDTO.gems()[i];
-                if (gemDTO != null) gems[i] = gemFactory.fromDTO(gemDTO);
-            }
-        }
-        item.setGems(gems);
+    public Map<ItemSlot, Item> fromDTOMap(Map<ItemSlot, ItemInstanceDTO> itemDTOs, CharacterClass characterClass)
+    {
+        Map<ItemSlot, Item> items = new EnumMap<>(ItemSlot.class);
 
-        Enchantment[] enchantments = new Enchantment[10];
-        if (itemDTO.gems() != null)
-        {
-            for (int i=0; i < itemDTO.gems().length && i < 10; i++)
-            {
-                EnchantmentDTO enchantmentDTO = itemDTO.enchantments()[i];
-                if (enchantmentDTO != null) enchantments[i] = EnchantmentFactory.fromDTO(enchantmentDTO);
-            }
-        }
-        item.setEnchantments(enchantments);
+        itemDTOs.forEach((slot, dto) -> {
+            items.put(slot, this.fromDTO(dto, characterClass));
+        });
 
-        return item;
+        return items;
     }
 }
