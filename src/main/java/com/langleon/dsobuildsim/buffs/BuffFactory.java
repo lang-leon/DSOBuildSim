@@ -1,4 +1,5 @@
 package com.langleon.dsobuildsim.buffs;
+import com.langleon.dsobuildsim.buffs.dto.BuffInstanceDTO;
 import com.langleon.dsobuildsim.buffs.enums.PhysicType;
 import com.langleon.dsobuildsim.buffs.enums.TonicType;
 
@@ -22,6 +23,11 @@ public class BuffFactory {
         return new Tonic(tonicType, tonicDefinition.statType(), tonicDefinition.statsPerTier().get(tonicDefinition.defaultTier()), tonicDefinition.defaultTier());
     }
 
+    public Tonic tonicFromDTO(BuffInstanceDTO dto)
+    {
+        return this.createTonic(TonicType.valueOf(dto.type()), dto.tier());
+    }
+
     public Physic createPhysic(PhysicType physicType, int tier)
     {
         PhysicDefinition physicDefinition = this.config.physics().get(physicType);
@@ -33,5 +39,10 @@ public class BuffFactory {
     {
         PhysicDefinition physicDefinition = this.config.physics().get(physicType);
         return new Physic(physicType, physicDefinition.statType(), physicDefinition.statsPerTier().get(physicDefinition.defaultTier()), physicDefinition.defaultTier());
+    }
+
+    public Physic physicFromDTO(BuffInstanceDTO dto)
+    {
+        return this.createPhysic(PhysicType.valueOf(dto.type()), dto.tier());
     }
 }

@@ -31,8 +31,8 @@ public class ItemResolver {
 
     public Item fromDTO(ItemInstanceDTO itemDTO, CharacterClass characterClass)
     {
-        List<AbstractGem> gems = gemFactory.fromDTOList(Arrays.stream(itemDTO.gems()).toList());
-        List<Enchantment> enchantments = EnchantmentFactory.fromDTOList(Arrays.stream(itemDTO.enchantments()).toList());
+        List<AbstractGem> gems = gemFactory.fromDTOList(itemDTO.gems());
+        List<Enchantment> enchantments = EnchantmentFactory.fromDTOList(itemDTO.enchantments());
 
         switch (itemDTO.itemCategory())
         {

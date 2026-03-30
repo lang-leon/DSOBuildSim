@@ -9,9 +9,7 @@ import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagBonusType;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagTier;
 
-import java.util.ArrayList;
-import java.util.EnumMap;
-import java.util.List;
+import java.util.*;
 
 public class CollectorBagFactory {
 
@@ -46,11 +44,13 @@ public class CollectorBagFactory {
         return createCollectorBagCategoryBonus(dto.category(), dto.tier());
     }
 
-    public List<CollectorBagCategoryBonus> fromDTOList(List<CollectorBagCategoryBonusInstanceDTO> dtos)
+    public Map<CollectorBagCategory, CollectorBagCategoryBonus> fromDTOList(List<CollectorBagCategoryBonusInstanceDTO> dtos)
     {
-        if (dtos == null) return List.of();
-        return dtos.stream()
-                .map(this::fromDTO)
-                .toList();
+        if (dtos == null) return Map.of();
+        Map<CollectorBagCategory, CollectorBagCategoryBonus> bonuses = new HashMap<>();
+        dtos.forEach(dto -> {
+            bonuses.put(dto.category(), this.fromDTO(dto));
+        });
+        return bonuses;
     }
 }
