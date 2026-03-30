@@ -2,16 +2,16 @@ package com.langleon.dsobuildsim.character;
 
 import com.langleon.dsobuildsim.buffs.Physic;
 import com.langleon.dsobuildsim.buffs.Tonic;
+import com.langleon.dsobuildsim.collectorbagbonus.collectorbagcategorybonus.CollectorBagCategoryBonus;
+import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dragonstones.DragonCrestTrinket;
-import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
 import com.langleon.dsobuildsim.jewels.JewelType;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.essences.Essence;
-import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 import com.langleon.dsobuildsim.sets.*;
 import com.langleon.dsobuildsim.items.core.Item;
@@ -19,53 +19,59 @@ import com.langleon.dsobuildsim.jewels.JewelTrinket;
 import com.langleon.dsobuildsim.pets.Pet;
 import com.langleon.dsobuildsim.runes.RuneTrinket;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTree;
-import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeFactory;
 
 import java.util.*;
-import java.util.function.Function;
 
 public class Character {
 
-    private final SetFactory setFactory;
-
     private final CharacterClass characterClass;
-    private String name;
+    private final String name;
 
-    private MasteryType elementalMasteryType;
-    private int elementalMasteryLevel; // 0-10
-    private boolean experienceBonusPath;
-    private int experienceBonusPathLevel;
+    private final MasteryType elementalMasteryType;
+    private final int elementalMasteryLevel; // 0-10
+    private final boolean experienceBonusPath;
+    private final int experienceBonusPathLevel;
 
     private final List<RuneTrinket> runeTrinkets;
     private final List<JewelTrinket> jewelTrinkets;
     private final DragonCrestTrinket dragonCrestTrinket;
 
-    private Map<ItemSlot, Item> equippedItems;
-    private Map<SetType, SetInstance> equippedSets;
-    private Map<GemLimitGroup, Integer> gemLimits;
+    private final Map<ItemSlot, Item> equippedItems;
+    private final Map<SetType, SetInstance> equippedSets;
 
-    private Pet pet;
-    private Map<StatType, Double> collectorBagBuffs;
+    private final Pet pet;
+    private final Map<CollectorBagCategory, CollectorBagCategoryBonus> collectorBagBuffs;
 
-    private Essence essence;
-    private Tonic tonic;
-    private Physic physic;
+    private final Essence essence;
+    private final Tonic tonic;
+    private final Physic physic;
 
-    private WisdomSkillTree wisdomSkillTree;
+    private final WisdomSkillTree wisdomSkillTree;
 
-    //default constructor
-    public Character(CharacterClass characterClass, SetFactory setFactory, WisdomSkillTreeFactory wisdomSkillTreeFactory,
-                     List<RuneTrinket> runeTrinkets, List<JewelTrinket> jewelTrinkets, DragonCrestTrinket dragonCrest)
+    public Character(CharacterClass characterClass,
+                     MasteryType masteryType,
+                     int masteryLevel,
+                     boolean experienceBonusPath,
+                     int experienceBonusPathLevel,
+                     List<RuneTrinket> runeTrinkets,
+                     List<JewelTrinket> jewelTrinkets,
+                     DragonCrestTrinket dragonCrest,
+                     Map<ItemSlot, Item> items,
+                     Map<SetType, SetInstance> equippedSets,
+                     Pet pet,
+                     Essence essence,
+                     Tonic tonic,
+                     Physic physic,
+                     WisdomSkillTree wisdomSkillTree,
+                     Map<CollectorBagCategory, CollectorBagCategoryBonus> collectorBagBuffs
+                     )
     {
-        this.setFactory = setFactory;
-
         this.characterClass = characterClass;
         this.name = characterClass.getName();
-        this.elementalMasteryType = MasteryType.NONE;
-        this.elementalMasteryLevel = 0;
-        this.experienceBonusPath = false;
-        this.experienceBonusPathLevel = 0;
-        this.gemLimits = new EnumMap<>(GemLimitGroup.class);
+        this.elementalMasteryType = masteryType;
+        this.elementalMasteryLevel = masteryLevel;
+        this.experienceBonusPath = experienceBonusPath;
+        this.experienceBonusPathLevel = experienceBonusPathLevel;
 
         this.validateRunes(runeTrinkets);
         this.runeTrinkets = runeTrinkets;
@@ -73,11 +79,17 @@ public class Character {
         this.jewelTrinkets = jewelTrinkets;
         this.dragonCrestTrinket = dragonCrest;
 
-        this.equippedItems = new EnumMap<>(ItemSlot.class);
-        this.equippedSets = new EnumMap<>(SetType.class);
+        this.validateGems(items.values().stream().toList());
+        this.equippedItems = items;
+        this.equippedSets = equippedSets;
 
-        this.collectorBagBuffs = new EnumMap<>(StatType.class);
-        this.wisdomSkillTree = wisdomSkillTreeFactory.createTree();
+        this.pet = pet;
+        this.essence = essence;
+        this.tonic = tonic;
+        this.physic = physic;
+
+        this.collectorBagBuffs = collectorBagBuffs;
+        this.wisdomSkillTree = wisdomSkillTree;
     }
 
     public CharacterClass getCharacterClass() {
@@ -88,192 +100,28 @@ public class Character {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public MasteryType getElementalMasteryType() {
-        return elementalMasteryType;
-    }
-
-    public void setElementalMasteryType(MasteryType masteryType) {
-        this.elementalMasteryType = masteryType;
-    }
-
-    public int getElementalMasteryLevel() {
-        return elementalMasteryLevel;
-    }
-
-    public void setElementalMasteryLevel(int masteryLevel) {
-        if (masteryLevel < 0 || masteryLevel > 10) throw new IllegalArgumentException("Experience skill tree bonus level must be in range 0-10.");
-        this.elementalMasteryLevel = masteryLevel;
-    }
-
-    public boolean isExperienceBonusPath() {
-        return experienceBonusPath;
-    }
-
-    public int getExperienceBonusPathLevel() {
-        return experienceBonusPathLevel;
-    }
-
-    public void setExperienceBonusPathLevel(int level) {
-        if (level < 0 || level > 5) throw new IllegalArgumentException("Experience skill tree bonus level must be in range 0-5.");
-        this.experienceBonusPath = level != 0;
-        this.experienceBonusPathLevel = level;
-    }
-
-    public void equipItem(ItemSlot slot, Item item)
-    {
-        if (item.getItemSlotType() != slot.getAllowedItemType()) throw new IllegalArgumentException("Item "+item.getItemType()+" not allowed in slot "+slot+"!");
-
-        Item oldItem = this.equippedItems.get(slot);
-        if (oldItem instanceof SetBonusProvider oldSetItem) {
-            updateEquippedSetsOnRemoval(oldSetItem);
-        }
-
-        this.equippedItems.put(slot, item);
-        if (item instanceof SetBonusProvider settableItem)
-        {
-            SetInstance setInstance = this.equippedSets.computeIfAbsent(settableItem.getSetType(), k -> this.setFactory.createSet(settableItem.getSetType(), CharacterClass.SPELLWEAVER));
-            setInstance.addSetItem(settableItem.getSetItemIdentifier());
-        }
-
-        Map<GemLimitGroup, Integer> newGems = this.countByLimitGroup(item.getGems(), AbstractGem::getGemLimitGroup, GemLimitGroup.class);
-        for (Map.Entry<GemLimitGroup, Integer> entry : newGems.entrySet()) {
-            GemLimitGroup group = entry.getKey();
-            int globalCount = this.gemLimits.getOrDefault(group, 0);
-            int newCount = entry.getValue();
-
-            if (globalCount + newCount > group.getLimit()) {
-                throw new IllegalArgumentException("Gem limit exceeded for " + group + ".");
-            }
-        }
-
-        this.updateGlobalLimits(Map.of(), newGems, this.gemLimits);
-    }
-
-    public void unequipItem(ItemSlot slot)
-    {
-        Item removedItem = this.equippedItems.remove(slot);
-        if (removedItem != null)
-        {
-            if (removedItem instanceof SetBonusProvider settableItem)
-            {
-                this.updateEquippedSetsOnRemoval(settableItem);
-            }
-        }
-    }
-
-    public void updateItemGems(ItemSlot slot, AbstractGem[] gems)
-    {
-        Item eqippedItem = this.equippedItems.get(slot);
-        if (eqippedItem == null) throw new IllegalArgumentException("Can't update gems for non equipped item in slot "+slot+".");
-        Map<GemLimitGroup, Integer> oldGems = this.countByLimitGroup(eqippedItem.getGems(), AbstractGem::getGemLimitGroup, GemLimitGroup.class);
-        Map<GemLimitGroup, Integer> newGems = this.countByLimitGroup(gems, AbstractGem::getGemLimitGroup, GemLimitGroup.class);
-
-        for (Map.Entry<GemLimitGroup, Integer> entry : newGems.entrySet()) {
-            GemLimitGroup group = entry.getKey();
-            int globalCount = this.gemLimits.getOrDefault(group, 0);
-            int oldCount = oldGems.getOrDefault(group, 0);
-            int newCount = entry.getValue();
-
-            if (globalCount - oldCount + newCount > group.getLimit()) {
-                throw new IllegalArgumentException("Gem limit exceeded for " + group + ".");
-            }
-        }
-
-        this.updateGlobalLimits(oldGems, newGems, this.gemLimits);
-        this.equippedItems.get(slot).setGems(gems);
-    }
-
-    private <T, G extends Enum<G>> Map<G, Integer> countByLimitGroup(T[] items, Function<T, G> groupExtractor, Class<G> enumClass)
-    {
-        Map<G, Integer> result = new EnumMap<>(enumClass);
-
-        for (T item : items)
-        {
-            if (item == null) continue;
-            result.merge(groupExtractor.apply(item), 1, Integer::sum);
-        }
-
-        return result;
-    }
-
-    private <G extends Enum<G>> void updateGlobalLimits(Map<G, Integer> oldCount, Map<G, Integer> newCount, Map<G, Integer> globalCount)
-    {
-        for (Map.Entry<G, Integer> entry : oldCount.entrySet()) {
-            globalCount.computeIfPresent(entry.getKey(), (_, amount) -> {
-                int result = amount - entry.getValue();
-                return result <= 0 ? null : result;
-            });
-        }
-
-        for (Map.Entry<G, Integer> entry : newCount.entrySet()) {
-            globalCount.merge(entry.getKey(), entry.getValue(), Integer::sum);
-        }
-    }
-
-    private void updateEquippedSetsOnRemoval(SetBonusProvider settableItem)
-    {
-        SetInstance setInstance = this.equippedSets.get(settableItem.getSetType());
-
-        if (setInstance != null)
-        {
-            setInstance.removeSetItem(settableItem.getSetType().toString());
-            if (setInstance.getEquippedSetItems().isEmpty())
-            {
-                this.equippedSets.remove(settableItem.getSetType());
-            }
-        }
-    }
-
     public Pet getPet() {
         return pet;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public Map<StatType, Double> getCollectorBagBuffs() {
+    public Map<CollectorBagCategory, CollectorBagCategoryBonus> getCollectorBagBuffs() {
         return collectorBagBuffs;
-    }
-
-    public void setCollectorBagBuffs(Map<StatType, Double> collectorBagBuffs) {
-        this.collectorBagBuffs = collectorBagBuffs;
     }
 
     public Essence getEssence() {
         return essence;
     }
 
-    public void setEssence(Essence essence) {
-        this.essence = essence;
-    }
-
     public Tonic getTonic() {
         return tonic;
-    }
-
-    public void setTonic(Tonic tonic) {
-        this.tonic = tonic;
     }
 
     public Physic getPhysic() {
         return physic;
     }
 
-    public void setPhysic(Physic physic) {
-        this.physic = physic;
-    }
-
     public WisdomSkillTree getWisdomSkillTree() {
         return wisdomSkillTree;
-    }
-
-    public void setWisdomSkillTree(WisdomSkillTree wisdomSkillTree) {
-        this.wisdomSkillTree = wisdomSkillTree;
     }
 
     private void validateRunes(List<RuneTrinket> runeTrinkets)
@@ -301,6 +149,20 @@ public class Character {
 
         jewelCount.forEach((jewelType, amount) -> {
             if (jewelType.getLimit() < amount) throw new IllegalArgumentException("Jewel limit exceeded for "+jewelType);
+        });
+    }
+
+    private void validateGems(List<Item> items)
+    {
+        Map<GemLimitGroup, Integer> gemCount = new EnumMap<>(GemLimitGroup.class);
+        items.forEach(item -> {
+            item.getGems().forEach(gem -> {
+                gemCount.merge(gem.getGemLimitGroup(), 1, Integer::sum);
+            });
+        });
+
+        gemCount.forEach((gemLimitGroup, amount) -> {
+            if (gemLimitGroup.getLimit() < amount) throw new IllegalArgumentException("Gem limit exceeded for "+gemLimitGroup);
         });
     }
 
@@ -392,7 +254,9 @@ public class Character {
         if (this.pet !=null)
         {
             this.pet.getRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
-            this.collectorBagBuffs.forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+            this.collectorBagBuffs.forEach((_, bonus) -> {
+                bonus.calculateStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+            });
         }
         if (this.essence != null) relativeBonusStats.merge(StatType.DAMAGE, this.essence.damageIncrease(), Double::sum);
         if (this.physic != null) relativeBonusStats.merge(this.physic.statType(), this.physic.statValue(), Double::sum);

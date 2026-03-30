@@ -14,8 +14,8 @@ public record ItemInstanceDTO(
         ItemType itemType,
         int level,
         Map<StatType, Double> baseValues,
-        AbstractGemInstanceDTO[] gems,
-        EnchantmentDTO[] enchantments,
+        List<AbstractGemInstanceDTO> gems,
+        List<EnchantmentDTO> enchantments,
 
         //optional fields depending on category
         Map<StatType, Double> uniqueBaseValues,
