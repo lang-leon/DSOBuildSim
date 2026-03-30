@@ -1,6 +1,6 @@
-package com.langleon.dsobuildsim.pets.enums;
+package com.langleon.dsobuildsim.collectorbagbonus.enums;
 
-public enum PetCategory {
+public enum CollectorBagCategory {
     DRAGON_SPAWN("Dragon Spawn"),
     SCOUNDRELS("Scoundrels"),
     DOMESTICATED("Domesticated"),
@@ -13,11 +13,12 @@ public enum PetCategory {
     LUCKY_CATS("Lucky Cats"),
     ENIGMATIC_HATCHLINGS("Enigmatic Hatchlings"),
     AWOKEN_LION("Awoken Lion"),
-    ANCIENT_DRAGONS("Ancient Dragons");
+    ANCIENT_DRAGONS("Ancient Dragons"),
+    SHADOW_SOULS("Shadow Souls");
 
     private final String name;
 
-    PetCategory(String name) {
+    CollectorBagCategory(String name) {
         this.name = name;
     }
 
