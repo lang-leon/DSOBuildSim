@@ -5,6 +5,7 @@ import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
 import com.langleon.dsobuildsim.gamedata.LevelMultiplierTable;
+import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
 import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
@@ -37,27 +38,27 @@ public class ItemFactory {
         this.levelMultiplierTable = levelMultiplierTable;
     }
 
-    public MythicItem createItem(MythicItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level)
+    public MythicItem createItem(MythicItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments)
     {
         MythicItemDefinition itemDefinition = this.getDefinitionForClass(characterClass, mythicItemConfig.spellweaverItems(), mythicItemConfig.dragonknightItems(), mythicItemConfig.rangerItems(), mythicItemConfig.steamMechanicusItems(), itemType);
         this.checkBaseValues(itemDefinition, level, baseValues);
-        return new MythicItem(itemDefinition, baseValues, level);
+        return new MythicItem(itemDefinition, baseValues, level, gems, enchantments);
     }
 
-    public UniqueItem createItem(UniqueItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, Map<StatType, Double> uniqueBaseValues, List<Enchantment> uniqueEnchantments)
+    public UniqueItem createItem(UniqueItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments, Map<StatType, Double> uniqueBaseValues, List<Enchantment> uniqueEnchantments)
     {
         UniqueItemDefinition itemDefinition = this.getDefinitionForClass(characterClass, uniqueItemConfig.spellweaverItems(), uniqueItemConfig.dragonknightItems(), uniqueItemConfig.rangerItems(), uniqueItemConfig.steamMechanicusItems(), itemType);
         this.checkBaseValues(itemDefinition, level, baseValues);
         this.checkUniqueBaseValues(itemDefinition, uniqueBaseValues);
         this.checkUniqueEnchantments(itemDefinition, uniqueEnchantments);
-        return new UniqueItem(itemDefinition, baseValues, level, uniqueBaseValues, uniqueEnchantments);
+        return new UniqueItem(itemDefinition, baseValues, level, gems, enchantments, uniqueBaseValues, uniqueEnchantments);
     }
 
-    public SetItem createItem(SetItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level)
+    public SetItem createItem(SetItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments)
     {
         SetItemDefinition itemDefinition = this.getDefinitionForClass(characterClass, setItemConfig.spellweaverItems(), setItemConfig.dragonknightItems(), setItemConfig.rangerItems(), setItemConfig.steamMechanicusItems(), itemType);
         this.checkBaseValues(itemDefinition, level, baseValues);
-        return new SetItem(itemDefinition, baseValues, level);
+        return new SetItem(itemDefinition, baseValues, level, gems, enchantments);
     }
 
     private <K, T> T getDefinitionForClass(CharacterClass characterClass, Map<K, T> spellweaverItems, Map<K, T> dragonknightItems, Map<K, T> rangerItems, Map<K, T> steamMechanicusItems, K itemType)

@@ -9,7 +9,7 @@ import com.langleon.dsobuildsim.items.core.enums.ItemCategory;
 import java.util.List;
 import java.util.Map;
 
-public record ItemDTO(
+public record ItemInstanceDTO(
         ItemCategory itemCategory,
         ItemType itemType,
         int level,
