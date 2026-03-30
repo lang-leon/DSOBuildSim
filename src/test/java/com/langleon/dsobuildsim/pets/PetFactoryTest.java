@@ -1,8 +1,6 @@
 package com.langleon.dsobuildsim.pets;
 
-import com.langleon.dsobuildsim.pets.dto.PetDefinitionDTO;
 import com.langleon.dsobuildsim.pets.dto.PetInstanceDTO;
-import com.langleon.dsobuildsim.pets.enums.PetCategory;
 import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.pets.enums.PetType;
@@ -20,7 +18,8 @@ public class PetFactoryTest {
     private PetFactory petFactory;
 
     @BeforeEach
-    void setup() throws IOException {
+    void setup() throws IOException
+    {
         try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/pets.json"))))
         {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -73,7 +72,6 @@ public class PetFactoryTest {
         PetInstanceDTO petDTO = new PetInstanceDTO(PetType.BLUE_DRAGONSPAWN, 4);
 
         Pet pet = petFactory.fromDTO(petDTO);
-        Map<Integer, Map<StatType, Double>> statsPerTier = Map.of(4, Map.of(StatType.XP_GAIN, 0.25));
 
         Assertions.assertEquals(PetType.BLUE_DRAGONSPAWN, pet.getPetType());
         Assertions.assertEquals(4, pet.getTier());

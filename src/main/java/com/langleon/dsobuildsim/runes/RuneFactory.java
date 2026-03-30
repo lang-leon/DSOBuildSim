@@ -1,6 +1,7 @@
 package com.langleon.dsobuildsim.runes;
 
 import com.langleon.dsobuildsim.runes.dto.RuneInstanceDTO;
+import com.langleon.dsobuildsim.runes.dto.RuneTrinketDTO;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
 import com.langleon.dsobuildsim.runes.enums.RuneUpgradeType;
 
@@ -35,7 +36,7 @@ public class RuneFactory {
     public Rune createRune(RuneType runeType, int tier)
     {
         RuneDefinition runeDefinition = this.config.runes().get(runeType);
-        if (!runeDefinition.statsPerTier().containsKey(tier)) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
+        if (!runeDefinition.statsPerTier().containsKey(tier)) throw new IllegalArgumentException("Invalid rune tier: " + tier + "!");
         return new Rune(runeType, runeDefinition.runeUpgradeType(), runeDefinition.runeLimitGroup(), tier, runeDefinition.statsPerTier().get(tier), runeDefinition.description());
     }
 
@@ -56,6 +57,19 @@ public class RuneFactory {
         if (dtos == null) return List.of();
         return dtos.stream()
                 .map(this::fromDTO)
+                .toList();
+    }
+
+    public RuneTrinket fromTrinketDTO(RuneTrinketDTO runeTrinketDTO)
+    {
+        return new RuneTrinket(fromDTOList(runeTrinketDTO.runes()));
+    }
+
+    public List<RuneTrinket> fromTrinketDTOList(List<RuneTrinketDTO> dtos)
+    {
+        if (dtos == null) return List.of();
+        return dtos.stream()
+                .map(this::fromTrinketDTO)
                 .toList();
     }
 }

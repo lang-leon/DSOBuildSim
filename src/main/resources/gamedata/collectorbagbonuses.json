@@ -1,0 +1,128 @@
+{
+  "bonuses": {
+    "BULWARK_OF_SIX": {
+      "bonusType": "BULWARK_OF_SIX",
+      "stats": {
+        "BLOCK_VALUE": 0.02
+      }
+    },
+    "RESISTANCE_OF_SIX": {
+      "bonusType": "RESISTANCE_OF_SIX",
+      "stats": {
+        "RESISTANCE_VALUE": 0.03
+      }
+    },
+    "SOULBOUND_POWER_1": {
+      "bonusType": "SOULBOUND_POWER_1",
+      "stats": {
+        "HEALTH_POINTS": 0.05,
+        "DAMAGE": 0.05
+      }
+    },
+    "SOULBOUND_POWER_2": {
+      "bonusType": "SOULBOUND_POWER_2",
+      "stats": {
+        "HEALTH_POINTS": 0.10,
+        "DAMAGE": 0.10
+      }
+    },
+    "STRENGTH_OF_NINE": {
+      "bonusType": "STRENGTH_OF_NINE",
+      "stats": {
+        "DAMAGE": 0.02
+      }
+    },
+    "TRIAD_OF_LIFE": {
+      "bonusType": "TRIAD_OF_LIFE",
+      "stats": {
+        "HEALTH_POINTS": 0.03
+      }
+    },
+    "WAVING_OF_FORTUNE": {
+      "bonusType": "WAVING_OF_FORTUNE",
+      "stats": {
+        "ANDERMANT_DROP_BONUS": 0.10
+      }
+    }
+  },
+  "categoryBonuses": {
+    "DRAGON_SPAWN": {
+      "category": "DRAGON_SPAWN",
+      "bonuses": [
+        "TRIAD_OF_LIFE",
+        "RESISTANCE_OF_SIX",
+        "STRENGTH_OF_NINE"
+      ]
+    },
+    "SCOUNDRELS": {
+      "category": "SCOUNDRELS",
+      "bonuses": [
+        "TRIAD_OF_LIFE",
+        "RESISTANCE_OF_SIX"
+      ]
+    },
+    "DOMESTICATED": {
+      "category": "DOMESTICATED",
+      "bonuses": [
+        "TRIAD_OF_LIFE",
+        "RESISTANCE_OF_SIX"
+      ]
+    },
+    "WILD_BEASTS": {
+      "category": "WILD_BEASTS",
+      "bonuses": [
+        "TRIAD_OF_LIFE"
+      ]
+    },
+    "AQUATICS": {
+      "category": "AQUATICS",
+      "bonuses": [
+        "TRIAD_OF_LIFE"
+      ]
+    },
+    "AVIANS": {
+      "category": "AVIANS",
+      "bonuses": [
+        "TRIAD_OF_LIFE"
+      ]
+    },
+    "TAMED_FOES": {
+      "category": "TAMED_FOES",
+      "bonuses": [
+        "TRIAD_OF_LIFE",
+        "RESISTANCE_OF_SIX",
+        "STRENGTH_OF_NINE",
+        "TRIAD_OF_LIFE"
+      ]
+    },
+    "FREE_SPIRITS": {
+      "category": "FREE_SPIRITS",
+      "bonuses": [
+        "TRIAD_OF_LIFE",
+        "RESISTANCE_OF_SIX",
+        "STRENGTH_OF_NINE"
+      ]
+    },
+    "AUTOMATONS": {
+      "category": "AUTOMATONS",
+      "bonuses": [
+        "TRIAD_OF_LIFE",
+        "BULWARK_OF_SIX"
+      ]
+    },
+    "LUCKY_CATS": {
+      "category": "LUCKY_CATS",
+      "bonuses": [
+        "WAVING_OF_FORTUNE"
+      ]
+    },
+    "SHADOW_SOULS": {
+      "category": "SHADOW_SOULS",
+      "bonuses": [
+        "SOULBOUND_POWER_1",
+        "SOULBOUND_POWER_2",
+        "SOULBOUND_POWER_2"
+      ]
+    }
+  }
+}
