@@ -4,7 +4,6 @@ import com.langleon.dsobuildsim.buffs.Physic;
 import com.langleon.dsobuildsim.buffs.Tonic;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dragonstones.DragonCrestTrinket;
-import com.langleon.dsobuildsim.dragonstones.DragonStone;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
@@ -16,10 +15,8 @@ import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 import com.langleon.dsobuildsim.sets.*;
 import com.langleon.dsobuildsim.items.core.Item;
-import com.langleon.dsobuildsim.jewels.Jewel;
 import com.langleon.dsobuildsim.jewels.JewelTrinket;
 import com.langleon.dsobuildsim.pets.Pet;
-import com.langleon.dsobuildsim.runes.Rune;
 import com.langleon.dsobuildsim.runes.RuneTrinket;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTree;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeFactory;
@@ -39,15 +36,13 @@ public class Character {
     private boolean experienceBonusPath;
     private int experienceBonusPathLevel;
 
-    private List<RuneTrinket> runeTrinkets;
-    private List<JewelTrinket> jewelTrinkets;
-    private DragonCrestTrinket dragonCrestTrinket;
+    private final List<RuneTrinket> runeTrinkets;
+    private final List<JewelTrinket> jewelTrinkets;
+    private final DragonCrestTrinket dragonCrestTrinket;
 
     private Map<ItemSlot, Item> equippedItems;
     private Map<SetType, SetInstance> equippedSets;
     private Map<GemLimitGroup, Integer> gemLimits;
-    private Map<RuneLimitGroup, Integer> runeLimits;
-    private Map<JewelType, Integer> jewelLimits;
 
     private Pet pet;
     private Map<StatType, Double> collectorBagBuffs;
@@ -59,7 +54,8 @@ public class Character {
     private WisdomSkillTree wisdomSkillTree;
 
     //default constructor
-    public Character(CharacterClass characterClass, SetFactory setFactory, WisdomSkillTreeFactory wisdomSkillTreeFactory)
+    public Character(CharacterClass characterClass, SetFactory setFactory, WisdomSkillTreeFactory wisdomSkillTreeFactory,
+                     List<RuneTrinket> runeTrinkets, List<JewelTrinket> jewelTrinkets, DragonCrestTrinket dragonCrest)
     {
         this.setFactory = setFactory;
 
@@ -70,18 +66,12 @@ public class Character {
         this.experienceBonusPath = false;
         this.experienceBonusPathLevel = 0;
         this.gemLimits = new EnumMap<>(GemLimitGroup.class);
-        this.runeLimits = new EnumMap<>(RuneLimitGroup.class);
-        this.jewelLimits = new EnumMap<>(JewelType.class);
 
-        this.runeTrinkets = new ArrayList<>(7);
-        for (int i = 0; i < 7; i++) {
-            this.runeTrinkets.add(new RuneTrinket());
-        }
-        this.jewelTrinkets = new ArrayList<>(3);
-        for (int i = 0; i < 3; i++) {
-            jewelTrinkets.add(new JewelTrinket());
-        }
-        this.dragonCrestTrinket = new DragonCrestTrinket();
+        this.validateRunes(runeTrinkets);
+        this.runeTrinkets = runeTrinkets;
+        this.validateJewels(jewelTrinkets);
+        this.jewelTrinkets = jewelTrinkets;
+        this.dragonCrestTrinket = dragonCrest;
 
         this.equippedItems = new EnumMap<>(ItemSlot.class);
         this.equippedSets = new EnumMap<>(SetType.class);
@@ -131,71 +121,6 @@ public class Character {
         if (level < 0 || level > 5) throw new IllegalArgumentException("Experience skill tree bonus level must be in range 0-5.");
         this.experienceBonusPath = level != 0;
         this.experienceBonusPathLevel = level;
-    }
-
-    public List<RuneTrinket> getRuneTrinkets() {
-        return runeTrinkets;
-    }
-
-    public RuneTrinket getRuneTrinket(int index) {
-        return runeTrinkets.get(index);
-    }
-
-    public void updateRuneTrinket(int index, Rune[] runes)
-    {
-        Map<RuneLimitGroup, Integer> oldRunes = this.countByLimitGroup(this.runeTrinkets.get(index).getRunes(), Rune::getRuneLimitGroup, RuneLimitGroup.class);
-        Map<RuneLimitGroup, Integer> newRunes = this.countByLimitGroup(runes, Rune::getRuneLimitGroup, RuneLimitGroup.class);
-
-        for (Map.Entry<RuneLimitGroup, Integer> entry : newRunes.entrySet()) {
-            RuneLimitGroup group = entry.getKey();
-            int globalCount = this.runeLimits.getOrDefault(group, 0);
-            int oldCount = oldRunes.getOrDefault(group, 0);
-            int newCount = entry.getValue();
-
-            if (globalCount - oldCount + newCount > group.getLimit()) {
-                throw new IllegalArgumentException("Rune limit exceeded for " + group + ".");
-            }
-        }
-
-        this.updateGlobalLimits(oldRunes, newRunes, this.runeLimits);
-        this.runeTrinkets.get(index).updateRunes(runes);
-    }
-
-    public List<JewelTrinket> getJewelTrinkets() {
-        return jewelTrinkets;
-    }
-
-    public JewelTrinket getJewelTrinket(int index) {
-        return jewelTrinkets.get(index);
-    }
-
-    public void updateJewelTrinket(int index, Jewel[] jewels)
-    {
-        Map<JewelType, Integer> oldJewels = this.countByLimitGroup(this.jewelTrinkets.get(index).getJewels(), Jewel::getJewelType, JewelType.class);
-        Map<JewelType, Integer> newJewels = this.countByLimitGroup(jewels, Jewel::getJewelType, JewelType.class);
-
-        for (Map.Entry<JewelType, Integer> entry : newJewels.entrySet()) {
-            JewelType group = entry.getKey();
-            int globalCount = this.jewelLimits.getOrDefault(group, 0);
-            int oldCount = oldJewels.getOrDefault(group, 0);
-            int newCount = entry.getValue();
-
-            if (globalCount - oldCount + newCount > group.getLimit()) {
-                throw new IllegalArgumentException("Jewel limit exceeded for " + group + ".");
-            }
-        }
-
-        this.updateGlobalLimits(oldJewels, newJewels, this.jewelLimits);
-        this.jewelTrinkets.get(index).updateJewels(jewels);
-    }
-
-    public DragonCrestTrinket getDragonCrestTrinket() {
-        return dragonCrestTrinket;
-    }
-
-    public void updateDragonCrestTrinket(DragonStone[] dragonStones)
-    {
-        this.dragonCrestTrinket.updateDragonStones(dragonStones);
     }
 
     public void equipItem(ItemSlot slot, Item item)
@@ -349,6 +274,34 @@ public class Character {
 
     public void setWisdomSkillTree(WisdomSkillTree wisdomSkillTree) {
         this.wisdomSkillTree = wisdomSkillTree;
+    }
+
+    private void validateRunes(List<RuneTrinket> runeTrinkets)
+    {
+        Map<RuneLimitGroup, Integer> runeCount = new EnumMap<>(RuneLimitGroup.class);
+        runeTrinkets.forEach(runeTrinket -> {
+            runeTrinket.getRunes().forEach(rune -> {
+                runeCount.merge(rune.getRuneLimitGroup(), 1, Integer::sum);
+            });
+        });
+
+        runeCount.forEach((runeLimitGroup, amount) -> {
+            if (runeLimitGroup.getLimit() < amount) throw new IllegalArgumentException("Rune limit exceeded for "+runeLimitGroup);
+        });
+    }
+
+    private void validateJewels(List<JewelTrinket> jewelTrinkets)
+    {
+        Map<JewelType, Integer> jewelCount = new EnumMap<>(JewelType.class);
+        jewelTrinkets.forEach(jewelTrinket -> {
+            jewelTrinket.getJewels().forEach(jewel -> {
+                jewelCount.merge(jewel.getJewelType(), 1, Integer::sum);
+            });
+        });
+
+        jewelCount.forEach((jewelType, amount) -> {
+            if (jewelType.getLimit() < amount) throw new IllegalArgumentException("Jewel limit exceeded for "+jewelType);
+        });
     }
 
     public Map<StatType, Double> calculateCharacterStats()
