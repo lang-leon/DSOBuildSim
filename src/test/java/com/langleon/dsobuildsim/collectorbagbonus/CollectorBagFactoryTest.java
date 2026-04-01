@@ -15,6 +15,7 @@ import tools.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class CollectorBagFactoryTest {
@@ -65,13 +66,13 @@ public class CollectorBagFactoryTest {
     {
         CollectorBagCategoryBonusInstanceDTO dto1 = new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.DRAGON_SPAWN, CollectorBagTier.TIER2);
         CollectorBagCategoryBonusInstanceDTO dto2 = new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.TAMED_FOES, CollectorBagTier.TIER3);
-        List<CollectorBagCategoryBonus> bonuses = factory.fromDTOList(List.of(dto1, dto2));
-        Assertions.assertEquals(2, bonuses.getFirst().calculateStats().size());
-        Assertions.assertEquals(0.03, bonuses.getFirst().calculateStats().get(StatType.HEALTH_POINTS));
-        Assertions.assertEquals(0.03, bonuses.getFirst().calculateStats().get(StatType.RESISTANCE_VALUE));
-        Assertions.assertEquals(3, bonuses.get(1).calculateStats().size());
-        Assertions.assertEquals(0.03, bonuses.get(1).calculateStats().get(StatType.HEALTH_POINTS));
-        Assertions.assertEquals(0.03, bonuses.get(1).calculateStats().get(StatType.RESISTANCE_VALUE));
-        Assertions.assertEquals(0.02, bonuses.get(1).calculateStats().get(StatType.DAMAGE));
+        Map<CollectorBagCategory, CollectorBagCategoryBonus> bonuses = factory.fromDTOList(List.of(dto1, dto2));
+        Assertions.assertEquals(2, bonuses.get(CollectorBagCategory.DRAGON_SPAWN).calculateStats().size());
+        Assertions.assertEquals(0.03, bonuses.get(CollectorBagCategory.DRAGON_SPAWN).calculateStats().get(StatType.HEALTH_POINTS));
+        Assertions.assertEquals(0.03, bonuses.get(CollectorBagCategory.DRAGON_SPAWN).calculateStats().get(StatType.RESISTANCE_VALUE));
+        Assertions.assertEquals(3, bonuses.get(CollectorBagCategory.TAMED_FOES).calculateStats().size());
+        Assertions.assertEquals(0.03, bonuses.get(CollectorBagCategory.TAMED_FOES).calculateStats().get(StatType.HEALTH_POINTS));
+        Assertions.assertEquals(0.03, bonuses.get(CollectorBagCategory.TAMED_FOES).calculateStats().get(StatType.RESISTANCE_VALUE));
+        Assertions.assertEquals(0.02, bonuses.get(CollectorBagCategory.TAMED_FOES).calculateStats().get(StatType.DAMAGE));
     }
 }

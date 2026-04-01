@@ -1,15 +1,19 @@
 package com.langleon.dsobuildsim.character;
 
 import com.langleon.dsobuildsim.buffs.BuffFactory;
+import com.langleon.dsobuildsim.buffs.Physic;
+import com.langleon.dsobuildsim.buffs.Tonic;
 import com.langleon.dsobuildsim.character.dto.CharacterDTO;
 import com.langleon.dsobuildsim.collectorbagbonus.CollectorBagFactory;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneFactory;
+import com.langleon.dsobuildsim.essences.Essence;
 import com.langleon.dsobuildsim.essences.EssenceFactory;
 import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.ItemResolver;
 import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
 import com.langleon.dsobuildsim.jewels.JewelFactory;
+import com.langleon.dsobuildsim.pets.Pet;
 import com.langleon.dsobuildsim.pets.PetFactory;
 import com.langleon.dsobuildsim.runes.RuneFactory;
 import com.langleon.dsobuildsim.sets.SetFactory;
@@ -50,6 +54,10 @@ public class CharacterFactory {
     public Character fromDTO(CharacterDTO dto)
     {
         Map<ItemSlot, Item> items = itemResolver.fromDTOMap(dto.items(), dto.characterClass());
+        Pet pet = (dto.pet() != null ? petFactory.fromDTO(dto.pet()) : null);
+        Essence essence = (dto.essence() != null ? essenceFactory.fromDTO(dto.essence()) : null);
+        Tonic tonic = (dto.tonic() != null ? buffFactory.tonicFromDTO(dto.tonic()) : null);
+        Physic physic = (dto.physic() != null ? buffFactory.physicFromDTO(dto.physic()) : null);
 
         return new Character(
                 dto.characterClass(),
@@ -62,10 +70,10 @@ public class CharacterFactory {
                 dragonStoneFactory.fromDTO(dto.dragonCrest()),
                 items,
                 this.calculateEquippedSets(items.values().stream().toList()),
-                petFactory.fromDTO(dto.pet()),
-                essenceFactory.fromDTO(dto.essence()),
-                buffFactory.tonicFromDTO(dto.tonic()),
-                buffFactory.physicFromDTO(dto.physic()),
+                pet,
+                essence,
+                tonic,
+                physic,
                 wisdomSkillTreeResolver.resolveWisdomSkillTree(dto.wisdomSkillTree()),
                 collectorBagFactory.fromDTOList(dto.collectorBagBuffs())
         );
@@ -78,7 +86,7 @@ public class CharacterFactory {
         items.forEach(item -> {
             if (item instanceof SetBonusProvider settableItem)
             {
-                SetInstance setInstance = equippedSets.computeIfAbsent(settableItem.getSetType(), k -> this.setFactory.createSet(settableItem.getSetType(), CharacterClass.SPELLWEAVER));
+                SetInstance setInstance = equippedSets.computeIfAbsent(settableItem.getSetType(), _ -> this.setFactory.createSet(settableItem.getSetType(), CharacterClass.SPELLWEAVER));
                 setInstance.addSetItem(settableItem.getSetItemIdentifier());
             }
         });
