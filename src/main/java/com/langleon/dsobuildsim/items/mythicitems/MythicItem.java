@@ -1,11 +1,14 @@
 package com.langleon.dsobuildsim.items.mythicitems;
 
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.enchantments.Enchantment;
+import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.items.core.enums.ItemType;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.items.core.*;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 public class MythicItem extends Item implements SetBonusProvider, UniqueStatProvider {
@@ -14,8 +17,8 @@ public class MythicItem extends Item implements SetBonusProvider, UniqueStatProv
     private final SetType setType;
     private final MythicItemType itemType;
 
-    public MythicItem(MythicItemDefinition itemDefinition, Map<StatType, Double> baseValues, int level){
-        super(itemDefinition.itemSlotType(), baseValues, level);
+    public MythicItem(MythicItemDefinition itemDefinition, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments){
+        super(itemDefinition.itemSlotType(), baseValues, level, gems, enchantments);
         this.uniqueRelativeValues = itemDefinition.uniqueRelativeValues();
         this.uniqueAbsoluteValues = itemDefinition.uniqueAbsoluteValues();
         this.itemType = itemDefinition.itemType();

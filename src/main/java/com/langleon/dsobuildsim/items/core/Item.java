@@ -7,22 +7,26 @@ import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.items.core.enums.ItemType;
 import com.langleon.dsobuildsim.utils.MapUtils;
 
+import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 public abstract class Item {
     protected int level;
     protected final ItemSlotType itemSlotType;
     protected Map<StatType, Double> baseValues;
-    protected Enchantment[] enchantments;
-    protected AbstractGem[] gems;
+    protected List<Enchantment> enchantments;
+    protected List<AbstractGem> gems;
 
-    public Item(ItemSlotType itemSlotType, Map<StatType, Double> actualBaseValues, int level) {
+    public Item(ItemSlotType itemSlotType, Map<StatType, Double> actualBaseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments) {
         this.itemSlotType = itemSlotType;
         this.baseValues = new EnumMap<>(actualBaseValues);
         this.level = level;
-        this.gems = new AbstractGem[10];
-        this.enchantments = new Enchantment[4];
+        if (gems.size() > 10) throw new IllegalArgumentException("Can't have more than 10 gems per item");
+        this.gems = new ArrayList<>(gems);
+        if (enchantments.size() > 4) throw new IllegalArgumentException("Can't have more than 4 enchantments per item");
+        this.enchantments = new ArrayList<>(enchantments);
     }
 
     public abstract ItemType getItemType();
@@ -32,30 +36,13 @@ public abstract class Item {
         return baseValues;
     }
 
-    public void updateBaseValues(Map<StatType, Double> newBaseValues)
-    {
-        MapUtils.replaceExisting(this.baseValues, newBaseValues);
-    }
-
-    public AbstractGem[] getGems() {
+    public List<AbstractGem> getGems() {
         return gems;
     }
 
-    public void setGems(AbstractGem[] gems)
-    {
-        if (gems.length!=10) throw new IllegalArgumentException("Invalid array length!");
-        this.gems = gems;
-    }
-
-    public Enchantment[] getEnchantments()
+    public List<Enchantment> getEnchantments()
     {
         return enchantments;
-    }
-
-    public void setEnchantments(Enchantment[] enchantments)
-    {
-        if (enchantments.length!=4) throw new IllegalArgumentException("Invalid array length!");
-        this.enchantments = enchantments;
     }
 
     public int getLevel() {
@@ -70,27 +57,20 @@ public abstract class Item {
     public Map<StatType, Double> calculateGemStats()
     {
         Map<StatType, Double> stats = new EnumMap<>(StatType.class);
-        for (int i=0; i<10; i++){
-            if (gems[i]!=null)
-            {
-                for(Map.Entry<StatType, Double> entry : gems[i].getStats().entrySet())
-                {
-                    stats.merge(entry.getKey(), entry.getValue(), Double::sum);
-                }
-            }
-        }
+        gems.forEach(gem -> {
+            gem.getStats().forEach((type, value) -> {
+                stats.merge(type, value, Double::sum);
+            });
+        });
         return stats;
     }
 
     public Map<StatType, Double> calculateEnchantStats()
     {
         Map<StatType, Double> totalEnchants = new EnumMap<>(StatType.class);
-        for (int i=0; i<4; i++){
-            if (enchantments[i]!=null)
-            {
-                totalEnchants.merge(enchantments[i].getStatType(), enchantments[i].getValue(), Double::sum);
-            }
-        }
+        enchantments.forEach(enchantment -> {
+            totalEnchants.merge(enchantment.getStatType(), enchantment.getValue(), Double::sum);
+        });
         return totalEnchants;
     }
 
