@@ -9,13 +9,13 @@ import com.langleon.dsobuildsim.items.core.enums.ItemCategory;
 import java.util.List;
 import java.util.Map;
 
-public record ItemDTO(
+public record ItemInstanceDTO(
         ItemCategory itemCategory,
         ItemType itemType,
         int level,
         Map<StatType, Double> baseValues,
-        AbstractGemInstanceDTO[] gems,
-        EnchantmentDTO[] enchantments,
+        List<AbstractGemInstanceDTO> gems,
+        List<EnchantmentDTO> enchantments,
 
         //optional fields depending on category
         Map<StatType, Double> uniqueBaseValues,
