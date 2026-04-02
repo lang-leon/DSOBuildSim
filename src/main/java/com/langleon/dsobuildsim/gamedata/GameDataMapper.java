@@ -48,7 +48,7 @@ public class GameDataMapper {
                                                 config.uniqueItems().get(clazz)
                                         )
                                         .filter(Objects::nonNull)
-                                        .flatMap(List::stream)
+                                        .flatMap(map -> map.values().stream())
                                         .map(ItemDefinitionMapper::from)
                                         .toList()
                         ));
@@ -59,21 +59,21 @@ public class GameDataMapper {
         Map<CharacterClass, List<JewelDefinitionDTO>> jewels =
                 mapPerClass(config.jewels(), JewelMapper::from);
 
-        List<EnchantmentDTO> enchantments = config.enchantments().stream().map(EnchantmentMapper::from).toList();
+        List<EnchantmentDTO> enchantments = config.enchantments().values().stream().map(EnchantmentMapper::from).toList();
 
-        List<GemDefinitionDTO> gems = config.gems().stream().map(GemMapper::from).toList();
+        List<GemDefinitionDTO> gems = config.gems().values().stream().map(GemMapper::from).toList();
 
-        List<RuneDefinitionDTO> runes = config.runes().stream().map(RuneMapper::from).toList();
+        List<RuneDefinitionDTO> runes = config.runes().values().stream().map(RuneMapper::from).toList();
 
-        List<DragonStoneDefinitionDTO> dragonStones = config.dragonStones().stream().map(DragonStoneMapper::from).toList();
+        List<DragonStoneDefinitionDTO> dragonStones = config.dragonStones().values().stream().map(DragonStoneMapper::from).toList();
 
-        List<PetDefinitionDTO> pets = config.pets().stream().map(PetMapper::from).toList();
+        List<PetDefinitionDTO> pets = config.pets().values().stream().map(PetMapper::from).toList();
 
-        List<EssenceDefinitionDTO> essences = config.essences().stream().map(EssenceMapper::from).toList();
+        List<EssenceDefinitionDTO> essences = config.essences().values().stream().map(EssenceMapper::from).toList();
 
-        List<BuffDefinitionDTO> tonics = config.tonics().stream().map(BuffMapper::from).toList();
+        List<BuffDefinitionDTO> tonics = config.buffConfig().tonics().values().stream().map(BuffMapper::from).toList();
 
-        List<BuffDefinitionDTO> physics = config.physics().stream().map(BuffMapper::from).toList();
+        List<BuffDefinitionDTO> physics = config.buffConfig().physics().values().stream().map(BuffMapper::from).toList();
 
         LevelMultiplierTableDTO levelMultiplierTable = LevelMultiplierTableMapper.from(config.levelMultiplierTable());
 
@@ -82,12 +82,12 @@ public class GameDataMapper {
         return new GameDataDTO(config.classStats(), items, sets, jewels, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkillTree);
     }
 
-    private static <S, T> Map<CharacterClass, List<T>> mapPerClass(Map<CharacterClass, List<S>> source, Function<S, T> mapper)
+    private static <K, S, T> Map<CharacterClass, List<T>> mapPerClass(Map<CharacterClass, Map<K, S>> source, Function<S, T> mapper)
     {
         return source.entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
-                        e -> e.getValue().stream()
+                        e -> e.getValue().values().stream()
                                 .map(mapper)
                                 .toList()
                 ));

@@ -1,40 +1,24 @@
 package com.langleon.dsobuildsim.pets;
 
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.pets.dto.PetDefinitionDTO;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.pets.dto.PetInstanceDTO;
 import com.langleon.dsobuildsim.pets.enums.PetType;
+import org.springframework.stereotype.Component;
+
 import java.util.Map;
 
+@Component
 public class PetFactory {
-    private final PetConfig config;
+    private final Map<PetType, PetDefinition> pets;
 
-    public PetFactory(PetConfig config) {
-        this.config = config;
-    }
-
-    public int getUpgradeCost(Pet pet)
-    {
-        switch (pet.getPetUpgradeType())
-        {
-            case NORMAL -> {
-                return this.config.normalUpgradeCosts().get(pet.getTier());
-            }
-            case SILVERCAT -> {
-                return this.config.silverCatUpgradeCosts().get(pet.getTier());
-            }
-            case GILDEDCAT -> {
-                return this.config.gildedCatUpgradeCosts().get(pet.getTier());
-            }
-            default -> {
-                return -1;
-            }
-        }
+    public PetFactory(GameDataConfig config) {
+        this.pets = config.pets();
     }
 
     public Pet createPet(PetType petType, int tier)
     {
-        PetDefinition petDefinition = this.config.pets().get(petType);
+        PetDefinition petDefinition = this.pets.get(petType);
         Map<StatType, Double> stats = petDefinition.statsPerTier().get(tier);
         if (stats == null) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
         return new Pet(petType, petDefinition.petUpgradeType(), tier, stats, petDefinition.descriptionPerTier().getOrDefault(tier, ""));

@@ -2,33 +2,26 @@ package com.langleon.dsobuildsim.gems;
 
 
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.gems.dto.*;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.gems.enums.GemType;
-import com.langleon.dsobuildsim.gems.enums.GemUpgradeType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import tools.jackson.databind.ObjectMapper;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 class GemFactoryTest {
 
     private GemFactory gemFactory;
 
     @BeforeEach
-    void setup() throws IOException {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/gems.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            GemConfig gemConfig = objectMapper.readValue(reader, GemConfig.class);
-            gemFactory = new GemFactory(gemConfig);
-        }
+    void setup() {
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        gemFactory = new GemFactory(config);
     }
 
     @Test
@@ -45,22 +38,6 @@ class GemFactoryTest {
     }
 
     @Test
-    void testUpgradeCostsOffensive()
-    {
-        Gem gem = gemFactory.createGem(GemType.RUBY, 5);
-        Assertions.assertEquals(GemUpgradeType.OFFENSIVE, gem.getGemUpgradeType());
-        Assertions.assertEquals(50, gemFactory.getUpgradeCost(gem));
-    }
-
-    @Test
-    void testUpgradeCostsDefensive()
-    {
-        Gem gem = gemFactory.createGem(GemType.AMETHYST, 5);
-        Assertions.assertEquals(GemUpgradeType.DEFENSIVE, gem.getGemUpgradeType());
-        Assertions.assertEquals(40, gemFactory.getUpgradeCost(gem));
-    }
-
-    @Test
     void createOpalTier10()
     {
         Opal opal = gemFactory.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 10);
@@ -72,14 +49,6 @@ class GemFactoryTest {
         Assertions.assertEquals(84.75, opal.getStats().get(StatType.DAMAGE), 1e-6);
         Assertions.assertEquals(562.5, opal.getStats().get(StatType.CRIT_VALUE), 1e-6);
         Assertions.assertEquals(0.075, opal.getStats().get(StatType.MOVEMENT_SPEED), 1e-6);
-    }
-
-    @Test
-    void testUpgradeCostsOpal()
-    {
-        Opal opal = gemFactory.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 10);
-        Assertions.assertEquals(GemUpgradeType.OPAL, opal.getGemUpgradeType());
-        Assertions.assertEquals(7875, gemFactory.getUpgradeCost(opal));
     }
 
     @Test

@@ -1,36 +1,33 @@
 package com.langleon.dsobuildsim.sets;
 
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.sets.dto.SetDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 
 public class SetMapperTest {
 
-    private SetConfig setConfig;
+    private Map<CharacterClass, Map<SetType, SetDefinition>> sets;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/sets.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            setConfig = objectMapper.readValue(reader, SetConfig.class);
-        }
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        sets = config.sets();
+
     }
 
     @Test
     void shouldMapSetDefinitionToSetDTO()
     {
-        SetDTO setDTO = SetMapper.from(setConfig.spellweaverSets().get(SetType.STELLAR_WALKER));
+        SetDTO setDTO = SetMapper.from(sets.get(CharacterClass.SPELLWEAVER).get(SetType.STELLAR_WALKER));
         Map<Integer, Map<StatType, Double>> stats = Map.of(
                 2, Map.of(StatType.ATTACK_SPEED, 0.79),
                 4, Map.of(StatType.DAMAGE, 8657.0),

@@ -1,40 +1,25 @@
 package com.langleon.dsobuildsim.wisdomskilltree;
 
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillDefinitionDTO;
 import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillTreeDefinitionDTO;
-import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
-import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import tools.jackson.databind.ObjectMapper;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Objects;
 
 public class WisdomSkillTreeMapperTest {
 
     private WisdomSkillTreeConfig wisdomSkillTreeConfig;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        ObjectMapper objectMapper = new ObjectMapper();
-        WisdomSkillConfig wisdomSkillConfig;
-        WisdomGroupConfig wisdomGroupConfig;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomSkills.json"))))
-        {
-            wisdomSkillConfig = objectMapper.readValue(reader, WisdomSkillConfig.class);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomGroups.json"))))
-        {
-            wisdomGroupConfig = objectMapper.readValue(reader, WisdomGroupConfig.class);
-        }
-        wisdomSkillTreeConfig = new WisdomSkillTreeConfig(wisdomSkillConfig.wisdomSkills(), wisdomGroupConfig.wisdomGroups());
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        wisdomSkillTreeConfig = config.wisdomSkillConfig();
     }
 
     @Test

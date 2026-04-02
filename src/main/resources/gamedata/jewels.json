@@ -1,5 +1,5 @@
 {
-  "spellweaverJewels": {
+  "SPELLWEAVER": {
     "AMBIDEXTROUS_VIGOR": {
       "jewelType": "AMBIDEXTROUS_VIGOR",
       "name": "Jewel of Ambidextrous Vigor",
@@ -536,7 +536,7 @@
       }
     }
   },
-  "dragonknightJewels": {
+  "DRAGONKNIGHT": {
     "AMBIDEXTROUS_VIGOR": {
       "jewelType": "AMBIDEXTROUS_VIGOR",
       "name": "Jewel of Ambidextrous Vigor",
@@ -1073,7 +1073,7 @@
       }
     }
   },
-  "rangerJewels": {
+  "RANGER": {
     "AMBIDEXTROUS_VIGOR": {
       "jewelType": "AMBIDEXTROUS_VIGOR",
       "name": "Jewel of Ambidextrous Vigor",
@@ -1610,7 +1610,7 @@
       }
     }
   },
-  "steamMechanicusJewels": {
+  "STEAM_MECHANICUS": {
     "AMBIDEXTROUS_VIGOR": {
       "jewelType": "AMBIDEXTROUS_VIGOR",
       "name": "Jewel of Ambidextrous Vigor",
@@ -2146,11 +2146,5 @@
         "5": "+ 10.00% Health points"
       }
     }
-  },
-  "upgradeCosts": {
-    "1": 3000,
-    "2": 8250,
-    "3": 16500,
-    "4": 27750
   }
 }

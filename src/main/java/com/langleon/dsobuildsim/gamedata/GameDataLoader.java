@@ -1,21 +1,11 @@
 package com.langleon.dsobuildsim.gamedata;
 
 import com.langleon.dsobuildsim.buffs.BuffConfig;
-import com.langleon.dsobuildsim.dragonstones.DragonStoneConfig;
-import com.langleon.dsobuildsim.enchantments.EnchantmentConfig;
-import com.langleon.dsobuildsim.essences.EssenceConfig;
-import com.langleon.dsobuildsim.gems.GemConfig;
-import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
-import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
-import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
-import com.langleon.dsobuildsim.jewels.JewelConfig;
-import com.langleon.dsobuildsim.pets.PetConfig;
-import com.langleon.dsobuildsim.runes.RuneConfig;
-import com.langleon.dsobuildsim.sets.SetConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
 import org.springframework.stereotype.Component;
+import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -26,87 +16,39 @@ public class GameDataLoader {
 
     private final ObjectMapper mapper = new ObjectMapper();
 
-    public ClassStatsConfig loadClassStatsConfig()
+    public GameDataConfig loadGameDataConfig()
     {
-        return load("/gamedata/classStats.json", ClassStatsConfig.class);
+        return new GameDataConfig(
+                load("/gamedata/classStats.json", new TypeReference<>() {}),
+                load("/gamedata/mythicitems.json", new TypeReference<>() {}),
+                load("/gamedata/setitems.json", new TypeReference<>() {}),
+                load("/gamedata/uniqueitems.json", new TypeReference<>() {}),
+                load("/gamedata/sets.json", new TypeReference<>() {}),
+                load("/gamedata/jewels.json", new TypeReference<>() {}),
+                load("/gamedata/enchantments.json", new TypeReference<>() {}),
+                load("/gamedata/gems.json", new TypeReference<>() {}),
+                load("/gamedata/runes.json", new TypeReference<>() {}),
+                load("/gamedata/dragonstones.json", new TypeReference<>() {}),
+                load("/gamedata/pets.json", new TypeReference<>() {}),
+                load("/gamedata/essences.json", new TypeReference<>() {}),
+                load("/gamedata/buffs.json", BuffConfig.class),
+                load("/gamedata/levelMultiplierTable.json", new TypeReference<>() {}),
+                loadWisdomSkillTreeConfig(),
+                load("/gamedata/collectorBagBonuses.json", new TypeReference<>() {})
+        );
     }
 
-    public MythicItemConfig loadMythicItemConfig()
-    {
-        return load("/gamedata/mythicitems.json", MythicItemConfig.class);
-    }
-
-    public SetItemConfig loadSetItemConfig()
-    {
-        return load("/gamedata/setitems.json", SetItemConfig.class);
-    }
-
-    public UniqueItemConfig loadUniqueItemConfig()
-    {
-        return load("/gamedata/uniqueitems.json", UniqueItemConfig.class);
-    }
-
-    public SetConfig loadSetConfig()
-    {
-        return load("/gamedata/sets.json", SetConfig.class);
-    }
-
-    public JewelConfig loadJewelConfig()
-    {
-        return load("/gamedata/jewels.json", JewelConfig.class);
-    }
-
-    public EnchantmentConfig loadEnchantmentConfig()
-    {
-        return load("/gamedata/enchantments.json", EnchantmentConfig.class);
-    }
-
-    public GemConfig loadGemConfig()
-    {
-        return load("/gamedata/gems.json", GemConfig.class);
-    }
-
-    public RuneConfig loadRuneConfig()
-    {
-        return load("/gamedata/runes.json", RuneConfig.class);
-    }
-
-    public DragonStoneConfig loadDragonStoneConfig()
-    {
-        return load("/gamedata/dragonstones.json", DragonStoneConfig.class);
-    }
-
-    public PetConfig loadPetConfig()
-    {
-        return load("/gamedata/pets.json", PetConfig.class);
-    }
-
-    public EssenceConfig loadEssenceConfig()
-    {
-        return load("/gamedata/essences.json", EssenceConfig.class);
-    }
-
-    public BuffConfig loadBuffConfig()
-    {
-        return load("/gamedata/buffs.json", BuffConfig.class);
-    }
-
-    public LevelMultiplierTable loadLevelMultiplierTable()
-    {
-        return load("/gamedata/levelMultiplierTable.json", LevelMultiplierTable.class);
-    }
-
-    public WisdomSkillConfig loadWisdomSkillConfig()
+    private WisdomSkillConfig loadWisdomSkillConfig()
     {
         return load("/gamedata/wisdomSkills.json", WisdomSkillConfig.class);
     }
 
-    public WisdomGroupConfig loadWisdomGroupConfig()
+    private WisdomGroupConfig loadWisdomGroupConfig()
     {
         return load("/gamedata/wisdomGroups.json", WisdomGroupConfig.class);
     }
 
-    public WisdomSkillTreeConfig loadWisdomSkillTreeConfig()
+    private WisdomSkillTreeConfig loadWisdomSkillTreeConfig()
     {
         return new WisdomSkillTreeConfig(loadWisdomSkillConfig().wisdomSkills(), loadWisdomGroupConfig().wisdomGroups());
     }
@@ -120,6 +62,14 @@ public class GameDataLoader {
         catch (IOException e)
         {
             throw new RuntimeException("Failed to load "+path, e);
+        }
+    }
+
+    private <T> T load(String path, TypeReference<T> typeRef) {
+        try (InputStream is = getClass().getResourceAsStream(path)) {
+            return mapper.readValue(is, typeRef);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load " + path, e);
         }
     }
 }

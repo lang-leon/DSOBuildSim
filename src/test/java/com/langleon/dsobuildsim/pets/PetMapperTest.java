@@ -1,7 +1,8 @@
 package com.langleon.dsobuildsim.pets;
 
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.pets.dto.PetDefinitionDTO;
 import com.langleon.dsobuildsim.pets.enums.PetType;
@@ -9,28 +10,23 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Map;
-import java.util.Objects;
 
 public class PetMapperTest {
 
-    private PetConfig petConfig;
+    private Map<PetType, PetDefinition> pets;
 
     @BeforeEach
-    void setup() throws IOException {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/pets.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            petConfig = objectMapper.readValue(reader, PetConfig.class);
-        }
+    void setup()
+    {
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        pets = config.pets();
     }
 
     @Test
     void shouldMapPetDefinitionToPetDTO()
     {
-        PetDefinitionDTO petDTO = PetMapper.from(petConfig.pets().get(PetType.BLUE_DRAGONSPAWN));
+        PetDefinitionDTO petDTO = PetMapper.from(pets.get(PetType.BLUE_DRAGONSPAWN));
 
         Map<Integer, Map<StatType, Double>> statsPerTier = Map.of(
                 2, Map.of(StatType.XP_GAIN, 0.05),

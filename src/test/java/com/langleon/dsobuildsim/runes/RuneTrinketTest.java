@@ -1,32 +1,26 @@
 package com.langleon.dsobuildsim.runes;
 
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class RuneTrinketTest {
 
     private RuneFactory runeFactory;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/runes.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            RuneConfig dragonStoneConfig = objectMapper.readValue(reader, RuneConfig.class);
-            runeFactory = new RuneFactory(dragonStoneConfig);
-        }
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        runeFactory = new RuneFactory(config);
     }
 
     @Test

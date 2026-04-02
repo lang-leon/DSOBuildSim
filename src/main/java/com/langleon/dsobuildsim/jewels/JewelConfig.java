@@ -1,7 +1,9 @@
 package com.langleon.dsobuildsim.jewels;
 
+import com.langleon.dsobuildsim.character.CharacterClass;
+
 import java.util.Map;
 
-public record JewelConfig (Map<JewelType, JewelDefinition> spellweaverJewels, Map<JewelType, JewelDefinition> dragonknightJewels, Map<JewelType, JewelDefinition> rangerJewels, Map<JewelType, JewelDefinition> steamMechanicusJewels, Map<Integer, Integer> upgradeCosts)
+public record JewelConfig (Map<CharacterClass, Map<JewelType, JewelDefinition>> jewels, Map<Integer, Integer> upgradeCosts)
 {
 }

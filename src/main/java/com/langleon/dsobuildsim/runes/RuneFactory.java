@@ -1,41 +1,25 @@
 package com.langleon.dsobuildsim.runes;
 
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.runes.dto.RuneInstanceDTO;
 import com.langleon.dsobuildsim.runes.dto.RuneTrinketDTO;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
-import com.langleon.dsobuildsim.runes.enums.RuneUpgradeType;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 
+@Component
 public class RuneFactory {
-    private final RuneConfig config;
+    private final Map<RuneType, RuneDefinition> runes;
 
-    public RuneFactory(RuneConfig config) {
-        this.config = config;
-    }
-
-    public int getUpgradeCost(Rune rune)
-    {
-        switch (rune.getRuneUpgradeType())
-        {
-            case RuneUpgradeType.OFFENSIVE -> {
-                return this.config.offensiveUpgradeCosts().get(rune.getTier());
-            }
-            case RuneUpgradeType.DEFENSIVE, RuneUpgradeType.GROUP -> {
-                return this.config.defensiveUpgradeCosts().get(rune.getTier());
-            }
-            case RuneUpgradeType.BASIC -> {
-                return this.config.basicUpgradeCosts().get(rune.getTier());
-            }
-            default -> {
-                return -1;
-            }
-        }
+    public RuneFactory(GameDataConfig config) {
+        this.runes = config.runes();
     }
 
     public Rune createRune(RuneType runeType, int tier)
     {
-        RuneDefinition runeDefinition = this.config.runes().get(runeType);
+        RuneDefinition runeDefinition = this.runes.get(runeType);
         if (!runeDefinition.statsPerTier().containsKey(tier)) throw new IllegalArgumentException("Invalid rune tier: " + tier + "!");
         return new Rune(runeType, runeDefinition.runeUpgradeType(), runeDefinition.runeLimitGroup(), tier, runeDefinition.statsPerTier().get(tier), runeDefinition.description());
     }
