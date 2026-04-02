@@ -1,9 +1,7 @@
 package com.langleon.dsobuildsim.character;
 
-import com.langleon.dsobuildsim.buffs.BuffConfig;
 import com.langleon.dsobuildsim.buffs.BuffFactory;
 import com.langleon.dsobuildsim.character.dto.CharacterDTO;
-import com.langleon.dsobuildsim.collectorbagbonus.CollectorBagConfig;
 import com.langleon.dsobuildsim.collectorbagbonus.CollectorBagFactory;
 import com.langleon.dsobuildsim.collectorbagbonus.dto.instance.CollectorBagCategoryBonusInstanceDTO;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
@@ -13,6 +11,8 @@ import com.langleon.dsobuildsim.dragonstones.dto.DragonCrestTrinketDTO;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneInstanceDTO;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.essences.dto.EssenceInstanceDTO;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.gems.dto.AbstractGemInstanceDTO;
 import com.langleon.dsobuildsim.gems.dto.GemInstanceDTO;
 import com.langleon.dsobuildsim.gems.dto.OpalInstanceDTO;
@@ -25,17 +25,13 @@ import com.langleon.dsobuildsim.jewels.dto.JewelTrinketDTO;
 import com.langleon.dsobuildsim.pets.dto.PetInstanceDTO;
 import com.langleon.dsobuildsim.runes.dto.RuneInstanceDTO;
 import com.langleon.dsobuildsim.runes.dto.RuneTrinketDTO;
-import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeFactory;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeResolver;
 import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomGroupInstanceDTO;
 import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomSkillInstanceDTO;
 import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomSkillTreeInstanceDTO;
-import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
-import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
-import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.essences.EssenceType;
@@ -45,27 +41,16 @@ import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
 import com.langleon.dsobuildsim.pets.enums.PetType;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
-import com.langleon.dsobuildsim.essences.EssenceConfig;
 import com.langleon.dsobuildsim.essences.EssenceFactory;
-import com.langleon.dsobuildsim.gems.GemConfig;
 import com.langleon.dsobuildsim.gems.GemFactory;
 import com.langleon.dsobuildsim.items.core.ItemFactory;
-import com.langleon.dsobuildsim.gamedata.LevelMultiplierTable;
-import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
-import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
-import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
-import com.langleon.dsobuildsim.pets.PetConfig;
 import com.langleon.dsobuildsim.pets.PetFactory;
-import com.langleon.dsobuildsim.runes.RuneConfig;
 import com.langleon.dsobuildsim.runes.RuneFactory;
-import com.langleon.dsobuildsim.sets.SetConfig;
 import com.langleon.dsobuildsim.sets.SetFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 
 public class CharacterFactoryTest {
@@ -73,103 +58,19 @@ public class CharacterFactoryTest {
     private CharacterFactory characterFactory;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        EssenceFactory essenceFactory;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/essences.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            EssenceConfig essenceConfig = objectMapper.readValue(reader, EssenceConfig.class);
-            essenceFactory = new EssenceFactory(essenceConfig);
-        }
-        DragonStoneFactory dragonStoneFactory;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/dragonstones.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            DragonStoneConfig dragonStoneConfig = objectMapper.readValue(reader, DragonStoneConfig.class);
-            dragonStoneFactory = new DragonStoneFactory(dragonStoneConfig);
-        }
-        GemFactory gemFactory;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/gems.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            GemConfig gemConfig = objectMapper.readValue(reader, GemConfig.class);
-            gemFactory = new GemFactory(gemConfig);
-        }
-        JewelFactory jewelFactory;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/jewels.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            JewelConfig jewelConfig = objectMapper.readValue(reader, JewelConfig.class);
-            jewelFactory = new JewelFactory(jewelConfig);
-        }
-        PetFactory petFactory;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/pets.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            PetConfig petConfig = objectMapper.readValue(reader, PetConfig.class);
-            petFactory = new PetFactory(petConfig);
-        }
-        RuneFactory runeFactory;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/runes.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            RuneConfig runeConfig = objectMapper.readValue(reader, RuneConfig.class);
-            runeFactory = new RuneFactory(runeConfig);
-        }
-        SetFactory setFactory;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/sets.json")))) {
-            ObjectMapper objectMapper = new ObjectMapper();
-            SetConfig setConfig = objectMapper.readValue(reader, SetConfig.class);
-            setFactory = new SetFactory(setConfig);
-        }
-        ObjectMapper objectMapper = new ObjectMapper();
-        MythicItemConfig mythicItemConfig;
-        UniqueItemConfig uniqueItemConfig;
-        SetItemConfig setItemConfig;
-        LevelMultiplierTable levelMultiplierTable;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/mythicitems.json"))))
-        {
-            mythicItemConfig = objectMapper.readValue(reader, MythicItemConfig.class);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/uniqueitems.json"))))
-        {
-            uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/setitems.json"))))
-        {
-            setItemConfig = objectMapper.readValue(reader, SetItemConfig.class);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/levelMultiplierTable.json"))))
-        {
-            levelMultiplierTable = objectMapper.readValue(reader, LevelMultiplierTable.class);
-        }
-        ItemFactory itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig, levelMultiplierTable);
-        BuffConfig buffConfig;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/buffs.json"))))
-        {
-            buffConfig = objectMapper.readValue(reader, BuffConfig.class);
-        }
-        ItemResolver itemResolver = new ItemResolver(itemFactory, gemFactory);
-        BuffFactory buffFactory = new BuffFactory(buffConfig);
-        WisdomSkillConfig wisdomSkillConfig;
-        WisdomGroupConfig wisdomGroupConfig;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomSkills.json"))))
-        {
-            wisdomSkillConfig = objectMapper.readValue(reader, WisdomSkillConfig.class);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/wisdomGroups.json"))))
-        {
-            wisdomGroupConfig = objectMapper.readValue(reader, WisdomGroupConfig.class);
-        }
-        WisdomSkillTreeFactory wisdomSkillTreeFactory = new WisdomSkillTreeFactory(new WisdomSkillTreeConfig(wisdomSkillConfig.wisdomSkills(), wisdomGroupConfig.wisdomGroups()));
-        WisdomSkillTreeResolver wisdomSkillTreeResolver = new WisdomSkillTreeResolver(wisdomSkillTreeFactory);
-        CollectorBagConfig collectorBagConfig;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/collectorbagbonuses.json"))))
-        {
-            collectorBagConfig = objectMapper.readValue(reader, CollectorBagConfig.class);
-        }
-        CollectorBagFactory collectorBagFactory = new CollectorBagFactory(collectorBagConfig);
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        RuneFactory runeFactory = new RuneFactory(config);
+        JewelFactory jewelFactory = new JewelFactory(config);
+        DragonStoneFactory dragonStoneFactory = new DragonStoneFactory(config);
+        ItemResolver itemResolver = new ItemResolver(new ItemFactory(config), new GemFactory(config));
+        SetFactory setFactory = new SetFactory(config);
+        PetFactory petFactory = new PetFactory(config);
+        EssenceFactory essenceFactory = new EssenceFactory(config);
+        BuffFactory buffFactory = new BuffFactory(config);
+        WisdomSkillTreeResolver wisdomSkillTreeResolver = new WisdomSkillTreeResolver(new WisdomSkillTreeFactory(config));
+        CollectorBagFactory collectorBagFactory = new CollectorBagFactory(config);
         characterFactory = new CharacterFactory(runeFactory, jewelFactory, dragonStoneFactory, itemResolver, setFactory, petFactory, essenceFactory, buffFactory, wisdomSkillTreeResolver, collectorBagFactory);
     }
 

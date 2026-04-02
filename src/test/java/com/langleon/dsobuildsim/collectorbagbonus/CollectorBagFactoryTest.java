@@ -7,36 +7,30 @@ import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagBonusType;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagTier;
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import tools.jackson.databind.ObjectMapper;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class CollectorBagFactoryTest {
 
-    private CollectorBagFactory factory;
+    private CollectorBagFactory collectorBagFactory;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/collectorbagbonuses.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            CollectorBagConfig config = objectMapper.readValue(reader, CollectorBagConfig.class);
-            factory = new CollectorBagFactory(config);
-        }
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        collectorBagFactory = new CollectorBagFactory(config);
     }
 
     @Test
     void createCollectorBagBonus()
     {
-        CollectorBagBonus bonus = factory.createCollectorBagBonus(CollectorBagBonusType.TRIAD_OF_LIFE);
+        CollectorBagBonus bonus = collectorBagFactory.createCollectorBagBonus(CollectorBagBonusType.TRIAD_OF_LIFE);
         Assertions.assertEquals(CollectorBagBonusType.TRIAD_OF_LIFE, bonus.type());
         Assertions.assertEquals(0.03, bonus.stats().get(StatType.HEALTH_POINTS));
     }
@@ -44,7 +38,7 @@ public class CollectorBagFactoryTest {
     @Test
     void createCollectorBagCategoryBonus()
     {
-        CollectorBagCategoryBonus bonus = factory.createCollectorBagCategoryBonus(CollectorBagCategory.DRAGON_SPAWN, CollectorBagTier.TIER2);
+        CollectorBagCategoryBonus bonus = collectorBagFactory.createCollectorBagCategoryBonus(CollectorBagCategory.DRAGON_SPAWN, CollectorBagTier.TIER2);
         Assertions.assertEquals(CollectorBagCategory.DRAGON_SPAWN, bonus.category());
         Assertions.assertEquals(2, bonus.calculateStats().size());
         Assertions.assertEquals(0.03, bonus.calculateStats().get(StatType.HEALTH_POINTS));
@@ -55,7 +49,7 @@ public class CollectorBagFactoryTest {
     void createFromDTO()
     {
         CollectorBagCategoryBonusInstanceDTO dto = new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.DRAGON_SPAWN, CollectorBagTier.TIER2);
-        CollectorBagCategoryBonus bonus = factory.fromDTO(dto);
+        CollectorBagCategoryBonus bonus = collectorBagFactory.fromDTO(dto);
         Assertions.assertEquals(2, bonus.calculateStats().size());
         Assertions.assertEquals(0.03, bonus.calculateStats().get(StatType.HEALTH_POINTS));
         Assertions.assertEquals(0.03, bonus.calculateStats().get(StatType.RESISTANCE_VALUE));
@@ -66,7 +60,7 @@ public class CollectorBagFactoryTest {
     {
         CollectorBagCategoryBonusInstanceDTO dto1 = new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.DRAGON_SPAWN, CollectorBagTier.TIER2);
         CollectorBagCategoryBonusInstanceDTO dto2 = new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.TAMED_FOES, CollectorBagTier.TIER3);
-        Map<CollectorBagCategory, CollectorBagCategoryBonus> bonuses = factory.fromDTOList(List.of(dto1, dto2));
+        Map<CollectorBagCategory, CollectorBagCategoryBonus> bonuses = collectorBagFactory.fromDTOList(List.of(dto1, dto2));
         Assertions.assertEquals(2, bonuses.get(CollectorBagCategory.DRAGON_SPAWN).calculateStats().size());
         Assertions.assertEquals(0.03, bonuses.get(CollectorBagCategory.DRAGON_SPAWN).calculateStats().get(StatType.HEALTH_POINTS));
         Assertions.assertEquals(0.03, bonuses.get(CollectorBagCategory.DRAGON_SPAWN).calculateStats().get(StatType.RESISTANCE_VALUE));

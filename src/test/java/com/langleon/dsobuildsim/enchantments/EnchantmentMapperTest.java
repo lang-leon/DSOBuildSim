@@ -1,33 +1,30 @@
 package com.langleon.dsobuildsim.enchantments;
 
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Objects;
+import java.util.Map;
 
 public class EnchantmentMapperTest {
 
-    private EnchantmentConfig config;
+    private Map<StatType, EnchantmentDefinition> enchantments;
 
     @BeforeEach
-    void setup() throws IOException {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/enchantments.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            config = objectMapper.readValue(reader, EnchantmentConfig.class);
-        }
+    void setup()
+    {
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        enchantments = config.enchantments();
     }
 
     @Test
     void shouldMapEnchantmentDefinitionToEnchantmentDTO()
     {
-        EnchantmentDTO dto = EnchantmentMapper.from(config.enchantments().get(StatType.DAMAGE));
+        EnchantmentDTO dto = EnchantmentMapper.from(enchantments.get(StatType.DAMAGE));
 
         Assertions.assertEquals(StatType.DAMAGE, dto.statType());
         Assertions.assertEquals(0.44776, dto.value());

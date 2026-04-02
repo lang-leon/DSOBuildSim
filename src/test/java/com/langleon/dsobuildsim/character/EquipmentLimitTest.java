@@ -1,32 +1,25 @@
 package com.langleon.dsobuildsim.character;
 
 import com.langleon.dsobuildsim.dragonstones.DragonCrestTrinket;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.jewels.*;
 import com.langleon.dsobuildsim.runes.RuneTrinket;
-import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.gems.Gem;
-import com.langleon.dsobuildsim.gems.GemConfig;
 import com.langleon.dsobuildsim.gems.GemFactory;
 import com.langleon.dsobuildsim.gems.enums.GemType;
 import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.items.core.ItemFactory;
-import com.langleon.dsobuildsim.gamedata.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
-import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
-import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
 import com.langleon.dsobuildsim.items.setitems.SetItemType;
-import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
-import com.langleon.dsobuildsim.runes.RuneConfig;
 import com.langleon.dsobuildsim.runes.RuneFactory;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 
 public class EquipmentLimitTest {
@@ -37,48 +30,13 @@ public class EquipmentLimitTest {
     private RuneFactory runeFactory;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/gems.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            GemConfig gemConfig = objectMapper.readValue(reader, GemConfig.class);
-            gemFactory = new GemFactory(gemConfig);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/jewels.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            JewelConfig jewelConfig = objectMapper.readValue(reader, JewelConfig.class);
-            jewelFactory = new JewelFactory(jewelConfig);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/runes.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            RuneConfig runeConfig = objectMapper.readValue(reader, RuneConfig.class);
-            runeFactory = new RuneFactory(runeConfig);
-        }
-        ObjectMapper objectMapper = new ObjectMapper();
-        MythicItemConfig mythicItemConfig;
-        UniqueItemConfig uniqueItemConfig;
-        SetItemConfig setItemConfig;
-        LevelMultiplierTable levelMultiplierTable;
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/mythicitems.json"))))
-        {
-            mythicItemConfig = objectMapper.readValue(reader, MythicItemConfig.class);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/uniqueitems.json"))))
-        {
-            uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/setitems.json"))))
-        {
-            setItemConfig = objectMapper.readValue(reader, SetItemConfig.class);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/levelMultiplierTable.json"))))
-        {
-            levelMultiplierTable = objectMapper.readValue(reader, LevelMultiplierTable.class);
-        }
-        itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig, levelMultiplierTable);
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        itemFactory = new ItemFactory(config);
+        gemFactory = new GemFactory(config);
+        jewelFactory = new JewelFactory(config);
+        runeFactory = new RuneFactory(config);
     }
 
     // Gems
