@@ -2,12 +2,15 @@ package com.langleon.dsobuildsim.buffs;
 import com.langleon.dsobuildsim.buffs.dto.BuffInstanceDTO;
 import com.langleon.dsobuildsim.buffs.enums.PhysicType;
 import com.langleon.dsobuildsim.buffs.enums.TonicType;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BuffFactory {
     private final BuffConfig config;
 
-    public BuffFactory(BuffConfig config) {
-        this.config = config;
+    public BuffFactory(GameDataConfig config) {
+        this.config = config.buffConfig();
     }
 
     public Tonic createTonic(TonicType tonicType, int tier)

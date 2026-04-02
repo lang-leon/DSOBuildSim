@@ -1,5 +1,5 @@
 {
-  "spellweaverItems":
+  "SPELLWEAVER":
   {
     "AMULET_OF_DEFLECTION": {
       "itemType": "AMULET_OF_DEFLECTION",
@@ -2624,15 +2624,15 @@
       "uniqueDescription": ""
     }
   },
-  "dragonknightItems":
+  "DRAGONKNIGHT":
   {
 
   },
-  "rangerItems":
+  "RANGER":
   {
 
   },
-  "steamMechanicusItems":
+  "STEAM_MECHANICUS":
   {
   }
 }
