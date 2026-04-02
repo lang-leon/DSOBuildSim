@@ -1,32 +1,26 @@
 package com.langleon.dsobuildsim.jewels;
 
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.common.StatType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class JewelTrinketTest {
 
     private JewelFactory jewelFactory;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/jewels.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            JewelConfig jewelConfig = objectMapper.readValue(reader, JewelConfig.class);
-            jewelFactory = new JewelFactory(jewelConfig);
-        }
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        jewelFactory = new JewelFactory(config);
     }
 
     @Test

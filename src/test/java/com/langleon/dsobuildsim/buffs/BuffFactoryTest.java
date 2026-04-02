@@ -1,6 +1,7 @@
 package com.langleon.dsobuildsim.buffs;
 
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.buffs.enums.PhysicType;
 import com.langleon.dsobuildsim.buffs.enums.TonicType;
@@ -8,22 +9,15 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class BuffFactoryTest {
 
     private BuffFactory buffFactory;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/gamedata/buffs.json")))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            BuffConfig buffConfig = objectMapper.readValue(reader, BuffConfig.class);
-            buffFactory = new BuffFactory(buffConfig);
-        }
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        buffFactory = new BuffFactory(config);
     }
 
     @Test

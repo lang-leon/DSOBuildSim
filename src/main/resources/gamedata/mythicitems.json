@@ -1,5 +1,5 @@
 {
-  "spellweaverItems": {
+  "SPELLWEAVER": {
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",
@@ -76,7 +76,7 @@
       "set": "ANCESTRAL_GLORY"
     }
   },
-  "dragonknightItems": {
+  "DRAGONKNIGHT": {
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",
@@ -153,7 +153,7 @@
       "set": "ANCESTRAL_GLORY"
     }
   },
-  "rangerItems": {
+  "RANGER": {
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",
@@ -230,7 +230,7 @@
       "set": "ANCESTRAL_GLORY"
     }
   },
-  "steamMechanicusItems": {
+  "STEAM_MECHANICUS": {
     "RING_OF_OLD_GLORY": {
       "itemType": "RING_OF_OLD_GLORY",
       "name": "Ring of Old Glory",

@@ -3,7 +3,9 @@ package com.langleon.dsobuildsim.wisdomskilltree;
 import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomSkillTreeInstanceDTO;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroup;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkill;
+import org.springframework.stereotype.Component;
 
+@Component
 public class WisdomSkillTreeResolver {
 
     private final WisdomSkillTreeFactory wisdomFactory;

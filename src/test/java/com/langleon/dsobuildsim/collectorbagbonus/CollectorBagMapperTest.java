@@ -5,33 +5,27 @@ import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagCat
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagBonusType;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import tools.jackson.databind.ObjectMapper;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Objects;
 
 public class CollectorBagMapperTest {
 
-    private CollectorBagConfig config;
+    private CollectorBagConfig collectorBagConfig;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/collectorbagbonuses.json"))))
-        {
-            config = objectMapper.readValue(reader, CollectorBagConfig.class);
-        }
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        collectorBagConfig = config.collectorBagConfig();
     }
 
     @Test
     void shouldMapDefinitionToDTO()
     {
-        CollectorBagBonusDefinitionDTO dto = CollectorBagMapper.from(config.bonuses().get(CollectorBagBonusType.TRIAD_OF_LIFE));
+        CollectorBagBonusDefinitionDTO dto = CollectorBagMapper.from(collectorBagConfig.bonuses().get(CollectorBagBonusType.TRIAD_OF_LIFE));
 
         Assertions.assertEquals(CollectorBagBonusType.TRIAD_OF_LIFE, dto.type());
         Assertions.assertTrue(dto.stats().containsKey(StatType.HEALTH_POINTS));
@@ -42,7 +36,7 @@ public class CollectorBagMapperTest {
     @Test
     void shouldMapCategoryDefinitionToDTO()
     {
-        CollectorBagCategoryBonusDefinitionDTO dto = CollectorBagMapper.from(config.categoryBonuses().get(CollectorBagCategory.DRAGON_SPAWN), config);
+        CollectorBagCategoryBonusDefinitionDTO dto = CollectorBagMapper.from(collectorBagConfig.categoryBonuses().get(CollectorBagCategory.DRAGON_SPAWN), collectorBagConfig);
 
         Assertions.assertEquals(3, dto.bonuses().size());
         Assertions.assertEquals(CollectorBagBonusType.TRIAD_OF_LIFE, dto.bonuses().getFirst().type());

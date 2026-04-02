@@ -1,34 +1,30 @@
 package com.langleon.dsobuildsim.dragonstones;
 
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.common.StatType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Map;
-import java.util.Objects;
 
 public class DragonStoneMapperTest {
 
-    private DragonStoneConfig config;
+    private Map<DragonStoneType, DragonStoneDefinition> dragonStones;
 
     @BeforeEach
-    void setup() throws IOException {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/dragonstones.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            config = objectMapper.readValue(reader, DragonStoneConfig.class);
-        }
+    void setup()
+    {
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        dragonStones = config.dragonStones();
     }
 
     @Test
     void shouldMapDragonStoneDefinitionToDragonStoneDTO()
     {
-        DragonStoneDefinitionDTO dto = DragonStoneMapper.from(config.dragonStones().get(DragonStoneType.POWERSTONE));
+        DragonStoneDefinitionDTO dto = DragonStoneMapper.from(dragonStones.get(DragonStoneType.POWERSTONE));
 
         Map<Integer, Map<StatType, Double>> statsPerTier = Map.of(
                 3, Map.of(StatType.HEALTH_POINTS, 0.025),

@@ -1,7 +1,8 @@
 package com.langleon.dsobuildsim.pets;
 
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.pets.dto.PetInstanceDTO;
-import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.pets.enums.PetType;
 import com.langleon.dsobuildsim.pets.enums.PetUpgradeType;
@@ -9,23 +10,16 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Map;
-import java.util.Objects;
 
 public class PetFactoryTest {
     private PetFactory petFactory;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/pets.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            PetConfig petConfig = objectMapper.readValue(reader, PetConfig.class);
-            petFactory = new PetFactory(petConfig);
-        }
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        petFactory = new PetFactory(config);
     }
 
     @Test

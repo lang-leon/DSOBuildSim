@@ -1,0 +1,17 @@
+{
+  "normalUpgradeCosts": {
+    "2": 5,
+    "3": 25,
+    "4": 50
+  },
+  "silverCatUpgradeCosts": {
+    "2": 50,
+    "3": 75,
+    "4": 100
+  },
+  "gildedCatUpgradeCosts": {
+    "2": 100,
+    "3": 150,
+    "4": 200
+  }
+}

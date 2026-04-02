@@ -8,28 +8,29 @@ import com.langleon.dsobuildsim.collectorbagbonus.dto.instance.CollectorBagCateg
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagBonusType;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagTier;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+@Component
 public class CollectorBagFactory {
 
-    private final EnumMap<CollectorBagBonusType, CollectorBagBonusDefinition> bonusConfig;
-    private final EnumMap<CollectorBagCategory, CollectorBagCategoryBonusDefinition> categoryConfig;
+    private final CollectorBagConfig config;
 
-    public CollectorBagFactory(CollectorBagConfig bonusConfig) {
-        this.bonusConfig = new EnumMap<>(bonusConfig.bonuses());
-        this.categoryConfig = new EnumMap<>(bonusConfig.categoryBonuses());
+    public CollectorBagFactory(GameDataConfig config) {
+        this.config = config.collectorBagConfig();
     }
 
     public CollectorBagBonus createCollectorBagBonus(CollectorBagBonusType type)
     {
-        CollectorBagBonusDefinition definition = bonusConfig.get(type);
+        CollectorBagBonusDefinition definition = config.bonuses().get(type);
         return new CollectorBagBonus(type, definition.stats());
     }
 
     public CollectorBagCategoryBonus createCollectorBagCategoryBonus(CollectorBagCategory category, CollectorBagTier tier)
     {
-        CollectorBagCategoryBonusDefinition definition = categoryConfig.get(category);
+        CollectorBagCategoryBonusDefinition definition = config.categoryBonuses().get(category);
         List<CollectorBagBonus> bonuses = new ArrayList<>();
         for (int i=0; i<tier.getTier(); i++)
         {

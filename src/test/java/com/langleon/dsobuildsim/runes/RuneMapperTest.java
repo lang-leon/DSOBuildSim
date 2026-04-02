@@ -1,6 +1,7 @@
 package com.langleon.dsobuildsim.runes;
 
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.runes.dto.RuneDefinitionDTO;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
@@ -8,30 +9,23 @@ import com.langleon.dsobuildsim.runes.enums.RuneType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Map;
-import java.util.Objects;
 
 public class RuneMapperTest {
     
-    private RuneConfig runeConfig;
+    private Map<RuneType, RuneDefinition> runes;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/runes.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            runeConfig = objectMapper.readValue(reader, RuneConfig.class);
-        }
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        runes = config.runes();
     }
 
     @Test
     void shouldMapRuneDefinitionToRuneDTO()
     {
-        RuneDefinitionDTO runeDTO = RuneMapper.from(runeConfig.runes().get(RuneType.VIGOR));
+        RuneDefinitionDTO runeDTO = RuneMapper.from(runes.get(RuneType.VIGOR));
         Map<Integer, Map<StatType, Double>> stats = Map.of(
                 1, Map.of(StatType.DAMAGE, 0.013),
                 2, Map.of(StatType.DAMAGE, 0.026),

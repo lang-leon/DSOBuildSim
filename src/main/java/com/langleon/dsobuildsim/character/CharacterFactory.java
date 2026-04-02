@@ -20,11 +20,13 @@ import com.langleon.dsobuildsim.sets.SetFactory;
 import com.langleon.dsobuildsim.sets.SetInstance;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeResolver;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class CharacterFactory {
 
     private final RuneFactory runeFactory;

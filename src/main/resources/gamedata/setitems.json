@@ -1,5 +1,5 @@
 {
-  "spellweaverItems": {
+  "SPELLWEAVER": {
     "ALLIANCE_AMULET": {
       "itemType": "ALLIANCE_AMULET",
       "name": "Resolve of the Alliance",
@@ -3293,7 +3293,7 @@
       "set": "SOUL_DESTRUCTION"
     }
   },
-  "dragonknightItems": {
+  "DRAGONKNIGHT": {
     "SOUL_DESTRUCTION_AMULET": {
       "itemType": "SOUL_DESTRUCTION_AMULET",
       "name": "Soul Destruction Necklace",
@@ -3328,7 +3328,7 @@
       "set": "SOUL_DESTRUCTION"
     }
   },
-  "rangerItems": {
+  "RANGER": {
     "SOUL_DESTRUCTION_AMULET": {
       "itemType": "SOUL_DESTRUCTION_AMULET",
       "name": "Soul Destruction Necklace",
@@ -3363,7 +3363,7 @@
       "set": "SOUL_DESTRUCTION"
     }
   },
-  "steamMechanicusItems": {
+  "STEAM_MECHANICUS": {
     "SOUL_DESTRUCTION_AMULET": {
       "itemType": "SOUL_DESTRUCTION_AMULET",
       "name": "Soul Destruction Necklace",
