@@ -2,23 +2,21 @@ package com.langleon.dsobuildsim.items.core;
 
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.enchantments.EnchantmentFactory;
-import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.gems.GemFactory;
-import com.langleon.dsobuildsim.gems.dto.AbstractGemInstanceDTO;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
 import com.langleon.dsobuildsim.items.dto.ItemInstanceDTO;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
-import com.langleon.dsobuildsim.gems.Gem;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
 import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
+import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class ItemResolver {
 
     private final ItemFactory itemFactory;

@@ -1,5 +1,5 @@
 {
-  "spellweaverSets":
+  "SPELLWEAVER":
   {
     "AMMONS_GLEAM": {
       "setType": "AMMONS_GLEAM",
@@ -1171,7 +1171,7 @@
       }
     }
   },
-  "dragonknightSets":
+  "DRAGONKNIGHT":
   {
     "ANCESTRAL_GLORY": {
       "setType": "ANCESTRAL_GLORY",
@@ -1225,7 +1225,7 @@
       }
     }
   },
-  "rangerSets":
+  "RANGER":
   {
     "ANCESTRAL_GLORY": {
       "setType": "ANCESTRAL_GLORY",
@@ -1279,7 +1279,7 @@
       }
     }
   },
-  "steamMechanicusSets":
+  "STEAM_MECHANICUS":
   {
     "ANCESTRAL_GLORY": {
       "setType": "ANCESTRAL_GLORY",

@@ -1,34 +1,25 @@
 package com.langleon.dsobuildsim.jewels;
 
 import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.jewels.dto.JewelInstanceDTO;
 import com.langleon.dsobuildsim.jewels.dto.JewelTrinketDTO;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class JewelFactory {
-    private final JewelConfig config;
+    private final Map<CharacterClass, Map<JewelType, JewelDefinition>> jewels;
 
-    public JewelFactory(JewelConfig config) {
-        this.config = config;
-    }
-
-    public int getUpgradeCost(Jewel jewel)
-    {
-        return this.config.upgradeCosts().get(jewel.getTier());
+    public JewelFactory(GameDataConfig config) {
+        this.jewels = config.jewels();
     }
 
     public Jewel createJewel(JewelType jewelType, CharacterClass characterClass, int tier)
     {
-        JewelDefinition jewelDefinition = null;
-        switch (characterClass)
-        {
-            case SPELLWEAVER -> jewelDefinition = this.config.spellweaverJewels().get(jewelType);
-            case DRAGONKNIGHT -> jewelDefinition = this.config.dragonknightJewels().get(jewelType);
-            case RANGER -> jewelDefinition = this.config.rangerJewels().get(jewelType);
-            case STEAM_MECHANICUS -> jewelDefinition = this.config.steamMechanicusJewels().get(jewelType);
-        }
+        JewelDefinition jewelDefinition = this.jewels.get(characterClass).get(jewelType);
         Map<Integer, String> description = jewelDefinition.descriptionPerTier();
         if (description.get(tier) == null)
             throw new IllegalArgumentException("Invalid jewel tier: " + tier + "!");
