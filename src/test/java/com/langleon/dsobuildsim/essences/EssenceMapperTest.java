@@ -1,33 +1,29 @@
 package com.langleon.dsobuildsim.essences;
 
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.essences.dto.EssenceDefinitionDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Map;
-import java.util.Objects;
 
 public class EssenceMapperTest {
 
-    private EssenceConfig essenceConfig;
+    private Map<EssenceType, EssenceDefinition> essences;
 
     @BeforeEach
-    void setup() throws IOException {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/essences.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            essenceConfig = objectMapper.readValue(reader, EssenceConfig.class);
-        }
+    void setup()
+    {
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        essences = config.essences();
     }
 
     @Test
     void shouldMapEssenceDefinitionToEssenceDTO()
     {
-        EssenceDefinitionDTO essenceDTO = EssenceMapper.from(essenceConfig.essences().get(EssenceType.BLAZING));
+        EssenceDefinitionDTO essenceDTO = EssenceMapper.from(essences.get(EssenceType.BLAZING));
 
         Assertions.assertEquals(EssenceType.BLAZING, essenceDTO.essenceType());
         Assertions.assertEquals("Blazing Essence of Vigor", essenceDTO.name());

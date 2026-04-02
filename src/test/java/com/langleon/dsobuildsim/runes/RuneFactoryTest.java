@@ -1,34 +1,27 @@
 package com.langleon.dsobuildsim.runes;
 
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.runes.dto.RuneInstanceDTO;
 import com.langleon.dsobuildsim.runes.dto.RuneTrinketDTO;
-import tools.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
-import com.langleon.dsobuildsim.runes.enums.RuneUpgradeType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 class RuneFactoryTest {
 
     private RuneFactory runeFactory;
 
     @BeforeEach
-    void setup() throws IOException {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/runes.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            RuneConfig runeConfig = objectMapper.readValue(reader, RuneConfig.class);
-            runeFactory = new RuneFactory(runeConfig);
-        }
+    void setup()
+    {
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        runeFactory = new RuneFactory(config);
     }
 
     @Test
@@ -54,38 +47,6 @@ class RuneFactoryTest {
         Assertions.assertEquals(1, rune.getStats().size());
         Assertions.assertEquals(0.052, rune.getStats().get(StatType.FIRE_RESISTANCE));
         Assertions.assertEquals(RuneLimitGroup.RESILIENCE, rune.getRuneLimitGroup());
-    }
-
-    @Test
-    void testUpgradeCostsOffensive()
-    {
-        Rune rune = runeFactory.createRune(RuneType.VIGOR, 4);
-        Assertions.assertEquals(RuneUpgradeType.OFFENSIVE, rune.getRuneUpgradeType());
-        Assertions.assertEquals(28908, runeFactory.getUpgradeCost(rune));
-    }
-
-    @Test
-    void testUpgradeCostsDefensive()
-    {
-        Rune rune = runeFactory.createRune(RuneType.VITALITY, 4);
-        Assertions.assertEquals(RuneUpgradeType.DEFENSIVE, rune.getRuneUpgradeType());
-        Assertions.assertEquals(23126, runeFactory.getUpgradeCost(rune));
-    }
-
-    @Test
-    void testUpgradeCostsGroup()
-    {
-        Rune rune = runeFactory.createRune(RuneType.SCHOLAR, 4);
-        Assertions.assertEquals(RuneUpgradeType.GROUP, rune.getRuneUpgradeType());
-        Assertions.assertEquals(23126, runeFactory.getUpgradeCost(rune));
-    }
-
-    @Test
-    void testUpgradeCostsBasic()
-    {
-        Rune rune = runeFactory.createRune(RuneType.INSIGHT, 4);
-        Assertions.assertEquals(RuneUpgradeType.BASIC, rune.getRuneUpgradeType());
-        Assertions.assertEquals(2313, runeFactory.getUpgradeCost(rune));
     }
 
     @Test

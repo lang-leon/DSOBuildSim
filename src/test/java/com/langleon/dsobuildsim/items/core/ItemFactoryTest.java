@@ -1,7 +1,7 @@
 package com.langleon.dsobuildsim.items.core;
 
-import com.langleon.dsobuildsim.gamedata.LevelMultiplierTable;
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
@@ -11,51 +11,24 @@ import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItem;
-import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
 import com.langleon.dsobuildsim.items.setitems.SetItem;
-import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItem;
-import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class ItemFactoryTest {
 
     private ItemFactory itemFactory;
 
     @BeforeEach
-    void setup() throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        MythicItemConfig mythicItemConfig;
-        UniqueItemConfig uniqueItemConfig;
-        SetItemConfig setItemConfig;
-        LevelMultiplierTable levelMultiplierTable;
-
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/mythicitems.json"))))
-        {
-            mythicItemConfig = objectMapper.readValue(reader, MythicItemConfig.class);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/uniqueitems.json"))))
-        {
-            uniqueItemConfig = objectMapper.readValue(reader, UniqueItemConfig.class);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/setitems.json"))))
-        {
-            setItemConfig = objectMapper.readValue(reader, SetItemConfig.class);
-        }
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/levelMultiplierTable.json"))))
-        {
-            levelMultiplierTable = objectMapper.readValue(reader, LevelMultiplierTable.class);
-        }
-
-        itemFactory = new ItemFactory(mythicItemConfig, uniqueItemConfig, setItemConfig, levelMultiplierTable);
+    void setup()
+    {
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        itemFactory = new ItemFactory(config);
     }
 
     @Test

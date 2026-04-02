@@ -1,28 +1,21 @@
 package com.langleon.dsobuildsim.essences;
 
 import com.langleon.dsobuildsim.essences.dto.EssenceInstanceDTO;
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Objects;
 
 public class EssenceFactoryTest {
 
     private EssenceFactory essenceFactory;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/essences.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            EssenceConfig essenceConfig = objectMapper.readValue(reader, EssenceConfig.class);
-            essenceFactory = new EssenceFactory(essenceConfig);
-        }
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        essenceFactory = new EssenceFactory(config);
     }
 
     @Test

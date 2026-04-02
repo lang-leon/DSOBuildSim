@@ -1,33 +1,30 @@
 package com.langleon.dsobuildsim.jewels;
 
-import tools.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Map;
-import java.util.Objects;
 
 public class JewelMapperTest {
-    private JewelConfig jewelConfig;
+    private Map<CharacterClass, Map<JewelType, JewelDefinition>> jewelConfig;
 
     @BeforeEach
-    void setup() throws IOException {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/gamedata/jewels.json"))))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            jewelConfig = objectMapper.readValue(reader, JewelConfig.class);
-        }
+    void setup()
+    {
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        jewelConfig = config.jewels();
     }
 
     @Test
     void shouldMapJewelDefinitionToJewelDTO()
     {
-        JewelDefinitionDTO jewelDTO = JewelMapper.from(jewelConfig.spellweaverJewels().get(JewelType.VIGOR));
+        JewelDefinitionDTO jewelDTO = JewelMapper.from(jewelConfig.get(CharacterClass.SPELLWEAVER).get(JewelType.VIGOR));
 
         Map<Integer, Map<StatType, Double>> statsPerTier = Map.of(
                 1, Map.of(StatType.DAMAGE, 0.02),
