@@ -171,34 +171,38 @@ public class Character {
         Map<StatType, Double> baseStats = this.calculateTotalBaseStats();
         Map<StatType, Double> relativeBonusStats = this.calculateTotalRelativeStats();
 
+        //temporary fix for wisdomskilltree coin drop size
+        relativeBonusStats.merge(StatType.COIN_DROP_BONUS, baseStats.get(StatType.COIN_DROP_BONUS), Double::sum);
+        baseStats.remove(StatType.COIN_DROP_BONUS);
+
         if (this.equippedItems.containsKey(ItemSlot.ONE_HAND_WEAPON))
         {
             Double absoluteOneHandDamage = baseStats.getOrDefault(StatType.ONE_HAND_DAMAGE, 0.0);
-            baseStats.remove(StatType.ONE_HAND_DAMAGE);
             Double relativeOneHandDamage = relativeBonusStats.getOrDefault(StatType.ONE_HAND_DAMAGE, 0.0);
-            relativeBonusStats.remove(StatType.ONE_HAND_DAMAGE);
             double bonusOneHandDamage = this.equippedItems.get(ItemSlot.ONE_HAND_WEAPON).calculateTotalStats().get(StatType.DAMAGE) * relativeOneHandDamage;
             bonusOneHandDamage += absoluteOneHandDamage * (1 + relativeOneHandDamage);
             baseStats.merge(StatType.DAMAGE, bonusOneHandDamage, Double::sum);
 
             Double absoluteOneHandAttackSpeed = baseStats.getOrDefault(StatType.ONE_HAND_ATTACK_SPEED, 0.0);
-            baseStats.remove(StatType.ONE_HAND_ATTACK_SPEED);
             baseStats.merge(StatType.ATTACK_SPEED, absoluteOneHandAttackSpeed, Double::sum);
         }
         else if (this.equippedItems.containsKey(ItemSlot.TWO_HAND_WEAPON))
         {
             Double absoluteTwoHandDamage = baseStats.getOrDefault(StatType.TWO_HAND_DAMAGE, 0.0);
-            baseStats.remove(StatType.TWO_HAND_DAMAGE);
             Double relativeTwoHandDamage = relativeBonusStats.getOrDefault(StatType.TWO_HAND_DAMAGE, 0.0);
-            relativeBonusStats.remove(StatType.TWO_HAND_DAMAGE);
             double bonusTwoHandDamage = this.equippedItems.get(ItemSlot.TWO_HAND_WEAPON).calculateTotalStats().get(StatType.DAMAGE) * relativeTwoHandDamage;
             bonusTwoHandDamage += absoluteTwoHandDamage * (1 + relativeTwoHandDamage);
             baseStats.merge(StatType.DAMAGE, bonusTwoHandDamage, Double::sum);
 
             Double absoluteTwoHandAttackSpeed = baseStats.getOrDefault(StatType.TWO_HAND_ATTACK_SPEED, 0.0);
-            baseStats.remove(StatType.TWO_HAND_ATTACK_SPEED);
             baseStats.merge(StatType.ATTACK_SPEED, absoluteTwoHandAttackSpeed, Double::sum);
         }
+        baseStats.remove(StatType.TWO_HAND_ATTACK_SPEED);
+        baseStats.remove(StatType.TWO_HAND_DAMAGE);
+        relativeBonusStats.remove(StatType.TWO_HAND_DAMAGE);
+        baseStats.remove(StatType.ONE_HAND_ATTACK_SPEED);
+        baseStats.remove(StatType.ONE_HAND_DAMAGE);
+        relativeBonusStats.remove(StatType.ONE_HAND_DAMAGE);
 
         Map<StatType, Double> finalStats = new EnumMap<>(StatType.class);
 
