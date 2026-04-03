@@ -5,6 +5,7 @@ import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.gems.dto.*;
+import com.langleon.dsobuildsim.gems.enums.GemCategory;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.gems.enums.GemType;
 import org.junit.jupiter.api.Assertions;
@@ -61,7 +62,7 @@ class GemFactoryTest {
     @Test
     void shouldResolveGemFromGemDTO()
     {
-        GemInstanceDTO gemDTO = new GemInstanceDTO(GemType.RUBY, 16);
+        GemInstanceDTO gemDTO = new GemInstanceDTO(GemCategory.GEM, List.of(GemType.RUBY), 16);
 
         AbstractGem gem = gemFactory.fromDTO(gemDTO);
 
@@ -73,9 +74,9 @@ class GemFactoryTest {
     @Test
     void shouldResolveGemsFromGemDTOs()
     {
-        GemInstanceDTO gemDTO1 = new GemInstanceDTO(GemType.RUBY, 16);
-        GemInstanceDTO gemDTO2 = new GemInstanceDTO(GemType.AMETHYST, 16);
-        List<AbstractGemInstanceDTO> gemDTOs = List.of(gemDTO1, gemDTO2);
+        GemInstanceDTO gemDTO1 = new GemInstanceDTO(GemCategory.GEM, List.of(GemType.RUBY), 16);
+        GemInstanceDTO gemDTO2 = new GemInstanceDTO(GemCategory.GEM, List.of(GemType.AMETHYST), 16);
+        List<GemInstanceDTO> gemDTOs = List.of(gemDTO1, gemDTO2);
         List<AbstractGem> gems = gemFactory.fromDTOList(gemDTOs);
 
         Assertions.assertEquals(GemType.RUBY, gems.getFirst().getGemType());
@@ -89,7 +90,7 @@ class GemFactoryTest {
     @Test
     void shouldResolveOpalFromOpalDTO()
     {
-        OpalInstanceDTO opalDTO = new OpalInstanceDTO(GemType.RUBY, GemType.ONYX, GemType.AMETHYST, 16);
+        GemInstanceDTO opalDTO = new GemInstanceDTO(GemCategory.OPAL, List.of(GemType.RUBY, GemType.ONYX, GemType.AMETHYST), 16);
 
         AbstractGem opal = gemFactory.fromDTO(opalDTO);
 
@@ -101,9 +102,9 @@ class GemFactoryTest {
     @Test
     void shouldResolveOpalsFromOpalDTOs()
     {
-        OpalInstanceDTO opalDTO1 = new OpalInstanceDTO(GemType.RUBY, GemType.ONYX, GemType.AMETHYST, 16);
-        OpalInstanceDTO opalDTO2 = new OpalInstanceDTO(GemType.RUBY, GemType.ONYX, GemType.ZIRCON, 16);
-        List<AbstractGemInstanceDTO> opalDTOs = List.of(opalDTO1, opalDTO2);
+        GemInstanceDTO opalDTO1 = new GemInstanceDTO(GemCategory.OPAL, List.of(GemType.RUBY, GemType.ONYX, GemType.AMETHYST), 16);
+        GemInstanceDTO opalDTO2 = new GemInstanceDTO(GemCategory.OPAL, List.of(GemType.RUBY, GemType.ONYX, GemType.ZIRCON), 16);
+        List<GemInstanceDTO> opalDTOs = List.of(opalDTO1, opalDTO2);
         List<AbstractGem> opals = gemFactory.fromDTOList(opalDTOs);
 
         Assertions.assertEquals(GemType.OPAL, opals.getFirst().getGemType());

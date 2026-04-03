@@ -13,9 +13,8 @@ import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.essences.dto.EssenceInstanceDTO;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.gamedata.GameDataLoader;
-import com.langleon.dsobuildsim.gems.dto.AbstractGemInstanceDTO;
 import com.langleon.dsobuildsim.gems.dto.GemInstanceDTO;
-import com.langleon.dsobuildsim.gems.dto.OpalInstanceDTO;
+import com.langleon.dsobuildsim.gems.enums.GemCategory;
 import com.langleon.dsobuildsim.items.core.ItemResolver;
 import com.langleon.dsobuildsim.items.core.enums.ItemCategory;
 import com.langleon.dsobuildsim.items.dto.ItemInstanceDTO;
@@ -80,13 +79,13 @@ public class CharacterFactoryTest {
         CharacterDTO characterDTO = createCharacter();
         Character character = characterFactory.fromDTO(characterDTO);
         Map<StatType, Double> stats = character.calculateCharacterStats();
-        Assertions.assertEquals(1336439.430, stats.get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(1504828.096, stats.get(StatType.DAMAGE), 0.001);
         Assertions.assertEquals(4.456, stats.get(StatType.ATTACK_SPEED), 0.001);
         Assertions.assertEquals(401796.790, stats.get(StatType.CRIT_VALUE), 0.001);
         Assertions.assertEquals(100.000, stats.get(StatType.MANA), 0.001);
         Assertions.assertEquals(12.000, stats.get(StatType.MANA_PER_SECOND), 0.001);
         Assertions.assertEquals(13.132, stats.get(StatType.MOVEMENT_SPEED), 0.001);
-        Assertions.assertEquals(2958326.630, stats.get(StatType.HEALTH_POINTS), 0.001);
+        Assertions.assertEquals(4463101.283, stats.get(StatType.HEALTH_POINTS), 0.001);
         Assertions.assertEquals(9900.000, stats.get(StatType.HEALTH_PER_SECOND), 0.001);
         Assertions.assertEquals(319956.940, stats.get(StatType.BLOCK_VALUE), 0.001);
         Assertions.assertEquals(48945.961, stats.get(StatType.ARMOR_VALUE), 0.001);
@@ -114,7 +113,7 @@ public class CharacterFactoryTest {
         jewelTrinkets.add(new JewelTrinketDTO(List.of(new JewelInstanceDTO(JewelType.FOCUS, 5), new JewelInstanceDTO(JewelType.FOCUS, 5), new JewelInstanceDTO(JewelType.FOCUS, 5), new JewelInstanceDTO(JewelType.FOCUS, 5), new JewelInstanceDTO(JewelType.FOCUS, 5), new JewelInstanceDTO(JewelType.VIGOR, 5), new JewelInstanceDTO(JewelType.AMBIDEXTROUS_VIGOR, 5), new JewelInstanceDTO(JewelType.VITALITY, 5), new JewelInstanceDTO(JewelType.ENCOURAGEMENT, 5), new JewelInstanceDTO(JewelType.CONTRIBUTION, 5))));
         jewelTrinkets.add(new JewelTrinketDTO(List.of(new JewelInstanceDTO(JewelType.LASTING_HEALTH, 5), new JewelInstanceDTO(JewelType.CONVERSE, 5), new JewelInstanceDTO(JewelType.FLOWER, 5), new JewelInstanceDTO(JewelType.STRENUOUSNESS, 5), new JewelInstanceDTO(JewelType.FORTITUDE, 5), new JewelInstanceDTO(JewelType.PROLONGATION, 5), new JewelInstanceDTO(JewelType.REVIVAL_BOON, 5), new JewelInstanceDTO(JewelType.EASTER_FEVER, 5), new JewelInstanceDTO(JewelType.SCORCHING_RAY, 5), new JewelInstanceDTO(JewelType.PENT_UP_POWER, 5))));
 
-        DragonCrestTrinketDTO dragonCrest = new DragonCrestTrinketDTO(List.of(new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 5), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 5), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 3), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 3), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 3)));
+        DragonCrestTrinketDTO dragonCrest = new DragonCrestTrinketDTO(List.of(new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 5), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 5), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 5), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 3), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 3)));
 
         PetInstanceDTO pet = new PetInstanceDTO(PetType.THE_SOUL_OF_DRAGAN_DOLL, 5);
         EssenceInstanceDTO essence = new EssenceInstanceDTO(EssenceType.VIGOR, 3);
@@ -129,33 +128,40 @@ public class CharacterFactoryTest {
         List<EnchantmentDTO> blockEnchants = List.of(blockEnchant, blockEnchant, blockEnchant, blockEnchant);
         EnchantmentDTO msEnchant = new EnchantmentDTO(StatType.MOVEMENT_SPEED, 0.22450);
         List<EnchantmentDTO> bootEnchants = List.of(msEnchant, msEnchant, dmgEnchant, dmgEnchant);
+        EnchantmentDTO hpEnchant2 = new EnchantmentDTO(StatType.HEALTH_POINTS, 0.46559);
+        List<EnchantmentDTO> hpEnchants2 = List.of(hpEnchant2, hpEnchant2, hpEnchant2, hpEnchant2);
+        EnchantmentDTO dmgEnchant2 = new EnchantmentDTO(StatType.DAMAGE, 0.47612);
+        List<EnchantmentDTO> dmgEnchants2 = List.of(dmgEnchant2, dmgEnchant2, dmgEnchant2, dmgEnchant2);
 
-        GemInstanceDTO ruby = new GemInstanceDTO(GemType.RUBY, 17);
-        List<AbstractGemInstanceDTO> rubies = List.of(ruby, ruby, ruby, ruby, ruby, ruby, ruby, ruby, ruby, ruby);
-        GemInstanceDTO onyx = new GemInstanceDTO(GemType.ONYX, 17);
-        List<AbstractGemInstanceDTO> onyxes = List.of(onyx, onyx, onyx, onyx, onyx, onyx, onyx, onyx, onyx, onyx);
-        GemInstanceDTO amethyst = new GemInstanceDTO(GemType.AMETHYST, 17);
-        List<AbstractGemInstanceDTO> amethysts = List.of(amethyst, amethyst, amethyst, amethyst, amethyst, amethyst, amethyst, amethyst, amethyst, amethyst);
-        GemInstanceDTO emerald = new GemInstanceDTO(GemType.EMERALD, 17);
-        List<AbstractGemInstanceDTO> emeralds = List.of(emerald, emerald, emerald, emerald, emerald, emerald, emerald, emerald, emerald, emerald);
-        GemInstanceDTO rhodolite = new GemInstanceDTO(GemType.RHODOLITE, 17);
-        List<AbstractGemInstanceDTO> boots = List.of(rhodolite, emerald, onyx, onyx, onyx, onyx, onyx, onyx, onyx, onyx);
-        OpalInstanceDTO opal = new OpalInstanceDTO(GemType.RUBY, GemType.ONYX, GemType.EMERALD, 17);
-        List<AbstractGemInstanceDTO> opals = List.of(opal, opal, opal, opal, opal, opal, opal, opal, opal, opal);
+        GemInstanceDTO ruby = new GemInstanceDTO(GemCategory.GEM, List.of(GemType.RUBY), 17);
+        List<GemInstanceDTO> rubies = List.of(ruby, ruby, ruby, ruby, ruby, ruby, ruby, ruby, ruby, ruby);
+        GemInstanceDTO onyx = new GemInstanceDTO(GemCategory.GEM, List.of(GemType.ONYX), 17);
+        List<GemInstanceDTO> onyxes = List.of(onyx, onyx, onyx, onyx, onyx, onyx, onyx, onyx, onyx, onyx);
+        GemInstanceDTO amethyst = new GemInstanceDTO(GemCategory.GEM, List.of(GemType.AMETHYST), 17);
+        List<GemInstanceDTO> amethysts = List.of(amethyst, amethyst, amethyst, amethyst, amethyst, amethyst, amethyst, amethyst, amethyst, amethyst);
+        GemInstanceDTO emerald = new GemInstanceDTO(GemCategory.GEM, List.of(GemType.EMERALD), 17);
+        List<GemInstanceDTO> emeralds = List.of(emerald, emerald, emerald, emerald, emerald, emerald, emerald, emerald, emerald, emerald);
+        GemInstanceDTO rhodolite = new GemInstanceDTO(GemCategory.GEM, List.of(GemType.RHODOLITE), 17);
+        List<GemInstanceDTO> boots = List.of(rhodolite, emerald, onyx, onyx, onyx, onyx, onyx, onyx, onyx, onyx);
+        GemInstanceDTO opal = new GemInstanceDTO(GemCategory.OPAL, List.of(GemType.RUBY, GemType.ONYX, GemType.EMERALD), 17);
+        List<GemInstanceDTO> opals = List.of(opal, opal, opal, opal, opal, opal, opal, opal, opal, opal);
 
         Map<ItemSlot, ItemInstanceDTO> items = new HashMap<>();
-        items.put(ItemSlot.AMULET, new ItemInstanceDTO(ItemCategory.SET, SetItemType.WINTER_AMULET, 145, Map.of(StatType.DAMAGE, 1644.883, StatType.MOVEMENT_SPEED, 0.489, StatType.HEALTH_POINTS, 24760.80), amethysts, hpEnchants, Map.of(), List.of()));
-        items.put(ItemSlot.CLOAK, new ItemInstanceDTO(ItemCategory.MYTHIC, MythicItemType.ANCESTRAL_GLORY_CLOAK, 145, Map.of(StatType.DAMAGE, 1891.513, StatType.ATTACK_SPEED, 0.06, StatType.HEALTH_POINTS, 16507.200), rubies, dmgEnchants, Map.of(), List.of()));
-        items.put(ItemSlot.BELT, new ItemInstanceDTO(ItemCategory.UNIQUE, UniqueItemType.BELT_OF_ZEAL, 145, Map.of(StatType.DAMAGE, 1630.885, StatType.HEALTH_POINTS, 20072.654, StatType.RESISTANCE_VALUE, 1679.873), rubies, dmgEnchants, Map.of(), List.of(new EnchantmentDTO(StatType.DAMAGE, 0.22384))));
-        items.put(ItemSlot.RING1, new ItemInstanceDTO(ItemCategory.MYTHIC, MythicItemType.ANCESTRAL_GLORY_RING, 145, Map.of(StatType.DAMAGE, 1891.513, StatType.CRIT_VALUE, 1753.505, StatType.HEALTH_POINTS, 24760.80), amethysts, hpEnchants, Map.of(), List.of()));
-        items.put(ItemSlot.RING2, new ItemInstanceDTO(ItemCategory.MYTHIC, MythicItemType.ANCESTRAL_GLORY_RING, 145, Map.of(StatType.DAMAGE, 1891.513, StatType.CRIT_VALUE, 1753.505, StatType.HEALTH_POINTS, 24760.80), opals, dmgEnchants, Map.of(), List.of()));
-        items.put(ItemSlot.HELMET, new ItemInstanceDTO(ItemCategory.SET, SetItemType.STELLAR_WALKER_HELMET, 145, Map.of(StatType.DAMAGE, 1426.117, StatType.CRIT_VALUE, 1298.723, StatType.HEALTH_POINTS, 19630.458), amethysts, hpEnchants, Map.of(), List.of()));
-        items.put(ItemSlot.SHOULDERS, new ItemInstanceDTO(ItemCategory.SET, SetItemType.STELLAR_WALKER_SHOULDERS, 145, Map.of(StatType.DAMAGE, 1639.564, StatType.CRIT_VALUE, 1361.277, StatType.HEALTH_POINTS, 15625.218), emeralds, blockEnchants, Map.of(), List.of()));
-        items.put(ItemSlot.TORSO, new ItemInstanceDTO(ItemCategory.SET, SetItemType.WINTER_TORSO, 145, Map.of(StatType.ARMOR_VALUE, 1648.043, StatType.ANDERMAGIC_RESISTANCE, 6225.969, StatType.BLOCK_VALUE, 1589.428), emeralds, blockEnchants, Map.of(), List.of()));
-        items.put(ItemSlot.GLOVES, new ItemInstanceDTO(ItemCategory.SET, SetItemType.WINTER_GLOVES, 145, Map.of(StatType.DAMAGE, 1644.883, StatType.ATTACK_SPEED, 0.055, StatType.CRIT_VALUE, 1753.505), onyxes, critEnchants, Map.of(), List.of()));
-        items.put(ItemSlot.BOOTS, new ItemInstanceDTO(ItemCategory.SET, SetItemType.WINTER_BOOTS, 145, Map.of(StatType.DAMAGE, 1644.883, StatType.MOVEMENT_SPEED, 1.221, StatType.CRIT_VALUE, 1401.911), boots, bootEnchants, Map.of(), List.of()));
-        items.put(ItemSlot.WEAPON_ADORNMENT, new ItemInstanceDTO(ItemCategory.UNIQUE, UniqueItemType.SIGRISMARRS_ADORNMENT, 145, Map.of(StatType.DAMAGE, 1870.52, StatType.CRIT_VALUE, 2100.146), rubies, dmgEnchants, Map.of(StatType.ATTACK_SPEED, 0.060), List.of()));
-        items.put(ItemSlot.TWO_HAND_WEAPON, new ItemInstanceDTO(ItemCategory.UNIQUE, UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED, 145, Map.of(StatType.DAMAGE, 26326.278, StatType.CRIT_VALUE, 3050.894), rubies, dmgEnchants, Map.of(StatType.ATTACK_SPEED, 0.102), List.of()));
+        items.put(ItemSlot.AMULET, new ItemInstanceDTO(ItemCategory.SET, SetItemType.WINTER_AMULET.name(), 145, Map.of(StatType.DAMAGE, 1644.883, StatType.MOVEMENT_SPEED, 0.489, StatType.HEALTH_POINTS, 24760.80), amethysts, hpEnchants, Map.of(), List.of()));
+        items.put(ItemSlot.CLOAK, new ItemInstanceDTO(ItemCategory.MYTHIC, MythicItemType.ANCESTRAL_GLORY_CLOAK.name(), 145, Map.of(StatType.DAMAGE, 1891.513, StatType.ATTACK_SPEED, 0.06, StatType.HEALTH_POINTS, 16507.200), rubies, dmgEnchants, Map.of(), List.of()));
+        items.put(ItemSlot.BELT, new ItemInstanceDTO(ItemCategory.UNIQUE, UniqueItemType.BELT_OF_ZEAL.name(), 145, Map.of(StatType.DAMAGE, 1630.885, StatType.HEALTH_POINTS, 20072.654, StatType.RESISTANCE_VALUE, 1679.873), rubies, dmgEnchants, Map.of(), List.of(new EnchantmentDTO(StatType.DAMAGE, 0.22384))));
+        items.put(ItemSlot.RING1, new ItemInstanceDTO(ItemCategory.MYTHIC, MythicItemType.ANCESTRAL_GLORY_RING.name(), 145, Map.of(StatType.DAMAGE, 1891.513, StatType.CRIT_VALUE, 1753.505, StatType.HEALTH_POINTS, 24760.80), amethysts, hpEnchants, Map.of(), List.of()));
+        items.put(ItemSlot.RING2, new ItemInstanceDTO(ItemCategory.MYTHIC, MythicItemType.ANCESTRAL_GLORY_RING.name(), 145, Map.of(StatType.DAMAGE, 1891.513, StatType.CRIT_VALUE, 1753.505, StatType.HEALTH_POINTS, 24760.80), opals, dmgEnchants, Map.of(), List.of()));
+        items.put(ItemSlot.HELMET, new ItemInstanceDTO(ItemCategory.SET, SetItemType.STELLAR_WALKER_HELMET.name(), 145, Map.of(StatType.DAMAGE, 1426.117, StatType.CRIT_VALUE, 1298.723, StatType.HEALTH_POINTS, 19630.458), amethysts, hpEnchants, Map.of(), List.of()));
+        items.put(ItemSlot.SHOULDERS, new ItemInstanceDTO(ItemCategory.SET, SetItemType.STELLAR_WALKER_SHOULDERS.name(), 145, Map.of(StatType.DAMAGE, 1639.564, StatType.CRIT_VALUE, 1361.277, StatType.HEALTH_POINTS, 15625.218), emeralds, blockEnchants, Map.of(), List.of()));
+        items.put(ItemSlot.TORSO, new ItemInstanceDTO(ItemCategory.SET, SetItemType.WINTER_TORSO.name(), 145, Map.of(StatType.ARMOR_VALUE, 1648.043, StatType.ANDERMAGIC_RESISTANCE, 6225.969, StatType.BLOCK_VALUE, 1589.428), emeralds, blockEnchants, Map.of(), List.of()));
+        items.put(ItemSlot.GLOVES, new ItemInstanceDTO(ItemCategory.SET, SetItemType.WINTER_GLOVES.name(), 145, Map.of(StatType.DAMAGE, 1644.883, StatType.ATTACK_SPEED, 0.055, StatType.CRIT_VALUE, 1753.505), onyxes, critEnchants, Map.of(), List.of()));
+        items.put(ItemSlot.BOOTS, new ItemInstanceDTO(ItemCategory.SET, SetItemType.WINTER_BOOTS.name(), 145, Map.of(StatType.DAMAGE, 1644.883, StatType.MOVEMENT_SPEED, 1.221, StatType.CRIT_VALUE, 1401.911), boots, bootEnchants, Map.of(), List.of()));
+        items.put(ItemSlot.WEAPON_ADORNMENT, new ItemInstanceDTO(ItemCategory.UNIQUE, UniqueItemType.SIGRISMARRS_ADORNMENT.name(), 145, Map.of(StatType.DAMAGE, 1870.52, StatType.CRIT_VALUE, 2100.146), rubies, dmgEnchants, Map.of(StatType.ATTACK_SPEED, 0.060), List.of()));
+        items.put(ItemSlot.TWO_HAND_WEAPON, new ItemInstanceDTO(ItemCategory.UNIQUE, UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED.name(), 145, Map.of(StatType.DAMAGE, 26326.278, StatType.CRIT_VALUE, 3050.894), rubies, dmgEnchants, Map.of(StatType.ATTACK_SPEED, 0.102), List.of()));
+        items.put(ItemSlot.SOUL_COMPANION_AMULET, new ItemInstanceDTO(ItemCategory.SET, SetItemType.SOUL_DESTRUCTION_AMULET.name(), 100, Map.of(StatType.DAMAGE, 847.04), rubies, dmgEnchants2, Map.of(), List.of()));
+        items.put(ItemSlot.SOUL_COMPANION_BELT, new ItemInstanceDTO(ItemCategory.SET, SetItemType.SOUL_DESTRUCTION_BELT.name(), 100, Map.of(StatType.HEALTH_POINTS, 14386.028), amethysts, hpEnchants2, Map.of(), List.of()));
+        items.put(ItemSlot.SOUL_COMPANION_CLOAK, new ItemInstanceDTO(ItemCategory.SET, SetItemType.SOUL_DESTRUCTION_CLOAK.name(), 100, Map.of(StatType.HEALTH_POINTS, 14386.028), amethysts, hpEnchants2, Map.of(), List.of()));
 
         EnumMap<WisdomGroupType, WisdomGroupInstanceDTO> wisdomGroups = new EnumMap<>(WisdomGroupType.class);
 
@@ -220,6 +226,7 @@ public class CharacterFactoryTest {
         collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.FREE_SPIRITS, CollectorBagTier.TIER3));
         collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.AUTOMATONS, CollectorBagTier.TIER2));
         collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.LUCKY_CATS, CollectorBagTier.TIER0));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.ALCHEMY_CIRCLES, CollectorBagTier.TIER1));
         collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.SHADOW_SOULS, CollectorBagTier.TIER2));
 
 

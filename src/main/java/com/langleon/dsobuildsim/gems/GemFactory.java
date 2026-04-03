@@ -31,20 +31,20 @@ public class GemFactory {
         return new Opal(tier, Map.of(gemDefinition1.statType(), gemDefinition1.statsPerTier().get(tier)*0.75, gemDefinition2.statType(), gemDefinition2.statsPerTier().get(tier)*0.75 , gemDefinition3.statType(), gemDefinition3.statsPerTier().get(tier)*0.75));
     }
 
-    public AbstractGem fromDTO(AbstractGemInstanceDTO dto)
+    public AbstractGem fromDTO(GemInstanceDTO dto)
     {
-        if (dto instanceof GemInstanceDTO(GemType gemType, int tier))
-        {
-            return createGem(gemType, tier);
-        }
-        if (dto instanceof OpalInstanceDTO(GemType gemType1, GemType gemType2, GemType gemType3, int tier))
-        {
-            return createOpal(gemType1, gemType2, gemType3, tier);
+        switch (dto.gemCategory()){
+            case GEM -> {
+                return createGem(dto.gemType().getFirst(), dto.tier());
+            }
+            case OPAL -> {
+                return createOpal(dto.gemType().getFirst(), dto.gemType().get(1), dto.gemType().get(2), dto.tier());
+            }
         }
         throw new IllegalArgumentException("Unknown DTO type: " + dto);
     }
 
-    public List<AbstractGem> fromDTOList(List<AbstractGemInstanceDTO> dtos)
+    public List<AbstractGem> fromDTOList(List<GemInstanceDTO> dtos)
     {
         if (dtos == null) return List.of();
         return dtos.stream()
