@@ -35,13 +35,13 @@ public class ItemResolver {
         switch (itemDTO.itemCategory())
         {
             case MYTHIC -> {
-            return itemFactory.createItem((MythicItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level(), gems, enchantments);
+            return itemFactory.createItem(MythicItemType.valueOf(itemDTO.itemType()), characterClass, itemDTO.baseValues(), itemDTO.level(), gems, enchantments);
         }
             case SET -> {
-            return itemFactory.createItem((SetItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level(), gems, enchantments);
+            return itemFactory.createItem(SetItemType.valueOf(itemDTO.itemType()), characterClass, itemDTO.baseValues(), itemDTO.level(), gems, enchantments);
         }
             case UNIQUE -> {
-            return itemFactory.createItem((UniqueItemType) itemDTO.itemType(), characterClass, itemDTO.baseValues(), itemDTO.level(), gems, enchantments, itemDTO.uniqueBaseValues(), EnchantmentFactory.fromDTOList(itemDTO.uniqueEnchantments()));
+            return itemFactory.createItem(UniqueItemType.valueOf(itemDTO.itemType()), characterClass, itemDTO.baseValues(), itemDTO.level(), gems, enchantments, itemDTO.uniqueBaseValues(), EnchantmentFactory.fromDTOList(itemDTO.uniqueEnchantments()));
         }
             default -> throw new IllegalArgumentException("Invalid item category "+itemDTO.itemCategory());
         }
