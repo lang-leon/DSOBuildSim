@@ -2,8 +2,7 @@ package com.langleon.dsobuildsim.items.dto;
 
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
-import com.langleon.dsobuildsim.gems.dto.AbstractGemInstanceDTO;
-import com.langleon.dsobuildsim.items.core.enums.ItemType;
+import com.langleon.dsobuildsim.gems.dto.GemInstanceDTO;
 import com.langleon.dsobuildsim.items.core.enums.ItemCategory;
 
 import java.util.List;
@@ -11,10 +10,10 @@ import java.util.Map;
 
 public record ItemInstanceDTO(
         ItemCategory itemCategory,
-        ItemType itemType,
+        String itemType,
         int level,
         Map<StatType, Double> baseValues,
-        List<AbstractGemInstanceDTO> gems,
+        List<GemInstanceDTO> gems,
         List<EnchantmentDTO> enchantments,
 
         //optional fields depending on category
