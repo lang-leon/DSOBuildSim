@@ -80,13 +80,13 @@ public class CharacterFactoryTest {
         CharacterDTO characterDTO = createCharacter();
         Character character = characterFactory.fromDTO(characterDTO);
         Map<StatType, Double> stats = character.calculateCharacterStats();
-        Assertions.assertEquals(1336439.430, stats.get(StatType.DAMAGE), 0.001);
+        Assertions.assertEquals(1504828.096, stats.get(StatType.DAMAGE), 0.001);
         Assertions.assertEquals(4.456, stats.get(StatType.ATTACK_SPEED), 0.001);
         Assertions.assertEquals(401796.790, stats.get(StatType.CRIT_VALUE), 0.001);
         Assertions.assertEquals(100.000, stats.get(StatType.MANA), 0.001);
         Assertions.assertEquals(12.000, stats.get(StatType.MANA_PER_SECOND), 0.001);
         Assertions.assertEquals(13.132, stats.get(StatType.MOVEMENT_SPEED), 0.001);
-        Assertions.assertEquals(2958326.630, stats.get(StatType.HEALTH_POINTS), 0.001);
+        Assertions.assertEquals(4463101.283, stats.get(StatType.HEALTH_POINTS), 0.001);
         Assertions.assertEquals(9900.000, stats.get(StatType.HEALTH_PER_SECOND), 0.001);
         Assertions.assertEquals(319956.940, stats.get(StatType.BLOCK_VALUE), 0.001);
         Assertions.assertEquals(48945.961, stats.get(StatType.ARMOR_VALUE), 0.001);
@@ -114,7 +114,7 @@ public class CharacterFactoryTest {
         jewelTrinkets.add(new JewelTrinketDTO(List.of(new JewelInstanceDTO(JewelType.FOCUS, 5), new JewelInstanceDTO(JewelType.FOCUS, 5), new JewelInstanceDTO(JewelType.FOCUS, 5), new JewelInstanceDTO(JewelType.FOCUS, 5), new JewelInstanceDTO(JewelType.FOCUS, 5), new JewelInstanceDTO(JewelType.VIGOR, 5), new JewelInstanceDTO(JewelType.AMBIDEXTROUS_VIGOR, 5), new JewelInstanceDTO(JewelType.VITALITY, 5), new JewelInstanceDTO(JewelType.ENCOURAGEMENT, 5), new JewelInstanceDTO(JewelType.CONTRIBUTION, 5))));
         jewelTrinkets.add(new JewelTrinketDTO(List.of(new JewelInstanceDTO(JewelType.LASTING_HEALTH, 5), new JewelInstanceDTO(JewelType.CONVERSE, 5), new JewelInstanceDTO(JewelType.FLOWER, 5), new JewelInstanceDTO(JewelType.STRENUOUSNESS, 5), new JewelInstanceDTO(JewelType.FORTITUDE, 5), new JewelInstanceDTO(JewelType.PROLONGATION, 5), new JewelInstanceDTO(JewelType.REVIVAL_BOON, 5), new JewelInstanceDTO(JewelType.EASTER_FEVER, 5), new JewelInstanceDTO(JewelType.SCORCHING_RAY, 5), new JewelInstanceDTO(JewelType.PENT_UP_POWER, 5))));
 
-        DragonCrestTrinketDTO dragonCrest = new DragonCrestTrinketDTO(List.of(new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 5), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 5), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 3), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 3), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 3)));
+        DragonCrestTrinketDTO dragonCrest = new DragonCrestTrinketDTO(List.of(new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 5), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 5), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 5), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 3), new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 3)));
 
         PetInstanceDTO pet = new PetInstanceDTO(PetType.THE_SOUL_OF_DRAGAN_DOLL, 5);
         EssenceInstanceDTO essence = new EssenceInstanceDTO(EssenceType.VIGOR, 3);
@@ -129,6 +129,10 @@ public class CharacterFactoryTest {
         List<EnchantmentDTO> blockEnchants = List.of(blockEnchant, blockEnchant, blockEnchant, blockEnchant);
         EnchantmentDTO msEnchant = new EnchantmentDTO(StatType.MOVEMENT_SPEED, 0.22450);
         List<EnchantmentDTO> bootEnchants = List.of(msEnchant, msEnchant, dmgEnchant, dmgEnchant);
+        EnchantmentDTO hpEnchant2 = new EnchantmentDTO(StatType.HEALTH_POINTS, 0.46559);
+        List<EnchantmentDTO> hpEnchants2 = List.of(hpEnchant2, hpEnchant2, hpEnchant2, hpEnchant2);
+        EnchantmentDTO dmgEnchant2 = new EnchantmentDTO(StatType.DAMAGE, 0.47612);
+        List<EnchantmentDTO> dmgEnchants2 = List.of(dmgEnchant2, dmgEnchant2, dmgEnchant2, dmgEnchant2);
 
         GemInstanceDTO ruby = new GemInstanceDTO(GemType.RUBY, 17);
         List<AbstractGemInstanceDTO> rubies = List.of(ruby, ruby, ruby, ruby, ruby, ruby, ruby, ruby, ruby, ruby);
@@ -156,6 +160,9 @@ public class CharacterFactoryTest {
         items.put(ItemSlot.BOOTS, new ItemInstanceDTO(ItemCategory.SET, SetItemType.WINTER_BOOTS, 145, Map.of(StatType.DAMAGE, 1644.883, StatType.MOVEMENT_SPEED, 1.221, StatType.CRIT_VALUE, 1401.911), boots, bootEnchants, Map.of(), List.of()));
         items.put(ItemSlot.WEAPON_ADORNMENT, new ItemInstanceDTO(ItemCategory.UNIQUE, UniqueItemType.SIGRISMARRS_ADORNMENT, 145, Map.of(StatType.DAMAGE, 1870.52, StatType.CRIT_VALUE, 2100.146), rubies, dmgEnchants, Map.of(StatType.ATTACK_SPEED, 0.060), List.of()));
         items.put(ItemSlot.TWO_HAND_WEAPON, new ItemInstanceDTO(ItemCategory.UNIQUE, UniqueItemType.ANNIVERSARY_TWO_HAND_UPGRADED, 145, Map.of(StatType.DAMAGE, 26326.278, StatType.CRIT_VALUE, 3050.894), rubies, dmgEnchants, Map.of(StatType.ATTACK_SPEED, 0.102), List.of()));
+        items.put(ItemSlot.SOUL_COMPANION_AMULET, new ItemInstanceDTO(ItemCategory.SET, SetItemType.SOUL_DESTRUCTION_AMULET, 100, Map.of(StatType.DAMAGE, 847.04), rubies, dmgEnchants2, Map.of(), List.of()));
+        items.put(ItemSlot.SOUL_COMPANION_BELT, new ItemInstanceDTO(ItemCategory.SET, SetItemType.SOUL_DESTRUCTION_BELT, 100, Map.of(StatType.HEALTH_POINTS, 14386.028), amethysts, hpEnchants2, Map.of(), List.of()));
+        items.put(ItemSlot.SOUL_COMPANION_CLOAK, new ItemInstanceDTO(ItemCategory.SET, SetItemType.SOUL_DESTRUCTION_CLOAK, 100, Map.of(StatType.HEALTH_POINTS, 14386.028), amethysts, hpEnchants2, Map.of(), List.of()));
 
         EnumMap<WisdomGroupType, WisdomGroupInstanceDTO> wisdomGroups = new EnumMap<>(WisdomGroupType.class);
 
@@ -220,6 +227,7 @@ public class CharacterFactoryTest {
         collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.FREE_SPIRITS, CollectorBagTier.TIER3));
         collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.AUTOMATONS, CollectorBagTier.TIER2));
         collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.LUCKY_CATS, CollectorBagTier.TIER0));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.ALCHEMY_CIRCLES, CollectorBagTier.TIER1));
         collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.SHADOW_SOULS, CollectorBagTier.TIER2));
 
 

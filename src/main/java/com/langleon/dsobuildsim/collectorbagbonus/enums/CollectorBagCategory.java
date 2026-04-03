@@ -14,6 +14,7 @@ public enum CollectorBagCategory {
     ENIGMATIC_HATCHLINGS("Enigmatic Hatchlings"),
     AWOKEN_LION("Awoken Lion"),
     ANCIENT_DRAGONS("Ancient Dragons"),
+    ALCHEMY_CIRCLES("Alchemy Circles"),
     SHADOW_SOULS("Shadow Souls");
 
     private final String name;
