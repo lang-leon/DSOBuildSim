@@ -116,6 +116,12 @@
         "WAVING_OF_FORTUNE"
       ]
     },
+    "ALCHEMY_CIRCLES": {
+      "category": "ALCHEMY_CIRCLES",
+      "bonuses": [
+        "TRIAD_OF_LIFE"
+      ]
+    },
     "SHADOW_SOULS": {
       "category": "SHADOW_SOULS",
       "bonuses": [
