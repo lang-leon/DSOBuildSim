@@ -5,7 +5,6 @@ import com.langleon.dsobuildsim.items.core.enums.ItemSlotType;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.gems.AbstractGem;
 import com.langleon.dsobuildsim.items.core.enums.ItemType;
-import com.langleon.dsobuildsim.utils.MapUtils;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
