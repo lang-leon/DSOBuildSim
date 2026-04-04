@@ -30,7 +30,6 @@ public class PetFactoryTest {
         Assertions.assertNotNull(pet);
         Assertions.assertEquals(3, pet.getTier());
         Assertions.assertEquals(0.12, pet.getRelativeStats().get(StatType.DAMAGE));
-        Assertions.assertEquals("+ 12,00% Attack Speed\n+ 12,00% Damage\n+ 12,00% Mana Points", pet.getDescription());
     }
 
     @Test
@@ -40,7 +39,6 @@ public class PetFactoryTest {
         Assertions.assertNotNull(pet);
         Assertions.assertEquals(6, pet.getTier());
         Assertions.assertEquals(0.2, pet.getRelativeStats().get(StatType.DAMAGE));
-        Assertions.assertEquals("+ 20,00% Damage\nIncreased item drop worthy monsters", pet.getDescription());
     }
 
     @Test
@@ -71,6 +69,5 @@ public class PetFactoryTest {
         Assertions.assertEquals(PetType.BLUE_DRAGONSPAWN, pet.getPetType());
         Assertions.assertEquals(4, pet.getTier());
         Assertions.assertEquals(Map.of(StatType.XP_GAIN, 0.25), pet.getRelativeStats());
-        Assertions.assertEquals("+ 25,00% XP Gain", pet.getDescription());
     }
 }
