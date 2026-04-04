@@ -2,6 +2,7 @@ package com.langleon.dsobuildsim.gems;
 
 
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.gems.dto.*;
@@ -55,8 +56,8 @@ class GemFactoryTest {
     @Test
     void throwsOnInvalidTier()
     {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> gemFactory.createGem(GemType.RUBY, -1));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> gemFactory.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 5));
+        Assertions.assertThrows(InvalidTierException.class, () -> gemFactory.createGem(GemType.RUBY, -1));
+        Assertions.assertThrows(InvalidTierException.class, () -> gemFactory.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 5));
     }
 
     @Test

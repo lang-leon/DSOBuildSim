@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.buffs;
 
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.common.StatType;
@@ -89,7 +90,7 @@ public class BuffFactoryTest {
     @Test
     void throwsOnInvalidTier()
     {
-        Assertions.assertThrows(IllegalArgumentException.class, () ->  buffFactory.createTonic(TonicType.CELERITY, -1));
-        Assertions.assertThrows(IllegalArgumentException.class, () ->  buffFactory.createPhysic(PhysicType.ALACRITY_ADVANCED, 7));
+        Assertions.assertThrows(InvalidTierException.class, () ->  buffFactory.createTonic(TonicType.CELERITY, -1));
+        Assertions.assertThrows(InvalidTierException.class, () ->  buffFactory.createPhysic(PhysicType.ALACRITY_ADVANCED, 7));
     }
 }

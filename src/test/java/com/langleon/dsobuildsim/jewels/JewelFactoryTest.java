@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.jewels;
 
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.jewels.dto.JewelInstanceDTO;
@@ -48,8 +49,8 @@ public class JewelFactoryTest {
     @Test
     void throwsOnInvalidTier()
     {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> jewelFactory.createJewel(JewelType.VIGOR, CharacterClass.SPELLWEAVER, -1));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> jewelFactory.createJewel(JewelType.BLACK_KNIGHT_ORDER, CharacterClass.SPELLWEAVER, 5));
+        Assertions.assertThrows(InvalidTierException.class, () -> jewelFactory.createJewel(JewelType.VIGOR, CharacterClass.SPELLWEAVER, -1));
+        Assertions.assertThrows(InvalidTierException.class, () -> jewelFactory.createJewel(JewelType.BLACK_KNIGHT_ORDER, CharacterClass.SPELLWEAVER, 5));
     }
 
     @Test
