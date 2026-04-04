@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.pets;
 
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.pets.dto.PetInstanceDTO;
@@ -56,8 +57,8 @@ public class PetFactoryTest {
     @Test
     void throwsOnInvalidTier()
     {
-        Assertions.assertThrows(IllegalArgumentException.class, () ->  petFactory.createPet(PetType.DAZZLING_FIREFLY, -1));
-        Assertions.assertThrows(IllegalArgumentException.class, () ->  petFactory.createPet(PetType.HEREDUR_DOLL, 7));
+        Assertions.assertThrows(InvalidTierException.class, () ->  petFactory.createPet(PetType.DAZZLING_FIREFLY, -1));
+        Assertions.assertThrows(InvalidTierException.class, () ->  petFactory.createPet(PetType.HEREDUR_DOLL, 7));
     }
 
     @Test
