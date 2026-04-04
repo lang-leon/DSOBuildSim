@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.buffs;
 
-import tools.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.buffs.enums.PhysicType;
 import com.langleon.dsobuildsim.buffs.enums.TonicType;
 import com.langleon.dsobuildsim.common.StatType;

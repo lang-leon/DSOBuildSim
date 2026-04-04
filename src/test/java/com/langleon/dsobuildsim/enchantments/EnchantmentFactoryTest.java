@@ -1,18 +1,11 @@
 package com.langleon.dsobuildsim.enchantments;
 
 import com.langleon.dsobuildsim.common.StatType;
-import com.langleon.dsobuildsim.dragonstones.DragonStoneConfig;
-import com.langleon.dsobuildsim.dragonstones.DragonStoneFactory;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import tools.jackson.databind.ObjectMapper;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
-import java.util.Objects;
 
 public class EnchantmentFactoryTest {
 
