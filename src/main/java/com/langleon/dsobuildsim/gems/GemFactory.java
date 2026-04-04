@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.gems;
 
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.gems.dto.*;
 import com.langleon.dsobuildsim.gems.enums.GemType;
@@ -19,7 +20,7 @@ public class GemFactory {
     public Gem createGem(GemType gemType, int tier) {
         GemDefinition gemDefinition = this.gems.get(gemType);
         Double value = gemDefinition.statsPerTier().get(tier);
-        if (value == null) throw new IllegalArgumentException("Invalid gem tier: " + tier + "!");
+        if (value == null) throw new InvalidTierException("Invalid gem tier " + tier + " for gem type " + gemType);
         return new Gem(gemDefinition.gemType(), gemDefinition.gemUpgradeType(), gemDefinition.gemLimitGroup(), tier, Map.of(gemDefinition.statType(), gemDefinition.statsPerTier().get(tier)));
     }
 
@@ -27,7 +28,7 @@ public class GemFactory {
         GemDefinition gemDefinition1 = this.gems.get(gemType1);
         GemDefinition gemDefinition2 = this.gems.get(gemType2);
         GemDefinition gemDefinition3 = this.gems.get(gemType3);
-        if (gemDefinition1.statsPerTier().get(tier) == null || tier < 9) throw new IllegalArgumentException("Invalid gem tier: " + tier + "!");
+        if (gemDefinition1.statsPerTier().get(tier) == null || tier < 9) throw new InvalidTierException("Invalid opal tier " + tier);
         return new Opal(tier, Map.of(gemDefinition1.statType(), gemDefinition1.statsPerTier().get(tier)*0.75, gemDefinition2.statType(), gemDefinition2.statsPerTier().get(tier)*0.75 , gemDefinition3.statType(), gemDefinition3.statsPerTier().get(tier)*0.75));
     }
 

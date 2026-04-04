@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.runes;
 
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.runes.dto.RuneInstanceDTO;
@@ -52,8 +53,8 @@ class RuneFactoryTest {
     @Test
     void throwsOnInvalidTier()
     {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> runeFactory.createRune(RuneType.VIGOR, -1));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> runeFactory.createRune(RuneType.HOLY_STAR_SHARD, 5));
+        Assertions.assertThrows(InvalidTierException.class, () -> runeFactory.createRune(RuneType.VIGOR, -1));
+        Assertions.assertThrows(InvalidTierException.class, () -> runeFactory.createRune(RuneType.HOLY_STAR_SHARD, 5));
     }
 
     @Test

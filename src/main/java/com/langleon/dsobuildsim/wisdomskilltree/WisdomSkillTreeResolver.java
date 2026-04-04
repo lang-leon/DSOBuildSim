@@ -22,9 +22,7 @@ public class WisdomSkillTreeResolver {
             WisdomGroup group = wisdomSkillTree.getWisdomGroups().get(groupType);
 
             groupDTO.wisdomSkills().forEach((skillType, wisdomSkillDTO) -> {
-                WisdomSkill wisdomSkill = group.getWisdomSkills().get(skillType);
-
-                if (wisdomSkill != null) wisdomSkill.setCurrentLevel(wisdomSkillDTO.currentLevel());
+                group.setSkillLevel(skillType, wisdomSkillDTO.currentLevel());
             });
         });
 
