@@ -82,7 +82,7 @@ public class GameDataMapperTest {
         List<BuffDefinitionDTO> tonics = config.buffConfig().tonics().values().stream().map(BuffMapper::from).toList();
         List<BuffDefinitionDTO> physics = config.buffConfig().physics().values().stream().map(BuffMapper::from).toList();
 
-        Assertions.assertEquals(classStats2, dto.characterClassClassStats());
+        Assertions.assertEquals(classStats2, dto.characterClassStats());
         Assertions.assertEquals(items2, dto.items());
         Assertions.assertEquals(sets2, dto.sets());
         Assertions.assertEquals(jewels2, dto.jewels());
