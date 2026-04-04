@@ -2,6 +2,7 @@ package com.langleon.dsobuildsim.dragonstones;
 
 import com.langleon.dsobuildsim.dragonstones.dto.DragonCrestTrinketDTO;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneInstanceDTO;
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +21,7 @@ public class DragonStoneFactory {
     public DragonStone createDragonStone(DragonStoneType dragonStoneType, int tier)
     {
         DragonStoneDefinition dragonStoneDefinition = this.dragonStones.get(dragonStoneType);
+        if (!dragonStoneDefinition.statsPerTier().containsKey(tier)) throw new InvalidTierException("Invalid dragonstone tier " + tier + " for dragonstone type " + dragonStoneType);
         return new DragonStone(dragonStoneType, tier, dragonStoneDefinition.statsPerTier().get(tier), dragonStoneDefinition.descriptionPerTier().get(tier));
     }
 

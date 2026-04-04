@@ -1,6 +1,7 @@
 package com.langleon.dsobuildsim.essences;
 
 import com.langleon.dsobuildsim.essences.dto.EssenceInstanceDTO;
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +17,7 @@ public class EssenceFactory {
 
     public Essence createEssence(EssenceType essenceType, int tier){
         EssenceDefinition essenceDefinition = essences.get(essenceType);
-        if (!essenceDefinition.damagePerTier().containsKey(tier)) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
+        if (!essenceDefinition.damagePerTier().containsKey(tier)) throw new InvalidTierException("Invalid essence tier " + tier + " for essence type " + essenceType);
         return new Essence(essenceType, tier, essenceDefinition.damagePerTier().get(tier), essenceDefinition.descriptionPerTier().get(tier));
     }
 

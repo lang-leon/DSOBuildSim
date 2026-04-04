@@ -8,6 +8,7 @@ import com.langleon.dsobuildsim.collectorbagbonus.dto.instance.CollectorBagCateg
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagBonusType;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagTier;
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import org.springframework.stereotype.Component;
 
@@ -42,6 +43,7 @@ public class CollectorBagFactory {
 
     public CollectorBagCategoryBonus fromDTO(CollectorBagCategoryBonusInstanceDTO dto)
     {
+        if (config.categoryBonuses().get(dto.category()).bonuses().size() < dto.tier().getTier()) throw new InvalidTierException("Invalid tier "+dto.tier()+" for collector bag category "+dto.category());
         return createCollectorBagCategoryBonus(dto.category(), dto.tier());
     }
 

@@ -1,6 +1,8 @@
 package com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup;
 
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.exceptions.LimitExceededException;
+import com.langleon.dsobuildsim.exceptions.LimitType;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkill;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 
@@ -34,10 +36,9 @@ public class WisdomGroup {
     }
 
     public void setSkillLevel(WisdomSkillType type, int skillLevel) {
-        if (!wisdomSkills.containsKey(type)) throw new IllegalArgumentException("Wisdom skill of type "+type+" not present in this wisdom group "+wisdomGroupDefinition.wisdomGroupType());
         int currentLevel = this.getCurrentLevel();
         int newCurrentLevel = currentLevel - wisdomSkills.get(type).getCurrentLevel() + skillLevel;
-        if (newCurrentLevel > wisdomGroupDefinition.maxLevel() || newCurrentLevel < 0) throw new IllegalArgumentException("Updating skill level would result in invalid group level.");
+        if (newCurrentLevel > wisdomGroupDefinition.maxLevel() || newCurrentLevel < 0) throw new LimitExceededException(LimitType.WISDOM_GROUP, "Wisdom group level must be in range between 0 and "+wisdomGroupDefinition.maxLevel()+", but was "+currentLevel);
         wisdomSkills.get(type).setCurrentLevel(skillLevel);
     }
 

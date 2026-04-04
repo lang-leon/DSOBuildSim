@@ -1,6 +1,7 @@
 package com.langleon.dsobuildsim.pets;
 
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.pets.dto.PetInstanceDTO;
 import com.langleon.dsobuildsim.pets.enums.PetType;
@@ -20,7 +21,7 @@ public class PetFactory {
     {
         PetDefinition petDefinition = this.pets.get(petType);
         Map<StatType, Double> stats = petDefinition.statsPerTier().get(tier);
-        if (stats == null) throw new IllegalArgumentException("Invalid pet tier: " + tier + "!");
+        if (stats == null) throw new InvalidTierException("Invalid pet tier " + tier + " for pet type "+petType);
         return new Pet(petType, petDefinition.petUpgradeType(), tier, stats, petDefinition.descriptionPerTier().getOrDefault(tier, ""));
     }
 
