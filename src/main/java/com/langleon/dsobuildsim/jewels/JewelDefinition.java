@@ -1,6 +1,5 @@
 package com.langleon.dsobuildsim.jewels;
 
-import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.common.StatType;
 
 import java.util.Map;
