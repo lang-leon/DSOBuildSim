@@ -1,12 +1,12 @@
 package com.langleon.dsobuildsim.gamedata;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.buffs.BuffConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
 import org.springframework.stereotype.Component;
-import tools.jackson.core.type.TypeReference;
-import tools.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.io.InputStream;
