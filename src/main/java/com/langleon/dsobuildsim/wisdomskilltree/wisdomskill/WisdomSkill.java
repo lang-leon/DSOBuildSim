@@ -1,6 +1,8 @@
 package com.langleon.dsobuildsim.wisdomskilltree.wisdomskill;
 
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.exceptions.LimitExceededException;
+import com.langleon.dsobuildsim.exceptions.LimitType;
 
 import java.util.Map;
 
@@ -19,7 +21,7 @@ public class WisdomSkill {
     }
 
     public void setCurrentLevel(int currentLevel) {
-        if (currentLevel < 0 || currentLevel > wisdomSkillDefinition.maxLevel()) throw new IllegalArgumentException("Level must be between: 0 and "+wisdomSkillDefinition.maxLevel());
+        if (currentLevel < 0 || currentLevel > wisdomSkillDefinition.maxLevel()) throw new LimitExceededException(LimitType.WISDOM_SKILL, "Wisdom skill level must be in range between 0 and "+wisdomSkillDefinition.maxLevel()+", but was "+currentLevel);
         this.currentLevel = currentLevel;
     }
 

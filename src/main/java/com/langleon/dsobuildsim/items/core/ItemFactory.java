@@ -4,6 +4,8 @@ import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
+import com.langleon.dsobuildsim.exceptions.LimitExceededException;
+import com.langleon.dsobuildsim.exceptions.LimitType;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.gamedata.LevelMultiplierTable;
 import com.langleon.dsobuildsim.gems.AbstractGem;
@@ -75,8 +77,9 @@ public class ItemFactory {
             double allowed = allowedBaseValues.get(stat);
             double actual = actualBaseValues.get(stat);
             if (actual - allowed > EPSILON) {
-                throw new IllegalArgumentException(
-                        "Stat " + stat + " value " + actual + " exceeds allowed " + allowed
+                throw new LimitExceededException(
+                        LimitType.ITEM_BASE_VALUES,
+                        "Stat " + stat + " value " + actual + " exceeds allowed value " + allowed
                 );
             }
         }
@@ -92,8 +95,9 @@ public class ItemFactory {
             double allowed = allowedBaseValues.get(stat);
             double actual = actualBaseValues.get(stat);
             if (actual - allowed > EPSILON) {
-                throw new IllegalArgumentException(
-                        "Stat " + stat + " value " + actual + " exceeds allowed " + allowed
+                throw new LimitExceededException(
+                        LimitType.ITEM_BASE_VALUES,
+                        "Stat " + stat + " value " + actual + " exceeds allowed value " + allowed
                 );
             }
         }
@@ -113,9 +117,9 @@ public class ItemFactory {
 
             double max = allowedEnchantmentStats.get(e.getStatType());
             if (e.getValue() - max > EPSILON) {
-                throw new IllegalArgumentException(
-                        "Enchant " + e.getStatType() + " value " + e.getValue() + " exceeds max allowed " + max
-                );
+                throw new LimitExceededException(
+                        LimitType.ENCHANTMENT,
+                        "Enchant " + e.getStatType() + " value " + e.getValue() + " exceeds allowed value " + max);
             }
         }
     }
