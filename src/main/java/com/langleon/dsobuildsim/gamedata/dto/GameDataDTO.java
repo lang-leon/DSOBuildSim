@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 public record GameDataDTO (
-        Map<CharacterClass, ClassStatsDTO> characterClassClassStats,
+        Map<CharacterClass, ClassStatsDTO> characterClassStats,
         Map<CharacterClass, List<ItemDefinitionDTO>> items,
         Map<CharacterClass, List<SetDTO>> sets,
         Map<CharacterClass, List<JewelDefinitionDTO>> jewels,
