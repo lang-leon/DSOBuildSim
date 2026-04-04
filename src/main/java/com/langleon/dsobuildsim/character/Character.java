@@ -6,6 +6,9 @@ import com.langleon.dsobuildsim.collectorbagbonus.collectorbagcategorybonus.Coll
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dragonstones.DragonCrestTrinket;
+import com.langleon.dsobuildsim.exceptions.InvalidItemsEquippedException;
+import com.langleon.dsobuildsim.exceptions.LimitExceededException;
+import com.langleon.dsobuildsim.exceptions.LimitType;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
 import com.langleon.dsobuildsim.jewels.JewelType;
@@ -69,8 +72,10 @@ public class Character {
         this.characterClass = characterClass;
         this.name = characterClass.getName();
         this.elementalMasteryType = masteryType;
+        if (masteryLevel > 10 || masteryLevel < 0) throw new LimitExceededException(LimitType.MASTERY_TYPE, "Mastery level must be between 0 and 10, but was "+masteryLevel);
         this.elementalMasteryLevel = masteryLevel;
         this.experienceBonusPath = experienceBonusPath;
+        if (experienceBonusPathLevel > 5 || experienceBonusPathLevel < 0) throw new LimitExceededException(LimitType.EXPERIENCE_SKILL_TREE, "Experience path level must be between 0 and 10, but was "+experienceBonusPathLevel);
         this.experienceBonusPathLevel = experienceBonusPathLevel;
 
         this.validateRunes(runeTrinkets);
@@ -79,6 +84,7 @@ public class Character {
         this.jewelTrinkets = jewelTrinkets;
         this.dragonCrestTrinket = dragonCrest;
 
+        if (items.containsKey(ItemSlot.TWO_HAND_WEAPON) && (items.containsKey(ItemSlot.ONE_HAND_WEAPON) || items.containsKey(ItemSlot.OFF_HAND))) throw new InvalidItemsEquippedException("Equipped one hand and two hand items");
         this.validateGems(items.values().stream().toList());
         this.equippedItems = items;
         this.equippedSets = equippedSets;
@@ -126,6 +132,7 @@ public class Character {
 
     private void validateRunes(List<RuneTrinket> runeTrinkets)
     {
+        if (runeTrinkets.size() > 7) throw new LimitExceededException(LimitType.RUNE_TRINKET, "Up to 7 rune trinkets allowed per character, but was "+runeTrinkets.size());
         Map<RuneLimitGroup, Integer> runeCount = new EnumMap<>(RuneLimitGroup.class);
         runeTrinkets.forEach(runeTrinket -> {
             runeTrinket.getRunes().forEach(rune -> {
@@ -134,12 +141,13 @@ public class Character {
         });
 
         runeCount.forEach((runeLimitGroup, amount) -> {
-            if (runeLimitGroup.getLimit() < amount) throw new IllegalArgumentException("Rune limit exceeded for "+runeLimitGroup);
+            if (runeLimitGroup.getLimit() < amount) throw new LimitExceededException(LimitType.RUNE, "Rune limit exceeded for "+runeLimitGroup);
         });
     }
 
     private void validateJewels(List<JewelTrinket> jewelTrinkets)
     {
+        if (jewelTrinkets.size() > 3) throw new LimitExceededException(LimitType.JEWEL_TRINKET, "Up to 3 jewel trinkets allowed per character, but was "+jewelTrinkets.size());
         Map<JewelType, Integer> jewelCount = new EnumMap<>(JewelType.class);
         jewelTrinkets.forEach(jewelTrinket -> {
             jewelTrinket.getJewels().forEach(jewel -> {
@@ -148,7 +156,7 @@ public class Character {
         });
 
         jewelCount.forEach((jewelType, amount) -> {
-            if (jewelType.getLimit() < amount) throw new IllegalArgumentException("Jewel limit exceeded for "+jewelType);
+            if (jewelType.getLimit() < amount) throw new LimitExceededException(LimitType.JEWEL, "Jewel limit exceeded for "+jewelType);
         });
     }
 
@@ -162,7 +170,7 @@ public class Character {
         });
 
         gemCount.forEach((gemLimitGroup, amount) -> {
-            if (gemLimitGroup.getLimit() < amount) throw new IllegalArgumentException("Gem limit exceeded for "+gemLimitGroup);
+            if (gemLimitGroup.getLimit() < amount) throw new LimitExceededException(LimitType.GEM, "Gem limit exceeded for "+gemLimitGroup);
         });
     }
 

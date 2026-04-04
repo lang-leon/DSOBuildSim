@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.runes;
 
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.runes.dto.RuneInstanceDTO;
 import com.langleon.dsobuildsim.runes.dto.RuneTrinketDTO;
@@ -20,7 +21,7 @@ public class RuneFactory {
     public Rune createRune(RuneType runeType, int tier)
     {
         RuneDefinition runeDefinition = this.runes.get(runeType);
-        if (!runeDefinition.statsPerTier().containsKey(tier)) throw new IllegalArgumentException("Invalid rune tier: " + tier + "!");
+        if (!runeDefinition.statsPerTier().containsKey(tier)) throw new InvalidTierException("Invalid rune tier " + tier +" for rune type " + runeType);
         return new Rune(runeType, runeDefinition.runeUpgradeType(), runeDefinition.runeLimitGroup(), tier, runeDefinition.statsPerTier().get(tier), runeDefinition.description());
     }
 

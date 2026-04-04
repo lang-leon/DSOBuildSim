@@ -1,6 +1,7 @@
 package com.langleon.dsobuildsim.jewels;
 
 import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.jewels.dto.JewelInstanceDTO;
 import com.langleon.dsobuildsim.jewels.dto.JewelTrinketDTO;
@@ -22,7 +23,7 @@ public class JewelFactory {
         JewelDefinition jewelDefinition = this.jewels.get(characterClass).get(jewelType);
         Map<Integer, String> description = jewelDefinition.descriptionPerTier();
         if (description.get(tier) == null)
-            throw new IllegalArgumentException("Invalid jewel tier: " + tier + "!");
+            throw new InvalidTierException("Invalid jewel tier " + tier +" for jewel type " + jewelType);
         return new Jewel(jewelType, tier, jewelDefinition.statsPerTier().getOrDefault(tier, Map.of()), jewelDefinition.descriptionPerTier().get(tier));
     }
 

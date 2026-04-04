@@ -1,6 +1,7 @@
 package com.langleon.dsobuildsim.essences;
 
 import com.langleon.dsobuildsim.essences.dto.EssenceInstanceDTO;
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import org.junit.jupiter.api.Assertions;
@@ -31,8 +32,8 @@ public class EssenceFactoryTest {
     @Test
     void throwsOnInvalidTier()
     {
-        Assertions.assertThrows(IllegalArgumentException.class, () ->  essenceFactory.createEssence(EssenceType.BLAZING, -1));
-        Assertions.assertThrows(IllegalArgumentException.class, () ->  essenceFactory.createEssence(EssenceType.STELLAR_GOLD, 5));
+        Assertions.assertThrows(InvalidTierException.class, () ->  essenceFactory.createEssence(EssenceType.BLAZING, -1));
+        Assertions.assertThrows(InvalidTierException.class, () ->  essenceFactory.createEssence(EssenceType.STELLAR_GOLD, 5));
     }
 
     @Test
