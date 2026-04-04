@@ -27,9 +27,4 @@ public class WisdomSkillTree {
         });
         return stats;
     }
-
-    public void setSkillLevel(WisdomGroupType groupType, WisdomSkillType skillType, int skillLevel) {
-        if (!wisdomGroups.containsKey(groupType)) throw new IllegalArgumentException("Wisdom skill tree doesn't contain wisdom group "+groupType);
-        wisdomGroups.get(groupType).setSkillLevel(skillType, skillLevel);
-    }
 }

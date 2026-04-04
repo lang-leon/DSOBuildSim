@@ -8,14 +8,12 @@ import java.util.Map;
 
 public class Pet {
     private final PetType petType;
-    private final PetUpgradeType petUpgradeType;
     private final int tier;
     private final Map<StatType, Double> stats;
     private final String description;
 
-    public Pet(PetType petType, PetUpgradeType petUpgradeType, int tier, Map<StatType, Double> stats, String description) {
+    public Pet(PetType petType, int tier, Map<StatType, Double> stats, String description) {
         this.petType = petType;
-        this.petUpgradeType = petUpgradeType;
         this.tier = tier;
         this.stats = stats;
         this.description = description;
@@ -23,10 +21,6 @@ public class Pet {
 
     public PetType getPetType() {
         return petType;
-    }
-
-    public PetUpgradeType getPetUpgradeType() {
-        return petUpgradeType;
     }
 
     public int getTier() {
