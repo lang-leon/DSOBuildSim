@@ -43,27 +43,27 @@ public class ItemFactory {
     public MythicItem createItem(MythicItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments)
     {
         MythicItemDefinition itemDefinition = this.mythicItems.get(characterClass).get(itemType);
-        this.checkBaseValues(itemDefinition, level, baseValues);
+        this.validateBaseValues(itemDefinition, level, baseValues);
         return new MythicItem(itemDefinition, baseValues, level, gems, enchantments);
     }
 
     public UniqueItem createItem(UniqueItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments, Map<StatType, Double> uniqueBaseValues, List<Enchantment> uniqueEnchantments)
     {
         UniqueItemDefinition itemDefinition = this.uniqueItems.get(characterClass).get(itemType);
-        this.checkBaseValues(itemDefinition, level, baseValues);
-        this.checkUniqueBaseValues(itemDefinition, uniqueBaseValues);
-        this.checkUniqueEnchantments(itemDefinition, uniqueEnchantments);
+        this.validateBaseValues(itemDefinition, level, baseValues);
+        this.validateUniqueBaseValues(itemDefinition, uniqueBaseValues);
+        this.validateUniqueEnchantments(itemDefinition, uniqueEnchantments);
         return new UniqueItem(itemDefinition, baseValues, level, gems, enchantments, uniqueBaseValues, uniqueEnchantments);
     }
 
     public SetItem createItem(SetItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments)
     {
         SetItemDefinition itemDefinition = this.setItems.get(characterClass).get(itemType);
-        this.checkBaseValues(itemDefinition, level, baseValues);
+        this.validateBaseValues(itemDefinition, level, baseValues);
         return new SetItem(itemDefinition, baseValues, level, gems, enchantments);
     }
 
-    private void checkBaseValues(ItemDefinition itemDefinition, int level, Map<StatType, Double> actualBaseValues)
+    private void validateBaseValues(ItemDefinition itemDefinition, int level, Map<StatType, Double> actualBaseValues)
     {
         Map<StatType, Double> allowedBaseValues = new EnumMap<>(StatType.class);
 
@@ -85,7 +85,7 @@ public class ItemFactory {
         }
     }
 
-    private void checkUniqueBaseValues(UniqueItemDefinition itemDefinition, Map<StatType, Double> actualBaseValues)
+    private void validateUniqueBaseValues(UniqueItemDefinition itemDefinition, Map<StatType, Double> actualBaseValues)
     {
         Map<StatType, Double> allowedBaseValues = itemDefinition.uniqueBaseValues();
 
@@ -103,7 +103,7 @@ public class ItemFactory {
         }
     }
 
-    private void checkUniqueEnchantments(UniqueItemDefinition itemDefinition, List<Enchantment> enchantments)
+    private void validateUniqueEnchantments(UniqueItemDefinition itemDefinition, List<Enchantment> enchantments)
     {
         if (enchantments.size() != itemDefinition.uniqueEnchantments().size()) throw new IllegalArgumentException("Unique enchantment amount invalid");
 

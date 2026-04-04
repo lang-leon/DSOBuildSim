@@ -21,7 +21,7 @@ public class GemFactory {
         GemDefinition gemDefinition = this.gems.get(gemType);
         Double value = gemDefinition.statsPerTier().get(tier);
         if (value == null) throw new InvalidTierException("Invalid gem tier " + tier + " for gem type " + gemType);
-        return new Gem(gemDefinition.gemType(), gemDefinition.gemUpgradeType(), gemDefinition.gemLimitGroup(), tier, Map.of(gemDefinition.statType(), gemDefinition.statsPerTier().get(tier)));
+        return new Gem(gemDefinition.gemType(), gemDefinition.gemLimitGroup(), tier, Map.of(gemDefinition.statType(), gemDefinition.statsPerTier().get(tier)));
     }
 
     public Opal createOpal(GemType gemType1, GemType gemType2, GemType gemType3, int tier) {
