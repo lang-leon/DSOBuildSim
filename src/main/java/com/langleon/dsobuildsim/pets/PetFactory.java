@@ -22,7 +22,7 @@ public class PetFactory {
         PetDefinition petDefinition = this.pets.get(petType);
         Map<StatType, Double> stats = petDefinition.statsPerTier().get(tier);
         if (stats == null) throw new InvalidTierException("Invalid pet tier " + tier + " for pet type "+petType);
-        return new Pet(petType, petDefinition.petUpgradeType(), tier, stats, petDefinition.descriptionPerTier().getOrDefault(tier, ""));
+        return new Pet(petType, tier, stats, petDefinition.descriptionPerTier().getOrDefault(tier, ""));
     }
 
     public Pet fromDTO(PetInstanceDTO petDTO)
