@@ -3,7 +3,6 @@ package com.langleon.dsobuildsim.wisdomskilltree;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroup;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
-import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 
 import java.util.EnumMap;
 
@@ -26,10 +25,5 @@ public class WisdomSkillTree {
             stats.putAll(v.calculateStats());
         });
         return stats;
-    }
-
-    public void setSkillLevel(WisdomGroupType groupType, WisdomSkillType skillType, int skillLevel) {
-        if (!wisdomGroups.containsKey(groupType)) throw new IllegalArgumentException("Wisdom skill tree doesn't contain wisdom group "+groupType);
-        wisdomGroups.get(groupType).setSkillLevel(skillType, skillLevel);
     }
 }

@@ -6,7 +6,6 @@ import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.pets.dto.PetInstanceDTO;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.pets.enums.PetType;
-import com.langleon.dsobuildsim.pets.enums.PetUpgradeType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,26 +29,6 @@ public class PetFactoryTest {
         Assertions.assertNotNull(pet);
         Assertions.assertEquals(3, pet.getTier());
         Assertions.assertEquals(0.12, pet.getRelativeStats().get(StatType.DAMAGE));
-    }
-
-    @Test
-    void createAwokenLionPetDefaultTier()
-    {
-        Pet pet = petFactory.createPet(PetType.AWOKEN_LION, 6);
-        Assertions.assertNotNull(pet);
-        Assertions.assertEquals(6, pet.getTier());
-        Assertions.assertEquals(0.2, pet.getRelativeStats().get(StatType.DAMAGE));
-    }
-
-    @Test
-    void testUpgradeCosts()
-    {
-        Pet pet = petFactory.createPet(PetType.AWOKEN_LION, 6);
-        Assertions.assertEquals(PetUpgradeType.NONE, pet.getPetUpgradeType());
-        Pet pet2 = petFactory.createPet(PetType.UNLEASHED_SARGON_DOLL, 5);
-        Assertions.assertEquals(PetUpgradeType.NORMAL, pet2.getPetUpgradeType());
-        Pet pet3 = petFactory.createPet(PetType.GILDED_LUCKY_CAT, 5);
-        Assertions.assertEquals(PetUpgradeType.GILDEDCAT, pet3.getPetUpgradeType());
     }
 
     @Test

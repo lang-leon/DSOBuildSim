@@ -3,7 +3,6 @@ package com.langleon.dsobuildsim.buffs;
 import com.langleon.dsobuildsim.buffs.dto.BuffInstanceDTO;
 import com.langleon.dsobuildsim.buffs.enums.PhysicType;
 import com.langleon.dsobuildsim.buffs.enums.TonicType;
-import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
 
 public class BuffResolver {
 
