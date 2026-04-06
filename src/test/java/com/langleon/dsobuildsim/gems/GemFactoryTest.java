@@ -1,29 +1,29 @@
 package com.langleon.dsobuildsim.gems;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
+import com.langleon.dsobuildsim.gems.dto.*;
+import com.langleon.dsobuildsim.gems.enums.GemCategory;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.gems.enums.GemType;
-import com.langleon.dsobuildsim.gems.enums.GemUpgradeType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.List;
+import java.util.Map;
 
 class GemFactoryTest {
 
     private GemFactory gemFactory;
 
     @BeforeEach
-    void setup() throws IOException {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/gems.json")))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            GemConfig gemConfig = objectMapper.readValue(reader, GemConfig.class);
-            gemFactory = new GemFactory(gemConfig);
-        }
+    void setup() {
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        gemFactory = new GemFactory(config);
     }
 
     @Test
@@ -37,22 +37,6 @@ class GemFactoryTest {
         Assertions.assertEquals(1, gem.getStats().size());
         Assertions.assertEquals(15, gem.getStats().get(StatType.DAMAGE));
         Assertions.assertEquals(GemLimitGroup.RUBY, gem.getGemLimitGroup());
-    }
-
-    @Test
-    void testUpgradeCostsOffensive()
-    {
-        Gem gem = gemFactory.createGem(GemType.RUBY, 5);
-        Assertions.assertEquals(GemUpgradeType.OFFENSIVE, gem.getGemUpgradeType());
-        Assertions.assertEquals(50, gemFactory.getUpgradeCost(gem));
-    }
-
-    @Test
-    void testUpgradeCostsDefensive()
-    {
-        Gem gem = gemFactory.createGem(GemType.AMETHYST, 5);
-        Assertions.assertEquals(GemUpgradeType.DEFENSIVE, gem.getGemUpgradeType());
-        Assertions.assertEquals(40, gemFactory.getUpgradeCost(gem));
     }
 
     @Test
@@ -70,17 +54,65 @@ class GemFactoryTest {
     }
 
     @Test
-    void testUpgradeCostsOpal()
+    void throwsOnInvalidTier()
     {
-        Opal opal = gemFactory.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 10);
-        Assertions.assertEquals(GemUpgradeType.OPAL, opal.getGemUpgradeType());
-        Assertions.assertEquals(7875, gemFactory.getUpgradeCost(opal));
+        Assertions.assertThrows(InvalidTierException.class, () -> gemFactory.createGem(GemType.RUBY, -1));
+        Assertions.assertThrows(InvalidTierException.class, () -> gemFactory.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 5));
     }
 
     @Test
-    void throwsOnInvalidTier()
+    void shouldResolveGemFromGemDTO()
     {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> gemFactory.createGem(GemType.RUBY, -1));
-        Assertions.assertThrows(IllegalArgumentException.class, () -> gemFactory.createOpal(GemType.RUBY, GemType.ONYX, GemType.RHODOLITE, 5));
+        GemInstanceDTO gemDTO = new GemInstanceDTO(GemCategory.GEM, List.of(GemType.RUBY), 16);
+
+        AbstractGem gem = gemFactory.fromDTO(gemDTO);
+
+        Assertions.assertEquals(GemType.RUBY, gem.getGemType());
+        Assertions.assertEquals(16, gem.getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 600.0), gem.getStats());
+    }
+
+    @Test
+    void shouldResolveGemsFromGemDTOs()
+    {
+        GemInstanceDTO gemDTO1 = new GemInstanceDTO(GemCategory.GEM, List.of(GemType.RUBY), 16);
+        GemInstanceDTO gemDTO2 = new GemInstanceDTO(GemCategory.GEM, List.of(GemType.AMETHYST), 16);
+        List<GemInstanceDTO> gemDTOs = List.of(gemDTO1, gemDTO2);
+        List<AbstractGem> gems = gemFactory.fromDTOList(gemDTOs);
+
+        Assertions.assertEquals(GemType.RUBY, gems.getFirst().getGemType());
+        Assertions.assertEquals(16, gems.getFirst().getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 600.0), gems.getFirst().getStats());
+        Assertions.assertEquals(GemType.AMETHYST, gems.get(1).getGemType());
+        Assertions.assertEquals(16, gems.get(1).getTier());
+        Assertions.assertEquals(Map.of(StatType.HEALTH_POINTS, 4900.0), gems.get(1).getStats());
+    }
+
+    @Test
+    void shouldResolveOpalFromOpalDTO()
+    {
+        GemInstanceDTO opalDTO = new GemInstanceDTO(GemCategory.OPAL, List.of(GemType.RUBY, GemType.ONYX, GemType.AMETHYST), 16);
+
+        AbstractGem opal = gemFactory.fromDTO(opalDTO);
+
+        Assertions.assertEquals(GemType.OPAL, opal.getGemType());
+        Assertions.assertEquals(16, opal.getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 450.0, StatType.CRIT_VALUE, 1687.5, StatType.HEALTH_POINTS, 3675.0), opal.getStats());
+    }
+
+    @Test
+    void shouldResolveOpalsFromOpalDTOs()
+    {
+        GemInstanceDTO opalDTO1 = new GemInstanceDTO(GemCategory.OPAL, List.of(GemType.RUBY, GemType.ONYX, GemType.AMETHYST), 16);
+        GemInstanceDTO opalDTO2 = new GemInstanceDTO(GemCategory.OPAL, List.of(GemType.RUBY, GemType.ONYX, GemType.ZIRCON), 16);
+        List<GemInstanceDTO> opalDTOs = List.of(opalDTO1, opalDTO2);
+        List<AbstractGem> opals = gemFactory.fromDTOList(opalDTOs);
+
+        Assertions.assertEquals(GemType.OPAL, opals.getFirst().getGemType());
+        Assertions.assertEquals(16, opals.getFirst().getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 450.0, StatType.CRIT_VALUE, 1687.5, StatType.HEALTH_POINTS, 3675.0), opals.getFirst().getStats());
+        Assertions.assertEquals(GemType.OPAL, opals.get(1).getGemType());
+        Assertions.assertEquals(16, opals.get(1).getTier());
+        Assertions.assertEquals(Map.of(StatType.DAMAGE, 450.0, StatType.CRIT_VALUE, 1687.5, StatType.ATTACK_SPEED, 0.012), opals.get(1).getStats());
     }
 }

@@ -7,7 +7,7 @@ public record Physic(PhysicType physicType, StatType statType, Double statValue,
 
     public String description()
     {
-        return String.format("+ %.2f%% %s", statValue * 100, statType);
+        return String.format("+ %.2f%% %s", statValue * 100, statType.getName());
     }
 
     public String getName()

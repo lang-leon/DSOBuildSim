@@ -1,22 +1,33 @@
 package com.langleon.dsobuildsim.items.mythicitems;
 
 import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.enchantments.Enchantment;
+import com.langleon.dsobuildsim.gems.AbstractGem;
+import com.langleon.dsobuildsim.items.core.enums.ItemType;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.items.core.*;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 public class MythicItem extends Item implements SetBonusProvider, UniqueStatProvider {
     private final Map<StatType, Double> uniqueRelativeValues;
     private final Map<StatType, Double> uniqueAbsoluteValues;
     private final SetType setType;
+    private final MythicItemType itemType;
 
-    public MythicItem(MythicItemDefinition itemDefinition, LevelMultiplierTable levelMultipliers, Map<StatType, Double> uniqueRelativeValues, Map<StatType, Double> uniqueAbsoluteValues, SetType set){
-        super(itemDefinition, levelMultipliers);
-        this.uniqueRelativeValues = uniqueRelativeValues;
-        this.uniqueAbsoluteValues = uniqueAbsoluteValues;
-        this.setType = set;
+    public MythicItem(MythicItemDefinition itemDefinition, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments){
+        super(itemDefinition.itemSlotType(), baseValues, level, gems, enchantments);
+        this.uniqueRelativeValues = itemDefinition.uniqueRelativeValues();
+        this.uniqueAbsoluteValues = itemDefinition.uniqueAbsoluteValues();
+        this.itemType = itemDefinition.itemType();
+        this.setType = itemDefinition.set();
+    }
+
+    @Override
+    public ItemType getItemType() {
+        return itemType;
     }
 
     @Override
@@ -26,7 +37,7 @@ public class MythicItem extends Item implements SetBonusProvider, UniqueStatProv
 
     @Override
     public String getSetItemIdentifier() {
-        return this.itemDefinition.itemType().toString();
+        return this.itemType.toString();
     }
 
     public Map<StatType, Double> getUniqueRelativeValues() {

@@ -4,164 +4,72 @@ import com.langleon.dsobuildsim.enchantments.Enchantment;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlotType;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.gems.AbstractGem;
-import com.langleon.dsobuildsim.utils.MapUtils;
+import com.langleon.dsobuildsim.items.core.enums.ItemType;
 
+import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 public abstract class Item {
-    protected final ItemDefinition itemDefinition;
-    protected final LevelMultiplierTable levelMultipliers;
     protected int level;
+    protected final ItemSlotType itemSlotType;
     protected Map<StatType, Double> baseValues;
-    protected Enchantment[] enchantments;
-    protected AbstractGem[] gems;
+    protected List<Enchantment> enchantments;
+    protected List<AbstractGem> gems;
 
-    public Item(ItemDefinition itemDefinition, LevelMultiplierTable levelMultipliers) {
-        this.itemDefinition = itemDefinition;
-        this.levelMultipliers = levelMultipliers;
-        this.level = itemDefinition.defaultLevel();
-        this.baseValues = new EnumMap<>(StatType.class);
-        this.itemDefinition.rawBaseValues().forEach((statType, value) ->
-                baseValues.put(statType, value * this.levelMultipliers.getMultiplier(level, statType)));
-        this.gems = new AbstractGem[10];
-        this.enchantments = new Enchantment[10];
+    public Item(ItemSlotType itemSlotType, Map<StatType, Double> actualBaseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments) {
+        this.itemSlotType = itemSlotType;
+        this.baseValues = new EnumMap<>(actualBaseValues);
+        this.level = level;
+        if (gems.size() > 10) throw new IllegalArgumentException("Can't have more than 10 gems per item");
+        this.gems = new ArrayList<>(gems);
+        if (enchantments.size() > 4) throw new IllegalArgumentException("Can't have more than 4 enchantments per item");
+        this.enchantments = new ArrayList<>(enchantments);
     }
 
-    public String getName()
-    {
-        return this.itemDefinition.name();
-    }
-
-    public ItemType getItemType()
-    {
-        return this.itemDefinition.itemType();
-    }
+    public abstract ItemType getItemType();
 
     public Map<StatType, Double> getBaseValues()
     {
         return baseValues;
     }
 
-    public void updateBaseValues(Map<StatType, Double> newBaseValues)
-    {
-        MapUtils.replaceExisting(this.baseValues, newBaseValues);
-    }
-
-    public AbstractGem[] getGems() {
+    public List<AbstractGem> getGems() {
         return gems;
     }
 
-    public void setGem(AbstractGem gem, int slot)
-    {
-        if (slot>=0 && slot<10)
-        {
-            gems[slot] = gem;
-        }else
-        {
-            throw new IllegalArgumentException("Invalid slot index!");
-        }
-    }
-
-    public void updateGems(AbstractGem[] gems)
-    {
-        if (gems.length!=10) throw new IllegalArgumentException("Invalid array length!");
-        this.gems = gems;
-    }
-
-    public void removeGem(int slot)
-    {
-        if (slot>=0 && slot<10)
-        {
-            gems[slot] = null;
-        }else
-        {
-            throw new IllegalArgumentException("Invalid slot index!");
-        }
-    }
-
-    public void removeGems()
-    {
-        for (int i=0; i<10; i++)
-        {
-            gems[i]=null;
-        }
-    }
-
-    public Enchantment[] getEnchants()
+    public List<Enchantment> getEnchantments()
     {
         return enchantments;
-    }
-
-    public void setEnchant(Enchantment enchantment, int slot)
-    {
-        if (slot>=0 && slot<10)
-        {
-            enchantments[slot] = enchantment;
-        }else
-        {
-            throw new IllegalArgumentException("Invalid slot index!");
-        }
-    }
-
-    public void setEnchants(Enchantment enchantment)
-    {
-        for (int i=0; i<4; i++) enchantments[i] = enchantment;
-    }
-
-    public void removeEnchant(int slot)
-    {
-        enchantments[slot] = null;
     }
 
     public int getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
-
-        baseValues.forEach(((statType, currentValue) -> {
-            double maxValue = itemDefinition.rawBaseValues().get(statType) * levelMultipliers.getMultiplier(level, statType);
-            if (currentValue > maxValue)
-                baseValues.put(statType, maxValue);
-        }));
-    }
-
-    public int getTier()
-    {
-        return this.itemDefinition.tier();
-    }
-
     public ItemSlotType getItemSlotType()
     {
-        return this.itemDefinition.itemSlotType();
+        return this.itemSlotType;
     }
 
     public Map<StatType, Double> calculateGemStats()
     {
         Map<StatType, Double> stats = new EnumMap<>(StatType.class);
-        for (int i=0; i<10; i++){
-            if (gems[i]!=null)
-            {
-                for(Map.Entry<StatType, Double> entry : gems[i].getStats().entrySet())
-                {
-                    stats.merge(entry.getKey(), entry.getValue(), Double::sum);
-                }
-            }
-        }
+        gems.forEach(gem -> {
+            gem.getStats().forEach((type, value) -> {
+                stats.merge(type, value, Double::sum);
+            });
+        });
         return stats;
     }
 
     public Map<StatType, Double> calculateEnchantStats()
     {
         Map<StatType, Double> totalEnchants = new EnumMap<>(StatType.class);
-        for (int i=0; i<4; i++){
-            if (enchantments[i]!=null)
-            {
-                totalEnchants.merge(enchantments[i].getStatType(), enchantments[i].getValue(), Double::sum);
-            }
-        }
+        enchantments.forEach(enchantment -> {
+            totalEnchants.merge(enchantment.getStatType(), enchantment.getValue(), Double::sum);
+        });
         return totalEnchants;
     }
 
