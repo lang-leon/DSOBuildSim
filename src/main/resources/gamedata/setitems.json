@@ -3259,6 +3259,17 @@
       },
       "set": "SUN_AUSPICES"
     },
+    "HOLY_EXPEDITIONARY_FORCE_AMULET": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_AMULET",
+      "name": "Soul Holy Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
+    },
     "SOUL_DESTRUCTION_AMULET": {
       "itemType": "SOUL_DESTRUCTION_AMULET",
       "name": "Soul Destruction Necklace",
@@ -3270,6 +3281,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
+    "HOLY_EXPEDITIONARY_FORCE_CLOAK": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_CLOAK",
+      "name": "Soul Holy Cloak",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
+    },
     "SOUL_DESTRUCTION_CLOAK": {
       "itemType": "SOUL_DESTRUCTION_CLOAK",
       "name": "Soul Destruction Cloak",
@@ -3280,6 +3302,17 @@
         "HEALTH_POINTS": 3.111
       },
       "set": "SOUL_DESTRUCTION"
+    },
+    "HOLY_EXPEDITIONARY_FORCE_BELT": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_BELT",
+      "name": "Soul Holy Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
     },
     "SOUL_DESTRUCTION_BELT": {
       "itemType": "SOUL_DESTRUCTION_BELT",
@@ -3294,6 +3327,17 @@
     }
   },
   "DRAGONKNIGHT": {
+    "HOLY_EXPEDITIONARY_FORCE_AMULET": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_AMULET",
+      "name": "Soul Holy Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
+    },
     "SOUL_DESTRUCTION_AMULET": {
       "itemType": "SOUL_DESTRUCTION_AMULET",
       "name": "Soul Destruction Necklace",
@@ -3305,6 +3349,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
+    "HOLY_EXPEDITIONARY_FORCE_CLOAK": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_CLOAK",
+      "name": "Soul Holy Cloak",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
+    },
     "SOUL_DESTRUCTION_CLOAK": {
       "itemType": "SOUL_DESTRUCTION_CLOAK",
       "name": "Soul Destruction Cloak",
@@ -3315,6 +3370,17 @@
         "HEALTH_POINTS": 9.333
       },
       "set": "SOUL_DESTRUCTION"
+    },
+    "HOLY_EXPEDITIONARY_FORCE_BELT": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_BELT",
+      "name": "Soul Holy Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
     },
     "SOUL_DESTRUCTION_BELT": {
       "itemType": "SOUL_DESTRUCTION_BELT",
@@ -3329,6 +3395,17 @@
     }
   },
   "RANGER": {
+    "HOLY_EXPEDITIONARY_FORCE_AMULET": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_AMULET",
+      "name": "Soul Holy Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
+    },
     "SOUL_DESTRUCTION_AMULET": {
       "itemType": "SOUL_DESTRUCTION_AMULET",
       "name": "Soul Destruction Necklace",
@@ -3340,6 +3417,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
+    "HOLY_EXPEDITIONARY_FORCE_CLOAK": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_CLOAK",
+      "name": "Soul Holy Cloak",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.93753
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
+    },
     "SOUL_DESTRUCTION_CLOAK": {
       "itemType": "SOUL_DESTRUCTION_CLOAK",
       "name": "Soul Destruction Cloak",
@@ -3350,6 +3438,18 @@
         "HEALTH_POINTS": 6.93753
       },
       "set": "SOUL_DESTRUCTION"
+    },
+
+    "HOLY_EXPEDITIONARY_FORCE_BELT": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_BELT",
+      "name": "Soul Holy Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.93753
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
     },
     "SOUL_DESTRUCTION_BELT": {
       "itemType": "SOUL_DESTRUCTION_BELT",
@@ -3364,6 +3464,17 @@
     }
   },
   "STEAM_MECHANICUS": {
+    "HOLY_EXPEDITIONARY_FORCE_AMULET": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_AMULET",
+      "name": "Soul Holy Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
+    },
     "SOUL_DESTRUCTION_AMULET": {
       "itemType": "SOUL_DESTRUCTION_AMULET",
       "name": "Soul Destruction Necklace",
@@ -3375,6 +3486,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
+    "HOLY_EXPEDITIONARY_FORCE_CLOAK": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_CLOAK",
+      "name": "Soul Holy Cloak",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 5.44425
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
+    },
     "SOUL_DESTRUCTION_CLOAK": {
       "itemType": "SOUL_DESTRUCTION_CLOAK",
       "name": "Soul Destruction Cloak",
@@ -3385,6 +3507,17 @@
         "HEALTH_POINTS": 5.44425
       },
       "set": "SOUL_DESTRUCTION"
+    },
+    "HOLY_EXPEDITIONARY_FORCE_BELT": {
+      "itemType": "HOLY_EXPEDITIONARY_FORCE_BELT",
+      "name": "Soul Holy Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 5.44425
+      },
+      "set": "HOLY_EXPEDITIONARY_FORCE"
     },
     "SOUL_DESTRUCTION_BELT": {
       "itemType": "SOUL_DESTRUCTION_BELT",

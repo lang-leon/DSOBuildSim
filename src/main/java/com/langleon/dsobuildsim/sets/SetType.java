@@ -58,7 +58,7 @@ public enum SetType {
     WORLD_DROP_SET,
 
     //Soul Companion
-    SOUL_DESTRUCTION;
-    ;
+    HOLY_EXPEDITIONARY_FORCE,
+    SOUL_DESTRUCTION
 
 }
