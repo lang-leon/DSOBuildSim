@@ -2221,6 +2221,22 @@
       }
     }
   },
+  "APRIL_HARE": {
+    "petType": "APRIL_HARE",
+    "petUpgradeType": "NONE",
+    "petCategory": "FREE_SPIRITS",
+    "descriptionPerTier": {
+      "6": "When you open the big egg in Kingshill, it will have a 10% chance to additionally drop a reward."
+    },
+    "defaultTier": "6",
+    "statsPerTier": {
+      "6": {
+        "DAMAGE": 0.20,
+        "CRIT_VALUE": 0.10,
+        "ATTACK_SPEED": 0.10
+      }
+    }
+  },
   "IRON_PAW": {
     "petType": "IRON_PAW",
     "petUpgradeType": "NONE",
