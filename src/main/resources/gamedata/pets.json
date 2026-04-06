@@ -1277,6 +1277,36 @@
       }
     }
   },
+  "OMEN_WING": {
+    "petType": "OMEN_WING",
+    "petUpgradeType": "NORMAL",
+    "petCategory": "AVIANS",
+    "descriptionPerTier": {
+    },
+    "defaultTier": "5",
+    "statsPerTier": {
+      "2": {
+        "DAMAGE": 0.05,
+        "MOVEMENT_SPEED": 0.05,
+        "ANDERMANT_DROP_BONUS": 0.08
+      },
+      "3": {
+        "DAMAGE": 0.10,
+        "MOVEMENT_SPEED": 0.10,
+        "ANDERMANT_DROP_BONUS": 0.10
+      },
+      "4": {
+        "DAMAGE": 0.15,
+        "MOVEMENT_SPEED": 0.12,
+        "ANDERMANT_DROP_BONUS": 0.12
+      },
+      "5": {
+        "DAMAGE": 0.20,
+        "RESISTANCE_VALUE": 0.15,
+        "ANDERMANT_DROP_BONUS": 0.15
+      }
+    }
+  },
   "SAPPHIRE_PARROT": {
     "petType": "SAPPHIRE_PARROT",
     "petUpgradeType": "NORMAL",
@@ -1415,19 +1445,19 @@
     "defaultTier": "5",
     "statsPerTier": {
       "2": {
-        "HEALTH_POINTS": 0.0,
-        "RESISTANCE_VALUE": 0.0,
-        "ANDERMANT_DROP_BONUS": 0.0
+        "HEALTH_POINTS": 0.05,
+        "RESISTANCE_VALUE": 0.05,
+        "ANDERMANT_DROP_BONUS": 0.08
       },
       "3": {
-        "HEALTH_POINTS": 0.0,
-        "RESISTANCE_VALUE": 0.0,
-        "ANDERMANT_DROP_BONUS": 0.0
+        "HEALTH_POINTS": 0.10,
+        "RESISTANCE_VALUE": 0.10,
+        "ANDERMANT_DROP_BONUS": 0.10
       },
       "4": {
-        "HEALTH_POINTS": 0.0,
-        "RESISTANCE_VALUE": 0.0,
-        "ANDERMANT_DROP_BONUS": 0.0
+        "HEALTH_POINTS": 0.15,
+        "RESISTANCE_VALUE": 0.15,
+        "ANDERMANT_DROP_BONUS": 0.12
       },
       "5": {
         "HEALTH_POINTS": 0.20,

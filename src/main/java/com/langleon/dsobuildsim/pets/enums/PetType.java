@@ -74,6 +74,7 @@ public enum PetType {
     YELLOW_PAUL("Yellow Paul"),
 
     //Avians
+    OMEN_WING("Omen Wing"),
     SAPPHIRE_PARROT("Sapphire Parrot"),
     RUBY_PARROT("Ruby Parrot"),
     EMERALD_PARROT("Emerald Parrot"),
