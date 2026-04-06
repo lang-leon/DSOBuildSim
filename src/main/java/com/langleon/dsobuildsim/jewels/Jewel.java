@@ -18,23 +18,6 @@ public class Jewel {
         this.stats = stats;
     }
 
-    public String getDisplayName()
-    {
-        String tierName;
-        switch (tier)
-        {
-            case 1 -> tierName = " (gray)";
-            case 2 -> tierName = " (green)";
-            case 3 -> tierName = " (blue)";
-            case 4 -> tierName = " (purple)";
-            case 5 -> tierName = " (orange)";
-            case 6 -> tierName = " (yellow)";
-            case 7 -> tierName = " (red)";
-            default -> tierName = "";
-        }
-        return this.jewelType+tierName;
-    }
-
     public int getTier() {
         return tier;
     }

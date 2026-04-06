@@ -1,0 +1,2150 @@
+{
+  "SPELLWEAVER": {
+    "AMBIDEXTROUS_VIGOR": {
+      "jewelType": "AMBIDEXTROUS_VIGOR",
+      "name": "Jewel of Ambidextrous Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "TWO_HAND_DAMAGE": 0.02
+        },
+        "2": {
+          "TWO_HAND_DAMAGE": 0.04
+        },
+        "3": {
+          "TWO_HAND_DAMAGE": 0.06
+        },
+        "4": {
+          "TWO_HAND_DAMAGE": 0.08
+        },
+        "5": {
+          "TWO_HAND_DAMAGE": 0.10
+        }
+      },
+      "descriptionPerTier": {
+        "1": "2.00% increased damage on two-hand weapons",
+        "2": "4.00% increased damage on two-hand weapons",
+        "3": "6.00% increased damage on two-hand weapons",
+        "4": "8.00% increased damage on two-hand weapons",
+        "5": "10.00% increased damage on two-hand weapons"
+      }
+    },
+    "AMPLIFIED_HEALING": {
+      "jewelType": "AMPLIFIED_HEALING",
+      "name": "Jewel of Amplified Healing",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Picking up a healing sphere increases your damage by 25% and your movement speed by 5% for 5 seconds",
+        "2": "Picking up a healing sphere increases your damage by 50% and your movement speed by 10% for 5 seconds",
+        "3": "Picking up a healing sphere increases your damage by 75% and your movement speed by 15% for 5 seconds",
+        "4": "Picking up a healing sphere increases your damage by 100% and your movement speed by 20% for 5 seconds",
+        "5": "Picking up a healing sphere increases your damage by 150% and your movement speed by 25% for 5 seconds"
+      }
+    },
+    "ANDER_POWER": {
+      "jewelType": "ANDER_POWER",
+      "name": "Jewel of Ander Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "3": {
+          "ANDERMANT_DROP_BONUS": 0.04
+        },
+        "4": {
+          "ANDERMANT_DROP_BONUS": 0.06
+        },
+        "5": {
+          "ANDERMANT_DROP_BONUS": 0.08
+        }
+      },
+      "descriptionPerTier": {
+        "3": "Increased Andermant drop stack size by 4%.",
+        "4": "Increased Andermant drop stack size by 6%.",
+        "5": "Increased Andermant drop stack size by 8%."
+      }
+    },
+    "BLACK_KNIGHT_ORDER": {
+      "jewelType": "BLACK_KNIGHT_ORDER",
+      "name": "Jewel of the Black Knight Order",
+      "defaultTier": "7",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\nThe damage of Lightning Strike is increased by 50.0% and the active cooldown time of Destruction is reduced by 1.0 second(s) for every enemy that dies while being hit by it."
+      }
+    },
+    "CONTRIBUTION": {
+      "jewelType": "CONTRIBUTION",
+      "name": "Jewel of Contribution",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing damage to an enemy, there is a 10% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "2": "When dealing damage to an enemy, there is a 12.5% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 7.5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "3": "When dealing damage to an enemy, there is a 15% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 10% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "4": "When dealing damage to an enemy, there is a 17.5% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 12.5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "5": "When dealing damage to an enemy, there is a 20% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 15% and regenerates 5% Resource per second of all group members (except you). The buff does not stack."
+      }
+    },
+    "CONVERSE": {
+      "jewelType": "CONVERSE",
+      "name": "Jewel of Converse",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Whenever you get immobilized, your armor will be increased by 20% for 5 seconds.",
+        "2": "Whenever you get immobilized, your armor will be increased by 30% for 5 seconds.",
+        "3": "Whenever you get immobilized, your armor will be increased by 40% for 5 seconds.",
+        "4": "Whenever you get immobilized, your armor will be increased by 50% for 5 seconds.",
+        "5": "Whenever you get immobilized, your armor will be increased by 60% for 5 seconds."
+      }
+    },
+    "DEXTROUS_VIGOR": {
+      "jewelType": "DEXTROUS_VIGOR",
+      "name": "Jewel of Dextrous Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "ONE_HAND_DAMAGE": 0.005
+        },
+        "2": {
+          "ONE_HAND_DAMAGE": 0.01
+        },
+        "3": {
+          "ONE_HAND_DAMAGE": 0.02
+        },
+        "4": {
+          "ONE_HAND_DAMAGE": 0.03
+        },
+        "5": {
+          "ONE_HAND_DAMAGE": 0.04
+        }
+      },
+      "descriptionPerTier": {
+        "1": "0.50% increased damage on one-handed weapons",
+        "2": "1.00% increased damage on one-handed weapons",
+        "3": "2.00% increased damage on one-handed weapons",
+        "4": "3.00% increased damage on one-handed weapons",
+        "5": "4.00% increased damage on one-handed weapons"
+      }
+    },
+    "EASTER_FEVER": {
+      "jewelType": "EASTER_FEVER",
+      "name": "Jewel of the Easter Fever",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 1 drop stack size of Gilded Clovers.",
+        "2": "+ 2 drop stack size of Gilded Clovers.",
+        "3": "+ 3 drop stack size of Gilded Clovers.",
+        "4": "+ 4 drop stack size of Gilded Clovers.",
+        "5": "+ 5 drop stack size of Gilded Clovers."
+      }
+    },
+    "ENCOURAGEMENT": {
+      "jewelType": "ENCOURAGEMENT",
+      "name": "Jewel of Encouragement",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing damage to an enemy, there is a 10% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "2": "When dealing damage to an enemy, there is a 12.5% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 7.5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "3": "When dealing damage to an enemy, there is a 15% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 10% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "4": "When dealing damage to an enemy, there is a 17.5% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 12.5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "5": "When dealing damage to an enemy, there is a 20% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 15% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack."
+      }
+    },
+    "ETERNAL_SCORN": {
+      "jewelType": "ETERNAL_SCORN",
+      "name": "Jewel of Eternal Scorn",
+      "defaultTier": "7",
+      "statsPerTier": {
+        "7": {
+          "CRIT_VALUE": 0.15
+        }
+      },
+      "descriptionPerTier": {
+        "7": "+ 15.00% critical value\nEach successful hit with Ice Missile has a chance of 5% to spawn an Ice Meteor on your location, dealing 150% of your damage as Ice damage for 5 seconds to enemies in 5 meter radius."
+      }
+    },
+    "ETERNAL_WRATH": {
+      "jewelType": "ETERNAL_WRATH",
+      "name": "Jewel of the Eternal Wrath",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 80% higher drop stack size of Fragments of Infernal Passage",
+        "2": "+ 100% higher drop stack size of Fragments of Infernal Passage",
+        "3": "+ 140% higher drop stack size of Fragments of Infernal Passage",
+        "4": "+ 180% higher drop stack size of Fragments of Infernal Passage",
+        "5": "+ 200% higher drop stack size of Fragments of Infernal Passage"
+      }
+    },
+    "FLOWER": {
+      "jewelType": "FLOWER",
+      "name": "Fiery Flower Jewel",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Each successful hit with Fireball has a 15% chance to cause 25% of your base damage as fire damage to all enemies in a range of 5 meters around the hit enemy.",
+        "2": "Each successful hit with Fireball has a 15% chance to cause 50% of your base damage as fire damage to all enemies in a range of 5 meters around the hit enemy.",
+        "3": "Each successful hit with Fireball has a 15% chance to cause 75% of your base damage as fire damage to all enemies in a range of 5 meters around the hit enemy.",
+        "4": "Each successful hit with Fireball has a 15% chance to cause 100% of your base damage as fire damage to all enemies in a range of 5 meters around the hit enemy.",
+        "5": "Each successful hit with Fireball has a 15% chance to cause 150% of your base damage as fire damage to all enemies in a range of 5 meters around the hit enemy."
+      }
+    },
+    "FOCUS": {
+      "jewelType": "FOCUS",
+      "name": "Jewel of Focus",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Reduces cooldowns of all player skills by 1.50%",
+        "2": "Reduces cooldowns of all player skills by 3.00%",
+        "3": "Reduces cooldowns of all player skills by 4.50%",
+        "4": "Reduces cooldowns of all player skills by 6.00%",
+        "5": "Reduces cooldowns of all player skills by 7.50%"
+      }
+    },
+    "FORTITUDE": {
+      "jewelType": "FORTITUDE",
+      "name": "Jewel of Fortitude",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "ARMOR_VALUE": 0.02
+        },
+        "2": {
+          "ARMOR_VALUE": 0.04
+        },
+        "3": {
+          "ARMOR_VALUE": 0.06
+        },
+        "4": {
+          "ARMOR_VALUE": 0.08
+        },
+        "5": {
+          "ARMOR_VALUE": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% Armor value",
+        "2": "+ 4.00% Armor value",
+        "3": "+ 6.00% Armor value",
+        "4": "+ 8.00% Armor value",
+        "5": "+ 10.00% Armor value"
+      }
+    },
+    "FROZEN_HEART": {
+      "jewelType": "FROZEN_HEART",
+      "name": "Jewel of the Frozen Heart",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When you are hit while being frozen, you will be healed by 10% of your maximum Health Points",
+        "2": "When you are hit while being frozen, you will be healed by 20% of your maximum Health Points",
+        "3": "When you are hit while being frozen, you will be healed by 30% of your maximum Health Points",
+        "4": "When you are hit while being frozen, you will be healed by 40% of your maximum Health Points",
+        "5": "When you are hit while being frozen, you will be healed by 50% of your maximum Health Points"
+      }
+    },
+    "GEM_FORTUNE": {
+      "jewelType": "GEM_FORTUNE",
+      "name": "Jewel of Gem Fortune",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Bosses drop 1 additional gems.",
+        "2": "Bosses drop 2 additional gems.",
+        "3": "Bosses drop 3 additional gems.",
+        "4": "Bosses drop 4 additional gems.",
+        "5": "Bosses drop 5 additional gems."
+      }
+    },
+    "GHOST_POWER": {
+      "jewelType": "GHOST_POWER",
+      "name": "Jewel of Ghost Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 1%.",
+        "2": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 2%.",
+        "3": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 3%.",
+        "4": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 4%.",
+        "5": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 5%."
+      }
+    },
+    "GLACIAL_FANG": {
+      "jewelType": "GLACIAL_FANG",
+      "name": "Jewel of Glacial Fang",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "Each critical hit has a chance of 1% to spawn a Fenris Wolf fighting beside you for 10 seconds.",
+        "4": "Each critical hit has a chance of 2% to spawn a Fenris Wolf fighting beside you for 10 seconds.",
+        "5": "Each critical hit has a chance of 3% to spawn a Fenris Wolf fighting beside you for 10 seconds."
+      }
+    },
+    "GLORY": {
+      "jewelType": "GLORY",
+      "name": "Jewel of Glory",
+      "defaultTier": "7",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "7": "This jewel will substantially enhance all \"Forgotten Glory\" set effects.\nWhen you equip all two pieces of the \"Forgotten Glory\" set, you shall gain the following effects:\n• Using Frost Wind instantly grants maximum Stirring Frost stacks."
+      }
+    },
+    "INGREDIENT_HUNTER": {
+      "jewelType": "INGREDIENT_HUNTER",
+      "name": "Jewel of the Ingredient Hunter",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 1 drop stack size of all basic, boss and event boss ingredients",
+        "2": "+ 2 drop stack size of all basic, boss and event boss ingredients",
+        "3": "+ 3 drop stack size of all basic, boss and event boss ingredients",
+        "4": "+ 4 drop stack size of all basic, boss and event boss ingredients",
+        "5": "+ 5 drop stack size of all basic, boss and event boss ingredients"
+      }
+    },
+    "LASTING_HEALTH": {
+      "jewelType": "LASTING_HEALTH",
+      "name": "Jewel of Lasting Health",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Defeating and enemy increases your health regeneration by 2% for 5 seconds.",
+        "2": "Defeating and enemy increases your health regeneration by 4% for 5 seconds.",
+        "3": "Defeating and enemy increases your health regeneration by 6% for 5 seconds.",
+        "4": "Defeating and enemy increases your health regeneration by 8% for 5 seconds.",
+        "5": "Defeating and enemy increases your health regeneration by 10% for 5 seconds."
+      }
+    },
+    "PENT_UP_POWER": {
+      "jewelType": "PENT_UP_POWER",
+      "name": "Jewel of Pent-up Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 1000% of your base damage as physical damage to all enemies around you.",
+        "2": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 1500% of your base damage as physical damage to all enemies around you.",
+        "3": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 2000% of your base damage as physical damage to all enemies around you.",
+        "4": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 2500% of your base damage as physical damage to all enemies around you.",
+        "5": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 3000% of your base damage as physical damage to all enemies around you."
+      }
+    },
+    "POISONOUS_THORNS": {
+      "jewelType": "POISONOUS_THORNS",
+      "name": "Jewel of Poisonous Thorns",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 10% of you base damage as poison damage. The poisonous thorns also deal 15% poison damage to you whenever it afflicts damage to an enemy.",
+        "2": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 20% of you base damage as poison damage. The poisonous thorns also deal 20% poison damage to you whenever it afflicts damage to an enemy.",
+        "3": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 30% of you base damage as poison damage. The poisonous thorns also deal 25% poison damage to you whenever it afflicts damage to an enemy.",
+        "4": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 40% of you base damage as poison damage. The poisonous thorns also deal 30% poison damage to you whenever it afflicts damage to an enemy.",
+        "5": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 50% of you base damage as poison damage. The poisonous thorns also deal 35% poison damage to you whenever it afflicts damage to an enemy."
+      }
+    },
+    "PROLONGATION": {
+      "jewelType": "PROLONGATION",
+      "name": "Jewel of Prolongation",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "The duration of the stun immunity effect is increased by 2 seconds.",
+        "2": "The duration of the stun immunity effect is increased by 3 seconds.",
+        "3": "The duration of the stun immunity effect is increased by 4 seconds.",
+        "4": "The duration of the stun immunity effect is increased by 5 seconds.",
+        "5": "The duration of the stun immunity effect is increased by 6 seconds."
+      }
+    },
+    "RAGE": {
+      "jewelType": "RAGE",
+      "name": "Jewel of Rage",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing critical damage to an enemy, there is a 20% chance that your critical value increases by 10% and your attacks per second increase by 5% for 10 seconds.",
+        "2": "When dealing critical damage to an enemy, there is a 25% chance that your critical value increases by 15% and your attacks per second increase by 10% for 10 seconds.",
+        "3": "When dealing critical damage to an enemy, there is a 30% chance that your critical value increases by 20% and your attacks per second increase by 15% for 10 seconds.",
+        "4": "When dealing critical damage to an enemy, there is a 35% chance that your critical value increases by 25% and your attacks per second increase by 20% for 10 seconds.",
+        "5": "When dealing critical damage to an enemy, there is a 40% chance that your critical value increases by 30% and your attacks per second increase by 25% for 10 seconds."
+      }
+    },
+    "RELENTLESSNESS": {
+      "jewelType": "RELENTLESSNESS",
+      "name": "Jewel of Relentlessness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "- 1% mana costs",
+        "2": "- 2% mana costs",
+        "3": "- 3% mana costs",
+        "4": "- 4% mana costs",
+        "5": "- 5% mana costs"
+      }
+    },
+    "REVIVAL_BOON": {
+      "jewelType": "REVIVAL_BOON",
+      "name": "Jewel of Revival Boon",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When you revive yourself at the place where you died your armor and damage will be increased by 20% for 10 seconds.",
+        "2": "When you revive yourself at the place where you died your armor and damage will be increased by 35% for 10 seconds.",
+        "3": "When you revive yourself at the place where you died your armor and damage will be increased by 30% for 10 seconds.",
+        "4": "When you revive yourself at the place where you died your armor and damage will be increased by 35% for 10 seconds.",
+        "5": "When you revive yourself at the place where you died your armor and damage will be increased by 40% for 10 seconds."
+      }
+    },
+    "SCORCHING_RAY": {
+      "jewelType": "SCORCHING_RAY",
+      "name": "Jewel of Scorching Ray",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+        }
+      },
+      "descriptionPerTier": {
+        "3": "When you block an enemy's skill, there is a 10% chance you will be healed by 10% if your maximum Health Points.",
+        "4": "When you block an enemy's skill, there is a 10% chance you will be healed by 20% if your maximum Health Points.",
+        "5": "When you block an enemy's skill, there is a 10% chance you will be healed by 40% if your maximum Health Points."
+      }
+    },
+    "STRENUOUSNESS": {
+      "jewelType": "STRENUOUSNESS",
+      "name": "Jewel of Strenuousness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "+1 to Keys of Prowess drop stack size.",
+        "4": "+2 to Keys of Prowess drop stack size.",
+        "5": "+3 to Keys of Prowess drop stack size."
+      }
+    },
+    "SWIFTNESS": {
+      "jewelType": "SWIFTNESS",
+      "name": "Jewel of Swiftness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Frost Charge and Teleport will cost 20% less Mana if your health drop below 33%.",
+        "2": "Frost Charge and Teleport will cost 30% less Mana if your health drop below 33%.",
+        "3": "Frost Charge and Teleport will cost 40% less Mana if your health drop below 33%.",
+        "4": "Frost Charge and Teleport will cost 50% less Mana if your health drop below 33%.",
+        "5": "Frost Charge and Teleport will cost 60% less Mana if your health drop below 33%."
+      }
+    },
+    "VANQUISHER": {
+      "jewelType": "VANQUISHER",
+      "name": "Jewel of the Vanquisher",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.005% additional critical value per stack",
+        "2": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.015% additional critical value per stack",
+        "3": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.03% additional critical value per stack",
+        "4": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.04% additional critical value per stack",
+        "5": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.05% additional critical value per stack"
+      }
+    },
+    "VIGOR": {
+      "jewelType": "VIGOR",
+      "name": "Jewel of Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "DAMAGE": 0.02
+        },
+        "2": {
+          "DAMAGE": 0.04
+        },
+        "3": {
+          "DAMAGE": 0.06
+        },
+        "4": {
+          "DAMAGE": 0.08
+        },
+        "5": {
+          "DAMAGE": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% damage",
+        "2": "+ 4.00% damage",
+        "3": "+ 6.00% damage",
+        "4": "+ 8.00% damage",
+        "5": "+ 10.00% damage"
+      }
+    },
+    "VITALITY": {
+      "jewelType": "VITALITY",
+      "name": "Jewel of Vitality",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "HEALTH_POINTS": 0.02
+        },
+        "2": {
+          "HEALTH_POINTS": 0.04
+        },
+        "3": {
+          "HEALTH_POINTS": 0.06
+        },
+        "4": {
+          "HEALTH_POINTS": 0.08
+        },
+        "5": {
+          "HEALTH_POINTS": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% Health points",
+        "2": "+ 4.00% Health points",
+        "3": "+ 6.00% Health points",
+        "4": "+ 8.00% Health points",
+        "5": "+ 10.00% Health points"
+      }
+    }
+  },
+  "DRAGONKNIGHT": {
+    "AMBIDEXTROUS_VIGOR": {
+      "jewelType": "AMBIDEXTROUS_VIGOR",
+      "name": "Jewel of Ambidextrous Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "TWO_HAND_DAMAGE": 0.02
+        },
+        "2": {
+          "TWO_HAND_DAMAGE": 0.04
+        },
+        "3": {
+          "TWO_HAND_DAMAGE": 0.06
+        },
+        "4": {
+          "TWO_HAND_DAMAGE": 0.08
+        },
+        "5": {
+          "TWO_HAND_DAMAGE": 0.10
+        }
+      },
+      "descriptionPerTier": {
+        "1": "2.00% increased damage on two-hand weapons",
+        "2": "4.00% increased damage on two-hand weapons",
+        "3": "6.00% increased damage on two-hand weapons",
+        "4": "8.00% increased damage on two-hand weapons",
+        "5": "10.00% increased damage on two-hand weapons"
+      }
+    },
+    "AMPLIFIED_HEALING": {
+      "jewelType": "AMPLIFIED_HEALING",
+      "name": "Jewel of Amplified Healing",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Picking up a healing sphere increases your damage by 25% and your movement speed by 5% for 5 seconds",
+        "2": "Picking up a healing sphere increases your damage by 50% and your movement speed by 10% for 5 seconds",
+        "3": "Picking up a healing sphere increases your damage by 75% and your movement speed by 15% for 5 seconds",
+        "4": "Picking up a healing sphere increases your damage by 100% and your movement speed by 20% for 5 seconds",
+        "5": "Picking up a healing sphere increases your damage by 150% and your movement speed by 25% for 5 seconds"
+      }
+    },
+    "ANDER_POWER": {
+      "jewelType": "ANDER_POWER",
+      "name": "Jewel of Ander Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "3": {
+          "ANDERMANT_DROP_BONUS": 0.04
+        },
+        "4": {
+          "ANDERMANT_DROP_BONUS": 0.06
+        },
+        "5": {
+          "ANDERMANT_DROP_BONUS": 0.08
+        }
+      },
+      "descriptionPerTier": {
+        "3": "Increased Andermant drop stack size by 4%.",
+        "4": "Increased Andermant drop stack size by 6%.",
+        "5": "Increased Andermant drop stack size by 8%."
+      }
+    },
+    "BLACK_KNIGHT_ORDER": {
+      "jewelType": "BLACK_KNIGHT_ORDER",
+      "name": "Jewel of the Black Knight Order",
+      "defaultTier": "7",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\nThe damage of Lightning Strike is increased by 50.0% and the active cooldown time of Destruction is reduced by 1.0 second(s) for every enemy that dies while being hit by it."
+      }
+    },
+    "CONTRIBUTION": {
+      "jewelType": "CONTRIBUTION",
+      "name": "Jewel of Contribution",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing damage to an enemy, there is a 10% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "2": "When dealing damage to an enemy, there is a 12.5% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 7.5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "3": "When dealing damage to an enemy, there is a 15% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 10% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "4": "When dealing damage to an enemy, there is a 17.5% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 12.5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "5": "When dealing damage to an enemy, there is a 20% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 15% and regenerates 5% Resource per second of all group members (except you). The buff does not stack."
+      }
+    },
+    "CONVERSE": {
+      "jewelType": "CONVERSE",
+      "name": "Jewel of Converse",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Whenever you get immobilized, your armor will be increased by 20% for 5 seconds.",
+        "2": "Whenever you get immobilized, your armor will be increased by 30% for 5 seconds.",
+        "3": "Whenever you get immobilized, your armor will be increased by 40% for 5 seconds.",
+        "4": "Whenever you get immobilized, your armor will be increased by 50% for 5 seconds.",
+        "5": "Whenever you get immobilized, your armor will be increased by 60% for 5 seconds."
+      }
+    },
+    "DEXTROUS_VIGOR": {
+      "jewelType": "DEXTROUS_VIGOR",
+      "name": "Jewel of Dextrous Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "ONE_HAND_DAMAGE": 0.005
+        },
+        "2": {
+          "ONE_HAND_DAMAGE": 0.01
+        },
+        "3": {
+          "ONE_HAND_DAMAGE": 0.02
+        },
+        "4": {
+          "ONE_HAND_DAMAGE": 0.03
+        },
+        "5": {
+          "ONE_HAND_DAMAGE": 0.04
+        }
+      },
+      "descriptionPerTier": {
+        "1": "0.50% increased damage on one-handed weapons",
+        "2": "1.00% increased damage on one-handed weapons",
+        "3": "2.00% increased damage on one-handed weapons",
+        "4": "3.00% increased damage on one-handed weapons",
+        "5": "4.00% increased damage on one-handed weapons"
+      }
+    },
+    "EASTER_FEVER": {
+      "jewelType": "EASTER_FEVER",
+      "name": "Jewel of the Easter Fever",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 1 drop stack size of Gilded Clovers.",
+        "2": "+ 2 drop stack size of Gilded Clovers.",
+        "3": "+ 3 drop stack size of Gilded Clovers.",
+        "4": "+ 4 drop stack size of Gilded Clovers.",
+        "5": "+ 5 drop stack size of Gilded Clovers."
+      }
+    },
+    "ENCOURAGEMENT": {
+      "jewelType": "ENCOURAGEMENT",
+      "name": "Jewel of Encouragement",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing damage to an enemy, there is a 10% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "2": "When dealing damage to an enemy, there is a 12.5% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 7.5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "3": "When dealing damage to an enemy, there is a 15% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 10% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "4": "When dealing damage to an enemy, there is a 17.5% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 12.5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "5": "When dealing damage to an enemy, there is a 20% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 15% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack."
+      }
+    },
+    "ETERNAL_SCORN": {
+      "jewelType": "ETERNAL_SCORN",
+      "name": "Jewel of Eternal Scorn",
+      "defaultTier": "7",
+      "statsPerTier": {
+        "7": {
+          "CRIT_VALUE": 0.15
+        }
+      },
+      "descriptionPerTier": {
+        "7": "+ 15.00% critical value\nEach successful hit with Smash has a chance of 5% to spawn an Ice Meteor on your location, dealing 150% of your damage as Ice damage for 5 seconds to enemies in 5 meter radius."
+      }
+    },
+    "ETERNAL_WRATH": {
+      "jewelType": "ETERNAL_WRATH",
+      "name": "Jewel of the Eternal Wrath",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 80% higher drop stack size of Fragments of Infernal Passage",
+        "2": "+ 100% higher drop stack size of Fragments of Infernal Passage",
+        "3": "+ 140% higher drop stack size of Fragments of Infernal Passage",
+        "4": "+ 180% higher drop stack size of Fragments of Infernal Passage",
+        "5": "+ 200% higher drop stack size of Fragments of Infernal Passage"
+      }
+    },
+    "FLOWER": {
+      "jewelType": "FLOWER",
+      "name": "Thundering Flower Jewel",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Each successful hit with Smash has a 10% chance to cause 20% of your base damage as lightning damage to all enemies in a range of 5 meters around the hit enemy.",
+        "2": "Each successful hit with Smash has a 10% chance to cause 40% of your base damage as lightning damage to all enemies in a range of 5 meters around the hit enemy.",
+        "3": "Each successful hit with Smash has a 10% chance to cause 60% of your base damage as lightning damage to all enemies in a range of 5 meters around the hit enemy.",
+        "4": "Each successful hit with Smash has a 10% chance to cause 80% of your base damage as lightning damage to all enemies in a range of 5 meters around the hit enemy.",
+        "5": "Each successful hit with Smash has a 10% chance to cause 100% of your base damage as lightning damage to all enemies in a range of 5 meters around the hit enemy."
+      }
+    },
+    "FOCUS": {
+      "jewelType": "FOCUS",
+      "name": "Jewel of Focus",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Reduces cooldowns of all player skills by 1.50%",
+        "2": "Reduces cooldowns of all player skills by 3.00%",
+        "3": "Reduces cooldowns of all player skills by 4.50%",
+        "4": "Reduces cooldowns of all player skills by 6.00%",
+        "5": "Reduces cooldowns of all player skills by 7.50%"
+      }
+    },
+    "FORTITUDE": {
+      "jewelType": "FORTITUDE",
+      "name": "Jewel of Fortitude",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "ARMOR_VALUE": 0.02
+        },
+        "2": {
+          "ARMOR_VALUE": 0.04
+        },
+        "3": {
+          "ARMOR_VALUE": 0.06
+        },
+        "4": {
+          "ARMOR_VALUE": 0.08
+        },
+        "5": {
+          "ARMOR_VALUE": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% Armor value",
+        "2": "+ 4.00% Armor value",
+        "3": "+ 6.00% Armor value",
+        "4": "+ 8.00% Armor value",
+        "5": "+ 10.00% Armor value"
+      }
+    },
+    "FROZEN_HEART": {
+      "jewelType": "FROZEN_HEART",
+      "name": "Jewel of the Frozen Heart",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When you are hit while being frozen, you will be healed by 10% of your maximum Health Points",
+        "2": "When you are hit while being frozen, you will be healed by 20% of your maximum Health Points",
+        "3": "When you are hit while being frozen, you will be healed by 30% of your maximum Health Points",
+        "4": "When you are hit while being frozen, you will be healed by 40% of your maximum Health Points",
+        "5": "When you are hit while being frozen, you will be healed by 50% of your maximum Health Points"
+      }
+    },
+    "GEM_FORTUNE": {
+      "jewelType": "GEM_FORTUNE",
+      "name": "Jewel of Gem Fortune",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Bosses drop 1 additional gems.",
+        "2": "Bosses drop 2 additional gems.",
+        "3": "Bosses drop 3 additional gems.",
+        "4": "Bosses drop 4 additional gems.",
+        "5": "Bosses drop 5 additional gems."
+      }
+    },
+    "GHOST_POWER": {
+      "jewelType": "GHOST_POWER",
+      "name": "Jewel of Ghost Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 1%.",
+        "2": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 2%.",
+        "3": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 3%.",
+        "4": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 4%.",
+        "5": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 5%."
+      }
+    },
+    "GLACIAL_FANG": {
+      "jewelType": "GLACIAL_FANG",
+      "name": "Jewel of Glacial Fang",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "Each critical hit has a chance of 1% to spawn a Fenris Wolf fighting beside you for 10 seconds.",
+        "4": "Each critical hit has a chance of 2% to spawn a Fenris Wolf fighting beside you for 10 seconds.",
+        "5": "Each critical hit has a chance of 3% to spawn a Fenris Wolf fighting beside you for 10 seconds."
+      }
+    },
+    "GLORY": {
+      "jewelType": "GLORY",
+      "name": "Jewel of Glory",
+      "defaultTier": "7",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "7": "This jewel will substantially enhance all \"Forgotten Glory\" set effects.\nWhen you equip all two pieces of the \"Forgotten Glory\" set, you shall gain the following effects:\n• When you release Banner of War, immediately gain the maximum number of Battle Frenzy stacks.\n• Each stack additionally increases Mighty Wild Swing damage by 15%."
+      }
+    },
+    "INGREDIENT_HUNTER": {
+      "jewelType": "INGREDIENT_HUNTER",
+      "name": "Jewel of the Ingredient Hunter",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 1 drop stack size of all basic, boss and event boss ingredients",
+        "2": "+ 2 drop stack size of all basic, boss and event boss ingredients",
+        "3": "+ 3 drop stack size of all basic, boss and event boss ingredients",
+        "4": "+ 4 drop stack size of all basic, boss and event boss ingredients",
+        "5": "+ 5 drop stack size of all basic, boss and event boss ingredients"
+      }
+    },
+    "LASTING_HEALTH": {
+      "jewelType": "LASTING_HEALTH",
+      "name": "Jewel of Lasting Health",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Defeating and enemy increases your health regeneration by 2% for 5 seconds.",
+        "2": "Defeating and enemy increases your health regeneration by 4% for 5 seconds.",
+        "3": "Defeating and enemy increases your health regeneration by 6% for 5 seconds.",
+        "4": "Defeating and enemy increases your health regeneration by 8% for 5 seconds.",
+        "5": "Defeating and enemy increases your health regeneration by 10% for 5 seconds."
+      }
+    },
+    "PENT_UP_POWER": {
+      "jewelType": "PENT_UP_POWER",
+      "name": "Jewel of Pent-up Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 1000% of your base damage as physical damage to all enemies around you.",
+        "2": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 1500% of your base damage as physical damage to all enemies around you.",
+        "3": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 2000% of your base damage as physical damage to all enemies around you.",
+        "4": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 2500% of your base damage as physical damage to all enemies around you.",
+        "5": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 3000% of your base damage as physical damage to all enemies around you."
+      }
+    },
+    "POISONOUS_THORNS": {
+      "jewelType": "POISONOUS_THORNS",
+      "name": "Jewel of Poisonous Thorns",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 10% of you base damage as poison damage. The poisonous thorns also deal 15% poison damage to you whenever it afflicts damage to an enemy.",
+        "2": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 20% of you base damage as poison damage. The poisonous thorns also deal 20% poison damage to you whenever it afflicts damage to an enemy.",
+        "3": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 30% of you base damage as poison damage. The poisonous thorns also deal 25% poison damage to you whenever it afflicts damage to an enemy.",
+        "4": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 40% of you base damage as poison damage. The poisonous thorns also deal 30% poison damage to you whenever it afflicts damage to an enemy.",
+        "5": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 50% of you base damage as poison damage. The poisonous thorns also deal 35% poison damage to you whenever it afflicts damage to an enemy."
+      }
+    },
+    "PROLONGATION": {
+      "jewelType": "PROLONGATION",
+      "name": "Jewel of Prolongation",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "The duration of the stun immunity effect is increased by 2 seconds.",
+        "2": "The duration of the stun immunity effect is increased by 3 seconds.",
+        "3": "The duration of the stun immunity effect is increased by 4 seconds.",
+        "4": "The duration of the stun immunity effect is increased by 5 seconds.",
+        "5": "The duration of the stun immunity effect is increased by 6 seconds."
+      }
+    },
+    "RAGE": {
+      "jewelType": "RAGE",
+      "name": "Jewel of Rage",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing critical damage to an enemy, there is a 20% chance that your critical value increases by 10% and your attacks per second increase by 5% for 10 seconds.",
+        "2": "When dealing critical damage to an enemy, there is a 25% chance that your critical value increases by 15% and your attacks per second increase by 10% for 10 seconds.",
+        "3": "When dealing critical damage to an enemy, there is a 30% chance that your critical value increases by 20% and your attacks per second increase by 15% for 10 seconds.",
+        "4": "When dealing critical damage to an enemy, there is a 35% chance that your critical value increases by 25% and your attacks per second increase by 20% for 10 seconds.",
+        "5": "When dealing critical damage to an enemy, there is a 40% chance that your critical value increases by 30% and your attacks per second increase by 25% for 10 seconds."
+      }
+    },
+    "RELENTLESSNESS": {
+      "jewelType": "RELENTLESSNESS",
+      "name": "Jewel of Relentlessness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "- 1% rage costs",
+        "2": "- 2% rage costs",
+        "3": "- 3% rage costs",
+        "4": "- 4% rage costs",
+        "5": "- 5% rage costs"
+      }
+    },
+    "REVIVAL_BOON": {
+      "jewelType": "REVIVAL_BOON",
+      "name": "Jewel of Revival Boon",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When you revive yourself at the place where you died your armor and damage will be increased by 20% for 10 seconds.",
+        "2": "When you revive yourself at the place where you died your armor and damage will be increased by 35% for 10 seconds.",
+        "3": "When you revive yourself at the place where you died your armor and damage will be increased by 30% for 10 seconds.",
+        "4": "When you revive yourself at the place where you died your armor and damage will be increased by 35% for 10 seconds.",
+        "5": "When you revive yourself at the place where you died your armor and damage will be increased by 40% for 10 seconds."
+      }
+    },
+    "SCORCHING_RAY": {
+      "jewelType": "SCORCHING_RAY",
+      "name": "Jewel of Scorching Ray",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+        }
+      },
+      "descriptionPerTier": {
+        "3": "When you block an enemy's skill, there is a 10% chance you will be healed by 10% if your maximum Health Points.",
+        "4": "When you block an enemy's skill, there is a 10% chance you will be healed by 20% if your maximum Health Points.",
+        "5": "When you block an enemy's skill, there is a 10% chance you will be healed by 40% if your maximum Health Points."
+      }
+    },
+    "STRENUOUSNESS": {
+      "jewelType": "STRENUOUSNESS",
+      "name": "Jewel of Strenuousness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "+1 to Keys of Prowess drop stack size.",
+        "4": "+2 to Keys of Prowess drop stack size.",
+        "5": "+3 to Keys of Prowess drop stack size."
+      }
+    },
+    "SWIFTNESS": {
+      "jewelType": "SWIFTNESS",
+      "name": "Jewel of Swiftness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Charge and Rage Jump will cost 20% less Mana if your health drop below 33%.",
+        "2": "Charge and Rage Jump will cost 30% less Mana if your health drop below 33%.",
+        "3": "Charge and Rage Jump will cost 40% less Mana if your health drop below 33%.",
+        "4": "Charge and Rage Jump will cost 50% less Mana if your health drop below 33%.",
+        "5": "Charge and Rage Jump will cost 60% less Mana if your health drop below 33%."
+      }
+    },
+    "VANQUISHER": {
+      "jewelType": "VANQUISHER",
+      "name": "Jewel of the Vanquisher",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.005% additional critical value per stack",
+        "2": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.015% additional critical value per stack",
+        "3": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.03% additional critical value per stack",
+        "4": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.04% additional critical value per stack",
+        "5": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.05% additional critical value per stack"
+      }
+    },
+    "VIGOR": {
+      "jewelType": "VIGOR",
+      "name": "Jewel of Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "DAMAGE": 0.02
+        },
+        "2": {
+          "DAMAGE": 0.04
+        },
+        "3": {
+          "DAMAGE": 0.06
+        },
+        "4": {
+          "DAMAGE": 0.08
+        },
+        "5": {
+          "DAMAGE": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% damage",
+        "2": "+ 4.00% damage",
+        "3": "+ 6.00% damage",
+        "4": "+ 8.00% damage",
+        "5": "+ 10.00% damage"
+      }
+    },
+    "VITALITY": {
+      "jewelType": "VITALITY",
+      "name": "Jewel of Vitality",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "HEALTH_POINTS": 0.02
+        },
+        "2": {
+          "HEALTH_POINTS": 0.04
+        },
+        "3": {
+          "HEALTH_POINTS": 0.06
+        },
+        "4": {
+          "HEALTH_POINTS": 0.08
+        },
+        "5": {
+          "HEALTH_POINTS": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% Health points",
+        "2": "+ 4.00% Health points",
+        "3": "+ 6.00% Health points",
+        "4": "+ 8.00% Health points",
+        "5": "+ 10.00% Health points"
+      }
+    }
+  },
+  "RANGER": {
+    "AMBIDEXTROUS_VIGOR": {
+      "jewelType": "AMBIDEXTROUS_VIGOR",
+      "name": "Jewel of Ambidextrous Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "TWO_HAND_DAMAGE": 0.02
+        },
+        "2": {
+          "TWO_HAND_DAMAGE": 0.04
+        },
+        "3": {
+          "TWO_HAND_DAMAGE": 0.06
+        },
+        "4": {
+          "TWO_HAND_DAMAGE": 0.08
+        },
+        "5": {
+          "TWO_HAND_DAMAGE": 0.10
+        }
+      },
+      "descriptionPerTier": {
+        "1": "2.00% increased damage on two-hand weapons",
+        "2": "4.00% increased damage on two-hand weapons",
+        "3": "6.00% increased damage on two-hand weapons",
+        "4": "8.00% increased damage on two-hand weapons",
+        "5": "10.00% increased damage on two-hand weapons"
+      }
+    },
+    "AMPLIFIED_HEALING": {
+      "jewelType": "AMPLIFIED_HEALING",
+      "name": "Jewel of Amplified Healing",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Picking up a healing sphere increases your damage by 25% and your movement speed by 5% for 5 seconds",
+        "2": "Picking up a healing sphere increases your damage by 50% and your movement speed by 10% for 5 seconds",
+        "3": "Picking up a healing sphere increases your damage by 75% and your movement speed by 15% for 5 seconds",
+        "4": "Picking up a healing sphere increases your damage by 100% and your movement speed by 20% for 5 seconds",
+        "5": "Picking up a healing sphere increases your damage by 150% and your movement speed by 25% for 5 seconds"
+      }
+    },
+    "ANDER_POWER": {
+      "jewelType": "ANDER_POWER",
+      "name": "Jewel of Ander Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "3": {
+          "ANDERMANT_DROP_BONUS": 0.04
+        },
+        "4": {
+          "ANDERMANT_DROP_BONUS": 0.06
+        },
+        "5": {
+          "ANDERMANT_DROP_BONUS": 0.08
+        }
+      },
+      "descriptionPerTier": {
+        "3": "Increased Andermant drop stack size by 4%.",
+        "4": "Increased Andermant drop stack size by 6%.",
+        "5": "Increased Andermant drop stack size by 8%."
+      }
+    },
+    "BLACK_KNIGHT_ORDER": {
+      "jewelType": "BLACK_KNIGHT_ORDER",
+      "name": "Jewel of the Black Knight Order",
+      "defaultTier": "7",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\n+ 1.5% Health Points whenever you hit an already marked enemy"
+      }
+    },
+    "CONTRIBUTION": {
+      "jewelType": "CONTRIBUTION",
+      "name": "Jewel of Contribution",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing damage to an enemy, there is a 10% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "2": "When dealing damage to an enemy, there is a 12.5% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 7.5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "3": "When dealing damage to an enemy, there is a 15% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 10% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "4": "When dealing damage to an enemy, there is a 17.5% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 12.5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "5": "When dealing damage to an enemy, there is a 20% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 15% and regenerates 5% Resource per second of all group members (except you). The buff does not stack."
+      }
+    },
+    "CONVERSE": {
+      "jewelType": "CONVERSE",
+      "name": "Jewel of Converse",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Whenever you get immobilized, your armor will be increased by 20% for 5 seconds.",
+        "2": "Whenever you get immobilized, your armor will be increased by 30% for 5 seconds.",
+        "3": "Whenever you get immobilized, your armor will be increased by 40% for 5 seconds.",
+        "4": "Whenever you get immobilized, your armor will be increased by 50% for 5 seconds.",
+        "5": "Whenever you get immobilized, your armor will be increased by 60% for 5 seconds."
+      }
+    },
+    "DEXTROUS_VIGOR": {
+      "jewelType": "DEXTROUS_VIGOR",
+      "name": "Jewel of Dextrous Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "ONE_HAND_DAMAGE": 0.005
+        },
+        "2": {
+          "ONE_HAND_DAMAGE": 0.01
+        },
+        "3": {
+          "ONE_HAND_DAMAGE": 0.02
+        },
+        "4": {
+          "ONE_HAND_DAMAGE": 0.03
+        },
+        "5": {
+          "ONE_HAND_DAMAGE": 0.04
+        }
+      },
+      "descriptionPerTier": {
+        "1": "0.50% increased damage on one-handed weapons",
+        "2": "1.00% increased damage on one-handed weapons",
+        "3": "2.00% increased damage on one-handed weapons",
+        "4": "3.00% increased damage on one-handed weapons",
+        "5": "4.00% increased damage on one-handed weapons"
+      }
+    },
+    "EASTER_FEVER": {
+      "jewelType": "EASTER_FEVER",
+      "name": "Jewel of the Easter Fever",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 1 drop stack size of Gilded Clovers.",
+        "2": "+ 2 drop stack size of Gilded Clovers.",
+        "3": "+ 3 drop stack size of Gilded Clovers.",
+        "4": "+ 4 drop stack size of Gilded Clovers.",
+        "5": "+ 5 drop stack size of Gilded Clovers."
+      }
+    },
+    "ENCOURAGEMENT": {
+      "jewelType": "ENCOURAGEMENT",
+      "name": "Jewel of Encouragement",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing damage to an enemy, there is a 10% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "2": "When dealing damage to an enemy, there is a 12.5% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 7.5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "3": "When dealing damage to an enemy, there is a 15% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 10% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "4": "When dealing damage to an enemy, there is a 17.5% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 12.5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "5": "When dealing damage to an enemy, there is a 20% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 15% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack."
+      }
+    },
+    "ETERNAL_SCORN": {
+      "jewelType": "ETERNAL_SCORN",
+      "name": "Jewel of Eternal Scorn",
+      "defaultTier": "7",
+      "statsPerTier": {
+        "7": {
+          "CRIT_VALUE": 0.15
+        }
+      },
+      "descriptionPerTier": {
+        "7": "+ 15.00% critical value\nEach successful hit with Scatter Shot has a chance of 5% to spawn an Ice Meteor on your location, dealing 150% of your damage as Ice damage for 5 seconds to enemies in 5 meter radius."
+      }
+    },
+    "ETERNAL_WRATH": {
+      "jewelType": "ETERNAL_WRATH",
+      "name": "Jewel of the Eternal Wrath",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 80% higher drop stack size of Fragments of Infernal Passage",
+        "2": "+ 100% higher drop stack size of Fragments of Infernal Passage",
+        "3": "+ 140% higher drop stack size of Fragments of Infernal Passage",
+        "4": "+ 180% higher drop stack size of Fragments of Infernal Passage",
+        "5": "+ 200% higher drop stack size of Fragments of Infernal Passage"
+      }
+    },
+    "FLOWER": {
+      "jewelType": "FLOWER",
+      "name": "Thundering Flower Jewel",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Each successful hit with Precise Shot has a 15% chance to cause 25% of your base damage as lightning damage to all enemies in a range of 5 meters around the hit enemy.",
+        "2": "Each successful hit with Precise Shot has a 15% chance to cause 50% of your base damage as lightning damage to all enemies in a range of 5 meters around the hit enemy.",
+        "3": "Each successful hit with Precise Shot has a 15% chance to cause 75% of your base damage as lightning damage to all enemies in a range of 5 meters around the hit enemy.",
+        "4": "Each successful hit with Precise Shot has a 15% chance to cause 100% of your base damage as lightning damage to all enemies in a range of 5 meters around the hit enemy.",
+        "5": "Each successful hit with Precise Shot has a 15% chance to cause 150% of your base damage as lightning damage to all enemies in a range of 5 meters around the hit enemy."
+      }
+    },
+    "FOCUS": {
+      "jewelType": "FOCUS",
+      "name": "Jewel of Focus",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Reduces cooldowns of all player skills by 1.50%",
+        "2": "Reduces cooldowns of all player skills by 3.00%",
+        "3": "Reduces cooldowns of all player skills by 4.50%",
+        "4": "Reduces cooldowns of all player skills by 6.00%",
+        "5": "Reduces cooldowns of all player skills by 7.50%"
+      }
+    },
+    "FORTITUDE": {
+      "jewelType": "FORTITUDE",
+      "name": "Jewel of Fortitude",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "ARMOR_VALUE": 0.02
+        },
+        "2": {
+          "ARMOR_VALUE": 0.04
+        },
+        "3": {
+          "ARMOR_VALUE": 0.06
+        },
+        "4": {
+          "ARMOR_VALUE": 0.08
+        },
+        "5": {
+          "ARMOR_VALUE": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% Armor value",
+        "2": "+ 4.00% Armor value",
+        "3": "+ 6.00% Armor value",
+        "4": "+ 8.00% Armor value",
+        "5": "+ 10.00% Armor value"
+      }
+    },
+    "FROZEN_HEART": {
+      "jewelType": "FROZEN_HEART",
+      "name": "Jewel of the Frozen Heart",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When you are hit while being frozen, you will be healed by 10% of your maximum Health Points",
+        "2": "When you are hit while being frozen, you will be healed by 20% of your maximum Health Points",
+        "3": "When you are hit while being frozen, you will be healed by 30% of your maximum Health Points",
+        "4": "When you are hit while being frozen, you will be healed by 40% of your maximum Health Points",
+        "5": "When you are hit while being frozen, you will be healed by 50% of your maximum Health Points"
+      }
+    },
+    "GEM_FORTUNE": {
+      "jewelType": "GEM_FORTUNE",
+      "name": "Jewel of Gem Fortune",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Bosses drop 1 additional gems.",
+        "2": "Bosses drop 2 additional gems.",
+        "3": "Bosses drop 3 additional gems.",
+        "4": "Bosses drop 4 additional gems.",
+        "5": "Bosses drop 5 additional gems."
+      }
+    },
+    "GHOST_POWER": {
+      "jewelType": "GHOST_POWER",
+      "name": "Jewel of Ghost Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 1%.",
+        "2": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 2%.",
+        "3": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 3%.",
+        "4": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 4%.",
+        "5": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 5%."
+      }
+    },
+    "GLACIAL_FANG": {
+      "jewelType": "GLACIAL_FANG",
+      "name": "Jewel of Glacial Fang",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "Each critical hit has a chance of 1% to spawn a Fenris Wolf fighting beside you for 10 seconds.",
+        "4": "Each critical hit has a chance of 2% to spawn a Fenris Wolf fighting beside you for 10 seconds.",
+        "5": "Each critical hit has a chance of 3% to spawn a Fenris Wolf fighting beside you for 10 seconds."
+      }
+    },
+    "GLORY": {
+      "jewelType": "GLORY",
+      "name": "Jewel of Glory",
+      "defaultTier": "7",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "7": "This jewel will substantially enhance all \"Forgotten Glory\" set effects.\nWhen you equip all two pieces of the \"Forgotten Glory\" set, you shall gain the following effects:\n• Explosive Arrow triggers an additional explosion with a 4.5 meter radius, dealing 100% Physical Damage to each hit enemy and applying 3 stacks of Burning."
+      }
+    },
+    "INGREDIENT_HUNTER": {
+      "jewelType": "INGREDIENT_HUNTER",
+      "name": "Jewel of the Ingredient Hunter",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 1 drop stack size of all basic, boss and event boss ingredients",
+        "2": "+ 2 drop stack size of all basic, boss and event boss ingredients",
+        "3": "+ 3 drop stack size of all basic, boss and event boss ingredients",
+        "4": "+ 4 drop stack size of all basic, boss and event boss ingredients",
+        "5": "+ 5 drop stack size of all basic, boss and event boss ingredients"
+      }
+    },
+    "LASTING_HEALTH": {
+      "jewelType": "LASTING_HEALTH",
+      "name": "Jewel of Lasting Health",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Defeating and enemy increases your health regeneration by 2% for 5 seconds.",
+        "2": "Defeating and enemy increases your health regeneration by 4% for 5 seconds.",
+        "3": "Defeating and enemy increases your health regeneration by 6% for 5 seconds.",
+        "4": "Defeating and enemy increases your health regeneration by 8% for 5 seconds.",
+        "5": "Defeating and enemy increases your health regeneration by 10% for 5 seconds."
+      }
+    },
+    "PENT_UP_POWER": {
+      "jewelType": "PENT_UP_POWER",
+      "name": "Jewel of Pent-up Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 1000% of your base damage as physical damage to all enemies around you.",
+        "2": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 1500% of your base damage as physical damage to all enemies around you.",
+        "3": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 2000% of your base damage as physical damage to all enemies around you.",
+        "4": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 2500% of your base damage as physical damage to all enemies around you.",
+        "5": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 3000% of your base damage as physical damage to all enemies around you."
+      }
+    },
+    "POISONOUS_THORNS": {
+      "jewelType": "POISONOUS_THORNS",
+      "name": "Jewel of Poisonous Thorns",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 10% of you base damage as poison damage. The poisonous thorns also deal 15% poison damage to you whenever it afflicts damage to an enemy.",
+        "2": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 20% of you base damage as poison damage. The poisonous thorns also deal 20% poison damage to you whenever it afflicts damage to an enemy.",
+        "3": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 30% of you base damage as poison damage. The poisonous thorns also deal 25% poison damage to you whenever it afflicts damage to an enemy.",
+        "4": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 40% of you base damage as poison damage. The poisonous thorns also deal 30% poison damage to you whenever it afflicts damage to an enemy.",
+        "5": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 50% of you base damage as poison damage. The poisonous thorns also deal 35% poison damage to you whenever it afflicts damage to an enemy."
+      }
+    },
+    "PROLONGATION": {
+      "jewelType": "PROLONGATION",
+      "name": "Jewel of Prolongation",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "The duration of the stun immunity effect is increased by 2 seconds.",
+        "2": "The duration of the stun immunity effect is increased by 3 seconds.",
+        "3": "The duration of the stun immunity effect is increased by 4 seconds.",
+        "4": "The duration of the stun immunity effect is increased by 5 seconds.",
+        "5": "The duration of the stun immunity effect is increased by 6 seconds."
+      }
+    },
+    "RAGE": {
+      "jewelType": "RAGE",
+      "name": "Jewel of Rage",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing critical damage to an enemy, there is a 20% chance that your critical value increases by 10% and your attacks per second increase by 5% for 10 seconds.",
+        "2": "When dealing critical damage to an enemy, there is a 25% chance that your critical value increases by 15% and your attacks per second increase by 10% for 10 seconds.",
+        "3": "When dealing critical damage to an enemy, there is a 30% chance that your critical value increases by 20% and your attacks per second increase by 15% for 10 seconds.",
+        "4": "When dealing critical damage to an enemy, there is a 35% chance that your critical value increases by 25% and your attacks per second increase by 20% for 10 seconds.",
+        "5": "When dealing critical damage to an enemy, there is a 40% chance that your critical value increases by 30% and your attacks per second increase by 25% for 10 seconds."
+      }
+    },
+    "RELENTLESSNESS": {
+      "jewelType": "RELENTLESSNESS",
+      "name": "Jewel of Relentlessness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "- 1% concentration costs",
+        "2": "- 2% concentration costs",
+        "3": "- 3% concentration costs",
+        "4": "- 4% concentration costs",
+        "5": "- 5% concentration costs"
+      }
+    },
+    "REVIVAL_BOON": {
+      "jewelType": "REVIVAL_BOON",
+      "name": "Jewel of Revival Boon",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When you revive yourself at the place where you died your armor and damage will be increased by 20% for 10 seconds.",
+        "2": "When you revive yourself at the place where you died your armor and damage will be increased by 35% for 10 seconds.",
+        "3": "When you revive yourself at the place where you died your armor and damage will be increased by 30% for 10 seconds.",
+        "4": "When you revive yourself at the place where you died your armor and damage will be increased by 35% for 10 seconds.",
+        "5": "When you revive yourself at the place where you died your armor and damage will be increased by 40% for 10 seconds."
+      }
+    },
+    "SCORCHING_RAY": {
+      "jewelType": "SCORCHING_RAY",
+      "name": "Jewel of Scorching Ray",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+        }
+      },
+      "descriptionPerTier": {
+        "3": "When you block an enemy's skill, there is a 10% chance you will be healed by 10% if your maximum Health Points.",
+        "4": "When you block an enemy's skill, there is a 10% chance you will be healed by 20% if your maximum Health Points.",
+        "5": "When you block an enemy's skill, there is a 10% chance you will be healed by 40% if your maximum Health Points."
+      }
+    },
+    "STRENUOUSNESS": {
+      "jewelType": "STRENUOUSNESS",
+      "name": "Jewel of Strenuousness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "+1 to Keys of Prowess drop stack size.",
+        "4": "+2 to Keys of Prowess drop stack size.",
+        "5": "+3 to Keys of Prowess drop stack size."
+      }
+    },
+    "SWIFTNESS": {
+      "jewelType": "SWIFTNESS",
+      "name": "Jewel of Swiftness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Dive and Blade Dance will cost 20% less Mana if your health drop below 33%.",
+        "2": "Dive and Blade Dance will cost 30% less Mana if your health drop below 33%.",
+        "3": "Dive and Blade Dance will cost 40% less Mana if your health drop below 33%.",
+        "4": "Dive and Blade Dance will cost 50% less Mana if your health drop below 33%.",
+        "5": "Dive and Blade Dance will cost 60% less Mana if your health drop below 33%."
+      }
+    },
+    "VANQUISHER": {
+      "jewelType": "VANQUISHER",
+      "name": "Jewel of the Vanquisher",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.005% additional critical value per stack",
+        "2": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.015% additional critical value per stack",
+        "3": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.03% additional critical value per stack",
+        "4": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.04% additional critical value per stack",
+        "5": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.05% additional critical value per stack"
+      }
+    },
+    "VIGOR": {
+      "jewelType": "VIGOR",
+      "name": "Jewel of Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "DAMAGE": 0.02
+        },
+        "2": {
+          "DAMAGE": 0.04
+        },
+        "3": {
+          "DAMAGE": 0.06
+        },
+        "4": {
+          "DAMAGE": 0.08
+        },
+        "5": {
+          "DAMAGE": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% damage",
+        "2": "+ 4.00% damage",
+        "3": "+ 6.00% damage",
+        "4": "+ 8.00% damage",
+        "5": "+ 10.00% damage"
+      }
+    },
+    "VITALITY": {
+      "jewelType": "VITALITY",
+      "name": "Jewel of Vitality",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "HEALTH_POINTS": 0.02
+        },
+        "2": {
+          "HEALTH_POINTS": 0.04
+        },
+        "3": {
+          "HEALTH_POINTS": 0.06
+        },
+        "4": {
+          "HEALTH_POINTS": 0.08
+        },
+        "5": {
+          "HEALTH_POINTS": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% Health points",
+        "2": "+ 4.00% Health points",
+        "3": "+ 6.00% Health points",
+        "4": "+ 8.00% Health points",
+        "5": "+ 10.00% Health points"
+      }
+    }
+  },
+  "STEAM_MECHANICUS": {
+    "AMBIDEXTROUS_VIGOR": {
+      "jewelType": "AMBIDEXTROUS_VIGOR",
+      "name": "Jewel of Ambidextrous Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "TWO_HAND_DAMAGE": 0.02
+        },
+        "2": {
+          "TWO_HAND_DAMAGE": 0.04
+        },
+        "3": {
+          "TWO_HAND_DAMAGE": 0.06
+        },
+        "4": {
+          "TWO_HAND_DAMAGE": 0.08
+        },
+        "5": {
+          "TWO_HAND_DAMAGE": 0.10
+        }
+      },
+      "descriptionPerTier": {
+        "1": "2.00% increased damage on two-hand weapons",
+        "2": "4.00% increased damage on two-hand weapons",
+        "3": "6.00% increased damage on two-hand weapons",
+        "4": "8.00% increased damage on two-hand weapons",
+        "5": "10.00% increased damage on two-hand weapons"
+      }
+    },
+    "AMPLIFIED_HEALING": {
+      "jewelType": "AMPLIFIED_HEALING",
+      "name": "Jewel of Amplified Healing",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Picking up a healing sphere increases your damage by 25% and your movement speed by 5% for 5 seconds",
+        "2": "Picking up a healing sphere increases your damage by 50% and your movement speed by 10% for 5 seconds",
+        "3": "Picking up a healing sphere increases your damage by 75% and your movement speed by 15% for 5 seconds",
+        "4": "Picking up a healing sphere increases your damage by 100% and your movement speed by 20% for 5 seconds",
+        "5": "Picking up a healing sphere increases your damage by 150% and your movement speed by 25% for 5 seconds"
+      }
+    },
+    "ANDER_POWER": {
+      "jewelType": "ANDER_POWER",
+      "name": "Jewel of Ander Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "3": {
+          "ANDERMANT_DROP_BONUS": 0.04
+        },
+        "4": {
+          "ANDERMANT_DROP_BONUS": 0.06
+        },
+        "5": {
+          "ANDERMANT_DROP_BONUS": 0.08
+        }
+      },
+      "descriptionPerTier": {
+        "3": "Increased Andermant drop stack size by 4%.",
+        "4": "Increased Andermant drop stack size by 6%.",
+        "5": "Increased Andermant drop stack size by 8%."
+      }
+    },
+    "BLACK_KNIGHT_ORDER": {
+      "jewelType": "BLACK_KNIGHT_ORDER",
+      "name": "Jewel of the Black Knight Order",
+      "defaultTier": "7",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\nWhenever any of your Turrets are active, its damage is increased by 60%."
+      }
+    },
+    "CONTRIBUTION": {
+      "jewelType": "CONTRIBUTION",
+      "name": "Jewel of Contribution",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing damage to an enemy, there is a 10% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "2": "When dealing damage to an enemy, there is a 12.5% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 7.5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "3": "When dealing damage to an enemy, there is a 15% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 10% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "4": "When dealing damage to an enemy, there is a 17.5% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 12.5% and regenerates 5% Resource per second of all group members (except you). The buff does not stack.",
+        "5": "When dealing damage to an enemy, there is a 20% chance to trigger the Valuable Contribution buff for 10 seconds.\nThe buff increases your Health Points by 15% and regenerates 5% Resource per second of all group members (except you). The buff does not stack."
+      }
+    },
+    "CONVERSE": {
+      "jewelType": "CONVERSE",
+      "name": "Jewel of Converse",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Whenever you get immobilized, your armor will be increased by 20% for 5 seconds.",
+        "2": "Whenever you get immobilized, your armor will be increased by 30% for 5 seconds.",
+        "3": "Whenever you get immobilized, your armor will be increased by 40% for 5 seconds.",
+        "4": "Whenever you get immobilized, your armor will be increased by 50% for 5 seconds.",
+        "5": "Whenever you get immobilized, your armor will be increased by 60% for 5 seconds."
+      }
+    },
+    "DEXTROUS_VIGOR": {
+      "jewelType": "DEXTROUS_VIGOR",
+      "name": "Jewel of Dextrous Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "ONE_HAND_DAMAGE": 0.005
+        },
+        "2": {
+          "ONE_HAND_DAMAGE": 0.01
+        },
+        "3": {
+          "ONE_HAND_DAMAGE": 0.02
+        },
+        "4": {
+          "ONE_HAND_DAMAGE": 0.03
+        },
+        "5": {
+          "ONE_HAND_DAMAGE": 0.04
+        }
+      },
+      "descriptionPerTier": {
+        "1": "0.50% increased damage on one-handed weapons",
+        "2": "1.00% increased damage on one-handed weapons",
+        "3": "2.00% increased damage on one-handed weapons",
+        "4": "3.00% increased damage on one-handed weapons",
+        "5": "4.00% increased damage on one-handed weapons"
+      }
+    },
+    "EASTER_FEVER": {
+      "jewelType": "EASTER_FEVER",
+      "name": "Jewel of the Easter Fever",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 1 drop stack size of Gilded Clovers.",
+        "2": "+ 2 drop stack size of Gilded Clovers.",
+        "3": "+ 3 drop stack size of Gilded Clovers.",
+        "4": "+ 4 drop stack size of Gilded Clovers.",
+        "5": "+ 5 drop stack size of Gilded Clovers."
+      }
+    },
+    "ENCOURAGEMENT": {
+      "jewelType": "ENCOURAGEMENT",
+      "name": "Jewel of Encouragement",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing damage to an enemy, there is a 10% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "2": "When dealing damage to an enemy, there is a 12.5% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 7.5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "3": "When dealing damage to an enemy, there is a 15% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 10% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "4": "When dealing damage to an enemy, there is a 17.5% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 12.5% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack.",
+        "5": "When dealing damage to an enemy, there is a 20% chance to trigger the Increasing Encouragement buff for 10 seconds.\nThe buff increases your Resources by 15% and regenerates 5% Health Points per second of all group members (except you). The buff does not stack."
+      }
+    },
+    "ETERNAL_SCORN": {
+      "jewelType": "ETERNAL_SCORN",
+      "name": "Jewel of Eternal Scorn",
+      "defaultTier": "7",
+      "statsPerTier": {
+        "7": {
+          "CRIT_VALUE": 0.15
+        }
+      },
+      "descriptionPerTier": {
+        "7": "+ 15.00% critical value\nEach successful hit with Flamethrower has a chance of 5% to spawn an Ice Meteor on your location, dealing 150% of your damage as Ice damage for 5 seconds to enemies in 5 meter radius."
+      }
+    },
+    "ETERNAL_WRATH": {
+      "jewelType": "ETERNAL_WRATH",
+      "name": "Jewel of the Eternal Wrath",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 80% higher drop stack size of Fragments of Infernal Passage",
+        "2": "+ 100% higher drop stack size of Fragments of Infernal Passage",
+        "3": "+ 140% higher drop stack size of Fragments of Infernal Passage",
+        "4": "+ 180% higher drop stack size of Fragments of Infernal Passage",
+        "5": "+ 200% higher drop stack size of Fragments of Infernal Passage"
+      }
+    },
+    "FLOWER": {
+      "jewelType": "FLOWER",
+      "name": "Fiery Flower Jewel",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Each successful hit with Heavy Shot has a 20% chance to cause 30% of your base damage as fire damage to all enemies in a range of 5 meters around the hit enemy.",
+        "2": "Each successful hit with Heavy Shot has a 20% chance to cause 60% of your base damage as fire damage to all enemies in a range of 5 meters around the hit enemy.",
+        "3": "Each successful hit with Heavy Shot has a 20% chance to cause 90% of your base damage as fire damage to all enemies in a range of 5 meters around the hit enemy.",
+        "4": "Each successful hit with Heavy Shot has a 20% chance to cause 120% of your base damage as fire damage to all enemies in a range of 5 meters around the hit enemy.",
+        "5": "Each successful hit with Heavy Shot has a 20% chance to cause 180% of your base damage as fire damage to all enemies in a range of 5 meters around the hit enemy."
+      }
+    },
+    "FOCUS": {
+      "jewelType": "FOCUS",
+      "name": "Jewel of Focus",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Reduces cooldowns of all player skills by 1.50%",
+        "2": "Reduces cooldowns of all player skills by 3.00%",
+        "3": "Reduces cooldowns of all player skills by 4.50%",
+        "4": "Reduces cooldowns of all player skills by 6.00%",
+        "5": "Reduces cooldowns of all player skills by 7.50%"
+      }
+    },
+    "FORTITUDE": {
+      "jewelType": "FORTITUDE",
+      "name": "Jewel of Fortitude",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "ARMOR_VALUE": 0.02
+        },
+        "2": {
+          "ARMOR_VALUE": 0.04
+        },
+        "3": {
+          "ARMOR_VALUE": 0.06
+        },
+        "4": {
+          "ARMOR_VALUE": 0.08
+        },
+        "5": {
+          "ARMOR_VALUE": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% Armor value",
+        "2": "+ 4.00% Armor value",
+        "3": "+ 6.00% Armor value",
+        "4": "+ 8.00% Armor value",
+        "5": "+ 10.00% Armor value"
+      }
+    },
+    "FROZEN_HEART": {
+      "jewelType": "FROZEN_HEART",
+      "name": "Jewel of the Frozen Heart",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When you are hit while being frozen, you will be healed by 10% of your maximum Health Points",
+        "2": "When you are hit while being frozen, you will be healed by 20% of your maximum Health Points",
+        "3": "When you are hit while being frozen, you will be healed by 30% of your maximum Health Points",
+        "4": "When you are hit while being frozen, you will be healed by 40% of your maximum Health Points",
+        "5": "When you are hit while being frozen, you will be healed by 50% of your maximum Health Points"
+      }
+    },
+    "GEM_FORTUNE": {
+      "jewelType": "GEM_FORTUNE",
+      "name": "Jewel of Gem Fortune",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Bosses drop 1 additional gems.",
+        "2": "Bosses drop 2 additional gems.",
+        "3": "Bosses drop 3 additional gems.",
+        "4": "Bosses drop 4 additional gems.",
+        "5": "Bosses drop 5 additional gems."
+      }
+    },
+    "GHOST_POWER": {
+      "jewelType": "GHOST_POWER",
+      "name": "Jewel of Ghost Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 1%.",
+        "2": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 2%.",
+        "3": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 3%.",
+        "4": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 4%.",
+        "5": "Increases the damage bonus of the Ghost Power buff, granted by Gwenfara's main hand and off hand item, by 5%."
+      }
+    },
+    "GLACIAL_FANG": {
+      "jewelType": "GLACIAL_FANG",
+      "name": "Jewel of Glacial Fang",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "Each critical hit has a chance of 1% to spawn a Fenris Wolf fighting beside you for 10 seconds.",
+        "4": "Each critical hit has a chance of 2% to spawn a Fenris Wolf fighting beside you for 10 seconds.",
+        "5": "Each critical hit has a chance of 3% to spawn a Fenris Wolf fighting beside you for 10 seconds."
+      }
+    },
+    "GLORY": {
+      "jewelType": "GLORY",
+      "name": "Jewel of Glory",
+      "defaultTier": "7",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "7": "This jewel will substantially enhance all \"Forgotten Glory\" set effects.\nWhen you equip all two pieces of the \"Forgotten Glory\" set, you shall gain the following effects:\n• Quick Shot has a 100% chance to cause your currently active Mechanical Turrets to fire 3 Ice Bullets.\n• While within the range of your Mechanical Turrets, you gain an additional 100% increased Damage."
+      }
+    },
+    "INGREDIENT_HUNTER": {
+      "jewelType": "INGREDIENT_HUNTER",
+      "name": "Jewel of the Ingredient Hunter",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "+ 1 drop stack size of all basic, boss and event boss ingredients",
+        "2": "+ 2 drop stack size of all basic, boss and event boss ingredients",
+        "3": "+ 3 drop stack size of all basic, boss and event boss ingredients",
+        "4": "+ 4 drop stack size of all basic, boss and event boss ingredients",
+        "5": "+ 5 drop stack size of all basic, boss and event boss ingredients"
+      }
+    },
+    "LASTING_HEALTH": {
+      "jewelType": "LASTING_HEALTH",
+      "name": "Jewel of Lasting Health",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Defeating and enemy increases your health regeneration by 2% for 5 seconds.",
+        "2": "Defeating and enemy increases your health regeneration by 4% for 5 seconds.",
+        "3": "Defeating and enemy increases your health regeneration by 6% for 5 seconds.",
+        "4": "Defeating and enemy increases your health regeneration by 8% for 5 seconds.",
+        "5": "Defeating and enemy increases your health regeneration by 10% for 5 seconds."
+      }
+    },
+    "PENT_UP_POWER": {
+      "jewelType": "PENT_UP_POWER",
+      "name": "Jewel of Pent-up Power",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 1000% of your base damage as physical damage to all enemies around you.",
+        "2": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 1500% of your base damage as physical damage to all enemies around you.",
+        "3": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 2000% of your base damage as physical damage to all enemies around you.",
+        "4": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 2500% of your base damage as physical damage to all enemies around you.",
+        "5": "Blocking generates Pent-up Power that lasts for 10 seconds.\nIf you stack up 100x Pent-up Power you will release an explosion that deals 3000% of your base damage as physical damage to all enemies around you."
+      }
+    },
+    "POISONOUS_THORNS": {
+      "jewelType": "POISONOUS_THORNS",
+      "name": "Jewel of Poisonous Thorns",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 10% of you base damage as poison damage. The poisonous thorns also deal 15% poison damage to you whenever it afflicts damage to an enemy.",
+        "2": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 20% of you base damage as poison damage. The poisonous thorns also deal 20% poison damage to you whenever it afflicts damage to an enemy.",
+        "3": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 30% of you base damage as poison damage. The poisonous thorns also deal 25% poison damage to you whenever it afflicts damage to an enemy.",
+        "4": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 40% of you base damage as poison damage. The poisonous thorns also deal 30% poison damage to you whenever it afflicts damage to an enemy.",
+        "5": "You shoot poisonous thorns every three seconds to all enemies around you in a range of 5 meters, dealing 50% of you base damage as poison damage. The poisonous thorns also deal 35% poison damage to you whenever it afflicts damage to an enemy."
+      }
+    },
+    "PROLONGATION": {
+      "jewelType": "PROLONGATION",
+      "name": "Jewel of Prolongation",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "The duration of the stun immunity effect is increased by 2 seconds.",
+        "2": "The duration of the stun immunity effect is increased by 3 seconds.",
+        "3": "The duration of the stun immunity effect is increased by 4 seconds.",
+        "4": "The duration of the stun immunity effect is increased by 5 seconds.",
+        "5": "The duration of the stun immunity effect is increased by 6 seconds."
+      }
+    },
+    "RAGE": {
+      "jewelType": "RAGE",
+      "name": "Jewel of Rage",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When dealing critical damage to an enemy, there is a 20% chance that your critical value increases by 10% and your attacks per second increase by 5% for 10 seconds.",
+        "2": "When dealing critical damage to an enemy, there is a 25% chance that your critical value increases by 15% and your attacks per second increase by 10% for 10 seconds.",
+        "3": "When dealing critical damage to an enemy, there is a 30% chance that your critical value increases by 20% and your attacks per second increase by 15% for 10 seconds.",
+        "4": "When dealing critical damage to an enemy, there is a 35% chance that your critical value increases by 25% and your attacks per second increase by 20% for 10 seconds.",
+        "5": "When dealing critical damage to an enemy, there is a 40% chance that your critical value increases by 30% and your attacks per second increase by 25% for 10 seconds."
+      }
+    },
+    "RELENTLESSNESS": {
+      "jewelType": "RELENTLESSNESS",
+      "name": "Jewel of Relentlessness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "- 1% steam costs",
+        "2": "- 2% steam costs",
+        "3": "- 3% steam costs",
+        "4": "- 4% steam costs",
+        "5": "- 5% steam costs"
+      }
+    },
+    "REVIVAL_BOON": {
+      "jewelType": "REVIVAL_BOON",
+      "name": "Jewel of Revival Boon",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "When you revive yourself at the place where you died your armor and damage will be increased by 20% for 10 seconds.",
+        "2": "When you revive yourself at the place where you died your armor and damage will be increased by 35% for 10 seconds.",
+        "3": "When you revive yourself at the place where you died your armor and damage will be increased by 30% for 10 seconds.",
+        "4": "When you revive yourself at the place where you died your armor and damage will be increased by 35% for 10 seconds.",
+        "5": "When you revive yourself at the place where you died your armor and damage will be increased by 40% for 10 seconds."
+      }
+    },
+    "SCORCHING_RAY": {
+      "jewelType": "SCORCHING_RAY",
+      "name": "Jewel of Scorching Ray",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+        }
+      },
+      "descriptionPerTier": {
+        "3": "When you block an enemy's skill, there is a 10% chance you will be healed by 10% if your maximum Health Points.",
+        "4": "When you block an enemy's skill, there is a 10% chance you will be healed by 20% if your maximum Health Points.",
+        "5": "When you block an enemy's skill, there is a 10% chance you will be healed by 40% if your maximum Health Points."
+      }
+    },
+    "STRENUOUSNESS": {
+      "jewelType": "STRENUOUSNESS",
+      "name": "Jewel of Strenuousness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "3": "+1 to Keys of Prowess drop stack size.",
+        "4": "+2 to Keys of Prowess drop stack size.",
+        "5": "+3 to Keys of Prowess drop stack size."
+      }
+    },
+    "SWIFTNESS": {
+      "jewelType": "SWIFTNESS",
+      "name": "Jewel of Swiftness",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Rocket Pack and Iron Pounce will cost 20% less Mana if your health drop below 33%.",
+        "2": "Rocket Pack and Iron Pounce will cost 30% less Mana if your health drop below 33%.",
+        "3": "Rocket Pack and Iron Pounce will cost 40% less Mana if your health drop below 33%.",
+        "4": "Rocket Pack and Iron Pounce will cost 50% less Mana if your health drop below 33%.",
+        "5": "Rocket Pack and Iron Pounce will cost 60% less Mana if your health drop below 33%."
+      }
+    },
+    "VANQUISHER": {
+      "jewelType": "VANQUISHER",
+      "name": "Jewel of the Vanquisher",
+      "defaultTier": "5",
+      "statsPerTier": {
+      },
+      "descriptionPerTier": {
+        "1": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.005% additional critical value per stack",
+        "2": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.015% additional critical value per stack",
+        "3": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.03% additional critical value per stack",
+        "4": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.04% additional critical value per stack",
+        "5": "Enhances the Frenzy of the Vanquisher effect:\n+ 0.05% additional critical value per stack"
+      }
+    },
+    "VIGOR": {
+      "jewelType": "VIGOR",
+      "name": "Jewel of Vigor",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "DAMAGE": 0.02
+        },
+        "2": {
+          "DAMAGE": 0.04
+        },
+        "3": {
+          "DAMAGE": 0.06
+        },
+        "4": {
+          "DAMAGE": 0.08
+        },
+        "5": {
+          "DAMAGE": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% damage",
+        "2": "+ 4.00% damage",
+        "3": "+ 6.00% damage",
+        "4": "+ 8.00% damage",
+        "5": "+ 10.00% damage"
+      }
+    },
+    "VITALITY": {
+      "jewelType": "VITALITY",
+      "name": "Jewel of Vitality",
+      "defaultTier": "5",
+      "statsPerTier": {
+        "1": {
+          "HEALTH_POINTS": 0.02
+        },
+        "2": {
+          "HEALTH_POINTS": 0.04
+        },
+        "3": {
+          "HEALTH_POINTS": 0.06
+        },
+        "4": {
+          "HEALTH_POINTS": 0.08
+        },
+        "5": {
+          "HEALTH_POINTS": 0.1
+        }
+      },
+      "descriptionPerTier": {
+        "1": "+ 2.00% Health points",
+        "2": "+ 4.00% Health points",
+        "3": "+ 6.00% Health points",
+        "4": "+ 8.00% Health points",
+        "5": "+ 10.00% Health points"
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.items.mythicitems;
 
-import com.langleon.dsobuildsim.items.core.ItemType;
+import com.langleon.dsobuildsim.items.core.enums.ItemType;
 
 public enum MythicItemType implements ItemType {
 

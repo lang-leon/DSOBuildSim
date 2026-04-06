@@ -215,8 +215,7 @@ public enum PetType {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
+    public String getName() {
         return name;
     }
 }

@@ -1,0 +1,310 @@
+{
+  "SPELLWEAVER": {
+    "RING_OF_OLD_GLORY": {
+      "itemType": "RING_OF_OLD_GLORY",
+      "name": "Ring of Old Glory",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.05,
+        "CRIT_VALUE": 0.05
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "FORGOTTEN_GLORY"
+    },
+    "OLD_GLORY": {
+      "itemType": "OLD_GLORY",
+      "name": "Old Glory",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "FORGOTTEN_GLORY"
+    },
+    "ANCESTRAL_GLORY_RING": {
+      "itemType": "ANCESTRAL_GLORY_RING",
+      "name": "Ancestral Glory Ring",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10,
+        "CRIT_VALUE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "ANCESTRAL_GLORY"
+    },
+    "ANCESTRAL_GLORY_CLOAK": {
+      "itemType": "ANCESTRAL_GLORY_CLOAK",
+      "name": "Ancestral Glory Cloak (Mage)",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+        "DAMAGE": 5000.0
+      },
+      "set": "ANCESTRAL_GLORY"
+    }
+  },
+  "DRAGONKNIGHT": {
+    "RING_OF_OLD_GLORY": {
+      "itemType": "RING_OF_OLD_GLORY",
+      "name": "Ring of Old Glory",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.05,
+        "CRIT_VALUE": 0.05
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "FORGOTTEN_GLORY"
+    },
+    "OLD_GLORY": {
+      "itemType": "OLD_GLORY",
+      "name": "Old Glory",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 6.222
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "FORGOTTEN_GLORY"
+    },
+    "ANCESTRAL_GLORY_RING": {
+      "itemType": "ANCESTRAL_GLORY_RING",
+      "name": "Ancestral Glory Ring",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10,
+        "CRIT_VALUE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "ANCESTRAL_GLORY"
+    },
+    "ANCESTRAL_GLORY_CLOAK": {
+      "itemType": "ANCESTRAL_GLORY_CLOAK",
+      "name": "Ancestral Glory Cloak (Warrior)",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 6.222
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+        "DAMAGE": 5000.0
+      },
+      "set": "ANCESTRAL_GLORY"
+    }
+  },
+  "RANGER": {
+    "RING_OF_OLD_GLORY": {
+      "itemType": "RING_OF_OLD_GLORY",
+      "name": "Ring of Old Glory",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 7.1553
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.05,
+        "CRIT_VALUE": 0.05
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "FORGOTTEN_GLORY"
+    },
+    "OLD_GLORY": {
+      "itemType": "OLD_GLORY",
+      "name": "Old Glory",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 4.7702
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "FORGOTTEN_GLORY"
+    },
+    "ANCESTRAL_GLORY_RING": {
+      "itemType": "ANCESTRAL_GLORY_RING",
+      "name": "Ancestral Glory Ring",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 7.1553
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10,
+        "CRIT_VALUE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "ANCESTRAL_GLORY"
+    },
+    "ANCESTRAL_GLORY_CLOAK": {
+      "itemType": "ANCESTRAL_GLORY_CLOAK",
+      "name": "Ancestral Glory Cloak (Archer)",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 4.7702
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+        "DAMAGE": 5000.0
+      },
+      "set": "ANCESTRAL_GLORY"
+    }
+  },
+  "STEAM_MECHANICUS": {
+    "RING_OF_OLD_GLORY": {
+      "itemType": "RING_OF_OLD_GLORY",
+      "name": "Ring of Old Glory",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 5.44425
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.05,
+        "CRIT_VALUE": 0.05
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "FORGOTTEN_GLORY"
+    },
+    "OLD_GLORY": {
+      "itemType": "OLD_GLORY",
+      "name": "Old Glory",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 3.6295
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "FORGOTTEN_GLORY"
+    },
+    "ANCESTRAL_GLORY_RING": {
+      "itemType": "ANCESTRAL_GLORY_RING",
+      "name": "Ancestral Glory Ring",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 5.44425
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10,
+        "CRIT_VALUE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+      },
+      "set": "ANCESTRAL_GLORY"
+    },
+    "ANCESTRAL_GLORY_CLOAK": {
+      "itemType": "ANCESTRAL_GLORY_CLOAK",
+      "name": "Ancestral Glory Cloak (Dwarf)",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 3.6295
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10
+      },
+      "uniqueAbsoluteValues": {
+        "DAMAGE": 5000.0
+      },
+      "set": "ANCESTRAL_GLORY"
+    }
+  }
+}

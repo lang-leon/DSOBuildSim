@@ -8,12 +8,12 @@ import java.util.*;
 public class SetInstance {
     private final SetType setType;
     private final String name;
-    private int level;
+    private final int level;
     private final Set<String> setItems;
-    private Map<Integer, Map<StatType, Double>> baseValuesPerTier;
+    private final Map<Integer, Map<StatType, Double>> baseValuesPerTier;
     private final Map<Integer, Map<StatType, Double>> relativeValuesPerTier;
     private final Map<Integer, String> descriptionPerTier;
-    private List<String> equippedSetItems;
+    private final List<String> equippedSetItems;
 
     public SetInstance(SetType setType, String name, int level, Set<String> setItems, Map<Integer, Map<StatType, Double>> baseValuesPerTier, Map<Integer, Map<StatType, Double>> relativeValuesPerTier, Map<Integer, String> descriptionPerTier) {
         this.setType = setType;
@@ -67,18 +67,8 @@ public class SetInstance {
         return relativeValuesPerTier;
     }
 
-    public Map<StatType, Double> getRelativeValues(int tier)
-    {
-        return relativeValuesPerTier.get(tier);
-    }
-
     public Map<Integer, String> getDescriptionPerTier() {
         return descriptionPerTier;
-    }
-
-    public String getDescription(int tier)
-    {
-        return descriptionPerTier.get(tier);
     }
 
     public List<String> getEquippedSetItems() {

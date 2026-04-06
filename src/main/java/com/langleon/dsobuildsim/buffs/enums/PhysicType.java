@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.buffs.enums;
 
-public enum PhysicType {
+public enum PhysicType implements BuffType{
     //Simple Physics
     VITALITY_SIMPLE("Simple Physic of Vitality"),
     EFFICACY_SIMPLE("Simple Physic of Efficacy"),
@@ -30,7 +30,6 @@ public enum PhysicType {
     RESILIENCE_ICE_ADVANCED("Advanced Physic of Resilience (Ice)"),
     RESILIENCE_LIGHTNING_ADVANCED("Advanced Physic of Resilience (Lightning)"),
     RESILIENCE_ANDERMAGIC_ADVANCED("Advanced Physic of Resilience (Andermagic)");
-    ;
 
     private final String name;
 
@@ -39,11 +38,6 @@ public enum PhysicType {
     }
 
     public String getName() {
-        return name;
-    }
-
-    @Override
-    public String toString() {
         return name;
     }
 }

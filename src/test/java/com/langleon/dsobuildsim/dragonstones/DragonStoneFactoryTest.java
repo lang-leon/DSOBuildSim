@@ -1,27 +1,26 @@
 package com.langleon.dsobuildsim.dragonstones;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.langleon.dsobuildsim.dragonstones.dto.DragonCrestTrinketDTO;
+import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneInstanceDTO;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
 import com.langleon.dsobuildsim.common.StatType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.List;
+import java.util.Map;
 
 public class DragonStoneFactoryTest {
 
     private DragonStoneFactory dragonStoneFactory;
 
     @BeforeEach
-    void setup() throws IOException
+    void setup()
     {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/dragonstones.json")))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            DragonStoneConfig dragonStoneConfig = objectMapper.readValue(reader, DragonStoneConfig.class);
-            dragonStoneFactory = new DragonStoneFactory(dragonStoneConfig);
-        }
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        dragonStoneFactory = new DragonStoneFactory(config);
     }
 
     @Test
@@ -57,5 +56,55 @@ public class DragonStoneFactoryTest {
         Assertions.assertEquals(-0.015, dragonStone.stats().get(StatType.DAMAGE));
         Assertions.assertEquals(0.015, dragonStone.stats().get(StatType.ATTACK_SPEED));
         Assertions.assertEquals("Condensed from a Dragon Elder's blood, this crystal is brimming with a faint aura of restlessness. With the Dragon Crest inserted, attack speed increases by 1.5%, damage percentage decreases by 1.5%\n- 1.50% damage.", dragonStone.description());
+    }
+
+    @Test
+    void shouldResolveDragonStoneFromDragonStoneDTO()
+    {
+        DragonStoneInstanceDTO dto = new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE, 4);
+
+        DragonStone dragonStone = dragonStoneFactory.fromDTO(dto);
+
+        Assertions.assertEquals(DragonStoneType.POWERSTONE, dragonStone.dragonStoneType());
+        Assertions.assertEquals(4, dragonStone.tier());
+        Assertions.assertEquals(Map.of(StatType.HEALTH_POINTS, 0.05), dragonStone.stats());
+        Assertions.assertEquals("+ 5.00% Health Points", dragonStone.description());
+    }
+
+    @Test
+    void shouldResolveDragonStonesFromDragonStoneDTOs()
+    {
+        DragonStoneInstanceDTO dragonStoneDefinitionDTO1 = new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE,4);
+        DragonStoneInstanceDTO dragonStoneDefinitionDTO2 = new DragonStoneInstanceDTO(DragonStoneType.GREEDSTONE, 4);
+        List<DragonStoneInstanceDTO> dragonStoneInstanceDTOs = List.of(dragonStoneDefinitionDTO1, dragonStoneDefinitionDTO2);
+        List<DragonStone> dragonStones = dragonStoneFactory.fromDTOList(dragonStoneInstanceDTOs);
+
+        Assertions.assertEquals(DragonStoneType.POWERSTONE, dragonStones.getFirst().dragonStoneType());
+        Assertions.assertEquals(4, dragonStones.getFirst().tier());
+        Assertions.assertEquals(Map.of(StatType.HEALTH_POINTS, 0.05), dragonStones.getFirst().stats());
+        Assertions.assertEquals("+ 5.00% Health Points", dragonStones.getFirst().description());
+        Assertions.assertEquals(DragonStoneType.GREEDSTONE, dragonStones.get(1).dragonStoneType());
+        Assertions.assertEquals(4, dragonStones.get(1).tier());
+        Assertions.assertEquals(Map.of(StatType.ANDERMANT_DROP_BONUS, 0.01), dragonStones.get(1).stats());
+        Assertions.assertEquals("+ 1% drop stack size of Andermant", dragonStones.get(1).description());
+    }
+
+    @Test
+    void shouldResolveDragonStonesFromDragonCrestDTO()
+    {
+        DragonStoneInstanceDTO dragonStoneDefinitionDTO1 = new DragonStoneInstanceDTO(DragonStoneType.POWERSTONE,4);
+        DragonStoneInstanceDTO dragonStoneDefinitionDTO2 = new DragonStoneInstanceDTO(DragonStoneType.GREEDSTONE, 4);
+        List<DragonStoneInstanceDTO> dragonStoneInstanceDTOs = List.of(dragonStoneDefinitionDTO1, dragonStoneDefinitionDTO2);
+        DragonCrestTrinketDTO dragonCrestTrinketDTO = new DragonCrestTrinketDTO(dragonStoneInstanceDTOs);
+        DragonCrestTrinket dragonCrest = dragonStoneFactory.fromDTO(dragonCrestTrinketDTO);
+
+        Assertions.assertEquals(DragonStoneType.POWERSTONE, dragonCrest.getDragonStones().getFirst().dragonStoneType());
+        Assertions.assertEquals(4, dragonCrest.getDragonStones().getFirst().tier());
+        Assertions.assertEquals(Map.of(StatType.HEALTH_POINTS, 0.05), dragonCrest.getDragonStones().getFirst().stats());
+        Assertions.assertEquals("+ 5.00% Health Points", dragonCrest.getDragonStones().getFirst().description());
+        Assertions.assertEquals(DragonStoneType.GREEDSTONE, dragonCrest.getDragonStones().get(1).dragonStoneType());
+        Assertions.assertEquals(4, dragonCrest.getDragonStones().get(1).tier());
+        Assertions.assertEquals(Map.of(StatType.ANDERMANT_DROP_BONUS, 0.01), dragonCrest.getDragonStones().get(1).stats());
+        Assertions.assertEquals("+ 1% drop stack size of Andermant", dragonCrest.getDragonStones().get(1).description());
     }
 }

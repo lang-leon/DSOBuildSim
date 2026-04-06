@@ -2,93 +2,100 @@ package com.langleon.dsobuildsim.character;
 
 import com.langleon.dsobuildsim.buffs.Physic;
 import com.langleon.dsobuildsim.buffs.Tonic;
+import com.langleon.dsobuildsim.collectorbagbonus.collectorbagcategorybonus.CollectorBagCategoryBonus;
+import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
 import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.dragonstones.DragonCrestTrinket;
-import com.langleon.dsobuildsim.dragonstones.DragonStone;
-import com.langleon.dsobuildsim.gems.AbstractGem;
-import com.langleon.dsobuildsim.gems.Gem;
+import com.langleon.dsobuildsim.exceptions.InvalidItemsEquippedException;
+import com.langleon.dsobuildsim.exceptions.LimitExceededException;
+import com.langleon.dsobuildsim.exceptions.LimitType;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
-import com.langleon.dsobuildsim.items.core.enums.ItemSlotType;
 import com.langleon.dsobuildsim.jewels.JewelType;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.essences.Essence;
-import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 import com.langleon.dsobuildsim.items.core.UniqueStatProvider;
 import com.langleon.dsobuildsim.sets.*;
 import com.langleon.dsobuildsim.items.core.Item;
-import com.langleon.dsobuildsim.jewels.Jewel;
 import com.langleon.dsobuildsim.jewels.JewelTrinket;
 import com.langleon.dsobuildsim.pets.Pet;
-import com.langleon.dsobuildsim.runes.Rune;
 import com.langleon.dsobuildsim.runes.RuneTrinket;
-import com.langleon.dsobuildsim.skilltrees.wisdomskilltree.WisdomSkillTree;
+import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTree;
 
 import java.util.*;
-import java.util.function.Function;
 
 public class Character {
 
-    private final SetFactory setFactory;
-
     private final CharacterClass characterClass;
-    private String name;
+    private final String name;
 
-    private MasteryType elementalMasteryType;
-    private int elementalMasteryLevel; // 0-10
-    private boolean experienceBonusPath;
-    private int experienceBonusPathLevel;
+    private final MasteryType elementalMasteryType;
+    private final int elementalMasteryLevel; // 0-10
+    private final boolean experienceBonusPath;
+    private final int experienceBonusPathLevel;
 
-    private List<RuneTrinket> runeTrinkets;
-    private List<JewelTrinket> jewelTrinkets;
-    private DragonCrestTrinket dragonCrestTrinket;
+    private final List<RuneTrinket> runeTrinkets;
+    private final List<JewelTrinket> jewelTrinkets;
+    private final DragonCrestTrinket dragonCrestTrinket;
 
-    private Map<ItemSlot, Item> equippedItems;
-    private Map<SetType, SetInstance> equippedSets;
-    private Map<GemLimitGroup, Integer> gemLimits;
-    private Map<RuneLimitGroup, Integer> runeLimits;
-    private Map<JewelType, Integer> jewelLimits;
+    private final Map<ItemSlot, Item> equippedItems;
+    private final Map<SetType, SetInstance> equippedSets;
 
-    private Pet pet;
-    private Map<StatType, Double> collectorBagBuffs;
+    private final Pet pet;
+    private final Map<CollectorBagCategory, CollectorBagCategoryBonus> collectorBagBuffs;
 
-    private Essence essence;
-    private Tonic tonic;
-    private Physic physic;
+    private final Essence essence;
+    private final Tonic tonic;
+    private final Physic physic;
 
-    private WisdomSkillTree wisdomSkillTree;
+    private final WisdomSkillTree wisdomSkillTree;
 
-    //default constructor
-    public Character(CharacterClass characterClass, SetFactory setFactory)
+    public Character(CharacterClass characterClass,
+                     MasteryType masteryType,
+                     int masteryLevel,
+                     boolean experienceBonusPath,
+                     int experienceBonusPathLevel,
+                     List<RuneTrinket> runeTrinkets,
+                     List<JewelTrinket> jewelTrinkets,
+                     DragonCrestTrinket dragonCrest,
+                     Map<ItemSlot, Item> items,
+                     Map<SetType, SetInstance> equippedSets,
+                     Pet pet,
+                     Essence essence,
+                     Tonic tonic,
+                     Physic physic,
+                     WisdomSkillTree wisdomSkillTree,
+                     Map<CollectorBagCategory, CollectorBagCategoryBonus> collectorBagBuffs
+                     )
     {
-        this.setFactory = setFactory;
-
         this.characterClass = characterClass;
-        this.name = characterClass.getClassName();
-        this.elementalMasteryType = MasteryType.NONE;
-        this.elementalMasteryLevel = 0;
-        this.experienceBonusPath = false;
-        this.experienceBonusPathLevel = 0;
-        this.gemLimits = new EnumMap<>(GemLimitGroup.class);
-        this.runeLimits = new EnumMap<>(RuneLimitGroup.class);
-        this.jewelLimits = new EnumMap<>(JewelType.class);
+        this.name = characterClass.getName();
+        this.elementalMasteryType = masteryType;
+        if (masteryLevel > 10 || masteryLevel < 0) throw new LimitExceededException(LimitType.MASTERY_TYPE, "Mastery level must be between 0 and 10, but was "+masteryLevel);
+        this.elementalMasteryLevel = masteryLevel;
+        this.experienceBonusPath = experienceBonusPath;
+        if (experienceBonusPathLevel > 5 || experienceBonusPathLevel < 0) throw new LimitExceededException(LimitType.EXPERIENCE_SKILL_TREE, "Experience path level must be between 0 and 10, but was "+experienceBonusPathLevel);
+        this.experienceBonusPathLevel = experienceBonusPathLevel;
 
-        this.runeTrinkets = new ArrayList<>(7);
-        for (int i = 0; i < 7; i++) {
-            this.runeTrinkets.add(new RuneTrinket());
-        }
-        this.jewelTrinkets = new ArrayList<>(3);
-        for (int i = 0; i < 3; i++) {
-            jewelTrinkets.add(new JewelTrinket());
-        }
-        this.dragonCrestTrinket = new DragonCrestTrinket();
+        this.validateRunes(runeTrinkets);
+        this.runeTrinkets = runeTrinkets;
+        this.validateJewels(jewelTrinkets);
+        this.jewelTrinkets = jewelTrinkets;
+        this.dragonCrestTrinket = dragonCrest;
 
-        this.equippedItems = new EnumMap<>(ItemSlot.class);
-        this.equippedSets = new EnumMap<>(SetType.class);
+        if (items.containsKey(ItemSlot.TWO_HAND_WEAPON) && (items.containsKey(ItemSlot.ONE_HAND_WEAPON) || items.containsKey(ItemSlot.OFF_HAND))) throw new InvalidItemsEquippedException("Equipped one hand and two hand items");
+        this.validateGems(items.values().stream().toList());
+        this.equippedItems = items;
+        this.equippedSets = equippedSets;
 
-        this.collectorBagBuffs = new EnumMap<>(StatType.class);
-        this.wisdomSkillTree = new WisdomSkillTree();
+        this.pet = pet;
+        this.essence = essence;
+        this.tonic = tonic;
+        this.physic = physic;
+
+        this.collectorBagBuffs = collectorBagBuffs;
+        this.wisdomSkillTree = wisdomSkillTree;
     }
 
     public CharacterClass getCharacterClass() {
@@ -99,244 +106,72 @@ public class Character {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public MasteryType getElementalMasteryType() {
-        return elementalMasteryType;
-    }
-
-    public void setElementalMasteryType(MasteryType masteryType) {
-        this.elementalMasteryType = masteryType;
-    }
-
-    public int getElementalMasteryLevel() {
-        return elementalMasteryLevel;
-    }
-
-    public void setElementalMasteryLevel(int masteryLevel) {
-        if (masteryLevel < 0 || masteryLevel > 10) throw new IllegalArgumentException("Experience skill tree bonus level must be in range 0-10.");
-        this.elementalMasteryLevel = masteryLevel;
-    }
-
-    public boolean isExperienceBonusPath() {
-        return experienceBonusPath;
-    }
-
-    public int getExperienceBonusPathLevel() {
-        return experienceBonusPathLevel;
-    }
-
-    public void setExperienceBonusPathLevel(int level) {
-        if (level < 0 || level > 5) throw new IllegalArgumentException("Experience skill tree bonus level must be in range 0-5.");
-        this.experienceBonusPath = level != 0;
-        this.experienceBonusPathLevel = level;
-    }
-
-    public List<RuneTrinket> getRuneTrinkets() {
-        return runeTrinkets;
-    }
-
-    public RuneTrinket getRuneTrinket(int index) {
-        return runeTrinkets.get(index);
-    }
-
-    public void updateRuneTrinket(int index, Rune[] runes)
-    {
-        Map<RuneLimitGroup, Integer> oldRunes = this.countByLimitGroup(this.runeTrinkets.get(index).getRunes(), Rune::getRuneLimitGroup, RuneLimitGroup.class);
-        Map<RuneLimitGroup, Integer> newRunes = this.countByLimitGroup(runes, Rune::getRuneLimitGroup, RuneLimitGroup.class);
-
-        for (Map.Entry<RuneLimitGroup, Integer> entry : newRunes.entrySet()) {
-            RuneLimitGroup group = entry.getKey();
-            int globalCount = this.runeLimits.getOrDefault(group, 0);
-            int oldCount = oldRunes.getOrDefault(group, 0);
-            int newCount = entry.getValue();
-
-            if (globalCount - oldCount + newCount > group.getLimit()) {
-                throw new IllegalArgumentException("Rune limit exceeded for " + group + ".");
-            }
-        }
-
-        this.updateGlobalLimits(oldRunes, newRunes, this.runeLimits);
-        this.runeTrinkets.get(index).updateRunes(runes);
-    }
-
-    public List<JewelTrinket> getJewelTrinkets() {
-        return jewelTrinkets;
-    }
-
-    public JewelTrinket getJewelTrinket(int index) {
-        return jewelTrinkets.get(index);
-    }
-
-    public void updateJewelTrinket(int index, Jewel[] jewels)
-    {
-        Map<JewelType, Integer> oldJewels = this.countByLimitGroup(this.jewelTrinkets.get(index).getJewels(), Jewel::getJewelType, JewelType.class);
-        Map<JewelType, Integer> newJewels = this.countByLimitGroup(jewels, Jewel::getJewelType, JewelType.class);
-
-        for (Map.Entry<JewelType, Integer> entry : newJewels.entrySet()) {
-            JewelType group = entry.getKey();
-            int globalCount = this.jewelLimits.getOrDefault(group, 0);
-            int oldCount = oldJewels.getOrDefault(group, 0);
-            int newCount = entry.getValue();
-
-            if (globalCount - oldCount + newCount > group.getLimit()) {
-                throw new IllegalArgumentException("Jewel limit exceeded for " + group + ".");
-            }
-        }
-
-        this.updateGlobalLimits(oldJewels, newJewels, this.jewelLimits);
-        this.jewelTrinkets.get(index).updateJewels(jewels);
-    }
-
-    public DragonCrestTrinket getDragonCrestTrinket() {
-        return dragonCrestTrinket;
-    }
-
-    public void updateDragonCrestTrinket(DragonStone[] dragonStones)
-    {
-        this.dragonCrestTrinket.updateDragonStones(dragonStones);
-    }
-
-    public void equipItem(ItemSlot slot, Item item)
-    {
-        if (item.getItemSlotType() != slot.getAllowedItemType()) throw new IllegalArgumentException("Item "+item.getName()+" not allowed in slot "+slot+"!");
-
-        Item oldItem = this.equippedItems.get(slot);
-        if (oldItem instanceof SetBonusProvider oldSetItem) {
-            updateEquippedSetsOnRemoval(oldSetItem);
-        }
-
-        this.equippedItems.put(slot, item);
-        if (item instanceof SetBonusProvider settableItem)
-        {
-            SetInstance setInstance = this.equippedSets.computeIfAbsent(settableItem.getSetType(), k -> this.setFactory.createSet(settableItem.getSetType(), CharacterClass.SPELLWEAVER));
-            setInstance.addSetItem(settableItem.getSetItemIdentifier());
-        }
-    }
-
-    public void unequipItem(ItemSlot slot)
-    {
-        Item removedItem = this.equippedItems.remove(slot);
-        if (removedItem != null)
-        {
-            if (removedItem instanceof SetBonusProvider settableItem)
-            {
-                this.updateEquippedSetsOnRemoval(settableItem);
-            }
-        }
-    }
-
-    public void updateItemGems(ItemSlot slot, AbstractGem[] gems)
-    {
-        Item eqippedItem = this.equippedItems.get(slot);
-        if (eqippedItem == null) throw new IllegalArgumentException("Can't update gems for non equipped item in slot "+slot+".");
-        Map<GemLimitGroup, Integer> oldGems = this.countByLimitGroup(eqippedItem.getGems(), AbstractGem::getGemLimitGroup, GemLimitGroup.class);
-        Map<GemLimitGroup, Integer> newGems = this.countByLimitGroup(gems, AbstractGem::getGemLimitGroup, GemLimitGroup.class);
-
-        for (Map.Entry<GemLimitGroup, Integer> entry : newGems.entrySet()) {
-            GemLimitGroup group = entry.getKey();
-            int globalCount = this.gemLimits.getOrDefault(group, 0);
-            int oldCount = oldGems.getOrDefault(group, 0);
-            int newCount = entry.getValue();
-
-            if (globalCount - oldCount + newCount > group.getLimit()) {
-                throw new IllegalArgumentException("Gem limit exceeded for " + group + ".");
-            }
-        }
-
-        this.updateGlobalLimits(oldGems, newGems, this.gemLimits);
-        this.equippedItems.get(slot).updateGems(gems);
-    }
-
-    private <T, G extends Enum<G>> Map<G, Integer> countByLimitGroup(T[] items, Function<T, G> groupExtractor, Class<G> enumClass)
-    {
-        Map<G, Integer> result = new EnumMap<>(enumClass);
-
-        for (T item : items)
-        {
-            if (item == null) continue;
-            result.merge(groupExtractor.apply(item), 1, Integer::sum);
-        }
-
-        return result;
-    }
-
-    private <G extends Enum<G>> void updateGlobalLimits(Map<G, Integer> oldCount, Map<G, Integer> newCount, Map<G, Integer> globalCount)
-    {
-        for (Map.Entry<G, Integer> entry : oldCount.entrySet()) {
-            globalCount.computeIfPresent(entry.getKey(), (_, amount) -> {
-                int result = amount - entry.getValue();
-                return result <= 0 ? null : result;
-            });
-        }
-
-        for (Map.Entry<G, Integer> entry : newCount.entrySet()) {
-            globalCount.merge(entry.getKey(), entry.getValue(), Integer::sum);
-        }
-    }
-
-    private void updateEquippedSetsOnRemoval(SetBonusProvider settableItem)
-    {
-        SetInstance setInstance = this.equippedSets.get(settableItem.getSetType());
-
-        if (setInstance != null)
-        {
-            setInstance.removeSetItem(settableItem.getSetType().toString());
-            if (setInstance.getEquippedSetItems().isEmpty())
-            {
-                this.equippedSets.remove(settableItem.getSetType());
-            }
-        }
-    }
-
     public Pet getPet() {
         return pet;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public Map<StatType, Double> getCollectorBagBuffs() {
+    public Map<CollectorBagCategory, CollectorBagCategoryBonus> getCollectorBagBuffs() {
         return collectorBagBuffs;
-    }
-
-    public void setCollectorBagBuffs(Map<StatType, Double> collectorBagBuffs) {
-        this.collectorBagBuffs = collectorBagBuffs;
     }
 
     public Essence getEssence() {
         return essence;
     }
 
-    public void setEssence(Essence essence) {
-        this.essence = essence;
-    }
-
     public Tonic getTonic() {
         return tonic;
-    }
-
-    public void setTonic(Tonic tonic) {
-        this.tonic = tonic;
     }
 
     public Physic getPhysic() {
         return physic;
     }
 
-    public void setPhysic(Physic physic) {
-        this.physic = physic;
-    }
-
     public WisdomSkillTree getWisdomSkillTree() {
         return wisdomSkillTree;
     }
 
-    public void setWisdomSkillTree(WisdomSkillTree wisdomSkillTree) {
-        this.wisdomSkillTree = wisdomSkillTree;
+    private void validateRunes(List<RuneTrinket> runeTrinkets)
+    {
+        if (runeTrinkets.size() > 7) throw new LimitExceededException(LimitType.RUNE_TRINKET, "Up to 7 rune trinkets allowed per character, but was "+runeTrinkets.size());
+        Map<RuneLimitGroup, Integer> runeCount = new EnumMap<>(RuneLimitGroup.class);
+        runeTrinkets.forEach(runeTrinket -> {
+            runeTrinket.getRunes().forEach(rune -> {
+                runeCount.merge(rune.getRuneLimitGroup(), 1, Integer::sum);
+            });
+        });
+
+        runeCount.forEach((runeLimitGroup, amount) -> {
+            if (runeLimitGroup.getLimit() < amount) throw new LimitExceededException(LimitType.RUNE, "Rune limit exceeded for "+runeLimitGroup);
+        });
+    }
+
+    private void validateJewels(List<JewelTrinket> jewelTrinkets)
+    {
+        if (jewelTrinkets.size() > 3) throw new LimitExceededException(LimitType.JEWEL_TRINKET, "Up to 3 jewel trinkets allowed per character, but was "+jewelTrinkets.size());
+        Map<JewelType, Integer> jewelCount = new EnumMap<>(JewelType.class);
+        jewelTrinkets.forEach(jewelTrinket -> {
+            jewelTrinket.getJewels().forEach(jewel -> {
+                jewelCount.merge(jewel.getJewelType(), 1, Integer::sum);
+            });
+        });
+
+        jewelCount.forEach((jewelType, amount) -> {
+            if (jewelType.getLimit() < amount) throw new LimitExceededException(LimitType.JEWEL, "Jewel limit exceeded for "+jewelType);
+        });
+    }
+
+    private void validateGems(List<Item> items)
+    {
+        Map<GemLimitGroup, Integer> gemCount = new EnumMap<>(GemLimitGroup.class);
+        items.forEach(item -> {
+            item.getGems().forEach(gem -> {
+                gemCount.merge(gem.getGemLimitGroup(), 1, Integer::sum);
+            });
+        });
+
+        gemCount.forEach((gemLimitGroup, amount) -> {
+            if (gemLimitGroup.getLimit() < amount) throw new LimitExceededException(LimitType.GEM, "Gem limit exceeded for "+gemLimitGroup);
+        });
     }
 
     public Map<StatType, Double> calculateCharacterStats()
@@ -344,34 +179,38 @@ public class Character {
         Map<StatType, Double> baseStats = this.calculateTotalBaseStats();
         Map<StatType, Double> relativeBonusStats = this.calculateTotalRelativeStats();
 
+        //temporary fix for wisdomskilltree coin drop size
+        relativeBonusStats.merge(StatType.COIN_DROP_BONUS, baseStats.get(StatType.COIN_DROP_BONUS), Double::sum);
+        baseStats.remove(StatType.COIN_DROP_BONUS);
+
         if (this.equippedItems.containsKey(ItemSlot.ONE_HAND_WEAPON))
         {
             Double absoluteOneHandDamage = baseStats.getOrDefault(StatType.ONE_HAND_DAMAGE, 0.0);
-            baseStats.remove(StatType.ONE_HAND_DAMAGE);
             Double relativeOneHandDamage = relativeBonusStats.getOrDefault(StatType.ONE_HAND_DAMAGE, 0.0);
-            relativeBonusStats.remove(StatType.ONE_HAND_DAMAGE);
             double bonusOneHandDamage = this.equippedItems.get(ItemSlot.ONE_HAND_WEAPON).calculateTotalStats().get(StatType.DAMAGE) * relativeOneHandDamage;
             bonusOneHandDamage += absoluteOneHandDamage * (1 + relativeOneHandDamage);
             baseStats.merge(StatType.DAMAGE, bonusOneHandDamage, Double::sum);
 
             Double absoluteOneHandAttackSpeed = baseStats.getOrDefault(StatType.ONE_HAND_ATTACK_SPEED, 0.0);
-            baseStats.remove(StatType.ONE_HAND_ATTACK_SPEED);
             baseStats.merge(StatType.ATTACK_SPEED, absoluteOneHandAttackSpeed, Double::sum);
         }
         else if (this.equippedItems.containsKey(ItemSlot.TWO_HAND_WEAPON))
         {
             Double absoluteTwoHandDamage = baseStats.getOrDefault(StatType.TWO_HAND_DAMAGE, 0.0);
-            baseStats.remove(StatType.TWO_HAND_DAMAGE);
             Double relativeTwoHandDamage = relativeBonusStats.getOrDefault(StatType.TWO_HAND_DAMAGE, 0.0);
-            relativeBonusStats.remove(StatType.TWO_HAND_DAMAGE);
             double bonusTwoHandDamage = this.equippedItems.get(ItemSlot.TWO_HAND_WEAPON).calculateTotalStats().get(StatType.DAMAGE) * relativeTwoHandDamage;
             bonusTwoHandDamage += absoluteTwoHandDamage * (1 + relativeTwoHandDamage);
             baseStats.merge(StatType.DAMAGE, bonusTwoHandDamage, Double::sum);
 
             Double absoluteTwoHandAttackSpeed = baseStats.getOrDefault(StatType.TWO_HAND_ATTACK_SPEED, 0.0);
-            baseStats.remove(StatType.TWO_HAND_ATTACK_SPEED);
             baseStats.merge(StatType.ATTACK_SPEED, absoluteTwoHandAttackSpeed, Double::sum);
         }
+        baseStats.remove(StatType.TWO_HAND_ATTACK_SPEED);
+        baseStats.remove(StatType.TWO_HAND_DAMAGE);
+        relativeBonusStats.remove(StatType.TWO_HAND_DAMAGE);
+        baseStats.remove(StatType.ONE_HAND_ATTACK_SPEED);
+        baseStats.remove(StatType.ONE_HAND_DAMAGE);
+        relativeBonusStats.remove(StatType.ONE_HAND_DAMAGE);
 
         Map<StatType, Double> finalStats = new EnumMap<>(StatType.class);
 
@@ -388,8 +227,8 @@ public class Character {
     private Map<StatType, Double> calculateTotalBaseStats()
     {
         Map<StatType, Double> baseStats = new EnumMap<>(StatType.class);
-        this.characterClass.getClassBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
-        this.wisdomSkillTree.getAbsoluteBuffs().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
+        this.characterClass.getBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
+        this.wisdomSkillTree.calculateStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
         this.calculateTotalItemBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
         this.equippedSets.forEach((setType, setInstance) -> setInstance.getActiveBaseValues().forEach((key, value) -> baseStats.merge(key, value, Double::sum)));
         if (this.tonic != null) baseStats.merge(this.tonic.statType(), this.tonic.statValue(), Double::sum);
@@ -417,7 +256,7 @@ public class Character {
     private Map<StatType, Double> calculateTotalRelativeStats()
     {
         Map<StatType, Double> relativeBonusStats = new EnumMap<>(StatType.class);
-        this.characterClass.getClassRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+        this.characterClass.getRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
         this.calculateExperienceSkillTreeRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
         this.calculateTotalItemRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
         this.equippedSets.forEach((setType, setInstance) -> setInstance.getActiveRelativeValues().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum)));
@@ -427,7 +266,9 @@ public class Character {
         if (this.pet !=null)
         {
             this.pet.getRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
-            this.collectorBagBuffs.forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+            this.collectorBagBuffs.forEach((_, bonus) -> {
+                bonus.calculateStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+            });
         }
         if (this.essence != null) relativeBonusStats.merge(StatType.DAMAGE, this.essence.damageIncrease(), Double::sum);
         if (this.physic != null) relativeBonusStats.merge(this.physic.statType(), this.physic.statValue(), Double::sum);
