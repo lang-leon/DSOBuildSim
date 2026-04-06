@@ -1151,6 +1151,25 @@
         "3": "+ 15% movement speed for 5 seconds upon defeating an enemy"
       }
     },
+    "HOLY_EXPEDITIONARY_FORCE": {
+      "setType": "HOLY_EXPEDITIONARY_FORCE",
+      "name": "Holy Expeditionary Force",
+      "defaultLevel": 100,
+      "setItems": [
+        "HOLY_EXPEDITIONARY_FORCE_AMULET",
+        "HOLY_EXPEDITIONARY_FORCE_CLOAK",
+        "HOLY_EXPEDITIONARY_FORCE_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "3": "Additional effects while inside the domain:\n• Increased Attack Speed by 20%\n• Increased Movement Speed by 50%\n• Increased Projectile Speed by 50%\n• Reduced cooldown of all skills by 30%\n• Increased Damage by 300%"
+      }
+    },
     "SOUL_DESTRUCTION": {
       "setType": "SOUL_DESTRUCTION",
       "name": "Soul Destruction",
@@ -1203,6 +1222,25 @@
       },
       "descriptionPerTier": {
         "2": "When equipped with the set, Mighty Wild Swing's damage is increased by 300%.\nWhen you release Banner of War, all your damage is boosted by 200% for 10 seconds. Also refreshes the cooldowns of all the following skills:\n•Furious Battle Cry\n•Outburst\n•Dragon Hide\n•Spike Shield"
+      }
+    },
+    "HOLY_EXPEDITIONARY_FORCE": {
+      "setType": "HOLY_EXPEDITIONARY_FORCE",
+      "name": "Holy Expeditionary Force",
+      "defaultLevel": 100,
+      "setItems": [
+        "HOLY_EXPEDITIONARY_FORCE_AMULET",
+        "HOLY_EXPEDITIONARY_FORCE_CLOAK",
+        "HOLY_EXPEDITIONARY_FORCE_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "3": "Additional effects while inside the domain:\n• Increased Attack Speed by 30%\n• Increased Movement Speed by 50%\n• Increased Projectile Speed by 35%\n• Reduced cooldown of all skills by 20%\n• Increased Damage by 350%"
       }
     },
     "SOUL_DESTRUCTION": {
@@ -1259,6 +1297,25 @@
         "2": "When Thicket of Thorns hits an enemy, your Concentration cost are decreased to 0 and Explosive Arrow does not have cooldown for 3 seconds. (PvP: 1,5 seconds)."
       }
     },
+    "HOLY_EXPEDITIONARY_FORCE": {
+      "setType": "HOLY_EXPEDITIONARY_FORCE",
+      "name": "Holy Expeditionary Force",
+      "defaultLevel": 100,
+      "setItems": [
+        "HOLY_EXPEDITIONARY_FORCE_AMULET",
+        "HOLY_EXPEDITIONARY_FORCE_CLOAK",
+        "HOLY_EXPEDITIONARY_FORCE_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "3": "Additional effects while inside the domain:\n• Increased Attack Speed by 25%\n• Increased Movement Speed by 50%\n• Increased Projectile Speed by 40%\n• Reduced cooldown of all skills by 25%\n• Increased Damage by 350%"
+      }
+    },
     "SOUL_DESTRUCTION": {
       "setType": "SOUL_DESTRUCTION",
       "name": "Soul Destruction",
@@ -1312,6 +1369,25 @@
       "descriptionPerTier": {
         "2": "There is a 60% chance that hits with Quick Shot cause your currently active Mechanical Turret to fire 3 additional ice bullets that covers enemies in Frost for 4 seconds. Enemies covered in Frost have reduced movement and attack speed. When a Mechanical Turret is used, you get 100% Damage and 15% Critical Value while staying within the range of it."
 
+      }
+    },
+    "HOLY_EXPEDITIONARY_FORCE": {
+      "setType": "HOLY_EXPEDITIONARY_FORCE",
+      "name": "Holy Expeditionary Force",
+      "defaultLevel": 100,
+      "setItems": [
+        "HOLY_EXPEDITIONARY_FORCE_AMULET",
+        "HOLY_EXPEDITIONARY_FORCE_CLOAK",
+        "HOLY_EXPEDITIONARY_FORCE_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "3": "Additional effects while inside the domain:\n• Increased Attack Speed by 20%\n• Increased Movement Speed by 50%\n• Increased Projectile Speed by 50%\n• Reduced cooldown of all skills by 20%\n• Increased Damage by 350%"
       }
     },
     "SOUL_DESTRUCTION": {
