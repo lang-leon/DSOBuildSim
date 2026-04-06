@@ -98,7 +98,7 @@ Returns all available game definitions including:
 
 ### Calculate Character Stats
 
-    POST /api/calculate-stats
+    POST /api/stats/calculate
 
 Input: character configuration\
 Output: calculated character stats
