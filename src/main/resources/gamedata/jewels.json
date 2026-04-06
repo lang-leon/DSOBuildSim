@@ -71,7 +71,7 @@
       "statsPerTier": {
       },
       "descriptionPerTier": {
-        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\nThe damage of Lightning Strike is increased by 50.0% and the active cooldown time of Destruction is reduced by 1.0 second(s) for every enemy that dies while being hit by it."
+        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\n• The velocity of Frozen Sphere is increased by 100% and deals 80% increased damage.\n• Frozen Sphere has an 50% chance to spawn a Frost Spike at the target location, inflicts 3x Frost upon hit enemies."
       }
     },
     "CONTRIBUTION": {
@@ -608,7 +608,7 @@
       "statsPerTier": {
       },
       "descriptionPerTier": {
-        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\nThe damage of Lightning Strike is increased by 50.0% and the active cooldown time of Destruction is reduced by 1.0 second(s) for every enemy that dies while being hit by it."
+        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\n• Set bonus duration is increased by 5 seconds. The damage of Smash is increased by 60%.\n• Enemies hit by Ground Breaker take an additional 20% Armor reduction, 20% Attack Speed reduction, and 30% Movement Speed reduction for 10 seconds."
       }
     },
     "CONTRIBUTION": {
@@ -1145,7 +1145,7 @@
       "statsPerTier": {
       },
       "descriptionPerTier": {
-        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\n+ 1.5% Health Points whenever you hit an already marked enemy"
+        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\n• Deadly Blow's skill damage penalty is reduced to 200%.\n• Each enemy hit by Death Sweep grants 10% increased Deadly Blow damage and 1% increased Movement Speed for 5 seconds, Stacks up to 10 times. Killing an enemy with Deadly Blow refreshes this effect."
       }
     },
     "CONTRIBUTION": {
@@ -1682,7 +1682,7 @@
       "statsPerTier": {
       },
       "descriptionPerTier": {
-        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\nWhenever any of your Turrets are active, its damage is increased by 60%."
+        "7": "This jewel will substantially enhance all \"End of the Empire\" set effects.\nWhen you equip all three pieces of the \"End of the Empire\" set, you shall gain the following effects:\n• The cooldown of Heavy Shot is reduced by 60%.\n• Whenever any of your Turrets are active, Heavy Shot deals 50% increased damage."
       }
     },
     "CONTRIBUTION": {
