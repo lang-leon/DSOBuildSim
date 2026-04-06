@@ -288,8 +288,15 @@ public enum SetItemType implements ItemType {
     //unknown
     ALLIANCE_MISSING,
 
-    //Soul Companion
+    //Soul Companion amulets
+    HOLY_EXPEDITIONARY_FORCE_AMULET,
     SOUL_DESTRUCTION_AMULET,
+
+    //Soul Companion cloaks
+    HOLY_EXPEDITIONARY_FORCE_CLOAK,
     SOUL_DESTRUCTION_CLOAK,
-    SOUL_DESTRUCTION_BELT;
+
+    //Soul Companion belts
+    HOLY_EXPEDITIONARY_FORCE_BELT,
+    SOUL_DESTRUCTION_BELT
 }
