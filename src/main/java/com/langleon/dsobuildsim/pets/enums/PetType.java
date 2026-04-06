@@ -119,6 +119,7 @@ public enum PetType {
     GUARDIAN_OF_RAVENCAW("Guardian of Ravencaw"),
 
     //Free Spirits
+    APRIL_HARE("April Hare"),
     IRON_PAW("Iron Paw"),
     SOUL_OF_ATHENA("Soul of Athena"),
     KILLERJAW("Killerjaw"),
