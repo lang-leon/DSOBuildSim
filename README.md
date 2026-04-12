@@ -1,187 +1,198 @@
 # DSOBuildSim
 
-A build simulator for the MMORPG **Drakensang Online** that allows
-players to test different equipment and build combinations and see the
-resulting character stats.
+Full-stack application for simulating and calculating complex, rule-based character statistics.
 
-The application consists of a **Java Spring Boot backend** that performs
-stat calculations and a planned **Angular frontend** that provides an
-interactive web interface.
+The system consists of a Spring Boot backend that handles the core calculation logic and a planned Angular frontend for interactive configuration and visualization.
 
-------------------------------------------------------------------------
+The application is inspired by the MMORPG Drakensang Online and allows users to experiment with different equipment and build configurations.
+
+**Technologies:** Java, Spring Boot, REST API, Angular (in progress)
+
+---
 
 ## Features
 
-The simulator calculates character stats based on multiple game systems
-from **Drakensang Online**.
+- REST API for calculating character stats based on complex dependencies  
+- Rule-based processing of multiple entity types  
+- Automatic handling of interactions (e.g. set bonuses, modifiers)  
+- Modular stat calculation engine  
 
-### Equipment
+**Domain entities include:**
+- Items (unique, mythic, sets)  
+- Enhancements (gems, runes, jewels)  
+- Additional modifiers (pets, buffs, essences)  
 
--   Unique items
--   Mythic items
--   Set items
--   Soul companion system items
--   Automatic **set bonus application**
-
-### Enhancements
-
--   Gems (socketed in items)
--   Runes
--   Jewels
--   Dragonstones
-
-### Other Systems
-
--   Pets
--   Essences
--   Buffs
-    -   Tonics
-    -   Physics
-
-Players can freely combine equipment and enhancements to see the **final
-calculated character stats** for their character.
-
-------------------------------------------------------------------------
+---
 
 ## Architecture
 
 The project follows a **backend + frontend architecture**.
 
-    DSOBuildSim
-    ├── backend   # Spring Boot REST API
-    └── frontend  # Angular web application (planned)
+```
+DSOBuildSim
+├── backend   # Spring Boot REST API
+└── frontend  # Angular web application (planned)
+```
 
-### Backend
+### Backend Architecture
 
--   Java
--   Spring Boot
--   REST API
--   JSON-based game data definitions
--   Stat calculation engine
+The backend follows a layered architecture:
 
-### Frontend
+- **Controller layer** (REST endpoints)  
+- **Service layer** (business logic)  
+- **Domain model** (entities and rule system)  
 
--   Angular
--   Communicates with the backend via REST
--   UI for selecting equipment and build components
+The stat calculation is implemented as a modular system where different components contribute to the final result.
 
-------------------------------------------------------------------------
+### Backend Tech Stack
+
+- Java  
+- Spring Boot  
+- REST API  
+- JSON-based data definitions  
+
+### Frontend (planned)
+
+- Angular  
+- Communication via REST API  
+
+---
 
 ## How It Works
 
-1.  The frontend requests **game data definitions** from the backend.
-2.  The user selects items, gems, runes, jewels, pets, buffs, etc.
-3.  The frontend sends the character configuration to the backend.
-4.  The backend calculates the resulting stats and returns them.
+1. The frontend requests game data definitions from the backend  
+2. The user selects items, enhancements and modifiers  
+3. The frontend sends the configuration to the backend  
+4. The backend calculates and returns the resulting stats  
 
-------------------------------------------------------------------------
+---
 
 ## API Overview
 
 ### Get Game Data
 
-    GET /api/game-data
+```
+GET /api/game-data
+```
 
-Returns all available game definitions including:
+Returns all available definitions (items, gems, runes, pets, etc.).
 
--   items
--   sets
--   jewels
--   gems
--   runes
--   dragonstones
--   pets
--   essences
--   buffs
-
-------------------------------------------------------------------------
+---
 
 ### Calculate Character Stats
 
-    POST /api/stats/calculate
+```
+POST /api/stats/calculate
+```
 
-Input: character configuration\
-Output: calculated character stats
+Calculates final character stats based on the provided configuration.
 
-Example request (not finalized):
+### Example Request
 
-``` json
+```json
 {
-  "class": "SPELLWEAVER",
-  "items": [],
-  "runeTrinkets": [],
-  "jewelTrinkets": [],
-  "dragonCrestTrinket": [],
-  "pet": "DRAGON_CAT",
-  "essence": "RED",
-  "tonic": "POWER_TONIC",
-  "physic": "PHYSIC_OF_POWER"
+  "characterClass": "SPELLWEAVER",
+  "items": {
+    "BOOTS": {
+      "itemType": "WINTER_BOOTS",
+      "level": 145,
+      "gems": [
+        { "gemType": "ONYX", "tier": 17 }
+      ]
+    }
+  },
+  "pet": {
+    "petType": "DRAGON_CAT",
+    "tier": 5
+  }
 }
 ```
 
-------------------------------------------------------------------------
+Note: The actual request structure is significantly more complex and includes many additional systems (e.g. runes, jewels, buffs, skill trees). The example above is simplified for readability.
+
+### Example Response
+
+```json
+{
+  "stats": {
+    "DAMAGE": 1504828.10,
+    "CRIT_VALUE": 401796.79,
+    "ATTACK_SPEED": 4.46,
+    "HEALTH_POINTS": 4463101.28,
+    "ARMOR_VALUE": 48945.96,
+    "BLOCK_VALUE": 319956.94,
+    "MOVEMENT_SPEED": 13.13
+  }
+}
+```
+
+Note: The actual response includes more stats. The example above is simplified for readability.
+
+---
+
+## Testing
+
+- Unit tests for core calculation logic  
+- Focus on correctness of stat computation and rule interactions  
+
+---
 
 ## Running the Project
 
 ### Backend
 
-Requirements:
+**Requirements:**
+- Java 17+
+- Maven  
 
--   Java 17+
--   Maven
-
-Run the backend:
-
-    mvn spring-boot:run
+**Run:**
+```
+mvn spring-boot:run
+```
 
 The REST API will start locally.
 
-------------------------------------------------------------------------
+---
 
 ### Frontend (planned)
 
-Requirements:
+**Requirements:**
+- Node.js  
+- Angular CLI  
 
--   Node.js
--   Angular CLI
+**Run:**
+```
+npm install
+ng serve
+```
 
-Run the frontend:
+---
 
-    npm install
-    ng serve
+## Purpose
 
-------------------------------------------------------------------------
+This project was developed to practice building structured backend systems with non-trivial business logic and to improve skills in API design and clean architecture.
 
-## Project Goals
+Additionally, it can be used as a tool for experimenting with different character configurations.
 
-This project serves both as:
-
--   a **learning project for modern full-stack development**
--   a **tool for the Drakensang Online community** to experiment with
-    builds and equipment combinations
-
-------------------------------------------------------------------------
+---
 
 ## Roadmap
 
-Planned improvements include:
+- Angular frontend  
+- Item filtering  
+- Build import/export  
+- Build sharing  
+- Detailed stat breakdown  
+- Support for additional systems  
 
--   Full Angular frontend
--   Item filtering by slot and class
--   Build import/export
--   Build sharing
--   Detailed stat breakdown
--   Support for additional game systems
-
-------------------------------------------------------------------------
+---
 
 ## License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License.
 
-------------------------------------------------------------------------
+---
 
 ## Disclaimer
 
-This project is a **fan-made tool** and is not affiliated with or
-endorsed by **Bigpoint** or **Drakensang Online**.
+This project is a fan-made tool and is not affiliated with or endorsed by Bigpoint or Drakensang Online.
