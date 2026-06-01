@@ -2221,6 +2221,19 @@
       }
     }
   },
+  "FOREST_SYLPH_SPRITE": {
+    "petType": "FOREST_SYLPH_SPRITE",
+    "petUpgradeType": "NONE",
+    "petCategory": "FREE_SPIRITS",
+    "defaultTier": "6",
+    "statsPerTier": {
+      "6": {
+        "DAMAGE": 0.20,
+        "ATTACK_SPEED": 0.10,
+        "HEALTH_POINTS": 0.15
+      }
+    }
+  },
   "RATATOXIE": {
     "petType": "RATATOXIE",
     "petUpgradeType": "NONE",
