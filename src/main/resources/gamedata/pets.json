@@ -2221,6 +2221,22 @@
       }
     }
   },
+  "RATATOXIE": {
+    "petType": "RATATOXIE",
+    "petUpgradeType": "NONE",
+    "petCategory": "FREE_SPIRITS",
+    "descriptionPerTier": {
+      "6": "Opening a Waste Box has a 10% chance to grant an additional reward."
+    },
+    "defaultTier": "6",
+    "statsPerTier": {
+      "6": {
+        "DAMAGE": 0.25,
+        "HEALTH_POINTS": 0.15,
+        "POISON_RESISTANCE": 0.20
+      }
+    }
+  },
   "APRIL_HARE": {
     "petType": "APRIL_HARE",
     "petUpgradeType": "NONE",
