@@ -1188,6 +1188,24 @@
       "descriptionPerTier": {
         "3": "All your skills deal 250% increased damage to enemies affected by Mark of Desolation and reduce their attack speed by 50%."
       }
+    },
+    "REIGNITED_EMBER": {
+      "setType": "REIGNITED_EMBER",
+      "name": "Reignited Ember",
+      "defaultLevel": 100,
+      "setItems": [
+        "REIGNITED_EMBER_AMULET",
+        "REIGNITED_EMBER_CLOAK",
+        "REIGNITED_EMBER_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "At 20 Heat stacks, Kain enters Overheated causing his attacks to become area attacks with a 4 m radius.",
+        "3": "Kain's attacks apply Smolder to enemies for 5 seconds (up to 10 stacks). Each stack of Smolder causes enemies to take 15% increased damage from your skills. Upon reaching 10 stacks, the target becomes Smoldering Collapse for 6 seconds:\n• Damage taken from your skills is increased by 250%.\n• All Smolder stacks are removed, cannot gain Smolder while Smoldering Collapse."
+      }
     }
   },
   "DRAGONKNIGHT":
@@ -1260,6 +1278,24 @@
       },
       "descriptionPerTier": {
         "3": "All your skills deal 300% increased damage to enemies affected by Mark of Desolation and reduce their attack speed by 50%."
+      }
+    },
+    "REIGNITED_EMBER": {
+      "setType": "REIGNITED_EMBER",
+      "name": "Reignited Ember",
+      "defaultLevel": 100,
+      "setItems": [
+        "REIGNITED_EMBER_AMULET",
+        "REIGNITED_EMBER_CLOAK",
+        "REIGNITED_EMBER_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "At 20 Heat stacks, Kain enters Overheated causing his attacks to become area attacks with a 4 m radius.",
+        "3": "Kain's attacks apply Smolder to enemies for 5 seconds (up to 10 stacks). Each stack of Smolder causes enemies to take 15% increased damage from your skills. Upon reaching 10 stacks, the target becomes Smoldering Collapse for 6 seconds:\n• Damage taken from your skills is increased by 250%.\n• All Smolder stacks are removed, cannot gain Smolder while Smoldering Collapse."
       }
     }
   },
@@ -1334,6 +1370,24 @@
       "descriptionPerTier": {
         "3": "All your skills deal 325% increased damage to enemies affected by Mark of Desolation and reduce their attack speed by 50%."
       }
+    },
+    "REIGNITED_EMBER": {
+      "setType": "REIGNITED_EMBER",
+      "name": "Reignited Ember",
+      "defaultLevel": 100,
+      "setItems": [
+        "REIGNITED_EMBER_AMULET",
+        "REIGNITED_EMBER_CLOAK",
+        "REIGNITED_EMBER_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "At 20 Heat stacks, Kain enters Overheated causing his attacks to become area attacks with a 4 m radius.",
+        "3": "Kain's attacks apply Smolder to enemies for 5 seconds (up to 10 stacks). Each stack of Smolder causes enemies to take 15% increased damage from your skills. Upon reaching 10 stacks, the target becomes Smoldering Collapse for 6 seconds:\n• Damage taken from your skills is increased by 250%.\n• All Smolder stacks are removed, cannot gain Smolder while Smoldering Collapse."
+      }
     }
   },
   "STEAM_MECHANICUS":
@@ -1407,6 +1461,24 @@
       },
       "descriptionPerTier": {
         "3": "All your skills deal 250% increased damage to enemies affected by Mark of Desolation and reduce their attack speed by 50%."
+      }
+    },
+    "REIGNITED_EMBER": {
+      "setType": "REIGNITED_EMBER",
+      "name": "Reignited Ember",
+      "defaultLevel": 100,
+      "setItems": [
+        "REIGNITED_EMBER_AMULET",
+        "REIGNITED_EMBER_CLOAK",
+        "REIGNITED_EMBER_BELT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+      },
+      "descriptionPerTier": {
+        "2": "At 20 Heat stacks, Kain enters Overheated causing his attacks to become area attacks with a 4 m radius.",
+        "3": "Kain's attacks apply Smolder to enemies for 5 seconds (up to 10 stacks). Each stack of Smolder causes enemies to take 15% increased damage from your skills. Upon reaching 10 stacks, the target becomes Smoldering Collapse for 6 seconds:\n• Damage taken from your skills is increased by 250%.\n• All Smolder stacks are removed, cannot gain Smolder while Smoldering Collapse."
       }
     }
   }
