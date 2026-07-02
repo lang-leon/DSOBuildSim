@@ -2221,6 +2221,22 @@
       }
     }
   },
+  "CLOCKWORK_FALCON": {
+    "petType": "CLOCKWORK_FALCON",
+    "petUpgradeType": "NONE",
+    "petCategory": "FREE_SPIRITS",
+    "descriptionPerTier": {
+      "6": "80% additional drop rate of Heart of Lava."
+    },
+    "defaultTier": "6",
+    "statsPerTier": {
+      "6": {
+        "DAMAGE": 0.20,
+        "HEALTH_POINTS": 0.15,
+        "BLOCK_VALUE": 0.10
+      }
+    }
+  },
   "CHIP_THE_DRAGON_SQUIRREL": {
     "petType": "CHIP_THE_DRAGON_SQUIRREL",
     "petUpgradeType": "NONE",
