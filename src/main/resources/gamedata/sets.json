@@ -676,6 +676,26 @@
         "6": "Your Magic Missile is turned into an Ice piercing bullet and the skill Damage is turned into Ice and increased by 50%"
       }
     },
+    "PLAGUEBORN_REGALIA": {
+      "setType": "PLAGUEBORN_REGALIA",
+      "name": "Plagueborn Regalia",
+      "defaultLevel": 145,
+      "setItems": [
+        "PLAGUEBORN_REGALIA_RING1",
+        "PLAGUEBORN_REGALIA_RING2",
+        "PLAGUEBORN_REGALIA_HELMET",
+        "PLAGUEBORN_REGALIA_ADORNMENT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "4": "When Magic Missile hits an enemy, you have a 50% chance to transform into Venomous Form for 20 seconds.\nVenomous Form:\n•Ignores 25% Poison Resistance initially, gaining 15% every 3 seconds, up to 100% max.(PvP: 10% to 50%)\n•Damage: +125% Initial, gains 75% every 3 seconds, up to 500% maximum.\n•Singularity transforms into Toxic Explosion: centered on the caster, erupts every 0.3 second, dealing 320% of your base damage as Poison damage to all enemies within 4 meters, inflicting Slow debuff and 1x Poison on hit. Hitting an enemy has a 30% chance to cast Mind Control to the target, up to once every 8 seconds."
+      }
+    },
     "POISON_BUSTER": {
       "setType": "POISON_BUSTER",
       "name": "Poison Buster",
@@ -1242,6 +1262,26 @@
         "2": "When equipped with the set, Mighty Wild Swing's damage is increased by 300%.\nWhen you release Banner of War, all your damage is boosted by 200% for 10 seconds. Also refreshes the cooldowns of all the following skills:\n•Furious Battle Cry\n•Outburst\n•Dragon Hide\n•Spike Shield"
       }
     },
+    "PLAGUEBORN_REGALIA": {
+      "setType": "PLAGUEBORN_REGALIA",
+      "name": "Plagueborn Regalia",
+      "defaultLevel": 145,
+      "setItems": [
+        "PLAGUEBORN_REGALIA_RING1",
+        "PLAGUEBORN_REGALIA_RING2",
+        "PLAGUEBORN_REGALIA_HELMET",
+        "PLAGUEBORN_REGALIA_ADORNMENT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "4": "When Rageful Swing hits an enemy, you have a 30% chance to transform into Venomous Form for 20 seconds.\nVenomous Form:\n•Ignores 25% Poison Resistance initially, gaining 15% every 3 seconds, up to 100% max.(PvP: 10% to 50%)\n•Damage: +150% Initial, gains 90% every 3 seconds, up to 600% maximum.\n•Bloody Wild Swing transforms into Chimera Bloody Wild Swing: continuously swing your weapon while moving, without consuming resources. Deals 400% of your base damage as Poison damage per 0.5 second to all enemies within 4.8 meters and applies 1x Poison on hit. Hitting an enemy has a 30% chance to trigger Dragon Hide, up to once every 8 seconds."
+      }
+    },
     "HOLY_EXPEDITIONARY_FORCE": {
       "setType": "HOLY_EXPEDITIONARY_FORCE",
       "name": "Holy Expeditionary Force",
@@ -1333,6 +1373,26 @@
         "2": "When Thicket of Thorns hits an enemy, your Concentration cost are decreased to 0 and Explosive Arrow does not have cooldown for 3 seconds. (PvP: 1,5 seconds)."
       }
     },
+    "PLAGUEBORN_REGALIA": {
+      "setType": "PLAGUEBORN_REGALIA",
+      "name": "Plagueborn Regalia",
+      "defaultLevel": 145,
+      "setItems": [
+        "PLAGUEBORN_REGALIA_RING1",
+        "PLAGUEBORN_REGALIA_RING2",
+        "PLAGUEBORN_REGALIA_HELMET",
+        "PLAGUEBORN_REGALIA_ADORNMENT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "4": "When Hunting Arrow hits an enemy, you have a 50% chance to transform into Venomous Form for 20 seconds.\nVenomous Form:\n•Ignores 25% Poison Resistance initially, gaining 15% every 3 seconds, up to 100% max.(PvP: 10% to 50%)\n•Damage: +150% Initial, gains 90% every 3 seconds, up to 600% maximum.\n•Scatter Shot transforms into Chimera Scatter: unleashes a cone of Poison attacks with no cooldown and no resource cost, dealing 120% of your base damage as Poison damage to all targets in front and applying 1x Poison on hit. Hitting an enemy has a 100% chance to apply Mark to the target."
+      }
+    },
     "HOLY_EXPEDITIONARY_FORCE": {
       "setType": "HOLY_EXPEDITIONARY_FORCE",
       "name": "Holy Expeditionary Force",
@@ -1422,7 +1482,26 @@
       },
       "descriptionPerTier": {
         "2": "There is a 60% chance that hits with Quick Shot cause your currently active Mechanical Turret to fire 3 additional ice bullets that covers enemies in Frost for 4 seconds. Enemies covered in Frost have reduced movement and attack speed. When a Mechanical Turret is used, you get 100% Damage and 15% Critical Value while staying within the range of it."
-
+      }
+    },
+    "PLAGUEBORN_REGALIA": {
+      "setType": "PLAGUEBORN_REGALIA",
+      "name": "Plagueborn Regalia",
+      "defaultLevel": 145,
+      "setItems": [
+        "PLAGUEBORN_REGALIA_RING1",
+        "PLAGUEBORN_REGALIA_RING2",
+        "PLAGUEBORN_REGALIA_HELMET",
+        "PLAGUEBORN_REGALIA_ADORNMENT"
+      ],
+      "baseValuesPerTier": {
+      },
+      "relativeValuesPerTier": {
+        "2": {"HEALTH_POINTS": 0.20},
+        "3": {"DAMAGE": 0.20}
+      },
+      "descriptionPerTier": {
+        "4": "When Quick Shot hits an enemy, you have a 50% chance to transform into Venomous Form for 20 seconds.\nVenomous Form:\n•Ignores 25% Poison Resistance initially, gaining 15% every 3 seconds, up to 100% max.(PvP: 10% to 50%)\n•Damage: +100% Initial, gains 60% every 3 seconds, up to 400% maximum.\n•Quick Shot transforms into Chimera Shot: fires three Poison bullets forward with no cooldown and no resource cost. Each bullet deals 100% of your base damage as Poison damage and applies 1x Poison on hit. Bullets pierces 5 enemies. Each hit grants a Quicker Shot buff (+2% Attack Speed, lasts 5 seconds, stacks up to 10 times). Hitting an enemy has a 30% chance to build up a Mechanical Turret in front of the player, ignoring turret limits, up to once every 10 seconds."
       }
     },
     "HOLY_EXPEDITIONARY_FORCE": {
