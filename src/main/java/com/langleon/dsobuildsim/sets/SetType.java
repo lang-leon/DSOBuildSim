@@ -59,6 +59,7 @@ public enum SetType {
 
     //Soul Companion
     HOLY_EXPEDITIONARY_FORCE,
-    SOUL_DESTRUCTION
+    SOUL_DESTRUCTION,
+    REIGNITED_EMBER
 
 }
