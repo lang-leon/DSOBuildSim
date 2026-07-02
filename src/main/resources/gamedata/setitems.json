@@ -3281,6 +3281,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
+    "REIGNITED_EMBER_AMULET": {
+      "itemType": "REIGNITED_EMBER_AMULET",
+      "name": "Overload Pulse Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
+      },
+      "set": "REIGNITED_EMBER"
+    },
     "HOLY_EXPEDITIONARY_FORCE_CLOAK": {
       "itemType": "HOLY_EXPEDITIONARY_FORCE_CLOAK",
       "name": "Soul Holy Cloak",
@@ -3303,6 +3314,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
+    "REIGNITED_EMBER_CLOAK": {
+      "itemType": "REIGNITED_EMBER_CLOAK",
+      "name": "Cloak of Flowing Embers",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111
+      },
+      "set": "REIGNITED_EMBER"
+    },
     "HOLY_EXPEDITIONARY_FORCE_BELT": {
       "itemType": "HOLY_EXPEDITIONARY_FORCE_BELT",
       "name": "Soul Holy Belt",
@@ -3324,6 +3346,17 @@
         "HEALTH_POINTS": 3.111
       },
       "set": "SOUL_DESTRUCTION"
+    },
+    "REIGNITED_EMBER_BELT": {
+      "itemType": "REIGNITED_EMBER_BELT",
+      "name": "Heavy Gear Link Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111
+      },
+      "set": "REIGNITED_EMBER"
     }
   },
   "DRAGONKNIGHT": {
@@ -3349,6 +3382,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
+    "REIGNITED_EMBER_AMULET": {
+      "itemType": "REIGNITED_EMBER_AMULET",
+      "name": "Overload Pulse Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
+      },
+      "set": "REIGNITED_EMBER"
+    },
     "HOLY_EXPEDITIONARY_FORCE_CLOAK": {
       "itemType": "HOLY_EXPEDITIONARY_FORCE_CLOAK",
       "name": "Soul Holy Cloak",
@@ -3371,6 +3415,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
+    "REIGNITED_EMBER_CLOAK": {
+      "itemType": "REIGNITED_EMBER_CLOAK",
+      "name": "Cloak of Flowing Embers",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333
+      },
+      "set": "REIGNITED_EMBER"
+    },
     "HOLY_EXPEDITIONARY_FORCE_BELT": {
       "itemType": "HOLY_EXPEDITIONARY_FORCE_BELT",
       "name": "Soul Holy Belt",
@@ -3392,6 +3447,17 @@
         "HEALTH_POINTS": 9.333
       },
       "set": "SOUL_DESTRUCTION"
+    },
+    "REIGNITED_EMBER_BELT": {
+      "itemType": "REIGNITED_EMBER_BELT",
+      "name": "Heavy Gear Link Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333
+      },
+      "set": "REIGNITED_EMBER"
     }
   },
   "RANGER": {
@@ -3417,6 +3483,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
+    "REIGNITED_EMBER_AMULET": {
+      "itemType": "REIGNITED_EMBER_AMULET",
+      "name": "Overload Pulse Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
+      },
+      "set": "REIGNITED_EMBER"
+    },
     "HOLY_EXPEDITIONARY_FORCE_CLOAK": {
       "itemType": "HOLY_EXPEDITIONARY_FORCE_CLOAK",
       "name": "Soul Holy Cloak",
@@ -3439,7 +3516,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
-
+    "REIGNITED_EMBER_CLOAK": {
+      "itemType": "REIGNITED_EMBER_CLOAK",
+      "name": "Cloak of Flowing Embers",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.93753
+      },
+      "set": "REIGNITED_EMBER"
+    },
     "HOLY_EXPEDITIONARY_FORCE_BELT": {
       "itemType": "HOLY_EXPEDITIONARY_FORCE_BELT",
       "name": "Soul Holy Belt",
@@ -3461,6 +3548,17 @@
         "HEALTH_POINTS": 6.93753
       },
       "set": "SOUL_DESTRUCTION"
+    },
+    "REIGNITED_EMBER_BELT": {
+      "itemType": "REIGNITED_EMBER_BELT",
+      "name": "Heavy Gear Link Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.93753
+      },
+      "set": "REIGNITED_EMBER"
     }
   },
   "STEAM_MECHANICUS": {
@@ -3486,6 +3584,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
+    "REIGNITED_EMBER_AMULET": {
+      "itemType": "REIGNITED_EMBER_AMULET",
+      "name": "Overload Pulse Necklace",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.8074
+      },
+      "set": "REIGNITED_EMBER"
+    },
     "HOLY_EXPEDITIONARY_FORCE_CLOAK": {
       "itemType": "HOLY_EXPEDITIONARY_FORCE_CLOAK",
       "name": "Soul Holy Cloak",
@@ -3508,6 +3617,17 @@
       },
       "set": "SOUL_DESTRUCTION"
     },
+    "REIGNITED_EMBER_CLOAK": {
+      "itemType": "REIGNITED_EMBER_CLOAK",
+      "name": "Cloak of Flowing Embers",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 5.44425
+      },
+      "set": "REIGNITED_EMBER"
+    },
     "HOLY_EXPEDITIONARY_FORCE_BELT": {
       "itemType": "HOLY_EXPEDITIONARY_FORCE_BELT",
       "name": "Soul Holy Belt",
@@ -3529,6 +3649,17 @@
         "HEALTH_POINTS": 5.44425
       },
       "set": "SOUL_DESTRUCTION"
+    },
+    "REIGNITED_EMBER_BELT": {
+      "itemType": "REIGNITED_EMBER_BELT",
+      "name": "Heavy Gear Link Belt",
+      "defaultLevel": 100,
+      "tier": 0,
+      "itemSlotType": "SOUL_COMPANION_BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 5.44425
+      },
+      "set": "REIGNITED_EMBER"
     }
   }
 }
