@@ -675,6 +675,32 @@
       },
       "set": "MECHANICAL_TOOLS"
     },
+    "PLAGUEBORN_REGALIA_RING1": {
+      "itemType": "PLAGUEBORN_REGALIA_RING1",
+      "name": "Venomcoil Ring",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
+    "PLAGUEBORN_REGALIA_RING2": {
+      "itemType": "PLAGUEBORN_REGALIA_RING2",
+      "name": "Blightspike Ring",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
     "SPRING_RING1": {
       "itemType": "SPRING_RING1",
       "name": "Ring of Sprouting",
@@ -921,6 +947,19 @@
         "RESISTANCE_VALUE": 1.096
       },
       "set": "AT_DEATHS_DOORSTEP"
+    },
+    "PLAGUEBORN_REGALIA_HELMET": {
+      "itemType": "PLAGUEBORN_REGALIA_HELMET",
+      "name": "Mask of the Rotting Breath",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593
+      },
+      "set": "PLAGUEBORN_REGALIA"
     },
     "POISON_EXTINGUISHER_HELMET": {
       "itemType": "POISON_EXTINGUISHER_HELMET",
@@ -2637,6 +2676,18 @@
       },
       "set": "MECHANICAL_TOOLS"
     },
+    "PLAGUEBORN_REGALIA_ADORNMENT": {
+      "itemType": "PLAGUEBORN_REGALIA_ADORNMENT",
+      "name": "Heart of Contagion",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
     "SARGON_ADORNMENT": {
       "itemType": "SARGON_ADORNMENT",
       "name": "Sargon's Shadow Crystal",
@@ -3360,6 +3411,57 @@
     }
   },
   "DRAGONKNIGHT": {
+    "PLAGUEBORN_REGALIA_RING1": {
+      "itemType": "PLAGUEBORN_REGALIA_RING1",
+      "name": "Venomcoil Ring",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
+    "PLAGUEBORN_REGALIA_RING2": {
+      "itemType": "PLAGUEBORN_REGALIA_RING2",
+      "name": "Blightspike Ring",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
+    "PLAGUEBORN_REGALIA_HELMET": {
+      "itemType": "PLAGUEBORN_REGALIA_HELMET",
+      "name": "Mask of the Rotting Breath",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 7.779
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
+    "PLAGUEBORN_REGALIA_ADORNMENT": {
+      "itemType": "PLAGUEBORN_REGALIA_ADORNMENT",
+      "name": "Heart of Contagion",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
     "HOLY_EXPEDITIONARY_FORCE_AMULET": {
       "itemType": "HOLY_EXPEDITIONARY_FORCE_AMULET",
       "name": "Soul Holy Necklace",
@@ -3461,6 +3563,57 @@
     }
   },
   "RANGER": {
+    "PLAGUEBORN_REGALIA_RING1": {
+      "itemType": "PLAGUEBORN_REGALIA_RING1",
+      "name": "Venomcoil Ring",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 7.1553,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
+    "PLAGUEBORN_REGALIA_RING2": {
+      "itemType": "PLAGUEBORN_REGALIA_RING2",
+      "name": "Blightspike Ring",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 7.1553
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
+    "PLAGUEBORN_REGALIA_HELMET": {
+      "itemType": "PLAGUEBORN_REGALIA_HELMET",
+      "name": "Mask of the Rotting Breath",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 5.9639
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
+    "PLAGUEBORN_REGALIA_ADORNMENT": {
+      "itemType": "PLAGUEBORN_REGALIA_ADORNMENT",
+      "name": "Heart of Contagion",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
     "HOLY_EXPEDITIONARY_FORCE_AMULET": {
       "itemType": "HOLY_EXPEDITIONARY_FORCE_AMULET",
       "name": "Soul Holy Necklace",
@@ -3501,7 +3654,7 @@
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_CLOAK",
       "rawBaseValues": {
-        "HEALTH_POINTS": 6.93753
+        "HEALTH_POINTS": 7.1553
       },
       "set": "HOLY_EXPEDITIONARY_FORCE"
     },
@@ -3512,7 +3665,7 @@
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_CLOAK",
       "rawBaseValues": {
-        "HEALTH_POINTS": 6.93753
+        "HEALTH_POINTS": 7.1553
       },
       "set": "SOUL_DESTRUCTION"
     },
@@ -3523,7 +3676,7 @@
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_CLOAK",
       "rawBaseValues": {
-        "HEALTH_POINTS": 6.93753
+        "HEALTH_POINTS": 7.1553
       },
       "set": "REIGNITED_EMBER"
     },
@@ -3534,7 +3687,7 @@
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_BELT",
       "rawBaseValues": {
-        "HEALTH_POINTS": 6.93753
+        "HEALTH_POINTS": 7.1553
       },
       "set": "HOLY_EXPEDITIONARY_FORCE"
     },
@@ -3545,7 +3698,7 @@
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_BELT",
       "rawBaseValues": {
-        "HEALTH_POINTS": 6.93753
+        "HEALTH_POINTS": 7.1553
       },
       "set": "SOUL_DESTRUCTION"
     },
@@ -3556,12 +3709,63 @@
       "tier": 0,
       "itemSlotType": "SOUL_COMPANION_BELT",
       "rawBaseValues": {
-        "HEALTH_POINTS": 6.93753
+        "HEALTH_POINTS": 7.1553
       },
       "set": "REIGNITED_EMBER"
     }
   },
   "STEAM_MECHANICUS": {
+    "PLAGUEBORN_REGALIA_RING1": {
+      "itemType": "PLAGUEBORN_REGALIA_RING1",
+      "name": "Venomcoil Ring",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 5.44425,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
+    "PLAGUEBORN_REGALIA_RING2": {
+      "itemType": "PLAGUEBORN_REGALIA_RING2",
+      "name": "Blightspike Ring",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 5.44425
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
+    "PLAGUEBORN_REGALIA_HELMET": {
+      "itemType": "PLAGUEBORN_REGALIA_HELMET",
+      "name": "Mask of the Rotting Breath",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 4.53775
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
+    "PLAGUEBORN_REGALIA_ADORNMENT": {
+      "itemType": "PLAGUEBORN_REGALIA_ADORNMENT",
+      "name": "Heart of Contagion",
+      "defaultLevel": 145,
+      "tier": 0,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
+      },
+      "set": "PLAGUEBORN_REGALIA"
+    },
     "HOLY_EXPEDITIONARY_FORCE_AMULET": {
       "itemType": "HOLY_EXPEDITIONARY_FORCE_AMULET",
       "name": "Soul Holy Necklace",
