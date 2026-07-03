@@ -1,6 +1,6 @@
 package com.langleon.dsobuildsim.items.core;
 
-import com.langleon.dsobuildsim.enums.StatType;
+import com.langleon.dsobuildsim.common.StatType;
 
 import java.util.Map;
 

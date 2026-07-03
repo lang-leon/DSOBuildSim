@@ -1,0 +1,244 @@
+{
+  "wisdomSkills": {
+    "RISING_VIGOR": {
+      "wisdomSkillType":"RISING_VIGOR",
+      "name": "Rising Vigor",
+      "maxLevel": 60,
+      "costPerLevel": 3,
+      "statType": "HEALTH_POINTS",
+      "increasePerLevel": 3250.0,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "VIVACIOUS_VITALITY": {
+      "wisdomSkillType": "VIVACIOUS_VITALITY", 
+      "name": "Vivacious Vitality",
+      "maxLevel": 60,
+      "costPerLevel": 3,
+      "statType": "HEALTH_PER_SECOND",
+      "increasePerLevel": 165.0,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "CONJURED_DISTILLATION": {
+      "wisdomSkillType": "CONJURED_DISTILLATION",
+      "name": "Conjured Distillation",
+      "maxLevel": 60,
+      "costPerLevel": 3,
+      "statType": "MANA",
+      "increasePerLevel": 1.0,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "RISING_POWER": {
+      "wisdomSkillType": "RISING_POWER",
+      "name": "Rising Power",
+      "maxLevel": 80,
+      "costPerLevel": 3,
+      "statType": "DAMAGE",
+      "increasePerLevel": 75.0,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "DECISIVE_STRIKE": {
+      "wisdomSkillType": "DECISIVE_STRIKE",
+      "name": "Decisive Strike",
+      "maxLevel": 80,
+      "costPerLevel": 3,
+      "statType": "CRIT_VALUE",
+      "increasePerLevel": 845.0,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "HANGMANS_PRIDE": {
+      "wisdomSkillType": "HANGMANS_PRIDE",
+      "name": "Hangman's Pride",
+      "maxLevel": 80,
+      "costPerLevel": 3,
+      "statType": null,
+      "increasePerLevel": 165.0,
+      "firstLevelBonus": 0,
+      "description": "Regenerates %f Health Points per final Blow"
+    },
+    "STURDY_SHIELD": {
+      "wisdomSkillType": "STURDY_SHIELD",
+      "name": "Sturdy Shield",
+      "maxLevel": 80,
+      "costPerLevel": 3,
+      "statType": "BLOCK_VALUE",
+      "increasePerLevel": 845.0,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "HARD_AS_A_ROCK": {
+      "wisdomSkillType": "HARD_AS_A_ROCK",
+      "name": "Hard as a Rock",
+      "maxLevel": 80,
+      "costPerLevel": 3,
+      "statType": "ARMOR_VALUE",
+      "increasePerLevel": 545.0,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "ELEMENTAL_PROTECTION": {
+      "wisdomSkillType": "ELEMENTAL_PROTECTION",
+      "name": "Elemental Protection",
+      "maxLevel": 80,
+      "costPerLevel": 3,
+      "statType": "RESISTANCE_VALUE",
+      "increasePerLevel": 545.0,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "SECOND_CHANCE": {
+      "wisdomSkillType": "SECOND_CHANCE",
+      "name": "Second Chance",
+      "maxLevel": 1,
+      "costPerLevel": 300,
+      "statType": null,
+      "increasePerLevel": 0,
+      "firstLevelBonus": 0,
+      "description": "Saves you from death if your Health Points drop to 0."
+    },
+    "EMERGENCY_RESERVES": {
+      "wisdomSkillType": "EMERGENCY_RESERVES",
+      "name": "Emergency Reserves",
+      "maxLevel": 1,
+      "costPerLevel": 300,
+      "statType": null,
+      "increasePerLevel": 0,
+      "firstLevelBonus": 0,
+      "description": "Regenerates 15 Resource Points whenever you get hit while your Health Points are below 33%"
+    },
+    "ENERGETIC_FORCE": {
+      "wisdomSkillType": "ENERGETIC_FORCE",
+      "name": "Energetic Force",
+      "maxLevel": 1,
+      "costPerLevel": 300,
+      "statType": null,
+      "increasePerLevel": 0,
+      "firstLevelBonus": 0,
+      "description": "Each critical hit grants the Energetic Force buff"
+    },
+    "DEXTROUS_SMITING": {
+      "wisdomSkillType": "DEXTROUS_SMITING",
+      "name": "Dextrous Smiting",
+      "maxLevel": 60,
+      "costPerLevel": 3,
+      "statType": "ONE_HAND_DAMAGE",
+      "increasePerLevel": 100.0,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "DEXTROUS_AGILITY": {
+      "wisdomSkillType": "DEXTROUS_AGILITY",
+      "name": "Dextrous Agility",
+      "maxLevel": 60,
+      "costPerLevel": 3,
+      "statType": "ONE_HAND_ATTACK_SPEED",
+      "increasePerLevel": 0.01,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "A_HANDFUL_OF_RESOURCES": {
+      "wisdomSkillType": "A_HANDFUL_OF_RESOURCES",
+      "name": "A Handful of Resources",
+      "maxLevel": 60,
+      "costPerLevel": 3,
+      "statType": null,
+      "increasePerLevel": 0.0025,
+      "firstLevelBonus": 0.01,
+      "description": "Each final blow with an one-handed weapon grants the A Handful of Resources buff"
+    },
+    "AMBIDEXTROUS_SMITING": {
+      "wisdomSkillType": "AMBIDEXTROUS_SMITING",
+      "name": "Ambidextrous Smiting",
+      "maxLevel": 60,
+      "costPerLevel": 3,
+      "statType": "TWO_HAND_DAMAGE",
+      "increasePerLevel": 200.0,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "AMBIDEXTROUS_AGILITY": {
+      "wisdomSkillType": "AMBIDEXTROUS_AGILITY",
+      "name": "Ambidextrous Agility",
+      "maxLevel": 60,
+      "costPerLevel": 3,
+      "statType": "TWO_HAND_ATTACK_SPEED",
+      "increasePerLevel": 0.005,
+      "firstLevelBonus": 0,
+      "description": ""
+    },
+    "LIFETIME_THIEF": {
+      "wisdomSkillType": "LIFETIME_THIEF",
+      "name": "Lifetime Thief",
+      "maxLevel": 60,
+      "costPerLevel": 3,
+      "statType": null,
+      "increasePerLevel": 0.0025,
+      "firstLevelBonus": 0.01,
+      "description": "Each final blow with a two-handed weapon reduces your active skill cool-down times by %f%"
+    },
+    "BONANZA": {
+      "wisdomSkillType": "BONANZA",
+      "name": "Bonanza",
+      "maxLevel": 150,
+      "costPerLevel": 1,
+      "statType": "COIN_DROP_BONUS",
+      "increasePerLevel": 0.007,
+      "firstLevelBonus": 0.01,
+      "description": ""
+    },
+    "PEDDLER": {
+      "wisdomSkillType": "PEDDLER",
+      "name": "Peddler",
+      "maxLevel": 1,
+      "costPerLevel": 45,
+      "statType": null,
+      "increasePerLevel": 0,
+      "firstLevelBonus": 0,
+      "description": "Unlocks o portable shop window to sell your items wherever you are."
+    },
+    "PORTABLE_WORKBENCH": {
+      "wisdomSkillType": "PORTABLE_WORKBENCH",
+      "name": "Portable Workbench",
+      "maxLevel": 1,
+      "costPerLevel": 45,
+      "statType": null,
+      "increasePerLevel": 0,
+      "firstLevelBonus": 0,
+      "description": "Unlocks a portable workbench for crafting wherever you are."
+    },
+    "HOME_SWEET_HOME": {
+      "wisdomSkillType": "HOME_SWEET_HOME",
+      "name": "Home Sweet Home",
+      "maxLevel": 15,
+      "costPerLevel": 3,
+      "statType": null,
+      "increasePerLevel": 0.02,
+      "firstLevelBonus": 0.01,
+      "description": "%f% less time to use the Urban Area Teleportation"
+    },
+    "ON_HORSEBACK": {
+      "wisdomSkillType": "ON_HORSEBACK",
+      "name": "On Horseback",
+      "maxLevel": 15,
+      "costPerLevel": 3,
+      "statType": null,
+      "increasePerLevel": 0.02,
+      "firstLevelBonus": 0.01,
+      "description": "%f% less time to summon mounts"
+    },
+    "RACING_SLIPPERS": {
+      "wisdomSkillType": "RACING_SLIPPERS",
+      "name": "Racing Slippers",
+      "maxLevel": 15,
+      "costPerLevel": 3,
+      "statType": null,
+      "increasePerLevel": 0.02,
+      "firstLevelBonus": 0.01,
+      "description": "%f% movement speed in hubs"
+    }
+  }
+}

@@ -1,0 +1,5259 @@
+{
+  "SPELLWEAVER":
+  {
+    "AMULET_OF_DEFLECTION": {
+      "itemType": "AMULET_OF_DEFLECTION",
+      "name": "Amulet of Deflection",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111,
+        "POISON_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "MOVEMENT_SPEED": 0.168
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Makes you immune to the self-damage cause by the Jewel of Poisonous Thorns' effect."
+    },
+    "AMULET_OF_THE_BLACK_KNIGHT": {
+      "itemType": "AMULET_OF_THE_BLACK_KNIGHT",
+      "name": "Amulet of the Black Knight",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "DAMAGE",
+          "value": 0.67153
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "AMULET_OF_THE_KRAKEN": {
+      "itemType": "AMULET_OF_THE_KRAKEN",
+      "name": "Amulet of the Kraken",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111,
+        "POISON_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "POISON_RESISTANCE": 3406.00
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Frost Wind talent by 4."
+    },
+    "AMULET_OF_THE_REALMS": {
+      "itemType": "AMULET_OF_THE_REALMS",
+      "name": "Amulet of the Realms",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Realm Charger talent by 2.\n+ 2 drop stack size of Realm Fragment"
+    },
+    "AMULET_OF_ZEAL": {
+      "itemType": "AMULET_OF_ZEAL",
+      "name": "Amulet of Zeal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Whenever you defeat enemies you will generate Protective Energy. If you heath drops below 33% the accumulated Protective Energy will generate a shield around you, increasing your armor by 2% for each stack of Protective Energy for 20 seconds."
+    },
+    "ARACHNA_AMULET": {
+      "itemType": "ARACHNA_AMULET",
+      "name": "Arachna's Vigor of the Spider",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+        "POISON_RESISTANCE": 592.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Singularity talent by 4."
+    },
+    "BRONZE_HELIOS_AMULET": {
+      "itemType": "BRONZE_HELIOS_AMULET",
+      "name": "Bronze Helios Amulet",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "ARMOR_VALUE": 1921.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "DESTRUCTOR_AMULET": {
+      "itemType": "DESTRUCTOR_AMULET",
+      "name": "Mystical Gear",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 2584.0,
+        "FIRE_RESISTANCE": 2433.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "GOLDEN_HELIOS_AMULET": {
+      "itemType": "GOLDEN_HELIOS_AMULET",
+      "name": "Golden Helios Amulet",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "ARMOR_VALUE": 640.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "BLOCK_VALUE",
+          "value": 0.12182
+        }
+      ],
+      "uniqueDescription": "+ 1 Gilded Clover drop stack size"
+    },
+    "KINGSHILL_NECKLACE": {
+      "itemType": "KINGSHILL_NECKLACE",
+      "name": "Kingshill Necklace",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "HEALTH_POINTS": 43615.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "MATERI_AMULET": {
+      "itemType": "MATERI_AMULET",
+      "name": "Materi Amulet",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+        "MANA": 3.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Focus buff. It regenerates 5 Resource every second for 10 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "NEFATARI_AMULET": {
+      "itemType": "NEFATARI_AMULET",
+      "name": "Seal of Betrayal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+        "HEALTH_PER_SECOND": 14734.086
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "SARGONS_SHADOW_AMULET": {
+      "itemType": "SARGONS_SHADOW_AMULET",
+      "name": "Sargon's Shadow Amulet",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 3771.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "SILVER_HELIOS_AMULET": {
+      "itemType": "SILVER_HELIOS_AMULET",
+      "name": "Silver Helios Amulet",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "ARMOR_VALUE": 1281.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "BLOCK_VALUE",
+          "value": 0.24364
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "SPIRITUAL_TREASURE": {
+      "itemType": "SPIRITUAL_TREASURE",
+      "name": "Spiritual Treasure",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When your Health Points drop below 30%, you will enter the Soul Revival state, which restores 10% of your maximum Health Points every second for 10 seconds. (PVP: 3 seconds).\nCooldown: 100 seconds"
+    },
+    "CLOAK_OF_HEROES": {
+      "itemType": "CLOAK_OF_HEROES",
+      "name": "Cloak of Heroes",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 2.074
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 1959,
+        "MOVEMENT_SPEED": 0.129
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "CLOAK_OF_THE_UNDEFEATABLES": {
+      "itemType": "CLOAK_OF_THE_UNDEFEATABLES",
+      "name": "Cloak of the Undefeatables",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 1.248,
+        "RESISTANCE_VALUE": 1.37
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "50% less time to summon Mounts"
+    },
+    "GWENFARAS_CLOAK": {
+      "itemType": "GWENFARAS_CLOAK",
+      "name": "Gwenfara's Ghostly Shroud",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.248,
+        "RESISTANCE_VALUE": 1.37,
+        "BLOCK_VALUE": 2.136
+      },
+      "uniqueBaseValues": {
+        "MOVEMENT_SPEED": 0.252
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "50% less time to summon Mounts"
+    },
+    "HERALD_CLOAK": {
+      "itemType": "HERALD_CLOAK",
+      "name": "Adamant Magma",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885,
+        "HEALTH_POINTS": 2.074
+      },
+      "uniqueBaseValues": {
+        "HEALTH_POINTS": 21383.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Fireball will shoot a dual fireball instead of the normal one. Each fireball will deal 75% of the normal fireball damage."
+    },
+    "KAYLIN_LEFRYES_COAT": {
+      "itemType": "KAYLIN_LEFRYES_COAT",
+      "name": "Kaylin Lefrye's Coat",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885,
+        "HEALTH_POINTS": 2.074
+      },
+      "uniqueBaseValues": {
+        "CRIT_VALUE": 1624.0,
+        "MANA": 7.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "MATERI_CLOAK": {
+      "itemType": "MATERI_CLOAK",
+      "name": "Materi Cloak",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 1.248,
+        "LIGHTNING_RESISTANCE": 4.894
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "LIGHTNING_RESISTANCE",
+          "value": 0.12135
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Lightning Force Field buff. It increases your lightning resistance by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "MEDUSA_CLOAK": {
+      "itemType": "MEDUSA_CLOAK",
+      "name": "Duplicitous Trophy",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "POISON_RESISTANCE": 4.894,
+        "BLOCK_VALUE": 2.136
+      },
+      "uniqueBaseValues": {
+        "MOVEMENT_SPEED": 0.084
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Teleport will petrify nearby enemies at the point of origin for 3 seconds."
+    },
+    "MERCILESS_TERROR": {
+      "itemType": "MERCILESS_TERROR",
+      "name": "Merciless Terror",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 1.248,
+        "LIGHTNING_RESISTANCE": 4.894
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "HEALTH_POINTS",
+          "value": 0.4415
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your Health Points are increased by 30% but your resource is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "WINTER_FESTIVAL_BAG": {
+      "itemType": "WINTER_FESTIVAL_BAG",
+      "name": "Winter Festival Bag",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.37,
+        "BLOCK_VALUE": 2.136
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "+ 3.0-10.0% chance of finding items from regular monsters"
+    },
+    "BEARACHS_INSTINCT": {
+      "itemType": "BEARACHS_INSTINCT",
+      "name": "Bearach's Instinct",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BELT",
+      "rawBaseValues": {
+       "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "LIGHTNING_RESISTANCE": 5.873
+      },
+      "uniqueBaseValues": {
+        "LIGHTNING_RESISTANCE": 4941.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Lightning Strike talent by 4."
+    },
+    "BELT_OF_ZEAL": {
+      "itemType": "BELT_OF_ZEAL",
+      "name": "Belt of Zeal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BELT",
+      "rawBaseValues": {
+       "DAMAGE": 0.807,
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.644
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "DAMAGE",
+          "value": 0.22384
+        }
+      ],
+      "uniqueDescription": "When you defeat an enemy your damage will be increased by 0,2% and your attack speed by 0,1%. This effect lasts for 1 Minute or until you have been defeated. This effect can stack up to 100 times."
+    },
+    "BRIGAVIK_BELT": {
+      "itemType": "BRIGAVIK_BELT",
+      "name": "Inquiring Mind",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "FIRE_RESISTANCE": 5.873,
+        "ICE_RESISTANCE": 5.873
+      },
+      "uniqueBaseValues": {
+        "BLOCK_VALUE": 2069.0
+      },
+      "uniqueRelativeValues": {
+        "RESISTANCE_VALUE": 0.1
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "MATERI_BELT": {
+      "itemType": "MATERI_BELT",
+      "name": "Materi Belt",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 1.498,
+        "POISON_RESISTANCE": 5.873
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "POISON_RESISTANCE",
+          "value": 0.12134
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Poison Force Field buff. It increases your poison resistance by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "AGATHONS_RING_OF_ORDER": {
+      "itemType": "AGATHONS_RING_OF_ORDER",
+      "name": "Agathons Ring of Order",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+        "ARMOR_VALUE": 2562.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "ANNIVERSARY_RING": {
+      "itemType": "ANNIVERSARY_RING",
+      "name": "Ring of Diversion",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "If your Health Points drop lower than 33%, 3 Taunting Drones will appear that will taunt foes, fly away in random directions after a while and then explode. They live for 8 seconds in total - can be used once every 100 seconds."
+    },
+    "ARTAYAS_RING_OF_LIFE": {
+      "itemType": "ARTAYAS_RING_OF_LIFE",
+      "name": "Artaya's Ring of Life",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "HEALTH_PER_SECOND": 9208.802
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "BALORS_RING_OF_CHAOS": {
+      "itemType": "BALORS_RING_OF_CHAOS",
+      "name": "Balor's Ring of Chaos",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 3.111,
+        "ANDERMAGIC_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 2612.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ANDERMAGIC_RESISTANCE",
+          "value": 0.26922
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "BRIGAVIK_RING": {
+      "itemType": "BRIGAVIK_RING",
+      "name": "Signet of Memory",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "CRIT_VALUE": 1.571
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.03
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ATTACK_SPEED",
+          "value": 0.46126
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "DRAGAN_RING": {
+      "itemType": "DRAGAN_RING",
+      "name": "Dragan's Grim Signet Ring",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "If your Health Points drop lower than 33%, a Black Knight will appear that will distract foes and fight for you for 10 seconds - can be used once every 120 seconds. Only one Black Knight can be active at a time."
+    },
+    "DRAGON_EMBLEM_RING": {
+      "itemType": "DRAGON_EMBLEM_RING",
+      "name": "Dragon Emblem Ring",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 3.111,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "HEALTH_PER_SECOND": 9208.802
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "FJALNIRS_RING_OF_FROST": {
+      "itemType": "FJALNIRS_RING_OF_FROST",
+      "name": "Fjalnir's Ring of Frost",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 3.111,
+        "ICE_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Reduces the duration of Frost and Freeze effects on you by 33%"
+    },
+    "FYRGONS_RING_OF_FIRE": {
+      "itemType": "FYRGONS_RING_OF_FIRE",
+      "name": "Fyrgon's Ring of Fire",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 3.111,
+        "FIRE_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Reduces the duration of Burn effects on you by 33%"
+    },
+    "KINGSHILL_EMBLEM_RING": {
+      "itemType": "KINGSHILL_EMBLEM_RING",
+      "name": "Kingshill Emblem Ring",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "BLOCK_VALUE": 4225.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "MATERI_RING": {
+      "itemType": "MATERI_RING",
+      "name": "Materi Absorber Ring",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ARMOR_VALUE",
+          "value": 0.12155
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Damping Force Field buff. It increases your armor value by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "MORTIS_RING": {
+      "itemType": "MORTIS_RING",
+      "name": "Mortis' Ring of Death",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.149
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "OCEANUS_RING_OF_POISON": {
+      "itemType": "OCEANUS_RING_OF_POISON",
+      "name": "Oceanus' Ring of Poison",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111,
+        "POISON_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Reduces the duration of Poisoning effects on you by 33%"
+    },
+    "RING_OF_CERULEAN_HOPE": {
+      "itemType": "RING_OF_CERULEAN_HOPE",
+      "name": "Ring of Cerulean Hope",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "ATTACK_SPEED": 0.05
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "RING_OF_CRIMSON_DREAD": {
+      "itemType": "RING_OF_CRIMSON_DREAD",
+      "name": "Ring of Crimson Dread",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.05
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "RING_OF_ICY_BARRIERS": {
+      "itemType": "RING_OF_ICY_BARRIERS",
+      "name": "Ring of Icy Barriers",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.222,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When your Health Points drop below 33%, for 5 seconds your Block Value and Block Rating will be increased by milion.\nCooldown: 5 minutes"
+    },
+    "RING_OF_RENEWAL": {
+      "itemType": "RING_OF_RENEWAL",
+      "name": "Ring of Renewal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.732,
+        "HEALTH_POINTS": 3.111,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "MANA": 19
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "RING_OF_WINTER": {
+      "itemType": "RING_OF_WINTER",
+      "name": "Ring of Winter",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Every successful hit has a 20% chance to spawn a snowball, dealing damage and slowing the enemy it hits."
+    },
+    "RING_OF_ZEAL": {
+      "itemType": "RING_OF_ZEAL",
+      "name": "Ring of Zeal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When you defeat an enemy your critical value will be increased by 0,2%. This effect lasts for 1 Minute or until you have been defeated. This effect can stack up to 100 times."
+    },
+    "STELLAR_GOLD_AS_RING": {
+      "itemType": "STELLAR_GOLD_AS_RING",
+      "name": "Presence of Iron Will",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "ATTACK_SPEED": 0.02
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Resistance Values by 15% for 10 seconds."
+    },
+    "STELLAR_GOLD_DMG_RING": {
+      "itemType": "STELLAR_GOLD_DMG_RING",
+      "name": "Presence of Dominance",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.02
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Damage by 15% for 10 seconds."
+    },
+    "STELLAR_GOLD_HP_RING": {
+      "itemType": "STELLAR_GOLD_HP_RING",
+      "name": "Presence of Brutality",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "HEALTH_POINTS": 0.02
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Armor Value by 15% for 10 seconds."
+    },
+    "STELLAR_GOLD_MS_RING": {
+      "itemType": "STELLAR_GOLD_MS_RING",
+      "name": "Presence of Desperation",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 3.111
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "MOVEMENT_SPEED": 0.02
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Movement Speed by 15% for 10 seconds."
+    },
+    "TERRIBLE_FEAR": {
+      "itemType": "TERRIBLE_FEAR",
+      "name": "Terrible Fear",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "BLOCK_VALUE": 1.78,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "RESISTANCE_VALUE",
+          "value": 0.27198
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your fire, ice, poison, lightning and andermagic resistance is increased by 30% but your Health Points are decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "ABYSSAL_TREASURE_HELMET": {
+      "itemType": "ABYSSAL_TREASURE_HELMET",
+      "name": "Abyssal Treasure Helmet",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998,
+        "ANDERMAGIC_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "ARMOR_VALUE": 1281.0,
+        "MANA": 10
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "GOLDEN_HORN_CAP": {
+      "itemType": "GOLDEN_HORN_CAP",
+      "name": "Golden Horn Cap",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+        "RESISTANCE_VALUE": 2029.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "HEREDUR_HELMET": {
+      "itemType": "HEREDUR_HELMET",
+      "name": "Heredur's Royal Power",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "BLOCK_VALUE": 1.424
+      },
+      "uniqueBaseValues": {
+        "ICE_RESISTANCE": 3406.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Frost Charge talent by 4."
+    },
+    "KHALY_MASK": {
+      "itemType": "KHALY_MASK",
+      "name": "Khalys' Dark Gaze",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+        "MANA": 10.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Mind Control talent by 3."
+    },
+    "MATERI_MASK": {
+      "itemType": "MATERI_MASK",
+      "name": "Materi Mask",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 3.111,
+        "ARMOR_VALUE": 0.998,
+        "FIRE_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "FIRE_RESISTANCE",
+          "value": 0.12134
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Fire Force Field buff. It increases your fire resistance by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "SPEECHLESS_TERROR": {
+      "itemType": "SPEECHLESS_TERROR",
+      "name": "Speechless Terror",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 2.593,
+        "FIRE_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "CRIT_VALUE",
+          "value": 0.24365
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your critical value is increased by 30% but your damage is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "STRAW_HAT": {
+      "itemType": "STRAW_HAT",
+      "name": "Straw Hat",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+       "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 2.593
+      },
+      "uniqueBaseValues": {
+        "HEALTH_PER_SECOND": 11050.562
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "WORLD_DROP_HELMET": {
+      "itemType": "WORLD_DROP_HELMET",
+      "name": "Fearsome Explorer Helmet",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+       "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.593,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+        "MOVEMENT_SPEED": 0.168
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "DAMAGE",
+          "value": 0.22384
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "ABYSSAL_TREASURE_PAULDRONS": {
+      "itemType": "ABYSSAL_TREASURE_PAULDRONS",
+      "name": "Abyssal Treasure Pauldrons",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 2.074,
+        "POISON_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "POISON_RESISTANCE": 4865.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Magic Missile talent by 10.\nMagic Missile reduces the poison resistance of hit enemies by 50% for 10 seconds (PvP: 5 seconds). (Effect not stackable)"
+    },
+    "ANNIVERSARY_SHOULDERS": {
+      "itemType": "ANNIVERSARY_SHOULDERS",
+      "name": "Pauldrons of the Ferocious Beast",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+        "MOVEMENT_SPEED": 0.336
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "KHALYS_SHOULDERS": {
+      "itemType": "KHALYS_SHOULDERS",
+      "name": "Khalys' Dark Scheme",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+        "ANDERMAGIC_RESISTANCE": 2433.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "If your Health Points drop below 33% three Illusions of you will spawn nearby causing a Destruction towards enemies that deals 190% of your base damage as physical damage and 65% of your base damage as lightning damage. This effect has a cooldown of 60 seconds."
+    },
+    "MATERI_SHOULDERS": {
+      "itemType": "MATERI_SHOULDERS",
+      "name": "Materi Pauldrons",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "FIRE_RESISTANCE": 3.915,
+        "BLOCK_VALUE": 1.424
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ICE_RESISTANCE",
+          "value": 0.12134
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Ice Force Field buff. It increases your ice resistance by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "PREMIUM_SHOULDERS": {
+      "itemType": "PREMIUM_SHOULDERS",
+      "name": "Royal Pauldrons of Singularity",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.424
+      },
+      "uniqueBaseValues": {
+        "MANA": 5.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "- Singularity% cooldown time for 20.00"
+    },
+    "TERRIBAL_TRIBUNAL": {
+      "itemType": "TERRIBAL_TRIBUNAL",
+      "name": "Terrible Tribunal",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "ARMOR_VALUE": 0.998,
+        "ICE_RESISTANCE": 3.915,
+        "BLOCK_VALUE": 1.424
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "BLOCK_VALUE",
+          "value": 0.24184
+        }
+      ],
+      "uniqueDescription": "Each time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your block value is increased by 30% but your attack speed is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "WORLD_DROP_SHOULDERS": {
+      "itemType": "WORLD_DROP_SHOULDERS",
+      "name": "Master's Pauldrons",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+        "CRIT_VALUE": 1396.0,
+        "ATTACK_SPEED": 0.09
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "ARMOR_OF_THE_BLACK_KNIGHT": {
+      "itemType": "ARMOR_OF_THE_BLACK_KNIGHT",
+      "name": "Armor of the Black Knight",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+       "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ARMOR_VALUE",
+          "value": 0.40632
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "BRIGAVIK_TORSO": {
+      "itemType": "BRIGAVIK_TORSO",
+      "name": "Researcher's Coat",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498,
+        "RESISTANCE_VALUE": 1.644
+      },
+      "uniqueBaseValues": {
+        "HEALTH_PER_SECOND": 3615.886
+      },
+      "uniqueRelativeValues": {
+        "HEALTH_POINTS": 0.05
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "DESTRUCTOR_TORSO": {
+      "itemType": "DESTRUCTOR_TORSO",
+      "name": "Destructor Plated Robes",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.106,
+        "FIRE_RESISTANCE": 2471.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "GREAT_TERROR": {
+      "itemType": "GREAT_TERROR",
+      "name": "Great Terror",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.256,
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ARMOR_VALUE",
+          "value": 0.26832
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your armor is increased by 30% but your movement speed is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "GRIMMAG_TORSO": {
+      "itemType": "GRIMMAG_TORSO",
+      "name": "Grimmag's Starry Robe",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 2.074
+      },
+      "uniqueBaseValues": {
+        "MANA": 36.0,
+        "MANA_PER_SECOND": 9.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "MATERI_TORSO": {
+      "itemType": "MATERI_TORSO",
+      "name": "Materi Robe",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873,
+        "BLOCK_VALUE": 1.424
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ANDERMAGIC_RESISTANCE",
+          "value": 0.12134
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Andermagic Force Field buff. It increases your andermagic resistance by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "WORLD_DROP_TORSO": {
+      "itemType": "WORLD_DROP_TORSO",
+      "name": "Remin's Battle Harness",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
+      },
+      "uniqueBaseValues": {
+        "RESISTANCE_VALUE": 1375.0,
+        "BLOCK_VALUE": 1052.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "SIGRISMARR_TORSO": {
+      "itemType": "SIGRISMARR_TORSO",
+      "name": "Sigrismarr's Eternal Ward",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 1.498
+      },
+      "uniqueBaseValues": {
+        "ICE_RESISTANCE": 3459.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Frozen Sphere talent by 3."
+    },
+    "ABYSSAL_TREASURE_GLOVES": {
+      "itemType": "ABYSSAL_TREASURE_GLOVES",
+      "name": "Abyssal Treasure Gloves",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571,
+        "LIGHTNING_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "LIGHTNING_RESISTANCE": 4865.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Frozen Sphere talent by 10.\nFrozen Sphere has a 5% chance to petrify hit enemies."
+    },
+    "BRIGAVIK_GLOVES": {
+      "itemType": "BRIGAVIK_GLOVES",
+      "name": "Researcher's Gauntlets",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.00872,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "ARMOR_VALUE": 0.10
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "RESISTANCE_VALUE",
+          "value": 0.27198
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "GLOVE_OF_ZEAL": {
+      "itemType": "GLOVE_OF_ZEAL",
+      "name": "Gloves of Zeal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 2.074,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "HEALTH_POINTS",
+          "value": 0.22295
+        }
+      ],
+      "uniqueDescription": "When you defeat an enemy your armor value and resistance values will be increased by 0,15%. This effect lasts for 1 Minute or until you have been defeated. This effect can stack up to 100 times."
+    },
+    "GLOVES_OF_THE_BLACK_KNIGHT": {
+      "itemType": "GLOVES_OF_THE_BLACK_KNIGHT",
+      "name": "Gloves of the Black Knight",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "RESISTANCE_VALUE",
+          "value": 0.41173
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "HERALDS_GLOVES": {
+      "itemType": "HERALDS_GLOVES",
+      "name": "The Herald's Blazing Onslaught",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "FIRE_RESISTANCE": 3.915,
+        "ANDERMAGIC_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "ANDERMAGIC_RESISTANCE": 3406.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Risig Vigor (III) talent by 4."
+    },
+    "MATERI_GLOVES": {
+      "itemType": "MATERI_GLOVES",
+      "name": "Materi Gauntlets",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ATTACK_SPEED",
+          "value": 0.21679
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Imbuement Rage buff. It increases your attack speed by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "REIGN_OF_TERROR": {
+      "itemType": "REIGN_OF_TERROR",
+      "name": "Reign of Terror",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "DAMAGE",
+          "value": 0.44221
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your damage is increased by 30% but your armor is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "BOOTS_OF_THE_BLACK_KNIGHT": {
+      "itemType": "BOOTS_OF_THE_BLACK_KNIGHT",
+      "name": "Boots of the Black Knight",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "MOVEMENT_SPEED",
+          "value": 0.3846
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "BRIGAVIK_BOOTS": {
+      "itemType": "BRIGAVIK_BOOTS",
+      "name": "Researcher's Boots",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "CRIT_VALUE": 1.256
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "CRIT_VALUE": 0.10
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "MOVEMENT_SPEED",
+          "value": 0.25558
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "DEADLY_TERROR": {
+      "itemType": "DEADLY_TERROR",
+      "name": "Deadly Terror",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "ARMOR_VALUE": 0.998,
+        "POISON_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "MOVEMENT_SPEED",
+          "value": 0.25558
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your movement speed is increased by 30% but your block value is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "GRIMMAG_BOOTS": {
+      "itemType": "GRIMMAG_BOOTS",
+      "name": "Fiery Tracks of Grimmag",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "ARMOR_VALUE": 0.998,
+        "FIRE_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "FIRE_RESISTANCE": 2433.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Price Fall (II) talent by 5."
+    },
+    "MATERI_BOOTS": {
+      "itemType": "MATERI_BOOTS",
+      "name": "Materi Boots",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.965,
+        "CRIT_VALUE": 1.256
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "MOVEMENT_SPEED",
+          "value": 0.12402
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Imbuement Haste buff. It increases your movement speed by 10% for 5 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "MEDUSA_BOOTS": {
+      "itemType": "MEDUSA_BOOTS",
+      "name": "Gorgonskin Leather Boots",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074,
+        "ANDERMAGIC_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "ANDERMAGIC_RESISTANCE": 3892.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Teleport talent by 4.0"
+    },
+    "LAPIS_LAZULI_BOOTS": {
+      "itemType": "LAPIS_LAZULI_BOOTS",
+      "name": "Lapis Lazuli Boots",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 2.074
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases your movement speed by 25% as long as you don't get hit by enemies. Whenever you get hit the increased movement speed is deactivated for 10 seconds."
+    },
+    "ADORNMENT_OF_THE_VANQUISHER": {
+      "itemType": "ADORNMENT_OF_THE_VANQUISHER",
+      "name": "Adornment of the Vanquisher",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Whenever you defeat an enemy you will get the Frenzy of the Vanquisher buff that increases your critical value by 0,1%. This effect lasts for 1 minute or until you have been defeated. It can stack up to 100 times."
+    },
+    "BRIGAVIK_ADORNMENT": {
+      "itemType": "BRIGAVIK_ADORNMENT",
+      "name": "Ancient Battle Adornment",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.05
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "CRIT_VALUE",
+          "value": 0.24365
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "GRIMMAG_ADORNMENT": {
+      "itemType": "GRIMMAG_ADORNMENT",
+      "name": "Grimmag's Flaming Wrath",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 1306.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Fire Blast talent by 2."
+    },
+    "MATERI_ADORNMENT": {
+      "itemType": "MATERI_ADORNMENT",
+      "name": "Materi Adornment",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "CRIT_VALUE",
+          "value": 0.11354
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Imbuement Frenzy Field buff. It increases your ice resistance by +10% for 5 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "SIGRISMARRS_ADORNMENT": {
+      "itemType": "SIGRISMARRS_ADORNMENT",
+      "name": "Sigrismarr's Eternal Grasp",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.060
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Ice Missile talent by 5."
+    },
+    "ROCKETMAN_ADORNMENT": {
+      "itemType": "ROCKETMAN_ADORNMENT",
+      "name": "Stinger",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "DAMAGE",
+          "value": 0.67637
+        },
+        {
+          "statType": "CRIT_VALUE",
+          "value": 0.60126
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "ARACHNA_ONE_HAND": {
+      "itemType": "ARACHNA_ONE_HAND",
+      "name": "Arachna's Venomous Revenge",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00347,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 1842.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each critical hit has a 10% chance to summon a spider which will assist oyu for 10 seconds, dealing up to 50% of your base damage. Maximum number: 3 Spiders."
+    },
+    "DESTRUCTOR_ONE_HAND": {
+      "itemType": "DESTRUCTOR_ONE_HAND",
+      "name": "Staff of Destruction",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "CRIT_VALUE": 2166.0,
+        "FIRE_RESISTANCE": 2282.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "DESERT_ONE_HAND": {
+      "itemType": "DESERT_ONE_HAND",
+      "name": "Desert Flame Wand",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "If your Health Points drop lower than 33%, Flying Saifs will appear that will distract foes and fight for you for 10 seconds - can be used once every 120 seconds."
+    },
+    "END_OF_TIME_ONE_HAND": {
+      "itemType": "END_OF_TIME_ONE_HAND",
+      "name": "Staff of the End of Time",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "DAMAGE",
+          "value": 0.5794
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "GWENFARA_ONE_HAND": {
+      "itemType": "GWENFARA_ONE_HAND",
+      "name": "Gwenfara's Ghost Claw",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00347,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each successful attack with Lightning Strike generates 5 Ghost Energies. As soon as you stack Ghost Energy 25 times you get a 50% damage bonus for 5 seconds and a Ghost Aura will be generated at your location. Every enemy within the Ghost Aura deals less damage."
+    },
+    "MATERI_ONE_HAND": {
+      "itemType": "MATERI_ONE_HAND",
+      "name": "Materi Scepter",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.157,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ATTACK_SPEED",
+          "value": 0.22182
+        }
+      ],
+      "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Rage buff. It increases your attack speed by 7,5% for 10 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "PREMIUM_ONE_HAND": {
+      "itemType": "PREMIUM_ONE_HAND",
+      "name": "Staff of the Eternal Flame",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00347
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Rising Vigor (III) talent by 4."
+    },
+    "WORLD_DROP_ONE_HAND": {
+      "itemType": "WORLD_DROP_ONE_HAND",
+      "name": "Starlight",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
+      },
+      "uniqueBaseValues": {
+        "MANA": 19.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "GORGA_OFF_HAND": {
+      "itemType": "GORGA_OFF_HAND",
+      "name": "Biting Tome",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ATTACK_SPEED",
+          "value": 0.9432
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "GWENFARA_OFF_HAND": {
+      "itemType": "GWENFARA_OFF_HAND",
+      "name": "Gwenfara's Ghostly Almanac",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "CRIT_VALUE": 2166.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each critical hit with Magic Missile and Meteor generates Ghost Energy. As soon as you stack Ghost Energy 25 times you get a 50% damage bonus for 5 seconds and a Ghost Aura will be generated at your location. Each enemy within the Ghost Aura deals less damage."
+    },
+    "HEREDURS_OFF_HAND": {
+      "itemType": "HEREDURS_OFF_HAND",
+      "name": "Heredur's Royal Shield",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.997,
+        "RESISTANCE_VALUE": 2.192,
+        "BLOCK_VALUE": 42.72
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "BLOCK_VALUE",
+          "value": 0.12183
+        }
+      ],
+      "uniqueDescription": "Increases the Frost Nova talent by 2."
+    },
+    "MATERI_OFF_HAND_1": {
+      "itemType": "MATERI_OFF_HAND_1",
+      "name": "Materi Book",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00173
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "DAMAGE",
+          "value": 0.19318
+        }
+      ],
+      "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Fury buff. It increases your damage by 7,5% for 10 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "MATERI_OFF_HAND_2": {
+      "itemType": "MATERI_OFF_HAND_2",
+      "name": "Materi Orb",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 4.149,
+        "BLOCK_VALUE": 42.72
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "BLOCK_VALUE",
+          "value": 0.11622
+        }
+      ],
+      "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Fury buff. It increases your block value by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "PREMIUM_OFF_HAND": {
+      "itemType": "PREMIUM_OFF_HAND",
+      "name": "Royal Tome of the Guardian",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.043
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Rising Vigor (III) talent by 4."
+    },
+    "SHARR_KHARABS_OFF_HAND": {
+      "itemType": "SHARR_KHARABS_OFF_HAND",
+      "name": "Sharr Kharab's Scroll",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "There is a 8% chance that the fists of Sharr Kharab will attack your enemies after using Magic Missile and cause 100% of your base damage as physical damage."
+    },
+    "WORLD_DROP_OFF_HAND_1": {
+      "itemType": "WORLD_DROP_OFF_HAND_1",
+      "name": "Riddle",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 4.149,
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
+      },
+      "uniqueBaseValues": {
+        "HEALTH_POINTS": 44463.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "WORLD_DROP_OFF_HAND_2": {
+      "itemType": "WORLD_DROP_OFF_HAND_2",
+      "name": "Book of Condemnation",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 4.149,
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
+      },
+      "uniqueBaseValues": {
+        "MANA": 7.0,
+        "RESISTANCE_VALUE": 1050.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "ANNIVERSARY_TWO_HAND": {
+      "itemType": "ANNIVERSARY_TWO_HAND",
+      "name": "Grimace of the Thunder Beast",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 12.916,
+        "CRIT_VALUE": 3.141
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.102
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Defeating an enemy has a chance to trigger a cross-shaped aura that deals up to 200% of your base damage to all enemies inside the cross depending, on how far away they are from the center of it. The damage type of the aura will change based on your chosen elemental mastery talents. Every level of your elemental mastery will increase the dealt damage by 50%."
+    },
+    "ANNIVERSARY_TWO_HAND_UPGRADED": {
+      "itemType": "ANNIVERSARY_TWO_HAND_UPGRADED",
+      "name": "Grimace of the Immortal Beast",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 12.916,
+        "CRIT_VALUE": 3.141
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.102
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Defeating an enemy has a chance to trigger a cross-shaped aura that deals up to 250% of your base damage to all enemies inside the cross depending, on how far away they are from the center of it. The damage type of the aura will change based on your chosen elemental mastery talents. Every level of your elemental mastery will increase the dealt damage by 60%.\nWhen your Health Points drop below 33%, you will enter the Wind of Recovery state, which restores 1% of your maximum Health Points every second. It will last for 5 seconds and can be stacked up to 3 times."
+    },
+    "ATLANTIS_TWO_HAND": {
+      "itemType": "ATLANTIS_TWO_HAND",
+      "name": "Kraken",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ATTACK_SPEED",
+          "value": 0.94322
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "BEARACH_TWO_HAND": {
+      "itemType": "BEARACH_TWO_HAND",
+      "name": "Bearach's Untamed Scorn",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 6.458,
+        "CRIT_VALUE": 3.141
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 2754.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Ball Lightning talent by 2."
+    },
+    "BRIGAVIK_TWO_HAND": {
+      "itemType": "BRIGAVIK_TWO_HAND",
+      "name": "Wisdom Seeker",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.08
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "CRIT_VALUE",
+          "value": 0.2392
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "DRAGANS_TWOHAND_BASE": {
+      "itemType": "DRAGANS_TWOHAND_BASE",
+      "name": "Dragan's Incensed Staff",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+        "RESISTANCE_VALUE": 3799.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "DRAGANS_TWOHAND_FIRE": {
+      "itemType": "DRAGANS_TWOHAND_FIRE",
+      "name": "Dragan's Incensed Staff (Fire)",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+        "FIRE_RESISTANCE": 8886.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When you hit an opponent, there is a 5% chance that a \"Fire Nova\" will be generated at your location. It will inflict 300% of your base damage as fire damage upon surrounding enemies - 20-second cooldown time."
+    },
+    "DRAGANS_TWOHAND_LIGHTNING": {
+      "itemType": "DRAGANS_TWOHAND_LIGHTNING",
+      "name": "Dragan's Incensed Staff (Lightning)",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+        "LIGHTNING_RESISTANCE": 8886.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When you hit an opponent, there is a 5% chance that a \"Lightning Nova\" will be generated at your location. It will inflict 300% of your base damage as lightning damage upon surrounding enemies - 20-second cooldown time."
+    },
+    "DRAGANS_TWOHAND_POISON": {
+      "itemType": "DRAGANS_TWOHAND_POISON",
+      "name": "Dragan's Incensed Staff (Poison)",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+        "POISON_RESISTANCE": 8886.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When you hit an opponent, there is a 5% chance that a \"Poison Nova\" will be generated at your location. It will inflict 300% of your base damage as poison damage upon surrounding enemies - 20-second cooldown time."
+    },
+    "EXECUTOR": {
+      "itemType": "EXECUTOR",
+      "name": "Executor",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "ATTACK_SPEED",
+          "value": 0.46856
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your attack speed is increased by 30% but your critical value is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "HERALD_TWO_HAND": {
+      "itemType": "HERALD_TWO_HAND",
+      "name": "The Herald's Burning Thunder",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 6.458,
+        "ATTACK_SPEED": 0.0026
+      },
+      "uniqueBaseValues": {
+        "FIRE_RESISTANCE": 4563.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Destruction talent by 2."
+    },
+    "MATERI_TWO_HAND": {
+      "itemType": "MATERI_TWO_HAND",
+      "name": "Materi Staff",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "DAMAGE",
+          "value": 0.19296
+        }
+      ],
+      "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Fury buff. It increases your damage by 15% for 10 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "PREMIUM_TWO_HAND": {
+      "itemType": "PREMIUM_TWO_HAND",
+      "name": "Royal Stroke of Lightning",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 6.458
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.048
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Lightning Strike talent by 5."
+    },
+    "WORLD_DROP_TWO_HAND": {
+      "itemType": "WORLD_DROP_TWO_HAND",
+      "name": "Dimensional Rift",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.082
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "statType": "DAMAGE",
+          "value": 0.29099
+        }
+      ],
+      "uniqueDescription": ""
+    }
+  },
+  "DRAGONKNIGHT":
+  {
+    "AMULET_OF_DEFLECTION": {
+      "itemType": "AMULET_OF_DEFLECTION",
+      "name": "Amulet of Deflection",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333,
+        "POISON_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "MOVEMENT_SPEED": 0.168
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Makes you immune to the self-damage cause by the Jewel of Poisonous Thorns' effect."
+    },
+    "AMULET_OF_THE_BLACK_KNIGHT": {
+      "itemType": "AMULET_OF_THE_BLACK_KNIGHT",
+      "name": "Amulet of the Black Knight",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 9.333,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "DAMAGE",
+          "value": 0.67153
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "AMULET_OF_THE_KRAKEN": {
+      "itemType": "AMULET_OF_THE_KRAKEN",
+      "name": "Amulet of the Kraken",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333,
+        "POISON_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "POISON_RESISTANCE": 3406.00
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Frost Wind talent by 4."
+    },
+    "AMULET_OF_THE_REALMS": {
+      "itemType": "AMULET_OF_THE_REALMS",
+      "name": "Amulet of the Realms",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Realm Charger talent by 2.\n+ 2 drop stack size of Realm Fragment"
+    },
+    "AMULET_OF_ZEAL": {
+      "itemType": "AMULET_OF_ZEAL",
+      "name": "Amulet of Zeal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Whenever you defeat enemies you will generate Protective Energy. If you heath drops below 33% the accumulated Protective Energy will generate a shield around you, increasing your armor by 2% for each stack of Protective Energy for 20 seconds."
+    },
+    "ARACHNA_AMULET": {
+      "itemType": "ARACHNA_AMULET",
+      "name": "Arachna's Vigor of the Spider",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+        "POISON_RESISTANCE": 592.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Singularity talent by 4."
+    },
+    "BRONZE_HELIOS_AMULET": {
+      "itemType": "BRONZE_HELIOS_AMULET",
+      "name": "Bronze Helios Amulet",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "ARMOR_VALUE": 1921.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "DESTRUCTOR_AMULET": {
+      "itemType": "DESTRUCTOR_AMULET",
+      "name": "Powerful Gear",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 2584.0,
+        "FIRE_RESISTANCE": 2433.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "GOLDEN_HELIOS_AMULET": {
+      "itemType": "GOLDEN_HELIOS_AMULET",
+      "name": "Golden Helios Amulet",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "ARMOR_VALUE": 640.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "BLOCK_VALUE",
+          "value": 0.12182
+        }
+      ],
+      "uniqueDescription": "+ 1 Gilded Clover drop stack size"
+    },
+    "KINGSHILL_NECKLACE": {
+      "itemType": "KINGSHILL_NECKLACE",
+      "name": "Kingshill Necklace",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "HEALTH_POINTS": 43615.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "MATERI_AMULET": {
+      "itemType": "MATERI_AMULET",
+      "name": "Materi Amulet",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+        "MANA": 3.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Focus buff. It regenerates 5 Resource every second for 10 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "NEFATARI_AMULET": {
+      "itemType": "NEFATARI_AMULET",
+      "name": "Seal of Betrayal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+        "HEALTH_PER_SECOND": 14734.086
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "SARGONS_SHADOW_AMULET": {
+      "itemType": "SARGONS_SHADOW_AMULET",
+      "name": "Sargon's Shadow Amulet",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 3771.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "SILVER_HELIOS_AMULET": {
+      "itemType": "SILVER_HELIOS_AMULET",
+      "name": "Silver Helios Amulet",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "ARMOR_VALUE": 1281.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "BLOCK_VALUE",
+          "value": 0.24364
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "SPIRITUAL_TREASURE": {
+      "itemType": "SPIRITUAL_TREASURE",
+      "name": "Spiritual Treasure",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "AMULET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 9.333,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When your Health Points drop below 30%, you will enter the Soul Revival state, which restores 10% of your maximum Health Points every second for 10 seconds. (PVP: 3 seconds).\nCooldown: 100 seconds"
+    },
+    "CLOAK_OF_HEROES": {
+      "itemType": "CLOAK_OF_HEROES",
+      "name": "Cloak of Heroes",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "HEALTH_POINTS": 6.222
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 1959,
+        "MOVEMENT_SPEED": 0.129
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "CLOAK_OF_THE_UNDEFEATABLES": {
+      "itemType": "CLOAK_OF_THE_UNDEFEATABLES",
+      "name": "Cloak of the Undefeatables",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 1.248,
+        "RESISTANCE_VALUE": 1.37
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "50% less time to summon Mounts"
+    },
+    "GWENFARAS_CLOAK": {
+      "itemType": "GWENFARAS_CLOAK",
+      "name": "Gwenfara's Ghostly Shroud",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.248,
+        "RESISTANCE_VALUE": 1.37,
+        "BLOCK_VALUE": 2.136
+      },
+      "uniqueBaseValues": {
+        "MOVEMENT_SPEED": 0.252
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "50% less time to summon Mounts"
+    },
+    "HERALD_CLOAK": {
+      "itemType": "HERALD_CLOAK",
+      "name": "Adamant Magma",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885,
+        "HEALTH_POINTS": 6.222
+      },
+      "uniqueBaseValues": {
+        "HEALTH_POINTS": 21383.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Fireball will shoot a dual fireball instead of the normal one. Each fireball will deal 75% of the normal fireball damage."
+    },
+    "KAYLIN_LEFRYES_COAT": {
+      "itemType": "KAYLIN_LEFRYES_COAT",
+      "name": "Kaylin Lefrye's Coat",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885,
+        "HEALTH_POINTS": 6.222
+      },
+      "uniqueBaseValues": {
+        "CRIT_VALUE": 1624.0,
+        "MANA": 7.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "MATERI_CLOAK": {
+      "itemType": "MATERI_CLOAK",
+      "name": "Materi Cloak",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 1.248,
+        "LIGHTNING_RESISTANCE": 4.894
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "LIGHTNING_RESISTANCE",
+          "value": 0.12135
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Lightning Force Field buff. It increases your lightning resistance by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "MEDUSA_CLOAK": {
+      "itemType": "MEDUSA_CLOAK",
+      "name": "Duplicitous Trophy",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "POISON_RESISTANCE": 4.894,
+        "BLOCK_VALUE": 2.136
+      },
+      "uniqueBaseValues": {
+        "MOVEMENT_SPEED": 0.084
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Teleport will petrify nearby enemies at the point of origin for 3 seconds."
+    },
+    "MERCILESS_TERROR": {
+      "itemType": "MERCILESS_TERROR",
+      "name": "Merciless Terror",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 1.248,
+        "LIGHTNING_RESISTANCE": 4.894
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "HEALTH_POINTS",
+          "value": 0.4415
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your Health Points are increased by 30% but your resource is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "WINTER_FESTIVAL_BAG": {
+      "itemType": "WINTER_FESTIVAL_BAG",
+      "name": "Winter Festival Bag",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "CLOAK",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "RESISTANCE_VALUE": 1.37,
+        "BLOCK_VALUE": 2.136
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "+ 3.0-10.0% chance of finding items from regular monsters"
+    },
+    "BEARACHS_INSTINCT": {
+      "itemType": "BEARACHS_INSTINCT",
+      "name": "Bearach's Instinct",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BELT",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 9.333,
+        "LIGHTNING_RESISTANCE": 5.873
+      },
+      "uniqueBaseValues": {
+        "LIGHTNING_RESISTANCE": 4941.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Lightning Strike talent by 4."
+    },
+    "BELT_OF_ZEAL": {
+      "itemType": "BELT_OF_ZEAL",
+      "name": "Belt of Zeal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BELT",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 9.333,
+        "RESISTANCE_VALUE": 1.644
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "DAMAGE",
+          "value": 0.22384
+        }
+      ],
+      "uniqueDescription": "When you defeat an enemy your damage will be increased by 0,2% and your attack speed by 0,1%. This effect lasts for 1 Minute or until you have been defeated. This effect can stack up to 100 times."
+    },
+    "BRIGAVIK_BELT": {
+      "itemType": "BRIGAVIK_BELT",
+      "name": "Inquiring Mind",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "FIRE_RESISTANCE": 5.873,
+        "ICE_RESISTANCE": 5.873
+      },
+      "uniqueBaseValues": {
+        "BLOCK_VALUE": 2069.0
+      },
+      "uniqueRelativeValues": {
+        "RESISTANCE_VALUE": 0.1
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "MATERI_BELT": {
+      "itemType": "MATERI_BELT",
+      "name": "Materi Belt",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "BELT",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 1.498,
+        "POISON_RESISTANCE": 5.873
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "POISON_RESISTANCE",
+          "value": 0.12134
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Poison Force Field buff. It increases your poison resistance by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "AGATHONS_RING_OF_ORDER": {
+      "itemType": "AGATHONS_RING_OF_ORDER",
+      "name": "Agathons Ring of Order",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+        "ARMOR_VALUE": 2562.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "ANNIVERSARY_RING": {
+      "itemType": "ANNIVERSARY_RING",
+      "name": "Ring of Diversion",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "If your Health Points drop lower than 33%, 3 Taunting Drones will appear that will taunt foes, fly away in random directions after a while and then explode. They live for 8 seconds in total - can be used once every 100 seconds."
+    },
+    "ARTAYAS_RING_OF_LIFE": {
+      "itemType": "ARTAYAS_RING_OF_LIFE",
+      "name": "Artaya's Ring of Life",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "HEALTH_PER_SECOND": 9208.802
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "BALORS_RING_OF_CHAOS": {
+      "itemType": "BALORS_RING_OF_CHAOS",
+      "name": "Balor's Ring of Chaos",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 9.333,
+        "ANDERMAGIC_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 2612.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ANDERMAGIC_RESISTANCE",
+          "value": 0.26922
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "BRIGAVIK_RING": {
+      "itemType": "BRIGAVIK_RING",
+      "name": "Signet of Memory",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00095,
+        "CRIT_VALUE": 1.571
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.03
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ATTACK_SPEED",
+          "value": 0.46126
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "DRAGAN_RING": {
+      "itemType": "DRAGAN_RING",
+      "name": "Dragan's Grim Signet Ring",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "If your Health Points drop lower than 33%, a Black Knight will appear that will distract foes and fight for you for 10 seconds - can be used once every 120 seconds. Only one Black Knight can be active at a time."
+    },
+    "DRAGON_EMBLEM_RING": {
+      "itemType": "DRAGON_EMBLEM_RING",
+      "name": "Dragon Emblem Ring",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 9.333,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "HEALTH_PER_SECOND": 9208.802
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "FJALNIRS_RING_OF_FROST": {
+      "itemType": "FJALNIRS_RING_OF_FROST",
+      "name": "Fjalnir's Ring of Frost",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 9.333,
+        "ICE_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Reduces the duration of Frost and Freeze effects on you by 33%"
+    },
+    "FYRGONS_RING_OF_FIRE": {
+      "itemType": "FYRGONS_RING_OF_FIRE",
+      "name": "Fyrgon's Ring of Fire",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 9.333,
+        "FIRE_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Reduces the duration of Burn effects on you by 33%"
+    },
+    "KINGSHILL_EMBLEM_RING": {
+      "itemType": "KINGSHILL_EMBLEM_RING",
+      "name": "Kingshill Emblem Ring",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 0.998,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "BLOCK_VALUE": 4225.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "MATERI_RING": {
+      "itemType": "MATERI_RING",
+      "name": "Materi Absorber Ring",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ARMOR",
+          "value": 0.12155
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Damping Force Field buff. It increases your armor value by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "MORTIS_RING": {
+      "itemType": "MORTIS_RING",
+      "name": "Mortis' Ring of Death",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.149
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "OCEANUS_RING_OF_POISON": {
+      "itemType": "OCEANUS_RING_OF_POISON",
+      "name": "Oceanus' Ring of Poison",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333,
+        "POISON_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Reduces the duration of Poisoning effects on you by 33%"
+    },
+    "RING_OF_CERULEAN_HOPE": {
+      "itemType": "RING_OF_CERULEAN_HOPE",
+      "name": "Ring of Cerulean Hope",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "ATTACK_SPEED": 0.05
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "RING_OF_CRIMSON_DREAD": {
+      "itemType": "RING_OF_CRIMSON_DREAD",
+      "name": "Ring of Crimson Dread",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.05
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "RING_OF_ICY_BARRIERS": {
+      "itemType": "RING_OF_ICY_BARRIERS",
+      "name": "Ring of Icy Barriers",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.222,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When your Health Points drop below 33%, for 5 seconds your Block Value and Block Rating will be increased by milion.\nCooldown: 5 minutes"
+    },
+    "RING_OF_RENEWAL": {
+      "itemType": "RING_OF_RENEWAL",
+      "name": "Ring of Renewal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.732,
+        "HEALTH_POINTS": 9.333,
+        "BLOCK_VALUE": 1.78
+      },
+      "uniqueBaseValues": {
+        "MANA": 19
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "RING_OF_WINTER": {
+      "itemType": "RING_OF_WINTER",
+      "name": "Ring of Winter",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Every successful hit has a 20% chance to spawn a snowball, dealing damage and slowing the enemy it hits."
+    },
+    "RING_OF_ZEAL": {
+      "itemType": "RING_OF_ZEAL",
+      "name": "Ring of Zeal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When you defeat an enemy your critical value will be increased by 0,2%. This effect lasts for 1 Minute or until you have been defeated. This effect can stack up to 100 times."
+    },
+    "STELLAR_GOLD_AS_RING": {
+      "itemType": "STELLAR_GOLD_AS_RING",
+      "name": "Presence of Iron Will",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "ATTACK_SPEED": 0.02
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Resistance Values by 15% for 10 seconds."
+    },
+    "STELLAR_GOLD_DMG_RING": {
+      "itemType": "STELLAR_GOLD_DMG_RING",
+      "name": "Presence of Dominance",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.02
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Damage by 15% for 10 seconds."
+    },
+    "STELLAR_GOLD_HP_RING": {
+      "itemType": "STELLAR_GOLD_HP_RING",
+      "name": "Presence of Brutality",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "HEALTH_POINTS": 0.02
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Armor Value by 15% for 10 seconds."
+    },
+    "STELLAR_GOLD_MS_RING": {
+      "itemType": "STELLAR_GOLD_MS_RING",
+      "name": "Presence of Desperation",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.571,
+        "HEALTH_POINTS": 9.333
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "MOVEMENT_SPEED": 0.02
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each successful hit grants a Brutality Force stack. Upon reaching 25 stacks, the Power of Brutality effect will be applied to all enemies in 10 meter radius, reducing their Movement Speed by 15% for 10 seconds."
+    },
+    "TERRIBLE_FEAR": {
+      "itemType": "TERRIBLE_FEAR",
+      "name": "Terrible Fear",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "RING",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "BLOCK_VALUE": 1.78,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "RESISTANCE",
+          "value": 0.27198
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your fire, ice, poison, lightning and andermagic resistance is increased by 30% but your Health Points are decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "ABYSSAL_TREASURE_HELMET": {
+      "itemType": "ABYSSAL_TREASURE_HELMET",
+      "name": "Abyssal Treasure Helmet",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 7.779,
+        "ARMOR_VALUE": 0.998,
+        "ANDERMAGIC_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "ARMOR_VALUE": 1281.0,
+        "MANA": 10
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "GOLDEN_HORN_CAP": {
+      "itemType": "GOLDEN_HORN_CAP",
+      "name": "Golden Horn Cap",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 7.779,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+        "RESISTANCE_VALUE": 2029.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "HEREDUR_HELMET": {
+      "itemType": "HEREDUR_HELMET",
+      "name": "Heredur's Royal Power",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "CRIT_VALUE": 1.256,
+        "BLOCK_VALUE": 1.424
+      },
+      "uniqueBaseValues": {
+        "ICE_RESISTANCE": 3406.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Frost Charge talent by 4."
+    },
+    "KHALY_MASK": {
+      "itemType": "KHALY_MASK",
+      "name": "Khalys' Dark Gaze",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 6.222,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+        "MANA": 10.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Mind Control talent by 3."
+    },
+    "MATERI_MASK": {
+      "itemType": "MATERI_MASK",
+      "name": "Materi Mask",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 9.333,
+        "ARMOR_VALUE": 0.998,
+        "FIRE_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "FIRE_RESISTANCE",
+          "value": 0.12134
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Fire Force Field buff. It increases your fire resistance by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "SPEECHLESS_TERROR": {
+      "itemType": "SPEECHLESS_TERROR",
+      "name": "Speechless Terror",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.256,
+        "HEALTH_POINTS": 7.779,
+        "FIRE_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "CRIT_VALUE",
+          "value": 0.24365
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your critical value is increased by 30% but your damage is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "STRAW_HAT": {
+      "itemType": "STRAW_HAT",
+      "name": "Straw Hat",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 7.779
+      },
+      "uniqueBaseValues": {
+        "HEALTH_PER_SECOND": 11050.562
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "WORLD_DROP_HELMET": {
+      "itemType": "WORLD_DROP_HELMET",
+      "name": "Fearsome Berserker Helmet",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "HELMET",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 7.779,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+        "MOVEMENT_SPEED": 0.168
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "DAMAGE",
+          "value": 0.22384
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "ABYSSAL_TREASURE_PAULDRONS": {
+      "itemType": "ABYSSAL_TREASURE_PAULDRONS",
+      "name": "Abyssal Treasure Pauldrons",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 6.222,
+        "POISON_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "POISON_RESISTANCE": 4865.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Magic Missile talent by 10.\nMagic Missile reduces the poison resistance of hit enemies by 50% for 10 seconds (PvP: 5 seconds). (Effect not stackable)"
+    },
+    "ANNIVERSARY_SHOULDERS": {
+      "itemType": "ANNIVERSARY_SHOULDERS",
+      "name": "Pauldrons of the Ferocious Beast",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.222,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+        "MOVEMENT_SPEED": 0.336
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "KHALYS_SHOULDERS": {
+      "itemType": "KHALYS_SHOULDERS",
+      "name": "Khalys' Dark Scheme",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+        "ANDERMAGIC_RESISTANCE": 2433.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "If your Health Points drop below 33% three Illusions of you will spawn nearby causing a Destruction towards enemies that deals 190% of your base damage as physical damage and 65% of your base damage as lightning damage. This effect has a cooldown of 60 seconds."
+    },
+    "MATERI_SHOULDERS": {
+      "itemType": "MATERI_SHOULDERS",
+      "name": "Materi Pauldrons",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.222,
+        "FIRE_RESISTANCE": 3.915,
+        "BLOCK_VALUE": 1.424
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ICE_RESISTANCE",
+          "value": 0.12134
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Ice Force Field buff. It increases your ice resistance by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "PREMIUM_SHOULDERS": {
+      "itemType": "PREMIUM_SHOULDERS",
+      "name": "Royal Pauldrons of the Onslaught",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096,
+        "BLOCK_VALUE": 1.424
+      },
+      "uniqueBaseValues": {
+        "MANA": 5.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "- Singularity% cooldown time for 20.00"
+    },
+    "TERRIBAL_TRIBUNAL": {
+      "itemType": "TERRIBAL_TRIBUNAL",
+      "name": "Terrible Tribunal",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "ARMOR_VALUE": 0.998,
+        "ICE_RESISTANCE": 3.915,
+        "BLOCK_VALUE": 1.424
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "BLOCK_VALUE",
+          "value": 0.24184
+        }
+      ],
+      "uniqueDescription": "Each time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your block value is increased by 30% but your attack speed is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "WORLD_DROP_SHOULDERS": {
+      "itemType": "WORLD_DROP_SHOULDERS",
+      "name": "Warlord Pauldrons",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "SHOULDERS",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "HEALTH_POINTS": 6.222,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+        "CRIT_VALUE": 1396.0,
+        "ATTACK_SPEED": 0.09
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "ARMOR_OF_THE_BLACK_KNIGHT": {
+      "itemType": "ARMOR_OF_THE_BLACK_KNIGHT",
+      "name": "Armor of the Black Knight",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 6.222,
+        "ARMOR_VALUE": 1.498
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ARMOR",
+          "value": 0.40632
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "BRIGAVIK_TORSO": {
+      "itemType": "BRIGAVIK_TORSO",
+      "name": "Grand Master's Armor",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.222,
+        "ARMOR_VALUE": 1.498,
+        "RESISTANCE_VALUE": 1.644
+      },
+      "uniqueBaseValues": {
+        "HEALTH_PER_SECOND": 3615.886
+      },
+      "uniqueRelativeValues": {
+        "HEALTH_POINTS": 0.05
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "DESTRUCTOR_TORSO": {
+      "itemType": "DESTRUCTOR_TORSO",
+      "name": "Destructor Breastplate",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 6.222,
+        "ARMOR_VALUE": 1.498
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.106,
+        "FIRE_RESISTANCE": 2471.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "GREAT_TERROR": {
+      "itemType": "GREAT_TERROR",
+      "name": "Great Terror",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "CRIT_VALUE": 1.256,
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ARMOR",
+          "value": 0.26832
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your armor is increased by 30% but your movement speed is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "GRIMMAG_TORSO": {
+      "itemType": "GRIMMAG_TORSO",
+      "name": "Tegans's Suit of Armor",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.00872,
+        "HEALTH_POINTS": 6.222
+      },
+      "uniqueBaseValues": {
+        "MANA": 36.0,
+        "MANA_PER_SECOND": 9.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "MATERI_TORSO": {
+      "itemType": "MATERI_TORSO",
+      "name": "Materi Armor",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.498,
+        "ANDERMAGIC_RESISTANCE": 5.873,
+        "BLOCK_VALUE": 1.424
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ANDERMAGIC_RESISTANCE",
+          "value": 0.12134
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Andermagic Force Field buff. It increases your andermagic resistance by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "WORLD_DROP_TORSO": {
+      "itemType": "WORLD_DROP_TORSO",
+      "name": "Gladiator",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 6.222,
+        "ARMOR_VALUE": 1.498
+      },
+      "uniqueBaseValues": {
+        "RESISTANCE_VALUE": 1375.0,
+        "BLOCK_VALUE": 1052.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "SIGRISMARR_TORSO": {
+      "itemType": "SIGRISMARR_TORSO",
+      "name": "Sigrismarr's Eternal Ward",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TORSO",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "HEALTH_POINTS": 6.222,
+        "ARMOR_VALUE": 1.498
+      },
+      "uniqueBaseValues": {
+        "ICE_RESISTANCE": 3459.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Frozen Sphere talent by 3."
+    },
+    "ABYSSAL_TREASURE_GLOVES": {
+      "itemType": "ABYSSAL_TREASURE_GLOVES",
+      "name": "Abyssal Treasure Gloves",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571,
+        "LIGHTNING_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "LIGHTNING_RESISTANCE": 4865.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Frozen Sphere talent by 10.\nFrozen Sphere has a 5% chance to petrify hit enemies."
+    },
+    "BRIGAVIK_GLOVES": {
+      "itemType": "BRIGAVIK_GLOVES",
+      "name": "Grand Masters's Gloves",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.00872,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "ARMOR_VALUE": 0.10
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "RESISTANCE",
+          "value": 0.27198
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "GLOVE_OF_ZEAL": {
+      "itemType": "GLOVE_OF_ZEAL",
+      "name": "Gloves of Zeal",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 6.222,
+        "ARMOR_VALUE": 0.998,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "HEALTH_POINTS",
+          "value": 0.22295
+        }
+      ],
+      "uniqueDescription": "When you defeat an enemy your armor value and resistance values will be increased by 0,15%. This effect lasts for 1 Minute or until you have been defeated. This effect can stack up to 100 times."
+    },
+    "GLOVES_OF_THE_BLACK_KNIGHT": {
+      "itemType": "GLOVES_OF_THE_BLACK_KNIGHT",
+      "name": "Gloves of the Black Knight",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "RESISTANCE",
+          "value": 0.41173
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "HERALDS_GLOVES": {
+      "itemType": "HERALDS_GLOVES",
+      "name": "The Herald's Blazing Onslaught",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "FIRE_RESISTANCE": 3.915,
+        "ANDERMAGIC_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "ANDERMAGIC_RESISTANCE": 3406.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Risig Vigor (III) talent by 4."
+    },
+    "MATERI_GLOVES": {
+      "itemType": "MATERI_GLOVES",
+      "name": "Materi Gauntlets",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.571
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ATTACK_SPEED",
+          "value": 0.21679
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Imbuement Rage buff. It increases your attack speed by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "REIGN_OF_TERROR": {
+      "itemType": "REIGN_OF_TERROR",
+      "name": "Reign of Terror",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "GLOVES",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "ATTACK_SPEED": 0.00087,
+        "ARMOR_VALUE": 0.998
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "DAMAGE",
+          "value": 0.44221
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your damage is increased by 30% but your armor is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "BOOTS_OF_THE_BLACK_KNIGHT": {
+      "itemType": "BOOTS_OF_THE_BLACK_KNIGHT",
+      "name": "Boots of the Black Knight",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 6.222,
+        "RESISTANCE_VALUE": 1.096
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "MOVEMENT_SPEED",
+          "value": 0.3846
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "BRIGAVIK_BOOTS": {
+      "itemType": "BRIGAVIK_BOOTS",
+      "name": "Grand Master's Sabatons",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "CRIT_VALUE": 1.256
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "CRIT_VALUE": 0.10
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "MOVEMENT_SPEED",
+          "value": 0.25558
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "DEADLY_TERROR": {
+      "itemType": "DEADLY_TERROR",
+      "name": "Deadly Terror",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "ARMOR_VALUE": 0.998,
+        "POISON_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "MOVEMENT_SPEED",
+          "value": 0.25558
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your movement speed is increased by 30% but your block value is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "GRIMMAG_BOOTS": {
+      "itemType": "GRIMMAG_BOOTS",
+      "name": "Fiery Tracks of Grimmag",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "ARMOR_VALUE": 0.998,
+        "FIRE_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "FIRE_RESISTANCE": 2433.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Price Fall (II) talent by 5."
+    },
+    "MATERI_BOOTS": {
+      "itemType": "MATERI_BOOTS",
+      "name": "Materi Boots",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.965,
+        "CRIT_VALUE": 1.256
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "MOVEMENT_SPEED",
+          "value": 0.12402
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Imbuement Haste buff. It increases your movement speed by 10% for 5 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "MEDUSA_BOOTS": {
+      "itemType": "MEDUSA_BOOTS",
+      "name": "Gorgonskin Leather Boots",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 6.222,
+        "ANDERMAGIC_RESISTANCE": 3.915
+      },
+      "uniqueBaseValues": {
+        "ANDERMAGIC_RESISTANCE": 3892.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Teleport talent by 4.0"
+    },
+    "LAPIS_LAZULI_BOOTS": {
+      "itemType": "LAPIS_LAZULI_BOOTS",
+      "name": "Lapis Lazuli Boots",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "BOOTS",
+      "rawBaseValues": {
+        "DAMAGE": 0.807,
+        "MOVEMENT_SPEED": 0.02179,
+        "HEALTH_POINTS": 6.222
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases your movement speed by 25% as long as you don't get hit by enemies. Whenever you get hit the increased movement speed is deactivated for 10 seconds."
+    },
+    "ADORNMENT_OF_THE_VANQUISHER": {
+      "itemType": "ADORNMENT_OF_THE_VANQUISHER",
+      "name": "Adornment of the Vanquisher",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Whenever you defeat an enemy you will get the Frenzy of the Vanquisher buff that increases your critical value by 0,1%. This effect lasts for 1 minute or until you have been defeated. It can stack up to 100 times."
+    },
+    "BRIGAVIK_ADORNMENT": {
+      "itemType": "BRIGAVIK_ADORNMENT",
+      "name": "Ancient Battle Adornment",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.05
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "CRIT_VALUE",
+          "value": 0.24365
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "GRIMMAG_ADORNMENT": {
+      "itemType": "GRIMMAG_ADORNMENT",
+      "name": "Grimmag's Flaming Wrath",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 1306.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Fire Blast talent by 2."
+    },
+    "MATERI_ADORNMENT": {
+      "itemType": "MATERI_ADORNMENT",
+      "name": "Materi Adornment",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "CRIT_VALUE",
+          "value": 0.11354
+        }
+      ],
+      "uniqueDescription": "Every time you use a skill, there is a 5% chance that you will receive the Materi Imbuement Frenzy Field buff. It increases your ice resistance by +10% for 5 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "SIGRISMARRS_ADORNMENT": {
+      "itemType": "SIGRISMARRS_ADORNMENT",
+      "name": "Sigrismarr's Eternal Grasp",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.060
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Ice Missile talent by 5."
+    },
+    "ROCKETMAN_ADORNMENT": {
+      "itemType": "ROCKETMAN_ADORNMENT",
+      "name": "Illuminating Fangs",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "WEAPON_ADORNMENT",
+      "rawBaseValues": {
+        "DAMAGE": 0.928,
+        "ATTACK_SPEED": 0.00087,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "DAMAGE",
+          "value": 0.67637
+        },
+        {
+          "enchantmentType": "CRIT_VALUE",
+          "value": 0.60126
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "ARACHNA_ONE_HAND": {
+      "itemType": "ARACHNA_ONE_HAND",
+      "name": "Arachna's Venomous Revenge",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00347,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 1842.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each critical hit has a 10% chance to summon a spider which will assist oyu for 10 seconds, dealing up to 50% of your base damage. Maximum number: 3 Spiders."
+    },
+    "DESTRUCTOR_ONE_HAND": {
+      "itemType": "DESTRUCTOR_ONE_HAND",
+      "name": "Axe of Destruction",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "CRIT_VALUE": 2166.0,
+        "FIRE_RESISTANCE": 2282.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "DESERT_ONE_HAND": {
+      "itemType": "DESERT_ONE_HAND",
+      "name": "Lapis Lazuli Scimitar",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "If your Health Points drop lower than 33%, Flying Saifs will appear that will distract foes and fight for you for 10 seconds - can be used once every 120 seconds."
+    },
+    "END_OF_TIME_ONE_HAND": {
+      "itemType": "END_OF_TIME_ONE_HAND",
+      "name": "Axe of the End of Time",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "DAMAGE",
+          "value": 0.5794
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "GWENFARA_ONE_HAND": {
+      "itemType": "GWENFARA_ONE_HAND",
+      "name": "Gwenfara's Ghost Axe",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00347,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each successful attack with Lightning Strike generates 5 Ghost Energies. As soon as you stack Ghost Energy 25 times you get a 50% damage bonus for 5 seconds and a Ghost Aura will be generated at your location. Every enemy within the Ghost Aura deals less damage."
+    },
+    "MATERI_ONE_HAND": {
+      "itemType": "MATERI_ONE_HAND",
+      "name": "Materi Axe",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.157,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ATTACK_SPEED",
+          "value": 0.22182
+        }
+      ],
+      "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Rage buff. It increases your attack speed by 7,5% for 10 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "PREMIUM_ONE_HAND": {
+      "itemType": "PREMIUM_ONE_HAND",
+      "name": "Life Keeper",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00347
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Rising Vigor (III) talent by 4."
+    },
+    "WORLD_DROP_ONE_HAND": {
+      "itemType": "WORLD_DROP_ONE_HAND",
+      "name": "Cloaked Wrath",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "ONE_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 1.009,
+        "ATTACK_SPEED": 0.00694
+      },
+      "uniqueBaseValues": {
+        "MANA": 19.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "GORGA_OFF_HAND": {
+      "itemType": "GORGA_OFF_HAND",
+      "name": "Gorga Scale",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ATTACK_SPEED",
+          "value": 0.9432
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "GWENFARA_OFF_HAND": {
+      "itemType": "GWENFARA_OFF_HAND",
+      "name": "Gwenfara's Spectre Shield",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "CRIT_VALUE": 2166.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Each critical hit with Magic Missile and Meteor generates Ghost Energy. As soon as you stack Ghost Energy 25 times you get a 50% damage bonus for 5 seconds and a Ghost Aura will be generated at your location. Each enemy within the Ghost Aura deals less damage."
+    },
+    "HEREDURS_OFF_HAND": {
+      "itemType": "HEREDURS_OFF_HAND",
+      "name": "Heredur's Royal Shield",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "ARMOR_VALUE": 1.997,
+        "RESISTANCE_VALUE": 2.192,
+        "BLOCK_VALUE": 42.72
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "BLOCK_VALUE",
+          "value": 0.12183
+        }
+      ],
+      "uniqueDescription": "Increases the Frost Nova talent by 2."
+    },
+    "MATERI_OFF_HAND_1": {
+      "itemType": "MATERI_OFF_HAND_1",
+      "name": "Materi Battle Shield",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "ATTACK_SPEED": 0.00173
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "DAMAGE",
+          "value": 0.19318
+        }
+      ],
+      "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Fury buff. It increases your damage by 7,5% for 10 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "MATERI_OFF_HAND_2": {
+      "itemType": "MATERI_OFF_HAND_2",
+      "name": "Materi Shield",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 12.447,
+        "BLOCK_VALUE": 42.72
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "BLOCK_VALUE",
+          "value": 0.11622
+        }
+      ],
+      "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Fury buff. It increases your block value by 10% for 5 seconds. The buff has a cooldown of 15 seconds."
+    },
+    "PREMIUM_OFF_HAND": {
+      "itemType": "PREMIUM_OFF_HAND",
+      "name": "Royal Shield of the Iron Brow",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "DAMAGE": 1.615,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.043
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Rising Vigor (III) talent by 4."
+    },
+    "SHARR_KHARABS_OFF_HAND": {
+      "itemType": "SHARR_KHARABS_OFF_HAND",
+      "name": "Sharr Kharab's Shield",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "ATTACK_SPEED": 0.00173,
+        "CRIT_VALUE": 1.885
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "There is a 8% chance that the fists of Sharr Kharab will attack your enemies after using Magic Missile and cause 100% of your base damage as physical damage."
+    },
+    "WORLD_DROP_OFF_HAND_1": {
+      "itemType": "WORLD_DROP_OFF_HAND_1",
+      "name": "Justice",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 12.447,
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
+      },
+      "uniqueBaseValues": {
+        "HEALTH_POINTS": 44463.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "WORLD_DROP_OFF_HAND_2": {
+      "itemType": "WORLD_DROP_OFF_HAND_2",
+      "name": "Shield of Slaughter",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "OFF_HAND",
+      "rawBaseValues": {
+        "HEALTH_POINTS": 12.447,
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
+      },
+      "uniqueBaseValues": {
+        "MANA": 7.0,
+        "RESISTANCE_VALUE": 1050.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "ANNIVERSARY_TWO_HAND": {
+      "itemType": "ANNIVERSARY_TWO_HAND",
+      "name": "Winding Thunder Dragon",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 12.916,
+        "CRIT_VALUE": 3.141
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.102
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Defeating an enemy has a chance to trigger a cross-shaped aura that deals up to 200% of your base damage to all enemies inside the cross depending, on how far away they are from the center of it. The damage type of the aura will change based on your chosen elemental mastery talents. Every level of your elemental mastery will increase the dealt damage by 50%."
+    },
+    "ANNIVERSARY_TWO_HAND_UPGRADED": {
+      "itemType": "ANNIVERSARY_TWO_HAND_UPGRADED",
+      "name": "Winding Immortal Dragon",
+      "defaultLevel": 145,
+      "tier": 7,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 12.916,
+        "CRIT_VALUE": 3.141
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.102
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.10
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Defeating an enemy has a chance to trigger a cross-shaped aura that deals up to 250% of your base damage to all enemies inside the cross depending, on how far away they are from the center of it. The damage type of the aura will change based on your chosen elemental mastery talents. Every level of your elemental mastery will increase the dealt damage by 60%.\nWhen your Health Points drop below 33%, you will enter the Wind of Recovery state, which restores 1% of your maximum Health Points every second. It will last for 5 seconds and can be stacked up to 3 times."
+    },
+    "ATLANTIS_TWO_HAND": {
+      "itemType": "ATLANTIS_TWO_HAND",
+      "name": "Tiamat",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ATTACK_SPEED",
+          "value": 0.94322
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "BEARACH_TWO_HAND": {
+      "itemType": "BEARACH_TWO_HAND",
+      "name": "Bearach's Torturer",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 6.458,
+        "CRIT_VALUE": 3.141
+      },
+      "uniqueBaseValues": {
+        "DAMAGE": 2754.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Ball Lightning talent by 2."
+    },
+    "BRIGAVIK_TWO_HAND": {
+      "itemType": "BRIGAVIK_TWO_HAND",
+      "name": "Glorious Past",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+        "DAMAGE": 0.08
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "CRIT_VALUE",
+          "value": 0.2392
+        }
+      ],
+      "uniqueDescription": ""
+    },
+    "DRAGANS_TWOHAND_BASE": {
+      "itemType": "DRAGANS_TWOHAND_BASE",
+      "name": "Dragan's Incensed Sword",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+        "RESISTANCE_VALUE": 3799.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": ""
+    },
+    "DRAGANS_TWOHAND_FIRE": {
+      "itemType": "DRAGANS_TWOHAND_FIRE",
+      "name": "Dragan's Incensed Sword (Fire)",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+        "FIRE_RESISTANCE": 8886.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When you hit an opponent, there is a 5% chance that a \"Fire Nova\" will be generated at your location. It will inflict 300% of your base damage as fire damage upon surrounding enemies - 20-second cooldown time."
+    },
+    "DRAGANS_TWOHAND_LIGHTNING": {
+      "itemType": "DRAGANS_TWOHAND_LIGHTNING",
+      "name": "Dragan's Incensed Sword (Lightning)",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+        "LIGHTNING_RESISTANCE": 8886.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When you hit an opponent, there is a 5% chance that a \"Lightning Nova\" will be generated at your location. It will inflict 300% of your base damage as lightning damage upon surrounding enemies - 20-second cooldown time."
+    },
+    "DRAGANS_TWOHAND_POISON": {
+      "itemType": "DRAGANS_TWOHAND_POISON",
+      "name": "Dragan's Incensed Sword (Poison)",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+        "POISON_RESISTANCE": 8886.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "When you hit an opponent, there is a 5% chance that a \"Poison Nova\" will be generated at your location. It will inflict 300% of your base damage as poison damage upon surrounding enemies - 20-second cooldown time."
+    },
+    "EXECUTOR": {
+      "itemType": "EXECUTOR",
+      "name": "Executor",
+      "defaultLevel": 140,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "ATTACK_SPEED": 0.0052
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "ATTACK_SPEED",
+          "value": 0.46856
+        }
+      ],
+      "uniqueDescription": "Controlled Terror Effect:\nEach time you defeat a monster, there is a chance that a Terror Sphere drops near you.\nWhen you pick up a Terror Sphere your attack speed is increased by 30% but your critical value is decreased by 20% for 10 seconds.\nCooldown: 20s."
+    },
+    "HERALD_TWO_HAND": {
+      "itemType": "HERALD_TWO_HAND",
+      "name": "The Herald's Burning Thunder",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 6.458,
+        "ATTACK_SPEED": 0.0026
+      },
+      "uniqueBaseValues": {
+        "FIRE_RESISTANCE": 4563.0
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Destruction talent by 2."
+    },
+    "MATERI_TWO_HAND": {
+      "itemType": "MATERI_TWO_HAND",
+      "name": "Materi Long Axe",
+      "defaultLevel": 100,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
+      },
+      "uniqueBaseValues": {
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "DAMAGE",
+          "value": 0.19296
+        }
+      ],
+      "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Fury buff. It increases your damage by 15% for 10 seconds. The buff has a cooldown of 30 seconds."
+    },
+    "PREMIUM_TWO_HAND": {
+      "itemType": "PREMIUM_TWO_HAND",
+      "name": "Royal Seismic Smash Hammer",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 6.458
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.048
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+      ],
+      "uniqueDescription": "Increases the Lightning Strike talent by 5."
+    },
+    "WORLD_DROP_TWO_HAND": {
+      "itemType": "WORLD_DROP_TWO_HAND",
+      "name": "Legend",
+      "defaultLevel": 145,
+      "tier": 6,
+      "itemSlotType": "TWO_HAND_WEAPON",
+      "rawBaseValues": {
+        "DAMAGE": 3.229,
+        "CRIT_VALUE": 6.282
+      },
+      "uniqueBaseValues": {
+        "ATTACK_SPEED": 0.082
+      },
+      "uniqueRelativeValues": {
+      },
+      "uniqueEnchantments": [
+        {
+          "enchantmentType": "DAMAGE",
+          "value": 0.29099
+        }
+      ],
+      "uniqueDescription": ""
+    }
+  },
+  "RANGER":
+  {
+
+  },
+  "STEAM_MECHANICUS":
+  {
+  }
+}

@@ -1,7 +1,6 @@
 package com.langleon.dsobuildsim.dragonstones;
 
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.dragonstones.DragonStoneType;
+import com.langleon.dsobuildsim.common.StatType;
 
 import java.util.Map;
 

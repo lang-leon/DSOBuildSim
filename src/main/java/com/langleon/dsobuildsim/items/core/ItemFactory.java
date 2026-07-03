@@ -1,65 +1,126 @@
 package com.langleon.dsobuildsim.items.core;
 
+import com.langleon.dsobuildsim.common.StatType;
 import com.langleon.dsobuildsim.enchantments.Enchantment;
+import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.enchantments.EnchantmentDefinition;
-import com.langleon.dsobuildsim.enums.CharacterClass;
-import com.langleon.dsobuildsim.enums.items.MythicItemType;
-import com.langleon.dsobuildsim.enums.items.SetItemType;
-import com.langleon.dsobuildsim.enums.items.UniqueItemType;
+import com.langleon.dsobuildsim.exceptions.LimitExceededException;
+import com.langleon.dsobuildsim.exceptions.LimitType;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.LevelMultiplierTable;
+import com.langleon.dsobuildsim.gems.AbstractGem;
+import com.langleon.dsobuildsim.items.mythicitems.MythicItemType;
+import com.langleon.dsobuildsim.items.setitems.SetItemType;
+import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemType;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItem;
-import com.langleon.dsobuildsim.items.mythicitems.MythicItemConfig;
 import com.langleon.dsobuildsim.items.mythicitems.MythicItemDefinition;
 import com.langleon.dsobuildsim.items.setitems.SetItem;
-import com.langleon.dsobuildsim.items.setitems.SetItemConfig;
 import com.langleon.dsobuildsim.items.setitems.SetItemDefinition;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItem;
-import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemConfig;
 import com.langleon.dsobuildsim.items.uniqueitems.UniqueItemDefinition;
+import org.springframework.stereotype.Component;
 
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+@Component
 public class ItemFactory {
-    private final MythicItemConfig mythicItemConfig;
-    private final UniqueItemConfig uniqueItemConfig;
-    private final SetItemConfig setItemConfig;
+    private final Map<CharacterClass, Map<MythicItemType, MythicItemDefinition>> mythicItems;
+    private final Map<CharacterClass, Map<SetItemType, SetItemDefinition>> setItems;
+    private final Map<CharacterClass, Map<UniqueItemType, UniqueItemDefinition>> uniqueItems;
     private final LevelMultiplierTable levelMultiplierTable;
+    private static final double EPSILON = 0.002;
 
-    public ItemFactory(MythicItemConfig mythicItemConfig, UniqueItemConfig uniqueItemConfig, SetItemConfig setItemConfig, LevelMultiplierTable levelMultiplierTable) {
-        this.mythicItemConfig = mythicItemConfig;
-        this.uniqueItemConfig = uniqueItemConfig;
-        this.setItemConfig = setItemConfig;
-        this.levelMultiplierTable = levelMultiplierTable;
+    public ItemFactory(GameDataConfig config) {
+        this.mythicItems = config.mythicItems();
+        this.setItems = config.setItems();
+        this.uniqueItems = config.uniqueItems();
+        this.levelMultiplierTable = config.levelMultiplierTable();
     }
 
-    public MythicItem createItem(MythicItemType itemType, CharacterClass characterClass)
+    public MythicItem createItem(MythicItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments)
     {
-        MythicItemDefinition itemDefinition = this.getDefinitionForClass(characterClass, mythicItemConfig.spellweaverItems(), mythicItemConfig.dragonknightItems(), mythicItemConfig.rangerItems(), mythicItemConfig.steamMechanicusItems(), itemType);
-        return new MythicItem(itemDefinition, levelMultiplierTable, itemDefinition.uniqueRelativeValues(), itemDefinition.uniqueAbsoluteValues(), itemDefinition.set());
+        MythicItemDefinition itemDefinition = this.mythicItems.get(characterClass).get(itemType);
+        this.validateBaseValues(itemDefinition, level, baseValues);
+        return new MythicItem(itemDefinition, baseValues, level, gems, enchantments);
     }
 
-    public UniqueItem createItem(UniqueItemType itemType, CharacterClass characterClass)
+    public UniqueItem createItem(UniqueItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments, Map<StatType, Double> uniqueBaseValues, List<Enchantment> uniqueEnchantments)
     {
-        UniqueItemDefinition itemDefinition = this.getDefinitionForClass(characterClass, uniqueItemConfig.spellweaverItems(), uniqueItemConfig.dragonknightItems(), uniqueItemConfig.rangerItems(), uniqueItemConfig.steamMechanicusItems(), itemType);
-        List<Enchantment> uniqueEnchantments = itemDefinition.uniqueEnchantments().stream().map(EnchantmentDefinition::toEnchantment).toList();
-        return new UniqueItem(itemDefinition, levelMultiplierTable, itemDefinition.uniqueBaseValues(), itemDefinition.uniqueRelativeValues(), uniqueEnchantments, itemDefinition.uniqueDescription());
+        UniqueItemDefinition itemDefinition = this.uniqueItems.get(characterClass).get(itemType);
+        this.validateBaseValues(itemDefinition, level, baseValues);
+        this.validateUniqueBaseValues(itemDefinition, uniqueBaseValues);
+        this.validateUniqueEnchantments(itemDefinition, uniqueEnchantments);
+        return new UniqueItem(itemDefinition, baseValues, level, gems, enchantments, uniqueBaseValues, uniqueEnchantments);
     }
 
-    public SetItem createItem(SetItemType itemType, CharacterClass characterClass)
+    public SetItem createItem(SetItemType itemType, CharacterClass characterClass, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments)
     {
-        SetItemDefinition itemDefinition = this.getDefinitionForClass(characterClass, setItemConfig.spellweaverItems(), setItemConfig.dragonknightItems(), setItemConfig.rangerItems(), setItemConfig.steamMechanicusItems(), itemType);
-        return new SetItem(itemDefinition, levelMultiplierTable,  itemDefinition.set());
+        SetItemDefinition itemDefinition = this.setItems.get(characterClass).get(itemType);
+        this.validateBaseValues(itemDefinition, level, baseValues);
+        return new SetItem(itemDefinition, baseValues, level, gems, enchantments);
     }
 
-    private <K, T> T getDefinitionForClass(CharacterClass characterClass, Map<K, T> spellweaverItems, Map<K, T> dragonknightItems, Map<K, T> rangerItems, Map<K, T> steamMechanicusItems, K itemType)
+    private void validateBaseValues(ItemDefinition itemDefinition, int level, Map<StatType, Double> actualBaseValues)
     {
-        return switch (characterClass)
-        {
-            case SPELLWEAVER -> spellweaverItems.get(itemType);
-            case DRAGONKNIGHT -> dragonknightItems.get(itemType);
-            case RANGER -> rangerItems.get(itemType);
-            case STEAM_MECHANICUS -> steamMechanicusItems.get(itemType);
-            default -> throw new IllegalArgumentException("Unsupported character class: " + characterClass);
-        };
+        Map<StatType, Double> allowedBaseValues = new EnumMap<>(StatType.class);
+
+        itemDefinition.rawBaseValues().forEach((statType, value) ->
+                allowedBaseValues.put(statType, value * levelMultiplierTable.getMultiplier(level, statType))
+        );
+
+        if (!allowedBaseValues.keySet().equals(actualBaseValues.keySet())) throw new IllegalArgumentException("Stat keys do not match allowed stats");
+
+        for (StatType stat : allowedBaseValues.keySet()) {
+            double allowed = allowedBaseValues.get(stat);
+            double actual = actualBaseValues.get(stat);
+            if (actual - allowed > EPSILON) {
+                throw new LimitExceededException(
+                        LimitType.ITEM_BASE_VALUES,
+                        "Stat " + stat + " value " + actual + " exceeds allowed value " + allowed
+                );
+            }
+        }
+    }
+
+    private void validateUniqueBaseValues(UniqueItemDefinition itemDefinition, Map<StatType, Double> actualBaseValues)
+    {
+        Map<StatType, Double> allowedBaseValues = itemDefinition.uniqueBaseValues();
+
+        if (!allowedBaseValues.keySet().equals(actualBaseValues.keySet())) throw new IllegalArgumentException("Stat keys do not match allowed stats");
+
+        for (StatType stat : allowedBaseValues.keySet()) {
+            double allowed = allowedBaseValues.get(stat);
+            double actual = actualBaseValues.get(stat);
+            if (actual - allowed > EPSILON) {
+                throw new LimitExceededException(
+                        LimitType.ITEM_BASE_VALUES,
+                        "Stat " + stat + " value " + actual + " exceeds allowed value " + allowed
+                );
+            }
+        }
+    }
+
+    private void validateUniqueEnchantments(UniqueItemDefinition itemDefinition, List<Enchantment> enchantments)
+    {
+        if (enchantments.size() != itemDefinition.uniqueEnchantments().size()) throw new IllegalArgumentException("Unique enchantment amount invalid");
+
+        Map<StatType, Double> allowedEnchantmentStats = itemDefinition.uniqueEnchantments().stream()
+                .collect(Collectors.toMap(EnchantmentDefinition::statType, EnchantmentDefinition::value));
+
+        for (Enchantment e : enchantments) {
+            if (!allowedEnchantmentStats.containsKey(e.getStatType())) {
+                throw new IllegalArgumentException("Invalid unique enchant stat: " + e.getStatType());
+            }
+
+            double max = allowedEnchantmentStats.get(e.getStatType());
+            if (e.getValue() - max > EPSILON) {
+                throw new LimitExceededException(
+                        LimitType.ENCHANTMENT,
+                        "Enchant " + e.getStatType() + " value " + e.getValue() + " exceeds allowed value " + max);
+            }
+        }
     }
 }

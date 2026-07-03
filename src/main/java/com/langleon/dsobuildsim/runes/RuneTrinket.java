@@ -1,41 +1,24 @@
 package com.langleon.dsobuildsim.runes;
 
-import com.langleon.dsobuildsim.enums.StatType;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.exceptions.LimitExceededException;
+import com.langleon.dsobuildsim.exceptions.LimitType;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 public class RuneTrinket {
 
-    private Rune[] runes;
+    private final List<Rune> runes;
 
-    public RuneTrinket() {
-        runes = new Rune[10];
-    }
-
-    public Rune[] getRunes() {
-        return runes;
-    }
-
-    public Rune getRune(int slot) {
-        return runes[slot];
-    }
-
-    public void addRune(Rune rune, int slot){
-        if (rune==null) throw new IllegalArgumentException("Rune is null!");
-        if (slot<0 || slot>10) throw new IllegalArgumentException("Index out of range!");
-        runes[slot] = rune;
-    }
-
-    public void removeRune(int slot){
-        if (slot<0 || slot>10) throw new IllegalArgumentException("Index out of range!");
-        runes[slot] = null;
-    }
-
-    public void updateRunes(Rune[] runes)
-    {
-        if (runes.length!=10) throw new IllegalArgumentException("Invalid array length!");
+    public RuneTrinket(List<Rune> runes) {
+        if (runes.size() > 10) throw new LimitExceededException(LimitType.RUNE_TRINKET, "Rune Trinket can only hold up to 10 runes.");
         this.runes = runes;
+    }
+
+    public List<Rune> getRunes() {
+        return runes;
     }
 
     public Map<StatType, Double> getTotalRelativeStats()
@@ -43,9 +26,9 @@ public class RuneTrinket {
         Map<StatType, Double> stats = new EnumMap<>(StatType.class);
         for(int i=0; i<10; i++)
         {
-            if (runes[i]!=null)
+            if (runes.get(i)!=null)
             {
-                for(Map.Entry<StatType, Double> entry : runes[i].getStats().entrySet())
+                for(Map.Entry<StatType, Double> entry : runes.get(i).getStats().entrySet())
                 {
                     stats.merge(entry.getKey(), entry.getValue(), Double::sum);
                 }

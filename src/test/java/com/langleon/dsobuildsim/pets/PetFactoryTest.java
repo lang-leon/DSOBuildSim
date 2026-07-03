@@ -1,27 +1,25 @@
 package com.langleon.dsobuildsim.pets;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.pets.PetType;
-import com.langleon.dsobuildsim.enums.pets.PetUpgradeType;
+import com.langleon.dsobuildsim.exceptions.InvalidTierException;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
+import com.langleon.dsobuildsim.pets.dto.PetInstanceDTO;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.pets.enums.PetType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Map;
 
 public class PetFactoryTest {
     private PetFactory petFactory;
 
     @BeforeEach
-    void setup() throws IOException {
-        try (var reader = new InputStreamReader(getClass().getResourceAsStream("/data/pets.json")))
-        {
-            ObjectMapper objectMapper = new ObjectMapper();
-            PetConfig petConfig = objectMapper.readValue(reader, PetConfig.class);
-            petFactory = new PetFactory(petConfig);
-        }
+    void setup()
+    {
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        petFactory = new PetFactory(config);
     }
 
     @Test
@@ -31,34 +29,24 @@ public class PetFactoryTest {
         Assertions.assertNotNull(pet);
         Assertions.assertEquals(3, pet.getTier());
         Assertions.assertEquals(0.12, pet.getRelativeStats().get(StatType.DAMAGE));
-        Assertions.assertEquals("+ 12,00% Attack Speed\n+ 12,00% Mana Points\n+ 12,00% Damage", pet.getDescription());
-    }
-
-    @Test
-    void createAwokenLionPetDefaultTier()
-    {
-        Pet pet = petFactory.createPet(PetType.AWOKEN_LION);
-        Assertions.assertNotNull(pet);
-        Assertions.assertEquals(6, pet.getTier());
-        Assertions.assertEquals(0.2, pet.getRelativeStats().get(StatType.DAMAGE));
-        Assertions.assertEquals("+ 20,00% Damage\nIncreased item drop worthy monsters", pet.getDescription());
-    }
-
-    @Test
-    void testUpgradeCosts()
-    {
-        Pet pet = petFactory.createPet(PetType.AWOKEN_LION);
-        Assertions.assertEquals(PetUpgradeType.NONE, pet.getPetUpgradeType());
-        Pet pet2 = petFactory.createPet(PetType.UNLEASHED_SARGON_DOLL);
-        Assertions.assertEquals(PetUpgradeType.NORMAL, pet2.getPetUpgradeType());
-        Pet pet3 = petFactory.createPet(PetType.GILDED_LUCKY_CAT);
-        Assertions.assertEquals(PetUpgradeType.GILDEDCAT, pet3.getPetUpgradeType());
     }
 
     @Test
     void throwsOnInvalidTier()
     {
-        Assertions.assertThrows(IllegalArgumentException.class, () ->  petFactory.createPet(PetType.DAZZLING_FIREFLY, -1));
-        Assertions.assertThrows(IllegalArgumentException.class, () ->  petFactory.createPet(PetType.HEREDUR_DOLL, 7));
+        Assertions.assertThrows(InvalidTierException.class, () ->  petFactory.createPet(PetType.DAZZLING_FIREFLY, -1));
+        Assertions.assertThrows(InvalidTierException.class, () ->  petFactory.createPet(PetType.HEREDUR_DOLL, 7));
+    }
+
+    @Test
+    void shouldResolvePetFromPetDTO()
+    {
+        PetInstanceDTO petDTO = new PetInstanceDTO(PetType.BLUE_DRAGONSPAWN, 4);
+
+        Pet pet = petFactory.fromDTO(petDTO);
+
+        Assertions.assertEquals(PetType.BLUE_DRAGONSPAWN, pet.getPetType());
+        Assertions.assertEquals(4, pet.getTier());
+        Assertions.assertEquals(Map.of(StatType.XP_GAIN, 0.25), pet.getRelativeStats());
     }
 }

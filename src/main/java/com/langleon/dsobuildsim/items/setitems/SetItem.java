@@ -1,20 +1,30 @@
 package com.langleon.dsobuildsim.items.setitems;
 
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.enchantments.Enchantment;
+import com.langleon.dsobuildsim.gems.AbstractGem;
+import com.langleon.dsobuildsim.items.core.enums.ItemType;
+import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.items.core.Item;
-import com.langleon.dsobuildsim.items.core.LevelMultiplierTable;
 import com.langleon.dsobuildsim.items.core.SetBonusProvider;
 
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 public class SetItem extends Item implements SetBonusProvider {
     private final SetType setType;
+    private final SetItemType itemType;
 
-    public SetItem(SetItemDefinition itemDefinition, LevelMultiplierTable levelMultipliers, SetType set){
-        super(itemDefinition, levelMultipliers);
-        this.setType = set;
+    public SetItem(SetItemDefinition itemDefinition, Map<StatType, Double> baseValues, int level, List<AbstractGem> gems, List<Enchantment> enchantments){
+        super(itemDefinition.itemSlotType(), baseValues, level,gems, enchantments);
+        this.itemType = itemDefinition.itemType();
+        this.setType = itemDefinition.set();
+    }
+
+    @Override
+    public ItemType getItemType() {
+        return this.itemType;
     }
 
     @Override
@@ -24,7 +34,7 @@ public class SetItem extends Item implements SetBonusProvider {
 
     @Override
     public String getSetItemIdentifier() {
-        return this.itemDefinition.itemType().toString();
+        return this.itemType.toString();
     }
 
     @Override
