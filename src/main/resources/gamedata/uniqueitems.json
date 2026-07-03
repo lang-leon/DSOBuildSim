@@ -503,7 +503,7 @@
       "tier": 6,
       "itemSlotType": "BELT",
       "rawBaseValues": {
-       "DAMAGE": 0.807,
+        "DAMAGE": 0.807,
         "HEALTH_POINTS": 3.111,
         "LIGHTNING_RESISTANCE": 5.873
       },
@@ -523,7 +523,7 @@
       "tier": 6,
       "itemSlotType": "BELT",
       "rawBaseValues": {
-       "DAMAGE": 0.807,
+        "DAMAGE": 0.807,
         "HEALTH_POINTS": 3.111,
         "RESISTANCE_VALUE": 1.644
       },
@@ -1137,7 +1137,7 @@
       "itemSlotType": "HELMET",
       "rawBaseValues": {
         "DAMAGE": 0.807,
-        "HEALTH_POINTS": 2.074,
+        "HEALTH_POINTS": 2.593,
         "ARMOR_VALUE": 0.998
       },
       "uniqueBaseValues": {
@@ -1156,7 +1156,7 @@
       "tier": 6,
       "itemSlotType": "HELMET",
       "rawBaseValues": {
-        "HEALTH_POINTS": 3.111,
+        "HEALTH_POINTS": 2.593,
         "ARMOR_VALUE": 0.998,
         "FIRE_RESISTANCE": 3.915
       },
@@ -1202,7 +1202,7 @@
       "tier": 6,
       "itemSlotType": "HELMET",
       "rawBaseValues": {
-       "DAMAGE": 0.807,
+        "DAMAGE": 0.807,
         "MOVEMENT_SPEED": 0.00872,
         "HEALTH_POINTS": 2.593
       },
@@ -1222,7 +1222,7 @@
       "tier": 6,
       "itemSlotType": "HELMET",
       "rawBaseValues": {
-       "DAMAGE": 0.807,
+        "DAMAGE": 0.807,
         "HEALTH_POINTS": 2.593,
         "ARMOR_VALUE": 0.998
       },
@@ -1340,7 +1340,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "- Singularity% cooldown time for 20.00"
+      "uniqueDescription": "-20% cooldown time for Singularity"
     },
     "TERRIBAL_TRIBUNAL": {
       "itemType": "TERRIBAL_TRIBUNAL",
@@ -1393,7 +1393,7 @@
       "tier": 6,
       "itemSlotType": "TORSO",
       "rawBaseValues": {
-       "DAMAGE": 0.807,
+        "DAMAGE": 0.807,
         "HEALTH_POINTS": 2.074,
         "ARMOR_VALUE": 1.498
       },
@@ -1846,11 +1846,11 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Teleport talent by 4.0"
+      "uniqueDescription": "Increases the Teleport talent by 4"
     },
     "LAPIS_LAZULI_BOOTS": {
       "itemType": "LAPIS_LAZULI_BOOTS",
-      "name": "Lapis Lazuli Boots",
+      "name": "Lapis Lazuli ",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "BOOTS",
@@ -2117,8 +2117,8 @@
       ],
       "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Rage buff. It increases your attack speed by 7,5% for 10 seconds. The buff has a cooldown of 30 seconds."
     },
-    "PREMIUM_ONE_HAND": {
-      "itemType": "PREMIUM_ONE_HAND",
+    "DRAKEN_ONE_HAND": {
+      "itemType": "DRAKEN_ONE_HAND",
       "name": "Staff of the Eternal Flame",
       "defaultLevel": 145,
       "tier": 6,
@@ -2464,7 +2464,7 @@
     },
     "DRAGANS_TWOHAND_FIRE": {
       "itemType": "DRAGANS_TWOHAND_FIRE",
-      "name": "Dragan's Incensed Staff (Fire)",
+      "name": "Dragan's Incensed Staff",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
@@ -2483,7 +2483,7 @@
     },
     "DRAGANS_TWOHAND_LIGHTNING": {
       "itemType": "DRAGANS_TWOHAND_LIGHTNING",
-      "name": "Dragan's Incensed Staff (Lightning)",
+      "name": "Dragan's Incensed Staff",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
@@ -2502,7 +2502,7 @@
     },
     "DRAGANS_TWOHAND_POISON": {
       "itemType": "DRAGANS_TWOHAND_POISON",
-      "name": "Dragan's Incensed Staff (Poison)",
+      "name": "Dragan's Incensed Staff",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
@@ -2663,7 +2663,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.67153
         }
       ],
@@ -2687,7 +2687,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Frost Wind talent by 4."
+      "uniqueDescription": "Increases the Dragon Hide talent by 4."
     },
     "AMULET_OF_THE_REALMS": {
       "itemType": "AMULET_OF_THE_REALMS",
@@ -2745,7 +2745,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Singularity talent by 4."
+      "uniqueDescription": "Increases the Outburst talent by 4."
     },
     "BRONZE_HELIOS_AMULET": {
       "itemType": "BRONZE_HELIOS_AMULET",
@@ -2806,7 +2806,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "BLOCK_VALUE",
+          "statType": "BLOCK_VALUE",
           "value": 0.12182
         }
       ],
@@ -2910,7 +2910,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "BLOCK_VALUE",
+          "statType": "BLOCK_VALUE",
           "value": 0.24364
         }
       ],
@@ -3053,7 +3053,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "LIGHTNING_RESISTANCE",
+          "statType": "LIGHTNING_RESISTANCE",
           "value": 0.12135
         }
       ],
@@ -3077,7 +3077,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Teleport will petrify nearby enemies at the point of origin for 3 seconds."
+      "uniqueDescription": "Rage Jump will petrify nearby enemies at the point of origin for 3 seconds."
     },
     "MERCILESS_TERROR": {
       "itemType": "MERCILESS_TERROR",
@@ -3096,7 +3096,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "HEALTH_POINTS",
+          "statType": "HEALTH_POINTS",
           "value": 0.4415
         }
       ],
@@ -3139,7 +3139,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Lightning Strike talent by 4."
+      "uniqueDescription": "Increases the Bloody Wild Swing talent by 4."
     },
     "BELT_OF_ZEAL": {
       "itemType": "BELT_OF_ZEAL",
@@ -3158,7 +3158,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.22384
         }
       ],
@@ -3202,7 +3202,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "POISON_RESISTANCE",
+          "statType": "POISON_RESISTANCE",
           "value": 0.12134
         }
       ],
@@ -3285,7 +3285,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ANDERMAGIC_RESISTANCE",
+          "statType": "ANDERMAGIC_RESISTANCE",
           "value": 0.26922
         }
       ],
@@ -3309,7 +3309,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ATTACK_SPEED",
+          "statType": "ATTACK_SPEED",
           "value": 0.46126
         }
       ],
@@ -3429,7 +3429,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ARMOR",
+          "statType": "ARMOR_VALUE",
           "value": 0.12155
         }
       ],
@@ -3521,7 +3521,7 @@
       "tier": 6,
       "itemSlotType": "RING",
       "rawBaseValues": {
-        "HEALTH_POINTS": 6.222,
+        "HEALTH_POINTS": 18.666,
         "BLOCK_VALUE": 1.78
       },
       "uniqueBaseValues": {
@@ -3687,7 +3687,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "RESISTANCE",
+          "statType": "RESISTANCE_VALUE",
           "value": 0.27198
         }
       ],
@@ -3752,7 +3752,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Frost Charge talent by 4."
+      "uniqueDescription": "Increases the Charge talent by 4."
     },
     "KHALY_MASK": {
       "itemType": "KHALY_MASK",
@@ -3762,7 +3762,7 @@
       "itemSlotType": "HELMET",
       "rawBaseValues": {
         "DAMAGE": 0.807,
-        "HEALTH_POINTS": 6.222,
+        "HEALTH_POINTS": 7.779,
         "ARMOR_VALUE": 0.998
       },
       "uniqueBaseValues": {
@@ -3772,7 +3772,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Mind Control talent by 3."
+      "uniqueDescription": "Increases the Ground Breaker talent by 3."
     },
     "MATERI_MASK": {
       "itemType": "MATERI_MASK",
@@ -3781,7 +3781,7 @@
       "tier": 6,
       "itemSlotType": "HELMET",
       "rawBaseValues": {
-        "HEALTH_POINTS": 9.333,
+        "HEALTH_POINTS": 7.779,
         "ARMOR_VALUE": 0.998,
         "FIRE_RESISTANCE": 3.915
       },
@@ -3791,7 +3791,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "FIRE_RESISTANCE",
+          "statType": "FIRE_RESISTANCE",
           "value": 0.12134
         }
       ],
@@ -3814,7 +3814,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "CRIT_VALUE",
+          "statType": "CRIT_VALUE",
           "value": 0.24365
         }
       ],
@@ -3858,7 +3858,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.22384
         }
       ],
@@ -3882,7 +3882,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Magic Missile talent by 10.\nMagic Missile reduces the poison resistance of hit enemies by 50% for 10 seconds (PvP: 5 seconds). (Effect not stackable)"
+      "uniqueDescription": "Increases the Rageful Swing talent by 10.\nRageful Swing reduces the poison resistance of hit enemies by 50% for 10 seconds (PvP: 5 seconds). (Effect not stackable)"
     },
     "ANNIVERSARY_SHOULDERS": {
       "itemType": "ANNIVERSARY_SHOULDERS",
@@ -3922,7 +3922,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "If your Health Points drop below 33% three Illusions of you will spawn nearby causing a Destruction towards enemies that deals 190% of your base damage as physical damage and 65% of your base damage as lightning damage. This effect has a cooldown of 60 seconds."
+      "uniqueDescription": "If your Health Points drop below 33% three Illusions of you will spawn nearby and charge around for 20 seconds, dealing 33% of your base damage as physical damage per hit. This effect has a cooldown of 60 seconds."
     },
     "MATERI_SHOULDERS": {
       "itemType": "MATERI_SHOULDERS",
@@ -3941,7 +3941,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ICE_RESISTANCE",
+          "statType": "ICE_RESISTANCE",
           "value": 0.12134
         }
       ],
@@ -3965,7 +3965,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "- Singularity% cooldown time for 20.00"
+      "uniqueDescription": "-20% cooldown time for Charge"
     },
     "TERRIBAL_TRIBUNAL": {
       "itemType": "TERRIBAL_TRIBUNAL",
@@ -3984,7 +3984,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "BLOCK_VALUE",
+          "statType": "BLOCK_VALUE",
           "value": 0.24184
         }
       ],
@@ -4028,7 +4028,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ARMOR",
+          "statType": "ARMOR_VALUE",
           "value": 0.40632
         }
       ],
@@ -4093,7 +4093,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ARMOR",
+          "statType": "ARMOR_VALUE",
           "value": 0.26832
         }
       ],
@@ -4101,7 +4101,7 @@
     },
     "GRIMMAG_TORSO": {
       "itemType": "GRIMMAG_TORSO",
-      "name": "Tegans's Suit of Armor",
+      "name": "Tegan's Suit of Armor",
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "TORSO",
@@ -4122,7 +4122,7 @@
     },
     "MATERI_TORSO": {
       "itemType": "MATERI_TORSO",
-      "name": "Materi Armor",
+      "name": "Materi Robe",
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "TORSO",
@@ -4137,7 +4137,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ANDERMAGIC_RESISTANCE",
+          "statType": "ANDERMAGIC_RESISTANCE",
           "value": 0.12134
         }
       ],
@@ -4182,7 +4182,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Frozen Sphere talent by 3."
+      "uniqueDescription": "Increases the Smash talent by 3."
     },
     "ABYSSAL_TREASURE_GLOVES": {
       "itemType": "ABYSSAL_TREASURE_GLOVES",
@@ -4202,11 +4202,11 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Frozen Sphere talent by 10.\nFrozen Sphere has a 5% chance to petrify hit enemies."
+      "uniqueDescription": "Increases the Mighty Wild Swing talent by 10.\nMighty Wild Swing has a 5% chance to petrify hit enemies."
     },
     "BRIGAVIK_GLOVES": {
       "itemType": "BRIGAVIK_GLOVES",
-      "name": "Grand Masters's Gloves",
+      "name": "Grand Master's Gloves",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "GLOVES",
@@ -4222,7 +4222,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "RESISTANCE",
+          "statType": "RESISTANCE_VALUE",
           "value": 0.27198
         }
       ],
@@ -4245,7 +4245,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "HEALTH_POINTS",
+          "statType": "HEALTH_POINTS",
           "value": 0.22295
         }
       ],
@@ -4268,7 +4268,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "RESISTANCE",
+          "statType": "RESISTANCE_VALUE",
           "value": 0.41173
         }
       ],
@@ -4311,7 +4311,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ATTACK_SPEED",
+          "statType": "ATTACK_SPEED",
           "value": 0.21679
         }
       ],
@@ -4334,7 +4334,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.44221
         }
       ],
@@ -4357,7 +4357,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "MOVEMENT_SPEED",
+          "statType": "MOVEMENT_SPEED",
           "value": 0.3846
         }
       ],
@@ -4381,7 +4381,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "MOVEMENT_SPEED",
+          "statType": "MOVEMENT_SPEED",
           "value": 0.25558
         }
       ],
@@ -4404,7 +4404,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "MOVEMENT_SPEED",
+          "statType": "MOVEMENT_SPEED",
           "value": 0.25558
         }
       ],
@@ -4447,7 +4447,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "MOVEMENT_SPEED",
+          "statType": "MOVEMENT_SPEED",
           "value": 0.12402
         }
       ],
@@ -4471,11 +4471,11 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Teleport talent by 4.0"
+      "uniqueDescription": "Increases the Rage Jump talent by 4"
     },
     "LAPIS_LAZULI_BOOTS": {
       "itemType": "LAPIS_LAZULI_BOOTS",
-      "name": "Lapis Lazuli Boots",
+      "name": "Lapis Lazuli ",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "BOOTS",
@@ -4527,7 +4527,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "CRIT_VALUE",
+          "statType": "CRIT_VALUE",
           "value": 0.24365
         }
       ],
@@ -4550,7 +4550,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Fire Blast talent by 2."
+      "uniqueDescription": "Increases the Fury of the Dragon talent by 2."
     },
     "MATERI_ADORNMENT": {
       "itemType": "MATERI_ADORNMENT",
@@ -4568,7 +4568,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "CRIT_VALUE",
+          "statType": "CRIT_VALUE",
           "value": 0.11354
         }
       ],
@@ -4591,7 +4591,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Ice Missile talent by 5."
+      "uniqueDescription": "Increases the Rage Attack talent by 5."
     },
     "ROCKETMAN_ADORNMENT": {
       "itemType": "ROCKETMAN_ADORNMENT",
@@ -4610,11 +4610,11 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.67637
         },
         {
-          "enchantmentType": "CRIT_VALUE",
+          "statType": "CRIT_VALUE",
           "value": 0.60126
         }
       ],
@@ -4680,7 +4680,7 @@
     },
     "END_OF_TIME_ONE_HAND": {
       "itemType": "END_OF_TIME_ONE_HAND",
-      "name": "Axe of the End of Time",
+      "name": "Handaxe of the End of Time",
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "ONE_HAND_WEAPON",
@@ -4694,7 +4694,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.5794
         }
       ],
@@ -4718,7 +4718,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Each successful attack with Lightning Strike generates 5 Ghost Energies. As soon as you stack Ghost Energy 25 times you get a 50% damage bonus for 5 seconds and a Ghost Aura will be generated at your location. Every enemy within the Ghost Aura deals less damage."
+      "uniqueDescription": "Each successful attack with Mighty Wild Swing generates 5 Ghost Energies. As soon as you stack Ghost Energy 25 times you get a 50% damage bonus for 5 seconds and a Ghost Aura will be generated at your location. Every enemy within the Ghost Aura deals less damage."
     },
     "MATERI_ONE_HAND": {
       "itemType": "MATERI_ONE_HAND",
@@ -4736,15 +4736,15 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ATTACK_SPEED",
+          "statType": "ATTACK_SPEED",
           "value": 0.22182
         }
       ],
       "uniqueDescription": "When you kill an enemy, there is a 5% chance that you will receive the Materi Imbuement Rage buff. It increases your attack speed by 7,5% for 10 seconds. The buff has a cooldown of 30 seconds."
     },
-    "PREMIUM_ONE_HAND": {
-      "itemType": "PREMIUM_ONE_HAND",
-      "name": "Life Keeper",
+    "DRAKEN_ONE_HAND": {
+      "itemType": "DRAKEN_ONE_HAND",
+      "name": "Life-keeper",
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "ONE_HAND_WEAPON",
@@ -4786,24 +4786,22 @@
       "tier": 6,
       "itemSlotType": "OFF_HAND",
       "rawBaseValues": {
-        "ATTACK_SPEED": 0.00173,
-        "CRIT_VALUE": 1.885
+        "HEALTH_POINTS": 12.447,
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
       },
       "uniqueBaseValues": {
+        "HEALTH_PER_SECOND": 14734.086
       },
       "uniqueRelativeValues": {
       },
       "uniqueEnchantments": [
-        {
-          "enchantmentType": "ATTACK_SPEED",
-          "value": 0.9432
-        }
       ],
       "uniqueDescription": ""
     },
     "GWENFARA_OFF_HAND": {
       "itemType": "GWENFARA_OFF_HAND",
-      "name": "Gwenfara's Spectre Shield",
+      "name": "Gwenfara's Specter Shield",
       "defaultLevel": 145,
       "tier": 6,
       "itemSlotType": "OFF_HAND",
@@ -4818,7 +4816,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Each critical hit with Magic Missile and Meteor generates Ghost Energy. As soon as you stack Ghost Energy 25 times you get a 50% damage bonus for 5 seconds and a Ghost Aura will be generated at your location. Each enemy within the Ghost Aura deals less damage."
+      "uniqueDescription": "Each critical hit with Rage Attack and Smash generates Ghost Energy. As soon as you stack Ghost Energy 25 times you get a 50% damage bonus for 5 seconds and a Ghost Aura will be generated at your location. Each enemy within the Ghost Aura deals less damage."
     },
     "HEREDURS_OFF_HAND": {
       "itemType": "HEREDURS_OFF_HAND",
@@ -4837,15 +4835,15 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "BLOCK_VALUE",
+          "statType": "BLOCK_VALUE",
           "value": 0.12183
         }
       ],
-      "uniqueDescription": "Increases the Frost Nova talent by 2."
+      "uniqueDescription": "Increases the Spike Shield talent by 2."
     },
     "MATERI_OFF_HAND_1": {
       "itemType": "MATERI_OFF_HAND_1",
-      "name": "Materi Battle Shield",
+      "name": "Materi Spike Shield",
       "defaultLevel": 100,
       "tier": 6,
       "itemSlotType": "OFF_HAND",
@@ -4859,7 +4857,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.19318
         }
       ],
@@ -4872,7 +4870,7 @@
       "tier": 6,
       "itemSlotType": "OFF_HAND",
       "rawBaseValues": {
-        "HEALTH_POINTS": 12.447,
+        "HEALTH_POINTS": 4.149,
         "BLOCK_VALUE": 42.72
       },
       "uniqueBaseValues": {
@@ -4881,7 +4879,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "BLOCK_VALUE",
+          "statType": "BLOCK_VALUE",
           "value": 0.11622
         }
       ],
@@ -4894,11 +4892,12 @@
       "tier": 6,
       "itemSlotType": "OFF_HAND",
       "rawBaseValues": {
-        "DAMAGE": 1.615,
-        "CRIT_VALUE": 1.885
+        "HEALTH_POINTS": 12.447,
+        "ARMOR_VALUE": 1.997,
+        "BLOCK_VALUE": 42.72
       },
       "uniqueBaseValues": {
-        "ATTACK_SPEED": 0.043
+        "HEALTH_POINTS": 11116.0
       },
       "uniqueRelativeValues": {
       },
@@ -4922,7 +4921,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "There is a 8% chance that the fists of Sharr Kharab will attack your enemies after using Magic Missile and cause 100% of your base damage as physical damage."
+      "uniqueDescription": "There is a 8% chance that the fists of Sharr Kharab will attack your enemies after using Rage Attack and cause 100% of your base damage as physical damage."
     },
     "WORLD_DROP_OFF_HAND_1": {
       "itemType": "WORLD_DROP_OFF_HAND_1",
@@ -5020,7 +5019,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ATTACK_SPEED",
+          "statType": "ATTACK_SPEED",
           "value": 0.94322
         }
       ],
@@ -5043,7 +5042,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Ball Lightning talent by 2."
+      "uniqueDescription": "Increases the Iron Brow talent by 2."
     },
     "BRIGAVIK_TWO_HAND": {
       "itemType": "BRIGAVIK_TWO_HAND",
@@ -5062,7 +5061,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "CRIT_VALUE",
+          "statType": "CRIT_VALUE",
           "value": 0.2392
         }
       ],
@@ -5089,7 +5088,7 @@
     },
     "DRAGANS_TWOHAND_FIRE": {
       "itemType": "DRAGANS_TWOHAND_FIRE",
-      "name": "Dragan's Incensed Sword (Fire)",
+      "name": "Dragan's Incensed Sword",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
@@ -5108,7 +5107,7 @@
     },
     "DRAGANS_TWOHAND_LIGHTNING": {
       "itemType": "DRAGANS_TWOHAND_LIGHTNING",
-      "name": "Dragan's Incensed Sword (Lightning)",
+      "name": "Dragan's Incensed Sword",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
@@ -5127,7 +5126,7 @@
     },
     "DRAGANS_TWOHAND_POISON": {
       "itemType": "DRAGANS_TWOHAND_POISON",
-      "name": "Dragan's Incensed Sword (Poison)",
+      "name": "Dragan's Incensed Sword",
       "defaultLevel": 140,
       "tier": 6,
       "itemSlotType": "TWO_HAND_WEAPON",
@@ -5160,7 +5159,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "ATTACK_SPEED",
+          "statType": "ATTACK_SPEED",
           "value": 0.46856
         }
       ],
@@ -5183,7 +5182,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Destruction talent by 2."
+      "uniqueDescription": "Increases the Banner of War talent by 2."
     },
     "MATERI_TWO_HAND": {
       "itemType": "MATERI_TWO_HAND",
@@ -5201,7 +5200,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.19296
         }
       ],
@@ -5223,7 +5222,7 @@
       },
       "uniqueEnchantments": [
       ],
-      "uniqueDescription": "Increases the Lightning Strike talent by 5."
+      "uniqueDescription": "Increases the Smash talent by 5."
     },
     "WORLD_DROP_TWO_HAND": {
       "itemType": "WORLD_DROP_TWO_HAND",
@@ -5242,7 +5241,7 @@
       },
       "uniqueEnchantments": [
         {
-          "enchantmentType": "DAMAGE",
+          "statType": "DAMAGE",
           "value": 0.29099
         }
       ],
