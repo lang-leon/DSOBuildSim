@@ -1,11 +1,9 @@
 package com.langleon.dsobuildsim.jewels;
 
-import com.langleon.dsobuildsim.enums.CharacterClass;
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.jewels.JewelType;
+import com.langleon.dsobuildsim.common.StatType;
 
 import java.util.Map;
 
-public record JewelDefinition(JewelType jewelType, int defaultTier,
-                              Map<Integer, Map<StatType, Double>> statsPerTier, Map<CharacterClass, Map<Integer, String>> descriptionPerClassPerTier) {
+public record JewelDefinition(JewelType jewelType, String name, int defaultTier,
+                              Map<Integer, Map<StatType, Double>> statsPerTier, Map<Integer, String> descriptionPerTier) {
 }

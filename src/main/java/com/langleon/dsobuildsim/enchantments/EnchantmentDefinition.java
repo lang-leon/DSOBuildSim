@@ -1,18 +1,7 @@
 package com.langleon.dsobuildsim.enchantments;
 
-import com.langleon.dsobuildsim.enums.EnchantmentType;
+import com.langleon.dsobuildsim.common.StatType;
 
-public record EnchantmentDefinition(EnchantmentType enchantmentType, Double value)
+public record EnchantmentDefinition(StatType statType, Double value)
 {
-    public Enchantment toEnchantment()
-    {
-        if (value != null && enchantmentType != null)
-        {
-            return new Enchantment(enchantmentType, value);
-        }
-        else
-        {
-            throw new IllegalArgumentException("Either EnchantmentType or Value is null");
-        }
-    }
 }

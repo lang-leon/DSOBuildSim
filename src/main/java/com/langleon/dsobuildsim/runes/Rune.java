@@ -1,9 +1,9 @@
 package com.langleon.dsobuildsim.runes;
 
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.runes.RuneLimitGroup;
-import com.langleon.dsobuildsim.enums.runes.RuneType;
-import com.langleon.dsobuildsim.enums.runes.RuneUpgradeType;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
+import com.langleon.dsobuildsim.runes.enums.RuneType;
+import com.langleon.dsobuildsim.runes.enums.RuneUpgradeType;
 
 import java.util.Map;
 import java.util.Objects;
@@ -23,27 +23,6 @@ public class Rune{
         this.tier = tier;
         this.stats = stats;
         this.description = description;
-    }
-
-    public String getDisplayName()
-    {
-        String tierName;
-        switch (tier)
-        {
-            case 1 -> tierName = " (gray)";
-            case 2 -> tierName = " (green)";
-            case 3 -> tierName = " (blue)";
-            case 4 -> tierName = " (purple)";
-            case 5 -> tierName = " (orange)";
-            case 6 -> tierName = " (yellow)";
-            case 7 -> tierName = " (red)";
-            default -> tierName = "";
-        }
-        return this.runeType+tierName;
-    }
-
-    public RuneUpgradeType getRuneUpgradeType() {
-        return runeUpgradeType;
     }
 
     public RuneLimitGroup getRuneLimitGroup() {

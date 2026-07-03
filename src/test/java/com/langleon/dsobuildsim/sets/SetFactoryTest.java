@@ -1,31 +1,25 @@
 package com.langleon.dsobuildsim.sets;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.langleon.dsobuildsim.enums.CharacterClass;
-import com.langleon.dsobuildsim.enums.StatType;
-import com.langleon.dsobuildsim.enums.items.SetItemType;
-import com.langleon.dsobuildsim.enums.items.SetType;
+import com.langleon.dsobuildsim.gamedata.GameDataConfig;
+import com.langleon.dsobuildsim.gamedata.GameDataLoader;
+import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.items.setitems.SetItemType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 class SetFactoryTest {
 
     private SetFactory setFactory;
 
     @BeforeEach
-    void setup() throws IOException {
-        try (var reader = new InputStreamReader(Objects.requireNonNull(getClass().getResourceAsStream("/data/sets.json")))) {
-            ObjectMapper objectMapper = new ObjectMapper();
-            SetConfig setConfig = objectMapper.readValue(reader, SetConfig.class);
-            setFactory = new SetFactory(setConfig);
-        }
+    void setup()
+    {
+        GameDataConfig config = new GameDataLoader().loadGameDataConfig();
+        setFactory = new SetFactory(config);
     }
 
     @Test
