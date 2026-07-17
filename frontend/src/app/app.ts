@@ -1,9 +1,9 @@
-import { Component, signal } from '@angular/core';
-import { CharacterComponent } from './components/character/character-component';
+import { Component } from '@angular/core';
+import { BuildSimComponent } from './components/BuildSim/build-sim-component';
 
 @Component({
   selector: 'app-root',
-  imports: [CharacterComponent],
+  imports: [BuildSimComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
