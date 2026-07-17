@@ -1,0 +1,13 @@
+<button (click)="openFilePicker()">Calculate Stats</button>
+
+<input 
+    #fileInput
+    type="file"
+    accept=".json"
+    hidden
+    (change)="onFileSelected($event)"
+>
+
+<pre>
+    {{stats | json}}
+</pre>
