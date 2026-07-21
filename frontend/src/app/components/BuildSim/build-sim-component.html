@@ -1,164 +1,214 @@
 <div class="build-layout">
-    <div class="left-panel">
-        <button (click)="openFilePicker()">Calculate Stats</button>
+  <div class="left-panel">
+    <button (click)="openFilePicker()">Import Character</button>
+    <button (click)="downloadCharacter()">Export Character</button>
 
-        <input 
-        #fileInput
-        type="file"
-        accept=".json"
-        hidden
-        (change)="onFileSelected($event)"
-        >
+    <input #fileInput type="file" accept=".json" hidden (change)="onFileSelected($event)" />
 
-        <div class="character-window">
-                    <div class="character-title">
-            <h1>Character</h1>
+    <div class="character-window">
+      <div class="character-header">
+        <div class="character-title">
+          <h1>{{ character.name || 'Character' }}</h1>
         </div>
 
-        <div class="stats-container">
-            <section class="stats-section">
-            <h3 class="offensive-stats">Offensive Values:</h3>
+        <img class="character-class-image" [src]="getCharacterClassImage()" />
+      </div>
 
-            <div class="stat-row">
-                <span class="stat-name">Damage</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.DAMAGE] ?? 0 | number:'1.0-0' }}</span>
-            </div>
+      <div class="stats-container">
+        <section class="stats-section">
+          <h3 class="offensive-stats">Offensive Values:</h3>
 
-            <div class="stat-row">
-                <span class="stat-name">Attacks per Second:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.ATTACK_SPEED] ?? 0 | number:'1.3-3'}}</span>
-            </div>
-            
-            <div class="stat-row">
-                <span class="stat-name">Critical Value:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.CRIT_VALUE] ?? 0 | number:'1.0-0' }}</span>
-            </div>
-            
-            <div class="stat-row">
-                <span class="stat-name">Mana Points:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.MANA] ?? 0 | number:'1.0-0' }}</span>
-            </div>
-            
-            <div class="stat-row">
-                <span class="stat-name">Mana Regeneration:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.MANA_PER_SECOND] ?? 0 | number:'1.2-2'}}</span>
-            </div>
-            
-            <div class="stat-row">
-                <span class="stat-name">Movement Speed:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.MOVEMENT_SPEED] ?? 0 | number:'1.3-3'}}</span>
-            </div>
-            
+          <div class="stat-row">
+            <span class="stat-name">Damage</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.DAMAGE] ?? 0 | number: '1.0-0'
+            }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Attacks per Second:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.ATTACK_SPEED] ?? 0 | number: '1.3-3'
+            }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Critical Value:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.CRIT_VALUE] ?? 0 | number: '1.0-0'
+            }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Mana Points:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.MANA] ?? 0 | number: '1.0-0'
+            }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Mana Regeneration:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.MANA_PER_SECOND] ?? 0 | number: '1.2-2'
+            }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Movement Speed:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.MOVEMENT_SPEED] ?? 0 | number: '1.3-3'
+            }}</span>
+          </div>
         </section>
 
         <section class="stats-section">
-            <h3>Defensive Values:</h3>
+          <h3>Defensive Values:</h3>
 
-            <div class="stat-row">
-                <span class="stat-name">Health Points:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.HEALTH_POINTS] ?? 0 | number:'1.0-0' }}</span>
-            </div>
+          <div class="stat-row">
+            <span class="stat-name">Health Points:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.HEALTH_POINTS] ?? 0 | number: '1.0-0'
+            }}</span>
+          </div>
 
-            <div class="stat-row">
-                <span class="stat-name">Health Points Regeneration:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.HEALTH_PER_SECOND] ?? 0 | number:'1.2-2' }}</span>
-            </div>
-            
-            <div class="stat-row">
-                <span class="stat-name">Block Value:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.BLOCK_VALUE] ?? 0 | number:'1.0-0' }}</span>
-            </div>
-            
-            <h4>Armor & Elemental Resistances</h4>
+          <div class="stat-row">
+            <span class="stat-name">Health Points Regeneration:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.HEALTH_PER_SECOND] ?? 0 | number: '1.2-2'
+            }}</span>
+          </div>
 
-            <div class="stat-row">
-                <span class="stat-name">Armor:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.ARMOR_VALUE] ?? 0 | number:'1.0-0' }}</span>
-            </div>
-            
-            <div class="stat-row">
-                <span class="stat-name">Fire:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.FIRE_RESISTANCE] ?? 0 | number:'1.0-0' }}</span>
-            </div>
-            
-            <div class="stat-row">
-                <span class="stat-name">Ice:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.ICE_RESISTANCE] ?? 0 | number:'1.0-0' }}</span>
-            </div>
+          <div class="stat-row">
+            <span class="stat-name">Block Value:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.BLOCK_VALUE] ?? 0 | number: '1.0-0'
+            }}</span>
+          </div>
 
-            <div class="stat-row">
-                <span class="stat-name">Lightning:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.LIGHTNING_RESISTANCE] ?? 0 | number:'1.0-0' }}</span>
-            </div>
+          <h4>Armor & Elemental Resistances</h4>
 
-            <div class="stat-row">
-                <span class="stat-name">Andermagic:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.ANDERMAGIC_RESISTANCE] ?? 0 | number:'1.0-0' }}</span>
-            </div>
+          <div class="stat-row">
+            <span class="stat-name">Armor:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.ARMOR_VALUE] ?? 0 | number: '1.0-0'
+            }}</span>
+          </div>
 
-            <div class="stat-row">
-                <span class="stat-name">Poison:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.POISON_RESISTANCE] ?? 0 | number:'1.0-0' }}</span>
-            </div>
-            
+          <div class="stat-row">
+            <span class="stat-name">Fire:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.FIRE_RESISTANCE] ?? 0 | number: '1.0-0'
+            }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Ice:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.ICE_RESISTANCE] ?? 0 | number: '1.0-0'
+            }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Lightning:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.LIGHTNING_RESISTANCE] ?? 0 | number: '1.0-0'
+            }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Andermagic:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.ANDERMAGIC_RESISTANCE] ?? 0 | number: '1.0-0'
+            }}</span>
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Poison:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value">{{
+              stats?.absoluteStats?.[StatType.POISON_RESISTANCE] ?? 0 | number: '1.0-0'
+            }}</span>
+          </div>
         </section>
 
-         <section class="stats-section">
-            <h3>Other Values:</h3>
+        <section class="stats-section">
+          <h3>Other Values:</h3>
 
-            <div class="stat-row">
-                <span class="stat-name">XP Gain:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.XP_GAIN] ?? 0 | number:'1.0-0' }} %</span>
-            </div>
+          <div class="stat-row">
+            <span class="stat-name">XP Gain:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value"
+              >{{ stats?.absoluteStats?.[StatType.XP_GAIN] ?? 0 | number: '1.0-0' }} %</span
+            >
+          </div>
 
-            <div class="stat-row">
-                <span class="stat-name">Honor Gain:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">{{stats?.absoluteStats?.[StatType.HONOR_GAIN] ?? 0 | number:'1.0-0' }} %</span>
-            </div>
-            
-            <div class="stat-row">
-                <span class="stat-name">Andermant Drop Bonus:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">+{{stats?.absoluteStats?.[StatType.ANDERMANT_DROP_BONUS] ?? 0 | number:'1.0-0' }} %</span>
-            </div>
-            
-            <div class="stat-row">
-                <span class="stat-name">Coin Drop Bonus:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">+{{stats?.absoluteStats?.[StatType.COIN_DROP_BONUS] ?? 0 | number:'1.0-0' }} %</span>
-            </div>
-            
-            <div class="stat-row">
-                <span class="stat-name">Wisdom Drop Bonus:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">+{{stats?.absoluteStats?.[StatType.ANCIENT_WISDOM_DROP_BONUS] ?? 0 | number:'1.0-0' }} %</span>
-            </div>
-            
-            <div class="stat-row">
-                <span class="stat-name">Materi Fragment Drop Bonus:</span>
-                <span class="stat-info"></span>
-                <span class="stat-value">+{{stats?.absoluteStats?.[StatType.MATERI_FRAGMENT_DROP_BONUS] ?? 0 | number:'1.0-0' }} %</span>
-            </div>
-            
+          <div class="stat-row">
+            <span class="stat-name">Honor Gain:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value"
+              >{{ stats?.absoluteStats?.[StatType.HONOR_GAIN] ?? 0 | number: '1.0-0' }} %</span
+            >
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Andermant Drop Bonus:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value"
+              >+{{
+                stats?.absoluteStats?.[StatType.ANDERMANT_DROP_BONUS] ?? 0 | number: '1.0-0'
+              }}
+              %</span
+            >
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Coin Drop Bonus:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value"
+              >+{{
+                stats?.absoluteStats?.[StatType.COIN_DROP_BONUS] ?? 0 | number: '1.0-0'
+              }}
+              %</span
+            >
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Wisdom Drop Bonus:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value"
+              >+{{
+                stats?.absoluteStats?.[StatType.ANCIENT_WISDOM_DROP_BONUS] ?? 0 | number: '1.0-0'
+              }}
+              %</span
+            >
+          </div>
+
+          <div class="stat-row">
+            <span class="stat-name">Materi Fragment Drop Bonus:</span>
+            <span class="stat-info"></span>
+            <span class="stat-value"
+              >+{{
+                stats?.absoluteStats?.[StatType.MATERI_FRAGMENT_DROP_BONUS] ?? 0 | number: '1.0-0'
+              }}
+              %</span
+            >
+          </div>
         </section>
-        </div>
+      </div>
     </div>
-    </div>
+  </div>
 </div>

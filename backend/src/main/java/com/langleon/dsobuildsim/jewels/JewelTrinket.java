@@ -7,6 +7,8 @@ import com.langleon.dsobuildsim.exceptions.LimitType;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class JewelTrinket {
 
@@ -23,17 +25,14 @@ public class JewelTrinket {
 
     public Map<StatType, Double> getTotalRelativeStats()
     {
-        Map<StatType, Double> stats = new EnumMap<>(StatType.class);
-        for(int i=0; i<10; i++)
-        {
-            if (jewels.get(i)!=null)
-            {
-                for(Map.Entry<StatType, Double> entry : jewels.get(i).getStats().entrySet())
-                {
-                    stats.merge(entry.getKey(), entry.getValue(), Double::sum);
-                }
-            }
-        }
-        return stats;
+        return jewels.stream()
+                .filter(Objects::nonNull)
+                .flatMap(jw -> jw.getStats().entrySet().stream())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        Double::sum,
+                        () -> new EnumMap<>(StatType.class)
+                ));
     }
 }
