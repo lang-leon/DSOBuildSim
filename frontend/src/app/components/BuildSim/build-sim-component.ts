@@ -12,7 +12,6 @@ import { WisdomSkillTreeInstanceDTO } from '../../models/instanceDTOs/WisdomSkil
 import { WisdomGroupType } from '../../enums/WisdomGroupType';
 import { WisdomGroupInstanceDTO } from '../../models/instanceDTOs/WisdomGroupInstanceDTO';
 import { WisdomSkillType } from '../../enums/WisdomSkillType';
-import { WisdomSkillInstanceDTO } from '../../models/instanceDTOs/WisdomSkillInstanceDTO';
 
 @Component({
   selector: 'app-character',
@@ -32,7 +31,7 @@ export class BuildSimComponent implements OnInit{
   StatType = StatType;
   gameData!: GameDataDTO;
   stats?: ClassStatsDTO;
-  character!: CharacterDTO;
+  character: CharacterDTO = this.createDefaultCharacter();
 
   constructor(
     private statCalculationService: StatCalculationService,
@@ -45,8 +44,6 @@ export class BuildSimComponent implements OnInit{
     .subscribe(data => {
       this.gameData = data;
       this.stats = this.gameData.characterClassStats["SPELLWEAVER"];
-      this.character = this.createDefaultCharacter();
-      console.log(this.character.wisdomSkillTree);
       this.changeDetector.detectChanges();
     });
   }
@@ -78,29 +75,148 @@ export class BuildSimComponent implements OnInit{
     }
   }
 
-  private createDefaultWisdomSkillTree(): WisdomSkillTreeInstanceDTO {
-    const wisdomGroups = {} as Record<WisdomGroupType, WisdomGroupInstanceDTO>;
-
-    for(const groupDefinition of Object.values(this.gameData.wisdomSkillTree.wisdomGroups))
-    {
-      const wisdomSkills = {} as Record<WisdomSkillType, WisdomSkillInstanceDTO>;
-
-      for (const skillDefinition of Object.values(groupDefinition.wisdomSkills))
-      {
-        wisdomSkills[skillDefinition.type] = {
-          type: skillDefinition.type,
+private createDefaultWisdomSkillTree(): WisdomSkillTreeInstanceDTO {
+  const wisdomGroups: Record<WisdomGroupType, WisdomGroupInstanceDTO> = {
+    [WisdomGroupType.HEALTH_RESOURCE]: {
+      type: WisdomGroupType.HEALTH_RESOURCE,
+      wisdomSkills: {
+        [WisdomSkillType.RISING_VIGOR]: {
+          type: WisdomSkillType.RISING_VIGOR,
           currentLevel: 0
-        };
+        },
+        [WisdomSkillType.VIVACIOUS_VITALITY]: {
+          type: WisdomSkillType.VIVACIOUS_VITALITY,
+          currentLevel: 0
+        },
+        [WisdomSkillType.CONJURED_DISTILLATION]: {
+          type: WisdomSkillType.CONJURED_DISTILLATION,
+          currentLevel: 0
+        }
       }
-
-      wisdomGroups[groupDefinition.type] = {
-        type: groupDefinition.type,
-        wisdomSkills
+    },
+    [WisdomGroupType.ATTACK]: {
+      type: WisdomGroupType.ATTACK,
+      wisdomSkills: {
+        [WisdomSkillType.RISING_POWER]: {
+          type: WisdomSkillType.RISING_POWER,
+          currentLevel: 0
+        },
+        [WisdomSkillType.DECISIVE_STRIKE]: {
+          type: WisdomSkillType.DECISIVE_STRIKE,
+          currentLevel: 0
+        },
+        [WisdomSkillType.HANGMANS_PRIDE]: {
+          type: WisdomSkillType.HANGMANS_PRIDE,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.DEFENSE]: {
+      type: WisdomGroupType.DEFENSE,
+      wisdomSkills: {
+        [WisdomSkillType.STURDY_SHIELD]: {
+          type: WisdomSkillType.STURDY_SHIELD,
+          currentLevel: 0
+        },
+        [WisdomSkillType.HARD_AS_A_ROCK]: {
+          type: WisdomSkillType.HARD_AS_A_ROCK,
+          currentLevel: 0
+        },
+        [WisdomSkillType.ELEMENTAL_PROTECTION]: {
+          type: WisdomSkillType.ELEMENTAL_PROTECTION,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.COMBAT]: {
+      type: WisdomGroupType.COMBAT,
+      wisdomSkills: {
+        [WisdomSkillType.SECOND_CHANCE]: {
+          type: WisdomSkillType.SECOND_CHANCE,
+          currentLevel: 0
+        },
+        [WisdomSkillType.EMERGENCY_RESERVES]: {
+          type: WisdomSkillType.EMERGENCY_RESERVES,
+          currentLevel: 0
+        },
+        [WisdomSkillType.ENERGETIC_FORCE]: {
+          type: WisdomSkillType.ENERGETIC_FORCE,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.ONE_HANDED_WEAPON]: {
+      type: WisdomGroupType.ONE_HANDED_WEAPON,
+      wisdomSkills: {
+        [WisdomSkillType.DEXTROUS_SMITING]: {
+          type: WisdomSkillType.DEXTROUS_SMITING,
+          currentLevel: 0
+        },
+        [WisdomSkillType.DEXTROUS_AGILITY]: {
+          type: WisdomSkillType.DEXTROUS_AGILITY,
+          currentLevel: 0
+        },
+        [WisdomSkillType.A_HANDFUL_OF_RESOURCES]: {
+          type: WisdomSkillType.A_HANDFUL_OF_RESOURCES,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.TWO_HANDED_WEAPON]: {
+      type: WisdomGroupType.TWO_HANDED_WEAPON,
+      wisdomSkills: {
+        [WisdomSkillType.AMBIDEXTROUS_SMITING]: {
+          type: WisdomSkillType.AMBIDEXTROUS_SMITING,
+          currentLevel: 0
+        },
+        [WisdomSkillType.AMBIDEXTROUS_AGILITY]: {
+          type: WisdomSkillType.AMBIDEXTROUS_AGILITY,
+          currentLevel: 0
+        },
+        [WisdomSkillType.LIFETIME_THIEF]: {
+          type: WisdomSkillType.LIFETIME_THIEF,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.PROSPERITY]: {
+      type: WisdomGroupType.PROSPERITY,
+      wisdomSkills: {
+        [WisdomSkillType.BONANZA]: {
+          type: WisdomSkillType.BONANZA,
+          currentLevel: 0
+        },
+        [WisdomSkillType.PEDDLER]: {
+          type: WisdomSkillType.PEDDLER,
+          currentLevel: 0
+        },
+        [WisdomSkillType.PORTABLE_WORKBENCH]: {
+          type: WisdomSkillType.PORTABLE_WORKBENCH,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.TRAVEL_MERITS]: {
+      type: WisdomGroupType.TRAVEL_MERITS,
+      wisdomSkills: {
+        [WisdomSkillType.HOME_SWEET_HOME]: {
+          type: WisdomSkillType.HOME_SWEET_HOME,
+          currentLevel: 0
+        },
+        [WisdomSkillType.ON_HORSEBACK]: {
+          type: WisdomSkillType.ON_HORSEBACK,
+          currentLevel: 0
+        },
+        [WisdomSkillType.RACING_SLIPPERS]: {
+          type: WisdomSkillType.RACING_SLIPPERS,
+          currentLevel: 0
+        }
       }
     }
-
-    return { wisdomGroups };
   }
+
+  return {wisdomGroups};
+}
 
   openFilePicker()
   {

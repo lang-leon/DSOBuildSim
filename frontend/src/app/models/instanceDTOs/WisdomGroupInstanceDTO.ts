@@ -4,5 +4,5 @@ import { WisdomSkillInstanceDTO } from "./WisdomSkillInstanceDTO";
 
 export interface WisdomGroupInstanceDTO {
     type: WisdomGroupType;
-    wisdomSkills: Record<WisdomSkillType, WisdomSkillInstanceDTO>;
+    wisdomSkills: Partial<Record<WisdomSkillType, WisdomSkillInstanceDTO>>;
 }
