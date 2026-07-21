@@ -1,10 +1,17 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { StatCalculationService } from '../../services/stat-calculation-service';
-import { GameDataDTO } from '../../models/game-data-dto';
+import { GameDataDTO } from '../../models/gamedataDTOs/GameDataDTO';
 import { GameDataService } from '../../services/game-data-service';
-import { StatType } from '../../models/stat-type';
-import { ClassStatsDTO } from '../../models/class-stats-dto';
+import { StatType } from '../../enums/StatType';
+import { ClassStatsDTO } from '../../models/gamedataDTOs/ClassStatsDTO';
 import { CommonModule } from '@angular/common';
+import { CharacterDTO } from '../../models/instanceDTOs/CharacterDTO';
+import { CharacterClass } from '../../enums/CharacterClass';
+import { MasteryType } from '../../enums/MasteryType';
+import { WisdomSkillTreeInstanceDTO } from '../../models/instanceDTOs/WisdomSkillTreeInstanceDTO';
+import { WisdomGroupType } from '../../enums/WisdomGroupType';
+import { WisdomGroupInstanceDTO } from '../../models/instanceDTOs/WisdomGroupInstanceDTO';
+import { WisdomSkillType } from '../../enums/WisdomSkillType';
 
 @Component({
   selector: 'app-character',
@@ -22,8 +29,9 @@ export class BuildSimComponent implements OnInit{
   fileInput!: ElementRef<HTMLInputElement>;
 
   StatType = StatType;
-  gameData?: GameDataDTO;
+  gameData!: GameDataDTO;
   stats?: ClassStatsDTO;
+  character: CharacterDTO = this.createDefaultCharacter();
 
   constructor(
     private statCalculationService: StatCalculationService,
@@ -36,10 +44,179 @@ export class BuildSimComponent implements OnInit{
     .subscribe(data => {
       this.gameData = data;
       this.stats = this.gameData.characterClassStats["SPELLWEAVER"];
-      console.log(this.stats);
       this.changeDetector.detectChanges();
     });
   }
+
+  private createDefaultCharacter(): CharacterDTO {
+    return {
+      characterClass: CharacterClass.SPELLWEAVER,
+      name: "Character",
+      masteryType: MasteryType.NONE,
+      masteryLevel: 0,
+      experienceBonus: false,
+      experienceBonusLevel: 0,
+      runeTrinkets: Array.from({ length: 7 }, () => ({
+        runes: []
+      })),
+      jewelTrinkets: Array.from({ length: 3 }, () => ({
+        jewels: []
+      })),
+      dragonCrest: {
+        dragonStones: []
+      },
+      items: {},
+      pet: null,
+      essence: null,
+      tonic: null,
+      physic: null,
+      wisdomSkillTree: this.createDefaultWisdomSkillTree(),
+      collectorBagBuffs: []
+    }
+  }
+
+private createDefaultWisdomSkillTree(): WisdomSkillTreeInstanceDTO {
+  const wisdomGroups: Record<WisdomGroupType, WisdomGroupInstanceDTO> = {
+    [WisdomGroupType.HEALTH_RESOURCE]: {
+      type: WisdomGroupType.HEALTH_RESOURCE,
+      wisdomSkills: {
+        [WisdomSkillType.RISING_VIGOR]: {
+          type: WisdomSkillType.RISING_VIGOR,
+          currentLevel: 0
+        },
+        [WisdomSkillType.VIVACIOUS_VITALITY]: {
+          type: WisdomSkillType.VIVACIOUS_VITALITY,
+          currentLevel: 0
+        },
+        [WisdomSkillType.CONJURED_DISTILLATION]: {
+          type: WisdomSkillType.CONJURED_DISTILLATION,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.ATTACK]: {
+      type: WisdomGroupType.ATTACK,
+      wisdomSkills: {
+        [WisdomSkillType.RISING_POWER]: {
+          type: WisdomSkillType.RISING_POWER,
+          currentLevel: 0
+        },
+        [WisdomSkillType.DECISIVE_STRIKE]: {
+          type: WisdomSkillType.DECISIVE_STRIKE,
+          currentLevel: 0
+        },
+        [WisdomSkillType.HANGMANS_PRIDE]: {
+          type: WisdomSkillType.HANGMANS_PRIDE,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.DEFENSE]: {
+      type: WisdomGroupType.DEFENSE,
+      wisdomSkills: {
+        [WisdomSkillType.STURDY_SHIELD]: {
+          type: WisdomSkillType.STURDY_SHIELD,
+          currentLevel: 0
+        },
+        [WisdomSkillType.HARD_AS_A_ROCK]: {
+          type: WisdomSkillType.HARD_AS_A_ROCK,
+          currentLevel: 0
+        },
+        [WisdomSkillType.ELEMENTAL_PROTECTION]: {
+          type: WisdomSkillType.ELEMENTAL_PROTECTION,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.COMBAT]: {
+      type: WisdomGroupType.COMBAT,
+      wisdomSkills: {
+        [WisdomSkillType.SECOND_CHANCE]: {
+          type: WisdomSkillType.SECOND_CHANCE,
+          currentLevel: 0
+        },
+        [WisdomSkillType.EMERGENCY_RESERVES]: {
+          type: WisdomSkillType.EMERGENCY_RESERVES,
+          currentLevel: 0
+        },
+        [WisdomSkillType.ENERGETIC_FORCE]: {
+          type: WisdomSkillType.ENERGETIC_FORCE,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.ONE_HANDED_WEAPON]: {
+      type: WisdomGroupType.ONE_HANDED_WEAPON,
+      wisdomSkills: {
+        [WisdomSkillType.DEXTROUS_SMITING]: {
+          type: WisdomSkillType.DEXTROUS_SMITING,
+          currentLevel: 0
+        },
+        [WisdomSkillType.DEXTROUS_AGILITY]: {
+          type: WisdomSkillType.DEXTROUS_AGILITY,
+          currentLevel: 0
+        },
+        [WisdomSkillType.A_HANDFUL_OF_RESOURCES]: {
+          type: WisdomSkillType.A_HANDFUL_OF_RESOURCES,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.TWO_HANDED_WEAPON]: {
+      type: WisdomGroupType.TWO_HANDED_WEAPON,
+      wisdomSkills: {
+        [WisdomSkillType.AMBIDEXTROUS_SMITING]: {
+          type: WisdomSkillType.AMBIDEXTROUS_SMITING,
+          currentLevel: 0
+        },
+        [WisdomSkillType.AMBIDEXTROUS_AGILITY]: {
+          type: WisdomSkillType.AMBIDEXTROUS_AGILITY,
+          currentLevel: 0
+        },
+        [WisdomSkillType.LIFETIME_THIEF]: {
+          type: WisdomSkillType.LIFETIME_THIEF,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.PROSPERITY]: {
+      type: WisdomGroupType.PROSPERITY,
+      wisdomSkills: {
+        [WisdomSkillType.BONANZA]: {
+          type: WisdomSkillType.BONANZA,
+          currentLevel: 0
+        },
+        [WisdomSkillType.PEDDLER]: {
+          type: WisdomSkillType.PEDDLER,
+          currentLevel: 0
+        },
+        [WisdomSkillType.PORTABLE_WORKBENCH]: {
+          type: WisdomSkillType.PORTABLE_WORKBENCH,
+          currentLevel: 0
+        }
+      }
+    },
+    [WisdomGroupType.TRAVEL_MERITS]: {
+      type: WisdomGroupType.TRAVEL_MERITS,
+      wisdomSkills: {
+        [WisdomSkillType.HOME_SWEET_HOME]: {
+          type: WisdomSkillType.HOME_SWEET_HOME,
+          currentLevel: 0
+        },
+        [WisdomSkillType.ON_HORSEBACK]: {
+          type: WisdomSkillType.ON_HORSEBACK,
+          currentLevel: 0
+        },
+        [WisdomSkillType.RACING_SLIPPERS]: {
+          type: WisdomSkillType.RACING_SLIPPERS,
+          currentLevel: 0
+        }
+      }
+    }
+  }
+
+  return {wisdomGroups};
+}
 
   openFilePicker()
   {
@@ -60,10 +237,9 @@ export class BuildSimComponent implements OnInit{
     const reader = new FileReader();
 
     reader.onload = () => {
-      const character = JSON.parse(reader.result as string);
-      this.calculate(character);
+      this.character = JSON.parse(reader.result as string);
+      this.calculate(this.character);
     };
-
     reader.readAsText(file);
   }
 
@@ -72,12 +248,41 @@ export class BuildSimComponent implements OnInit{
     this.statCalculationService.calculateStats(character).subscribe((response: any) => {
       this.stats!.absoluteStats = response.stats;
       this.changeDetector.detectChanges();
-
-      console.log(this.gameData);
-
-      console.log(response);
-      console.log("stats:");
-      console.log(this.stats?.absoluteStats);
     });
+  }
+
+  downloadCharacter() {
+    const json = JSON.stringify(this.character, null, 2);
+
+    const blob = new Blob([json], {
+      type: 'application/json'
+    });
+
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${this.character.name || 'character'}.json`;
+
+    link.click();
+
+    URL.revokeObjectURL(url);
+  }
+
+  
+  getCharacterClassImage():string {
+    switch(this.character.characterClass)
+    {
+      case CharacterClass.DRAGONKNIGHT:
+        return 'class-icons/dragonknight.png';
+      case CharacterClass.RANGER:
+        return 'class-icons/ranger.png';
+      case CharacterClass.SPELLWEAVER:
+        return 'class-icons/spellweaver.png';
+      case CharacterClass.STEAM_MECHANICUS:
+        return 'class-icons/steam-mechanicus.png';
+      default:
+        return '';
+    }
   }
 }

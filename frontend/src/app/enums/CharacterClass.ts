@@ -1,0 +1,6 @@
+export enum CharacterClass {
+    DRAGONKNIGHT = "dk",
+    RANGER = "RANGER",
+    SPELLWEAVER = "SPELLWEAVER",
+    STEAM_MECHANICUS = "STEAM_MECHANICUS"
+}

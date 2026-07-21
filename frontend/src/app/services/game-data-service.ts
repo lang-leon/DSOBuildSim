@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { GameDataDTO } from '../models/game-data-dto';
+import { GameDataDTO } from '../models/gamedataDTOs/GameDataDTO';
 
 @Injectable({
   providedIn: 'root',

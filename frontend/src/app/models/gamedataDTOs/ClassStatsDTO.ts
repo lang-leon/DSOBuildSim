@@ -1,5 +1,4 @@
-import { StatType } from "./stat-type";
-import { StatsDTO } from "./stats-dto";
+import { StatType } from "../../enums/StatType";
 
 export interface ClassStatsDTO{
     absoluteStats: Record<StatType, number>;

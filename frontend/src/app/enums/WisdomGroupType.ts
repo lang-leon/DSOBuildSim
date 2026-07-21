@@ -1,0 +1,10 @@
+export enum WisdomGroupType {
+    HEALTH_RESOURCE,
+    ATTACK,
+    DEFENSE,
+    COMBAT,
+    ONE_HANDED_WEAPON,
+    TWO_HANDED_WEAPON,
+    PROSPERITY,
+    TRAVEL_MERITS
+}
