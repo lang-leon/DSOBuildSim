@@ -180,7 +180,7 @@ public class Character {
         Map<StatType, Double> relativeBonusStats = this.calculateTotalRelativeStats();
 
         //temporary fix for wisdomskilltree coin drop size
-        relativeBonusStats.merge(StatType.COIN_DROP_BONUS, baseStats.get(StatType.COIN_DROP_BONUS), Double::sum);
+        relativeBonusStats.merge(StatType.COIN_DROP_BONUS, baseStats.getOrDefault(StatType.COIN_DROP_BONUS, 0.0), Double::sum);
         baseStats.remove(StatType.COIN_DROP_BONUS);
 
         if (this.equippedItems.containsKey(ItemSlot.ONE_HAND_WEAPON))
@@ -234,6 +234,7 @@ public class Character {
         if (this.tonic != null) baseStats.merge(this.tonic.statType(), this.tonic.statValue(), Double::sum);
 
         Double resistanceValue = baseStats.remove(StatType.RESISTANCE_VALUE);
+        if(resistanceValue == null) resistanceValue = 0.0;
         baseStats.merge(StatType.FIRE_RESISTANCE, resistanceValue, Double::sum);
         baseStats.merge(StatType.ICE_RESISTANCE, resistanceValue, Double::sum);
         baseStats.merge(StatType.LIGHTNING_RESISTANCE, resistanceValue, Double::sum);
@@ -274,6 +275,7 @@ public class Character {
         if (this.physic != null) relativeBonusStats.merge(this.physic.statType(), this.physic.statValue(), Double::sum);
 
         Double resistanceValue = relativeBonusStats.remove(StatType.RESISTANCE_VALUE);
+        if(resistanceValue == null) resistanceValue = 0.0;
         relativeBonusStats.merge(StatType.FIRE_RESISTANCE, resistanceValue, Double::sum);
         relativeBonusStats.merge(StatType.ICE_RESISTANCE, resistanceValue, Double::sum);
         relativeBonusStats.merge(StatType.LIGHTNING_RESISTANCE, resistanceValue, Double::sum);
