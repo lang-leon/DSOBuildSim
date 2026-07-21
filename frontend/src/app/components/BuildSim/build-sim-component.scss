@@ -23,13 +23,22 @@
     margin-top:20px;
 }
 
+.character-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
 .character-title {
     display:flex;
     justify-content: center;
     margin: 10px auto;
+    margin-left: 45px;
     background: #d4af37; // border color
     padding: 2px;
-    width: fit-content;
+    width: 380px;
+    height: 37px;
 
     clip-path: polygon(
         2% 0%,
@@ -46,12 +55,21 @@
 }
 
 .character-title h1 {
-  margin: 0;
-  padding: 6px 120px;
-  background: #222;
-  color: #EFD8B7;
+    margin: 0;
+    background: #222;
+    color: #EFD8B7;
+    width: 100%;
+    height: 100%;
 
-  clip-path: inherit;
+    clip-path: inherit;
+}
+
+.character-class-image {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-right: 5px;
+    padding-right: 30px;
 }
 
 .stats-container {

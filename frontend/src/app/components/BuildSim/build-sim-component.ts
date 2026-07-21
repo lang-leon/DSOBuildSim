@@ -268,4 +268,21 @@ private createDefaultWisdomSkillTree(): WisdomSkillTreeInstanceDTO {
 
     URL.revokeObjectURL(url);
   }
+
+  
+  getCharacterClassImage():string {
+    switch(this.character.characterClass)
+    {
+      case CharacterClass.DRAGONKNIGHT:
+        return 'class-icons/dragonknight.png';
+      case CharacterClass.RANGER:
+        return 'class-icons/ranger.png';
+      case CharacterClass.SPELLWEAVER:
+        return 'class-icons/spellweaver.png';
+      case CharacterClass.STEAM_MECHANICUS:
+        return 'class-icons/steam-mechanicus.png';
+      default:
+        return '';
+    }
+  }
 }
