@@ -1,0 +1,30 @@
+import { CharacterClass } from "../../enums/CharacterClass";
+import { MasteryType } from "../../enums/MasteryType";
+import { BuffInstanceDTO } from "./BuffInstanceDTO";
+import { CollectorBagCategoryBonusInstanceDTO } from "./CollectorBagCategoryBonusInstanceDTO";
+import { DragonCrestTrinketDTO } from "./DragonCrestTrinketDTO";
+import { EssenceInstanceDTO } from "./EssenceInstanceDTO";
+import { ItemInstanceDTO } from "./ItemInstanceDTO";
+import { jewelTrinketDTO } from "./JewelTrinketDTO";
+import { PetInstanceDTO } from "./PetInstanceDTO";
+import { runeTrinketDTO } from "./RuneTrinketDTO";
+import { WisdomSkillTreeInstanceDTO } from "./WisdomSkillTreeInstanceDTO";
+
+export interface CharacterDTO {
+    characterClass: CharacterClass;
+    name: string;
+    masteryType: MasteryType;
+    masteryLevel: number;
+    experienceBonus: boolean;
+    experienceBonusLevel: number;
+    runeTrinkets: runeTrinketDTO[];
+    jewelTrinkets: jewelTrinketDTO[];
+    dragonCrest: DragonCrestTrinketDTO;
+    items: Record<string, ItemInstanceDTO>;
+    pet: PetInstanceDTO | null;
+    essence: EssenceInstanceDTO | null;
+    tonic: BuffInstanceDTO | null;
+    physic: BuffInstanceDTO | null;
+    wisdomSkillTree: WisdomSkillTreeInstanceDTO;
+    collectorBagBuffs: CollectorBagCategoryBonusInstanceDTO[];
+}

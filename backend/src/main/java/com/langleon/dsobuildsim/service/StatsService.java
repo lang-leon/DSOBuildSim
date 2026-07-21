@@ -1,5 +1,6 @@
 package com.langleon.dsobuildsim.service;
 
+import com.langleon.dsobuildsim.character.Character;
 import com.langleon.dsobuildsim.character.CharacterFactory;
 import com.langleon.dsobuildsim.character.dto.CharacterDTO;
 import com.langleon.dsobuildsim.character.dto.CharacterStatsDTO;
