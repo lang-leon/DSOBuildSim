@@ -1,4 +1,4 @@
-import { StatType } from "./stat-type";
+import { StatType } from "../../enums/StatType";
 
 export interface BuffDefinitionDTO {
     type: string;

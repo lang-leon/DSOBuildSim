@@ -1,5 +1,5 @@
-import { EnchantmentDTO } from "./enchantment-dto";
-import { StatType } from "./stat-type";
+import { EnchantmentDTO } from "./EnchantmentDTO";
+import { StatType } from "../../enums/StatType";
 
 export interface ItemDefinitionDTO {
     itemCategory: string;
