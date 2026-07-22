@@ -1,0 +1,19 @@
+export enum ItemSlot {
+    AMULET,
+    CLOAK,
+    BELT,
+    RING1,
+    RING2,
+    HELMET,
+    SHOULDERS,
+    TORSO,
+    GLOVES,
+    BOOTS,
+    WEAPON_ADORNMENT,
+    ONE_HAND_WEAPON,
+    OFF_HAND,
+    TWO_HAND_WEAPON,
+    SOUL_COMPANION_AMULET,
+    SOUL_COMPANION_CLOAK,
+    SOUL_COMPANION_BELT
+}

@@ -1,10 +1,5 @@
 <div class="build-layout">
   <div class="left-panel">
-    <button (click)="openFilePicker()">Import Character</button>
-    <button (click)="downloadCharacter()">Export Character</button>
-
-    <input #fileInput type="file" accept=".json" hidden (change)="onFileSelected($event)" />
-
     <div class="character-window">
       <div class="character-header">
         <div class="character-title">
@@ -208,6 +203,224 @@
             >
           </div>
         </section>
+      </div>
+    </div>
+  </div>
+  <div class="middle-panel">
+    <button (click)="openFilePicker()">Import Character</button>
+    <button (click)="downloadCharacter()">Export Character</button>
+
+    <input #fileInput type="file" accept=".json" hidden (change)="onFileSelected($event)" />
+  </div>
+  <div class="right-panel">
+    <div class="inventory-window">
+      <div class="inventory-header">
+        <div class="inventory-header-button">
+          <button>Character</button>
+        </div>
+        <div class="inventory-header-button">
+          <button>Soul Companion</button>
+        </div>
+      </div>
+      <div class="equipment-grid">
+        <app-build-sim-button
+          class="amulet"
+          slotName="Amulet"
+          icon="inventory-icons/amulet.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="cloak"
+          slotName="Cloak"
+          icon="inventory-icons/cloak.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="belt"
+          slotName="Belt"
+          icon="inventory-icons/belt.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="ring1"
+          slotName="Ring 1"
+          icon="inventory-icons/ring.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="ring2"
+          slotName="Ring 2"
+          icon="inventory-icons/ring.png"
+        ></app-build-sim-button>
+
+        <app-build-sim-button
+          class="helmet"
+          slotName="Helmet"
+          icon="inventory-icons/helmet.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="shoulders"
+          slotName="Shoulders"
+          icon="inventory-icons/shoulders.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="torso"
+          slotName="Torso"
+          icon="inventory-icons/torso.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="gloves"
+          slotName="Gloves"
+          icon="inventory-icons/gloves.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="boots"
+          slotName="Boots"
+          icon="inventory-icons/boots.png"
+        ></app-build-sim-button>
+
+        <app-build-sim-button
+          class="adornment"
+          slotName="Weapon Adornment"
+          icon="inventory-icons/weapon-adornment.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="main-hand"
+          slotName="Main Hand"
+          [icon]=getMainHandIcon()
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="off-hand"
+          slotName="Off Hand"
+          [icon]=getOffHandIcon()
+        ></app-build-sim-button>
+      </div>
+
+      <div class="selection-grid">
+        <app-build-sim-button
+          class="rune-trinket1"
+          slotName="Rune Trinket 1"
+          icon="inventory-icons/rune-trinket.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="rune-trinket2"
+          slotName="Rune Trinket 2"
+          icon="inventory-icons/rune-trinket.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="rune-trinket3"
+          slotName="Rune Trinket 3"
+          icon="inventory-icons/rune-trinket.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="rune-trinket4"
+          slotName="Rune Trinket 4"
+          icon="inventory-icons/rune-trinket.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="rune-trinket5"
+          slotName="Rune Trinket 5"
+          icon="inventory-icons/rune-trinket.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="rune-trinket6"
+          slotName="Rune Trinket 6"
+          icon="inventory-icons/rune-trinket.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="rune-trinket7"
+          slotName="Rune Trinket 7"
+          icon="inventory-icons/rune-trinket.png"
+        ></app-build-sim-button>
+
+        <app-build-sim-button
+          class="jewel-trinket1"
+          slotName="Jewel Trinket 1"
+          icon="inventory-icons/jewel-trinket.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="jewel-trinket2"
+          slotName="Jewel Trinket 2"
+          icon="inventory-icons/jewel-trinket.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="jewel-trinket3"
+          slotName="Jewel Trinket 3"
+          icon="inventory-icons/jewel-trinket.png"
+        ></app-build-sim-button>
+
+        <app-build-sim-button
+          class="dragon-crest-trinket"
+          slotName="Dragon Crest"
+          icon="inventory-icons/dragon-crest.png"
+        ></app-build-sim-button>
+
+        <app-build-sim-button
+          class="pet"
+          slotName="Pet"
+          icon="inventory-icons/pet.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="essence"
+          slotName="Essence"
+          icon="inventory-icons/essence.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="tonic"
+          slotName="Tonic"
+          icon="inventory-icons/tonic.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="physic"
+          slotName="Physic"
+          icon="inventory-icons/physic.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="collector-bag"
+          slotName="Collector-Bag"
+          icon="inventory-icons/collector-bag.png"
+        ></app-build-sim-button>
+
+        <app-build-sim-button
+          class="wisdom-skill-tree"
+          slotName="Wisdom Skill Tree"
+          icon="inventory-icons/wisdom-skill-tree.png"
+        ></app-build-sim-button>
+        @if (character.characterClass === CharacterClass.DRAGONKNIGHT) {
+          <app-build-sim-button
+            class="class-skill1"
+            slotName="Immovable Wall"
+            icon="inventory-icons/class-skill-dk1-inactive.png"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="class-skill2"
+            slotName="Quick Striker"
+            icon="inventory-icons/class-skill-dk2-inactive.png"
+          ></app-build-sim-button>
+        }
+        @if (character.characterClass === CharacterClass.SPELLWEAVER) {
+          <app-build-sim-button
+            class="class-skill3"
+            slotName="Bloodmage"
+            icon="inventory-icons/class-skill-sw-inactive.png"
+          ></app-build-sim-button>
+        }
+        <app-build-sim-button
+          class="poison-mastery"
+          slotName="Poison Mastery"
+          icon="inventory-icons/poison-mastery-inactive.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="fire-mastery"
+          slotName="Fire Mastery"
+          icon="inventory-icons/fire-mastery-inactive.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="ice-mastery"
+          slotName="Ice Mastery"
+          icon="inventory-icons/ice-mastery-inactive.png"
+        ></app-build-sim-button>
+        <app-build-sim-button
+          class="lightning-mastery"
+          slotName="Lightning Mastery"
+          icon="inventory-icons/lightning-mastery-inactive.png"
+        ></app-build-sim-button>
       </div>
     </div>
   </div>
