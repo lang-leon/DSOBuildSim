@@ -4,7 +4,7 @@
     min-height: 100vh;
     padding-left: 225px;
     padding-right: 225px;
-    padding-top: 150px;
+    padding-top: 125px;
 }
 
 .left-panel {
@@ -28,18 +28,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+}
+
+.character-info {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
 }
 
 .character-title {
     display:flex;
     justify-content: center;
     margin: 10px auto;
-    margin-left: 45px;
+    margin-bottom: 5px;
+    margin-left: 25px;
     background: #d4af37; // border color
     padding: 2px;
     width: 380px;
-    height: 37px;
+    height: 45px;
 
     clip-path: polygon(
         2% 0%,
@@ -57,6 +65,9 @@
 
 .character-title h1 {
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #222;
     color: #EFD8B7;
     width: 100%;
@@ -65,12 +76,30 @@
     clip-path: inherit;
 }
 
+.character-class {
+    display:flex;
+    justify-content: center;
+    margin: 0px;
+    margin-top: 0px;
+    margin-left: 45px;
+    align-items: center;
+
+    margin-top: 2px;
+}
+
+.character-class span {
+    color: #EFD8B7;
+
+    font-size: 20px;
+    font-style: italic;
+}
+
 .character-class-image {
-    width: 64px;
-    height: 64px;
+    width: 95px;
+    height: 95px;
     object-fit: contain;
-    margin-right: 5px;
-    padding-right: 30px;
+    margin-right: 0px;
+    padding-right: 10px;
 }
 
 .stats-container {
@@ -139,9 +168,183 @@
 
 
 
-.right-panel {
+
+.middle-panel {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+.utility-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.reset-character {
+    margin-top: 5px;
+}
+
+.reset-character button {
+    position: relative;
+
+    width: 256px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #222;
+    color: #EFD8B7;
+    border: none;
+
+    cursor: pointer;
+
+    overflow: visible;
+
+    border-radius: 3px;
+
+    transition: 
+        background 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
+}
+
+.reset-character button:active {
+    transform: translateY(1px);
+}
+
+.reset-character button:disabled {
+    opacity: 0.4;
+    cursor: default;
+    filter: grayscale(100%);
+    box-shadow: none;
+}
+
+.reset-character button:disabled:hover {
+    background: #222;
+    color: #EFD8B7;
+}
+
+.reset-character button img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+
+    transition: 
+    filter 0.15s ease,
+    transform 0.15s;
+}
+
+.reset-character button:not(:disabled):hover img {
+    filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
+}
+
+.reset-character button:not(:disabled):hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.import-export {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.import-export-button {
+    position: relative;
+
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #222;
+    color: #EFD8B7;
+    border: none;
+
+    cursor: pointer;
+
+    overflow: visible;
+
+    border-radius: 5px;
+
+    transition: 
+        background 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
+}
+
+.import-export button:disabled {
+    opacity: 0.4;
+    cursor: default;
+    filter: grayscale(100%);
+    box-shadow: none;
+}
+
+.import-export-button img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+
+    transition: 
+        filter 0.15s ease,
+        transform 0.15s;
+}
+
+.import-export-button:not(:disabled):hover img {
+    filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
+}
+
+.import-export-button:not(:disabled):hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.import-export button:active {
+    transform: translateY(1px);
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    background: #222;
+    color: #EFD8B7;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+
+
+
+.right-panel {
+}
 .inventory-window {
     background-color:#543A23;
     border: 3px solid #ac7443;
@@ -405,4 +608,357 @@
 .lightning-mastery {
     grid-column: 7;
     grid-row: 4;
+}
+
+
+
+
+.reset-confirmation-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: 1000;
+}
+
+.reset-confirmation-window {
+    width: 400px;
+    height: 150px;
+
+    padding: 20px 25px;
+
+    background: #222;
+
+    border: 5px solid #543A23;
+    border-radius: 10px;
+
+    color: #EFD8B7;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.3),
+        0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+.reset-confirmation-window h1 { 
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    color:#EFD8B7;
+    font-size: 20;
+    font-style: italic;
+    border-bottom: 1px solid #555; }
+
+.reset-confirmation-window p {
+    margin: 10px 0;
+
+    font-size: 20px;
+}
+
+.reset-confirmation-window .warning {
+    color: #ff0000;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.reset-confirmation-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.reset-confirmation-buttons button {
+    position: relative;
+
+    width: 128px;
+    height: 62px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #222;
+
+    border: none;
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    overflow: visible;
+
+    transition:
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
+}
+
+.reset-confirmation-buttons button img {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    transition:
+        filter 0.15s ease,
+        transform 0.15s ease;
+}
+
+.reset-confirmation-buttons button:hover img {
+    filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
+}
+
+.reset-confirmation-buttons button:active {
+    transform: translateY(1px);
+}
+
+.reset-confirmation-buttons button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+.class-change-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: 1000;
+}
+
+.class-change-window {
+    position: relative;
+    width: 420px;
+
+    padding: 20px 25px;
+
+    background: #222;
+
+    border: 5px solid #543A23;
+    border-radius: 10px;
+
+    color: #EFD8B7;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.3),
+        0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+.class-change-window > button {
+    position: absolute;
+
+    top: 5px;
+    right: 5px;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.class-change-window > button img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    border-radius: inherit;
+
+    transition:
+        filter 0.15s ease,
+        transform 0.15s ease;
+}
+
+.class-change-window > button:hover img {
+    filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
+
+    transform: scale(1.1);
+}
+
+.class-change-window > button span {
+    position: absolute;
+
+    right: 0;
+    top: 100%;
+
+    margin-top: 5px;
+
+    padding: 5px 10px;
+
+    background: #222;
+    color: #EFD8B7;
+
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 1000;
+
+    transition: opacity 0.15s ease;
+}
+
+.class-change-window > button:hover span {
+    opacity: 1;
+    visibility: visible;
+}
+
+.class-change-window h1 {
+    margin: 0 0 20px 0;
+
+    padding-bottom: 10px;
+
+    color: #EFD8B7;
+
+    font-size: 20px;
+    font-style: italic;
+
+    border-bottom: 1px solid #555;
+}
+
+.select-class-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.select-class-buttons button {
+    position: relative;
+
+    width: 90px;
+    height: 90px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #222;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    overflow: visible;
+
+    transition:
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
+}
+
+.select-class-buttons button img {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 5px;
+
+    transition:
+        filter 0.15s ease,
+        transform 0.15s ease;
+}
+
+.select-class-buttons button:hover img {
+    filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
+
+    transform: scale(1.05);
+}
+
+.select-class-buttons button:active {
+    transform: translateY(1px);
+}
+
+.select-class-buttons button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.select-class-buttons .tooltip {
+    position: absolute;
+
+    bottom: 100%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    margin-bottom: 8px;
+
+    padding: 5px 10px;
+
+    background: #222;
+
+    color: #EFD8B7;
+
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 1000;
+
+    transition: opacity 0.15s ease;
 }
