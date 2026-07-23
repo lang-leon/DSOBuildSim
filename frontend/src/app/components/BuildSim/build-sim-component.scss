@@ -619,8 +619,7 @@
 
 
 
-
-.reset-confirmation-overlay {
+.confirmation-overlay {
     position: fixed;
 
     top: 0;
@@ -638,11 +637,14 @@
     z-index: 1000;
 }
 
-.reset-confirmation-window {
-    width: 400px;
-    height: 150px;
+.confirmation-window {
+    position: relative;
 
-    padding: 20px 25px;
+    width: 450px;
+
+    padding: 20px 25px 30px;
+
+    box-sizing: border-box;
 
     background: #222;
 
@@ -658,39 +660,45 @@
         0 0 25px rgba(0, 0, 0, 0.8);
 }
 
-.reset-confirmation-window h1 { 
+.confirmation-window h1 {
     margin: 0 0 20px 0;
     padding-bottom: 10px;
     color:#EFD8B7;
     font-size: 20;
     font-style: italic;
-    border-bottom: 1px solid #555; }
+    border-bottom: 1px solid #555;
+}
 
-.reset-confirmation-window p {
+.confirmation-window p {
     margin: 10px 0;
 
     font-size: 20px;
 }
 
-.reset-confirmation-window .warning {
+.confirmation-window .warning {
     color: #ff0000;
 
     font-size: 20px;
     font-weight: bold;
 }
 
-.reset-confirmation-buttons {
+.confirmation-buttons {
+    position: absolute;
+
+    left: 50%;
+    bottom: -41px;
+
+    transform: translateX(-50%);
+
     display: flex;
 
     justify-content: center;
     align-items: center;
 
     gap: 15px;
-
-    margin-top: 25px;
 }
 
-.reset-confirmation-buttons button {
+.confirmation-buttons button {
     position: relative;
 
     width: 128px;
@@ -716,7 +724,7 @@
         transform 0.1s ease;
 }
 
-.reset-confirmation-buttons button img {
+.confirmation-buttons button img {
     position: absolute;
 
     width: 100%;
@@ -731,15 +739,15 @@
         transform 0.15s ease;
 }
 
-.reset-confirmation-buttons button:hover img {
+.confirmation-buttons button:hover img {
     filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
 }
 
-.reset-confirmation-buttons button:active {
+.confirmation-buttons button:active {
     transform: translateY(1px);
 }
 
-.reset-confirmation-buttons button:hover .tooltip {
+.confirmation-buttons button:hover .tooltip {
     opacity: 1;
     visibility: visible;
 }

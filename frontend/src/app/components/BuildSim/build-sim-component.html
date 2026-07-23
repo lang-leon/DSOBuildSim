@@ -397,6 +397,7 @@
           class="pet"
           slotName="Pet"
           icon="inventory-icons/pet.png"
+          (clicked)="openPetSelector()"
         ></app-build-sim-button>
         <app-build-sim-button
           class="essence"
@@ -470,14 +471,14 @@
 
 
 
-@if ( (showResetConfirmation)) 
+@if ( (showResetConfirmation))
 {
-    <div class="reset-confirmation-overlay">
-        <div class="reset-confirmation-window">
+    <div class="confirmation-overlay">
+        <div class="confirmation-window">
             <h1>Reset Character?</h1>
             <p>Are you sure you want to reset your character?</p>
             <p class="warning">All current changes will be lost!</p>
-            <div class="reset-confirmation-buttons">
+            <div class="confirmation-buttons">
                 <button class="confirm-button" (click)="confirmResetCharacter()">
                     <img src="utility-icons/confirm.png">
                     <span class="tooltip">Confirm</span>
@@ -491,7 +492,7 @@
     </div>
 }
 
-@if ( (showClassChangeScreen)) 
+@if ( (showClassChangeScreen))
 {
     <div class="class-change-overlay">
         <div class="class-change-window">
@@ -522,14 +523,14 @@
     </div>
 }
 
-@if ( (slowClassChangeConfirmation)) 
+@if ( (slowClassChangeConfirmation))
 {
-    <div class="reset-confirmation-overlay">
-        <div class="reset-confirmation-window">
+    <div class="confirmation-overlay">
+        <div class="confirmation-window">
             <h1>Change Character Class?</h1>
             <p>Are you sure you want to change your character class?</p>
             <p class="warning">All current changes will be lost!</p>
-            <div class="reset-confirmation-buttons">
+            <div class="confirmation-buttons">
                 <button class="confirm-button" (click)="confirmClassChange()">
                     <img src="utility-icons/confirm.png">
                     <span class="tooltip">Confirm</span>
