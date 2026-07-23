@@ -2,8 +2,13 @@
   <div class="left-panel">
     <div class="character-window">
       <div class="character-header">
-        <div class="character-title">
-          <h1>{{ character.name || 'Character' }}</h1>
+        <div class="character-info">
+            <div class="character-title">
+                <h1>{{ character.name || 'Character' }}</h1>
+            </div>
+            <div class="character-class">
+                <span> {{getCharacterClassName(character.characterClass)}} </span>
+            </div>
         </div>
 
         <img class="character-class-image" [src]="getCharacterClassImage()" />
@@ -206,12 +211,49 @@
       </div>
     </div>
   </div>
-  <div class="middle-panel">
-    <button (click)="openFilePicker()">Import Character</button>
-    <button (click)="downloadCharacter()">Export Character</button>
+<div class="middle-panel">
 
-    <input #fileInput type="file" accept=".json" hidden (change)="onFileSelected($event)" />
-  </div>
+    <div class="utility-panel">
+        <!-- Change class-->
+        <div class="reset-character">
+            <button (click)="openChangeClassWindow()">
+                <img src="utility-icons/change-class.png">
+                <span class="tooltip">Change Character Class</span>
+            </button>
+        </div>
+
+        <!-- Reset -->
+        <div class="reset-character">
+            <button (click)="resetCharacter()" [disabled]="isDefaultCharacter()">
+                <img src="utility-icons/reset-character.png">
+                <span class="tooltip">Reset Character</span>
+            </button>
+        </div>
+
+        <!-- Import / Export -->
+        <div class="import-export">
+            <button (click)="openFilePicker()" class="import-export-button">
+                <img src="utility-icons/upload.png">
+                <span class="tooltip">Import Character</span>
+            </button>
+
+            <button (click)="downloadCharacter()" class="import-export-button" [disabled]="isDefaultCharacter()">
+                <img src="utility-icons/download.png">
+                <span class="tooltip">Export Character</span>
+            </button>
+
+            <input
+                #fileInput
+                type="file"
+                accept=".json"
+                hidden
+                (change)="onFileSelected($event)"
+            />
+        </div>
+
+    </div>
+
+</div>
   <div class="right-panel">
     <div class="inventory-window">
       <div class="inventory-header">
@@ -283,12 +325,12 @@
         <app-build-sim-button
           class="main-hand"
           slotName="Main Hand"
-          [icon]=getMainHandIcon()
+          [icon]="getMainHandIcon()"
         ></app-build-sim-button>
         <app-build-sim-button
           class="off-hand"
           slotName="Off Hand"
-          [icon]=getOffHandIcon()
+          [icon]="getOffHandIcon()"
         ></app-build-sim-button>
       </div>
 
@@ -425,3 +467,78 @@
     </div>
   </div>
 </div>
+
+
+
+@if ( (showResetConfirmation)) 
+{
+    <div class="reset-confirmation-overlay">
+        <div class="reset-confirmation-window">
+            <h1>Reset Character?</h1>
+            <p>Are you sure you want to reset your character?</p>
+            <p class="warning">All current changes will be lost!</p>
+            <div class="reset-confirmation-buttons">
+                <button class="confirm-button" (click)="confirmResetCharacter()">
+                    <img src="utility-icons/confirm.png">
+                    <span class="tooltip">Confirm</span>
+                </button>
+                <button class="cancel-button" (click)="cancelResetCharacter()">
+                    <img src="utility-icons/cancel.png">
+                    <span class="tooltip">Cancel</span>
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@if ( (showClassChangeScreen)) 
+{
+    <div class="class-change-overlay">
+        <div class="class-change-window">
+            <h1>Change class Character?</h1>
+            <button (click)="cancelClassChange()">
+                <img src="utility-icons/cancel-square.png">
+                <span>Cancel</span>
+            </button>
+            <div class="select-class-buttons">
+                <button (click)="changeClass(CharacterClass.DRAGONKNIGHT)">
+                    <img src="class-icons/dragonknight.png">
+                    <span class="tooltip">Dragonknight</span>
+                </button>
+                <button (click)="changeClass(CharacterClass.SPELLWEAVER)">
+                    <img src="class-icons/spellweaver.png">
+                    <span class="tooltip">Spellweaver</span>
+                </button>
+                <button (click)="changeClass(CharacterClass.RANGER)">
+                    <img src="class-icons/ranger.png">
+                    <span class="tooltip">Ranger</span>
+                </button>
+                <button (click)="changeClass(CharacterClass.STEAM_MECHANICUS)">
+                    <img src="class-icons/steam-mechanicus.png">
+                    <span class="tooltip">Steam Mechanicus</span>
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@if ( (slowClassChangeConfirmation)) 
+{
+    <div class="reset-confirmation-overlay">
+        <div class="reset-confirmation-window">
+            <h1>Change Character Class?</h1>
+            <p>Are you sure you want to change your character class?</p>
+            <p class="warning">All current changes will be lost!</p>
+            <div class="reset-confirmation-buttons">
+                <button class="confirm-button" (click)="confirmClassChange()">
+                    <img src="utility-icons/confirm.png">
+                    <span class="tooltip">Confirm</span>
+                </button>
+                <button class="cancel-button" (click)="cancelClassChange()">
+                    <img src="utility-icons/cancel.png">
+                    <span class="tooltip">Cancel</span>
+                </button>
+            </div>
+        </div>
+    </div>
+}
