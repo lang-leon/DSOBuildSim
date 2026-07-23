@@ -14,12 +14,12 @@ import { WisdomGroupInstanceDTO } from '../../models/instanceDTOs/WisdomGroupIns
 import { WisdomSkillType } from '../../enums/WisdomSkillType';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
 import { ItemSlot } from '../../enums/ItemSlot';
-import { ItemSlotDisplayName } from '../const/ItemSlotDisplayName';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-character',
   standalone: true,
-  imports: [CommonModule, BuildSimButton],
+  imports: [CommonModule, BuildSimButton, FormsModule],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
 })
@@ -30,9 +30,14 @@ export class BuildSimComponent implements OnInit {
   StatType = StatType;
   gameData!: GameDataDTO;
   stats?: ClassStatsDTO;
-  character: CharacterDTO = this.createDefaultCharacter();
+  @ViewChild(NgModel) classSelect!: NgModel;
+  character: CharacterDTO = this.createDefaultCharacter(CharacterClass.SPELLWEAVER);
 
   CharacterClass = CharacterClass;
+  showResetConfirmation = false;
+  showClassChangeScreen = false;
+  selectedClass: CharacterClass = CharacterClass.SPELLWEAVER;
+  slowClassChangeConfirmation = false;
 
   constructor(
     private statCalculationService: StatCalculationService,
@@ -43,14 +48,14 @@ export class BuildSimComponent implements OnInit {
   ngOnInit(): void {
     this.gameDataService.getGameData().subscribe((data) => {
       this.gameData = data;
-      this.stats = this.gameData.characterClassStats['SPELLWEAVER'];
+      this.stats = {...this.gameData.characterClassStats[CharacterClass.SPELLWEAVER]};
       this.changeDetector.detectChanges();
     });
   }
 
-  private createDefaultCharacter(): CharacterDTO {
+  private createDefaultCharacter(characterClass: CharacterClass): CharacterDTO {
     return {
-      characterClass: CharacterClass.SPELLWEAVER,
+      characterClass,
       name: 'Character',
       masteryType: MasteryType.NONE,
       masteryLevel: 0,
@@ -280,6 +285,13 @@ export class BuildSimComponent implements OnInit {
     }
   }
 
+  getCharacterClassName(characterClass: CharacterClass): string {
+    return characterClass
+        .split('_')
+        .map(word => word.charAt(0) + word.slice(1).toLowerCase())
+        .join(' ');
+}
+
   private readonly weaponIcons: Record<
     CharacterClass,
     {
@@ -323,5 +335,74 @@ export class BuildSimComponent implements OnInit {
     const icons = this.weaponIcons[this.character.characterClass];
 
     return this.character.items[ItemSlot.TWO_HAND_WEAPON] !== undefined ? icons.twoHand : icons.offHand;
+  }
+
+  resetCharacter()
+  {
+    if(!this.isDefaultCharacter()) this.showResetConfirmation = true;
+  }
+
+  confirmResetCharacter()
+  {
+    this.character = this.createDefaultCharacter(this.character.characterClass);
+    this.stats = {...this.gameData.characterClassStats[this.character.characterClass]};
+    this.showResetConfirmation = false;
+  }
+
+  cancelResetCharacter()
+  {
+    this.showResetConfirmation = false;
+  }
+
+  onCharacterClassChange(newClass: CharacterClass) {
+    if(this.character.characterClass==newClass) return;
+    if (!this.isDefaultCharacter())
+    {
+      const confirmed = confirm('Changing class will reset your build. Do you want to continue?');
+      if(!confirmed) return;
+    }
+    
+    this.character.characterClass = newClass;
+    this.character = this.createDefaultCharacter(newClass);
+    this.stats = {...this.gameData.characterClassStats[newClass]};
+  }
+
+  isDefaultCharacter(): boolean {
+    const defaultCharacter = this.createDefaultCharacter(this.character.characterClass);
+    return JSON.stringify(this.character) === JSON.stringify(defaultCharacter);
+  }
+
+  openChangeClassWindow()
+  {
+    this.showClassChangeScreen = true;
+  }
+
+  changeClass(newClass: CharacterClass)
+  {
+    if (this.isDefaultCharacter())
+    {
+      this.character = this.createDefaultCharacter(newClass);
+      this.stats = {...this.gameData.characterClassStats[newClass]};
+      this.showClassChangeScreen = false;
+    }
+    else
+    {
+      this.selectedClass = newClass;
+      this.slowClassChangeConfirmation = true;
+    }
+  }
+
+  confirmClassChange()
+  {
+    this.character = this.createDefaultCharacter(this.selectedClass);
+    this.stats = {...this.gameData.characterClassStats[this.selectedClass]};
+    this.slowClassChangeConfirmation = false;
+    this.showClassChangeScreen = false;
+  }
+
+  cancelClassChange()
+  {
+    this.slowClassChangeConfirmation = false;
+    this.showClassChangeScreen = false;
   }
 }
