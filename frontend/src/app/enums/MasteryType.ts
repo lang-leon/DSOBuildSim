@@ -1,7 +1,7 @@
 export enum MasteryType {
-    FIRE,
-    ICE,
-    LIGHTNING,
-    POISON,
-    NONE
+    FIRE = "FIRE",
+    ICE = "ICE",
+    LIGHTNING = "LIGHTNING",
+    POISON = "POISON",
+    NONE = "NONE"
 }
