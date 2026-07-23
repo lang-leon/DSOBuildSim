@@ -25,6 +25,11 @@
 
     object-fit: contain;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.item-slot:hover img {
+    filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
 }
 
 .tooltip {

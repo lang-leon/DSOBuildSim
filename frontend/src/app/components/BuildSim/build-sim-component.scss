@@ -364,6 +364,7 @@
     display:flex;
     text-align: center;
     justify-content: center;
+    cursor: pointer;
     margin: 3px;
     margin-bottom: 5px;
     background: #d4af37; // border color
@@ -383,9 +384,15 @@
         0% 50%,
         0% 25%
     );
+    
+}
+
+.inventory-header-button:hover {
+    filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
 }
 
 .inventory-header button {
+    cursor: pointer;
     margin: 0;
     background: #222;
     color: #EFD8B7;
