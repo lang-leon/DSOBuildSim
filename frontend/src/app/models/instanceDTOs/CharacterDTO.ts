@@ -1,4 +1,5 @@
 import { CharacterClass } from "../../enums/CharacterClass";
+import { ItemSlot } from "../../enums/ItemSlot";
 import { MasteryType } from "../../enums/MasteryType";
 import { BuffInstanceDTO } from "./BuffInstanceDTO";
 import { CollectorBagCategoryBonusInstanceDTO } from "./CollectorBagCategoryBonusInstanceDTO";
@@ -20,7 +21,7 @@ export interface CharacterDTO {
     runeTrinkets: runeTrinketDTO[];
     jewelTrinkets: jewelTrinketDTO[];
     dragonCrest: DragonCrestTrinketDTO;
-    items: Record<string, ItemInstanceDTO>;
+    items: Partial<Record<ItemSlot, ItemInstanceDTO>>;
     pet: PetInstanceDTO | null;
     essence: EssenceInstanceDTO | null;
     tonic: BuffInstanceDTO | null;
