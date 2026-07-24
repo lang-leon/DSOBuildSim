@@ -395,14 +395,15 @@
 
         <app-build-sim-button
           class="pet"
-          slotName="Pet"
-          icon="inventory-icons/pet.png"
+          [slotName]="character.pet ? 'Pet: ' + formatStatName(character.pet.petType) : 'Pet: None'"
+          [icon]="getPetIcon()"
           (clicked)="openPetSelector()"
         ></app-build-sim-button>
         <app-build-sim-button
           class="essence"
-          slotName="Essence"
-          icon="inventory-icons/essence.png"
+          [slotName]="character.essence ? 'Essence: ' + formatStatName(character.essence.essenceType) : 'Essence: None'"
+          [icon]="getEssenceIcon()"
+          (clicked)="openEssenceSelector()"
         ></app-build-sim-button>
         <app-build-sim-button
           class="tonic"
@@ -471,7 +472,7 @@
 
 
 
-@if ( (showResetConfirmation))
+@if ((showResetConfirmation))
 {
     <div class="confirmation-overlay">
         <div class="confirmation-window">
@@ -492,7 +493,7 @@
     </div>
 }
 
-@if ( (showClassChangeScreen))
+@if ((showClassChangeScreen))
 {
     <div class="class-change-overlay">
         <div class="class-change-window">
@@ -523,7 +524,7 @@
     </div>
 }
 
-@if ( (slowClassChangeConfirmation))
+@if ((slowClassChangeConfirmation))
 {
     <div class="confirmation-overlay">
         <div class="confirmation-window">
@@ -553,4 +554,15 @@
     (confirmed)="confirmPetSelection($event)"
     >
     </app-pet-selector>
+}
+
+@if ((showEssenceSelector))
+{
+    <app-essence-selector
+    [essences]="gameData.essences"
+    [character]="character"
+    (cancelled)="closeEssenceSelector()"
+    (confirmed)="confirmEssenceSelection($event)"
+    >
+    </app-essence-selector>
 }
