@@ -1,0 +1,404 @@
+.pet-selection-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: 1000;
+}
+
+.pet-selection-window {
+    position: relative;
+
+    width: 700px;
+    min-height: 300px;
+
+    padding: 25px 30px;
+
+    background: #222;
+
+    border: 5px solid #543A23;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    color: #EFD8B7;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.3),
+        0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+.pet-selection-window h1 {
+    width: 100%;
+
+    margin: 0 0 25px 0;
+    padding-bottom: 10px;
+
+    color: #EFD8B7;
+
+    font-size: 20;
+    font-style: italic;
+
+    text-align: center;
+
+    border-bottom: 1px solid #555;
+}
+
+
+.pet-selection {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.pet-selection label,
+.tier-selection > label {
+    color: #EFD8B7;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.pet-selection-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.pet-selection-controls {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.pet-selection select {
+    width: 300px;
+    height: 40px;
+
+    padding: 5px 10px;
+
+    background: #222;
+    color: #EFD8B7;
+
+    border: 2px solid #d4af37;
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.pet-selection select:hover {
+    background: #2c2c2c;
+}
+
+.pet-selection select:focus {
+    outline: none;
+
+    box-shadow:
+        0 0 5px #d4af37;
+}
+
+
+.tier-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    gap: 10px;
+}
+
+.tier-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.tier-buttons button {
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+
+    background: #222;
+    color: #222;
+
+    border: 3px solid #555;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
+}
+
+.tier-buttons button.tier1 {
+    background-color: #798285;
+}
+
+.tier-buttons button.tier2 {
+    background-color: #739273;
+}
+
+.tier-buttons button.tier3 {
+    background-color: #3A4A8D;
+}
+
+.tier-buttons button.tier4 {
+    background-color: #9C5990;
+}
+
+.tier-buttons button.tier5 {
+    background-color: #C69257;
+}
+
+.tier-buttons button.tier6 {
+    background-color: #CEBA63;
+}
+
+.tier-buttons button:hover:not(:disabled) {
+    box-shadow:
+        0 0 8px #d4af37;
+}
+
+.tier-buttons button.selected {
+    border-color: #d4af37;
+}
+
+.tier-buttons button:disabled {
+    background: #333;
+    color: #666;
+    border-color: #555;
+    cursor: default;
+    opacity: 0.5;
+}
+
+.tier-buttons button:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.pet-selection-buttons {
+    position: absolute;
+
+    left: 50%;
+    bottom: -41px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.pet-selection-buttons button {
+    position: relative;
+
+    width: 128px;
+    height: 62px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #222;
+
+    border: none;
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    overflow: visible;
+
+    transition:
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
+}
+
+.pet-selection-buttons button:disabled {
+    cursor: default;
+    filter: grayscale(100%) brightness(0.4); 
+    box-shadow: none;
+}
+.pet-selection-buttons button img {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    transition:
+        filter 0.15s ease,
+        transform 0.15s ease;
+}
+
+.pet-selection-buttons button:not(:disabled):hover img {
+    filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
+}
+
+.pet-selection-buttons button:not(:disabled):active {
+    transform: translateY(1px);
+}
+
+.pet-selection-buttons button:not(:disabled):hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    background: #222;
+    color: #EFD8B7;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.pet-stats-preview {
+    width: 260px;
+    min-height: 250px;
+
+    flex-shrink: 0;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    background: #1a1a1a;
+
+    border: 2px solid #543A23;
+    border-radius: 6px;
+
+    color: #EFD8B7;
+
+    box-shadow:
+        inset 0 0 10px rgba(0, 0, 0, 0.7),
+        0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.pet-stats-preview h2 {
+    margin: 0 0 12px 0;
+
+    padding-bottom: 8px;
+
+    color: #d4af37;
+
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+
+    border-bottom: 1px solid #543A23;
+}
+
+.pet-stats {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.pet-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5px 8px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    border-radius: 3px;
+
+    font-size: 14px;
+}
+
+.pet-stat span:first-child {
+    color: #EFD8B7;
+}
+
+.pet-stat span:last-child {
+    color: #d4af37;
+
+    font-weight: bold;
+}
+
+.pet-description {
+
+    color: #b9a58c;
+
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.4;
+
+    text-align: center;
+}
+
+.no-pet-selected {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #777;
+
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+}
+
+.pet-description.has-stats {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #543A23;
+}
