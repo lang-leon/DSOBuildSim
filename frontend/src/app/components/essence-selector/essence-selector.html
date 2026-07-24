@@ -25,7 +25,7 @@
           <label>Tier</label>
 
           <div class="tier-buttons">
-            @for (tier of [1, 2, 3, 4, 5, 6]; track tier) {
+            @for (tier of [1, 2, 3, 4, 5]; track tier) {
               <button
                 [disabled]="!availableTiers.includes(tier)"
                 [class.selected]="selectedTier === tier"
@@ -47,7 +47,7 @@
             <div class="essence-stat">
               <span>{{ formatStatName(StatType.DAMAGE) }}</span>
               <span>
-                {{ formatStatValue(selectedEssence.damage[selectedTier]) }}
+                {{ formatStatValue(selectedEssence.damage[selectedTier], 2) }}
               </span>
             </div>
           </div>

@@ -1,0 +1,76 @@
+<div class="buff-selection-overlay">
+  <div class="buff-selection-window">
+    <h1>Select {{formatStatName(buffCategory)}}</h1>
+
+    <div class="buff-selection-content">
+      <div class="buff-selection-controls">
+        <div class="buff-selection">
+          <label for="buff-select">{{formatStatName(buffCategory)}}</label>
+
+          <select
+            id="buff-select"
+            [(ngModel)]="selectedBuff"
+            (ngModelChange)="onBuffChange($event)"
+          >
+            <option [ngValue]="null">No {{formatStatName(buffCategory)}}</option>
+            @for (buff of buffs; track buff.type) {
+              <option [ngValue]="buff">
+                {{ buff.name }}
+              </option>
+            }
+          </select>
+        </div>
+
+        <div class="tier-selection">
+          <label>Tier</label>
+
+          <div class="tier-buttons">
+            @for (tier of [1, 2, 3, 4, 5]; track tier) {
+              <button
+                [disabled]="!availableTiers.includes(tier)"
+                [class.selected]="selectedTier === tier"
+                [class]="'tier' + tier"
+                (click)="selectedTier = tier"
+              >
+                T{{ tier }}
+              </button>
+            }
+          </div>
+        </div>
+      </div>
+
+      @if (selectedBuff !== null) {
+        <div class="buff-stats-preview">
+          <h2>Buff Stats:</h2>
+
+          <div class="buff-stats">
+            <div class="buff-stat">
+              <span>{{ formatStatName(selectedBuff.statType) }}</span>
+              <span>
+                {{ formatBuffValue(selectedBuff.statsPerTier[selectedTier]) }}
+              </span>
+            </div>
+          </div>
+        </div>
+      } @else {
+        <div class="buff-stats-preview">
+          <h2>Buff Stats:</h2>
+
+          <div class="no-buff-selected">No {{formatStatName(buffCategory)}} selected!</div>
+        </div>
+      }
+
+      <div class="buff-selection-buttons">
+        <button class="accept-button" (click)="confirm()">
+          <img src="utility-icons/confirm.png" alt="Accept" />
+          <span class="tooltip">Confirm</span>
+        </button>
+        <button class="cancel-button">
+          <img src="utility-icons/cancel.png" alt="Cancel" (click)="cancel()" />
+          <span class="tooltip">Cancel</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<p>buff-selector works!</p>
