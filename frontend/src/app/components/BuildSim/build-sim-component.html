@@ -543,3 +543,14 @@
         </div>
     </div>
 }
+
+@if ((showPetSelector))
+{
+    <app-pet-selector
+    [pets]="gameData.pets"
+    [character]="character"
+    (cancelled)="closePetSelector()"
+    (confirmed)="confirmPetSelection($event)"
+    >
+    </app-pet-selector>
+}

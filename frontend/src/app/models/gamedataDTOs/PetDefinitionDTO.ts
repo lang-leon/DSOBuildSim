@@ -5,6 +5,6 @@ export interface PetDefinitionDTO {
     petCategory: string;
     name: string;
     tier: number;
-    stats: Record<string, Record<StatType, number>>;
-    description: Record<string, string>;
+    stats: Record<number, Record<StatType, number>>;
+    description: Record<number, string>;
 }

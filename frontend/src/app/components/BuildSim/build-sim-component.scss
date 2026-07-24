@@ -217,14 +217,13 @@
         transform 0.1s ease;
 }
 
-.reset-character button:active {
+.reset-character button:not(:disabled):active {
     transform: translateY(1px);
 }
 
 .reset-character button:disabled {
-    opacity: 0.4;
     cursor: default;
-    filter: grayscale(100%);
+    filter: grayscale(100%) brightness(0.4);
     box-shadow: none;
 }
 
@@ -290,9 +289,8 @@
 }
 
 .import-export button:disabled {
-    opacity: 0.4;
     cursor: default;
-    filter: grayscale(100%);
+    filter: grayscale(100%) brightness(0.4);
     box-shadow: none;
 }
 
@@ -317,7 +315,7 @@
     visibility: visible;
 }
 
-.import-export button:active {
+.import-export button:not(:disabled):active {
     transform: translateY(1px);
 }
 
