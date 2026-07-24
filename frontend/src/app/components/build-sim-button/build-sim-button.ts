@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-build-sim-button',
@@ -13,4 +13,12 @@ export class BuildSimButton {
 
   @Input()
   slotName!: string;
+
+  @Output()
+  clicked = new EventEmitter<void>();
+
+  onClick()
+  {
+    this.clicked.emit();
+  }
 }

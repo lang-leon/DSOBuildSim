@@ -15,11 +15,13 @@ import { WisdomSkillType } from '../../enums/WisdomSkillType';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
 import { ItemSlot } from '../../enums/ItemSlot';
 import { FormsModule, NgModel } from '@angular/forms';
+import { PetSelector } from '../pet-selector/pet-selector';
+import { PetInstanceDTO } from '../../models/instanceDTOs/PetInstanceDTO';
 
 @Component({
   selector: 'app-character',
   standalone: true,
-  imports: [CommonModule, BuildSimButton, FormsModule],
+  imports: [CommonModule, BuildSimButton, FormsModule, PetSelector],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
 })
@@ -38,6 +40,7 @@ export class BuildSimComponent implements OnInit {
   showClassChangeScreen = false;
   selectedClass: CharacterClass = CharacterClass.SPELLWEAVER;
   slowClassChangeConfirmation = false;
+  showPetSelector = false;
 
   constructor(
     private statCalculationService: StatCalculationService,
@@ -48,7 +51,7 @@ export class BuildSimComponent implements OnInit {
   ngOnInit(): void {
     this.gameDataService.getGameData().subscribe((data) => {
       this.gameData = data;
-      this.stats = {...this.gameData.characterClassStats[CharacterClass.SPELLWEAVER]};
+      this.stats = { ...this.gameData.characterClassStats[CharacterClass.SPELLWEAVER] };
       this.changeDetector.detectChanges();
     });
   }
@@ -240,13 +243,13 @@ export class BuildSimComponent implements OnInit {
 
     reader.onload = () => {
       this.character = JSON.parse(reader.result as string);
-      this.calculate(this.character);
+      this.calculate();
     };
     reader.readAsText(file);
   }
 
-  calculate(character: object) {
-    this.statCalculationService.calculateStats(character).subscribe((response: any) => {
+  calculate() {
+    this.statCalculationService.calculateStats(this.character).subscribe((response: any) => {
       this.stats!.absoluteStats = response.stats;
       this.changeDetector.detectChanges();
     });
@@ -287,10 +290,10 @@ export class BuildSimComponent implements OnInit {
 
   getCharacterClassName(characterClass: CharacterClass): string {
     return characterClass
-        .split('_')
-        .map(word => word.charAt(0) + word.slice(1).toLowerCase())
-        .join(' ');
-}
+      .split('_')
+      .map((word) => word.charAt(0) + word.slice(1).toLowerCase())
+      .join(' ');
+  }
 
   private readonly weaponIcons: Record<
     CharacterClass,
@@ -328,43 +331,43 @@ export class BuildSimComponent implements OnInit {
   getMainHandIcon(): string {
     const icons = this.weaponIcons[this.character.characterClass];
 
-    return this.character.items[ItemSlot.TWO_HAND_WEAPON] !== undefined ? icons.twoHand : icons.oneHand;
+    return this.character.items[ItemSlot.TWO_HAND_WEAPON] !== undefined
+      ? icons.twoHand
+      : icons.oneHand;
   }
 
   getOffHandIcon(): string {
     const icons = this.weaponIcons[this.character.characterClass];
 
-    return this.character.items[ItemSlot.TWO_HAND_WEAPON] !== undefined ? icons.twoHand : icons.offHand;
+    return this.character.items[ItemSlot.TWO_HAND_WEAPON] !== undefined
+      ? icons.twoHand
+      : icons.offHand;
   }
 
-  resetCharacter()
-  {
-    if(!this.isDefaultCharacter()) this.showResetConfirmation = true;
+  resetCharacter() {
+    if (!this.isDefaultCharacter()) this.showResetConfirmation = true;
   }
 
-  confirmResetCharacter()
-  {
+  confirmResetCharacter() {
     this.character = this.createDefaultCharacter(this.character.characterClass);
-    this.stats = {...this.gameData.characterClassStats[this.character.characterClass]};
+    this.stats = { ...this.gameData.characterClassStats[this.character.characterClass] };
     this.showResetConfirmation = false;
   }
 
-  cancelResetCharacter()
-  {
+  cancelResetCharacter() {
     this.showResetConfirmation = false;
   }
 
   onCharacterClassChange(newClass: CharacterClass) {
-    if(this.character.characterClass==newClass) return;
-    if (!this.isDefaultCharacter())
-    {
+    if (this.character.characterClass == newClass) return;
+    if (!this.isDefaultCharacter()) {
       const confirmed = confirm('Changing class will reset your build. Do you want to continue?');
-      if(!confirmed) return;
+      if (!confirmed) return;
     }
-    
+
     this.character.characterClass = newClass;
     this.character = this.createDefaultCharacter(newClass);
-    this.stats = {...this.gameData.characterClassStats[newClass]};
+    this.stats = { ...this.gameData.characterClassStats[newClass] };
   }
 
   isDefaultCharacter(): boolean {
@@ -372,37 +375,44 @@ export class BuildSimComponent implements OnInit {
     return JSON.stringify(this.character) === JSON.stringify(defaultCharacter);
   }
 
-  openChangeClassWindow()
-  {
+  openChangeClassWindow() {
     this.showClassChangeScreen = true;
   }
 
-  changeClass(newClass: CharacterClass)
-  {
-    if (this.isDefaultCharacter())
-    {
+  changeClass(newClass: CharacterClass) {
+    if (this.isDefaultCharacter()) {
       this.character = this.createDefaultCharacter(newClass);
-      this.stats = {...this.gameData.characterClassStats[newClass]};
+      this.stats = { ...this.gameData.characterClassStats[newClass] };
       this.showClassChangeScreen = false;
-    }
-    else
-    {
+    } else {
       this.selectedClass = newClass;
       this.slowClassChangeConfirmation = true;
     }
   }
 
-  confirmClassChange()
-  {
+  confirmClassChange() {
     this.character = this.createDefaultCharacter(this.selectedClass);
-    this.stats = {...this.gameData.characterClassStats[this.selectedClass]};
+    this.stats = { ...this.gameData.characterClassStats[this.selectedClass] };
     this.slowClassChangeConfirmation = false;
     this.showClassChangeScreen = false;
   }
 
-  cancelClassChange()
-  {
+  cancelClassChange() {
     this.slowClassChangeConfirmation = false;
     this.showClassChangeScreen = false;
+  }
+
+  openPetSelector() {
+    this.showPetSelector = true;
+  }
+
+  closePetSelector() {
+    this.showPetSelector = false;
+  }
+
+  confirmPetSelection(pet: PetInstanceDTO) {
+    this.character.pet = pet;
+    this.calculate();
+    this.showPetSelector = false;
   }
 }

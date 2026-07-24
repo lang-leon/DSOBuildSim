@@ -1,5 +1,5 @@
-import { CharacterClass } from "../../enums/CharacterClass";
-import { ItemSlot } from "../../enums/ItemSlot";
+import { CharacterClass } from "../enums/CharacterClass";
+import { ItemSlot } from "../enums/ItemSlot";
 
 export const ItemSlotDisplayName: Record<ItemSlot, string> = {
     [ItemSlot.AMULET]: 'Amulet',
