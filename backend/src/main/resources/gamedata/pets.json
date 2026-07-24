@@ -2016,7 +2016,7 @@
       "4": {
         "ATTACK_SPEED": 0.20,
         "MANA": 0.20,
-        "DAMAGE": 0.02
+        "DAMAGE": 0.20
       },
       "5": {
         "ATTACK_SPEED": 0.30,
@@ -2187,6 +2187,10 @@
     "petUpgradeType": "NORMAL",
     "petCategory": "TAMED_FOES",
     "descriptionPerTier": {
+      "2": "Increased item drop from worthy monsters",
+      "3": "Increased item drop from worthy monsters",
+      "4": "Increased item drop from worthy monsters",
+      "5": "Increased item drop from worthy monsters",
     },
     "defaultTier": "5",
     "statsPerTier": {
