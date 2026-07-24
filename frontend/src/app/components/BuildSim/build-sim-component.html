@@ -396,13 +396,13 @@
         <app-build-sim-button
           class="pet"
           [slotName]="character.pet ? 'Pet: ' + formatStatName(character.pet.petType) : 'Pet: None'"
-          icon="inventory-icons/pet.png"
+          [icon]="getPetIcon()"
           (clicked)="openPetSelector()"
         ></app-build-sim-button>
         <app-build-sim-button
           class="essence"
           [slotName]="character.essence ? 'Essence: ' + formatStatName(character.essence.essenceType) : 'Essence: None'"
-          icon="inventory-icons/essence.png"
+          [icon]="getEssenceIcon()"
           (clicked)="openEssenceSelector()"
         ></app-build-sim-button>
         <app-build-sim-button

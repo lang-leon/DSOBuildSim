@@ -436,4 +436,44 @@ export class BuildSimComponent implements OnInit {
     this.showEssenceSelector = false;
   }
 
+getPetIcon(): string {
+    if (this.character.pet?.tier === undefined) {
+        return "inventory-icons/pet.png";
+    }
+
+    switch (this.character.pet.tier) {
+        case 2:
+            return "inventory-icons/pet-green.png";
+        case 3:
+            return "inventory-icons/pet-blue.png";
+        case 4:
+            return "inventory-icons/pet-purple.png";
+        case 5:
+            return "inventory-icons/pet-orange.png";
+        case 6:
+            return "inventory-icons/pet-yellow.png";
+        default:
+            return "inventory-icons/pet.png";
+    }
+}
+
+getEssenceIcon(): string {
+    if (this.character.essence?.tier === undefined) {
+        return "inventory-icons/essence.png";
+    }
+
+    switch (this.character.essence.tier) {
+        case 2:
+            return "inventory-icons/essence-green.png";
+        case 3:
+            return "inventory-icons/essence-blue.png";
+        case 4:
+            return "inventory-icons/essence-purple.png";
+        case 5:
+            return "inventory-icons/essence-red.png";
+        default:
+            return "inventory-icons/essence.png";
+    }
+}
+
 }
