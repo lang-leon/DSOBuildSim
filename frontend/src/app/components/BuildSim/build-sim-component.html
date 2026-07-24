@@ -407,13 +407,15 @@
         ></app-build-sim-button>
         <app-build-sim-button
           class="tonic"
-          slotName="Tonic"
-          icon="inventory-icons/tonic.png"
+          [slotName]="character.tonic ? 'Tonic: ' + formatStatName(character.tonic.type) : 'Tonic: None'"
+          [icon]="getTonicIcon()"
+          (clicked)="openTonicSelector()"
         ></app-build-sim-button>
         <app-build-sim-button
           class="physic"
-          slotName="Physic"
-          icon="inventory-icons/physic.png"
+          [slotName]="character.physic ? 'Physic: ' + formatStatName(character.physic.type) : 'Physic: None'"
+          [icon]="getPhysicIcon()"
+          (clicked)="openPhysicSelector()"
         ></app-build-sim-button>
         <app-build-sim-button
           class="collector-bag"
@@ -565,4 +567,28 @@
     (confirmed)="confirmEssenceSelection($event)"
     >
     </app-essence-selector>
+}
+
+@if ((showPhysicSelector))
+{
+    <app-buff-selector
+    [buffs]="gameData.physics"
+    [character]="character"
+    [buffCategory]="BuffCategory.PHYSIC"
+    (cancelled)="closePhysicSelector()"
+    (confirmed)="confirmPhysicSelection($event)"
+    >
+    </app-buff-selector>
+}
+
+@if ((showTonicSelector))
+{
+    <app-buff-selector
+    [buffs]="gameData.tonics"
+    [character]="character"
+    [buffCategory]="BuffCategory.TONIC"
+    (cancelled)="closeTonicSelector()"
+    (confirmed)="confirmTonicSelection($event)"
+    >
+    </app-buff-selector>
 }

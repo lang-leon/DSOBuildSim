@@ -20,11 +20,14 @@ import { PetInstanceDTO } from '../../models/instanceDTOs/PetInstanceDTO';
 import { EssenceSelector } from '../essence-selector/essence-selector';
 import { EssenceInstanceDTO } from '../../models/instanceDTOs/EssenceInstanceDTO';
 import { formatStatName } from '../../utils/display-utils';
+import { BuffInstanceDTO } from '../../models/instanceDTOs/BuffInstanceDTO';
+import { BuffCategory } from '../../enums/BuffCategory';
+import { BuffSelector } from '../buff-selector/buff-selector';
 
 @Component({
   selector: 'app-character',
   standalone: true,
-  imports: [CommonModule, BuildSimButton, FormsModule, PetSelector, EssenceSelector],
+  imports: [CommonModule, BuildSimButton, FormsModule, PetSelector, EssenceSelector, BuffSelector],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
 })
@@ -45,8 +48,11 @@ export class BuildSimComponent implements OnInit {
   slowClassChangeConfirmation = false;
   showPetSelector = false;
   showEssenceSelector = false;
+  showPhysicSelector = false;
+  showTonicSelector = false;
 
   formatStatName = formatStatName;
+  BuffCategory = BuffCategory;
 
   constructor(
     private statCalculationService: StatCalculationService,
@@ -422,21 +428,7 @@ export class BuildSimComponent implements OnInit {
     this.showPetSelector = false;
   }
 
-  openEssenceSelector() {
-    this.showEssenceSelector = true;
-  }
-
-  closeEssenceSelector() {
-    this.showEssenceSelector = false;
-  }
-
-  confirmEssenceSelection(essence: EssenceInstanceDTO | null) {
-    this.character.essence = essence;
-    this.calculate();
-    this.showEssenceSelector = false;
-  }
-
-getPetIcon(): string {
+  getPetIcon(): string {
     if (this.character.pet?.tier === undefined) {
         return "inventory-icons/pet.png";
     }
@@ -457,6 +449,20 @@ getPetIcon(): string {
     }
 }
 
+  openEssenceSelector() {
+    this.showEssenceSelector = true;
+  }
+
+  closeEssenceSelector() {
+    this.showEssenceSelector = false;
+  }
+
+  confirmEssenceSelection(essence: EssenceInstanceDTO | null) {
+    this.character.essence = essence;
+    this.calculate();
+    this.showEssenceSelector = false;
+  }
+
 getEssenceIcon(): string {
     if (this.character.essence?.tier === undefined) {
         return "inventory-icons/essence.png";
@@ -473,6 +479,72 @@ getEssenceIcon(): string {
             return "inventory-icons/essence-red.png";
         default:
             return "inventory-icons/essence.png";
+    }
+}
+
+openPhysicSelector() {
+    this.showPhysicSelector = true;
+  }
+
+  closePhysicSelector() {
+    this.showPhysicSelector = false;
+  }
+
+  confirmPhysicSelection(physic: BuffInstanceDTO | null) {
+    this.character.physic = physic;
+    this.calculate();
+    this.showPhysicSelector = false;
+  }
+
+getPhysicIcon(): string {
+    if (this.character.physic?.tier === undefined) {
+        return "inventory-icons/physic.png";
+    }
+
+    switch (this.character.physic.tier) {
+        case 2:
+            return "inventory-icons/physic-green.png";
+        case 3:
+            return "inventory-icons/physic-blue.png";
+        case 4:
+            return "inventory-icons/physic-purple.png";
+        case 5:
+            return "inventory-icons/physic-orange.png";
+        default:
+            return "inventory-icons/physic.png";
+    }
+}
+
+openTonicSelector() {
+    this.showTonicSelector = true;
+  }
+
+  closeTonicSelector() {
+    this.showTonicSelector = false;
+  }
+
+  confirmTonicSelection(tonic: BuffInstanceDTO | null) {
+    this.character.tonic = tonic;
+    this.calculate();
+    this.showTonicSelector = false;
+  }
+
+getTonicIcon(): string {
+    if (this.character.tonic?.tier === undefined) {
+        return "inventory-icons/tonic.png";
+    }
+
+    switch (this.character.tonic.tier) {
+        case 2:
+            return "inventory-icons/tonic-green.png";
+        case 3:
+            return "inventory-icons/tonic-blue.png";
+        case 4:
+            return "inventory-icons/tonic-purple.png";
+        case 5:
+            return "inventory-icons/tonic-orange.png";
+        default:
+            return "inventory-icons/tonic.png";
     }
 }
 
