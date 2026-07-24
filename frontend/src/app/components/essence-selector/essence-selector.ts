@@ -3,7 +3,7 @@ import { CharacterDTO } from '../../models/instanceDTOs/CharacterDTO';
 import { EssenceDefinitionDTO } from '../../models/gamedataDTOs/EssenceDefinitionDTO';
 import { FormsModule } from '@angular/forms';
 import { EssenceInstanceDTO } from '../../models/instanceDTOs/EssenceInstanceDTO';
-import { formatStatName, formatStatValue } from '../../utils/display-utils';
+import { formatStatName, formatStatValueRelative } from '../../utils/display-utils';
 import { StatType } from '../../enums/StatType';
 
 @Component({
@@ -30,7 +30,7 @@ export class EssenceSelector {
   selectedTier: number = 0;
 
   formatStatName = formatStatName;
-  formatStatValue = formatStatValue;
+  formatStatValue = formatStatValueRelative;
   StatType = StatType;
 
   ngOnInit() {

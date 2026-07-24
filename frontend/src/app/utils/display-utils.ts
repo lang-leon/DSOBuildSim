@@ -12,12 +12,12 @@ export function formatStatName(stat: StatType | string): string
         .join(' ');
 }
 
-export function formatStatValue(value: number): string
+export function formatStatValueRelative(value: number, digits: number): string
 {
-    return "+ "+(value*100).toFixed(2)+"%";
+    return "+ "+(value*100).toFixed(digits)+"%";
 }
 
-export function formatEssenceDescription(description: string)
+export function formatStatValueAbsolute(value: number, digits: number): string
 {
-
+    return "+ "+value.toFixed(digits);
 }
