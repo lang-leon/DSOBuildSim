@@ -43,7 +43,7 @@
               @for (stat of selectedPet!.stats[selectedTier] | keyvalue; track stat.key) {
                 <div class="pet-stat">
                   <span>{{ formatStatName(stat.key) }}</span>
-                  <span>{{ formatStatValue(stat.value) }}</span>
+                  <span>{{ formatStatValue(stat.value, 2) }}</span>
                 </div>
               }
             </div>

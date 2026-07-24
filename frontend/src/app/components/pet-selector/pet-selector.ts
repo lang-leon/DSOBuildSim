@@ -4,7 +4,7 @@ import { PetDefinitionDTO } from '../../models/gamedataDTOs/PetDefinitionDTO';
 import { FormsModule } from '@angular/forms';
 import { PetInstanceDTO } from '../../models/instanceDTOs/PetInstanceDTO';
 import { KeyValuePipe } from '@angular/common';
-import { formatStatName, formatStatValue } from '../../utils/display-utils';
+import { formatStatName, formatStatValueRelative } from '../../utils/display-utils';
 
 @Component({
   selector: 'app-pet-selector',
@@ -31,7 +31,7 @@ export class PetSelector {
   selectedTier: number = 0;
 
   formatStatName = formatStatName;
-  formatStatValue = formatStatValue;
+  formatStatValue = formatStatValueRelative;
 
   ngOnInit() {
     if (this.character.pet) {
