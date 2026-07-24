@@ -17,11 +17,14 @@ import { ItemSlot } from '../../enums/ItemSlot';
 import { FormsModule, NgModel } from '@angular/forms';
 import { PetSelector } from '../pet-selector/pet-selector';
 import { PetInstanceDTO } from '../../models/instanceDTOs/PetInstanceDTO';
+import { EssenceSelector } from '../essence-selector/essence-selector';
+import { EssenceInstanceDTO } from '../../models/instanceDTOs/EssenceInstanceDTO';
+import { formatStatName } from '../../utils/display-utils';
 
 @Component({
   selector: 'app-character',
   standalone: true,
-  imports: [CommonModule, BuildSimButton, FormsModule, PetSelector],
+  imports: [CommonModule, BuildSimButton, FormsModule, PetSelector, EssenceSelector],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
 })
@@ -41,6 +44,9 @@ export class BuildSimComponent implements OnInit {
   selectedClass: CharacterClass = CharacterClass.SPELLWEAVER;
   slowClassChangeConfirmation = false;
   showPetSelector = false;
+  showEssenceSelector = false;
+
+  formatStatName = formatStatName;
 
   constructor(
     private statCalculationService: StatCalculationService,
@@ -410,9 +416,24 @@ export class BuildSimComponent implements OnInit {
     this.showPetSelector = false;
   }
 
-  confirmPetSelection(pet: PetInstanceDTO) {
+  confirmPetSelection(pet: PetInstanceDTO | null) {
     this.character.pet = pet;
     this.calculate();
     this.showPetSelector = false;
   }
+
+  openEssenceSelector() {
+    this.showEssenceSelector = true;
+  }
+
+  closeEssenceSelector() {
+    this.showEssenceSelector = false;
+  }
+
+  confirmEssenceSelection(essence: EssenceInstanceDTO | null) {
+    this.character.essence = essence;
+    this.calculate();
+    this.showEssenceSelector = false;
+  }
+
 }
