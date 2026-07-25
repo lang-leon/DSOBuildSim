@@ -23,11 +23,13 @@ import { formatStatName } from '../../utils/display-utils';
 import { BuffInstanceDTO } from '../../models/instanceDTOs/BuffInstanceDTO';
 import { BuffCategory } from '../../enums/BuffCategory';
 import { BuffSelector } from '../buff-selector/buff-selector';
+import { ClassSkillType } from '../../enums/ClassSkillType';
+import { MasterySelector } from '../mastery-selector/mastery-selector';
 
 @Component({
   selector: 'app-character',
   standalone: true,
-  imports: [CommonModule, BuildSimButton, FormsModule, PetSelector, EssenceSelector, BuffSelector],
+  imports: [CommonModule, BuildSimButton, FormsModule, PetSelector, EssenceSelector, BuffSelector, MasterySelector],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
 })
@@ -50,9 +52,12 @@ export class BuildSimComponent implements OnInit {
   showEssenceSelector = false;
   showPhysicSelector = false;
   showTonicSelector = false;
+  showMasterySelector = false;
+  showClassSkillSelector = false;
 
   formatStatName = formatStatName;
   BuffCategory = BuffCategory;
+  ClassSkillType = ClassSkillType;
 
   constructor(
     private statCalculationService: StatCalculationService,
@@ -74,8 +79,8 @@ export class BuildSimComponent implements OnInit {
       name: 'Character',
       masteryType: MasteryType.NONE,
       masteryLevel: 0,
-      experienceBonus: false,
-      experienceBonusLevel: 0,
+      classSkillType: ClassSkillType.NONE,
+      classSkillLevel: 0,
       runeTrinkets: Array.from({ length: 7 }, () => ({
         runes: [],
       })),
@@ -430,24 +435,24 @@ export class BuildSimComponent implements OnInit {
 
   getPetIcon(): string {
     if (this.character.pet?.tier === undefined) {
-        return "inventory-icons/pet.png";
+      return 'inventory-icons/pet.png';
     }
 
     switch (this.character.pet.tier) {
-        case 2:
-            return "inventory-icons/pet-green.png";
-        case 3:
-            return "inventory-icons/pet-blue.png";
-        case 4:
-            return "inventory-icons/pet-purple.png";
-        case 5:
-            return "inventory-icons/pet-orange.png";
-        case 6:
-            return "inventory-icons/pet-yellow.png";
-        default:
-            return "inventory-icons/pet.png";
+      case 2:
+        return 'inventory-icons/pet-green.png';
+      case 3:
+        return 'inventory-icons/pet-blue.png';
+      case 4:
+        return 'inventory-icons/pet-purple.png';
+      case 5:
+        return 'inventory-icons/pet-orange.png';
+      case 6:
+        return 'inventory-icons/pet-yellow.png';
+      default:
+        return 'inventory-icons/pet.png';
     }
-}
+  }
 
   openEssenceSelector() {
     this.showEssenceSelector = true;
@@ -463,26 +468,26 @@ export class BuildSimComponent implements OnInit {
     this.showEssenceSelector = false;
   }
 
-getEssenceIcon(): string {
+  getEssenceIcon(): string {
     if (this.character.essence?.tier === undefined) {
-        return "inventory-icons/essence.png";
+      return 'inventory-icons/essence.png';
     }
 
     switch (this.character.essence.tier) {
-        case 2:
-            return "inventory-icons/essence-green.png";
-        case 3:
-            return "inventory-icons/essence-blue.png";
-        case 4:
-            return "inventory-icons/essence-purple.png";
-        case 5:
-            return "inventory-icons/essence-red.png";
-        default:
-            return "inventory-icons/essence.png";
+      case 2:
+        return 'inventory-icons/essence-green.png';
+      case 3:
+        return 'inventory-icons/essence-blue.png';
+      case 4:
+        return 'inventory-icons/essence-purple.png';
+      case 5:
+        return 'inventory-icons/essence-red.png';
+      default:
+        return 'inventory-icons/essence.png';
     }
-}
+  }
 
-openPhysicSelector() {
+  openPhysicSelector() {
     this.showPhysicSelector = true;
   }
 
@@ -496,26 +501,26 @@ openPhysicSelector() {
     this.showPhysicSelector = false;
   }
 
-getPhysicIcon(): string {
+  getPhysicIcon(): string {
     if (this.character.physic?.tier === undefined) {
-        return "inventory-icons/physic.png";
+      return 'inventory-icons/physic.png';
     }
 
     switch (this.character.physic.tier) {
-        case 2:
-            return "inventory-icons/physic-green.png";
-        case 3:
-            return "inventory-icons/physic-blue.png";
-        case 4:
-            return "inventory-icons/physic-purple.png";
-        case 5:
-            return "inventory-icons/physic-orange.png";
-        default:
-            return "inventory-icons/physic.png";
+      case 2:
+        return 'inventory-icons/physic-green.png';
+      case 3:
+        return 'inventory-icons/physic-blue.png';
+      case 4:
+        return 'inventory-icons/physic-purple.png';
+      case 5:
+        return 'inventory-icons/physic-orange.png';
+      default:
+        return 'inventory-icons/physic.png';
     }
-}
+  }
 
-openTonicSelector() {
+  openTonicSelector() {
     this.showTonicSelector = true;
   }
 
@@ -529,23 +534,95 @@ openTonicSelector() {
     this.showTonicSelector = false;
   }
 
-getTonicIcon(): string {
+  getTonicIcon(): string {
     if (this.character.tonic?.tier === undefined) {
-        return "inventory-icons/tonic.png";
+      return 'inventory-icons/tonic.png';
     }
 
     switch (this.character.tonic.tier) {
-        case 2:
-            return "inventory-icons/tonic-green.png";
-        case 3:
-            return "inventory-icons/tonic-blue.png";
-        case 4:
-            return "inventory-icons/tonic-purple.png";
-        case 5:
-            return "inventory-icons/tonic-orange.png";
-        default:
-            return "inventory-icons/tonic.png";
+      case 2:
+        return 'inventory-icons/tonic-green.png';
+      case 3:
+        return 'inventory-icons/tonic-blue.png';
+      case 4:
+        return 'inventory-icons/tonic-purple.png';
+      case 5:
+        return 'inventory-icons/tonic-orange.png';
+      default:
+        return 'inventory-icons/tonic.png';
     }
-}
+  }
 
+  openMasterySelector() {
+    this.showMasterySelector = true;
+  }
+
+  closeMasterySelector() {
+    this.showMasterySelector = false;
+  }
+
+  confirmMasterySelection(selection: {
+    masteryType: MasteryType;
+    level: number;
+  }) {
+    this.character.masteryType = selection.masteryType;
+    this.character.masteryLevel = selection.level;
+    this.calculate();
+    this.showMasterySelector = false;
+  }
+
+  getMasteryIcon(): string {
+    switch (this.character.masteryType) {
+      case MasteryType.POISON:
+        return 'inventory-icons/mastery-poison.png';
+      case MasteryType.FIRE:
+        return 'inventory-icons/mastery-fire.png';
+      case MasteryType.ICE:
+        return 'inventory-icons/mastery-ice.png';
+      case MasteryType.LIGHTNING:
+        return 'inventory-icons/mastery-lightning.png';
+      default:
+        return 'inventory-icons/mastery.png';
+    }
+  }
+
+  onClassSkillClick(skillType: ClassSkillType) {
+    if (this.character.classSkillType !== skillType) {
+      this.character.classSkillType = skillType;
+      this.character.classSkillLevel = 1;
+      return;
+    }
+    if (this.character.classSkillLevel < 5) {
+      this.character.classSkillLevel++;
+    }
+    this.calculate();
+  }
+
+  onClassSkillRightClick(event: MouseEvent, skillType: ClassSkillType) {
+    event.preventDefault();
+    if (this.character.classSkillType === skillType) {
+      this.character.classSkillLevel--;
+      if (this.character.classSkillLevel <= 0) {
+        this.character.classSkillType = ClassSkillType.NONE;
+        this.character.classSkillLevel = 0;
+      }
+    }
+    this.calculate();
+  }
+
+    getClassSkillIcon(skillType: ClassSkillType): string {
+    switch (skillType) {
+      case ClassSkillType.BLOODMAGE:
+        if(this.character.classSkillType === ClassSkillType.BLOODMAGE && this.character.classSkillLevel > 0) return 'inventory-icons/bloodmage-active.png';
+        return 'inventory-icons/bloodmage.png';
+      case ClassSkillType.IMMOVEABLE_WALL:
+        if(this.character.classSkillType === ClassSkillType.IMMOVEABLE_WALL && this.character.classSkillLevel > 0) return 'inventory-icons/immoveable-wall-active.png';
+        return 'inventory-icons/immoveable-wall.png';
+      case ClassSkillType.QUICK_STRIKER:
+        if(this.character.classSkillType === ClassSkillType.QUICK_STRIKER && this.character.classSkillLevel > 0) return 'inventory-icons/quick-striker-active.png';
+        return 'inventory-icons/quick-striker.png';
+      default:
+        return '';
+    }
+  }
 }

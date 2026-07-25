@@ -3,12 +3,12 @@
     <div class="character-window">
       <div class="character-header">
         <div class="character-info">
-            <div class="character-title">
-                <h1>{{ character.name || 'Character' }}</h1>
-            </div>
-            <div class="character-class">
-                <span> {{getCharacterClassName(character.characterClass)}} </span>
-            </div>
+          <div class="character-title">
+            <h1>{{ character.name || 'Character' }}</h1>
+          </div>
+          <div class="character-class">
+            <span> {{ getCharacterClassName(character.characterClass) }} </span>
+          </div>
         </div>
 
         <img class="character-class-image" [src]="getCharacterClassImage()" />
@@ -211,49 +211,44 @@
       </div>
     </div>
   </div>
-<div class="middle-panel">
-
+  <div class="middle-panel">
     <div class="utility-panel">
-        <!-- Change class-->
-        <div class="reset-character">
-            <button (click)="openChangeClassWindow()">
-                <img src="utility-icons/change-class.png">
-                <span class="tooltip">Change Character Class</span>
-            </button>
-        </div>
+      <!-- Change class-->
+      <div class="reset-character">
+        <button (click)="openChangeClassWindow()">
+          <img src="utility-icons/change-class.png" />
+          <span class="tooltip">Change Character Class</span>
+        </button>
+      </div>
 
-        <!-- Reset -->
-        <div class="reset-character">
-            <button (click)="resetCharacter()" [disabled]="isDefaultCharacter()">
-                <img src="utility-icons/reset-character.png">
-                <span class="tooltip">Reset Character</span>
-            </button>
-        </div>
+      <!-- Reset -->
+      <div class="reset-character">
+        <button (click)="resetCharacter()" [disabled]="isDefaultCharacter()">
+          <img src="utility-icons/reset-character.png" />
+          <span class="tooltip">Reset Character</span>
+        </button>
+      </div>
 
-        <!-- Import / Export -->
-        <div class="import-export">
-            <button (click)="openFilePicker()" class="import-export-button">
-                <img src="utility-icons/upload.png">
-                <span class="tooltip">Import Character</span>
-            </button>
+      <!-- Import / Export -->
+      <div class="import-export">
+        <button (click)="openFilePicker()" class="import-export-button">
+          <img src="utility-icons/upload.png" />
+          <span class="tooltip">Import Character</span>
+        </button>
 
-            <button (click)="downloadCharacter()" class="import-export-button" [disabled]="isDefaultCharacter()">
-                <img src="utility-icons/download.png">
-                <span class="tooltip">Export Character</span>
-            </button>
+        <button
+          (click)="downloadCharacter()"
+          class="import-export-button"
+          [disabled]="isDefaultCharacter()"
+        >
+          <img src="utility-icons/download.png" />
+          <span class="tooltip">Export Character</span>
+        </button>
 
-            <input
-                #fileInput
-                type="file"
-                accept=".json"
-                hidden
-                (change)="onFileSelected($event)"
-            />
-        </div>
-
+        <input #fileInput type="file" accept=".json" hidden (change)="onFileSelected($event)" />
+      </div>
     </div>
-
-</div>
+  </div>
   <div class="right-panel">
     <div class="inventory-window">
       <div class="inventory-header">
@@ -401,19 +396,27 @@
         ></app-build-sim-button>
         <app-build-sim-button
           class="essence"
-          [slotName]="character.essence ? 'Essence: ' + formatStatName(character.essence.essenceType) : 'Essence: None'"
+          [slotName]="
+            character.essence
+              ? 'Essence: ' + formatStatName(character.essence.essenceType)
+              : 'Essence: None'
+          "
           [icon]="getEssenceIcon()"
           (clicked)="openEssenceSelector()"
         ></app-build-sim-button>
         <app-build-sim-button
           class="tonic"
-          [slotName]="character.tonic ? 'Tonic: ' + formatStatName(character.tonic.type) : 'Tonic: None'"
+          [slotName]="
+            character.tonic ? 'Tonic: ' + formatStatName(character.tonic.type) : 'Tonic: None'
+          "
           [icon]="getTonicIcon()"
           (clicked)="openTonicSelector()"
         ></app-build-sim-button>
         <app-build-sim-button
           class="physic"
-          [slotName]="character.physic ? 'Physic: ' + formatStatName(character.physic.type) : 'Physic: None'"
+          [slotName]="
+            character.physic ? 'Physic: ' + formatStatName(character.physic.type) : 'Physic: None'
+          "
           [icon]="getPhysicIcon()"
           (clicked)="openPhysicSelector()"
         ></app-build-sim-button>
@@ -432,163 +435,158 @@
           <app-build-sim-button
             class="class-skill1"
             slotName="Immovable Wall"
-            icon="inventory-icons/class-skill-dk1-inactive.png"
+            [overlayText]="character.classSkillLevel > 0 && character.classSkillType === ClassSkillType.IMMOVEABLE_WALL ? character.classSkillLevel + '/5' : '0/5'"
+            [icon]="getClassSkillIcon(ClassSkillType.IMMOVEABLE_WALL)"
+            (clicked)="onClassSkillClick(ClassSkillType.IMMOVEABLE_WALL)"
+            (contextmenu)="onClassSkillRightClick($event, ClassSkillType.IMMOVEABLE_WALL)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="class-skill2"
             slotName="Quick Striker"
-            icon="inventory-icons/class-skill-dk2-inactive.png"
+            [overlayText]="character.classSkillLevel > 0 && character.classSkillType === ClassSkillType.QUICK_STRIKER ? character.classSkillLevel + '/5' : '0/5'"
+            [icon]="getClassSkillIcon(ClassSkillType.QUICK_STRIKER)"
+            (clicked)="onClassSkillClick(ClassSkillType.QUICK_STRIKER)"
+            (contextmenu)="onClassSkillRightClick($event, ClassSkillType.QUICK_STRIKER)"
           ></app-build-sim-button>
         }
         @if (character.characterClass === CharacterClass.SPELLWEAVER) {
           <app-build-sim-button
             class="class-skill3"
             slotName="Bloodmage"
-            icon="inventory-icons/class-skill-sw-inactive.png"
+            [icon]="getClassSkillIcon(ClassSkillType.BLOODMAGE)"
+            [overlayText]="character.classSkillLevel > 0 ? character.classSkillLevel + '/5' : '0/5'"
+            (clicked)="onClassSkillClick(ClassSkillType.BLOODMAGE)"
+            (contextmenu)="onClassSkillRightClick($event, ClassSkillType.BLOODMAGE)"
           ></app-build-sim-button>
         }
         <app-build-sim-button
-          class="poison-mastery"
-          slotName="Poison Mastery"
-          icon="inventory-icons/poison-mastery-inactive.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="fire-mastery"
-          slotName="Fire Mastery"
-          icon="inventory-icons/fire-mastery-inactive.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="ice-mastery"
-          slotName="Ice Mastery"
-          icon="inventory-icons/ice-mastery-inactive.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="lightning-mastery"
-          slotName="Lightning Mastery"
-          icon="inventory-icons/lightning-mastery-inactive.png"
+          class="mastery"
+          [slotName]="'Mastery: ' + formatStatName(character.masteryType)"
+          [icon]="getMasteryIcon()"
+          [overlayText]="character.masteryLevel > 0 ? character.masteryLevel + '/10' : '0/10'"
+          (clicked)="openMasterySelector()"
         ></app-build-sim-button>
       </div>
     </div>
   </div>
 </div>
 
-
-
-@if ((showResetConfirmation))
-{
-    <div class="confirmation-overlay">
-        <div class="confirmation-window">
-            <h1>Reset Character?</h1>
-            <p>Are you sure you want to reset your character?</p>
-            <p class="warning">All current changes will be lost!</p>
-            <div class="confirmation-buttons">
-                <button class="confirm-button" (click)="confirmResetCharacter()">
-                    <img src="utility-icons/confirm.png">
-                    <span class="tooltip">Confirm</span>
-                </button>
-                <button class="cancel-button" (click)="cancelResetCharacter()">
-                    <img src="utility-icons/cancel.png">
-                    <span class="tooltip">Cancel</span>
-                </button>
-            </div>
-        </div>
+@if (showResetConfirmation) {
+  <div class="confirmation-overlay">
+    <div class="confirmation-window">
+      <h1>Reset Character?</h1>
+      <p>Are you sure you want to reset your character?</p>
+      <p class="warning">All current changes will be lost!</p>
+      <div class="confirmation-buttons">
+        <button class="confirm-button" (click)="confirmResetCharacter()">
+          <img src="utility-icons/confirm.png" />
+          <span class="tooltip">Confirm</span>
+        </button>
+        <button class="cancel-button" (click)="cancelResetCharacter()">
+          <img src="utility-icons/cancel.png" />
+          <span class="tooltip">Cancel</span>
+        </button>
+      </div>
     </div>
+  </div>
 }
 
-@if ((showClassChangeScreen))
-{
-    <div class="class-change-overlay">
-        <div class="class-change-window">
-            <h1>Change class Character?</h1>
-            <button (click)="cancelClassChange()">
-                <img src="utility-icons/cancel-square.png">
-                <span>Cancel</span>
-            </button>
-            <div class="select-class-buttons">
-                <button (click)="changeClass(CharacterClass.DRAGONKNIGHT)">
-                    <img src="class-icons/dragonknight.png">
-                    <span class="tooltip">Dragonknight</span>
-                </button>
-                <button (click)="changeClass(CharacterClass.SPELLWEAVER)">
-                    <img src="class-icons/spellweaver.png">
-                    <span class="tooltip">Spellweaver</span>
-                </button>
-                <button (click)="changeClass(CharacterClass.RANGER)">
-                    <img src="class-icons/ranger.png">
-                    <span class="tooltip">Ranger</span>
-                </button>
-                <button (click)="changeClass(CharacterClass.STEAM_MECHANICUS)">
-                    <img src="class-icons/steam-mechanicus.png">
-                    <span class="tooltip">Steam Mechanicus</span>
-                </button>
-            </div>
-        </div>
+@if (showClassChangeScreen) {
+  <div class="class-change-overlay">
+    <div class="class-change-window">
+      <h1>Change class Character?</h1>
+      <button (click)="cancelClassChange()">
+        <img src="utility-icons/cancel-square.png" />
+        <span>Cancel</span>
+      </button>
+      <div class="select-class-buttons">
+        <button (click)="changeClass(CharacterClass.DRAGONKNIGHT)">
+          <img src="class-icons/dragonknight.png" />
+          <span class="tooltip">Dragonknight</span>
+        </button>
+        <button (click)="changeClass(CharacterClass.SPELLWEAVER)">
+          <img src="class-icons/spellweaver.png" />
+          <span class="tooltip">Spellweaver</span>
+        </button>
+        <button (click)="changeClass(CharacterClass.RANGER)">
+          <img src="class-icons/ranger.png" />
+          <span class="tooltip">Ranger</span>
+        </button>
+        <button (click)="changeClass(CharacterClass.STEAM_MECHANICUS)">
+          <img src="class-icons/steam-mechanicus.png" />
+          <span class="tooltip">Steam Mechanicus</span>
+        </button>
+      </div>
     </div>
+  </div>
 }
 
-@if ((slowClassChangeConfirmation))
-{
-    <div class="confirmation-overlay">
-        <div class="confirmation-window">
-            <h1>Change Character Class?</h1>
-            <p>Are you sure you want to change your character class?</p>
-            <p class="warning">All current changes will be lost!</p>
-            <div class="confirmation-buttons">
-                <button class="confirm-button" (click)="confirmClassChange()">
-                    <img src="utility-icons/confirm.png">
-                    <span class="tooltip">Confirm</span>
-                </button>
-                <button class="cancel-button" (click)="cancelClassChange()">
-                    <img src="utility-icons/cancel.png">
-                    <span class="tooltip">Cancel</span>
-                </button>
-            </div>
-        </div>
+@if (slowClassChangeConfirmation) {
+  <div class="confirmation-overlay">
+    <div class="confirmation-window">
+      <h1>Change Character Class?</h1>
+      <p>Are you sure you want to change your character class?</p>
+      <p class="warning">All current changes will be lost!</p>
+      <div class="confirmation-buttons">
+        <button class="confirm-button" (click)="confirmClassChange()">
+          <img src="utility-icons/confirm.png" />
+          <span class="tooltip">Confirm</span>
+        </button>
+        <button class="cancel-button" (click)="cancelClassChange()">
+          <img src="utility-icons/cancel.png" />
+          <span class="tooltip">Cancel</span>
+        </button>
+      </div>
     </div>
+  </div>
 }
 
-@if ((showPetSelector))
-{
-    <app-pet-selector
+@if (showPetSelector) {
+  <app-pet-selector
     [pets]="gameData.pets"
     [character]="character"
     (cancelled)="closePetSelector()"
     (confirmed)="confirmPetSelection($event)"
-    >
-    </app-pet-selector>
+  >
+  </app-pet-selector>
 }
 
-@if ((showEssenceSelector))
-{
-    <app-essence-selector
+@if (showEssenceSelector) {
+  <app-essence-selector
     [essences]="gameData.essences"
     [character]="character"
     (cancelled)="closeEssenceSelector()"
     (confirmed)="confirmEssenceSelection($event)"
-    >
-    </app-essence-selector>
+  >
+  </app-essence-selector>
 }
 
-@if ((showPhysicSelector))
-{
-    <app-buff-selector
+@if (showPhysicSelector) {
+  <app-buff-selector
     [buffs]="gameData.physics"
     [character]="character"
     [buffCategory]="BuffCategory.PHYSIC"
     (cancelled)="closePhysicSelector()"
     (confirmed)="confirmPhysicSelection($event)"
-    >
-    </app-buff-selector>
+  >
+  </app-buff-selector>
 }
 
-@if ((showTonicSelector))
-{
-    <app-buff-selector
+@if (showTonicSelector) {
+  <app-buff-selector
     [buffs]="gameData.tonics"
     [character]="character"
     [buffCategory]="BuffCategory.TONIC"
     (cancelled)="closeTonicSelector()"
     (confirmed)="confirmTonicSelection($event)"
-    >
-    </app-buff-selector>
+  >
+  </app-buff-selector>
+}
+
+@if (showMasterySelector) {
+  <app-mastery-selector
+    [character]="character"
+    (cancelled)="closeMasterySelector()"
+    (confirmed)="confirmMasterySelection($event)">
+  </app-mastery-selector>
 }
