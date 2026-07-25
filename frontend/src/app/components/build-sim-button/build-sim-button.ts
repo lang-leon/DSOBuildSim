@@ -14,6 +14,9 @@ export class BuildSimButton {
   @Input()
   slotName!: string;
 
+  @Input()
+  overlayText?: string;
+
   @Output()
   clicked = new EventEmitter<void>();
 

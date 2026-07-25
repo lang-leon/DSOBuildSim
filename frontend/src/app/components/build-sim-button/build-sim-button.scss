@@ -64,3 +64,23 @@
     opacity: 1;
     visibility: visible;
 }
+
+.slot-overlay {
+    position: absolute;
+
+    right: 2px;
+    bottom: 2px;
+
+    padding: 2px 5px;
+
+    background: rgba(0, 0, 0, 0.85);
+    color: #EFD8B7;
+
+    border: 1px solid #543A23;
+    border-radius: 3px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    pointer-events: none;
+}

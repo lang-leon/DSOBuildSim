@@ -1,4 +1,5 @@
 import { CharacterClass } from "../../enums/CharacterClass";
+import { ClassSkillType } from "../../enums/ClassSkillType";
 import { ItemSlot } from "../../enums/ItemSlot";
 import { MasteryType } from "../../enums/MasteryType";
 import { BuffInstanceDTO } from "./BuffInstanceDTO";
@@ -16,8 +17,8 @@ export interface CharacterDTO {
     name: string;
     masteryType: MasteryType;
     masteryLevel: number;
-    experienceBonus: boolean;
-    experienceBonusLevel: number;
+    classSkillType: ClassSkillType;
+    classSkillLevel: number;
     runeTrinkets: runeTrinketDTO[];
     jewelTrinkets: jewelTrinketDTO[];
     dragonCrest: DragonCrestTrinketDTO;
