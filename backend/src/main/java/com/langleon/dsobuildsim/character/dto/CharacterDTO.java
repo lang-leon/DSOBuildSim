@@ -2,6 +2,7 @@ package com.langleon.dsobuildsim.character.dto;
 
 import com.langleon.dsobuildsim.buffs.dto.BuffInstanceDTO;
 import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.character.ClassSkillType;
 import com.langleon.dsobuildsim.character.MasteryType;
 import com.langleon.dsobuildsim.collectorbagbonus.dto.instance.CollectorBagCategoryBonusInstanceDTO;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonCrestTrinketDTO;
@@ -20,8 +21,8 @@ public record CharacterDTO(CharacterClass characterClass,
                            String name,
                            MasteryType masteryType,
                            int masteryLevel,
-                           boolean experienceBonus,
-                           int experienceBonusLevel,
+                           ClassSkillType classSkillType,
+                           int classSkillLevel,
                            List<RuneTrinketDTO> runeTrinkets,
                            List<JewelTrinketDTO> jewelTrinkets,
                            DragonCrestTrinketDTO dragonCrest,

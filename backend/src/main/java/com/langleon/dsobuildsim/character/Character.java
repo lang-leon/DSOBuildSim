@@ -32,8 +32,8 @@ public class Character {
 
     private final MasteryType elementalMasteryType;
     private final int elementalMasteryLevel; // 0-10
-    private final boolean experienceBonusPath;
-    private final int experienceBonusPathLevel;
+    private final ClassSkillType classSkillType;
+    private final int classSkillLevel;
 
     private final List<RuneTrinket> runeTrinkets;
     private final List<JewelTrinket> jewelTrinkets;
@@ -54,8 +54,8 @@ public class Character {
     public Character(CharacterClass characterClass,
                      MasteryType masteryType,
                      int masteryLevel,
-                     boolean experienceBonusPath,
-                     int experienceBonusPathLevel,
+                     ClassSkillType classSkillType,
+                     int classSkillLevel,
                      List<RuneTrinket> runeTrinkets,
                      List<JewelTrinket> jewelTrinkets,
                      DragonCrestTrinket dragonCrest,
@@ -74,9 +74,9 @@ public class Character {
         this.elementalMasteryType = masteryType;
         if (masteryLevel > 10 || masteryLevel < 0) throw new LimitExceededException(LimitType.MASTERY_TYPE, "Mastery level must be between 0 and 10, but was "+masteryLevel);
         this.elementalMasteryLevel = masteryLevel;
-        this.experienceBonusPath = experienceBonusPath;
-        if (experienceBonusPathLevel > 5 || experienceBonusPathLevel < 0) throw new LimitExceededException(LimitType.EXPERIENCE_SKILL_TREE, "Experience path level must be between 0 and 10, but was "+experienceBonusPathLevel);
-        this.experienceBonusPathLevel = experienceBonusPathLevel;
+        this.classSkillType = classSkillType;
+        if (classSkillLevel > 5 || classSkillLevel < 0) throw new LimitExceededException(LimitType.EXPERIENCE_SKILL_TREE, "Class skill level must be between 0 and 10, but was "+classSkillLevel);
+        this.classSkillLevel = classSkillLevel;
 
         this.validateRunes(runeTrinkets);
         this.runeTrinkets = runeTrinkets;
@@ -289,13 +289,28 @@ public class Character {
     {
         Map<StatType, Double> relativeStats = new EnumMap<>(StatType.class);
 
-        if (experienceBonusPath && experienceBonusPathLevel >= 1)
+        if (classSkillLevel >= 1)
         {
             switch (this.characterClass)
             {
-                case SPELLWEAVER -> relativeStats.put(StatType.DAMAGE, 0.3 + (experienceBonusPathLevel-1) * 0.05);
-                case DRAGONKNIGHT -> relativeStats.put(StatType.ATTACK_SPEED, 0.3 + (experienceBonusPathLevel-1) * 0.05);
+                case SPELLWEAVER -> {
+                    if (classSkillType == ClassSkillType.BLOODMAGE) relativeStats.put(StatType.DAMAGE, 0.3 + (classSkillLevel -1) * 0.05);
+                }
+                case DRAGONKNIGHT -> {
+                    if (classSkillType == ClassSkillType.QUICK_STRIKER)
+                    {
+                        relativeStats.put(StatType.ATTACK_SPEED, 0.3 + (classSkillLevel -1) * 0.05);
+                    }
+                    else if (classSkillType == ClassSkillType.IMMOVEABLE_WALL)
+                    {
+                        relativeStats.put(StatType.ARMOR_VALUE, 0.5 + (classSkillLevel -1) * 0.05);
+                    }
+                }
             }
+        }
+
+        if (characterClass == CharacterClass.SPELLWEAVER && classSkillType == ClassSkillType.BLOODMAGE && classSkillLevel > 0){
+            relativeStats.put(StatType.DAMAGE, 0.3 + (classSkillLevel -1) * 0.05);
         }
 
         if (elementalMasteryType == MasteryType.NONE || elementalMasteryLevel <= 0) {
