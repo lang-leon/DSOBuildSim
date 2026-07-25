@@ -1,4 +1,9 @@
 <button class="item-slot" (click)="onClick()">
     <img [src]="icon">
+    @if (overlayText) {
+        <span class="slot-overlay">
+            {{overlayText}}
+        </span>
+    }
     <span class="tooltip">{{ slotName }}</span>
 </button>

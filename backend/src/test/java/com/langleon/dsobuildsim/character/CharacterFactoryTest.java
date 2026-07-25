@@ -235,7 +235,7 @@ public class CharacterFactoryTest {
                 "test",
                 MasteryType.ICE,
                 3,
-                true,
+                ClassSkillType.BLOODMAGE,
                 5,
                 runeTrinkets,
                 jewelTrinkets,
