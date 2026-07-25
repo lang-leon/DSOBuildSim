@@ -3,8 +3,8 @@
   "name": "test",
   "masteryType": "ICE",
   "masteryLevel": 3,
-  "experienceBonus": true,
-  "experienceBonusLevel": 5,
+  "classSkillType": "BLOODMAGE",
+  "classSkillLevel": 5,
   "runeTrinkets": [
     {
       "runes": [

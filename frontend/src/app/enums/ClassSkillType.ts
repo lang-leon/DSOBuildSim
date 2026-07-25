@@ -1,0 +1,6 @@
+export enum ClassSkillType {
+    BLOODMAGE = "BLOODMAGE",
+    IMMOVEABLE_WALL = "IMMOVEABLE_WALL",
+    QUICK_STRIKER = "QUICK_STRIKER",
+    NONE = "NONE"
+}
