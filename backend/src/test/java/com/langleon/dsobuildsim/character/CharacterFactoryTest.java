@@ -5,7 +5,6 @@ import com.langleon.dsobuildsim.character.dto.CharacterDTO;
 import com.langleon.dsobuildsim.collectorbagbonus.CollectorBagFactory;
 import com.langleon.dsobuildsim.collectorbagbonus.dto.instance.CollectorBagCategoryBonusInstanceDTO;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
-import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagTier;
 import com.langleon.dsobuildsim.dragonstones.*;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonCrestTrinketDTO;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneInstanceDTO;
@@ -216,18 +215,18 @@ public class CharacterFactoryTest {
         WisdomSkillTreeInstanceDTO wisdomSkillTree = new WisdomSkillTreeInstanceDTO(wisdomGroups);
 
         List<CollectorBagCategoryBonusInstanceDTO> collectorBagBuffs = new ArrayList<>();
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.DRAGON_SPAWN, CollectorBagTier.TIER3));
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.SCOUNDRELS, CollectorBagTier.TIER2));
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.DOMESTICATED, CollectorBagTier.TIER2));
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.WILD_BEASTS, CollectorBagTier.TIER1));
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.AQUATICS, CollectorBagTier.TIER1));
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.AVIANS, CollectorBagTier.TIER1));
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.TAMED_FOES, CollectorBagTier.TIER4));
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.FREE_SPIRITS, CollectorBagTier.TIER3));
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.AUTOMATONS, CollectorBagTier.TIER2));
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.LUCKY_CATS, CollectorBagTier.TIER0));
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.ALCHEMY_CIRCLES, CollectorBagTier.TIER1));
-        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.SHADOW_SOULS, CollectorBagTier.TIER2));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.DRAGON_SPAWN, 3));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.SCOUNDRELS, 2));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.DOMESTICATED, 2));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.WILD_BEASTS, 1));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.AQUATICS, 1));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.AVIANS, 1));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.TAMED_FOES, 4));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.FREE_SPIRITS, 3));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.AUTOMATONS, 2));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.LUCKY_CATS, 0));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.ALCHEMY_CIRCLES, 1));
+        collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.SHADOW_SOULS, 2));
 
 
         return new CharacterDTO(

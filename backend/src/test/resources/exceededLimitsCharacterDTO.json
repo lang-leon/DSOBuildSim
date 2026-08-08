@@ -2179,51 +2179,50 @@
   "collectorBagBuffs": [
     {
       "category": "DRAGON_SPAWN",
-      "tier": "TIER3"
-    },
+      "tier": 3},
     {
       "category": "SCOUNDRELS",
-      "tier": "TIER2"
+      "tier": 2
     },
     {
       "category": "DOMESTICATED",
-      "tier": "TIER2"
+      "tier": 2
     },
     {
       "category": "WILD_BEASTS",
-      "tier": "TIER1"
+      "tier": 1
     },
     {
       "category": "AQUATICS",
-      "tier": "TIER1"
+      "tier": 1
     },
     {
       "category": "AVIANS",
-      "tier": "TIER1"
+      "tier": 1
     },
     {
       "category": "TAMED_FOES",
-      "tier": "TIER4"
+      "tier": 4
     },
     {
       "category": "FREE_SPIRITS",
-      "tier": "TIER3"
+      "tier": 3
     },
     {
       "category": "AUTOMATONS",
-      "tier": "TIER2"
+      "tier": 2
     },
     {
       "category": "LUCKY_CATS",
-      "tier": "TIER0"
+      "tier": 0
     },
     {
       "category": "ALCHEMY_CIRCLES",
-      "tier": "TIER1"
+      "tier": 1
     },
     {
       "category": "SHADOW_SOULS",
-      "tier": "TIER2"
+      "tier": 2
     }
   ]
 }
