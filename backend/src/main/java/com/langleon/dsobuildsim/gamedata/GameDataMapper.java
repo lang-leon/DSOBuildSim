@@ -3,6 +3,9 @@ package com.langleon.dsobuildsim.gamedata;
 import com.langleon.dsobuildsim.buffs.BuffMapper;
 import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
 import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.collectorbagbonus.CollectorBagMapper;
+import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagBonusDefinitionDTO;
+import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagCategoryBonusDefinitionDTO;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneMapper;
 import com.langleon.dsobuildsim.enchantments.EnchantmentMapper;
@@ -79,7 +82,9 @@ public class GameDataMapper {
 
         WisdomSkillTreeDefinitionDTO wisdomSkillTree = WisdomSkillTreeMapper.from(config.wisdomSkillConfig());
 
-        return new GameDataDTO(config.classStats(), items, sets, jewels, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkillTree);
+        List<CollectorBagCategoryBonusDefinitionDTO> collectorBagBuffs = config.collectorBagConfig().categoryBonuses().values().stream().map(categoryBonus -> CollectorBagMapper.from(categoryBonus, config.collectorBagConfig())).toList();
+
+        return new GameDataDTO(config.classStats(), items, sets, jewels, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkillTree, collectorBagBuffs);
     }
 
     private static <K, S, T> Map<CharacterClass, List<T>> mapPerClass(Map<CharacterClass, Map<K, S>> source, Function<S, T> mapper)
