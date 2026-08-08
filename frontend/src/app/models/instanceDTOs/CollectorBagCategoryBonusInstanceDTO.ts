@@ -1,4 +1,6 @@
+import { CollectorBagCategory } from "../../enums/CollectorBagCategory";
+
 export interface CollectorBagCategoryBonusInstanceDTO {
-    category: string;
-    tier: string;
+    category: CollectorBagCategory;
+    tier: number;
 }

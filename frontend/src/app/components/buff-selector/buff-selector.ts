@@ -16,8 +16,13 @@ import { BuffCategory } from '../../enums/BuffCategory';
   styleUrl: './buff-selector.scss',
 })
 export class BuffSelector {
+  
+  @Input() scale = 1;
+  
   @Input() buffs!: BuffDefinitionDTO[];
+  
   @Input() character!: CharacterDTO;
+
   @Input() buffCategory!: BuffCategory;
 
   @Output() cancelled = new EventEmitter<void>();

@@ -1,4 +1,11 @@
-import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { StatCalculationService } from '../../services/stat-calculation-service';
 import { GameDataDTO } from '../../models/gamedataDTOs/GameDataDTO';
 import { GameDataService } from '../../services/game-data-service';
@@ -25,11 +32,26 @@ import { BuffCategory } from '../../enums/BuffCategory';
 import { BuffSelector } from '../buff-selector/buff-selector';
 import { ClassSkillType } from '../../enums/ClassSkillType';
 import { MasterySelector } from '../mastery-selector/mastery-selector';
+import { ClassChangeWindow } from '../class-change-window/class-change-window';
+import { ConfirmationWindow } from '../confirmation-window/confirmation-window';
+import { CollectorBagSelector } from '../collector-bag-selector/collector-bag-selector';
+import { CollectorBagCategoryBonusInstanceDTO } from '../../models/instanceDTOs/CollectorBagCategoryBonusInstanceDTO';
 
 @Component({
   selector: 'app-character',
   standalone: true,
-  imports: [CommonModule, BuildSimButton, FormsModule, PetSelector, EssenceSelector, BuffSelector, MasterySelector],
+  imports: [
+    CommonModule,
+    BuildSimButton,
+    FormsModule,
+    PetSelector,
+    EssenceSelector,
+    BuffSelector,
+    MasterySelector,
+    ClassChangeWindow,
+    ConfirmationWindow,
+    CollectorBagSelector
+  ],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
 })
@@ -41,7 +63,11 @@ export class BuildSimComponent implements OnInit {
   gameData!: GameDataDTO;
   stats?: ClassStatsDTO;
   @ViewChild(NgModel) classSelect!: NgModel;
-  character: CharacterDTO = this.createDefaultCharacter(CharacterClass.SPELLWEAVER);
+  character!: CharacterDTO; // = this.createDefaultCharacter(CharacterClass.SPELLWEAVER);
+
+  scale = 1;
+  private readonly designWidth = 1920;
+  private readonly designHeight = 1080;
 
   CharacterClass = CharacterClass;
   showResetConfirmation = false;
@@ -54,6 +80,7 @@ export class BuildSimComponent implements OnInit {
   showTonicSelector = false;
   showMasterySelector = false;
   showClassSkillSelector = false;
+  showCollectorBagSelector = false;
 
   formatStatName = formatStatName;
   BuffCategory = BuffCategory;
@@ -66,11 +93,29 @@ export class BuildSimComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.updateScale();
     this.gameDataService.getGameData().subscribe((data) => {
       this.gameData = data;
+      this.character = this.createDefaultCharacter(CharacterClass.SPELLWEAVER);
       this.stats = { ...this.gameData.characterClassStats[CharacterClass.SPELLWEAVER] };
       this.changeDetector.detectChanges();
     });
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('resize', this.updateScale);
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.updateScale();
+  }
+
+  private updateScale() {
+    const scaleX = window.innerWidth / this.designWidth;
+    const scaleY = window.innerHeight / this.designHeight;
+
+    this.scale = Math.min(scaleX, scaleY);
   }
 
   private createDefaultCharacter(characterClass: CharacterClass): CharacterDTO {
@@ -403,6 +448,7 @@ export class BuildSimComponent implements OnInit {
       this.showClassChangeScreen = false;
     } else {
       this.selectedClass = newClass;
+      this.showClassChangeScreen = false;
       this.slowClassChangeConfirmation = true;
     }
   }
@@ -561,10 +607,7 @@ export class BuildSimComponent implements OnInit {
     this.showMasterySelector = false;
   }
 
-  confirmMasterySelection(selection: {
-    masteryType: MasteryType;
-    level: number;
-  }) {
+  confirmMasterySelection(selection: { masteryType: MasteryType; level: number }) {
     this.character.masteryType = selection.masteryType;
     this.character.masteryLevel = selection.level;
     this.calculate();
@@ -610,19 +653,49 @@ export class BuildSimComponent implements OnInit {
     this.calculate();
   }
 
-    getClassSkillIcon(skillType: ClassSkillType): string {
+  getClassSkillIcon(skillType: ClassSkillType): string {
     switch (skillType) {
       case ClassSkillType.BLOODMAGE:
-        if(this.character.classSkillType === ClassSkillType.BLOODMAGE && this.character.classSkillLevel > 0) return 'inventory-icons/bloodmage-active.png';
+        if (
+          this.character.classSkillType === ClassSkillType.BLOODMAGE &&
+          this.character.classSkillLevel > 0
+        )
+          return 'inventory-icons/bloodmage-active.png';
         return 'inventory-icons/bloodmage.png';
       case ClassSkillType.IMMOVEABLE_WALL:
-        if(this.character.classSkillType === ClassSkillType.IMMOVEABLE_WALL && this.character.classSkillLevel > 0) return 'inventory-icons/immoveable-wall-active.png';
+        if (
+          this.character.classSkillType === ClassSkillType.IMMOVEABLE_WALL &&
+          this.character.classSkillLevel > 0
+        )
+          return 'inventory-icons/immoveable-wall-active.png';
         return 'inventory-icons/immoveable-wall.png';
       case ClassSkillType.QUICK_STRIKER:
-        if(this.character.classSkillType === ClassSkillType.QUICK_STRIKER && this.character.classSkillLevel > 0) return 'inventory-icons/quick-striker-active.png';
+        if (
+          this.character.classSkillType === ClassSkillType.QUICK_STRIKER &&
+          this.character.classSkillLevel > 0
+        )
+          return 'inventory-icons/quick-striker-active.png';
         return 'inventory-icons/quick-striker.png';
       default:
         return '';
     }
+  }
+
+  openCollectorBagSelector() {
+    this.showCollectorBagSelector = true;
+  }
+
+  closeCollectorBagSelector() {
+    this.showCollectorBagSelector = false;
+  }
+
+  confirmCollectorBagSelection(
+    buffs: CollectorBagCategoryBonusInstanceDTO[]
+  ) {
+    this.character.collectorBagBuffs = buffs;
+    console.log(this.character);
+    this.calculate();
+    console.log(this.stats);
+    this.showCollectorBagSelector = false;
   }
 }

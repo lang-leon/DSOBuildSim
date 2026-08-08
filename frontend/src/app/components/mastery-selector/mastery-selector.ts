@@ -15,6 +15,8 @@ import { MasteryType } from '../../enums/MasteryType';
 })
 export class MasterySelector {
 
+  @Input() scale = 1;
+
   @Input() character!: CharacterDTO;
 
   @Output() cancelled = new EventEmitter<void>();

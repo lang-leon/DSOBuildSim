@@ -1,4 +1,5 @@
-<div class="build-layout">
+@if (character && gameData) {
+  <div class="build-layout" [style.transform]="'scale(' + scale + ')'">
   <div class="left-panel">
     <div class="character-window">
       <div class="character-header">
@@ -424,6 +425,7 @@
           class="collector-bag"
           slotName="Collector-Bag"
           icon="inventory-icons/collector-bag.png"
+          (clicked)="openCollectorBagSelector()"
         ></app-build-sim-button>
 
         <app-build-sim-button
@@ -472,77 +474,38 @@
 </div>
 
 @if (showResetConfirmation) {
-  <div class="confirmation-overlay">
-    <div class="confirmation-window">
-      <h1>Reset Character?</h1>
-      <p>Are you sure you want to reset your character?</p>
-      <p class="warning">All current changes will be lost!</p>
-      <div class="confirmation-buttons">
-        <button class="confirm-button" (click)="confirmResetCharacter()">
-          <img src="utility-icons/confirm.png" />
-          <span class="tooltip">Confirm</span>
-        </button>
-        <button class="cancel-button" (click)="cancelResetCharacter()">
-          <img src="utility-icons/cancel.png" />
-          <span class="tooltip">Cancel</span>
-        </button>
-      </div>
-    </div>
-  </div>
+  <app-confirmation-window
+    [scale]="scale"
+    title="Reset Character?"
+    message="Are you sure you want to reset your character?"
+    warning="All current changes will be lost!"
+    (confirmed)="confirmResetCharacter()"
+    (cancelled)="cancelResetCharacter()"
+  />
 }
 
 @if (showClassChangeScreen) {
-  <div class="class-change-overlay">
-    <div class="class-change-window">
-      <h1>Change class Character?</h1>
-      <button (click)="cancelClassChange()">
-        <img src="utility-icons/cancel-square.png" />
-        <span>Cancel</span>
-      </button>
-      <div class="select-class-buttons">
-        <button (click)="changeClass(CharacterClass.DRAGONKNIGHT)">
-          <img src="class-icons/dragonknight.png" />
-          <span class="tooltip">Dragonknight</span>
-        </button>
-        <button (click)="changeClass(CharacterClass.SPELLWEAVER)">
-          <img src="class-icons/spellweaver.png" />
-          <span class="tooltip">Spellweaver</span>
-        </button>
-        <button (click)="changeClass(CharacterClass.RANGER)">
-          <img src="class-icons/ranger.png" />
-          <span class="tooltip">Ranger</span>
-        </button>
-        <button (click)="changeClass(CharacterClass.STEAM_MECHANICUS)">
-          <img src="class-icons/steam-mechanicus.png" />
-          <span class="tooltip">Steam Mechanicus</span>
-        </button>
-      </div>
-    </div>
-  </div>
+  <app-class-change-window
+    [scale]="scale"
+    (cancelled)="cancelClassChange()"
+    (classSelected)="changeClass($event)"
+  />
 }
 
 @if (slowClassChangeConfirmation) {
-  <div class="confirmation-overlay">
-    <div class="confirmation-window">
-      <h1>Change Character Class?</h1>
-      <p>Are you sure you want to change your character class?</p>
-      <p class="warning">All current changes will be lost!</p>
-      <div class="confirmation-buttons">
-        <button class="confirm-button" (click)="confirmClassChange()">
-          <img src="utility-icons/confirm.png" />
-          <span class="tooltip">Confirm</span>
-        </button>
-        <button class="cancel-button" (click)="cancelClassChange()">
-          <img src="utility-icons/cancel.png" />
-          <span class="tooltip">Cancel</span>
-        </button>
-      </div>
-    </div>
-  </div>
+  <app-confirmation-window
+    [scale]="scale"
+    title="Change Character Class?"
+    message="Are you sure you want to change your character class?"
+    warning="All current changes will be lost!"
+    (confirmed)="confirmClassChange()"
+    (cancelled)="cancelClassChange()"
+  />
 }
 
 @if (showPetSelector) {
   <app-pet-selector
+  [scale]="scale"
     [pets]="gameData.pets"
     [character]="character"
     (cancelled)="closePetSelector()"
@@ -553,6 +516,7 @@
 
 @if (showEssenceSelector) {
   <app-essence-selector
+  [scale]="scale"
     [essences]="gameData.essences"
     [character]="character"
     (cancelled)="closeEssenceSelector()"
@@ -563,6 +527,7 @@
 
 @if (showPhysicSelector) {
   <app-buff-selector
+  [scale]="scale"
     [buffs]="gameData.physics"
     [character]="character"
     [buffCategory]="BuffCategory.PHYSIC"
@@ -574,6 +539,7 @@
 
 @if (showTonicSelector) {
   <app-buff-selector
+    [scale]="scale"
     [buffs]="gameData.tonics"
     [character]="character"
     [buffCategory]="BuffCategory.TONIC"
@@ -585,8 +551,21 @@
 
 @if (showMasterySelector) {
   <app-mastery-selector
+    [scale]="scale"
     [character]="character"
     (cancelled)="closeMasterySelector()"
     (confirmed)="confirmMasterySelection($event)">
   </app-mastery-selector>
+}
+
+@if (showCollectorBagSelector) {
+  <app-collector-bag-selector
+  [scale]="scale"
+  [character]="character"
+  [categoryBonuses]="gameData.collectorBagBuffs"
+  (cancelled)="closeCollectorBagSelector()"
+  (confirmed)="confirmCollectorBagSelection($event)">
+  </app-collector-bag-selector>
+}
+
 }

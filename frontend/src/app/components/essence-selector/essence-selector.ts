@@ -15,6 +15,9 @@ import { StatType } from '../../enums/StatType';
   styleUrl: './essence-selector.scss',
 })
 export class EssenceSelector {
+  
+  @Input() scale = 1;
+  
   @Input() essences!: EssenceDefinitionDTO[];
 
   @Input() character!: CharacterDTO;

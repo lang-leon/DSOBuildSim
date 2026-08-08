@@ -1,0 +1,73 @@
+<div class="collector-bag-selection-overlay" [style.--popup-scale]="scale">
+  <div class="collector-bag-selection-window scaled-popup-window">
+    <h1>Select Collector Bag Buffs</h1>
+
+    <div class="collector-bag-selection-content">
+      <!-- LEFT SIDE: category selection -->
+      <div class="collector-bag-selection-controls">
+        <div class="collector-bag-selection">
+          <label>Categories</label>
+
+          <div class="collector-bag-categories">
+            @for (category of categoryBonuses; track $index) {
+              <div class="collector-bag-category">
+                <h3>{{ formatStatName(category.category) }}</h3>
+
+                <div>
+                  Tier:
+                  {{ selectedTiers[category.category] ?? 0 }}/{{ getMaxTier(category.category) }}
+                </div>
+
+                <input
+                  type="range"
+                  min="0"
+                  [max]="getMaxTier(category.category)"
+                  step="1"
+                  [(ngModel)]="selectedTiers[category.category]"
+                />
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: total stats preview -->
+      <div class="collector-bag-stats-preview">
+        <h2>Buff Stats:</h2>
+
+        @if (hasSelectedBuffs()) {
+          <div class="collector-bag-stats">
+            @for (stat of getSelectedStats(); track stat.type) {
+              <div class="collector-bag-stat">
+                <span>
+                  {{ formatStatName(stat.type) }}
+                </span>
+
+                <span>
+                  {{ formatStatValue(stat.value, 2) }}
+                </span>
+              </div>
+            }
+          </div>
+        } @else {
+          <div class="no-collector-bag-selected">No Buffs selected!</div>
+        }
+      </div>
+    </div>
+
+    <!-- BOTTOM: buttons -->
+    <div class="collector-bag-selection-buttons">
+      <button class="accept-button" (click)="confirm()">
+        <img src="utility-icons/confirm.png" alt="Accept" />
+
+        <span class="tooltip"> Confirm </span>
+      </button>
+
+      <button class="cancel-button" (click)="cancel()">
+        <img src="utility-icons/cancel.png" alt="Cancel" />
+
+        <span class="tooltip"> Cancel </span>
+      </button>
+    </div>
+  </div>
+</div>
