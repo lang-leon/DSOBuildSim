@@ -539,7 +539,7 @@
 
 @if (showTonicSelector) {
   <app-buff-selector
-  [scale]="scale"
+    [scale]="scale"
     [buffs]="gameData.tonics"
     [character]="character"
     [buffCategory]="BuffCategory.TONIC"
@@ -556,6 +556,16 @@
     (cancelled)="closeMasterySelector()"
     (confirmed)="confirmMasterySelection($event)">
   </app-mastery-selector>
+}
+
+@if (showCollectorBagSelector) {
+  <app-collector-bag-selector
+  [scale]="scale"
+  [character]="character"
+  [categoryBonuses]="gameData.collectorBagBuffs"
+  (cancelled)="closeCollectorBagSelector()"
+  (confirmed)="confirmCollectorBagSelection($event)">
+  </app-collector-bag-selector>
 }
 
 }
