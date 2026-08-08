@@ -34,6 +34,8 @@ import { ClassSkillType } from '../../enums/ClassSkillType';
 import { MasterySelector } from '../mastery-selector/mastery-selector';
 import { ClassChangeWindow } from '../class-change-window/class-change-window';
 import { ConfirmationWindow } from '../confirmation-window/confirmation-window';
+import { CollectorBagSelector } from '../collector-bag-selector/collector-bag-selector';
+import { CollectorBagCategoryBonusInstanceDTO } from '../../models/instanceDTOs/CollectorBagCategoryBonusInstanceDTO';
 
 @Component({
   selector: 'app-character',
@@ -47,7 +49,8 @@ import { ConfirmationWindow } from '../confirmation-window/confirmation-window';
     BuffSelector,
     MasterySelector,
     ClassChangeWindow,
-    ConfirmationWindow
+    ConfirmationWindow,
+    CollectorBagSelector
   ],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
@@ -604,10 +607,7 @@ export class BuildSimComponent implements OnInit {
     this.showMasterySelector = false;
   }
 
-  confirmMasterySelection(selection: {
-    masteryType: MasteryType;
-    level: number;
-  }) {
+  confirmMasterySelection(selection: { masteryType: MasteryType; level: number }) {
     this.character.masteryType = selection.masteryType;
     this.character.masteryLevel = selection.level;
     this.calculate();
@@ -653,19 +653,49 @@ export class BuildSimComponent implements OnInit {
     this.calculate();
   }
 
-    getClassSkillIcon(skillType: ClassSkillType): string {
+  getClassSkillIcon(skillType: ClassSkillType): string {
     switch (skillType) {
       case ClassSkillType.BLOODMAGE:
-        if(this.character.classSkillType === ClassSkillType.BLOODMAGE && this.character.classSkillLevel > 0) return 'inventory-icons/bloodmage-active.png';
+        if (
+          this.character.classSkillType === ClassSkillType.BLOODMAGE &&
+          this.character.classSkillLevel > 0
+        )
+          return 'inventory-icons/bloodmage-active.png';
         return 'inventory-icons/bloodmage.png';
       case ClassSkillType.IMMOVEABLE_WALL:
-        if(this.character.classSkillType === ClassSkillType.IMMOVEABLE_WALL && this.character.classSkillLevel > 0) return 'inventory-icons/immoveable-wall-active.png';
+        if (
+          this.character.classSkillType === ClassSkillType.IMMOVEABLE_WALL &&
+          this.character.classSkillLevel > 0
+        )
+          return 'inventory-icons/immoveable-wall-active.png';
         return 'inventory-icons/immoveable-wall.png';
       case ClassSkillType.QUICK_STRIKER:
-        if(this.character.classSkillType === ClassSkillType.QUICK_STRIKER && this.character.classSkillLevel > 0) return 'inventory-icons/quick-striker-active.png';
+        if (
+          this.character.classSkillType === ClassSkillType.QUICK_STRIKER &&
+          this.character.classSkillLevel > 0
+        )
+          return 'inventory-icons/quick-striker-active.png';
         return 'inventory-icons/quick-striker.png';
       default:
         return '';
     }
+  }
+
+  openCollectorBagSelector() {
+    this.showCollectorBagSelector = true;
+  }
+
+  closeCollectorBagSelector() {
+    this.showCollectorBagSelector = false;
+  }
+
+  confirmCollectorBagSelection(
+    buffs: CollectorBagCategoryBonusInstanceDTO[]
+  ) {
+    this.character.collectorBagBuffs = buffs;
+    console.log(this.character);
+    this.calculate();
+    console.log(this.stats);
+    this.showCollectorBagSelector = false;
   }
 }
