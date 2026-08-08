@@ -2,6 +2,8 @@ package com.langleon.dsobuildsim.gamedata.dto;
 
 import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
 import com.langleon.dsobuildsim.character.CharacterClass;
+import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagBonusDefinitionDTO;
+import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagCategoryBonusDefinitionDTO;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
 import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
 import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillTreeDefinitionDTO;
@@ -30,7 +32,8 @@ public record GameDataDTO (
         List<BuffDefinitionDTO> tonics,
         List<BuffDefinitionDTO> physics,
         LevelMultiplierTableDTO levelMultiplierTable,
-        WisdomSkillTreeDefinitionDTO wisdomSkillTree
+        WisdomSkillTreeDefinitionDTO wisdomSkillTree,
+        List<CollectorBagCategoryBonusDefinitionDTO> collectorBagBuffs
         )
 {
 }

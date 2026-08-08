@@ -267,10 +267,11 @@ public class Character {
         if (this.pet !=null)
         {
             this.pet.getRelativeStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
-            this.collectorBagBuffs.forEach((_, bonus) -> {
-                bonus.calculateStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
-            });
         }
+        //TODO collectorbagbuffs should only be active if pet/shadow soul is selected
+        this.collectorBagBuffs.forEach((_, bonus) -> {
+            bonus.calculateStats().forEach((key, value) -> relativeBonusStats.merge(key, value, Double::sum));
+        });
         if (this.essence != null) relativeBonusStats.merge(StatType.DAMAGE, this.essence.damageIncrease(), Double::sum);
         if (this.physic != null) relativeBonusStats.merge(this.physic.statType(), this.physic.statValue(), Double::sum);
 

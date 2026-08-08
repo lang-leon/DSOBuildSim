@@ -7,7 +7,6 @@ import com.langleon.dsobuildsim.collectorbagbonus.collectorbagcategorybonus.Coll
 import com.langleon.dsobuildsim.collectorbagbonus.dto.instance.CollectorBagCategoryBonusInstanceDTO;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagBonusType;
 import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagCategory;
-import com.langleon.dsobuildsim.collectorbagbonus.enums.CollectorBagTier;
 import com.langleon.dsobuildsim.exceptions.InvalidTierException;
 import com.langleon.dsobuildsim.gamedata.GameDataConfig;
 import org.springframework.stereotype.Component;
@@ -29,11 +28,11 @@ public class CollectorBagFactory {
         return new CollectorBagBonus(type, definition.stats());
     }
 
-    public CollectorBagCategoryBonus createCollectorBagCategoryBonus(CollectorBagCategory category, CollectorBagTier tier)
+    public CollectorBagCategoryBonus createCollectorBagCategoryBonus(CollectorBagCategory category, int tier)
     {
         CollectorBagCategoryBonusDefinition definition = config.categoryBonuses().get(category);
         List<CollectorBagBonus> bonuses = new ArrayList<>();
-        for (int i=0; i<tier.getTier(); i++)
+        for (int i=0; i<tier; i++)
         {
             bonuses.add(this.createCollectorBagBonus(definition.bonuses().get(i)));
         }
@@ -43,7 +42,7 @@ public class CollectorBagFactory {
 
     public CollectorBagCategoryBonus fromDTO(CollectorBagCategoryBonusInstanceDTO dto)
     {
-        if (config.categoryBonuses().get(dto.category()).bonuses().size() < dto.tier().getTier()) throw new InvalidTierException("Invalid tier "+dto.tier()+" for collector bag category "+dto.category());
+        if (config.categoryBonuses().get(dto.category()).bonuses().size() < dto.tier()) throw new InvalidTierException("Invalid tier "+dto.tier()+" for collector bag category "+dto.category());
         return createCollectorBagCategoryBonus(dto.category(), dto.tier());
     }
 

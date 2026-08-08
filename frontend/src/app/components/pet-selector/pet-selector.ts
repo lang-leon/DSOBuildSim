@@ -16,6 +16,9 @@ import { formatStatName, formatStatValueRelative } from '../../utils/display-uti
   styleUrl: './pet-selector.scss',
 })
 export class PetSelector {
+  
+  @Input() scale = 1;
+  
   @Input() pets!: PetDefinitionDTO[];
 
   @Input() character!: CharacterDTO;

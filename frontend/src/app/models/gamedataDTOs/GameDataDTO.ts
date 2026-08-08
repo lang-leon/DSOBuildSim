@@ -1,5 +1,6 @@
 import { BuffDefinitionDTO } from "./BuffDefinitionDTO";
 import { ClassStatsDTO } from "./ClassStatsDTO";
+import { CollectorBagCategoryBonusDefinitionDTO } from "./CollectorBagCategoryBonusDefinitionDTO";
 import { DragonStoneDefinitionDTO } from "./DragonStoneDefinitionDTO";
 import { EnchantmentDTO } from "./EnchantmentDTO";
 import { EssenceDefinitionDTO } from "./EssenceDefinitionDTO";
@@ -27,4 +28,5 @@ export interface GameDataDTO {
     physics: BuffDefinitionDTO[];
     levelMultiplierTable: LevelMultiplierTableDTO;
     wisdomSkillTree: WisdomSkillTreeDefinitionDTO;
+    collectorBagBuffs: CollectorBagCategoryBonusDefinitionDTO[];
 }
