@@ -7,7 +7,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './build-sim-button.scss',
 })
 export class BuildSimButton {
-
   @Input()
   icon!: string;
 
@@ -15,13 +14,18 @@ export class BuildSimButton {
   slotName!: string;
 
   @Input()
+  tooltipTitle?: string;
+
+  @Input()
+  tooltipDescription?: string;
+
+  @Input()
   overlayText?: string;
 
   @Output()
   clicked = new EventEmitter<void>();
 
-  onClick()
-  {
+  onClick() {
     this.clicked.emit();
   }
 }

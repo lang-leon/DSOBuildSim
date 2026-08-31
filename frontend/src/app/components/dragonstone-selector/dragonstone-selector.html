@@ -1,1 +1,24 @@
-<p>dragonstone-selector works!</p>
+<div class="dragon-stone-selector-overlay">
+  <div class="dragon-stone-selector-window">
+    <button class="close-button" (click)="cancel()">
+      <img src="utility-icons/cancel-square.png" alt="Close" />
+      <span class="tooltip">Close</span>
+    </button>
+
+    <h1>Select Dragon Stone</h1>
+
+    <div class="dragon-stone-grid">
+      @for (dragonStone of dragonStoneConfig; track dragonStone.dragonStoneType) {
+        @for (tier of getTiers(dragonStone); track tier) {
+          <app-build-sim-button
+            class="dragonstone-selection-button"
+            [tooltipTitle]="getDragonStoneName(dragonStone.dragonStoneType, tier)"
+            [tooltipDescription]="getDragonStoneDescription(dragonStone, tier)"
+            [icon]="getDragonStoneIcon(dragonStone.dragonStoneType, tier)"
+            (clicked)="selectDragonStone(dragonStone, tier)"
+          ></app-build-sim-button>
+        }
+      }
+    </div>
+  </div>
+</div>
