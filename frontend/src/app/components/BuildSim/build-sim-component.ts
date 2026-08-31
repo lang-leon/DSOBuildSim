@@ -36,6 +36,8 @@ import { ClassChangeWindow } from '../class-change-window/class-change-window';
 import { ConfirmationWindow } from '../confirmation-window/confirmation-window';
 import { CollectorBagSelector } from '../collector-bag-selector/collector-bag-selector';
 import { CollectorBagCategoryBonusInstanceDTO } from '../../models/instanceDTOs/CollectorBagCategoryBonusInstanceDTO';
+import { DragoncrestTrinketEditor } from '../dragoncrest-trinket-editor/dragoncrest-trinket-editor';
+import { DragonCrestTrinketDTO } from '../../models/instanceDTOs/DragonCrestTrinketDTO';
 
 @Component({
   selector: 'app-character',
@@ -50,7 +52,8 @@ import { CollectorBagCategoryBonusInstanceDTO } from '../../models/instanceDTOs/
     MasterySelector,
     ClassChangeWindow,
     ConfirmationWindow,
-    CollectorBagSelector
+    CollectorBagSelector,
+    DragoncrestTrinketEditor
   ],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
@@ -81,6 +84,7 @@ export class BuildSimComponent implements OnInit {
   showMasterySelector = false;
   showClassSkillSelector = false;
   showCollectorBagSelector = false;
+  showDragonCrest = false;
 
   formatStatName = formatStatName;
   BuffCategory = BuffCategory;
@@ -133,7 +137,7 @@ export class BuildSimComponent implements OnInit {
         jewels: [],
       })),
       dragonCrest: {
-        dragonStones: [],
+        dragonStones: [] = Array(10).fill(null)
       },
       items: {},
       pet: null,
@@ -697,5 +701,23 @@ export class BuildSimComponent implements OnInit {
     this.calculate();
     console.log(this.stats);
     this.showCollectorBagSelector = false;
+  }
+
+  openDragonCrestEditor() {
+    this.showDragonCrest = true;
+  }
+
+  closeDragonCrestEditor() {
+    this.showDragonCrest = false;
+  }
+
+  confirmDragonCrestSelection(
+    dragonCrest: DragonCrestTrinketDTO
+  ) {
+    this.character.dragonCrest = dragonCrest;
+    console.log(this.character);
+    this.calculate();
+    console.log(this.stats);
+    this.showDragonCrest = false;
   }
 }

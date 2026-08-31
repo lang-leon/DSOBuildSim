@@ -32,6 +32,10 @@
     filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
 }
 
+.item-slot:active {
+    transform: translateY(1px);
+}
+
 .tooltip {
     position: absolute;
 

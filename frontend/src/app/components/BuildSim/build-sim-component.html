@@ -387,6 +387,7 @@
           class="dragon-crest-trinket"
           slotName="Dragon Crest"
           icon="inventory-icons/dragon-crest.png"
+          (clicked)="openDragonCrestEditor()"
         ></app-build-sim-button>
 
         <app-build-sim-button
@@ -566,6 +567,16 @@
   (cancelled)="closeCollectorBagSelector()"
   (confirmed)="confirmCollectorBagSelection($event)">
   </app-collector-bag-selector>
+}
+
+@if (showDragonCrest) {
+  <app-dragoncrest-trinket-editor
+  [scale]="scale"
+  [character]="character"
+  [dragonStoneDefinitions]="gameData.dragonStones"
+  (cancelled)="closeDragonCrestEditor()"
+  (confirmed)="confirmDragonCrestSelection($event)">
+  </app-dragoncrest-trinket-editor>
 }
 
 }
