@@ -9,8 +9,18 @@
         <div class="dragon-crest-slot-wrapper">
           <app-build-sim-button
             class="dragon-crest-slot"
-            [slotName]="dragonStone !== null ? getDragonStoneName(dragonStone) : 'Empty'"
-            [icon]="getDragonStoneIcon(dragonStone)"
+            [slotName]="
+              dragonStone !== null
+                ? ''
+                : 'Empty'
+            "
+            [tooltipTitle]="dragonStone !== null ? getDragonStoneName(dragonStone.dragonStoneType, dragonStone.tier) : ''"
+            [tooltipDescription]="getDragonStoneDescription($index)"
+            [icon]="
+              dragonStone !== null
+                ? getDragonStoneIcon(dragonStone.dragonStoneType, dragonStone.tier)
+                : 'dragon-stone-icons/empty-dragon-stone.png'
+            "
             (clicked)="openDragonStoneSelector($index)"
           ></app-build-sim-button>
 
@@ -52,3 +62,12 @@
     </div>
   </div>
 </div>
+
+@if (showDragonStoneSelector) {
+  <app-dragonstone-selector
+    [dragonStoneConfig]="dragonStoneConfig"
+    (cancelled)="closeDragonStoneSelector()"
+    (selected)="confirmDragonStoneSelection($event)"
+  >
+  </app-dragonstone-selector>
+}

@@ -573,7 +573,8 @@
   <app-dragoncrest-trinket-editor
   [scale]="scale"
   [character]="character"
-  [dragonStoneDefinitions]="gameData.dragonStones"
+  [dragonStoneConfig]="gameData.dragonStones"
+  [dragonStoneConfig]="gameData.dragonStones"
   (cancelled)="closeDragonCrestEditor()"
   (confirmed)="confirmDragonCrestSelection($event)">
   </app-dragoncrest-trinket-editor>
