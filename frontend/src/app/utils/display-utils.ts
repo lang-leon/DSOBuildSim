@@ -76,3 +76,40 @@ export function getDragonStoneName(dragonStoneType: string, tier: number) {
 export function getDragonStoneDescription(dragonStone: DragonStoneDefinitionDTO, tier: number){
     return dragonStone.description[tier];
 }
+
+
+// Jewels
+
+export function getIcon<T>(type: string, tier: number) {
+  const typeName = type.toLowerCase().replace('_', '-');
+
+  let tierName: string;
+
+  switch (tier) {
+    case 1:
+      tierName = 'common';
+      break;
+    case 2:
+      tierName = 'improved';
+      break;
+    case 3:
+      tierName = 'magic';
+      break;
+    case 4:
+      tierName = 'mighty-dragons';
+      break;
+    case 5:
+      tierName = 'legendary';
+      break;
+    case 6:
+      tierName = 'unique';
+      break;
+    case 7:
+      tierName = 'mythic';
+      break;
+    default:
+      return 'default.png';
+  }
+
+  return `${typeName}-${tierName}.png`;
+}

@@ -1,5 +1,5 @@
 import { JewelInstanceDTO } from "./JewelInstanceDTO";
 
-export interface jewelTrinketDTO {
+export interface JewelTrinketDTO {
     jewels: JewelInstanceDTO[];
 }

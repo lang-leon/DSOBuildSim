@@ -38,6 +38,8 @@ import { CollectorBagSelector } from '../collector-bag-selector/collector-bag-se
 import { CollectorBagCategoryBonusInstanceDTO } from '../../models/instanceDTOs/CollectorBagCategoryBonusInstanceDTO';
 import { DragoncrestTrinketEditor } from '../dragoncrest-trinket-editor/dragoncrest-trinket-editor';
 import { DragonCrestTrinketDTO } from '../../models/instanceDTOs/DragonCrestTrinketDTO';
+import { JewelTrinketEditor } from '../jewel-trinket-editor/jewel-trinket-editor';
+import { JewelTrinketDTO } from '../../models/instanceDTOs/JewelTrinketDTO';
 
 @Component({
   selector: 'app-character',
@@ -53,7 +55,8 @@ import { DragonCrestTrinketDTO } from '../../models/instanceDTOs/DragonCrestTrin
     ClassChangeWindow,
     ConfirmationWindow,
     CollectorBagSelector,
-    DragoncrestTrinketEditor
+    DragoncrestTrinketEditor,
+    JewelTrinketEditor
   ],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
@@ -85,6 +88,8 @@ export class BuildSimComponent implements OnInit {
   showClassSkillSelector = false;
   showCollectorBagSelector = false;
   showDragonCrest = false;
+  showJewelTrinket = false;
+  selectedJewelTrinket = -1;
 
   formatStatName = formatStatName;
   BuffCategory = BuffCategory;
@@ -137,7 +142,7 @@ export class BuildSimComponent implements OnInit {
         jewels: [],
       })),
       dragonCrest: {
-        dragonStones: [] = Array(10).fill(null)
+        dragonStones: []
       },
       items: {},
       pet: null,
@@ -697,9 +702,7 @@ export class BuildSimComponent implements OnInit {
     buffs: CollectorBagCategoryBonusInstanceDTO[]
   ) {
     this.character.collectorBagBuffs = buffs;
-    console.log(this.character);
     this.calculate();
-    console.log(this.stats);
     this.showCollectorBagSelector = false;
   }
 
@@ -715,9 +718,26 @@ export class BuildSimComponent implements OnInit {
     dragonCrest: DragonCrestTrinketDTO
   ) {
     this.character.dragonCrest = dragonCrest;
-    console.log(this.character);
     this.calculate();
-    console.log(this.stats);
     this.showDragonCrest = false;
   }
+
+  openJewelTrinketEditor(index: number) {
+    this.selectedJewelTrinket = index;
+    this.showJewelTrinket = true;
+  }
+
+  closeJewelTrinketEditor() {
+    this.showJewelTrinket = false;
+    this.selectedJewelTrinket = -1;
+  }
+
+  confirmJewelTrinketSelection(
+    jewelTrinket: JewelTrinketDTO
+  ){
+    this.character.jewelTrinkets[this.selectedJewelTrinket] = jewelTrinket;
+    this.calculate();
+    this.closeJewelTrinketEditor();
+  }
+
 }

@@ -371,16 +371,19 @@
           class="jewel-trinket1"
           slotName="Jewel Trinket 1"
           icon="inventory-icons/jewel-trinket.png"
+          (clicked)="openJewelTrinketEditor(0)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="jewel-trinket2"
           slotName="Jewel Trinket 2"
           icon="inventory-icons/jewel-trinket.png"
+          (clicked)="openJewelTrinketEditor(1)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="jewel-trinket3"
           slotName="Jewel Trinket 3"
           icon="inventory-icons/jewel-trinket.png"
+          (clicked)="openJewelTrinketEditor(2)"
         ></app-build-sim-button>
 
         <app-build-sim-button
@@ -574,10 +577,19 @@
   [scale]="scale"
   [character]="character"
   [dragonStoneConfig]="gameData.dragonStones"
-  [dragonStoneConfig]="gameData.dragonStones"
   (cancelled)="closeDragonCrestEditor()"
   (confirmed)="confirmDragonCrestSelection($event)">
   </app-dragoncrest-trinket-editor>
+}
+
+@if (showJewelTrinket) {
+  <app-jewel-trinket-editor
+  [scale]="scale"
+  [jewelTrinket]="character.jewelTrinkets[selectedJewelTrinket]"
+  [jewelConfig]="gameData.jewels[selectedClass]"
+  (cancelled)="closeJewelTrinketEditor()"
+  (confirmed)="confirmJewelTrinketSelection($event)">
+  </app-jewel-trinket-editor>
 }
 
 }
