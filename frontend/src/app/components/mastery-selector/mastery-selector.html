@@ -1,0 +1,99 @@
+<div class="mastery-selection-overlay" [style.--popup-scale]="scale">
+  <div class="mastery-selection-window scaled-popup-window">
+    <h1>Select Mastery</h1>
+
+    <div class="mastery-selection-content">
+      <div class="mastery-selection-controls">
+        <div class="mastery-selection">
+          <label for="mastery-select">Mastery</label>
+
+          <div class="select-mastery-buttons">
+            <button
+              [class.selected]="selectedMastery === MasteryType.POISON"
+              (click)="onMasteryChange(MasteryType.POISON)"
+            >
+             <img [src]="getMasteryIcon(MasteryType.POISON)" />
+              <span class="tooltip">Poison Mastery</span>
+            </button>
+            <button
+              [class.selected]="selectedMastery === MasteryType.FIRE"
+              (click)="onMasteryChange(MasteryType.FIRE)"
+            >
+              <img [src]="getMasteryIcon(MasteryType.FIRE)" />
+              <span class="tooltip">Fire Mastery</span>
+            </button>
+            <button
+              [class.selected]="selectedMastery === MasteryType.ICE"
+              (click)="onMasteryChange(MasteryType.ICE)"
+            >
+              <img [src]="getMasteryIcon(MasteryType.ICE)" />
+              <span class="tooltip">Ice Mastery</span>
+            </button>
+            <button
+              [class.selected]="selectedMastery === MasteryType.LIGHTNING"
+              (click)="onMasteryChange(MasteryType.LIGHTNING)"
+            >
+              <img [src]="getMasteryIcon(MasteryType.LIGHTNING)" />
+              <span class="tooltip">Lightning Mastery</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="tier-selection">
+          <label>Mastery Level: {{ selectedLevel }}/10</label>
+          <input
+            type="range"
+            min="1"
+            max="10"
+            step="1"
+            [(ngModel)]="selectedLevel"
+            [disabled]="selectedMastery === MasteryType.NONE"
+          />
+        </div>
+      </div>
+
+<div class="mastery-stats-preview">
+  <h2>Mastery Stats:</h2>
+
+  @if (selectedMastery === MasteryType.NONE) {
+    <div class="no-mastery-selected">
+      No Mastery selected!
+    </div>
+  } @else {
+    <div class="mastery-stats">
+    <div class="mastery-stat">
+      <span>Fire Resistance</span>
+      <span>{{ getMasteryResistance(MasteryType.FIRE) }}</span>
+    </div>
+
+    <div class="mastery-stat">
+      <span>Ice Resistance</span>
+      <span>{{ getMasteryResistance(MasteryType.ICE) }}</span>
+    </div>
+
+    <div class="mastery-stat">
+      <span>Lightning Resistance</span>
+      <span>{{ getMasteryResistance(MasteryType.LIGHTNING) }}</span>
+    </div>
+
+    <div class="mastery-stat">
+      <span>Poison Resistance</span>
+      <span>{{ getMasteryResistance(MasteryType.POISON) }}</span>
+    </div>
+    </div>
+  }
+</div>
+
+      <div class="mastery-selection-buttons">
+        <button class="accept-button" (click)="confirm()">
+          <img src="utility-icons/confirm.png" alt="Accept" />
+          <span class="tooltip">Confirm</span>
+        </button>
+        <button class="cancel-button">
+          <img src="utility-icons/cancel.png" alt="Cancel" (click)="cancel()" />
+          <span class="tooltip">Cancel</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

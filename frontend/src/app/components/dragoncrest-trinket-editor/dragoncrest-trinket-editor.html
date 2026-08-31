@@ -1,0 +1,73 @@
+<div class="dragon-crest-overlay" [style.--popup-scale]="scale">
+  <div class="dragon-crest-window scaled-popup-window">
+    <h1>Edit Dragon Crest</h1>
+
+    <h2>Dragon Stones</h2>
+
+    <div class="dragon-crest-slots">
+      @for (dragonStone of dragonStones; track $index) {
+        <div class="dragon-crest-slot-wrapper">
+          <app-build-sim-button
+            class="dragon-crest-slot"
+            [slotName]="
+              dragonStone !== null
+                ? ''
+                : 'Empty'
+            "
+            [tooltipTitle]="dragonStone !== null ? getDragonStoneName(dragonStone.dragonStoneType, dragonStone.tier) : ''"
+            [tooltipDescription]="getDragonStoneDescription($index)"
+            [icon]="
+              dragonStone !== null
+                ? getDragonStoneIcon(dragonStone.dragonStoneType, dragonStone.tier)
+                : 'dragon-stone-icons/empty-dragon-stone.png'
+            "
+            (clicked)="openDragonStoneSelector($index)"
+          ></app-build-sim-button>
+
+          @if (dragonStone !== null) {
+            <!-- Delete -->
+            <button
+              class="dragon-crest-slot-action delete-button"
+              (click)="deleteDragonStone($index); $event.stopPropagation()"
+            >
+              <img src="utility-icons/cancel-square.png" alt="Delete" />
+              <span class="tooltip">Delete</span>
+            </button>
+
+            <!-- Copy -->
+            @if (hasEmptyDragonStoneSlot()) {
+              <button
+                class="dragon-crest-slot-action copy-button"
+                (click)="copyDragonStone($index); $event.stopPropagation()"
+              >
+                <img src="utility-icons/copy.png" alt="Copy" />
+                <span class="tooltip">Copy to next empty slot</span>
+              </button>
+            }
+          }
+        </div>
+      }
+    </div>
+
+    <div class="dragon-crest-buttons">
+      <button class="accept-button" (click)="confirm()">
+        <img src="utility-icons/confirm.png" alt="Confirm" />
+        <span class="tooltip">Confirm</span>
+      </button>
+
+      <button class="cancel-button" (click)="cancel()">
+        <img src="utility-icons/cancel.png" alt="Cancel" />
+        <span class="tooltip">Cancel</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+@if (showDragonStoneSelector) {
+  <app-dragonstone-selector
+    [dragonStoneConfig]="dragonStoneConfig"
+    (cancelled)="closeDragonStoneSelector()"
+    (selected)="confirmDragonStoneSelection($event)"
+  >
+  </app-dragonstone-selector>
+}

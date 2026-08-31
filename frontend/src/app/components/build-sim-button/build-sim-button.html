@@ -1,0 +1,27 @@
+<button class="item-slot" (click)="onClick()">
+    <img [src]="icon">
+
+    @if (overlayText) {
+        <span class="slot-overlay">
+            {{ overlayText }}
+        </span>
+    }
+
+    @if (tooltipTitle && tooltipDescription) {
+        <span class="tooltip structured-tooltip">
+            <span class="tooltip-name">
+                {{ tooltipTitle }}
+            </span>
+
+            <span class="tooltip-separator"></span>
+
+            <span class="tooltip-description">
+                {{ tooltipDescription }}
+            </span>
+        </span>
+    } @else if (slotName) {
+        <span class="tooltip">
+            {{ slotName }}
+        </span>
+    }
+</button>
