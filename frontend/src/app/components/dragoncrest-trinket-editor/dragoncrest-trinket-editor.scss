@@ -1,0 +1,354 @@
+/* =========================================================
+   OVERLAY
+   ========================================================= */
+
+.dragon-crest-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   MAIN WINDOW
+   ========================================================= */
+
+.dragon-crest-window {
+    position: relative;
+
+    width: 550px;
+    height: 360px;
+
+    padding: 25px 30px;
+
+    background: #222;
+
+    border: 5px solid #543A23;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    color: #EFD8B7;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.3),
+        0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.dragon-crest-window h1 {
+  width: 100%;
+
+  margin: 0 0 25px 0;
+  padding-bottom: 10px;
+
+  color: #EFD8B7;
+
+  font-size: 20;
+  font-style: italic;
+
+  text-align: center;
+
+  border-bottom: 1px solid #555;
+}
+
+
+
+/* =========================================================
+   SLOTS
+   ========================================================= */
+
+.dragon-crest-slots {
+    display: grid;
+
+    grid-template-columns: repeat(5, 70px);
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.dragon-crest-slot {
+    width: 70px;
+    height: 70px;
+}
+
+
+.dragon-crest-slot-wrapper {
+    position: relative;
+
+    width: 70px;
+    height: 70px;
+}
+
+.dragon-crest-slot-wrapper:hover {
+    z-index: 100;
+}
+
+.dragon-crest-slot {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   SLOT ACTION BUTTONS
+   ========================================================= */
+
+.dragon-crest-slot-action {
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #222;
+
+    border: 1px solid #543A23;
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    transition:
+        filter 0.15s ease,
+        transform 0.1s ease;
+}
+
+.dragon-crest-slot-action img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 2px;
+}
+
+
+/* Delete: top right */
+
+.dragon-crest-slot-action.delete-button {
+    top: -5px;
+    right: -5px;
+}
+
+
+/* Copy: directly underneath delete */
+
+.dragon-crest-slot-action.copy-button {
+    top: 16px;
+    right: -5px;
+}
+
+
+/* Hover only affects the icon */
+
+.dragon-crest-slot-action:hover img {
+    filter: brightness(1.4) drop-shadow(0 0 4px #d4af37);
+}
+
+.dragon-crest-slot-action:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   ACTION BUTTON TOOLTIPS
+   ========================================================= */
+
+.dragon-crest-slot-action .tooltip {
+    position: absolute;
+
+    bottom: 100%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    margin-bottom: 5px;
+    padding: 5px 10px;
+
+    background: #222;
+    color: #EFD8B7;
+
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+
+    white-space: nowrap;
+
+    font-size: 13px;
+    font-weight: normal;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.15s ease;
+
+    pointer-events: none;
+
+    z-index: 1000;
+}
+
+.dragon-crest-slot-action:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}   
+
+
+
+/* Click */
+
+.dragon-crest-slot:active {
+  transform: translateY(1px);
+}
+
+
+/* =========================================================
+   CONFIRM / CANCEL BUTTONS
+   ========================================================= */
+
+.dragon-crest-buttons {
+    position: absolute;
+
+    left: 50%;
+    bottom: -41px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.dragon-crest-buttons button {
+    position: relative;
+
+    width: 128px;
+    height: 62px;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #222;
+
+    border: none;
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    overflow: visible;
+
+    transition:
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
+}
+
+
+/* Button image */
+
+.dragon-crest-buttons button img {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+
+  transition:
+    filter 0.15s ease,
+    transform 0.15s ease;
+}
+
+
+/* Hover */
+
+.dragon-crest-buttons button:hover img {
+  filter:
+    brightness(1.4)
+    drop-shadow(0 0 5px #d4af37);
+}
+
+
+/* Click */
+
+.dragon-crest-buttons button:active {
+  transform: translateY(1px);
+}
+
+
+/* =========================================================
+   TOOLTIP
+   ========================================================= */
+
+.tooltip {
+  position: absolute;
+
+  bottom: 100%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  margin-bottom: 8px;
+  padding: 5px 10px;
+
+  background: #222;
+
+  color: #EFD8B7;
+
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.15s ease;
+
+  pointer-events: none;
+
+  z-index: 100;
+}
+
+
+.dragon-crest-buttons button:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}

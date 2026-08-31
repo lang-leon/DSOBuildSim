@@ -12,6 +12,16 @@ export function formatStatName(stat: StatType | string): string
         .join(' ');
 }
 
+export function formatName<T>(value: T): string {
+  return String(value)
+    .toLowerCase()
+    .split('_')
+    .map(word =>
+      word.charAt(0).toUpperCase() + word.slice(1)
+    )
+    .join(' ');
+}
+
 export function formatStatValueRelative(value: number, digits: number): string
 {
     return "+ "+(value*100).toFixed(digits)+"%";
