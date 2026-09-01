@@ -18,6 +18,7 @@ export interface GameDataDTO {
     items: Record<string, ItemDefinitionDTO[]>;
     sets: Record<string, SetDTO[]>;
     jewels: Record<string, JewelDefinitionDTO[]>;
+    jewelLimits: Record<string, number>;
     enchantments: EnchantmentDTO[];
     gems: GemDefinitionDTO[];
     runes: RuneDefinitionDTO[];

@@ -22,6 +22,8 @@ export class JewelTrinketEditor {
 
   @Input() jewelConfig!: JewelDefinitionDTO[];
 
+  @Input() canAddJewel!: (jewelType: string, jewels: (JewelInstanceDTO | null)[]) => boolean;
+
   @Output() cancelled = new EventEmitter<void>();
 
   @Output() confirmed = new EventEmitter<JewelTrinketDTO>();
@@ -45,7 +47,7 @@ export class JewelTrinketEditor {
 
   confirm() {
     const jewelTrinket: JewelTrinketDTO = {
-      jewels: this.jewels.filter((stone) => stone !== null),
+      jewels: this.jewels.filter((jewel) => jewel !== null),
     };
     this.confirmed.emit(jewelTrinket);
   }
@@ -55,7 +57,9 @@ export class JewelTrinketEditor {
   }
 
   copyJewel(index: number) {
+    if (this.jewels[index] === null) return;
     if (!this.hasEmptyJewelSlot()) return;
+    if (!this.canAddJewel(this.jewels[index].jewelType, this.jewels)) return;
     for (let i = 0; i < 10; i++) {
       if (this.jewels[i] === null) {
         this.jewels[i] = this.jewels[index];
