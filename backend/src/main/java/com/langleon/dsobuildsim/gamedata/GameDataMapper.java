@@ -17,6 +17,7 @@ import com.langleon.dsobuildsim.gamedata.dto.LevelMultiplierTableDTO;
 import com.langleon.dsobuildsim.gems.GemMapper;
 import com.langleon.dsobuildsim.gems.dto.GemDefinitionDTO;
 import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
+import com.langleon.dsobuildsim.jewels.JewelLimitGroup;
 import com.langleon.dsobuildsim.jewels.JewelMapper;
 import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
 import com.langleon.dsobuildsim.items.core.ItemDefinitionMapper;
@@ -62,6 +63,12 @@ public class GameDataMapper {
         Map<CharacterClass, List<JewelDefinitionDTO>> jewels =
                 mapPerClass(config.jewels(), JewelMapper::from);
 
+        Map<JewelLimitGroup, Integer> jewelLimits = Arrays.stream(JewelLimitGroup.values())
+                .collect(Collectors.toMap(
+                        group -> group,
+                        JewelLimitGroup::getLimit
+                ));
+
         List<EnchantmentDTO> enchantments = config.enchantments().values().stream().map(EnchantmentMapper::from).toList();
 
         List<GemDefinitionDTO> gems = config.gems().values().stream().map(GemMapper::from).toList();
@@ -84,7 +91,7 @@ public class GameDataMapper {
 
         List<CollectorBagCategoryBonusDefinitionDTO> collectorBagBuffs = config.collectorBagConfig().categoryBonuses().values().stream().map(categoryBonus -> CollectorBagMapper.from(categoryBonus, config.collectorBagConfig())).toList();
 
-        return new GameDataDTO(config.classStats(), items, sets, jewels, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkillTree, collectorBagBuffs);
+        return new GameDataDTO(config.classStats(), items, sets, jewels, jewelLimits, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkillTree, collectorBagBuffs);
     }
 
     private static <K, S, T> Map<CharacterClass, List<T>> mapPerClass(Map<CharacterClass, Map<K, S>> source, Function<S, T> mapper)
