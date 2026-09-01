@@ -317,35 +317,6 @@
    TOOLTIP
    ========================================================= */
 
-.tooltip {
-  position: absolute;
-
-  bottom: 100%;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  margin-bottom: 8px;
-  padding: 5px 10px;
-
-  background: #222;
-
-  color: #EFD8B7;
-
-  border: 1px solid #d4af37;
-  border-radius: 4px;
-
-  white-space: nowrap;
-
-  opacity: 0;
-  visibility: hidden;
-
-  transition: opacity 0.15s ease;
-
-  pointer-events: none;
-
-  z-index: 100;
-}
 
 
 .jewel-trinket-buttons button:hover .tooltip {

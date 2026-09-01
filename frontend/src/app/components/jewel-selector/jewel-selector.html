@@ -1,1 +1,28 @@
-<p>jewel-selector works!</p>
+<div class="jewel-selector-overlay">
+  <div class="jewel-selector-window">
+
+    <button class="close-button" (click)="cancel()">
+      <img src="utility-icons/cancel-square.png" alt="Close" />
+      <span class="tooltip">Close</span>
+    </button>
+
+    <h1>Select Jewel</h1>
+
+    <div class="jewel-grid-container">
+      <div class="jewel-grid">
+        @for (jewel of jewelConfig; track jewel.jewelType) {
+          @for (tier of getTiers(jewel); track tier) {
+            <app-build-sim-button
+              class="jewel-selection-button"
+              [tooltipTitle]="jewel.name"
+              [tooltipDescription]="jewel.descriptionPerTier[tier]"
+              [icon]="'jewel-icons/' + getIcon(jewel.jewelType, tier)"
+              (clicked)="selectJewel(jewel, tier)"
+            ></app-build-sim-button>
+          }
+        }
+      </div>
+    </div>
+
+  </div>
+</div>

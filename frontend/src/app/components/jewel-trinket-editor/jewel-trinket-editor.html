@@ -64,9 +64,9 @@
 </div>
 
 @if (showJewelSelector) {
-  <app-jewel-selector>
-    //[jewelConfig]="jewelConfig"
-    //(cancelled)="closeJewelSelector()"
-    //(selected)="confirmJewelSelection($event)"
+  <app-jewel-selector
+    [jewelConfig]="jewelConfig"
+    (cancelled)="closeJewelSelector()"
+    (selected)="confirmJewelSelection($event)">
   </app-jewel-selector>
 }
