@@ -2,6 +2,7 @@
 class="item-slot"
   cdkOverlayOrigin
   #tooltipTrigger="cdkOverlayOrigin"
+  [disabled]="disabled"
   (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()"
 (click)="onClick()">

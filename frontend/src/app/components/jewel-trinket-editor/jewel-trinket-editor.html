@@ -35,7 +35,7 @@
             </button>
 
             <!-- Copy -->
-            @if (hasEmptyJewelSlot()) {
+            @if (hasEmptyJewelSlot() && canSelectJewel(jewel.jewelType)) {
               <button
                 class="jewel-trinket-slot-action copy-button"
                 (click)="copyJewel($index); $event.stopPropagation()"
@@ -66,6 +66,7 @@
 @if (showJewelSelector) {
   <app-jewel-selector
     [jewelConfig]="jewelConfig"
+    [canSelectJewel]="canSelectJewel.bind(this)"
     (cancelled)="closeJewelSelector()"
     (selected)="confirmJewelSelection($event)">
   </app-jewel-selector>

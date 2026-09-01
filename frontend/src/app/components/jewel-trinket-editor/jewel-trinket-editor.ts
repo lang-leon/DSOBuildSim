@@ -72,6 +72,11 @@ export class JewelTrinketEditor {
     return this.jewels.some((stone) => stone === null);
   }
 
+  canSelectJewel(jewelType: string)
+  {
+    return this.canAddJewel(jewelType, this.jewels);
+  }
+
   getJewelName(index: number){
     if(this.jewels[index]===null) return "";
     const jewel = this.jewelConfig.find(

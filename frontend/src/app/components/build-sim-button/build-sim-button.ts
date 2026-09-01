@@ -3,9 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-build-sim-button',
-  imports: [
-    OverlayModule
-  ],
+  imports: [OverlayModule],
   templateUrl: './build-sim-button.html',
   styleUrl: './build-sim-button.scss',
 })
@@ -25,10 +23,12 @@ export class BuildSimButton {
   @Input()
   overlayText?: string;
 
+  @Input() disabled = false;
+
   @Output()
   clicked = new EventEmitter<void>();
 
-    showTooltip = false;
+  showTooltip = false;
 
   tooltipPositions: ConnectedPosition[] = [
     {
@@ -36,23 +36,19 @@ export class BuildSimButton {
       originY: 'top',
       overlayX: 'center',
       overlayY: 'bottom',
-      offsetY: -8
+      offsetY: -8,
     },
     {
       originX: 'center',
       originY: 'bottom',
       overlayX: 'center',
       overlayY: 'top',
-      offsetY: 8
-    }
+      offsetY: 8,
+    },
   ];
 
   get hasTooltip(): boolean {
-    return !!(
-      this.slotName ||
-      this.tooltipTitle ||
-      this.tooltipDescription
-    );
+    return !!(this.slotName || this.tooltipTitle || this.tooltipDescription);
   }
 
   get effectiveTooltipTitle(): string {
@@ -60,16 +56,18 @@ export class BuildSimButton {
   }
 
   onMouseEnter(): void {
-    if (this.hasTooltip) {
       this.showTooltip = true;
-    }
   }
 
   onMouseLeave(): void {
     this.showTooltip = false;
   }
 
-  onClick() {
+  onClick(): void {
+    if (this.disabled) {
+      return;
+    }
+
     this.clicked.emit();
   }
 }

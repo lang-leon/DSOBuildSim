@@ -587,6 +587,7 @@
   [scale]="scale"
   [jewelTrinket]="character.jewelTrinkets[selectedJewelTrinket]"
   [jewelConfig]="gameData.jewels[selectedClass]"
+  [canAddJewel]="canAddJewel.bind(this)"
   (cancelled)="closeJewelTrinketEditor()"
   (confirmed)="confirmJewelTrinketSelection($event)">
   </app-jewel-trinket-editor>
