@@ -2,7 +2,7 @@
    OVERLAY
    ========================================================= */
 
-.dragon-crest-overlay {
+.jewel-trinket-overlay {
     position: fixed;
 
     top: 0;
@@ -25,7 +25,7 @@
    MAIN WINDOW
    ========================================================= */
 
-.dragon-crest-window {
+.jewel-trinket-window {
     position: relative;
 
     width: 550px;
@@ -54,7 +54,7 @@
    TITLE
    ========================================================= */
 
-.dragon-crest-window h1 {
+.jewel-trinket-window h1 {
   width: 100%;
 
   margin: 0 0 25px 0;
@@ -76,7 +76,7 @@
    SLOTS
    ========================================================= */
 
-.dragon-crest-slots {
+.jewel-trinket-slots {
     display: grid;
 
     grid-template-columns: repeat(5, 70px);
@@ -86,24 +86,24 @@
     gap: 15px;
 }
 
-.dragon-crest-slot {
+.jewel-trinket-slot {
     width: 70px;
     height: 70px;
 }
 
 
-.dragon-crest-slot-wrapper {
+.jewel-trinket-slot-wrapper {
     position: relative;
 
     width: 70px;
     height: 70px;
 }
 
-.dragon-crest-slot-wrapper:hover {
+.jewel-trinket-slot-wrapper:hover {
     z-index: 100;
 }
 
-.dragon-crest-slot {
+.jewel-trinket-slot {
     width: 100%;
     height: 100%;
 }
@@ -113,7 +113,7 @@
    SLOT ACTION BUTTONS
    ========================================================= */
 
-.dragon-crest-slot-action {
+.jewel-trinket-slot-action {
     position: absolute;
 
     width: 20px;
@@ -141,7 +141,7 @@
         transform 0.1s ease;
 }
 
-.dragon-crest-slot-action img {
+.jewel-trinket-slot-action img {
     width: 100%;
     height: 100%;
 
@@ -153,7 +153,7 @@
 
 /* Delete: top right */
 
-.dragon-crest-slot-action.delete-button {
+.jewel-trinket-slot-action.delete-button {
     top: -5px;
     right: -5px;
 }
@@ -161,7 +161,7 @@
 
 /* Copy: directly underneath delete */
 
-.dragon-crest-slot-action.copy-button {
+.jewel-trinket-slot-action.copy-button {
     top: 16px;
     right: -5px;
 }
@@ -169,11 +169,11 @@
 
 /* Hover only affects the icon */
 
-.dragon-crest-slot-action:hover img {
+.jewel-trinket-slot-action:hover img {
     filter: brightness(1.4) drop-shadow(0 0 4px #d4af37);
 }
 
-.dragon-crest-slot-action:active {
+.jewel-trinket-slot-action:active {
     transform: translateY(1px);
 }
 
@@ -182,7 +182,7 @@
    ACTION BUTTON TOOLTIPS
    ========================================================= */
 
-.dragon-crest-slot-action .tooltip {
+.jewel-trinket-slot-action .tooltip {
     position: absolute;
 
     bottom: 100%;
@@ -214,7 +214,7 @@
     z-index: 1000;
 }
 
-.dragon-crest-slot-action:hover .tooltip {
+.jewel-trinket-slot-action:hover .tooltip {
     opacity: 1;
     visibility: visible;
 }   
@@ -223,7 +223,7 @@
 
 /* Click */
 
-.dragon-crest-slot:active {
+.jewel-trinket-slot:active {
   transform: translateY(1px);
 }
 
@@ -232,7 +232,7 @@
    CONFIRM / CANCEL BUTTONS
    ========================================================= */
 
-.dragon-crest-buttons {
+.jewel-trinket-buttons {
     position: absolute;
 
     left: 50%;
@@ -249,7 +249,7 @@
 }
 
 
-.dragon-crest-buttons button {
+.jewel-trinket-buttons button {
     position: relative;
 
     width: 128px;
@@ -279,7 +279,7 @@
 
 /* Button image */
 
-.dragon-crest-buttons button img {
+.jewel-trinket-buttons button img {
   position: absolute;
 
   width: 100%;
@@ -297,7 +297,7 @@
 
 /* Hover */
 
-.dragon-crest-buttons button:hover img {
+.jewel-trinket-buttons button:hover img {
   filter:
     brightness(1.4)
     drop-shadow(0 0 5px #d4af37);
@@ -306,7 +306,7 @@
 
 /* Click */
 
-.dragon-crest-buttons button:active {
+.jewel-trinket-buttons button:active {
   transform: translateY(1px);
 }
 
@@ -315,38 +315,9 @@
    TOOLTIP
    ========================================================= */
 
-.tooltip {
-  position: absolute;
-
-  bottom: 100%;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  margin-bottom: 8px;
-  padding: 5px 10px;
-
-  background: #222;
-
-  color: #EFD8B7;
-
-  border: 1px solid #d4af37;
-  border-radius: 4px;
-
-  white-space: nowrap;
-
-  opacity: 0;
-  visibility: hidden;
-
-  transition: opacity 0.15s ease;
-
-  pointer-events: none;
-
-  z-index: 100;
-}
 
 
-.dragon-crest-buttons button:hover .tooltip {
+.jewel-trinket-buttons button:hover .tooltip {
   opacity: 1;
   visibility: visible;
 }

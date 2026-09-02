@@ -17,6 +17,8 @@
 
     border: none;
     border-radius: 10px;
+
+    cursor: pointer;
 }
 
 .item-slot img {
@@ -24,99 +26,25 @@
     height: 100%;
 
     object-fit: contain;
+
     border-radius: 10px;
-    cursor: pointer;
 }
 
-.item-slot:hover img {
-    filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
+.item-slot:not(:disabled):hover img {
+    filter:
+        brightness(1.4)
+        drop-shadow(0 0 5px #d4af37);
 }
 
-.item-slot:active {
+.item-slot:not(:disabled):active {
     transform: translateY(1px);
 }
 
-
-/* =========================================================
-   TOOLTIP
-   ========================================================= */
-
-.tooltip {
-    position: absolute;
-
-    bottom: 100%;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    margin-bottom: 5px;
-    padding: 5px 10px;
-
-    background: #222;
-    color: #EFD8B7;
-
-    border: 1px solid #d4af37;
-    border-radius: 4px;
-
-    white-space: nowrap;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: opacity 0.15s ease;
-
-    pointer-events: none;
-
-    z-index: 100;
+.item-slot:disabled {
+    opacity: 0.4;
+    filter: grayscale(1);
+    cursor: default;
 }
-
-.item-slot:hover > .tooltip {
-    opacity: 1;
-    visibility: visible;
-}
-
-
-/* =========================================================
-   STRUCTURED TOOLTIP
-   ========================================================= */
-
-.structured-tooltip {
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    min-width: 180px;
-    max-width: 280px;
-
-    gap: 5px;
-
-    text-align: center;
-
-    white-space: normal;
-}
-
-.tooltip-name {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.tooltip-separator {
-    width: 100%;
-    height: 1px;
-
-    background: #555;
-}
-
-.tooltip-description {
-    font-size: 13px;
-    line-height: 1.3;
-}
-
-
-/* =========================================================
-   SLOT OVERLAY
-   ========================================================= */
 
 .slot-overlay {
     position: absolute;

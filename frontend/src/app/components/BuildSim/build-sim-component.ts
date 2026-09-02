@@ -38,6 +38,9 @@ import { CollectorBagSelector } from '../collector-bag-selector/collector-bag-se
 import { CollectorBagCategoryBonusInstanceDTO } from '../../models/instanceDTOs/CollectorBagCategoryBonusInstanceDTO';
 import { DragoncrestTrinketEditor } from '../dragoncrest-trinket-editor/dragoncrest-trinket-editor';
 import { DragonCrestTrinketDTO } from '../../models/instanceDTOs/DragonCrestTrinketDTO';
+import { JewelTrinketEditor } from '../jewel-trinket-editor/jewel-trinket-editor';
+import { JewelTrinketDTO } from '../../models/instanceDTOs/JewelTrinketDTO';
+import { JewelInstanceDTO } from '../../models/instanceDTOs/JewelInstanceDTO';
 
 @Component({
   selector: 'app-character',
@@ -53,7 +56,8 @@ import { DragonCrestTrinketDTO } from '../../models/instanceDTOs/DragonCrestTrin
     ClassChangeWindow,
     ConfirmationWindow,
     CollectorBagSelector,
-    DragoncrestTrinketEditor
+    DragoncrestTrinketEditor,
+    JewelTrinketEditor,
   ],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
@@ -67,6 +71,7 @@ export class BuildSimComponent implements OnInit {
   stats?: ClassStatsDTO;
   @ViewChild(NgModel) classSelect!: NgModel;
   character!: CharacterDTO; // = this.createDefaultCharacter(CharacterClass.SPELLWEAVER);
+  jewelLimitGroups!: Record<string, string>;
 
   scale = 1;
   private readonly designWidth = 1920;
@@ -85,6 +90,8 @@ export class BuildSimComponent implements OnInit {
   showClassSkillSelector = false;
   showCollectorBagSelector = false;
   showDragonCrest = false;
+  showJewelTrinket = false;
+  selectedJewelTrinket = -1;
 
   formatStatName = formatStatName;
   BuffCategory = BuffCategory;
@@ -100,6 +107,16 @@ export class BuildSimComponent implements OnInit {
     this.updateScale();
     this.gameDataService.getGameData().subscribe((data) => {
       this.gameData = data;
+      this.jewelLimitGroups = Object.values(this.gameData.jewels)
+        .flatMap((classJewels) => Object.values(classJewels))
+        .reduce(
+          (map, jewel) => {
+            map[jewel.jewelType] = jewel.jewelLimitGroup;
+            return map;
+          },
+          {} as Record<string, string>,
+        );
+      console.log(this.jewelLimitGroups);
       this.character = this.createDefaultCharacter(CharacterClass.SPELLWEAVER);
       this.stats = { ...this.gameData.characterClassStats[CharacterClass.SPELLWEAVER] };
       this.changeDetector.detectChanges();
@@ -137,7 +154,7 @@ export class BuildSimComponent implements OnInit {
         jewels: [],
       })),
       dragonCrest: {
-        dragonStones: [] = Array(10).fill(null)
+        dragonStones: [],
       },
       items: {},
       pet: null,
@@ -693,13 +710,9 @@ export class BuildSimComponent implements OnInit {
     this.showCollectorBagSelector = false;
   }
 
-  confirmCollectorBagSelection(
-    buffs: CollectorBagCategoryBonusInstanceDTO[]
-  ) {
+  confirmCollectorBagSelection(buffs: CollectorBagCategoryBonusInstanceDTO[]) {
     this.character.collectorBagBuffs = buffs;
-    console.log(this.character);
     this.calculate();
-    console.log(this.stats);
     this.showCollectorBagSelector = false;
   }
 
@@ -711,13 +724,57 @@ export class BuildSimComponent implements OnInit {
     this.showDragonCrest = false;
   }
 
-  confirmDragonCrestSelection(
-    dragonCrest: DragonCrestTrinketDTO
-  ) {
+  confirmDragonCrestSelection(dragonCrest: DragonCrestTrinketDTO) {
     this.character.dragonCrest = dragonCrest;
-    console.log(this.character);
     this.calculate();
-    console.log(this.stats);
     this.showDragonCrest = false;
   }
+
+  openJewelTrinketEditor(index: number) {
+    this.selectedJewelTrinket = index;
+    this.showJewelTrinket = true;
+  }
+
+  closeJewelTrinketEditor() {
+    this.showJewelTrinket = false;
+    this.selectedJewelTrinket = -1;
+  }
+
+  confirmJewelTrinketSelection(jewelTrinket: JewelTrinketDTO) {
+    this.character.jewelTrinkets[this.selectedJewelTrinket] = jewelTrinket;
+    this.calculate();
+    this.closeJewelTrinketEditor();
+  }
+
+getEquippedJewelAmount(
+  excludedTrinketIndex: number,
+  jewelType: string
+): number {
+  const limitGroup = this.jewelLimitGroups[jewelType];
+
+  return this.character.jewelTrinkets
+    .filter((_, index) => index !== excludedTrinketIndex)
+    .flatMap(trinket => trinket.jewels)
+    .filter(jewel => jewel !== null)
+    .filter(jewel => this.jewelLimitGroups[jewel.jewelType] === limitGroup)
+    .length;
+}
+
+canAddJewel(
+  jewelType: string,
+  editedJewels: (JewelInstanceDTO | null)[]
+): boolean {
+  const limitGroup = this.jewelLimitGroups[jewelType];
+
+  const equippedAmount = this.getEquippedJewelAmount(
+    this.selectedJewelTrinket, jewelType
+  );
+
+const editedAmount = editedJewels
+  .filter(jewel => jewel !== null)
+  .filter(jewel => this.jewelLimitGroups[jewel.jewelType] === limitGroup)
+  .length;
+
+  return equippedAmount + editedAmount < this.gameData.jewelLimits[limitGroup];
+}
 }

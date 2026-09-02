@@ -1,0 +1,47 @@
+<div class="jewel-selector-overlay">
+  <div class="jewel-selector-window">
+
+    <button class="close-button" (click)="cancel()">
+      <img src="utility-icons/cancel-square.png" alt="Close" />
+      <span class="tooltip">Close</span>
+    </button>
+
+    <h1>Select Jewel</h1>
+
+    <div class="jewel-filter-bar">
+
+  <input
+    type="text"
+    placeholder="Search jewels..."
+    [(ngModel)]="searchTerm"
+  />
+
+  <label>
+    <input
+      type="checkbox"
+      [(ngModel)]="maxTierOnly"
+    />
+    Max tier only
+  </label>
+
+</div>
+
+    <div class="jewel-grid-container">
+      <div class="jewel-grid">
+        @for (jewel of getFilteredJewels(); track jewel.jewelType) {
+          @for (tier of getTiers(jewel); track tier) {
+            <app-build-sim-button
+              class="jewel-selection-button"
+              [tooltipTitle]="jewel.name"
+              [tooltipDescription]="jewel.descriptionPerTier[tier]"
+              [icon]="getJewelIcon(jewel, tier)"
+              [disabled]="!canSelectJewel(jewel.jewelType)"
+              (clicked)="selectJewel(jewel, tier)"
+            ></app-build-sim-button>
+          }
+        }
+      </div>
+    </div>
+
+  </div>
+</div>

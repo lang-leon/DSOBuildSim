@@ -6,6 +6,6 @@ public class JewelMapper {
 
     public static JewelDefinitionDTO from(JewelDefinition jewelDefinition)
     {
-        return new JewelDefinitionDTO(jewelDefinition.jewelType(), jewelDefinition.name(), jewelDefinition.defaultTier(), jewelDefinition.statsPerTier(), jewelDefinition.descriptionPerTier());
+        return new JewelDefinitionDTO(jewelDefinition.jewelType(), jewelDefinition.jewelType().getLimitGroup(), jewelDefinition.name(), jewelDefinition.defaultTier(), jewelDefinition.statsPerTier(), jewelDefinition.descriptionPerTier());
     }
 }

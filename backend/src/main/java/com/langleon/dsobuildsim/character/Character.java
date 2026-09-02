@@ -11,7 +11,7 @@ import com.langleon.dsobuildsim.exceptions.LimitExceededException;
 import com.langleon.dsobuildsim.exceptions.LimitType;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
-import com.langleon.dsobuildsim.jewels.JewelType;
+import com.langleon.dsobuildsim.jewels.JewelLimitGroup;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.essences.Essence;
@@ -148,10 +148,10 @@ public class Character {
     private void validateJewels(List<JewelTrinket> jewelTrinkets)
     {
         if (jewelTrinkets.size() > 3) throw new LimitExceededException(LimitType.JEWEL_TRINKET, "Up to 3 jewel trinkets allowed per character, but was "+jewelTrinkets.size());
-        Map<JewelType, Integer> jewelCount = new EnumMap<>(JewelType.class);
+        Map<JewelLimitGroup, Integer> jewelCount = new EnumMap<>(JewelLimitGroup.class);
         jewelTrinkets.forEach(jewelTrinket -> {
             jewelTrinket.getJewels().forEach(jewel -> {
-                jewelCount.merge(jewel.getJewelType(), 1, Integer::sum);
+                jewelCount.merge(jewel.getJewelType().getLimitGroup(), 1, Integer::sum);
             });
         });
 

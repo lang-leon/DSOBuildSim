@@ -2,48 +2,47 @@ package com.langleon.dsobuildsim.jewels;
 
 public enum JewelType {
 
-    AMBIDEXTROUS_VIGOR(1),
-    AMPLIFIED_HEALING(1),
-    ANDER_POWER(1),
-    BLACK_KNIGHT_ORDER(1),
-    CONTRIBUTION(1),
-    CONVERSE(1),
-    DEXTROUS_VIGOR(1),
-    EASTER_FEVER(1),
-    ENCOURAGEMENT(1),
-    ETERNAL_SCORN(1),
-    ETERNAL_WRATH(1),
-    FLOWER(1),
-    FOCUS(5),
-    FORTITUDE(1),
-    FROZEN_HEART(1),
-    GEM_FORTUNE(1),
-    GHOST_POWER(3),
-    GLACIAL_FANG(1),
-    GLORY(1),
-    INGREDIENT_HUNTER(3),
-    LASTING_HEALTH(1),
-    PENT_UP_POWER(1),
-    POISONOUS_THORNS(1),
-    PROLONGATION(1),
-    RAGE(1),
-    RELENTLESSNESS(5),
-    REVIVAL_BOON(1),
-    SCORCHING_RAY(1),
-    STRENUOUSNESS(1),
-    SWIFTNESS(1),
-    VANQUISHER(1),
-    VIGOR(1),
-    VITALITY(1);
+    AMBIDEXTROUS_VIGOR(JewelLimitGroup.AMBIDEXTROUS_VIGOR),
+    AMPLIFIED_HEALING(JewelLimitGroup.AMPLIFIED_HEALING),
+    ANDER_POWER(JewelLimitGroup.ANDER_POWER),
+    BLACK_KNIGHT_ORDER(JewelLimitGroup.BLACK_KNIGHT_ORDER),
+    CONTRIBUTION(JewelLimitGroup.CONTRIBUTION),
+    CONVERSE(JewelLimitGroup.CONVERSE),
+    DEXTROUS_VIGOR(JewelLimitGroup.DEXTROUS_VIGOR),
+    EASTER_FEVER(JewelLimitGroup.EASTER_FEVER),
+    ENCOURAGEMENT(JewelLimitGroup.ENCOURAGEMENT),
+    ETERNAL_SCORN(JewelLimitGroup.ETERNAL_SCORN),
+    ETERNAL_WRATH(JewelLimitGroup.ETERNAL_WRATH),
+    FLOWER(JewelLimitGroup.FLOWER),
+    FOCUS(JewelLimitGroup.FOCUS),
+    FORTITUDE(JewelLimitGroup.FORTITUDE),
+    FROZEN_HEART(JewelLimitGroup.FROZEN_HEART),
+    GEM_FORTUNE(JewelLimitGroup.GEM_FORTUNE),
+    GHOST_POWER(JewelLimitGroup.GHOST_POWER),
+    GLACIAL_FANG(JewelLimitGroup.GLACIAL_FANG),
+    GLORY(JewelLimitGroup.GLORY),
+    INGREDIENT_HUNTER(JewelLimitGroup.INGREDIENT_HUNTER),
+    LASTING_HEALTH(JewelLimitGroup.LASTING_HEALTH),
+    PENT_UP_POWER(JewelLimitGroup.PENT_UP_POWER),
+    POISONOUS_THORNS(JewelLimitGroup.POISONOUS_THORNS),
+    PROLONGATION(JewelLimitGroup.PROLONGATION),
+    RAGE(JewelLimitGroup.RAGE),
+    RELENTLESSNESS(JewelLimitGroup.RELENTLESSNESS),
+    REVIVAL_BOON(JewelLimitGroup.REVIVAL_BOON),
+    SCORCHING_RAY(JewelLimitGroup.SCORCHING_RAY),
+    STRENUOUSNESS(JewelLimitGroup.STRENUOUSNESS),
+    SWIFTNESS(JewelLimitGroup.SWIFTNESS),
+    VANQUISHER(JewelLimitGroup.VANQUISHER),
+    VIGOR(JewelLimitGroup.VIGOR),
+    VITALITY(JewelLimitGroup.VITALITY);
 
-    private final int limit;
+    private final JewelLimitGroup limitGroup;
 
-    JewelType(int limit) {
-        this.limit = limit;
+    JewelType(JewelLimitGroup limitGroup) {
+        this.limitGroup = limitGroup;
     }
 
-    public int getLimit() {
-        return limit;
+    public JewelLimitGroup getLimitGroup() {
+        return limitGroup;
     }
-
 }

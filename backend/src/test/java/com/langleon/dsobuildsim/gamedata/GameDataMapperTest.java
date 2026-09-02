@@ -15,12 +15,14 @@ import com.langleon.dsobuildsim.gems.dto.GemDefinitionDTO;
 import com.langleon.dsobuildsim.items.core.ItemDefinitionMapper;
 import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
 import com.langleon.dsobuildsim.jewels.JewelMapper;
+import com.langleon.dsobuildsim.jewels.JewelType;
 import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
 import com.langleon.dsobuildsim.pets.PetMapper;
 import com.langleon.dsobuildsim.pets.dto.PetDefinitionDTO;
 import com.langleon.dsobuildsim.runes.RuneMapper;
 import com.langleon.dsobuildsim.runes.dto.RuneDefinitionDTO;
 import com.langleon.dsobuildsim.sets.SetMapper;
+import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.sets.dto.SetDTO;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import org.junit.jupiter.api.Assertions;
@@ -59,19 +61,23 @@ public class GameDataMapperTest {
                 )
         );
 
-        Map<CharacterClass, List<SetDTO>> sets2 = config.sets().entrySet().stream()
+        Map<CharacterClass, Map<SetType, SetDTO>> sets2 = config.sets().entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
-                        e -> e.getValue().values().stream()
-                                .map(SetMapper::from)
-                                .toList()
+                        e -> e.getValue().entrySet().stream()
+                                .collect(Collectors.toMap(
+                                        Map.Entry::getKey,
+                                        entry -> SetMapper.from(entry.getValue())
+                                ))
                 ));
-        Map<CharacterClass, List<JewelDefinitionDTO>> jewels2 = config.jewels().entrySet().stream()
+        Map<CharacterClass, Map<JewelType, JewelDefinitionDTO>> jewels2 = config.jewels().entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
-                        e -> e.getValue().values().stream()
-                                .map(JewelMapper::from)
-                                .toList()
+                        e -> e.getValue().entrySet().stream()
+                                .collect(Collectors.toMap(
+                                        Map.Entry::getKey,
+                                        entry -> JewelMapper.from(entry.getValue())
+                                ))
                 ));
         List<EnchantmentDTO> enchantments = config.enchantments().values().stream().map(EnchantmentMapper::from).toList();
         List<GemDefinitionDTO> gems = config.gems().values().stream().map(GemMapper::from).toList();

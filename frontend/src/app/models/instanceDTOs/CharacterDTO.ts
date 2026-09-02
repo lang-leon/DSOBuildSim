@@ -7,7 +7,7 @@ import { CollectorBagCategoryBonusInstanceDTO } from "./CollectorBagCategoryBonu
 import { DragonCrestTrinketDTO } from "./DragonCrestTrinketDTO";
 import { EssenceInstanceDTO } from "./EssenceInstanceDTO";
 import { ItemInstanceDTO } from "./ItemInstanceDTO";
-import { jewelTrinketDTO } from "./JewelTrinketDTO";
+import { JewelTrinketDTO } from "./JewelTrinketDTO";
 import { PetInstanceDTO } from "./PetInstanceDTO";
 import { runeTrinketDTO } from "./RuneTrinketDTO";
 import { WisdomSkillTreeInstanceDTO } from "./WisdomSkillTreeInstanceDTO";
@@ -20,7 +20,7 @@ export interface CharacterDTO {
     classSkillType: ClassSkillType;
     classSkillLevel: number;
     runeTrinkets: runeTrinketDTO[];
-    jewelTrinkets: jewelTrinketDTO[];
+    jewelTrinkets: JewelTrinketDTO[];
     dragonCrest: DragonCrestTrinketDTO;
     items: Partial<Record<ItemSlot, ItemInstanceDTO>>;
     pet: PetInstanceDTO | null;

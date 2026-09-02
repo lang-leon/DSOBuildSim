@@ -16,8 +16,9 @@ import { WisdomSkillTreeDefinitionDTO } from "./WisdomSkillTreeDefinitionDTO";
 export interface GameDataDTO {
     characterClassStats:  Record<string, ClassStatsDTO>;
     items: Record<string, ItemDefinitionDTO[]>;
-    sets: Record<string, SetDTO[]>;
-    jewels: Record<string, JewelDefinitionDTO[]>;
+    sets: Record<string, Record<string, SetDTO[]>>;
+    jewels: Record<string, Record<string, JewelDefinitionDTO>>;
+    jewelLimits: Record<string, number>;
     enchantments: EnchantmentDTO[];
     gems: GemDefinitionDTO[];
     runes: RuneDefinitionDTO[];
