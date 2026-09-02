@@ -20,7 +20,7 @@ export class JewelTrinketEditor {
 
   @Input() jewelTrinket!: JewelTrinketDTO;
 
-  @Input() jewelConfig!: JewelDefinitionDTO[];
+  @Input() jewelConfig!: Record<string, JewelDefinitionDTO>;
 
   @Input() canAddJewel!: (jewelType: string, jewels: (JewelInstanceDTO | null)[]) => boolean;
 
@@ -79,15 +79,13 @@ export class JewelTrinketEditor {
 
   getJewelName(index: number){
     if(this.jewels[index]===null) return "";
-    const jewel = this.jewelConfig.find(
-    jewel => jewel.jewelType === this.jewels[index]?.jewelType);
+    const jewel = this.jewelConfig[this.jewels[index]?.jewelType]
     return jewel?.name;
   }
 
   getJewelDescription(index: number) {
     if(this.jewels[index]===null) return "";
-    const jewel = this.jewelConfig.find(
-    jewel => jewel.jewelType === this.jewels[index]?.jewelType);
+    const jewel = this.jewelConfig[this.jewels[index]?.jewelType]
     return jewel?.descriptionPerTier[this.jewels[index].tier];
   }
 

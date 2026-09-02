@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './jewel-selector.scss',
 })
 export class JewelSelector {
-  @Input() jewelConfig!: JewelDefinitionDTO[];
+   @Input() jewelConfig!: Record<string, JewelDefinitionDTO>;
 
   @Input() canSelectJewel!: (jewelType: string) => boolean;
 
@@ -41,7 +41,7 @@ export class JewelSelector {
       };
       this.selected.emit(instance);
     }else{
-      
+
     }
   }
 
@@ -49,9 +49,10 @@ export class JewelSelector {
     this.cancelled.emit();
   }
 
-  getFilteredJewels(): JewelDefinitionDTO[] {
-    const search = this.searchTerm.toLowerCase().trim();
+getFilteredJewels(): JewelDefinitionDTO[] {
+  const search = this.searchTerm.toLowerCase().trim();
 
-    return this.jewelConfig.filter((jewel) => jewel.name.toLowerCase().includes(search));
-  }
+  return Object.values(this.jewelConfig)
+    .filter(jewel => jewel.name.toLowerCase().includes(search));
+}
 }

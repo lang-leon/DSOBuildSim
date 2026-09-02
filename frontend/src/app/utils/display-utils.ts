@@ -43,7 +43,7 @@ export function getIcon<T>(type: string, tier: number) {
       tierName = 'magic';
       break;
     case 4:
-      tierName = 'mighty-dragons';
+      tierName = 'extraordinary';
       break;
     case 5:
       tierName = 'legendary';
