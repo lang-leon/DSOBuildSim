@@ -7,6 +7,8 @@ import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagCat
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
 import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
 import com.langleon.dsobuildsim.jewels.JewelLimitGroup;
+import com.langleon.dsobuildsim.jewels.JewelType;
+import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillTreeDefinitionDTO;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.essences.dto.EssenceDefinitionDTO;
@@ -22,8 +24,8 @@ import java.util.Map;
 public record GameDataDTO (
         Map<CharacterClass, ClassStatsDTO> characterClassStats,
         Map<CharacterClass, List<ItemDefinitionDTO>> items,
-        Map<CharacterClass, List<SetDTO>> sets,
-        Map<CharacterClass, List<JewelDefinitionDTO>> jewels,
+        Map<CharacterClass, Map<SetType, SetDTO>> sets,
+        Map<CharacterClass, Map<JewelType, JewelDefinitionDTO>> jewels,
         Map<JewelLimitGroup, Integer> jewelLimits,
         List<EnchantmentDTO> enchantments,
         List<GemDefinitionDTO> gems,

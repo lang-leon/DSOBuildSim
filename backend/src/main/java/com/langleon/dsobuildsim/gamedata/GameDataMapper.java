@@ -19,8 +19,10 @@ import com.langleon.dsobuildsim.gems.dto.GemDefinitionDTO;
 import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
 import com.langleon.dsobuildsim.jewels.JewelLimitGroup;
 import com.langleon.dsobuildsim.jewels.JewelMapper;
+import com.langleon.dsobuildsim.jewels.JewelType;
 import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
 import com.langleon.dsobuildsim.items.core.ItemDefinitionMapper;
+import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeMapper;
 import com.langleon.dsobuildsim.pets.PetMapper;
 import com.langleon.dsobuildsim.pets.dto.PetDefinitionDTO;
@@ -57,10 +59,10 @@ public class GameDataMapper {
                                         .toList()
                         ));
 
-        Map<CharacterClass, List<SetDTO>> sets =
+        Map<CharacterClass, Map<SetType, SetDTO>> sets =
                 mapPerClass(config.sets(), SetMapper::from);
 
-        Map<CharacterClass, List<JewelDefinitionDTO>> jewels =
+        Map<CharacterClass, Map<JewelType, JewelDefinitionDTO>> jewels =
                 mapPerClass(config.jewels(), JewelMapper::from);
 
         Map<JewelLimitGroup, Integer> jewelLimits = Arrays.stream(JewelLimitGroup.values())
@@ -94,14 +96,18 @@ public class GameDataMapper {
         return new GameDataDTO(config.classStats(), items, sets, jewels, jewelLimits, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkillTree, collectorBagBuffs);
     }
 
-    private static <K, S, T> Map<CharacterClass, List<T>> mapPerClass(Map<CharacterClass, Map<K, S>> source, Function<S, T> mapper)
+    private static <K, S, T> Map<CharacterClass, Map<K, T>> mapPerClass(
+            Map<CharacterClass, Map<K, S>> source,
+            Function<S, T> mapper)
     {
         return source.entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
-                        e -> e.getValue().values().stream()
-                                .map(mapper)
-                                .toList()
+                        e -> e.getValue().entrySet().stream()
+                                .collect(Collectors.toMap(
+                                        Map.Entry::getKey,
+                                        entry -> mapper.apply(entry.getValue())
+                                ))
                 ));
     }
 }
