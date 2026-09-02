@@ -89,6 +89,14 @@ export class JewelTrinketEditor {
     return jewel?.descriptionPerTier[this.jewels[index].tier];
   }
 
+  getJewelIcon(jewel: JewelInstanceDTO | null)
+  {
+    if(jewel === null) return 'jewel-icons/default.png';
+
+    const jewelName = this.jewelConfig[jewel.jewelType].name;
+    return 'jewel-icons/'+this.getIcon(jewelName, jewel.tier);
+  }
+
   openJewelSelector(index: number) {
     this.selectedSlot = index;
     this.showJewelSelector = true;

@@ -25,6 +25,14 @@ export class JewelSelector {
 
   getIcon = getIcon;
 
+  ngOnInit()
+  {
+    for(const jewel of Object.values(this.jewelConfig))
+    {
+      console.log(jewel.name)
+    }
+  }
+
   getTiers(jewel: JewelDefinitionDTO): number[] {
     const tiers = Object.keys(jewel.descriptionPerTier)
       .map(Number)
@@ -55,4 +63,12 @@ getFilteredJewels(): JewelDefinitionDTO[] {
   return Object.values(this.jewelConfig)
     .filter(jewel => jewel.name.toLowerCase().includes(search));
 }
+
+  getJewelIcon(jewel: JewelDefinitionDTO | null, tier: number)
+  {
+    if(jewel === null) return 'jewel-icons/default.png';
+
+    const jewelName = this.jewelConfig[jewel.jewelType].name;
+    return 'jewel-icons/'+this.getIcon(jewelName, tier);
+  }
 }

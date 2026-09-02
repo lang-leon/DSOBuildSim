@@ -16,11 +16,7 @@
             "
             [tooltipTitle]="jewel !== null ? getJewelName($index) : ''"
             [tooltipDescription]="getJewelDescription($index)"
-            [icon]="
-              jewel !== null
-                ? 'jewel-icons/'+getIcon(jewel.jewelType, jewel.tier)
-                : 'jewel-icons/default.png'
-            "
+            [icon]="getJewelIcon(jewel)"
             (clicked)="openJewelSelector($index)"
           ></app-build-sim-button>
 

@@ -28,7 +28,7 @@ export function formatStatValueAbsolute(value: number, digits: number): string {
 }
 
 export function getIcon<T>(type: string, tier: number) {
-  const typeName = type.toLowerCase().replace('_', '-');
+  const typeName = type.toLowerCase().replaceAll('_', '-').replaceAll(' ', '-');
 
   let tierName: string;
 
@@ -110,6 +110,3 @@ export function getDragonStoneName(dragonStoneType: string, tier: number) {
 export function getDragonStoneDescription(dragonStone: DragonStoneDefinitionDTO, tier: number){
     return dragonStone.description[tier];
 }
-
-
-// Jewels

@@ -34,7 +34,7 @@
               class="jewel-selection-button"
               [tooltipTitle]="jewel.name"
               [tooltipDescription]="jewel.descriptionPerTier[tier]"
-              [icon]="'jewel-icons/' + getIcon(jewel.jewelType, tier)"
+              [icon]="getJewelIcon(jewel, tier)"
               [disabled]="!canSelectJewel(jewel.jewelType)"
               (clicked)="selectJewel(jewel, tier)"
             ></app-build-sim-button>
