@@ -1,26 +1,54 @@
 # DSOBuildSim
 
-Full-stack application for simulating and calculating complex, rule-based character statistics.
+Full-stack application for simulating and calculating complex, rule-based character statistics for **Drakensang Online**.
 
-The system consists of a Spring Boot backend that handles the core calculation logic and a planned Angular frontend for interactive configuration and visualization.
+DSOBuildSim allows users to configure characters using equipment, enhancements, pets, buffs and other game systems and see the resulting character statistics.
 
-The application is inspired by the MMORPG Drakensang Online and allows users to experiment with different equipment and build configurations.
+The application consists of a **Spring Boot backend** providing the calculation engine and REST API, and an **Angular frontend** for interactive build configuration and visualization.
 
-**Technologies:** Java, Spring Boot, REST API, Angular (in progress)
+>**Current development:** The frontend is currently being developed on the `milestone-3-frontend` branch.
+>The `master` branch currently contains the Spring Boot backend and REST API.
+>The current frontend implementation is available on [`milestone-3-frontend`](../../tree/milestone-3-frontend).
+>
+
+**Technologies:** Java, Spring Boot, REST API, Angular, TypeScript
+
+---
+
+## Screenshots
+
+### Character Overview
+
+![Character Overview](docs/images/overview.png)
+
+### Jewel Selection
+
+![Jewel Selection](docs/images/jewel-selection.png)
+
+### Collector's Bag
+
+![Collector's Bag](docs/images/collector-bag-buff-selection.png)
+
+Additional screenshots and feature documentation can be found in the [`docs`](docs/) directory.
 
 ---
 
 ## Features
 
-- REST API for calculating character stats based on complex dependencies  
-- Rule-based processing of multiple entity types  
-- Automatic handling of interactions (e.g. set bonuses, modifiers)  
-- Modular stat calculation engine  
+- Interactive character build configuration
+- REST API for calculating character statistics
+- Rule-based processing of complex game mechanics
+- Automatic handling of interactions such as set bonuses and modifiers
+- Modular stat calculation engine
+- Equipment and inventory management
+- Jewel/Rune/Dragonstone and enhancement configuration
+- Collector's bag configuration
 
 **Domain entities include:**
-- Items (unique, mythic, sets)  
-- Enhancements (gems, runes, jewels)  
-- Additional modifiers (pets, buffs, essences)  
+- Items (types: unique, mythic, sets)
+- Enhancements (gems, runes, jewels)
+- Additional modifiers (pets, buffs, essences)
+- Skill trees and other character systems
 
 ---
 
@@ -44,17 +72,36 @@ The backend follows a layered architecture:
 
 The stat calculation is implemented as a modular system where different components contribute to the final result.
 
+---
+
 ### Backend Tech Stack
 
-- Java  
-- Spring Boot  
-- REST API  
-- JSON-based data definitions  
+- Java
+- Spring Boot
+- REST API
+- Maven
+- JSON-based data definitions
+- JUnit / Mockito
 
-### Frontend (planned)
+---
 
-- Angular  
-- Communication via REST API  
+### Frontend
+
+- Character configuration
+- Equipment and item selection (wip)
+- Jewel/Rune/Dragonstone trinkets
+- Jewel/Rune/Dragonstone selection and filtering
+- Collector bag buffs
+- Character statistics
+
+---
+
+### Frontend Tech Stack
+
+- Angular
+- TypeScript
+- HTML / SCSS
+- npm
 
 ---
 
@@ -63,7 +110,8 @@ The stat calculation is implemented as a modular system where different componen
 1. The frontend requests game data definitions from the backend  
 2. The user selects items, enhancements and modifiers  
 3. The frontend sends the configuration to the backend  
-4. The backend calculates and returns the resulting stats  
+4. The backend calculates and returns the resulting stats
+5. The displayed stats are updated with the freshly calculated stats
 
 ---
 
@@ -177,10 +225,9 @@ Additionally, it can be used as a tool for experimenting with different characte
 ---
 
 ## Roadmap
-
-- Angular frontend  
-- Item filtering  
-- Build import/export  
+ 
+- Item filtering
+- PvP Mode
 - Build sharing  
 - Detailed stat breakdown  
 - Support for additional systems  
