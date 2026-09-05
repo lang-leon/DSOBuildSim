@@ -21,6 +21,7 @@ import com.langleon.dsobuildsim.pets.PetMapper;
 import com.langleon.dsobuildsim.pets.dto.PetDefinitionDTO;
 import com.langleon.dsobuildsim.runes.RuneMapper;
 import com.langleon.dsobuildsim.runes.dto.RuneDefinitionDTO;
+import com.langleon.dsobuildsim.runes.enums.RuneType;
 import com.langleon.dsobuildsim.sets.SetMapper;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.sets.dto.SetDTO;
@@ -81,7 +82,7 @@ public class GameDataMapperTest {
                 ));
         List<EnchantmentDTO> enchantments = config.enchantments().values().stream().map(EnchantmentMapper::from).toList();
         List<GemDefinitionDTO> gems = config.gems().values().stream().map(GemMapper::from).toList();
-        List<RuneDefinitionDTO> runes = config.runes().values().stream().map(RuneMapper::from).toList();
+        Map<RuneType, RuneDefinitionDTO> runes = config.runes().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> RuneMapper.from(entry.getValue())));
         List<DragonStoneDefinitionDTO> dragonStones = config.dragonStones().values().stream().map(DragonStoneMapper::from).toList();
         List<PetDefinitionDTO> pets = config.pets().values().stream().map(PetMapper::from).toList();
         List<EssenceDefinitionDTO> essences = config.essences().values().stream().map(EssenceMapper::from).toList();

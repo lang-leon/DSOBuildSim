@@ -22,6 +22,8 @@ import com.langleon.dsobuildsim.jewels.JewelMapper;
 import com.langleon.dsobuildsim.jewels.JewelType;
 import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
 import com.langleon.dsobuildsim.items.core.ItemDefinitionMapper;
+import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
+import com.langleon.dsobuildsim.runes.enums.RuneType;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeMapper;
 import com.langleon.dsobuildsim.pets.PetMapper;
@@ -75,7 +77,13 @@ public class GameDataMapper {
 
         List<GemDefinitionDTO> gems = config.gems().values().stream().map(GemMapper::from).toList();
 
-        List<RuneDefinitionDTO> runes = config.runes().values().stream().map(RuneMapper::from).toList();
+        Map<RuneType, RuneDefinitionDTO> runes = config.runes().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> RuneMapper.from(entry.getValue())));
+
+        Map<RuneLimitGroup, Integer> runeLimits = Arrays.stream(RuneLimitGroup.values())
+                .collect(Collectors.toMap(
+                        group -> group,
+                        RuneLimitGroup::getLimit
+                ));
 
         List<DragonStoneDefinitionDTO> dragonStones = config.dragonStones().values().stream().map(DragonStoneMapper::from).toList();
 
@@ -93,7 +101,7 @@ public class GameDataMapper {
 
         List<CollectorBagCategoryBonusDefinitionDTO> collectorBagBuffs = config.collectorBagConfig().categoryBonuses().values().stream().map(categoryBonus -> CollectorBagMapper.from(categoryBonus, config.collectorBagConfig())).toList();
 
-        return new GameDataDTO(config.classStats(), items, sets, jewels, jewelLimits, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkillTree, collectorBagBuffs);
+        return new GameDataDTO(config.classStats(), items, sets, jewels, jewelLimits, enchantments, gems, runes, runeLimits, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkillTree, collectorBagBuffs);
     }
 
     private static <K, S, T> Map<CharacterClass, Map<K, T>> mapPerClass(
