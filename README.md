@@ -23,7 +23,7 @@ The application consists of a **Spring Boot backend** providing the calculation 
 
 ### Jewel Selection
 
-![Jewel Selection](docs/images/jewel-selection.png)
+![Jewel Selection](docs/images/select-jewel.png)
 
 ### Collector's Bag
 
