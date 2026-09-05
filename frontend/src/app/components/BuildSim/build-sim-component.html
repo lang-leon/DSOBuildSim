@@ -335,36 +335,43 @@
           class="rune-trinket1"
           slotName="Rune Trinket 1"
           icon="inventory-icons/rune-trinket.png"
+          (clicked)="openRuneTrinketEditor(6)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="rune-trinket2"
           slotName="Rune Trinket 2"
           icon="inventory-icons/rune-trinket.png"
+          (clicked)="openRuneTrinketEditor(1)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="rune-trinket3"
           slotName="Rune Trinket 3"
           icon="inventory-icons/rune-trinket.png"
+          (clicked)="openRuneTrinketEditor(2)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="rune-trinket4"
           slotName="Rune Trinket 4"
           icon="inventory-icons/rune-trinket.png"
+          (clicked)="openRuneTrinketEditor(3)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="rune-trinket5"
           slotName="Rune Trinket 5"
           icon="inventory-icons/rune-trinket.png"
+          (clicked)="openRuneTrinketEditor(4)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="rune-trinket6"
           slotName="Rune Trinket 6"
           icon="inventory-icons/rune-trinket.png"
+          (clicked)="openRuneTrinketEditor(5)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="rune-trinket7"
           slotName="Rune Trinket 7"
           icon="inventory-icons/rune-trinket.png"
+          (clicked)="openRuneTrinketEditor(6)"
         ></app-build-sim-button>
 
         <app-build-sim-button
@@ -591,6 +598,17 @@
   (cancelled)="closeJewelTrinketEditor()"
   (confirmed)="confirmJewelTrinketSelection($event)">
   </app-jewel-trinket-editor>
+}
+
+@if (showRuneTrinket) {
+  <app-rune-trinket-editor
+  [scale]="scale"
+  [runeTrinket]="character.runeTrinkets[selectedRuneTrinket]"
+  [runeConfig]="gameData.runes"
+  [canAddRune]="canAddRune.bind(this)"
+  (cancelled)="closeRuneTrinketEditor()"
+  (confirmed)="confirmRuneTrinketSelection($event)">
+  </app-rune-trinket-editor>
 }
 
 }

@@ -41,6 +41,9 @@ import { DragonCrestTrinketDTO } from '../../models/instanceDTOs/DragonCrestTrin
 import { JewelTrinketEditor } from '../jewel-trinket-editor/jewel-trinket-editor';
 import { JewelTrinketDTO } from '../../models/instanceDTOs/JewelTrinketDTO';
 import { JewelInstanceDTO } from '../../models/instanceDTOs/JewelInstanceDTO';
+import { RuneInstanceDTO } from '../../models/instanceDTOs/RuneInstanceDTO';
+import { RuneTrinketDTO } from '../../models/instanceDTOs/RuneTrinketDTO';
+import { RuneTrinketEditor } from '../rune-trinket-editor/rune-trinket-editor';
 
 @Component({
   selector: 'app-character',
@@ -58,6 +61,7 @@ import { JewelInstanceDTO } from '../../models/instanceDTOs/JewelInstanceDTO';
     CollectorBagSelector,
     DragoncrestTrinketEditor,
     JewelTrinketEditor,
+    RuneTrinketEditor
   ],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
@@ -72,6 +76,7 @@ export class BuildSimComponent implements OnInit {
   @ViewChild(NgModel) classSelect!: NgModel;
   character!: CharacterDTO; // = this.createDefaultCharacter(CharacterClass.SPELLWEAVER);
   jewelLimitGroups!: Record<string, string>;
+  runeLimitGroups!: Record<string, string>;
 
   scale = 1;
   private readonly designWidth = 1920;
@@ -92,6 +97,8 @@ export class BuildSimComponent implements OnInit {
   showDragonCrest = false;
   showJewelTrinket = false;
   selectedJewelTrinket = -1;
+  showRuneTrinket = false;
+  selectedRuneTrinket = -1;
 
   formatStatName = formatStatName;
   BuffCategory = BuffCategory;
@@ -116,7 +123,14 @@ export class BuildSimComponent implements OnInit {
           },
           {} as Record<string, string>,
         );
-      console.log(this.jewelLimitGroups);
+      this.runeLimitGroups = Object.values(this.gameData.runes)
+        .reduce(
+          (map, rune) => {
+            map[rune.runeType] = rune.runeLimitGroup;
+            return map;
+          },
+          {} as Record<string, string>,
+        );
       this.character = this.createDefaultCharacter(CharacterClass.SPELLWEAVER);
       this.stats = { ...this.gameData.characterClassStats[CharacterClass.SPELLWEAVER] };
       this.changeDetector.detectChanges();
@@ -777,4 +791,54 @@ const editedAmount = editedJewels
 
   return equippedAmount + editedAmount < this.gameData.jewelLimits[limitGroup];
 }
+
+  openRuneTrinketEditor(index: number) {
+    this.selectedRuneTrinket = index;
+    this.showRuneTrinket = true;
+  }
+
+  closeRuneTrinketEditor() {
+    this.showRuneTrinket = false;
+    this.selectedRuneTrinket = -1;
+  }
+
+  confirmRuneTrinketSelection(runeTrinket: RuneTrinketDTO) {
+    this.character.runeTrinkets[this.selectedRuneTrinket] = runeTrinket;
+    this.calculate();
+    this.closeRuneTrinketEditor();
+  }
+
+  getEquippedRuneAmount(
+  excludedTrinketIndex: number,
+  runeType: string
+): number {
+  const limitGroup = this.runeLimitGroups[runeType];
+
+  return this.character.runeTrinkets
+    .filter((_, index) => index !== excludedTrinketIndex)
+    .flatMap(trinket => trinket.runes)
+    .filter(rune => rune !== null)
+    .filter(rune => this.runeLimitGroups[rune.runeType] === limitGroup)
+    .length;
+}
+
+canAddRune(
+  runeType: string,
+  editedRunes: (RuneInstanceDTO | null)[]
+): boolean {
+  const limitGroup = this.runeLimitGroups[runeType];
+
+  const equippedAmount = this.getEquippedRuneAmount(
+    this.selectedRuneTrinket, runeType
+  );
+
+const editedAmount = editedRunes
+  .filter(rune => rune !== null)
+  .filter(rune => this.runeLimitGroups[rune.runeType] === limitGroup)
+  .length;
+
+  return equippedAmount + editedAmount < this.gameData.runeLimits[limitGroup];
+}
+
+
 }

@@ -1,0 +1,47 @@
+<div class="rune-selector-overlay">
+  <div class="rune-selector-window">
+
+    <button class="close-button" (click)="cancel()">
+      <img src="utility-icons/cancel-square.png" alt="Close" />
+      <span class="tooltip">Close</span>
+    </button>
+
+    <h1>Select Rune</h1>
+
+    <div class="rune-filter-bar">
+
+  <input
+    type="text"
+    placeholder="Search runes..."
+    [(ngModel)]="searchTerm"
+  />
+
+  <label>
+    <input
+      type="checkbox"
+      [(ngModel)]="maxTierOnly"
+    />
+    Max tier only
+  </label>
+
+</div>
+
+    <div class="rune-grid-container">
+      <div class="rune-grid">
+        @for (rune of getFilteredRunes(); track rune.runeType) {
+          @for (tier of getTiers(rune); track tier) {
+            <app-build-sim-button
+              class="rune-selection-button"
+              [tooltipTitle]="rune.name"
+              [tooltipDescription]="getRuneDescription(rune, tier)"
+              [icon]="getRuneIcon(rune, tier)"
+              [disabled]="!canSelectRune(rune.runeType)"
+              (clicked)="selectRune(rune, tier)"
+            ></app-build-sim-button>
+          }
+        }
+      </div>
+    </div>
+
+  </div>
+</div>

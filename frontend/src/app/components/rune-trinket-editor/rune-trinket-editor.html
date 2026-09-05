@@ -1,0 +1,69 @@
+<div class="rune-trinket-overlay" [style.--popup-scale]="scale">
+  <div class="rune-trinket-window scaled-popup-window">
+    <h1>Edit Rune Trinket</h1>
+
+    <h2>Runes</h2>
+
+    <div class="rune-trinket-slots">
+      @for (rune of runes; track $index) {
+        <div class="rune-trinket-slot-wrapper">
+          <app-build-sim-button
+            class="rune-trinket-slot"
+            [slotName]="
+              rune !== null
+                ? ''
+                : 'Empty'
+            "
+            [tooltipTitle]="rune !== null ? getRuneName($index) : ''"
+            [tooltipDescription]="getRuneDescription($index)"
+            [icon]="getRuneIcon(rune)"
+            (clicked)="openRuneSelector($index)"
+          ></app-build-sim-button>
+
+          @if (rune !== null) {
+            <!-- Delete -->
+            <button
+              class="rune-trinket-slot-action delete-button"
+              (click)="deleteRune($index); $event.stopPropagation()"
+            >
+              <img src="utility-icons/cancel-square.png" alt="Delete" />
+              <span class="tooltip">Delete</span>
+            </button>
+
+            <!-- Copy -->
+            @if (hasEmptyRuneSlot() && canSelectRune(rune.runeType)) {
+              <button
+                class="rune-trinket-slot-action copy-button"
+                (click)="copyRune($index); $event.stopPropagation()"
+              >
+                <img src="utility-icons/copy.png" alt="Copy" />
+                <span class="tooltip">Copy to next empty slot</span>
+              </button>
+            }
+          }
+        </div>
+      }
+    </div>
+
+    <div class="rune-trinket-buttons">
+      <button class="accept-button" (click)="confirm()">
+        <img src="utility-icons/confirm.png" alt="Confirm" />
+        <span class="tooltip">Confirm</span>
+      </button>
+
+      <button class="cancel-button" (click)="cancel()">
+        <img src="utility-icons/cancel.png" alt="Cancel" />
+        <span class="tooltip">Cancel</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+@if (showRuneSelector) {
+  <app-rune-selector
+    [runeConfig]="runeConfig"
+    [canSelectRune]="canSelectRune.bind(this)"
+    (cancelled)="closeRuneSelector()"
+    (selected)="confirmRuneSelection($event)">
+  </app-rune-selector>
+}

@@ -9,7 +9,7 @@ import { EssenceInstanceDTO } from "./EssenceInstanceDTO";
 import { ItemInstanceDTO } from "./ItemInstanceDTO";
 import { JewelTrinketDTO } from "./JewelTrinketDTO";
 import { PetInstanceDTO } from "./PetInstanceDTO";
-import { runeTrinketDTO } from "./RuneTrinketDTO";
+import { RuneTrinketDTO } from "./RuneTrinketDTO";
 import { WisdomSkillTreeInstanceDTO } from "./WisdomSkillTreeInstanceDTO";
 
 export interface CharacterDTO {
@@ -19,7 +19,7 @@ export interface CharacterDTO {
     masteryLevel: number;
     classSkillType: ClassSkillType;
     classSkillLevel: number;
-    runeTrinkets: runeTrinketDTO[];
+    runeTrinkets: RuneTrinketDTO[];
     jewelTrinkets: JewelTrinketDTO[];
     dragonCrest: DragonCrestTrinketDTO;
     items: Partial<Record<ItemSlot, ItemInstanceDTO>>;
