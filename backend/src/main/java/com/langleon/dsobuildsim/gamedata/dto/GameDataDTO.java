@@ -8,6 +8,8 @@ import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
 import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
 import com.langleon.dsobuildsim.jewels.JewelLimitGroup;
 import com.langleon.dsobuildsim.jewels.JewelType;
+import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
+import com.langleon.dsobuildsim.runes.enums.RuneType;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillTreeDefinitionDTO;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
@@ -29,7 +31,8 @@ public record GameDataDTO (
         Map<JewelLimitGroup, Integer> jewelLimits,
         List<EnchantmentDTO> enchantments,
         List<GemDefinitionDTO> gems,
-        List<RuneDefinitionDTO> runes,
+        Map<RuneType, RuneDefinitionDTO> runes,
+        Map<RuneLimitGroup, Integer> runeLimits,
         List<DragonStoneDefinitionDTO> dragonStones,
         List<PetDefinitionDTO> pets,
         List<EssenceDefinitionDTO> essences,

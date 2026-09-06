@@ -1,5 +1,5 @@
 import { RuneInstanceDTO } from "./RuneInstanceDTO";
 
-export interface runeTrinketDTO {
+export interface RuneTrinketDTO {
     runes: RuneInstanceDTO[];
 }

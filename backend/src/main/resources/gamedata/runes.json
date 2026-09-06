@@ -1,6 +1,7 @@
 {
   "VIGOR": {
     "runeType": "VIGOR",
+    "name": "Rune of Vigor",
     "runeUpgradeType": "OFFENSIVE",
     "runeLimitGroup": "VIGOR",
     "defaultTier": "5",
@@ -25,6 +26,7 @@
   },
   "DEVASTATION": {
     "runeType": "DEVASTATION",
+    "name": "Rune of Devastation",
     "runeUpgradeType": "OFFENSIVE",
     "runeLimitGroup": "DEVASTATION",
     "defaultTier": "5",
@@ -49,6 +51,7 @@
   },
   "CELERITY": {
     "runeType": "CELERITY",
+    "name": "Rune of Celerity",
     "runeUpgradeType": "OFFENSIVE",
     "runeLimitGroup": "CELERITY",
     "defaultTier": "5",
@@ -73,6 +76,7 @@
   },
   "ACCELERATION": {
     "runeType": "ACCELERATION",
+    "name": "Rune of Acceleration",
     "runeUpgradeType": "OFFENSIVE",
     "runeLimitGroup": "ACCELERATION",
     "defaultTier": "5",
@@ -97,6 +101,7 @@
   },
   "EFFICACY": {
     "runeType": "EFFICACY",
+    "name": "Rune of Efficacy",
     "runeUpgradeType": "OFFENSIVE",
     "runeLimitGroup": "EFFICACY",
     "defaultTier": "5",
@@ -121,6 +126,7 @@
   },
   "RECHARGING": {
     "runeType": "RECHARGING",
+    "name": "Rune of Recharging",
     "runeUpgradeType": "OFFENSIVE",
     "runeLimitGroup": "RECHARGING",
     "defaultTier": "5",
@@ -145,6 +151,7 @@
   },
   "SPRING": {
     "runeType": "SPRING",
+    "name": "Concentrated Spring Rune",
     "runeUpgradeType": "OFFENSIVE",
     "runeLimitGroup": "SPRING",
     "defaultTier": "5",
@@ -179,6 +186,7 @@
   },
   "SUMMER": {
     "runeType": "SUMMER",
+    "name": "Concentrated Summer Rune",
     "runeUpgradeType": "OFFENSIVE",
     "runeLimitGroup": "SUMMER",
     "defaultTier": "5",
@@ -213,6 +221,7 @@
   },
   "AUTUMN": {
     "runeType": "AUTUMN",
+    "name": "Concentrated Autumn Rune",
     "runeUpgradeType": "OFFENSIVE",
     "runeLimitGroup": "AUTUMN",
     "defaultTier": "5",
@@ -247,6 +256,7 @@
   },
   "WINTER": {
     "runeType": "WINTER",
+    "name": "Concentrated Winter Rune",
     "runeUpgradeType": "OFFENSIVE",
     "runeLimitGroup": "WINTER",
     "defaultTier": "5",
@@ -281,6 +291,7 @@
   },
   "VITALITY": {
     "runeType": "VITALITY",
+    "name": "Rune of Vitality",
     "runeUpgradeType": "DEFENSIVE",
     "runeLimitGroup": "VITALITY",
     "defaultTier": "5",
@@ -305,6 +316,7 @@
   },
   "REGENERATION": {
     "runeType": "REGENERATION",
+    "name": "Rune of Regeneration",
     "runeUpgradeType": "DEFENSIVE",
     "runeLimitGroup": "REGENERATION",
     "defaultTier": "5",
@@ -329,6 +341,7 @@
   },
   "FORTITUDE": {
     "runeType": "FORTITUDE",
+    "name": "Rune of Fortitude",
     "runeUpgradeType": "DEFENSIVE",
     "runeLimitGroup": "FORTITUDE",
     "defaultTier": "5",
@@ -353,6 +366,7 @@
   },
   "RESILIENCE": {
     "runeType": "RESILIENCE",
+    "name": "Rune of Resilience",
     "runeUpgradeType": "DEFENSIVE",
     "runeLimitGroup": "RESILIENCE",
     "defaultTier": "5",
@@ -377,6 +391,7 @@
   },
   "FIRE_RESILIENCE": {
     "runeType": "FIRE_RESILIENCE",
+    "name": "Rune of Fire Resilience",
     "runeUpgradeType": "DEFENSIVE",
     "runeLimitGroup": "RESILIENCE",
     "defaultTier": "5",
@@ -401,6 +416,7 @@
   },
   "ICE_RESILIENCE": {
     "runeType": "ICE_RESILIENCE",
+    "name": "Rune of Ice Resilience",
     "runeUpgradeType": "DEFENSIVE",
     "runeLimitGroup": "RESILIENCE",
     "defaultTier": "5",
@@ -425,6 +441,7 @@
   },
   "LIGHTNING_RESILIENCE": {
     "runeType": "LIGHTNING_RESILIENCE",
+    "name": "Rune of Lightning Resilience",
     "runeUpgradeType": "DEFENSIVE",
     "runeLimitGroup": "RESILIENCE",
     "defaultTier": "5",
@@ -449,6 +466,7 @@
   },
   "POISON_RESILIENCE": {
     "runeType": "POISON_RESILIENCE",
+    "name": "Rune of Poison Resilience",
     "runeUpgradeType": "DEFENSIVE",
     "runeLimitGroup": "RESILIENCE",
     "defaultTier": "5",
@@ -473,6 +491,7 @@
   },
   "ANDERMAGIC_RESILIENCE": {
     "runeType": "ANDERMAGIC_RESILIENCE",
+    "name": "Rune of Andermagic Resilience",
     "runeUpgradeType": "DEFENSIVE",
     "runeLimitGroup": "RESILIENCE",
     "defaultTier": "5",
@@ -497,6 +516,7 @@
   },
   "PERSISTENCE": {
     "runeType": "PERSISTENCE",
+    "name": "Rune of Persistence",
     "runeUpgradeType": "DEFENSIVE",
     "runeLimitGroup": "PERSISTENCE",
     "defaultTier": "5",
@@ -521,10 +541,11 @@
   },
   "ANDERMANT_FEVER": {
     "runeType": "ANDERMANT_FEVER",
+    "name": "Rune of the Andermant Fever",
     "runeUpgradeType": "GROUP",
     "runeLimitGroup": "ANDERMANT_FEVER",
     "defaultTier": "5",
-    "description": "Increases the Andermant Fever talent by %d.",
+    "description": "Increases the Andermant Fever talent by {tier}.",
     "statsPerTier": {
       "1": {
       },
@@ -540,10 +561,11 @@
   },
   "REALM_CHANGER": {
     "runeType": "REALM_CHANGER",
+    "name": "Rune of the Realm Changer",
     "runeUpgradeType": "GROUP",
     "runeLimitGroup": "REALM_CHANGER",
     "defaultTier": "5",
-    "description": "Increases the Realm Changer talent by %d.",
+    "description": "Increases the Realm Changer talent by {tier}.",
     "statsPerTier": {
       "1": {
       },
@@ -559,10 +581,11 @@
   },
   "GOLD_FEVER": {
     "runeType": "GOLD_FEVER",
+    "name": "Rune of the Gold Fever",
     "runeUpgradeType": "GROUP",
     "runeLimitGroup": "GOLD_FEVER",
     "defaultTier": "5",
-    "description": "Increases the Gold Fever talent by %d.",
+    "description": "Increases the Gold Fever talent by {tier}.",
     "statsPerTier": {
       "1": {
       },
@@ -578,10 +601,11 @@
   },
   "ANXIETY_KEEPER": {
     "runeType": "ANXIETY_KEEPER",
+    "name": "Rune of the Anxiety Keeper",
     "runeUpgradeType": "GROUP",
     "runeLimitGroup": "ANXIETY_KEEPER",
     "defaultTier": "5",
-    "description": "Increases the Anxiety Keeper talent by %d.",
+    "description": "Increases the Anxiety Keeper talent by {tier}.",
     "statsPerTier": {
       "1": {
       },
@@ -597,10 +621,11 @@
   },
   "SCHOLAR": {
     "runeType": "SCHOLAR",
+    "name": "Rune of the Scholar",
     "runeUpgradeType": "GROUP",
     "runeLimitGroup": "SCHOLAR",
     "defaultTier": "5",
-    "description": "Increases the Scholar talent by %d.",
+    "description": "Increases the Scholar talent by {tier}.",
     "statsPerTier": {
       "1": {
       },
@@ -616,10 +641,11 @@
   },
   "EXPERIENCE_HUNTER": {
     "runeType": "EXPERIENCE_HUNTER",
+    "name": "Rune of the Experience Hunter",
     "runeUpgradeType": "GROUP",
     "runeLimitGroup": "EXPERIENCE_HUNTER",
     "defaultTier": "5",
-    "description": "Increases the Experience Hunter talent by %d.",
+    "description": "Increases the Experience Hunter talent by {tier}.",
     "statsPerTier": {
       "1": {
       },
@@ -635,10 +661,11 @@
   },
   "MATERI_BLESSING": {
     "runeType": "MATERI_BLESSING",
+    "name": "Rune of Materi Blessing",
     "runeUpgradeType": "BASIC",
     "runeLimitGroup": "MATERI_BLESSING",
     "defaultTier": "5",
-    "description": "+ %d%% Materi Fragment drop stack size",
+    "description": "",
     "statsPerTier": {
       "1": {
         "MATERI_FRAGMENT_DROP_BONUS": 0.1
@@ -659,10 +686,11 @@
   },
   "WISDOM_SEEKER": {
     "runeType": "WISDOM_SEEKER",
+    "name": "Rune of the Wisdom Seeker",
     "runeUpgradeType": "BASIC",
     "runeLimitGroup": "WISDOM_SEEKER",
     "defaultTier": "5",
-    "description": "+ %d%% Ancient Wisdom drop stack size",
+    "description": "",
     "statsPerTier": {
       "1": {
         "ANCIENT_WISDOM_DROP_BONUS": 0.1
@@ -683,30 +711,32 @@
   },
   "INSIGHT": {
     "runeType": "INSIGHT",
+    "name": "Rune of Insight",
     "runeUpgradeType": "BASIC",
     "runeLimitGroup": "INSIGHT",
     "defaultTier": "5",
-    "description": "+ %.2f%% experience points when defeating enemies",
+    "description": "",
     "statsPerTier": {
       "1": {
-        "ANCIENT_WISDOM_DROP_BONUS": 0.025
+        "XP_GAIN": 0.025
       },
       "2": {
-        "ANCIENT_WISDOM_DROP_BONUS": 0.05
+        "XP_GAIN": 0.05
       },
       "3": {
-        "ANCIENT_WISDOM_DROP_BONUS": 0.1
+        "XP_GAIN": 0.1
       },
       "4": {
-        "ANCIENT_WISDOM_DROP_BONUS": 0.15
+        "XP_GAIN": 0.15
       },
       "5": {
-        "ANCIENT_WISDOM_DROP_BONUS": 0.2
+        "XP_GAIN": 0.2
       }
     }
   },
   "RISING_VIGOR": {
     "runeType": "RISING_VIGOR",
+    "name": "Rune of Rising Vigor",
     "runeUpgradeType": "NONE",
     "runeLimitGroup": "PARAGON",
     "defaultTier": "6",
@@ -720,6 +750,7 @@
   },
   "RISING_POWER": {
     "runeType": "RISING_POWER",
+    "name": "Rune of Rising Power",
     "runeUpgradeType": "NONE",
     "runeLimitGroup": "PARAGON",
     "defaultTier": "6",
@@ -736,6 +767,7 @@
   },
   "HOLY_STAR_SHARD": {
     "runeType": "HOLY_STAR_SHARD",
+    "name": "Holy Star Shard Rune",
     "runeUpgradeType": "NONE",
     "runeLimitGroup": "VARNOK",
     "defaultTier": "7",

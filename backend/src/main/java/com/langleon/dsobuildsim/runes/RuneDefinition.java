@@ -7,6 +7,6 @@ import com.langleon.dsobuildsim.runes.enums.RuneUpgradeType;
 
 import java.util.Map;
 
-public record RuneDefinition(RuneType runeType, RuneUpgradeType runeUpgradeType, RuneLimitGroup runeLimitGroup, int defaultTier,
+public record RuneDefinition(RuneType runeType, String name, RuneUpgradeType runeUpgradeType, RuneLimitGroup runeLimitGroup, int defaultTier,
                              Map<Integer, Map<StatType, Double>> statsPerTier, String description) {
 }
