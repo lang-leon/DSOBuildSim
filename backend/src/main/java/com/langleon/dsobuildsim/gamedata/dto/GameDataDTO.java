@@ -2,7 +2,6 @@ package com.langleon.dsobuildsim.gamedata.dto;
 
 import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
 import com.langleon.dsobuildsim.character.CharacterClass;
-import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagBonusDefinitionDTO;
 import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagCategoryBonusDefinitionDTO;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
 import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
@@ -11,7 +10,8 @@ import com.langleon.dsobuildsim.jewels.JewelType;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
 import com.langleon.dsobuildsim.sets.SetType;
-import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillTreeDefinitionDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomGroupDefinitionDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillDefinitionDTO;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.essences.dto.EssenceDefinitionDTO;
 import com.langleon.dsobuildsim.gems.dto.GemDefinitionDTO;
@@ -19,6 +19,8 @@ import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
 import com.langleon.dsobuildsim.pets.dto.PetDefinitionDTO;
 import com.langleon.dsobuildsim.runes.dto.RuneDefinitionDTO;
 import com.langleon.dsobuildsim.sets.dto.SetDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 
 import java.util.List;
 import java.util.Map;
@@ -39,7 +41,8 @@ public record GameDataDTO (
         List<BuffDefinitionDTO> tonics,
         List<BuffDefinitionDTO> physics,
         LevelMultiplierTableDTO levelMultiplierTable,
-        WisdomSkillTreeDefinitionDTO wisdomSkillTree,
+        Map<WisdomSkillType, WisdomSkillDefinitionDTO> wisdomSkills,
+        Map<WisdomGroupType, WisdomGroupDefinitionDTO> wisdomGroups,
         List<CollectorBagCategoryBonusDefinitionDTO> collectorBagBuffs
         )
 {

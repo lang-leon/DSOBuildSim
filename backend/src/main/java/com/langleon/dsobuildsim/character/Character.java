@@ -21,7 +21,8 @@ import com.langleon.dsobuildsim.items.core.Item;
 import com.langleon.dsobuildsim.jewels.JewelTrinket;
 import com.langleon.dsobuildsim.pets.Pet;
 import com.langleon.dsobuildsim.runes.RuneTrinket;
-import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTree;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkill;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 
 import java.util.*;
 
@@ -49,7 +50,7 @@ public class Character {
     private final Tonic tonic;
     private final Physic physic;
 
-    private final WisdomSkillTree wisdomSkillTree;
+    private final Map<WisdomSkillType, WisdomSkill> wisdomSkills;
 
     public Character(CharacterClass characterClass,
                      MasteryType masteryType,
@@ -65,7 +66,7 @@ public class Character {
                      Essence essence,
                      Tonic tonic,
                      Physic physic,
-                     WisdomSkillTree wisdomSkillTree,
+                     Map<WisdomSkillType, WisdomSkill> wisdomSkills,
                      Map<CollectorBagCategory, CollectorBagCategoryBonus> collectorBagBuffs
                      )
     {
@@ -95,7 +96,7 @@ public class Character {
         this.physic = physic;
 
         this.collectorBagBuffs = collectorBagBuffs;
-        this.wisdomSkillTree = wisdomSkillTree;
+        this.wisdomSkills = wisdomSkills;
     }
 
     public CharacterClass getCharacterClass() {
@@ -126,8 +127,8 @@ public class Character {
         return physic;
     }
 
-    public WisdomSkillTree getWisdomSkillTree() {
-        return wisdomSkillTree;
+    public Map<WisdomSkillType, WisdomSkill> getWisdomSkills() {
+        return wisdomSkills;
     }
 
     private void validateRunes(List<RuneTrinket> runeTrinkets)
@@ -228,7 +229,7 @@ public class Character {
     {
         Map<StatType, Double> baseStats = new EnumMap<>(StatType.class);
         this.characterClass.getBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
-        this.wisdomSkillTree.calculateStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
+        this.calculateWisdomStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
         this.calculateTotalItemBaseStats().forEach((key, value) -> baseStats.merge(key, value, Double::sum));
         this.equippedSets.forEach((setType, setInstance) -> setInstance.getActiveBaseValues().forEach((key, value) -> baseStats.merge(key, value, Double::sum)));
         if (this.tonic != null) baseStats.merge(this.tonic.statType(), this.tonic.statValue(), Double::sum);
@@ -334,6 +335,15 @@ public class Character {
             if (stat!=masteryResType) relativeStats.put(stat, -0.25);
         }
         return relativeStats;
+    }
+
+    private Map<StatType, Double> calculateWisdomStats()
+    {
+        EnumMap<StatType ,Double> stats = new EnumMap<>(StatType.class);
+        this.wisdomSkills.forEach((_, v) -> {
+            stats.putAll(v.calculateTotalStats());
+        });
+        return stats;
     }
 
     private Map<StatType, Double> calculateTotalItemRelativeStats()

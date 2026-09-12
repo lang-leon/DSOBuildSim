@@ -3,9 +3,6 @@ package com.langleon.dsobuildsim.gamedata;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.buffs.BuffConfig;
-import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
-import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupConfig;
-import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillConfig;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -33,24 +30,10 @@ public class GameDataLoader {
                 load("/gamedata/essences.json", new TypeReference<>() {}),
                 load("/gamedata/buffs.json", BuffConfig.class),
                 load("/gamedata/levelMultiplierTable.json", new TypeReference<>() {}),
-                loadWisdomSkillTreeConfig(),
+                load("/gamedata/wisdomSkills.json", new TypeReference<>() {}),
+                load("/gamedata/wisdomGroups.json", new TypeReference<>() {}),
                 load("/gamedata/collectorBagBonuses.json", new TypeReference<>() {})
         );
-    }
-
-    private WisdomSkillConfig loadWisdomSkillConfig()
-    {
-        return load("/gamedata/wisdomSkills.json", WisdomSkillConfig.class);
-    }
-
-    private WisdomGroupConfig loadWisdomGroupConfig()
-    {
-        return load("/gamedata/wisdomGroups.json", WisdomGroupConfig.class);
-    }
-
-    private WisdomSkillTreeConfig loadWisdomSkillTreeConfig()
-    {
-        return new WisdomSkillTreeConfig(loadWisdomSkillConfig().wisdomSkills(), loadWisdomGroupConfig().wisdomGroups());
     }
 
     private <T> T load(String path, Class<T> clazz)

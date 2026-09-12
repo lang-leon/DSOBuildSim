@@ -44,7 +44,8 @@ public class GameDataControllerTest {
                 .contains("tonics")
                 .contains("physics")
                 .contains("levelMultiplierTable")
-                .contains("wisdomSkillTree");
+                .contains("wisdomSkills")
+                .contains("wisdomGroups");
     }
 
 }

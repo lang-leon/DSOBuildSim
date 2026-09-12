@@ -16,6 +16,11 @@ public class WisdomSkill {
         this.currentLevel = 0;
     }
 
+    public WisdomSkill(WisdomSkillDefinition wisdomSkillDefinition, int level) {
+        this.wisdomSkillDefinition = wisdomSkillDefinition;
+        this.setCurrentLevel(level);
+    }
+
     public int getCurrentLevel() {
         return currentLevel;
     }

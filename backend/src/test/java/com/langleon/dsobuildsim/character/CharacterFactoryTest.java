@@ -1,5 +1,7 @@
 package com.langleon.dsobuildsim.character;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.langleon.dsobuildsim.buffs.BuffFactory;
 import com.langleon.dsobuildsim.character.dto.CharacterDTO;
 import com.langleon.dsobuildsim.collectorbagbonus.CollectorBagFactory;
@@ -25,10 +27,7 @@ import com.langleon.dsobuildsim.runes.dto.RuneInstanceDTO;
 import com.langleon.dsobuildsim.runes.dto.RuneTrinketDTO;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeFactory;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeResolver;
-import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomGroupInstanceDTO;
 import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomSkillInstanceDTO;
-import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomSkillTreeInstanceDTO;
-import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
 import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 import com.langleon.dsobuildsim.items.core.enums.ItemSlot;
 import com.langleon.dsobuildsim.common.StatType;
@@ -73,9 +72,15 @@ public class CharacterFactoryTest {
     }
 
     @Test
-    void createCharacterAndCalculateStats()
-    {
+    void createCharacterAndCalculateStats() throws JsonProcessingException {
         CharacterDTO characterDTO = createCharacter();
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        System.out.println(objectMapper
+                .writerWithDefaultPrettyPrinter()
+                .writeValueAsString(characterDTO));
+
         Character character = characterFactory.fromDTO(characterDTO);
         Map<StatType, Double> stats = character.calculateCharacterStats();
         Assertions.assertEquals(1504828.096, stats.get(StatType.DAMAGE), 0.001);
@@ -162,57 +167,38 @@ public class CharacterFactoryTest {
         items.put(ItemSlot.SOUL_COMPANION_BELT, new ItemInstanceDTO(ItemCategory.SET, SetItemType.SOUL_DESTRUCTION_BELT.name(), 100, Map.of(StatType.HEALTH_POINTS, 14386.028), amethysts, hpEnchants2, Map.of(), List.of()));
         items.put(ItemSlot.SOUL_COMPANION_CLOAK, new ItemInstanceDTO(ItemCategory.SET, SetItemType.SOUL_DESTRUCTION_CLOAK.name(), 100, Map.of(StatType.HEALTH_POINTS, 14386.028), amethysts, hpEnchants2, Map.of(), List.of()));
 
-        EnumMap<WisdomGroupType, WisdomGroupInstanceDTO> wisdomGroups = new EnumMap<>(WisdomGroupType.class);
+        Map<WisdomSkillType, WisdomSkillInstanceDTO> wisdomSkills = new HashMap<>();
+        wisdomSkills.put(WisdomSkillType.RISING_VIGOR, new WisdomSkillInstanceDTO(WisdomSkillType.RISING_VIGOR, 60));
+        wisdomSkills.put(WisdomSkillType.VIVACIOUS_VITALITY, new WisdomSkillInstanceDTO(WisdomSkillType.VIVACIOUS_VITALITY, 60));
+        wisdomSkills.put(WisdomSkillType.CONJURED_DISTILLATION, new WisdomSkillInstanceDTO(WisdomSkillType.CONJURED_DISTILLATION, 0));
 
-        EnumMap<WisdomSkillType, WisdomSkillInstanceDTO> healthResource = new EnumMap<>(WisdomSkillType.class);
-        healthResource.put(WisdomSkillType.RISING_VIGOR, new WisdomSkillInstanceDTO(WisdomSkillType.RISING_VIGOR, 60));
-        healthResource.put(WisdomSkillType.VIVACIOUS_VITALITY, new WisdomSkillInstanceDTO(WisdomSkillType.VIVACIOUS_VITALITY, 60));
-        healthResource.put(WisdomSkillType.CONJURED_DISTILLATION, new WisdomSkillInstanceDTO(WisdomSkillType.CONJURED_DISTILLATION, 0));
-        wisdomGroups.put(WisdomGroupType.HEALTH_RESOURCE, new WisdomGroupInstanceDTO(WisdomGroupType.HEALTH_RESOURCE, healthResource));
+        wisdomSkills.put(WisdomSkillType.RISING_POWER, new WisdomSkillInstanceDTO(WisdomSkillType.RISING_POWER, 80));
+        wisdomSkills.put(WisdomSkillType.DECISIVE_STRIKE, new WisdomSkillInstanceDTO(WisdomSkillType.DECISIVE_STRIKE, 80));
+        wisdomSkills.put(WisdomSkillType.HANGMANS_PRIDE, new WisdomSkillInstanceDTO(WisdomSkillType.HANGMANS_PRIDE, 40));
 
-        EnumMap<WisdomSkillType, WisdomSkillInstanceDTO> attack = new EnumMap<>(WisdomSkillType.class);
-        attack.put(WisdomSkillType.RISING_POWER, new WisdomSkillInstanceDTO(WisdomSkillType.RISING_POWER, 80));
-        attack.put(WisdomSkillType.DECISIVE_STRIKE, new WisdomSkillInstanceDTO(WisdomSkillType.DECISIVE_STRIKE, 80));
-        attack.put(WisdomSkillType.HANGMANS_PRIDE, new WisdomSkillInstanceDTO(WisdomSkillType.HANGMANS_PRIDE, 40));
-        wisdomGroups.put(WisdomGroupType.ATTACK, new WisdomGroupInstanceDTO(WisdomGroupType.ATTACK, attack));
+        wisdomSkills.put(WisdomSkillType.STURDY_SHIELD, new WisdomSkillInstanceDTO(WisdomSkillType.STURDY_SHIELD, 80));
+        wisdomSkills.put(WisdomSkillType.HARD_AS_A_ROCK, new WisdomSkillInstanceDTO(WisdomSkillType.HARD_AS_A_ROCK, 60));
+        wisdomSkills.put(WisdomSkillType.ELEMENTAL_PROTECTION, new WisdomSkillInstanceDTO(WisdomSkillType.ELEMENTAL_PROTECTION, 60));
 
-        EnumMap<WisdomSkillType, WisdomSkillInstanceDTO> defense = new EnumMap<>(WisdomSkillType.class);
-        defense.put(WisdomSkillType.STURDY_SHIELD, new WisdomSkillInstanceDTO(WisdomSkillType.STURDY_SHIELD, 80));
-        defense.put(WisdomSkillType.HARD_AS_A_ROCK, new WisdomSkillInstanceDTO(WisdomSkillType.HARD_AS_A_ROCK, 60));
-        defense.put(WisdomSkillType.ELEMENTAL_PROTECTION, new WisdomSkillInstanceDTO(WisdomSkillType.ELEMENTAL_PROTECTION, 60));
-        wisdomGroups.put(WisdomGroupType.DEFENSE, new WisdomGroupInstanceDTO(WisdomGroupType.DEFENSE, defense));
+        wisdomSkills.put(WisdomSkillType.SECOND_CHANCE, new WisdomSkillInstanceDTO(WisdomSkillType.SECOND_CHANCE, 1));
+        wisdomSkills.put(WisdomSkillType.CLASS_SKILL_1, new WisdomSkillInstanceDTO(WisdomSkillType.CLASS_SKILL_1, 0));
+        wisdomSkills.put(WisdomSkillType.CLASS_SKILL_2, new WisdomSkillInstanceDTO(WisdomSkillType.CLASS_SKILL_2, 0));
 
-        EnumMap<WisdomSkillType, WisdomSkillInstanceDTO> combat = new EnumMap<>(WisdomSkillType.class);
-        combat.put(WisdomSkillType.SECOND_CHANCE, new WisdomSkillInstanceDTO(WisdomSkillType.SECOND_CHANCE, 1));
-        combat.put(WisdomSkillType.EMERGENCY_RESERVES, new WisdomSkillInstanceDTO(WisdomSkillType.EMERGENCY_RESERVES, 0));
-        combat.put(WisdomSkillType.ENERGETIC_FORCE, new WisdomSkillInstanceDTO(WisdomSkillType.ENERGETIC_FORCE, 0));
-        wisdomGroups.put(WisdomGroupType.COMBAT, new WisdomGroupInstanceDTO(WisdomGroupType.COMBAT, combat));
+        wisdomSkills.put(WisdomSkillType.DEXTROUS_SMITING, new WisdomSkillInstanceDTO(WisdomSkillType.DEXTROUS_SMITING, 60));
+        wisdomSkills.put(WisdomSkillType.DEXTROUS_AGILITY, new WisdomSkillInstanceDTO(WisdomSkillType.DEXTROUS_AGILITY, 60));
+        wisdomSkills.put(WisdomSkillType.A_HANDFUL_OF_RESOURCES, new WisdomSkillInstanceDTO(WisdomSkillType.A_HANDFUL_OF_RESOURCES, 0));
 
-        EnumMap<WisdomSkillType, WisdomSkillInstanceDTO> oneHand = new EnumMap<>(WisdomSkillType.class);
-        oneHand.put(WisdomSkillType.DEXTROUS_SMITING, new WisdomSkillInstanceDTO(WisdomSkillType.DEXTROUS_SMITING, 60));
-        oneHand.put(WisdomSkillType.DEXTROUS_AGILITY, new WisdomSkillInstanceDTO(WisdomSkillType.DEXTROUS_AGILITY, 60));
-        oneHand.put(WisdomSkillType.A_HANDFUL_OF_RESOURCES, new WisdomSkillInstanceDTO(WisdomSkillType.A_HANDFUL_OF_RESOURCES, 0));
-        wisdomGroups.put(WisdomGroupType.ONE_HANDED_WEAPON, new WisdomGroupInstanceDTO(WisdomGroupType.ONE_HANDED_WEAPON, oneHand));
+        wisdomSkills.put(WisdomSkillType.AMBIDEXTROUS_SMITING, new WisdomSkillInstanceDTO(WisdomSkillType.AMBIDEXTROUS_SMITING, 60));
+        wisdomSkills.put(WisdomSkillType.AMBIDEXTROUS_AGILITY, new WisdomSkillInstanceDTO(WisdomSkillType.AMBIDEXTROUS_AGILITY, 30));
+        wisdomSkills.put(WisdomSkillType.LIFETIME_THIEF, new WisdomSkillInstanceDTO(WisdomSkillType.LIFETIME_THIEF, 60));
 
-        EnumMap<WisdomSkillType, WisdomSkillInstanceDTO> twoHand = new EnumMap<>(WisdomSkillType.class);
-        twoHand.put(WisdomSkillType.AMBIDEXTROUS_SMITING, new WisdomSkillInstanceDTO(WisdomSkillType.AMBIDEXTROUS_SMITING, 60));
-        twoHand.put(WisdomSkillType.AMBIDEXTROUS_AGILITY, new WisdomSkillInstanceDTO(WisdomSkillType.AMBIDEXTROUS_AGILITY, 30));
-        twoHand.put(WisdomSkillType.LIFETIME_THIEF, new WisdomSkillInstanceDTO(WisdomSkillType.LIFETIME_THIEF, 60));
-        wisdomGroups.put(WisdomGroupType.TWO_HANDED_WEAPON, new WisdomGroupInstanceDTO(WisdomGroupType.TWO_HANDED_WEAPON, twoHand));
+        wisdomSkills.put(WisdomSkillType.BONANZA, new WisdomSkillInstanceDTO(WisdomSkillType.BONANZA, 15));
+        wisdomSkills.put(WisdomSkillType.PEDDLER, new WisdomSkillInstanceDTO(WisdomSkillType.PEDDLER, 1));
+        wisdomSkills.put(WisdomSkillType.PORTABLE_WORKBENCH, new WisdomSkillInstanceDTO(WisdomSkillType.PORTABLE_WORKBENCH, 1));
 
-        EnumMap<WisdomSkillType, WisdomSkillInstanceDTO> prosperity = new EnumMap<>(WisdomSkillType.class);
-        prosperity.put(WisdomSkillType.BONANZA, new WisdomSkillInstanceDTO(WisdomSkillType.BONANZA, 15));
-        prosperity.put(WisdomSkillType.PEDDLER, new WisdomSkillInstanceDTO(WisdomSkillType.PEDDLER, 1));
-        prosperity.put(WisdomSkillType.PORTABLE_WORKBENCH, new WisdomSkillInstanceDTO(WisdomSkillType.PORTABLE_WORKBENCH, 1));
-        wisdomGroups.put(WisdomGroupType.PROSPERITY, new WisdomGroupInstanceDTO(WisdomGroupType.PROSPERITY, prosperity));
-
-        EnumMap<WisdomSkillType, WisdomSkillInstanceDTO> travelMerits = new EnumMap<>(WisdomSkillType.class);
-        travelMerits.put(WisdomSkillType.HOME_SWEET_HOME, new WisdomSkillInstanceDTO(WisdomSkillType.HOME_SWEET_HOME, 15));
-        travelMerits.put(WisdomSkillType.ON_HORSEBACK, new WisdomSkillInstanceDTO(WisdomSkillType.ON_HORSEBACK, 15));
-        travelMerits.put(WisdomSkillType.RACING_SLIPPERS, new WisdomSkillInstanceDTO(WisdomSkillType.RACING_SLIPPERS, 0));
-        wisdomGroups.put(WisdomGroupType.TRAVEL_MERITS, new WisdomGroupInstanceDTO(WisdomGroupType.TRAVEL_MERITS, travelMerits));
-
-        WisdomSkillTreeInstanceDTO wisdomSkillTree = new WisdomSkillTreeInstanceDTO(wisdomGroups);
+        wisdomSkills.put(WisdomSkillType.HOME_SWEET_HOME, new WisdomSkillInstanceDTO(WisdomSkillType.HOME_SWEET_HOME, 15));
+        wisdomSkills.put(WisdomSkillType.ON_HORSEBACK, new WisdomSkillInstanceDTO(WisdomSkillType.ON_HORSEBACK, 15));
+        wisdomSkills.put(WisdomSkillType.RACING_SLIPPERS, new WisdomSkillInstanceDTO(WisdomSkillType.RACING_SLIPPERS, 0));
 
         List<CollectorBagCategoryBonusInstanceDTO> collectorBagBuffs = new ArrayList<>();
         collectorBagBuffs.add(new CollectorBagCategoryBonusInstanceDTO(CollectorBagCategory.DRAGON_SPAWN, 3));
@@ -244,7 +230,7 @@ public class CharacterFactoryTest {
                 essence,
                 null,
                 null,
-                wisdomSkillTree,
+                wisdomSkills,
                 collectorBagBuffs
         );
     }

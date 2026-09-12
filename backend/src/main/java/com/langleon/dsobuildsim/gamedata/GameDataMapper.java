@@ -4,7 +4,6 @@ import com.langleon.dsobuildsim.buffs.BuffMapper;
 import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.collectorbagbonus.CollectorBagMapper;
-import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagBonusDefinitionDTO;
 import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagCategoryBonusDefinitionDTO;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneMapper;
@@ -32,7 +31,10 @@ import com.langleon.dsobuildsim.runes.RuneMapper;
 import com.langleon.dsobuildsim.runes.dto.RuneDefinitionDTO;
 import com.langleon.dsobuildsim.sets.SetMapper;
 import com.langleon.dsobuildsim.sets.dto.SetDTO;
-import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillTreeDefinitionDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomGroupDefinitionDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillDefinitionDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 
 import java.util.Arrays;
 import java.util.List;
@@ -97,11 +99,13 @@ public class GameDataMapper {
 
         LevelMultiplierTableDTO levelMultiplierTable = LevelMultiplierTableMapper.from(config.levelMultiplierTable());
 
-        WisdomSkillTreeDefinitionDTO wisdomSkillTree = WisdomSkillTreeMapper.from(config.wisdomSkillConfig());
+        Map<WisdomSkillType, WisdomSkillDefinitionDTO> wisdomSkills = WisdomSkillTreeMapper.fromSkills(config.wisdomSkills());
+
+        Map<WisdomGroupType, WisdomGroupDefinitionDTO> wisdomGroups = WisdomSkillTreeMapper.fromGroups(config.wisdomGroups());
 
         List<CollectorBagCategoryBonusDefinitionDTO> collectorBagBuffs = config.collectorBagConfig().categoryBonuses().values().stream().map(categoryBonus -> CollectorBagMapper.from(categoryBonus, config.collectorBagConfig())).toList();
 
-        return new GameDataDTO(config.classStats(), items, sets, jewels, jewelLimits, enchantments, gems, runes, runeLimits, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkillTree, collectorBagBuffs);
+        return new GameDataDTO(config.classStats(), items, sets, jewels, jewelLimits, enchantments, gems, runes, runeLimits, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkills, wisdomGroups, collectorBagBuffs);
     }
 
     private static <K, S, T> Map<CharacterClass, Map<K, T>> mapPerClass(

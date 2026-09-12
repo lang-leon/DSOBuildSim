@@ -26,7 +26,10 @@ import com.langleon.dsobuildsim.runes.RuneDefinition;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
 import com.langleon.dsobuildsim.sets.SetDefinition;
 import com.langleon.dsobuildsim.sets.SetType;
-import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeConfig;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupDefinition;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillDefinition;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 
 import java.util.Map;
 
@@ -45,7 +48,8 @@ public record GameDataConfig(
         Map<EssenceType, EssenceDefinition> essences,
         BuffConfig buffConfig,
         LevelMultiplierTable levelMultiplierTable,
-        WisdomSkillTreeConfig wisdomSkillConfig,
+        Map<WisdomSkillType, WisdomSkillDefinition> wisdomSkills,
+        Map<WisdomGroupType, WisdomGroupDefinition> wisdomGroups,
         CollectorBagConfig collectorBagConfig
 ) {
 }
