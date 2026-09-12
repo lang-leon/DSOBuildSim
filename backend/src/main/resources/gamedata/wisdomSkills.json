@@ -162,7 +162,7 @@
       "increasePerLevel": 0.0025,
       "firstLevelBonus": 0.01,
       "statValueAbsolute": false,
-      "description": "Each final blow with an one-handed weapon grants the A Handful of Resources buff\nA Handful of Resources buff:\n- %f Resource cost for all skills\n- Lasts for 2.0 seconds"
+      "description": "Each final blow with an one-handed weapon grants the A Handful of Resources buff\n\nA Handful of Resources buff:\n- %f Resource cost for all skills\n- Lasts for 2.0 seconds"
     },
     "AMBIDEXTROUS_SMITING": {
       "wisdomSkillType": "AMBIDEXTROUS_SMITING",

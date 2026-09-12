@@ -443,6 +443,7 @@
           class="wisdom-skill-tree"
           slotName="Wisdom Skill Tree"
           icon="inventory-icons/wisdom-skill-tree.png"
+          (clicked)="openWisdomSkillTreeEditor()"
         ></app-build-sim-button>
         @if (character.characterClass === CharacterClass.DRAGONKNIGHT) {
           <app-build-sim-button
@@ -609,6 +610,18 @@
   (cancelled)="closeRuneTrinketEditor()"
   (confirmed)="confirmRuneTrinketSelection($event)">
   </app-rune-trinket-editor>
+}
+
+@if (showWisdomSkillTreeEditor) {
+  <app-wisdom-skilltree
+  [scale]="scale"
+  [characterClass]="character.characterClass"
+  [wisdomSkills]="character.wisdomSkills"
+  [wisdomSkillDefs]="gameData.wisdomSkills"
+  [wisdomGroupDefs]="gameData.wisdomGroups"
+  (cancelled)="closeWisdomSkillTreeEditor()"
+  (confirmed)="confirmWisdomSkillTreeSelection($event)">
+  </app-wisdom-skilltree>
 }
 
 }

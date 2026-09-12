@@ -6,5 +6,5 @@ export interface WisdomGroupDefinitionDTO {
     type: WisdomGroupType;
     name: string;
     maxLevel: number;
-    wisdomSkills: Record<WisdomSkillType, WisdomSkillDefinitionDTO>;
+    wisdomSkills: WisdomSkillType[];
 }

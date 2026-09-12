@@ -15,7 +15,6 @@ import { CommonModule } from '@angular/common';
 import { CharacterDTO } from '../../models/instanceDTOs/CharacterDTO';
 import { CharacterClass } from '../../enums/CharacterClass';
 import { MasteryType } from '../../enums/MasteryType';
-import { WisdomSkillTreeInstanceDTO } from '../../models/instanceDTOs/WisdomSkillTreeInstanceDTO';
 import { WisdomGroupType } from '../../enums/WisdomGroupType';
 import { WisdomGroupInstanceDTO } from '../../models/instanceDTOs/WisdomGroupInstanceDTO';
 import { WisdomSkillType } from '../../enums/WisdomSkillType';
@@ -44,6 +43,8 @@ import { JewelInstanceDTO } from '../../models/instanceDTOs/JewelInstanceDTO';
 import { RuneInstanceDTO } from '../../models/instanceDTOs/RuneInstanceDTO';
 import { RuneTrinketDTO } from '../../models/instanceDTOs/RuneTrinketDTO';
 import { RuneTrinketEditor } from '../rune-trinket-editor/rune-trinket-editor';
+import { WisdomSkilltreeEditor } from '../wisdom-skilltree-editor/wisdom-skilltree-editor';
+import { WisdomSkillInstanceDTO } from '../../models/instanceDTOs/WisdomSkillInstanceDTO';
 
 @Component({
   selector: 'app-character',
@@ -61,7 +62,8 @@ import { RuneTrinketEditor } from '../rune-trinket-editor/rune-trinket-editor';
     CollectorBagSelector,
     DragoncrestTrinketEditor,
     JewelTrinketEditor,
-    RuneTrinketEditor
+    RuneTrinketEditor,
+    WisdomSkilltreeEditor
   ],
   templateUrl: './build-sim-component.html',
   styleUrl: './build-sim-component.scss',
@@ -99,6 +101,7 @@ export class BuildSimComponent implements OnInit {
   selectedJewelTrinket = -1;
   showRuneTrinket = false;
   selectedRuneTrinket = -1;
+  showWisdomSkillTreeEditor = false;
 
   formatStatName = formatStatName;
   BuffCategory = BuffCategory;
@@ -175,16 +178,13 @@ export class BuildSimComponent implements OnInit {
       essence: null,
       tonic: null,
       physic: null,
-      wisdomSkillTree: this.createDefaultWisdomSkillTree(),
+      wisdomSkills: this.createDefaultWisdomSkillTree(),
       collectorBagBuffs: [],
     };
   }
 
-  private createDefaultWisdomSkillTree(): WisdomSkillTreeInstanceDTO {
-    const wisdomGroups: Record<WisdomGroupType, WisdomGroupInstanceDTO> = {
-      [WisdomGroupType.HEALTH_RESOURCE]: {
-        type: WisdomGroupType.HEALTH_RESOURCE,
-        wisdomSkills: {
+  private createDefaultWisdomSkillTree(): Record<WisdomSkillType, WisdomSkillInstanceDTO> {
+    const wisdomSkills: Record<WisdomSkillType, WisdomSkillInstanceDTO> = {
           [WisdomSkillType.RISING_VIGOR]: {
             type: WisdomSkillType.RISING_VIGOR,
             currentLevel: 0,
@@ -197,11 +197,6 @@ export class BuildSimComponent implements OnInit {
             type: WisdomSkillType.CONJURED_DISTILLATION,
             currentLevel: 0,
           },
-        },
-      },
-      [WisdomGroupType.ATTACK]: {
-        type: WisdomGroupType.ATTACK,
-        wisdomSkills: {
           [WisdomSkillType.RISING_POWER]: {
             type: WisdomSkillType.RISING_POWER,
             currentLevel: 0,
@@ -214,11 +209,6 @@ export class BuildSimComponent implements OnInit {
             type: WisdomSkillType.HANGMANS_PRIDE,
             currentLevel: 0,
           },
-        },
-      },
-      [WisdomGroupType.DEFENSE]: {
-        type: WisdomGroupType.DEFENSE,
-        wisdomSkills: {
           [WisdomSkillType.STURDY_SHIELD]: {
             type: WisdomSkillType.STURDY_SHIELD,
             currentLevel: 0,
@@ -231,28 +221,18 @@ export class BuildSimComponent implements OnInit {
             type: WisdomSkillType.ELEMENTAL_PROTECTION,
             currentLevel: 0,
           },
-        },
-      },
-      [WisdomGroupType.COMBAT]: {
-        type: WisdomGroupType.COMBAT,
-        wisdomSkills: {
           [WisdomSkillType.SECOND_CHANCE]: {
             type: WisdomSkillType.SECOND_CHANCE,
             currentLevel: 0,
           },
-          [WisdomSkillType.EMERGENCY_RESERVES]: {
-            type: WisdomSkillType.EMERGENCY_RESERVES,
+          [WisdomSkillType.CLASS_SKILL_1]: {
+            type: WisdomSkillType.CLASS_SKILL_1,
             currentLevel: 0,
           },
-          [WisdomSkillType.ENERGETIC_FORCE]: {
-            type: WisdomSkillType.ENERGETIC_FORCE,
+          [WisdomSkillType.CLASS_SKILL_2]: {
+            type: WisdomSkillType.CLASS_SKILL_2,
             currentLevel: 0,
           },
-        },
-      },
-      [WisdomGroupType.ONE_HANDED_WEAPON]: {
-        type: WisdomGroupType.ONE_HANDED_WEAPON,
-        wisdomSkills: {
           [WisdomSkillType.DEXTROUS_SMITING]: {
             type: WisdomSkillType.DEXTROUS_SMITING,
             currentLevel: 0,
@@ -265,11 +245,6 @@ export class BuildSimComponent implements OnInit {
             type: WisdomSkillType.A_HANDFUL_OF_RESOURCES,
             currentLevel: 0,
           },
-        },
-      },
-      [WisdomGroupType.TWO_HANDED_WEAPON]: {
-        type: WisdomGroupType.TWO_HANDED_WEAPON,
-        wisdomSkills: {
           [WisdomSkillType.AMBIDEXTROUS_SMITING]: {
             type: WisdomSkillType.AMBIDEXTROUS_SMITING,
             currentLevel: 0,
@@ -282,11 +257,6 @@ export class BuildSimComponent implements OnInit {
             type: WisdomSkillType.LIFETIME_THIEF,
             currentLevel: 0,
           },
-        },
-      },
-      [WisdomGroupType.PROSPERITY]: {
-        type: WisdomGroupType.PROSPERITY,
-        wisdomSkills: {
           [WisdomSkillType.BONANZA]: {
             type: WisdomSkillType.BONANZA,
             currentLevel: 0,
@@ -299,11 +269,6 @@ export class BuildSimComponent implements OnInit {
             type: WisdomSkillType.PORTABLE_WORKBENCH,
             currentLevel: 0,
           },
-        },
-      },
-      [WisdomGroupType.TRAVEL_MERITS]: {
-        type: WisdomGroupType.TRAVEL_MERITS,
-        wisdomSkills: {
           [WisdomSkillType.HOME_SWEET_HOME]: {
             type: WisdomSkillType.HOME_SWEET_HOME,
             currentLevel: 0,
@@ -316,11 +281,9 @@ export class BuildSimComponent implements OnInit {
             type: WisdomSkillType.RACING_SLIPPERS,
             currentLevel: 0,
           },
-        },
-      },
     };
 
-    return { wisdomGroups };
+    return wisdomSkills;
   }
 
   openFilePicker() {
@@ -839,6 +802,19 @@ const editedAmount = editedRunes
 
   return equippedAmount + editedAmount < this.gameData.runeLimits[limitGroup];
 }
+
+  openWisdomSkillTreeEditor() {
+    this.showWisdomSkillTreeEditor = true;
+  }
+
+  closeWisdomSkillTreeEditor() {
+    this.showWisdomSkillTreeEditor = false;
+  }
+
+  confirmWisdomSkillTreeSelection(wisdomSkills: Record<WisdomSkillType, WisdomSkillInstanceDTO>) {
+    this.calculate();
+    this.closeWisdomSkillTreeEditor();
+  }
 
 
 }

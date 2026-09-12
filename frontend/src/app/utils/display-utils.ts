@@ -1,6 +1,5 @@
 import { StatType } from '../enums/StatType';
 import { DragonStoneDefinitionDTO } from '../models/gamedataDTOs/DragonStoneDefinitionDTO';
-import { DragonStoneInstanceDTO } from '../models/instanceDTOs/DragonStoneInstanceDTO';
 
 export function formatStatName(stat: StatType | string): string {
   return stat
