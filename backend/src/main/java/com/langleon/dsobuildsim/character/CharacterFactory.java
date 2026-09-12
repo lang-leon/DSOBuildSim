@@ -76,7 +76,7 @@ public class CharacterFactory {
                 essence,
                 tonic,
                 physic,
-                wisdomSkillTreeResolver.resolveWisdomSkillTree(dto.wisdomSkillTree()),
+                wisdomSkillTreeResolver.resolveWisdomSkills(dto.wisdomSkills()),
                 collectorBagFactory.fromDTOList(dto.collectorBagBuffs())
         );
     }

@@ -1,0 +1,450 @@
+<div class="wisdom-skill-tree-overlay" [style.--popup-scale]="scale">
+  <div class="wisdom-skill-tree-window scaled-popup-window">
+    <h1>Edit Wisdom Skilltree</h1>
+
+    <h2>Available Wisdom Talent Points: {{getTotalPointsLeft()}}</h2>
+
+    <div class="wisdom-groups">
+      <div class="wisdom-group">
+        <div class="group-header">
+          <span>Health/Resource</span>
+          <span
+            >{{ getCurrentOfGroup(WisdomGroupType.HEALTH_RESOURCE) }} /
+            {{ getMaxOfGroup(WisdomGroupType.HEALTH_RESOURCE) }}</span
+          >
+        </div>
+
+        <div class="group-content">
+          <div class="skill-grid">
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.RISING_VIGOR)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.RISING_VIGOR)"
+              [overlayText]="getSkillLevel(WisdomSkillType.RISING_VIGOR)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.RISING_VIGOR)"
+              (clicked)="onSkillClick(WisdomSkillType.RISING_VIGOR, WisdomGroupType.HEALTH_RESOURCE)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.RISING_VIGOR)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.VIVACIOUS_VITALITY)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.VIVACIOUS_VITALITY)"
+              [overlayText]="getSkillLevel(WisdomSkillType.VIVACIOUS_VITALITY)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.VIVACIOUS_VITALITY)"
+              (clicked)="onSkillClick(WisdomSkillType.VIVACIOUS_VITALITY, WisdomGroupType.HEALTH_RESOURCE)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.VIVACIOUS_VITALITY)"
+            >
+            </app-build-sim-button>
+
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.CONJURED_DISTILLATION)"
+              [tooltipDescription]="
+                getWisdomSkillDescription(WisdomSkillType.CONJURED_DISTILLATION)
+              "
+              [overlayText]="getSkillLevel(WisdomSkillType.CONJURED_DISTILLATION)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.CONJURED_DISTILLATION)"
+              (clicked)="onSkillClick(WisdomSkillType.CONJURED_DISTILLATION, WisdomGroupType.HEALTH_RESOURCE)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.CONJURED_DISTILLATION)"
+            >
+            </app-build-sim-button>
+          </div>
+
+          <app-build-sim-button
+            class="reset-group-button"
+            slotName="Reset Wisdom Group"
+            icon="wisdom-skills/reset-group.png"
+            (clicked)="resetWisdomGroup(WisdomGroupType.HEALTH_RESOURCE)"
+          >
+          </app-build-sim-button>
+        </div>
+      </div>
+
+      <div class="wisdom-group">
+        <div class="group-header">
+          <span>Combat</span>
+          <span
+            >{{ getCurrentOfGroup(WisdomGroupType.COMBAT) }} /
+            {{ getMaxOfGroup(WisdomGroupType.COMBAT) }}</span
+          >
+        </div>
+
+        <div class="group-content">
+          <div class="skill-grid">
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.SECOND_CHANCE)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.SECOND_CHANCE)"
+              [overlayText]="getSkillLevel(WisdomSkillType.SECOND_CHANCE)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.SECOND_CHANCE)"
+              (clicked)="onSkillClick(WisdomSkillType.SECOND_CHANCE, WisdomGroupType.COMBAT)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.SECOND_CHANCE)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.CLASS_SKILL_1)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.CLASS_SKILL_1)"
+              [overlayText]="getSkillLevel(WisdomSkillType.CLASS_SKILL_1)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.CLASS_SKILL_1)"
+              (clicked)="onSkillClick(WisdomSkillType.CLASS_SKILL_1, WisdomGroupType.COMBAT)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.CLASS_SKILL_1)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.CLASS_SKILL_2)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.CLASS_SKILL_2)"
+              [overlayText]="getSkillLevel(WisdomSkillType.CLASS_SKILL_2)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.CLASS_SKILL_2)"
+              (clicked)="onSkillClick(WisdomSkillType.CLASS_SKILL_2, WisdomGroupType.COMBAT)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.CLASS_SKILL_2)"
+            >
+            </app-build-sim-button>
+          </div>
+
+          <app-build-sim-button
+            class="reset-group-button"
+            slotName="Reset Wisdom Group"
+            icon="wisdom-skills/reset-group.png"
+            (clicked)="resetWisdomGroup(WisdomGroupType.COMBAT)"
+          >
+          </app-build-sim-button>
+        </div>
+      </div>
+
+      <div class="wisdom-group">
+        <div class="group-header">
+          <span>Prosperity</span>
+          <span
+            >{{ getCurrentOfGroup(WisdomGroupType.PROSPERITY) }} /
+            {{ getMaxOfGroup(WisdomGroupType.PROSPERITY) }}</span
+          >
+        </div>
+
+        <div class="group-content">
+          <div class="skill-grid">
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.BONANZA)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.BONANZA)"
+              [overlayText]="getSkillLevel(WisdomSkillType.BONANZA)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.BONANZA)"
+              (clicked)="onSkillClick(WisdomSkillType.BONANZA, WisdomGroupType.PROSPERITY)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.BONANZA)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.PEDDLER)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.PEDDLER)"
+              [overlayText]="getSkillLevel(WisdomSkillType.PEDDLER)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.PEDDLER)"
+              (clicked)="onSkillClick(WisdomSkillType.PEDDLER, WisdomGroupType.PROSPERITY)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.PEDDLER)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.PORTABLE_WORKBENCH)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.PORTABLE_WORKBENCH)"
+              [overlayText]="getSkillLevel(WisdomSkillType.PORTABLE_WORKBENCH)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.PORTABLE_WORKBENCH)"
+              (clicked)="onSkillClick(WisdomSkillType.PORTABLE_WORKBENCH, WisdomGroupType.PROSPERITY)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.PORTABLE_WORKBENCH)"
+            >
+            </app-build-sim-button>
+          </div>
+
+          <app-build-sim-button
+            class="reset-group-button"
+            slotName="Reset Wisdom Group"
+            icon="wisdom-skills/reset-group.png"
+            (clicked)="resetWisdomGroup(WisdomGroupType.PROSPERITY)"
+          >
+          </app-build-sim-button>
+        </div>
+      </div>
+
+      <div class="wisdom-group">
+        <div class="group-header">
+          <span>Attack</span>
+          <span
+            >{{ getCurrentOfGroup(WisdomGroupType.ATTACK) }} /
+            {{ getMaxOfGroup(WisdomGroupType.ATTACK) }}</span
+          >
+        </div>
+
+        <div class="group-content">
+          <div class="skill-grid">
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.RISING_POWER)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.RISING_POWER)"
+              [overlayText]="getSkillLevel(WisdomSkillType.RISING_POWER)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.RISING_POWER)"
+              (clicked)="onSkillClick(WisdomSkillType.RISING_POWER, WisdomGroupType.ATTACK)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.RISING_POWER)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.DECISIVE_STRIKE)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.DECISIVE_STRIKE)"
+              [overlayText]="getSkillLevel(WisdomSkillType.DECISIVE_STRIKE)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.DECISIVE_STRIKE)"
+              (clicked)="onSkillClick(WisdomSkillType.DECISIVE_STRIKE, WisdomGroupType.ATTACK)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.DECISIVE_STRIKE)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.HANGMANS_PRIDE)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.HANGMANS_PRIDE)"
+              [overlayText]="getSkillLevel(WisdomSkillType.HANGMANS_PRIDE)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.HANGMANS_PRIDE)"
+              (clicked)="onSkillClick(WisdomSkillType.HANGMANS_PRIDE, WisdomGroupType.ATTACK)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.HANGMANS_PRIDE)"
+            >
+            </app-build-sim-button>
+          </div>
+
+          <app-build-sim-button
+            class="reset-group-button"
+            slotName="Reset Wisdom Group"
+            icon="wisdom-skills/reset-group.png"
+            (clicked)="resetWisdomGroup(WisdomGroupType.ATTACK)"
+          >
+          </app-build-sim-button>
+        </div>
+      </div>
+
+      <div class="wisdom-group">
+        <div class="group-header">
+          <span>One-handed Weapon</span>
+          <span
+            >{{ getCurrentOfGroup(WisdomGroupType.ONE_HANDED_WEAPON) }} /
+            {{ getMaxOfGroup(WisdomGroupType.ONE_HANDED_WEAPON) }}</span
+          >
+        </div>
+
+        <div class="group-content">
+          <div class="skill-grid">
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.DEXTROUS_SMITING)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.DEXTROUS_SMITING)"
+              [overlayText]="getSkillLevel(WisdomSkillType.DEXTROUS_SMITING)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.DEXTROUS_SMITING)"
+              (clicked)="onSkillClick(WisdomSkillType.DEXTROUS_SMITING, WisdomGroupType.ONE_HANDED_WEAPON)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.DEXTROUS_SMITING)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.DEXTROUS_AGILITY)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.DEXTROUS_AGILITY)"
+              [overlayText]="getSkillLevel(WisdomSkillType.DEXTROUS_AGILITY)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.DEXTROUS_AGILITY)"
+              (clicked)="onSkillClick(WisdomSkillType.DEXTROUS_AGILITY, WisdomGroupType.ONE_HANDED_WEAPON)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.DEXTROUS_AGILITY)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.A_HANDFUL_OF_RESOURCES)"
+              [tooltipDescription]="
+                getWisdomSkillDescription(WisdomSkillType.A_HANDFUL_OF_RESOURCES)
+              "
+              [overlayText]="getSkillLevel(WisdomSkillType.A_HANDFUL_OF_RESOURCES)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.A_HANDFUL_OF_RESOURCES)"
+              (clicked)="onSkillClick(WisdomSkillType.A_HANDFUL_OF_RESOURCES, WisdomGroupType.ONE_HANDED_WEAPON)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.A_HANDFUL_OF_RESOURCES)"
+            >
+            </app-build-sim-button>
+          </div>
+
+          <app-build-sim-button
+            class="reset-group-button"
+            slotName="Reset Wisdom Group"
+            icon="wisdom-skills/reset-group.png"
+            (clicked)="resetWisdomGroup(WisdomGroupType.ONE_HANDED_WEAPON)"
+          >
+          </app-build-sim-button>
+        </div>
+      </div>
+
+      <div class="wisdom-group">
+        <div class="group-header">
+          <span>Travel Merits</span>
+          <span
+            >{{ getCurrentOfGroup(WisdomGroupType.TRAVEL_MERITS) }} /
+            {{ getMaxOfGroup(WisdomGroupType.TRAVEL_MERITS) }}</span
+          >
+        </div>
+
+        <div class="group-content">
+          <div class="skill-grid">
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.HOME_SWEET_HOME)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.HOME_SWEET_HOME)"
+              [overlayText]="getSkillLevel(WisdomSkillType.HOME_SWEET_HOME)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.HOME_SWEET_HOME)"
+              (clicked)="onSkillClick(WisdomSkillType.HOME_SWEET_HOME, WisdomGroupType.TRAVEL_MERITS)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.HOME_SWEET_HOME)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.ON_HORSEBACK)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.ON_HORSEBACK)"
+              [overlayText]="getSkillLevel(WisdomSkillType.ON_HORSEBACK)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.ON_HORSEBACK)"
+              (clicked)="onSkillClick(WisdomSkillType.ON_HORSEBACK, WisdomGroupType.TRAVEL_MERITS)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.ON_HORSEBACK)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.RACING_SLIPPERS)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.RACING_SLIPPERS)"
+              [overlayText]="getSkillLevel(WisdomSkillType.RACING_SLIPPERS)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.RACING_SLIPPERS)"
+              (clicked)="onSkillClick(WisdomSkillType.RACING_SLIPPERS, WisdomGroupType.TRAVEL_MERITS)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.RACING_SLIPPERS)"
+            >
+            </app-build-sim-button>
+          </div>
+
+          <app-build-sim-button
+            class="reset-group-button"
+            slotName="Reset Wisdom Group"
+            icon="wisdom-skills/reset-group.png"
+            (clicked)="resetWisdomGroup(WisdomGroupType.TRAVEL_MERITS)"
+          >
+          </app-build-sim-button>
+        </div>
+      </div>
+
+      <div class="wisdom-group">
+        <div class="group-header">
+          <span>Defense</span>
+          <span
+            >{{ getCurrentOfGroup(WisdomGroupType.DEFENSE) }} /
+            {{ getMaxOfGroup(WisdomGroupType.DEFENSE) }}</span
+          >
+        </div>
+
+        <div class="group-content">
+          <div class="skill-grid">
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.STURDY_SHIELD)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.STURDY_SHIELD)"
+              [overlayText]="getSkillLevel(WisdomSkillType.STURDY_SHIELD)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.STURDY_SHIELD)"
+              (clicked)="onSkillClick(WisdomSkillType.STURDY_SHIELD, WisdomGroupType.DEFENSE)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.STURDY_SHIELD)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.HARD_AS_A_ROCK)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.HARD_AS_A_ROCK)"
+              [overlayText]="getSkillLevel(WisdomSkillType.HARD_AS_A_ROCK)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.HARD_AS_A_ROCK)"
+              (clicked)="onSkillClick(WisdomSkillType.HARD_AS_A_ROCK, WisdomGroupType.DEFENSE)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.HARD_AS_A_ROCK)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.ELEMENTAL_PROTECTION)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.ELEMENTAL_PROTECTION)"
+              [overlayText]="getSkillLevel(WisdomSkillType.ELEMENTAL_PROTECTION)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.ELEMENTAL_PROTECTION)"
+              (clicked)="onSkillClick(WisdomSkillType.ELEMENTAL_PROTECTION, WisdomGroupType.DEFENSE)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.ELEMENTAL_PROTECTION)"
+            >
+            </app-build-sim-button>
+          </div>
+
+          <app-build-sim-button
+            class="reset-group-button"
+            slotName="Reset Wisdom Group"
+            icon="wisdom-skills/reset-group.png"
+            (clicked)="resetWisdomGroup(WisdomGroupType.DEFENSE)"
+          >
+          </app-build-sim-button>
+        </div>
+      </div>
+
+      <div class="wisdom-group">
+        <div class="group-header">
+          <span>Two-handed Weapon</span>
+          <span
+            >{{ getCurrentOfGroup(WisdomGroupType.TWO_HANDED_WEAPON) }} /
+            {{ getMaxOfGroup(WisdomGroupType.TWO_HANDED_WEAPON) }}</span
+          >
+        </div>
+
+        <div class="group-content">
+          <div class="skill-grid">
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.AMBIDEXTROUS_SMITING)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.AMBIDEXTROUS_SMITING)"
+              [overlayText]="getSkillLevel(WisdomSkillType.AMBIDEXTROUS_SMITING)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.AMBIDEXTROUS_SMITING)"
+              (clicked)="onSkillClick(WisdomSkillType.AMBIDEXTROUS_SMITING, WisdomGroupType.TWO_HANDED_WEAPON)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.AMBIDEXTROUS_SMITING)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.AMBIDEXTROUS_AGILITY)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.AMBIDEXTROUS_AGILITY)"
+              [overlayText]="getSkillLevel(WisdomSkillType.AMBIDEXTROUS_AGILITY)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.AMBIDEXTROUS_AGILITY)"
+              (clicked)="onSkillClick(WisdomSkillType.AMBIDEXTROUS_AGILITY, WisdomGroupType.TWO_HANDED_WEAPON)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.AMBIDEXTROUS_AGILITY)"
+            >
+            </app-build-sim-button>
+            <app-build-sim-button
+              class="wisdom-skill-button"
+              [tooltipTitle]="getWisdomSkillName(WisdomSkillType.LIFETIME_THIEF)"
+              [tooltipDescription]="getWisdomSkillDescription(WisdomSkillType.LIFETIME_THIEF)"
+              [overlayText]="getSkillLevel(WisdomSkillType.LIFETIME_THIEF)"
+              [icon]="getWisdomSkillIcon(WisdomSkillType.LIFETIME_THIEF)"
+              (clicked)="onSkillClick(WisdomSkillType.LIFETIME_THIEF, WisdomGroupType.TWO_HANDED_WEAPON)"
+              (contextmenu)="onSkillRightClick($event, WisdomSkillType.LIFETIME_THIEF)"
+            >
+            </app-build-sim-button>
+          </div>
+
+          <app-build-sim-button
+            class="reset-group-button"
+            slotName="Reset Wisdom Group"
+            icon="wisdom-skills/reset-group.png"
+            (clicked)="resetWisdomGroup(WisdomGroupType.TWO_HANDED_WEAPON)"
+          >
+          </app-build-sim-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wisdom-skill-tree-buttons">
+      <button class="accept-button" (click)="confirm()">
+        <img src="utility-icons/confirm.png" alt="Confirm" />
+        <span class="tooltip">Confirm</span>
+      </button>
+
+      <button class="cancel-button" (click)="cancel()">
+        <img src="utility-icons/cancel.png" alt="Cancel" />
+        <span class="tooltip">Cancel</span>
+      </button>
+    </div>
+  </div>
+</div>

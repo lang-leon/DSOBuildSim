@@ -1,51 +1,55 @@
-<button 
-class="item-slot"
+<button
+  class="item-slot"
   cdkOverlayOrigin
   #tooltipTrigger="cdkOverlayOrigin"
   [disabled]="disabled"
   (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()"
-(click)="onClick()">
-    <img [src]="icon">
+  (click)="onClick()"
+>
+  <img [src]="icon" />
 
-    @if (overlayText) {
-        <span class="slot-overlay">
-            {{ overlayText }}
-        </span>
-    }
+  @if (overlayText) {
+    <span class="slot-overlay">
+      {{ overlayText }}
+    </span>
+  }
 </button>
 
-
-
 <ng-template
-    cdkConnectedOverlay
-    [cdkConnectedOverlayOrigin]="tooltipTrigger"
-    [cdkConnectedOverlayOpen]="showTooltip"
-    [cdkConnectedOverlayPositions]="tooltipPositions"
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="tooltipTrigger"
+  [cdkConnectedOverlayOpen]="showTooltip"
+  [cdkConnectedOverlayPositions]="tooltipPositions"
 >
-    <div class="tooltip-overlay">
+  <div class="tooltip-overlay">
+    @if (tooltipTitle) {
+      <div class="structured-tooltip">
+        <div class="tooltip-name">
+          {{ tooltipTitle }}
+        </div>
 
-        @if (tooltipTitle) {
-            <div class="structured-tooltip">
+        @if (tooltipDescription) {
+          <div class="tooltip-separator"></div>
 
-                <div class="tooltip-name">
-                    {{ tooltipTitle }}
-                </div>
-
-                @if (tooltipDescription) {
-                    <div class="tooltip-separator"></div>
-
-                    <div class="tooltip-description">
-                        {{ tooltipDescription }}
-                    </div>
+          <div class="tooltip-description">
+            @if (typeof tooltipDescription === 'string') {
+              {{ tooltipDescription }}
+            } @else {
+              @for (line of tooltipDescription; track $index) {
+                @if($index > 0){
+                  <div class="tooltip-separator"></div>
                 }
-
-            </div>
-        } @else if (slotName) {
-            <div class="tooltip-simple">
-                {{ slotName }}
-            </div>
+                <div>{{ line }}</div>
+              }
+            }
+          </div>
         }
-
-    </div>
+      </div>
+    } @else if (slotName) {
+      <div class="tooltip-simple">
+        {{ slotName }}
+      </div>
+    }
+  </div>
 </ng-template>

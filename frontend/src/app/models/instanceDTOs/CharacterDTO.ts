@@ -2,6 +2,7 @@ import { CharacterClass } from "../../enums/CharacterClass";
 import { ClassSkillType } from "../../enums/ClassSkillType";
 import { ItemSlot } from "../../enums/ItemSlot";
 import { MasteryType } from "../../enums/MasteryType";
+import { WisdomSkillType } from "../../enums/WisdomSkillType";
 import { BuffInstanceDTO } from "./BuffInstanceDTO";
 import { CollectorBagCategoryBonusInstanceDTO } from "./CollectorBagCategoryBonusInstanceDTO";
 import { DragonCrestTrinketDTO } from "./DragonCrestTrinketDTO";
@@ -10,7 +11,7 @@ import { ItemInstanceDTO } from "./ItemInstanceDTO";
 import { JewelTrinketDTO } from "./JewelTrinketDTO";
 import { PetInstanceDTO } from "./PetInstanceDTO";
 import { RuneTrinketDTO } from "./RuneTrinketDTO";
-import { WisdomSkillTreeInstanceDTO } from "./WisdomSkillTreeInstanceDTO";
+import { WisdomSkillInstanceDTO } from "./WisdomSkillInstanceDTO";
 
 export interface CharacterDTO {
     characterClass: CharacterClass;
@@ -27,6 +28,6 @@ export interface CharacterDTO {
     essence: EssenceInstanceDTO | null;
     tonic: BuffInstanceDTO | null;
     physic: BuffInstanceDTO | null;
-    wisdomSkillTree: WisdomSkillTreeInstanceDTO;
+    wisdomSkills: Record<WisdomSkillType, WisdomSkillInstanceDTO>;
     collectorBagBuffs: CollectorBagCategoryBonusInstanceDTO[];
 }

@@ -1,3 +1,5 @@
+import { WisdomGroupType } from "../../enums/WisdomGroupType";
+import { WisdomSkillType } from "../../enums/WisdomSkillType";
 import { BuffDefinitionDTO } from "./BuffDefinitionDTO";
 import { ClassStatsDTO } from "./ClassStatsDTO";
 import { CollectorBagCategoryBonusDefinitionDTO } from "./CollectorBagCategoryBonusDefinitionDTO";
@@ -11,7 +13,8 @@ import { LevelMultiplierTableDTO } from "./LevelMultiplierTableDTO";
 import { PetDefinitionDTO } from "./PetDefinitionDTO";
 import { RuneDefinitionDTO } from "./RuneDefinitionDTO";
 import { SetDTO } from "./SetDTO";
-import { WisdomSkillTreeDefinitionDTO } from "./WisdomSkillTreeDefinitionDTO";
+import { WisdomGroupDefinitionDTO } from "./WisdomGroupDefinitionDTO";
+import { WisdomSkillDefinitionDTO } from "./WisdomSkillDefinitionDTO";
 
 export interface GameDataDTO {
     characterClassStats:  Record<string, ClassStatsDTO>;
@@ -29,6 +32,7 @@ export interface GameDataDTO {
     tonics: BuffDefinitionDTO[];
     physics: BuffDefinitionDTO[];
     levelMultiplierTable: LevelMultiplierTableDTO;
-    wisdomSkillTree: WisdomSkillTreeDefinitionDTO;
+    wisdomSkills: Record<WisdomSkillType, WisdomSkillDefinitionDTO>
+    wisdomGroups: Record<WisdomGroupType, WisdomGroupDefinitionDTO>
     collectorBagBuffs: CollectorBagCategoryBonusDefinitionDTO[];
 }

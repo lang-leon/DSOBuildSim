@@ -12,7 +12,8 @@ import com.langleon.dsobuildsim.items.dto.ItemInstanceDTO;
 import com.langleon.dsobuildsim.jewels.dto.JewelTrinketDTO;
 import com.langleon.dsobuildsim.pets.dto.PetInstanceDTO;
 import com.langleon.dsobuildsim.runes.dto.RuneTrinketDTO;
-import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomSkillTreeInstanceDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.instance.WisdomSkillInstanceDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 
 import java.util.List;
 import java.util.Map;
@@ -31,7 +32,7 @@ public record CharacterDTO(CharacterClass characterClass,
                            EssenceInstanceDTO essence,
                            BuffInstanceDTO tonic,
                            BuffInstanceDTO physic,
-                           WisdomSkillTreeInstanceDTO wisdomSkillTree,
+                           Map<WisdomSkillType, WisdomSkillInstanceDTO> wisdomSkills,
                            List<CollectorBagCategoryBonusInstanceDTO> collectorBagBuffs
                            ) {
 }

@@ -1,0 +1,234 @@
+/* =========================================================
+   OVERLAY
+   ========================================================= */
+
+.wisdom-skill-tree-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   MAIN WINDOW
+   ========================================================= */
+
+.wisdom-skill-tree-window {
+    position: relative;
+    width: 1110px;
+    height: 630px;
+
+    padding: 25px 30px;
+
+    background: #222;
+
+    border: 5px solid #543A23;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    color: #EFD8B7;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.3),
+        0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.wisdom-skill-tree-window h1 {
+  width: 100%;
+
+  margin: 0 0 25px 0;
+  padding-bottom: 10px;
+
+  color: #EFD8B7;
+
+  font-size: 20;
+  font-style: italic;
+
+  text-align: center;
+
+  border-bottom: 1px solid #555;
+}
+
+.wisdom-skill-tree-window h2 {
+  width: 100%;
+
+  margin: 0 0 20px 0;
+
+  color: #EFD8B7;
+
+  font-size: 16;
+
+  text-align: left;
+}
+
+.wisdom-groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.wisdom-group {
+    padding: 12px;
+    background: #222;
+    border: 3px solid #543A23;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    color: #EFD8B7;
+}
+
+.group-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.group-points {
+    font-size: 14px;
+    color: #c9a875;
+}
+
+.group-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-grid {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.wisdom-skill-button {
+    width: 70px;
+    height: 70px;
+}
+
+.reset-group-button {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+}
+
+/* =========================================================
+   CONFIRM / CANCEL BUTTONS
+   ========================================================= */
+
+.wisdom-skill-tree-buttons {
+    position: absolute;
+
+    left: 50%;
+    bottom: -41px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.wisdom-skill-tree-buttons button {
+    position: relative;
+
+    width: 128px;
+    height: 62px;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #222;
+
+    border: none;
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    overflow: visible;
+
+    transition:
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
+}
+
+
+/* Button image */
+
+.wisdom-skill-tree-buttons button img {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+
+  transition:
+    filter 0.15s ease,
+    transform 0.15s ease;
+}
+
+
+/* Hover */
+
+.wisdom-skill-tree-buttons button:hover img {
+  filter:
+    brightness(1.4)
+    drop-shadow(0 0 5px #d4af37);
+}
+
+
+/* Click */
+
+.wisdom-skill-tree-buttons button:active {
+  transform: translateY(1px);
+}
+
+
+/* =========================================================
+   TOOLTIP
+   ========================================================= */
+
+
+
+.wisdom-skill-tree-buttons button:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}

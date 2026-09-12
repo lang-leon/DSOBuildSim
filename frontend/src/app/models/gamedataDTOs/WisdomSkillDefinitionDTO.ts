@@ -10,5 +10,6 @@ export interface WisdomSkillDefinitionDTO {
     statType: StatType;
     increasePerLevel: number;
     firstLevelBonus: number;
+    statValueAbsolute: boolean;
     description: string;
 }

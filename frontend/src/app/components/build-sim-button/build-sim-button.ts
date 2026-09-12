@@ -18,7 +18,7 @@ export class BuildSimButton {
   tooltipTitle?: string;
 
   @Input()
-  tooltipDescription?: string;
+  tooltipDescription: string | string[] = [];
 
   @Input()
   overlayText?: string;

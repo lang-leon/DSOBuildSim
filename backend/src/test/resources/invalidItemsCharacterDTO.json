@@ -2140,144 +2140,102 @@
   },
   "tonic": null,
   "physic": null,
-  "wisdomSkillTree": {
-    "wisdomGroups": {
-      "HEALTH_RESOURCE": {
-        "type": "HEALTH_RESOURCE",
-        "wisdomSkills": {
-          "RISING_VIGOR": {
-            "type": "RISING_VIGOR",
-            "currentLevel": 60
-          },
-          "VIVACIOUS_VITALITY": {
-            "type": "VIVACIOUS_VITALITY",
-            "currentLevel": 60
-          },
-          "CONJURED_DISTILLATION": {
-            "type": "CONJURED_DISTILLATION",
-            "currentLevel": 0
-          }
-        }
-      },
-      "ATTACK": {
-        "type": "ATTACK",
-        "wisdomSkills": {
-          "RISING_POWER": {
-            "type": "RISING_POWER",
-            "currentLevel": 80
-          },
-          "DECISIVE_STRIKE": {
-            "type": "DECISIVE_STRIKE",
-            "currentLevel": 80
-          },
-          "HANGMANS_PRIDE": {
-            "type": "HANGMANS_PRIDE",
-            "currentLevel": 40
-          }
-        }
-      },
-      "DEFENSE": {
-        "type": "DEFENSE",
-        "wisdomSkills": {
-          "STURDY_SHIELD": {
-            "type": "STURDY_SHIELD",
-            "currentLevel": 80
-          },
-          "HARD_AS_A_ROCK": {
-            "type": "HARD_AS_A_ROCK",
-            "currentLevel": 60
-          },
-          "ELEMENTAL_PROTECTION": {
-            "type": "ELEMENTAL_PROTECTION",
-            "currentLevel": 60
-          }
-        }
-      },
-      "COMBAT": {
-        "type": "COMBAT",
-        "wisdomSkills": {
-          "SECOND_CHANCE": {
-            "type": "SECOND_CHANCE",
-            "currentLevel": 1
-          },
-          "EMERGENCY_RESERVES": {
-            "type": "EMERGENCY_RESERVES",
-            "currentLevel": 0
-          },
-          "ENERGETIC_FORCE": {
-            "type": "ENERGETIC_FORCE",
-            "currentLevel": 0
-          }
-        }
-      },
-      "ONE_HANDED_WEAPON": {
-        "type": "ONE_HANDED_WEAPON",
-        "wisdomSkills": {
-          "DEXTROUS_SMITING": {
-            "type": "DEXTROUS_SMITING",
-            "currentLevel": 60
-          },
-          "DEXTROUS_AGILITY": {
-            "type": "DEXTROUS_AGILITY",
-            "currentLevel": 60
-          },
-          "A_HANDFUL_OF_RESOURCES": {
-            "type": "A_HANDFUL_OF_RESOURCES",
-            "currentLevel": 0
-          }
-        }
-      },
-      "TWO_HANDED_WEAPON": {
-        "type": "TWO_HANDED_WEAPON",
-        "wisdomSkills": {
-          "AMBIDEXTROUS_SMITING": {
-            "type": "AMBIDEXTROUS_SMITING",
-            "currentLevel": 60
-          },
-          "AMBIDEXTROUS_AGILITY": {
-            "type": "AMBIDEXTROUS_AGILITY",
-            "currentLevel": 30
-          },
-          "LIFETIME_THIEF": {
-            "type": "LIFETIME_THIEF",
-            "currentLevel": 60
-          }
-        }
-      },
-      "PROSPERITY": {
-        "type": "PROSPERITY",
-        "wisdomSkills": {
-          "BONANZA": {
-            "type": "BONANZA",
-            "currentLevel": 15
-          },
-          "PEDDLER": {
-            "type": "PEDDLER",
-            "currentLevel": 1
-          },
-          "PORTABLE_WORKBENCH": {
-            "type": "PORTABLE_WORKBENCH",
-            "currentLevel": 1
-          }
-        }
-      },
-      "TRAVEL_MERITS": {
-        "type": "TRAVEL_MERITS",
-        "wisdomSkills": {
-          "HOME_SWEET_HOME": {
-            "type": "HOME_SWEET_HOME",
-            "currentLevel": 15
-          },
-          "ON_HORSEBACK": {
-            "type": "ON_HORSEBACK",
-            "currentLevel": 15
-          },
-          "RACING_SLIPPERS": {
-            "type": "RACING_SLIPPERS",
-            "currentLevel": 0
-          }
-        }
-      }
+  "wisdomSkills": {
+    "RISING_VIGOR": {
+      "type": "RISING_VIGOR",
+      "currentLevel": 60
+    },
+    "VIVACIOUS_VITALITY": {
+      "type": "VIVACIOUS_VITALITY",
+      "currentLevel": 60
+    },
+    "CONJURED_DISTILLATION": {
+      "type": "CONJURED_DISTILLATION",
+      "currentLevel": 0
+    },
+    "RISING_POWER": {
+      "type": "RISING_POWER",
+      "currentLevel": 80
+    },
+    "DECISIVE_STRIKE": {
+      "type": "DECISIVE_STRIKE",
+      "currentLevel": 80
+    },
+    "HANGMANS_PRIDE": {
+      "type": "HANGMANS_PRIDE",
+      "currentLevel": 40
+    },
+    "STURDY_SHIELD": {
+      "type": "STURDY_SHIELD",
+      "currentLevel": 80
+    },
+    "HARD_AS_A_ROCK": {
+      "type": "HARD_AS_A_ROCK",
+      "currentLevel": 60
+    },
+    "ELEMENTAL_PROTECTION": {
+      "type": "ELEMENTAL_PROTECTION",
+      "currentLevel": 60
+    },
+    "SECOND_CHANCE": {
+      "type": "SECOND_CHANCE",
+      "currentLevel": 1
+    },
+    "CLASS_SKILL_1": {
+      "type": "CLASS_SKILL_1",
+      "currentLevel": 0
+    },
+    "CLASS_SKILL_2": {
+      "type": "CLASS_SKILL_2",
+      "currentLevel": 0
+    },
+    "DEXTROUS_SMITING": {
+      "type": "DEXTROUS_SMITING",
+      "currentLevel": 60
+    },
+    "DEXTROUS_AGILITY": {
+      "type": "DEXTROUS_AGILITY",
+      "currentLevel": 60
+    },
+    "A_HANDFUL_OF_RESOURCES": {
+      "type": "A_HANDFUL_OF_RESOURCES",
+      "currentLevel": 0
+    },
+    "AMBIDEXTROUS_SMITING": {
+      "type": "AMBIDEXTROUS_SMITING",
+      "currentLevel": 60
+    },
+    "AMBIDEXTROUS_AGILITY": {
+      "type": "AMBIDEXTROUS_AGILITY",
+      "currentLevel": 30
+    },
+    "LIFETIME_THIEF": {
+      "type": "LIFETIME_THIEF",
+      "currentLevel": 60
+    },
+    "BONANZA": {
+      "type": "BONANZA",
+      "currentLevel": 15
+    },
+    "PEDDLER": {
+      "type": "PEDDLER",
+      "currentLevel": 1
+    },
+    "PORTABLE_WORKBENCH": {
+      "type": "PORTABLE_WORKBENCH",
+      "currentLevel": 1
+    },
+    "HOME_SWEET_HOME": {
+      "type": "HOME_SWEET_HOME",
+      "currentLevel": 15
+    },
+    "ON_HORSEBACK": {
+      "type": "ON_HORSEBACK",
+      "currentLevel": 15
+    },
+    "RACING_SLIPPERS": {
+      "type": "RACING_SLIPPERS",
+      "currentLevel": 0
     }
   },
   "collectorBagBuffs": [
