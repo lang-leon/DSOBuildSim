@@ -15,15 +15,12 @@ public class ItemDefinitionMapper {
 
     public static ItemDefinitionDTO from(ItemDefinition itemDefinition)
     {
-        if (itemDefinition instanceof UniqueItemDefinition unique) {
-            return from(unique);
-        } else if (itemDefinition instanceof SetItemDefinition set) {
-            return from(set);
-        } else if (itemDefinition instanceof MythicItemDefinition mythic) {
-            return from(mythic);
-        } else {
-            throw new IllegalArgumentException("Unknown ItemDefinition type: " + itemDefinition.getClass());
-        }
+        return switch (itemDefinition) {
+            case UniqueItemDefinition unique -> from(unique);
+            case SetItemDefinition set -> from(set);
+            case MythicItemDefinition mythic -> from(mythic);
+            default -> throw new IllegalArgumentException("Unknown ItemDefinition type: " + itemDefinition.getClass());
+        };
     }
 
     public static ItemDefinitionDTO from(MythicItemDefinition itemDefinition)
@@ -34,7 +31,7 @@ public class ItemDefinitionMapper {
 
     public static ItemDefinitionDTO from(SetItemDefinition itemDefinition)
     {
-        return new ItemDefinitionDTO(ItemCategory.MYTHIC, itemDefinition.itemType(), itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.rawBaseValues(),
+        return new ItemDefinitionDTO(ItemCategory.SET, itemDefinition.itemType(), itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.rawBaseValues(),
                 null, null, null, null, null, itemDefinition.set());
     }
 
@@ -43,7 +40,7 @@ public class ItemDefinitionMapper {
         Set<EnchantmentDTO> enchantments = itemDefinition.uniqueEnchantments().stream()
                 .map(EnchantmentMapper::from)
                 .collect(Collectors.toSet());
-        return new ItemDefinitionDTO(ItemCategory.MYTHIC, itemDefinition.itemType(), itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.rawBaseValues(),
+        return new ItemDefinitionDTO(ItemCategory.UNIQUE, itemDefinition.itemType(), itemDefinition.name(), itemDefinition.defaultLevel(), itemDefinition.tier(), itemDefinition.itemSlotType(), itemDefinition.rawBaseValues(),
                 itemDefinition.uniqueBaseValues(), itemDefinition.uniqueRelativeValues(), null, enchantments, itemDefinition.uniqueDescription(), null);
     }
 }

@@ -15,6 +15,9 @@ import com.langleon.dsobuildsim.gamedata.dto.GameDataDTO;
 import com.langleon.dsobuildsim.gamedata.dto.LevelMultiplierTableDTO;
 import com.langleon.dsobuildsim.gems.GemMapper;
 import com.langleon.dsobuildsim.gems.dto.GemDefinitionDTO;
+import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
+import com.langleon.dsobuildsim.gems.enums.GemType;
+import com.langleon.dsobuildsim.items.core.enums.ItemType;
 import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
 import com.langleon.dsobuildsim.jewels.JewelLimitGroup;
 import com.langleon.dsobuildsim.jewels.JewelMapper;
@@ -48,7 +51,7 @@ public class GameDataMapper {
 
     public static GameDataDTO toDTO(GameDataConfig config)
     {
-        Map<CharacterClass, List<ItemDefinitionDTO>> items =
+        Map<CharacterClass, Map<ItemType, ItemDefinitionDTO>> items =
                 Arrays.stream(CharacterClass.values())
                         .collect(Collectors.toMap(
                                 clazz -> clazz,
@@ -60,7 +63,10 @@ public class GameDataMapper {
                                         .filter(Objects::nonNull)
                                         .flatMap(map -> map.values().stream())
                                         .map(ItemDefinitionMapper::from)
-                                        .toList()
+                                        .collect(Collectors.toMap(
+                                                ItemDefinitionDTO::itemType,
+                                                Function.identity()
+                                        ))
                         ));
 
         Map<CharacterClass, Map<SetType, SetDTO>> sets =
@@ -77,7 +83,13 @@ public class GameDataMapper {
 
         List<EnchantmentDTO> enchantments = config.enchantments().values().stream().map(EnchantmentMapper::from).toList();
 
-        List<GemDefinitionDTO> gems = config.gems().values().stream().map(GemMapper::from).toList();
+        Map<GemType, GemDefinitionDTO> gems = config.gems().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> GemMapper.from(entry.getValue())));
+
+        Map<GemLimitGroup, Integer> gemLimits = Arrays.stream(GemLimitGroup.values())
+                .collect(Collectors.toMap(
+                        group -> group,
+                        GemLimitGroup::getLimit
+                ));
 
         Map<RuneType, RuneDefinitionDTO> runes = config.runes().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> RuneMapper.from(entry.getValue())));
 
@@ -105,7 +117,7 @@ public class GameDataMapper {
 
         List<CollectorBagCategoryBonusDefinitionDTO> collectorBagBuffs = config.collectorBagConfig().categoryBonuses().values().stream().map(categoryBonus -> CollectorBagMapper.from(categoryBonus, config.collectorBagConfig())).toList();
 
-        return new GameDataDTO(config.classStats(), items, sets, jewels, jewelLimits, enchantments, gems, runes, runeLimits, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkills, wisdomGroups, collectorBagBuffs);
+        return new GameDataDTO(config.classStats(), items, sets, jewels, jewelLimits, enchantments, gems, gemLimits, runes, runeLimits, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkills, wisdomGroups, collectorBagBuffs);
     }
 
     private static <K, S, T> Map<CharacterClass, Map<K, T>> mapPerClass(
