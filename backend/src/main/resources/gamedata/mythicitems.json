@@ -41,7 +41,7 @@
       "itemType": "ANCESTRAL_GLORY_RING",
       "name": "Ancestral Glory Ring",
       "defaultLevel": 145,
-      "tier": 7,
+      "tier": 8,
       "itemSlotType": "RING",
       "rawBaseValues": {
         "DAMAGE": 0.928,
@@ -60,7 +60,7 @@
       "itemType": "ANCESTRAL_GLORY_CLOAK",
       "name": "Ancestral Glory Cloak (Mage)",
       "defaultLevel": 145,
-      "tier": 7,
+      "tier": 8,
       "itemSlotType": "CLOAK",
       "rawBaseValues": {
         "DAMAGE": 0.928,
@@ -118,7 +118,7 @@
       "itemType": "ANCESTRAL_GLORY_RING",
       "name": "Ancestral Glory Ring",
       "defaultLevel": 145,
-      "tier": 7,
+      "tier": 8,
       "itemSlotType": "RING",
       "rawBaseValues": {
         "DAMAGE": 0.928,
@@ -137,7 +137,7 @@
       "itemType": "ANCESTRAL_GLORY_CLOAK",
       "name": "Ancestral Glory Cloak (Warrior)",
       "defaultLevel": 145,
-      "tier": 7,
+      "tier": 8,
       "itemSlotType": "CLOAK",
       "rawBaseValues": {
         "DAMAGE": 0.928,
@@ -195,7 +195,7 @@
       "itemType": "ANCESTRAL_GLORY_RING",
       "name": "Ancestral Glory Ring",
       "defaultLevel": 145,
-      "tier": 7,
+      "tier": 8,
       "itemSlotType": "RING",
       "rawBaseValues": {
         "DAMAGE": 0.928,
@@ -214,7 +214,7 @@
       "itemType": "ANCESTRAL_GLORY_CLOAK",
       "name": "Ancestral Glory Cloak (Archer)",
       "defaultLevel": 145,
-      "tier": 7,
+      "tier": 8,
       "itemSlotType": "CLOAK",
       "rawBaseValues": {
         "DAMAGE": 0.928,
@@ -272,7 +272,7 @@
       "itemType": "ANCESTRAL_GLORY_RING",
       "name": "Ancestral Glory Ring",
       "defaultLevel": 145,
-      "tier": 7,
+      "tier": 8,
       "itemSlotType": "RING",
       "rawBaseValues": {
         "DAMAGE": 0.928,
@@ -291,7 +291,7 @@
       "itemType": "ANCESTRAL_GLORY_CLOAK",
       "name": "Ancestral Glory Cloak (Dwarf)",
       "defaultLevel": 145,
-      "tier": 7,
+      "tier": 8,
       "itemSlotType": "CLOAK",
       "rawBaseValues": {
         "DAMAGE": 0.928,

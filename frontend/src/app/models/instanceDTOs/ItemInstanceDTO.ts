@@ -6,7 +6,7 @@ export interface ItemInstanceDTO {
     itemCategory: string;
     itemType: string;
     level: number;
-    baseValues: Record<StatType, number>;
+    baseValues: Partial<Record<StatType, number>>;
     gems: GemInstanceDTO[];
     enchantments: EnchantmentDTO[];
 

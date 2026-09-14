@@ -263,70 +263,83 @@
       <div class="equipment-grid">
         <app-build-sim-button
           class="amulet"
-          slotName="Amulet"
+          [slotName]='getItemName(ItemSlot.AMULET, "Amulet")'
           icon="inventory-icons/amulet.png"
+          (clicked)="openItemEditor(ItemSlot.AMULET)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="cloak"
-          slotName="Cloak"
+          [slotName]='getItemName(ItemSlot.CLOAK, "Cloak")'
           icon="inventory-icons/cloak.png"
+          (clicked)="openItemEditor(ItemSlot.CLOAK)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="belt"
-          slotName="Belt"
+          [slotName]='getItemName(ItemSlot.BELT, "Belt")'
           icon="inventory-icons/belt.png"
+          (clicked)="openItemEditor(ItemSlot.BELT)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="ring1"
-          slotName="Ring 1"
+          [slotName]='getItemName(ItemSlot.RING1, "Ring 1")'
           icon="inventory-icons/ring.png"
+          (clicked)="openItemEditor(ItemSlot.RING1)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="ring2"
-          slotName="Ring 2"
+          [slotName]='getItemName(ItemSlot.RING2, "Ring 2")'
           icon="inventory-icons/ring.png"
+          (clicked)="openItemEditor(ItemSlot.RING2)"
         ></app-build-sim-button>
 
         <app-build-sim-button
           class="helmet"
-          slotName="Helmet"
+          [slotName]='getItemName(ItemSlot.HELMET, "Helmet")'
           icon="inventory-icons/helmet.png"
+          (clicked)="openItemEditor(ItemSlot.HELMET)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="shoulders"
-          slotName="Shoulders"
+          [slotName]='getItemName(ItemSlot.SHOULDERS, "Shoulders")'
           icon="inventory-icons/shoulders.png"
+          (clicked)="openItemEditor(ItemSlot.SHOULDERS)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="torso"
-          slotName="Torso"
+          [slotName]='getItemName(ItemSlot.TORSO, "Torso")'
           icon="inventory-icons/torso.png"
+          (clicked)="openItemEditor(ItemSlot.TORSO)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="gloves"
-          slotName="Gloves"
+          [slotName]='getItemName(ItemSlot.GLOVES, "Gloves")'
           icon="inventory-icons/gloves.png"
+          (clicked)="openItemEditor(ItemSlot.GLOVES)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="boots"
-          slotName="Boots"
+          [slotName]='getItemName(ItemSlot.BOOTS, "Boots")'
           icon="inventory-icons/boots.png"
+          (clicked)="openItemEditor(ItemSlot.BOOTS)"
         ></app-build-sim-button>
 
         <app-build-sim-button
           class="adornment"
-          slotName="Weapon Adornment"
+          [slotName]='getItemName(ItemSlot.WEAPON_ADORNMENT, "Weapon Adornment")'
           icon="inventory-icons/weapon-adornment.png"
+          (clicked)="openItemEditor(ItemSlot.WEAPON_ADORNMENT)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="main-hand"
-          slotName="Main Hand"
+          [slotName]='getItemName(ItemSlot.MAIN_HAND, "Main Hand")'
           [icon]="getMainHandIcon()"
+          (clicked)="openItemEditor(ItemSlot.MAIN_HAND)"
         ></app-build-sim-button>
         <app-build-sim-button
           class="off-hand"
-          slotName="Off Hand"
+          [slotName]='getItemName(ItemSlot.OFF_HAND, "Off Hand")'
           [icon]="getOffHandIcon()"
+          (clicked)="openItemEditor(ItemSlot.OFF_HAND)"
         ></app-build-sim-button>
       </div>
 
@@ -622,6 +635,22 @@
   (cancelled)="closeWisdomSkillTreeEditor()"
   (confirmed)="confirmWisdomSkillTreeSelection($event)">
   </app-wisdom-skilltree>
+}
+
+@if (showItemEditor) {
+  <app-item-editor
+  [scale]="scale"
+  [item]="character.items[selectedItemSlot]"
+  [slot]="selectedItemSlot"
+  [itemConfig]="getItemsForSlot(selectedItemSlot)"
+  [setConfig]="gameData.sets[character.characterClass]"
+  [levelMultiplierTable]="gameData.levelMultiplierTable"
+  [gemConfig]="gameData.gems"
+  [enchantmentConfig]="gameData.enchantments"
+  [canAddGem]="canAddGem.bind(this)"
+  (cancelled)="closeItemEditor()"
+  (confirmed)="confirmItemSelection($event)"
+  ></app-item-editor>
 }
 
 }
