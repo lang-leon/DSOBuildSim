@@ -411,11 +411,14 @@
         0% 50%,
         0% 25%
     );
-    
 }
 
-.inventory-header-button:hover {
-    filter: brightness(1.4) drop-shadow(0 0 5px #d4af37);
+.inventory-header-button:has(button:not(:disabled)) {
+    filter: grayscale(1) brightness(0.5);
+}
+
+.inventory-header-button:has(button:not(:disabled)):hover {
+    filter: grayscale(1) brightness(1);
 }
 
 .inventory-header button {
@@ -434,6 +437,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.inventory-header button:disabled {
+    cursor: default;
 }
 
 .equipment-grid {
