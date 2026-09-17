@@ -1,4 +1,3 @@
-import { CharacterClass } from "../enums/CharacterClass";
 import { ItemSlot } from "../enums/ItemSlot";
 
 export const ItemSlotDisplayName: Record<ItemSlot, string> = {
@@ -16,11 +15,12 @@ export const ItemSlotDisplayName: Record<ItemSlot, string> = {
     [ItemSlot.BOOTS]: 'Boots',
 
     [ItemSlot.WEAPON_ADORNMENT]: 'Weapon Adornment',
-    [ItemSlot.ONE_HAND_WEAPON]: 'One-Handed Weapon',
+    [ItemSlot.MAIN_HAND]: 'Main Hand',
     [ItemSlot.OFF_HAND]: 'Off-Hand',
-    [ItemSlot.TWO_HAND_WEAPON]: 'Two-Handed Weapon',
 
     [ItemSlot.SOUL_COMPANION_AMULET]: 'Soul Companion Amulet',
     [ItemSlot.SOUL_COMPANION_CLOAK]: 'Soul Companion Cloak',
-    [ItemSlot.SOUL_COMPANION_BELT]: 'Soul Companion Belt'
+    [ItemSlot.SOUL_COMPANION_BELT]: 'Soul Companion Belt',
+
+    [ItemSlot.NONE]: 'NONE'
 }

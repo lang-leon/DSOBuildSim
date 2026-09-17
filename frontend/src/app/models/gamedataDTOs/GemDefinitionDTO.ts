@@ -3,8 +3,8 @@ import { StatType } from "../../enums/StatType";
 export interface GemDefinitionDTO {
     gemType: string;
     gemLimitGroup: string;
-    gemLimit: number;
+    name: string;
     tier: number;
     statType: StatType;
-    stats: Record<string, number>;
+    stats: Record<number, number>;
 }

@@ -71,7 +71,7 @@ export class DragoncrestTrinketEditor {
     if(this.dragonStones[index]===null) return "";
     const stone = this.dragonStoneConfig.find(
     stone => stone.dragonStoneType === this.dragonStones[index]?.dragonStoneType);
-    return stone?.description[this.dragonStones[index].tier];
+    return stone?.description[this.dragonStones[index].tier] ?? "";
   }
 
   openDragonStoneSelector(index: number) {

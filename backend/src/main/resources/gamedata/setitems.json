@@ -186,7 +186,7 @@
       "itemType": "WINTER_AMULET",
       "name": "Winter Guardian",
       "defaultLevel": 145,
-      "tier": 7,
+      "tier": 8,
       "itemSlotType": "AMULET",
       "rawBaseValues": {
         "DAMAGE": 0.807,
@@ -238,7 +238,7 @@
       "itemType": "DRAGAN_CLOAK",
       "name": "Cloak of the Black Knight",
       "defaultLevel": 145,
-      "tier": 0,
+      "tier": 7,
       "itemSlotType": "CLOAK",
       "rawBaseValues": {
         "DAMAGE": 0.928,
@@ -355,7 +355,7 @@
       "itemType": "UPGRADED_DRAGAN_CLOAK",
       "name": "Cloak of the End",
       "defaultLevel": 145,
-      "tier": 0,
+      "tier": 8,
       "itemSlotType": "CLOAK",
       "rawBaseValues": {
         "DAMAGE": 0.928,
@@ -874,7 +874,7 @@
       "itemType": "DRAGAN_HELMET",
       "name": "Helmet of the Black Knight",
       "defaultLevel": 145,
-      "tier": 0,
+      "tier": 7,
       "itemSlotType": "HELMET",
       "rawBaseValues": {
         "DAMAGE": 0.807,
@@ -1095,7 +1095,7 @@
       "itemType": "UPGRADED_DRAGAN_HELMET",
       "name": "Helmet of the End",
       "defaultLevel": 145,
-      "tier": 0,
+      "tier": 8,
       "itemSlotType": "HELMET",
       "rawBaseValues": {
         "DAMAGE": 0.807,
@@ -1276,7 +1276,7 @@
       "itemType": "DRAGAN_SHOULDERS",
       "name": "Shoulders of the Black Knight",
       "defaultLevel": 145,
-      "tier": 0,
+      "tier": 7,
       "itemSlotType": "SHOULDERS",
       "rawBaseValues": {
         "DAMAGE": 0.928,
@@ -1457,7 +1457,7 @@
       "itemType": "UPGRADED_DRAGAN_SHOULDERS",
       "name": "Shoulders of the End",
       "defaultLevel": 145,
-      "tier": 0,
+      "tier": 8,
       "itemSlotType": "SHOULDERS",
       "rawBaseValues": {
         "DAMAGE": 0.928,
@@ -1846,7 +1846,7 @@
       "itemType": "WINTER_TORSO",
       "name": "Frostpocalypse",
       "defaultLevel": 145,
-      "tier": 7,
+      "tier": 8,
       "itemSlotType": "TORSO",
       "rawBaseValues": {
         "ARMOR_VALUE": 1.498,
@@ -2158,7 +2158,7 @@
       "itemType": "WINTER_GLOVES",
       "name": "Winter Mastery",
       "defaultLevel": 145,
-      "tier": 0,
+      "tier": 8,
       "itemSlotType": "GLOVES",
       "rawBaseValues": {
         "DAMAGE": 0.807,
@@ -2496,7 +2496,7 @@
       "itemType": "WINTER_BOOTS",
       "name": "Winter Wanderer",
       "defaultLevel": 145,
-      "tier": 7,
+      "tier": 8,
       "itemSlotType": "BOOTS",
       "rawBaseValues": {
         "DAMAGE": 0.807,

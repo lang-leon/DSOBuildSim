@@ -1,0 +1,227 @@
+<div class="item-editor-overlay" [style.--popup-scale]="scale">
+  <div class="item-editor-window scaled-popup-window">
+    <h1>Edit Item: {{ ItemSlotDisplayName[slot] }}</h1>
+
+    <h3 for="item-select">Item:</h3>
+    <div class="item-selection">
+      <select
+        id="item-select"
+        [ngModel]="item?.itemType ?? null"
+        (ngModelChange)="onItemChange($event)"
+      >
+        <option [ngValue]="null">No Item</option>
+
+        @for (entry of itemConfig | keyvalue; track entry.key) {
+          <option [ngValue]="entry.key">
+            {{ entry.value.name }}
+          </option>
+        }
+      </select>
+    </div>
+
+    <div class="item-editor-content">
+        @if (item) {
+      <h3>Base Values:</h3>
+      <div class="base-values">
+        @for (stat of editedBaseValues; track stat.type) {
+          <div class="base-value">
+            <span class="base-value-type">{{ formatStatName(stat.type) }}</span>
+            <input type="number" [(ngModel)]="stat.value" />
+          </div>
+        }
+      </div>
+
+      <h3>Gems:</h3>
+      <div class="item-editor-slots">
+        @for (gem of gems; track $index) {
+          <div class="item-editor-slot-wrapper">
+            <app-build-sim-button
+              class="item-editor-slot"
+              [slotName]="gem !== null ? '' : 'Empty'"
+              [tooltipTitle]="gem !== null ? gemService.getGemInstanceName(gem) : ''"
+              [tooltipDescription]="gemService.getGemInstanceDescription(gem)"
+              [icon]="gemService.getGemInstanceIcon(gem)"
+              (clicked)="openGemSelector($index)"
+            ></app-build-sim-button>
+
+            @if (gem !== null) {
+              <!-- Delete -->
+              <button
+                class="item-editor-slot-action delete-button"
+                (click)="deleteGem($index); $event.stopPropagation()"
+              >
+                <img src="utility-icons/cancel-square.png" alt="Delete" />
+                <span class="tooltip">Delete</span>
+              </button>
+
+              <!-- Copy -->
+              @if (hasEmptyGemSlot() && canSelectGem(gem.gemCategory === "OPAL" ? "OPAL" : gem.gemType[0])) {
+                <button
+                  class="item-editor-slot-action copy-button"
+                  (click)="copyGem($index); $event.stopPropagation()"
+                >
+                  <img src="utility-icons/copy.png" alt="Copy" />
+                  <span class="tooltip">Copy to next empty slot</span>
+                </button>
+              }
+            }
+          </div>
+        }
+      </div>
+
+      <h3>Enchantments:</h3>
+      <div class="base-values">
+        @for (enchantment of enchantments; track $index) {
+          <div class="enchantment">
+            <select
+              [ngModel]="enchantment?.statType ?? null"
+              (ngModelChange)="onEnchantmentChange($index, $event)"
+            >
+              <option [ngValue]="null">No Enchantment</option>
+
+              @for (available of enchantmentConfig; track available.statType) {
+                <option [ngValue]="available.statType">
+                  {{ formatStatName(available.statType) }}
+                </option>
+              }
+            </select>
+
+            <input
+              type="number"
+              [ngModel]="enchantment?.value ?? 0.0"
+              (ngModelChange)="onEnchantmentValueChange($index, $event)"
+              [disabled]="!enchantment"
+            />
+          </div>
+        }
+      </div>
+
+      @if (item.itemCategory === 'UNIQUE' || item.itemCategory === 'MYTHIC') {
+        <h3>Unique Values:</h3>
+
+        @if (Object.keys(uniqueBaseValues).length > 0) {
+          <h4>Base Values:</h4>
+          <div class="unique-values">
+            @for (uniqueBaseValue of uniqueBaseValues | keyvalue; track uniqueBaseValue.key) {
+              <div class="base-value">
+                <span class="base-value-type">
+                  {{ formatStatName(uniqueBaseValue.key) }}
+                </span>
+
+                <input
+                  type="number"
+                  [ngModel]="uniqueBaseValue.value"
+                  (ngModelChange)="onUniqueBaseValueChange(uniqueBaseValue.key, $event)"
+                />
+              </div>
+            }
+          </div>
+        }
+
+        @if (uniqueEnchantments.length > 0) {
+          <h4>Enchantments:</h4>
+          <div class="unique-values">
+            @for (
+              uniqueEnchantment of getItemDefinition(item.itemType).uniqueEnchantments;
+              track $index
+            ) {
+              <div class="base-value">
+                <span class="base-value-type">
+                  {{ formatStatName(uniqueEnchantment.statType) }}
+                </span>
+
+                <input
+                  type="number"
+                  [ngModel]="uniqueEnchantments[$index]?.value"
+                  (ngModelChange)="onUniqueEnchantmentChange($index, $event)"
+                />
+              </div>
+            }
+          </div>
+        }
+
+        @if (Object.keys(itemConfig[item.itemType].uniqueRelativeValues).length > 0) {
+          <h4>Relative Values:</h4>
+          <div class="unique-values">
+            @for (
+              entry of itemConfig[item.itemType].uniqueRelativeValues | keyvalue;
+              track entry.key
+            ) {
+              <div class="base-value">
+                <span class="base-value-type">
+                  {{ formatStatName(entry.key) }}
+                </span>
+
+                <span>
+                  {{ formatStatValueRelative(entry.value, 2) }}
+                </span>
+              </div>
+            }
+          </div>
+        }
+
+        @if (hasUniqueAbsoluteValues()) {
+          <h4>Absolute Values:</h4>
+          <div class="unique-values">
+            @for (
+              entry of itemConfig[item.itemType].uniqueAbsoluteValues | keyvalue;
+              track entry.key
+            ) {
+              <div class="base-value">
+                <span class="base-value-type">
+                  {{ formatStatName(entry.key) }}
+                </span>
+
+                <span> + {{ entry.value }} </span>
+              </div>
+            }
+          </div>
+        }
+
+        @if (itemConfig[item.itemType].uniqueDescription) {
+          <h4>Unique Description:</h4>
+          <div class="unique-values">
+            <div class="base-value">
+              {{ itemConfig[item.itemType].uniqueDescription }}
+            </div>
+          </div>
+        }
+      }
+
+      @if (item.itemCategory === 'SET' || item.itemCategory === 'MYTHIC') {
+        <h3>Set Bonus:</h3>
+        <div class="unique-values">
+          <div class="set-bonuses">
+            @for (bonus of getSetBonusStrings(itemConfig[item.itemType].set); track $index) {
+            <div class="set-bonus">{{ bonus }}</div>
+}
+          </div>
+        </div>
+      }
+    }
+    </div>
+
+    <div class="item-editor-buttons">
+      <button class="accept-button" (click)="confirm()">
+        <img src="utility-icons/confirm.png" alt="Confirm" />
+        <span class="tooltip">Confirm</span>
+      </button>
+
+      <button class="cancel-button" (click)="cancel()">
+        <img src="utility-icons/cancel.png" alt="Cancel" />
+        <span class="tooltip">Cancel</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+@if (showGemSelector) {
+  <app-gem-selector
+    [gemConfig]="gemConfig"
+    [canSelectGem]="canSelectGem.bind(this)"
+    (cancelled)="closeGemSelector()"
+    (selected)="confirmGemSelection($event)">
+    >
+  </app-gem-selector>
+}

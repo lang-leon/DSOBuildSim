@@ -1,3 +1,4 @@
+import { CharacterClass } from "../../enums/CharacterClass";
 import { WisdomGroupType } from "../../enums/WisdomGroupType";
 import { WisdomSkillType } from "../../enums/WisdomSkillType";
 import { BuffDefinitionDTO } from "./BuffDefinitionDTO";
@@ -18,12 +19,13 @@ import { WisdomSkillDefinitionDTO } from "./WisdomSkillDefinitionDTO";
 
 export interface GameDataDTO {
     characterClassStats:  Record<string, ClassStatsDTO>;
-    items: Record<string, ItemDefinitionDTO[]>;
-    sets: Record<string, Record<string, SetDTO[]>>;
+    items: Record<CharacterClass, Record<string, ItemDefinitionDTO>>;
+    sets: Record<string, Record<string, SetDTO>>;
     jewels: Record<string, Record<string, JewelDefinitionDTO>>;
     jewelLimits: Record<string, number>;
     enchantments: EnchantmentDTO[];
-    gems: GemDefinitionDTO[];
+    gems: Record<string, GemDefinitionDTO>;
+    gemLimits: Record<string, number>;
     runes: Record<string, RuneDefinitionDTO>;
     runeLimits: Record<string, number>;
     dragonStones: DragonStoneDefinitionDTO[];
