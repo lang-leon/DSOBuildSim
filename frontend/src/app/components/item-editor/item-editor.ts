@@ -56,7 +56,6 @@ export class ItemEditor {
   showGemSelector = false;
 
   ngOnInit() {
-    console.log(this.item);
     const existingGems = this.item?.gems ?? [];
     this.gems = Array.from({ length: 10 }, (_, index) => existingGems[index] ?? null);
 
@@ -245,8 +244,91 @@ export class ItemEditor {
     return '';
   }
 
-  getGemIcon(rune: GemInstanceDTO | null) {
-    return '';
+  getGemIcon(gem: GemInstanceDTO | null) {
+    if (gem === null) return 'gem-icons/default.png';
+
+    let gemName: string;
+    let tierName: string;
+
+    if (gem.gemCategory == "GEM")
+    {
+      gemName = this.gemConfig[gem.gemType[0]].name.toLocaleLowerCase();
+    }
+    else
+    {
+      gemName = "opal"
+    }
+
+    switch (gem.gemCategory)
+    {
+      case "GEM":
+        gemName = this.gemConfig[gem.gemType[0]].name.toLocaleLowerCase();
+        break;
+      case "OPAL":
+        gemName = "opal";
+        break;
+      default:
+        return 'gem-icons/default.png';
+    }
+
+    switch (gem.tier) {
+      case (1):
+        tierName = "splintered";
+        break;
+      case (2):
+        tierName = "flawed";
+        break;
+      case (3):
+        tierName = "simple";
+        break;
+      case (4):
+        tierName = "normal";
+        break;
+      case (5):
+        tierName = "polished";
+        break;
+      case (6):
+        tierName = "radiant";
+        break;
+      case (7):
+        tierName = "flawless";
+        break;
+      case (8):
+        tierName = "sacred";
+        break;
+      case (9):
+        tierName = "royal";
+        break;
+      case (10):
+        tierName = "trapezoid";
+        break;
+      case (11):
+        tierName = "refined-trapezoid";
+        break;
+      case (12):
+        tierName = "brilliant-trapezoid";
+        break;
+      case (13):
+        tierName = "exquisite-trapezoid";
+        break;
+      case (14):
+        tierName = "imperial";
+        break;
+      case (15):
+        tierName = "refined-imperial";
+        break;
+      case (16):
+        tierName = "brilliant-imperial";
+        break;
+      case (17):
+        tierName = "exquisite-imperial";
+        break;
+      default:
+        return 'gem-icons/default.png';
+    }
+
+
+    return 'gem-icons/' + gemName + "-" + tierName + ".png";
   }
 
   openGemSelector(index: number) {
@@ -327,7 +409,6 @@ getSetBonusStrings(setType: string): string[] {
           this.item.uniqueEnchantments = this.uniqueEnchantments;
         } 
     }
-    console.log(this.item);
     this.confirmed.emit(this.item);
   }
 }

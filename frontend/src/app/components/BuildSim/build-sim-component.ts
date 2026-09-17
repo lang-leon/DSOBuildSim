@@ -398,51 +398,81 @@ export class BuildSimComponent implements OnInit {
     }
   > = {
     [CharacterClass.DRAGONKNIGHT]: {
-      oneHand: 'inventory-icons/dk-1h.png',
-      offHand: 'inventory-icons/dk-shield.png',
-      twoHand: 'inventory-icons/dk-2h.png',
+      oneHand: 'item-icons/dk-1h',
+      offHand: 'item-icons/dk-shield',
+      twoHand: 'item-icons/dk-2h',
     },
 
     [CharacterClass.RANGER]: {
-      oneHand: 'inventory-icons/ranger-1h.png',
-      offHand: 'inventory-icons/ranger-shield.png',
-      twoHand: 'inventory-icons/ranger-2h.png',
+      oneHand: 'item-icons/ranger-1h',
+      offHand: 'item-icons/ranger-shield',
+      twoHand: 'item-icons/ranger-2h',
     },
 
     [CharacterClass.SPELLWEAVER]: {
-      oneHand: 'inventory-icons/sw-1h.png',
-      offHand: 'inventory-icons/sw-shield.png',
-      twoHand: 'inventory-icons/sw-2h.png',
+      oneHand: 'item-icons/sw-1h',
+      offHand: 'item-icons/sw-shield',
+      twoHand: 'item-icons/sw-2h',
     },
 
     [CharacterClass.STEAM_MECHANICUS]: {
-      oneHand: 'inventory-icons/sm-1h.png',
-      offHand: 'inventory-icons/sm-shield.png',
-      twoHand: 'inventory-icons/sm-2h.png',
+      oneHand: 'item-icons/sm-1h',
+      offHand: 'item-icons/sm-shield',
+      twoHand: 'item-icons/sm-2h',
     },
   };
+
+  getItemIcon(itemSlot: ItemSlot): string {
+    if (this.character.items[itemSlot] === undefined) return "item-icons/"+itemSlot.toLowerCase().replaceAll('_', '-').replaceAll(' ', '-').replaceAll('1','').replaceAll('2','')+".png";
+
+    const item = this.character.items[itemSlot];
+    return "item-icons/"+getIcon(itemSlot, this.gameData.items[this.character.characterClass][item.itemType].tier).replaceAll('1','').replaceAll('2','');
+  }
 
   getMainHandIcon(): string {
     const icons = this.weaponIcons[this.character.characterClass];
     const item = this.character.items[ItemSlot.MAIN_HAND];
-    if (item === undefined) return icons.oneHand;
+    if (item === undefined) return icons.oneHand + '.png';
+
+    let tier = this.getItemIconSuffix(this.gameData.items[this.character.characterClass][item.itemType].tier);
 
     return this.gameData.items[this.character.characterClass][item.itemType].itemSlotType ===
       ItemSlotType.TWO_HAND_WEAPON
-      ? icons.twoHand
-      : icons.oneHand;
+      ? icons.twoHand + tier + '.png'
+      : icons.oneHand + tier + '.png';
   }
 
   getOffHandIcon(): string {
     const icons = this.weaponIcons[this.character.characterClass];
-    const item = this.character.items[ItemSlot.MAIN_HAND];
+    const item = this.character.items[ItemSlot.OFF_HAND];
+    const weapon = this.character.items[ItemSlot.MAIN_HAND];
+    
+    if (weapon !== undefined){
+      if (this.gameData.items[this.character.characterClass][weapon.itemType].itemSlotType === ItemSlotType.TWO_HAND_WEAPON) 
+        return icons.twoHand + this.getItemIconSuffix(this.gameData.items[this.character.characterClass][weapon.itemType].tier) + ".png";
+    }
 
-    if (item === undefined) return icons.offHand;
+    if (item === undefined) return icons.offHand + '.png';
 
-    return this.gameData.items[this.character.characterClass][item.itemType].itemSlotType ===
-      ItemSlotType.TWO_HAND_WEAPON
-      ? icons.twoHand
-      : icons.offHand;
+    let tier = this.getItemIconSuffix(this.gameData.items[this.character.characterClass][item.itemType].tier);
+
+    return icons.offHand + tier + '.png';
+  }
+
+  getItemIconSuffix(tier: number)
+  {
+    switch (tier) {
+      case 6:
+        return '-unique';
+      case 0:
+        return '-set';
+      case 7:
+        return '-mythic';
+      case 8:
+        return '-mythic+';
+      default:
+        return '';
+    }
   }
 
   getItemName(slot: ItemSlot, defaultSlotName: string): string {

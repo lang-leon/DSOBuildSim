@@ -32,6 +32,9 @@ export function getIcon<T>(type: string, tier: number) {
   let tierName: string;
 
   switch (tier) {
+    case 0:
+      tierName = 'set';
+      break;
     case 1:
       tierName = 'common';
       break;
@@ -53,10 +56,12 @@ export function getIcon<T>(type: string, tier: number) {
     case 7:
       tierName = 'mythic';
       break;
+    case 8:
+      tierName = 'mythic+';
+      break;
     default:
       return 'default.png';
   }
-
   return `${typeName}-${tierName}.png`;
 }
 
@@ -106,6 +111,6 @@ export function getDragonStoneName(dragonStoneType: string, tier: number) {
   return `${tierName} ${stoneType}`;
 }
 
-export function getDragonStoneDescription(dragonStone: DragonStoneDefinitionDTO, tier: number){
-    return dragonStone.description[tier];
+export function getDragonStoneDescription(dragonStone: DragonStoneDefinitionDTO, tier: number) {
+  return dragonStone.description[tier];
 }
