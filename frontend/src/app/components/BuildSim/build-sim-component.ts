@@ -114,6 +114,7 @@ export class BuildSimComponent implements OnInit {
     CharacterClass,
     Record<ItemSlotType, Record<string, ItemDefinitionDTO>>
   > = {} as Record<CharacterClass, Record<ItemSlotType, Record<string, ItemDefinitionDTO>>>;
+  showShadowSoulEquipment = false;
 
   formatStatName = formatStatName;
   BuffCategory = BuffCategory;
@@ -438,7 +439,8 @@ export class BuildSimComponent implements OnInit {
           .replaceAll('_', '-')
           .replaceAll(' ', '-')
           .replaceAll('1', '')
-          .replaceAll('2', '') +
+          .replaceAll('2', '')
+          .replace('soul-companion-', '') +
         '.png'
       );
 
@@ -448,6 +450,7 @@ export class BuildSimComponent implements OnInit {
       getIcon(itemSlot, this.gameData.items[this.character.characterClass][item.itemType].tier)
         .replaceAll('1', '')
         .replaceAll('2', '')
+        .replace('soul-companion-', '')
     );
   }
 
