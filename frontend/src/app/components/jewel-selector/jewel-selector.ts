@@ -49,7 +49,7 @@ export class JewelSelector {
       };
       this.selected.emit(instance);
     }else{
-
+      
     }
   }
 

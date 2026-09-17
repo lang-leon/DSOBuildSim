@@ -38,9 +38,9 @@
             <app-build-sim-button
               class="item-editor-slot"
               [slotName]="gem !== null ? '' : 'Empty'"
-              [tooltipTitle]="item !== null ? getGemName($index) : ''"
-              [tooltipDescription]="getGemDescription($index)"
-              [icon]="getGemIcon(gem)"
+              [tooltipTitle]="gem !== null ? gemService.getGemInstanceName(gem) : ''"
+              [tooltipDescription]="gemService.getGemInstanceDescription(gem)"
+              [icon]="gemService.getGemInstanceIcon(gem)"
               (clicked)="openGemSelector($index)"
             ></app-build-sim-button>
 
@@ -55,7 +55,7 @@
               </button>
 
               <!-- Copy -->
-              @if (hasEmptyGemSlot() && canSelectGem(gem.gemCategory)) {
+              @if (hasEmptyGemSlot() && canSelectGem(gem.gemCategory === "OPAL" ? "OPAL" : gem.gemType[0])) {
                 <button
                   class="item-editor-slot-action copy-button"
                   (click)="copyGem($index); $event.stopPropagation()"
@@ -214,3 +214,14 @@
     </div>
   </div>
 </div>
+
+
+@if (showGemSelector) {
+  <app-gem-selector
+    [gemConfig]="gemConfig"
+    [canSelectGem]="canSelectGem.bind(this)"
+    (cancelled)="closeGemSelector()"
+    (selected)="confirmGemSelection($event)">
+    >
+  </app-gem-selector>
+}

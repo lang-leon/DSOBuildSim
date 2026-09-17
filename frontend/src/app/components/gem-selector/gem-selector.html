@@ -1,0 +1,36 @@
+<div class="gem-selector-overlay">
+  <div class="gem-selector-window">
+    <button class="close-button" (click)="cancel()">
+      <img src="utility-icons/cancel-square.png" alt="Close" />
+      <span class="tooltip">Close</span>
+    </button>
+
+    <h1>Select Gem</h1>
+
+    <div class="gem-filter-bar">
+      <input type="text" placeholder="Search gems..." [(ngModel)]="searchTerm" />
+
+      <label>
+        <input type="checkbox" [(ngModel)]="maxTierOnly" />
+        Max tier only
+      </label>
+    </div>
+
+    <div class="gem-grid-container">
+      <div class="gem-grid">
+        @for (gem of getFilteredGems(); track gem.gemType) {
+          @for (tier of getTiers(gem); track tier) {
+            <app-build-sim-button
+              class="gem-selection-button"
+              [tooltipTitle]="gemService.getGemDefinitionName(gem, tier)"
+              [tooltipDescription]="gemService.getGemDefinitionDescription(gem, tier)"
+              [icon]="gemService.getGemDefinitionIcon(gem, tier)"
+              [disabled]="!canSelectGem(gem.gemType)"
+              (clicked)="selectGem(gem, tier)"
+            ></app-build-sim-button>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</div>

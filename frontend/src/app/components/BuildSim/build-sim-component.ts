@@ -146,6 +146,13 @@ export class BuildSimComponent implements OnInit {
         },
         {} as Record<string, string>,
       );
+      this.gemLimitGroups = Object.values(this.gameData.gems).reduce(
+        (map, gem) => {
+          map[gem.gemType] = gem.gemLimitGroup;
+          return map;
+        },
+        {} as Record<string, string>,
+      );
 
       for (const [characterClass, items] of Object.entries(this.gameData.items) as [
         CharacterClass,
@@ -423,10 +430,25 @@ export class BuildSimComponent implements OnInit {
   };
 
   getItemIcon(itemSlot: ItemSlot): string {
-    if (this.character.items[itemSlot] === undefined) return "item-icons/"+itemSlot.toLowerCase().replaceAll('_', '-').replaceAll(' ', '-').replaceAll('1','').replaceAll('2','')+".png";
+    if (this.character.items[itemSlot] === undefined)
+      return (
+        'item-icons/' +
+        itemSlot
+          .toLowerCase()
+          .replaceAll('_', '-')
+          .replaceAll(' ', '-')
+          .replaceAll('1', '')
+          .replaceAll('2', '') +
+        '.png'
+      );
 
     const item = this.character.items[itemSlot];
-    return "item-icons/"+getIcon(itemSlot, this.gameData.items[this.character.characterClass][item.itemType].tier).replaceAll('1','').replaceAll('2','');
+    return (
+      'item-icons/' +
+      getIcon(itemSlot, this.gameData.items[this.character.characterClass][item.itemType].tier)
+        .replaceAll('1', '')
+        .replaceAll('2', '')
+    );
   }
 
   getMainHandIcon(): string {
@@ -434,7 +456,9 @@ export class BuildSimComponent implements OnInit {
     const item = this.character.items[ItemSlot.MAIN_HAND];
     if (item === undefined) return icons.oneHand + '.png';
 
-    let tier = this.getItemIconSuffix(this.gameData.items[this.character.characterClass][item.itemType].tier);
+    let tier = this.getItemIconSuffix(
+      this.gameData.items[this.character.characterClass][item.itemType].tier,
+    );
 
     return this.gameData.items[this.character.characterClass][item.itemType].itemSlotType ===
       ItemSlotType.TWO_HAND_WEAPON
@@ -446,21 +470,31 @@ export class BuildSimComponent implements OnInit {
     const icons = this.weaponIcons[this.character.characterClass];
     const item = this.character.items[ItemSlot.OFF_HAND];
     const weapon = this.character.items[ItemSlot.MAIN_HAND];
-    
-    if (weapon !== undefined){
-      if (this.gameData.items[this.character.characterClass][weapon.itemType].itemSlotType === ItemSlotType.TWO_HAND_WEAPON) 
-        return icons.twoHand + this.getItemIconSuffix(this.gameData.items[this.character.characterClass][weapon.itemType].tier) + ".png";
+
+    if (weapon !== undefined) {
+      if (
+        this.gameData.items[this.character.characterClass][weapon.itemType].itemSlotType ===
+        ItemSlotType.TWO_HAND_WEAPON
+      )
+        return (
+          icons.twoHand +
+          this.getItemIconSuffix(
+            this.gameData.items[this.character.characterClass][weapon.itemType].tier,
+          ) +
+          '.png'
+        );
     }
 
     if (item === undefined) return icons.offHand + '.png';
 
-    let tier = this.getItemIconSuffix(this.gameData.items[this.character.characterClass][item.itemType].tier);
+    let tier = this.getItemIconSuffix(
+      this.gameData.items[this.character.characterClass][item.itemType].tier,
+    );
 
     return icons.offHand + tier + '.png';
   }
 
-  getItemIconSuffix(tier: number)
-  {
+  getItemIconSuffix(tier: number) {
     switch (tier) {
       case 6:
         return '-unique';
@@ -1001,30 +1035,29 @@ export class BuildSimComponent implements OnInit {
   }
 
   canAddGem(gemType: string, editedGems: (GemInstanceDTO | null)[]): boolean {
-    return true;
-    /*
-    const limitGroup = this.gemLimitGroups[gemType];
+    const limitGroup = gemType === "OPAL" ? "OPAL" : this.gemLimitGroups[gemType];
 
     const equippedAmount = this.getEquippedGemAmount(this.selectedItemSlot, gemType);
 
     const editedAmount = editedGems
-      .filter((rune) => rune !== null)
-      .filter((rune) => this.gemLimitGroups[rune.gemCategory] === limitGroup).length;
-
+      .filter((gem) => gem !== null)
+      .filter((gem) =>
+        gem.gemCategory === 'OPAL'
+          ? 'OPAL' === limitGroup
+          : this.gemLimitGroups[gem.gemType[0]] === limitGroup,
+      ).length;
     return equippedAmount + editedAmount < this.gameData.gemLimits[limitGroup];
-    */
   }
 
   getEquippedGemAmount(excludedItem: ItemSlot, gemType: string): number {
     const limitGroup = this.gemLimitGroups[gemType];
-
-    return 0;
-    /*
-    return this.character.items
-      .filter((_, index) => index !== excludedTrinketIndex)
-      .flatMap((trinket) => trinket.jewels)
-      .filter((jewel) => jewel !== null)
-      .filter((jewel) => this.jewelLimitGroups[jewel.jewelType] === limitGroup).length;
-    */
+    return Object.entries(this.character.items)
+      .filter(([slot]) => slot !== excludedItem)
+      .map(([_, item]) => item)
+      .filter((item) => item !== undefined)
+      .flatMap((item) => item.gems)
+      .filter((gem) => gem !== null)
+      .filter((gem) => 
+        gem.gemCategory === "OPAL" ? "OPAL" === limitGroup: this.gemLimitGroups[gem.gemType[0]] === limitGroup).length;
   }
 }

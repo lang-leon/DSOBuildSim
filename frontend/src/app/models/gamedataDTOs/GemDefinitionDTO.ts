@@ -6,5 +6,5 @@ export interface GemDefinitionDTO {
     name: string;
     tier: number;
     statType: StatType;
-    stats: Record<string, number>;
+    stats: Record<number, number>;
 }
