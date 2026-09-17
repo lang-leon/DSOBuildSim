@@ -96,30 +96,56 @@ export class GemService {
   }
 
   private getGemDescription(gem: GemDefinitionDTO, tier: number, opal: boolean): string {
-    if (opal)
-        return "+ " + gem.stats[tier]*0.75 + " "+ formatStatName(gem.statType)
-    return "+ " + gem.stats[tier] + " "+ formatStatName(gem.statType)
+    if (opal) return '+ ' + gem.stats[tier] * 0.75 + ' ' + formatStatName(gem.statType);
+    return '+ ' + gem.stats[tier] + ' ' + formatStatName(gem.statType);
   }
 
-  getGemDefinitionDescription(gem: GemDefinitionDTO, tier: number): string
-  {
+  getGemDefinitionDescription(gem: GemDefinitionDTO, tier: number): string {
     return this.getGemDescription(gem, tier, false);
   }
 
-  getGemInstanceDescription(gem: GemInstanceDTO | null): string 
-  {
-    if(gem === null)
-        return '';
+  getGemInstanceDescription(gem: GemInstanceDTO | null): string {
+    if (gem === null) return '';
 
     switch (gem.gemCategory) {
       case 'GEM':
         return this.getGemDescription(this.gemConfig[gem.gemType[0]], gem.tier, false);
       case 'OPAL':
-        return this.getGemDescription(this.gemConfig[gem.gemType[0]], gem.tier, true)
-            + "\n" + this.getGemDescription(this.gemConfig[gem.gemType[1]], gem.tier, true)
-            + "\n" + this.getGemDescription(this.gemConfig[gem.gemType[2]], gem.tier, true)
+        return (
+          this.getGemDescription(this.gemConfig[gem.gemType[0]], gem.tier, true) +
+          '\n' +
+          this.getGemDescription(this.gemConfig[gem.gemType[1]], gem.tier, true) +
+          '\n' +
+          this.getGemDescription(this.gemConfig[gem.gemType[2]], gem.tier, true)
+        );
       default:
         return '';
     }
+  }
+
+  getOpalName(opalGems: (GemInstanceDTO | null)[]): string {
+    const tier = opalGems[0]?.tier;
+    if (tier === undefined) return 'Empty';
+
+    return this.getGemName('opal', tier);
+  }
+
+  getOpalDescription(opalGems: (GemInstanceDTO | null)[]): string {
+    let descr = "";
+    for (const gem of opalGems) {
+        const type = gem?.gemType;
+        const tier = gem?.tier;
+      if (type !== undefined && tier !== undefined){
+        descr += this.getGemDescription(this.gemConfig[type[0]], tier, true) +"\n";
+      }
+    }
+    return descr;
+  }
+
+  getOpalIcon(opalGems: (GemInstanceDTO | null)[]): string {
+    const tier = opalGems[0]?.tier;
+    if (tier === undefined) return 'gem-icons/default.png';
+
+    return this.getGemIcon('opal', tier);
   }
 }

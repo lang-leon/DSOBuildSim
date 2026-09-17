@@ -7,15 +7,12 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-gem-selector',
-  imports: [
-    BuildSimButton,
-    FormsModule
-  ],
+  imports: [BuildSimButton, FormsModule],
   templateUrl: './gem-selector.html',
   styleUrl: './gem-selector.scss',
 })
 export class GemSelector {
-  constructor(public gemService: GemService){}
+  constructor(public gemService: GemService) {}
 
   @Input() gemConfig!: Record<string, GemDefinitionDTO>;
 
@@ -27,9 +24,16 @@ export class GemSelector {
 
   searchTerm = '';
   maxTierOnly = true;
+  craftOpal = false;
+  opalGems: (GemInstanceDTO | null)[] = [null, null, null];
+  selectedOpalSlot = 0;
 
-  ngOnInit()
-  {
+  get selectedOpalTier(): number | null {
+    const gem = this.opalGems.find((gem) => gem !== null);
+    return gem?.tier ?? null;
+  }
+
+  ngOnInit() {
     this.gemService.setGemConfig(this.gemConfig);
   }
 
@@ -37,24 +41,20 @@ export class GemSelector {
     const tiers = Object.keys(gem.stats).map(Number);
     const search = this.searchTerm.toLowerCase().trim();
 
-    if (this.maxTierOnly)
-      return [tiers[tiers.length - 1]];
+    if (this.maxTierOnly) return [tiers[tiers.length - 1]];
 
     if (!search) {
-        return tiers;
+      return tiers;
     }
-    return tiers.filter(tier =>
-        this.matchesSearch(
-            this.gemService.getGemDefinitionName(gem, tier),
-            search
-        )
+    return tiers.filter((tier) =>
+      this.matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
     );
   }
 
   selectGem(gem: GemDefinitionDTO, tier: number) {
     if (this.canSelectGem(gem.gemType)) {
       const instance: GemInstanceDTO = {
-        gemCategory: "GEM",
+        gemCategory: 'GEM',
         gemType: [gem.gemType],
         tier: tier,
       };
@@ -69,27 +69,100 @@ export class GemSelector {
   getFilteredGems(): GemDefinitionDTO[] {
     const search = this.searchTerm.toLowerCase().trim();
 
-    return Object.values(this.gemConfig)
-        .filter(gem =>
-            !search ||
-            this.getTiers(gem).some(tier =>
-                this.matchesSearch(
-                    this.gemService.getGemDefinitionName(gem, tier),
-                    search
-                )
-            )
-        );
+    return Object.values(this.gemConfig).filter(
+      (gem) =>
+        !search ||
+        this.getTiers(gem).some((tier) =>
+          this.matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
+        ),
+    );
   }
 
   private matchesSearch(text: string, search: string): boolean {
-    const searchWords = search
-        .toLowerCase()
-        .trim()
-        .split(/\s+/);
+    const searchWords = search.toLowerCase().trim().split(/\s+/);
 
     const textLower = text.toLowerCase();
 
-    return searchWords.every(word => textLower.includes(word));
+    return searchWords.every((word) => textLower.includes(word));
+  }
+
+  //Opal crafting
+
+  selectOpalSlot(index: number) {
+    this.selectedOpalSlot = index;
+  }
+
+  selectOpalGem(gem: GemDefinitionDTO, tier: number): void {
+    this.opalGems[this.selectedOpalSlot] = {
+      gemCategory: 'GEM',
+      gemType: [gem.gemType],
+      tier,
+    };
+
+    const nextEmptySlot = this.opalGems.findIndex((gem) => gem === null);
+
+    if (nextEmptySlot !== -1) {
+      this.selectedOpalSlot = nextEmptySlot;
+    }
+  }
+
+  getAvailableOpalTiers(gem: GemDefinitionDTO): number[] {
+    const tiers = Object.keys(gem.stats)
+      .map(Number)
+      .filter((tier) => tier >= 9 && tier <= 17);
+    const search = this.searchTerm.toLowerCase().trim();
+
+    if (this.selectedOpalTier !== null) {
+      return tiers.filter((tier) => tier === this.selectedOpalTier);
+    }
+
+    if (this.maxTierOnly) return [tiers[tiers.length - 1]];
+
+    if (!search) {
+      return tiers;
+    }
+
+    return tiers.filter((tier) =>
+      this.matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
+    );
+  }
+
+  getFilteredOpalGems(): GemDefinitionDTO[] {
+    const search = this.searchTerm.toLowerCase().trim();
+
+    return Object.values(this.gemConfig).filter((gem) =>
+      this.getAvailableOpalTiers(gem).some(
+        (tier) =>
+          !search || this.matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
+      ),
+    );
+  }
+
+  selectOpal() {
+    const gems = this.opalGems.filter((gem): gem is GemInstanceDTO => gem !== null);
+
+    if (gems.length !== 3) {
+      return;
+    }
+
+    const instance: GemInstanceDTO = {
+      gemCategory: 'OPAL',
+      gemType: gems.map((gem) => gem.gemType[0]),
+      tier: gems[0].tier,
+    };
+
+    this.selected.emit(instance);
+  }
+
+  canSelectOpalGem(gemType: string): boolean {
+    for (const gem of this.opalGems) {
+      if (gem !== null && gem.gemType[0] == gemType) return false;
+    }
+    return true;
+  }
+
+  deleteOpalGem(index: number) {
+    this.opalGems[index] = null;
+    this.selectedOpalSlot = index;
   }
 }
-

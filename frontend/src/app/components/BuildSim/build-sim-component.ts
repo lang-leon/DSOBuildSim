@@ -1050,7 +1050,7 @@ export class BuildSimComponent implements OnInit {
   }
 
   getEquippedGemAmount(excludedItem: ItemSlot, gemType: string): number {
-    const limitGroup = this.gemLimitGroups[gemType];
+    const limitGroup = gemType === "OPAL" ? "OPAL" : this.gemLimitGroups[gemType];
     return Object.entries(this.character.items)
       .filter(([slot]) => slot !== excludedItem)
       .map(([_, item]) => item)
