@@ -3,6 +3,7 @@ package com.langleon.dsobuildsim.gamedata.dto;
 import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagCategoryBonusDefinitionDTO;
+import com.langleon.dsobuildsim.dragonstones.DragonStoneType;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.gems.enums.GemType;
@@ -39,7 +40,7 @@ public record GameDataDTO (
         Map<GemLimitGroup, Integer> gemLimits,
         Map<RuneType, RuneDefinitionDTO> runes,
         Map<RuneLimitGroup, Integer> runeLimits,
-        List<DragonStoneDefinitionDTO> dragonStones,
+        Map<DragonStoneType, DragonStoneDefinitionDTO> dragonStones,
         List<PetDefinitionDTO> pets,
         List<EssenceDefinitionDTO> essences,
         List<BuffDefinitionDTO> tonics,

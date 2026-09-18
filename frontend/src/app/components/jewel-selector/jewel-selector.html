@@ -1,6 +1,5 @@
 <div class="jewel-selector-overlay">
   <div class="jewel-selector-window">
-
     <button class="close-button" (click)="cancel()">
       <img src="utility-icons/cancel-square.png" alt="Close" />
       <span class="tooltip">Close</span>
@@ -9,22 +8,14 @@
     <h1>Select Jewel</h1>
 
     <div class="jewel-filter-bar">
+      <input type="text" placeholder="Search jewels..." [(ngModel)]="searchTerm" />
 
-  <input
-    type="text"
-    placeholder="Search jewels..."
-    [(ngModel)]="searchTerm"
-  />
-
-  <label>
-    <input
-      type="checkbox"
-      [(ngModel)]="maxTierOnly"
-    />
-    Max tier only
-  </label>
-
-</div>
+      <label class="toggle-switch">
+        <input type="checkbox" [(ngModel)]="maxTierOnly" />
+        <span class="slider"></span>
+        Max tier only
+      </label>
+    </div>
 
     <div class="jewel-grid-container">
       <div class="jewel-grid">
@@ -42,6 +33,5 @@
         }
       </div>
     </div>
-
   </div>
 </div>

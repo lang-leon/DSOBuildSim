@@ -1,6 +1,5 @@
 <div class="rune-selector-overlay">
   <div class="rune-selector-window">
-
     <button class="close-button" (click)="cancel()">
       <img src="utility-icons/cancel-square.png" alt="Close" />
       <span class="tooltip">Close</span>
@@ -9,22 +8,14 @@
     <h1>Select Rune</h1>
 
     <div class="rune-filter-bar">
+      <input type="text" placeholder="Search runes..." [(ngModel)]="searchTerm" />
 
-  <input
-    type="text"
-    placeholder="Search runes..."
-    [(ngModel)]="searchTerm"
-  />
-
-  <label>
-    <input
-      type="checkbox"
-      [(ngModel)]="maxTierOnly"
-    />
-    Max tier only
-  </label>
-
-</div>
+      <label class="toggle-switch">
+        <input type="checkbox" [(ngModel)]="maxTierOnly" />
+        <span class="slider"></span>
+        Max tier only
+      </label>
+    </div>
 
     <div class="rune-grid-container">
       <div class="rune-grid">
@@ -42,6 +33,5 @@
         }
       </div>
     </div>
-
   </div>
 </div>

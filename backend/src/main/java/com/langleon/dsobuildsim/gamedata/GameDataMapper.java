@@ -5,6 +5,7 @@ import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.collectorbagbonus.CollectorBagMapper;
 import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagCategoryBonusDefinitionDTO;
+import com.langleon.dsobuildsim.dragonstones.DragonStoneType;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneMapper;
 import com.langleon.dsobuildsim.enchantments.EnchantmentMapper;
@@ -99,7 +100,7 @@ public class GameDataMapper {
                         RuneLimitGroup::getLimit
                 ));
 
-        List<DragonStoneDefinitionDTO> dragonStones = config.dragonStones().values().stream().map(DragonStoneMapper::from).toList();
+        Map<DragonStoneType, DragonStoneDefinitionDTO> dragonStones = config.dragonStones().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> DragonStoneMapper.from(entry.getValue())));
 
         List<PetDefinitionDTO> pets = config.pets().values().stream().map(PetMapper::from).toList();
 
