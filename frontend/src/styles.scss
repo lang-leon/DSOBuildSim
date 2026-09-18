@@ -76,6 +76,20 @@ h2 {
   text-align: center;
 }
 
+h4 {
+  margin: 0 0 12px 0;
+
+  padding-bottom: 8px;
+
+  color: #d4af37;
+
+  font-size: 18px;
+  font-style: italic;
+  text-align: center;
+
+  border-bottom: 1px solid #543a23;
+}
+
 // Confirm/Cancel Buttons
 
 .cc-buttons {
@@ -535,4 +549,230 @@ h2 {
 
 .trinket-slot:active {
   transform: translateY(1px);
+}
+
+// Generic selection
+
+.selection-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 30px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.selection-controls {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.selection {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 20px;
+}
+
+.selection select {
+  width: 300px;
+  height: 40px;
+
+  padding: 5px 10px;
+
+  background: #222;
+  color: #efd8b7;
+
+  border: 2px solid #d4af37;
+  border-radius: 6px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.selection select:hover {
+  background: #2c2c2c;
+}
+
+.selection select:focus {
+  outline: none;
+
+  box-shadow: 0 0 5px #d4af37;
+}
+
+// Tier selection
+
+.tier-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  gap: 10px;
+}
+
+.tier-buttons {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.tier-buttons button {
+  width: 50px;
+  height: 50px;
+
+  padding: 0;
+
+  background: #222;
+  color: #222;
+
+  border: 3px solid #555;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.1s ease;
+}
+
+.tier-buttons button.tier1 {
+  background-color: #798285;
+}
+
+.tier-buttons button.tier2 {
+  background-color: #739273;
+}
+
+.tier-buttons button.tier3 {
+  background-color: #3a4a8d;
+}
+
+.tier-buttons button.tier4 {
+  background-color: #9c5990;
+}
+
+.tier-buttons button.tier5 {
+  background-color: #c69257;
+}
+
+.tier-buttons button.tier6 {
+  background-color: #ceba63;
+}
+
+.tier-buttons button:hover:not(:disabled) {
+  box-shadow: 0 0 8px #d4af37;
+}
+
+.tier-buttons button.selected {
+  border-color: #d4af37;
+}
+
+.tier-buttons button:disabled {
+  background: #333;
+  color: #666;
+  border-color: #555;
+  cursor: default;
+  opacity: 0.5;
+}
+
+.tier-buttons button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.selection label,
+.tier-selection > label {
+  color: #efd8b7;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+// Stats preview
+
+.stats-preview {
+  width: 260px;
+  min-height: 200px;
+
+  flex-shrink: 0;
+
+  padding: 15px;
+
+  box-sizing: border-box;
+
+  background: #1a1a1a;
+
+  border: 2px solid #543a23;
+  border-radius: 6px;
+
+  color: #efd8b7;
+
+  box-shadow:
+    inset 0 0 10px rgba(0, 0, 0, 0.7),
+    0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5px 8px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  border-radius: 3px;
+
+  font-size: 14px;
+}
+
+.stat span:first-child {
+  color: #efd8b7;
+}
+
+.stat span:last-child {
+  color: #d4af37;
+
+  font-weight: bold;
+}
+
+.none-selected {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
 }

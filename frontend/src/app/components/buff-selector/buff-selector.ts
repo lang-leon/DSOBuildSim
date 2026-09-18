@@ -5,7 +5,11 @@ import { CharacterDTO } from '../../models/instanceDTOs/CharacterDTO';
 import { BuffDefinitionDTO } from '../../models/gamedataDTOs/BuffDefinitionDTO';
 import { BuffInstanceDTO } from '../../models/instanceDTOs/BuffInstanceDTO';
 
-import { formatStatName, formatStatValueAbsolute, formatStatValueRelative } from '../../utils/display-utils';
+import {
+  formatStatName,
+  formatStatValueAbsolute,
+  formatStatValueRelative,
+} from '../../utils/display-utils';
 import { StatType } from '../../enums/StatType';
 import { BuffCategory } from '../../enums/BuffCategory';
 
@@ -16,11 +20,10 @@ import { BuffCategory } from '../../enums/BuffCategory';
   styleUrl: './buff-selector.scss',
 })
 export class BuffSelector {
-  
   @Input() scale = 1;
-  
+
   @Input() buffs!: BuffDefinitionDTO[];
-  
+
   @Input() character!: CharacterDTO;
 
   @Input() buffCategory!: BuffCategory;
@@ -38,24 +41,13 @@ export class BuffSelector {
 
   ngOnInit() {
     const currentBuff =
-      this.buffCategory === BuffCategory.PHYSIC
-        ? this.character.physic
-        : this.character.tonic;
+      this.buffCategory === BuffCategory.PHYSIC ? this.character.physic : this.character.tonic;
 
     if (currentBuff) {
-      this.selectedBuff =
-        this.buffs.find(
-          buff => buff.type === currentBuff.type
-        ) ?? null;
+      this.selectedBuff = this.buffs.find((buff) => buff.type === currentBuff.type) ?? null;
 
       this.selectedTier = currentBuff.tier;
     }
-  }
-
-  get buffTypes(): string[] {
-    return [...new Set(
-      this.buffs.map(buff => buff.type)
-    )];
   }
 
   get availableTiers(): number[] {
@@ -78,6 +70,14 @@ export class BuffSelector {
     }
   }
 
+  formatBuffValue(value: number): string {
+    if (this.buffCategory === BuffCategory.TONIC) {
+      return formatStatValueAbsolute(value, 1);
+    }
+
+    return formatStatValueRelative(value, 2);
+  }
+
   cancel() {
     this.cancelled.emit();
   }
@@ -90,17 +90,9 @@ export class BuffSelector {
 
     const buff: BuffInstanceDTO = {
       type: this.selectedBuff.type,
-      tier: this.selectedTier
+      tier: this.selectedTier,
     };
 
     this.confirmed.emit(buff);
   }
-
-  formatBuffValue(value: number): string {
-    if (this.buffCategory === BuffCategory.TONIC) {
-        return formatStatValueAbsolute(value, 1);
-    }
-
-    return formatStatValueRelative(value, 2);
-}
 }
