@@ -708,6 +708,16 @@ h4 {
   font-weight: bold;
 }
 
+.tier-slider {
+  cursor: pointer;
+  accent-color: #d4af37;
+}
+
+.tier-slider:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
 // Stats preview
 
 .stats-preview {
