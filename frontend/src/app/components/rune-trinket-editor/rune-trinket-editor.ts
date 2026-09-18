@@ -5,6 +5,7 @@ import { RuneTrinketDTO } from '../../models/instanceDTOs/RuneTrinketDTO';
 import { RuneDefinitionDTO } from '../../models/gamedataDTOs/RuneDefinitionDTO';
 import { RuneInstanceDTO } from '../../models/instanceDTOs/RuneInstanceDTO';
 import { formatName, formatStatName, getIcon } from '../../utils/display-utils';
+import { RuneService } from '../../utils/rune-service';
 
 @Component({
   selector: 'app-rune-trinket-editor',
@@ -13,6 +14,8 @@ import { formatName, formatStatName, getIcon } from '../../utils/display-utils';
   styleUrl: './rune-trinket-editor.scss',
 })
 export class RuneTrinketEditor {
+  constructor(public runeService: RuneService) {}
+
   @Input() scale = 1;
 
   @Input() runeTrinket!: RuneTrinketDTO;
@@ -33,8 +36,9 @@ export class RuneTrinketEditor {
   formatName = formatName;
 
   ngOnInit(): void {
-    const existingStones = this.runeTrinket.runes ?? [];
+    this.runeService.setRuneConfig(this.runeConfig);
 
+    const existingStones = this.runeTrinket.runes ?? [];
     this.runes = Array.from({ length: 10 }, (_, index) => existingStones[index] ?? null);
   }
 
@@ -83,9 +87,9 @@ export class RuneTrinketEditor {
     if (this.runes[index] === null) return '';
     const rune = this.runeConfig[this.runes[index]?.runeType];
     let desc = rune?.description.replace('{tier}', String(this.runes[index].tier));
-    
+
     for (const [statType, value] of Object.entries(rune.statsPerTier[this.runes[index].tier])) {
-      desc += `\n+${(value*100).toFixed(2)}% ${formatStatName(statType)}`;
+      desc += `\n+${(value * 100).toFixed(2)}% ${formatStatName(statType)}`;
     }
     return desc.trim();
   }
