@@ -8,17 +8,13 @@ import { formatStatName, formatStatValueRelative } from '../../utils/display-uti
 
 @Component({
   selector: 'app-pet-selector',
-  imports: [
-    FormsModule,
-    KeyValuePipe
-  ],
+  imports: [FormsModule, KeyValuePipe],
   templateUrl: './pet-selector.html',
   styleUrl: './pet-selector.scss',
 })
 export class PetSelector {
-  
   @Input() scale = 1;
-  
+
   @Input() pets!: PetDefinitionDTO[];
 
   @Input() character!: CharacterDTO;
@@ -38,17 +34,11 @@ export class PetSelector {
 
   ngOnInit() {
     if (this.character.pet) {
-        this.selectedPet =
-            this.pets.find(
-                pet => pet.petType === this.character.pet!.petType
-            ) ?? null;
+      this.selectedPet =
+        this.pets.find((pet) => pet.petType === this.character.pet!.petType) ?? null;
 
-        this.selectedTier = this.character.pet.tier;
+      this.selectedTier = this.character.pet.tier;
     }
-}
-
-  get petTypes(): string[] {
-    return [...new Set(this.pets.map((pet) => pet.petType))];
   }
 
   get availableTiers(): number[] {
@@ -70,17 +60,17 @@ export class PetSelector {
     this.cancelled.emit();
   }
 
-confirm() {
+  confirm() {
     if (!this.selectedPet) {
-        this.confirmed.emit(null);
-        return;
+      this.confirmed.emit(null);
+      return;
     }
 
     const pet: PetInstanceDTO = {
-        petType: this.selectedPet.petType,
-        tier: this.selectedTier
+      petType: this.selectedPet.petType,
+      tier: this.selectedTier,
     };
 
     this.confirmed.emit(pet);
-}
+  }
 }
