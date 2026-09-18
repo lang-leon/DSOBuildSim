@@ -15,6 +15,7 @@ import { formatStatName, formatStatValueRelative } from '../../utils/display-uti
 import { SetDTO } from '../../models/gamedataDTOs/SetDTO';
 import { GemService } from '../../utils/gem-service';
 import { GemSelector } from '../gem-selector/gem-selector';
+import { ItemService } from '../../utils/item-service';
 
 @Component({
   selector: 'app-item-editor',
@@ -23,7 +24,10 @@ import { GemSelector } from '../gem-selector/gem-selector';
   styleUrl: './item-editor.scss',
 })
 export class ItemEditor {
-  constructor(public gemService: GemService){}
+  constructor(
+    public itemService: ItemService,
+    public gemService: GemService,
+  ) {}
 
   @Input() scale = 1;
 
@@ -31,7 +35,13 @@ export class ItemEditor {
 
   @Input() slot!: ItemSlot;
 
+  @Input() equippedSets!: Record<string, Set<string>>;
+
+  @Input() equippedItems!: string[];
+
   @Input() itemConfig!: Record<string, ItemDefinitionDTO>;
+
+  @Input() fullItemConfig!: Record<string, ItemDefinitionDTO>;
 
   @Input() setConfig!: Record<string, SetDTO>;
 
@@ -61,6 +71,7 @@ export class ItemEditor {
   selectedSlot = -1;
 
   ngOnInit() {
+    this.itemService.setConfigs(this.fullItemConfig, this.setConfig);
     this.gemService.setGemConfig(this.gemConfig);
 
     const existingGems = this.item?.gems ?? [];
@@ -169,7 +180,7 @@ export class ItemEditor {
   copyGem(index: number) {
     if (this.gems[index] === null) return;
     if (!this.hasEmptyGemSlot()) return;
-    const gemType = this.gems[index].gemCategory === "OPAL" ? "OPAL" : this.gems[index].gemType[0];
+    const gemType = this.gems[index].gemCategory === 'OPAL' ? 'OPAL' : this.gems[index].gemType[0];
     if (!this.canAddGem(gemType, this.gems)) return;
     for (let i = 0; i < 10; i++) {
       if (this.gems[i] === null) {
@@ -187,115 +198,37 @@ export class ItemEditor {
     return this.canAddGem(gemType, this.gems);
   }
 
-  getGemName(index: number) {
-    const gem = this.gems[index];
-    if (gem === null) return 'Empty';
-    let tierName = '';
-    switch (gem.tier) {
-      case 1:
-        tierName = 'Flawed ';
-        break;
-      case 2:
-        tierName = 'Splintered ';
-        break;
-      case 3:
-        tierName = 'Simple ';
-        break;
-      case 4:
-        tierName = '';
-        break;
-      case 5:
-        tierName = 'Polished ';
-        break;
-      case 6:
-        tierName = 'Radiant ';
-        break;
-      case 7:
-        tierName = 'Flawless ';
-        break;
-      case 8:
-        tierName = 'Sacred ';
-        break;
-      case 9:
-        tierName = 'Royal ';
-        break;
-      case 10:
-        tierName = 'Trapezoid ';
-        break;
-      case 11:
-        tierName = 'Refined Trapezoid ';
-        break;
-      case 12:
-        tierName = 'Brilliant Trapezoid ';
-        break;
-      case 13:
-        tierName = 'Exquisite Trapezoid ';
-        break;
-      case 14:
-        tierName = 'Imperial ';
-        break;
-      case 15:
-        tierName = 'Refined Imperial ';
-        break;
-      case 16:
-        tierName = 'Brilliant Imperial ';
-        break;
-      case 17:
-        tierName = 'Exquisite Imperial ';
-        break;
-    }
-    if (gem.gemCategory === 'OPAL') return tierName + 'Opal';
-    return tierName + this.gemConfig[gem.gemType[0]].name;
+  getItemDefinition(itemType: string) {
+    return this.itemConfig[itemType];
   }
 
-  getItemDefinition(itemtType: string) {
-    return this.itemConfig[itemtType];
+  hasUniqueAbsoluteValues(): boolean {
+    if (this.item === undefined) return false;
+    return Object.keys(this.itemConfig[this.item.itemType].uniqueAbsoluteValues ?? {}).length > 0;
   }
 
-hasUniqueAbsoluteValues(): boolean {
-  if(this.item === undefined) return false;
-  return Object.keys(
-    this.itemConfig[this.item.itemType].uniqueAbsoluteValues ?? {}
-  ).length > 0;
-}
+  getEquippedSetItemCount(): number {
+    if (this.item === undefined) return 0;
+    const count = this.equippedSets[this.itemConfig[this.item.itemType].set]?.size || 0;
+    return this.equippedSets[this.itemConfig[this.item.itemType].set].has(this.item.itemType)
+      ? count
+      : count + 1;
+  }
 
-getSetBonusStrings(setType: string): string[] {
-  const set = this.setConfig[setType];
-  const tiers = new Set([
-    ...Object.keys(set.baseValuesPerTier),
-    ...Object.keys(set.relativeValuesPerTier),
-    ...Object.keys(set.descriptionPerTier)
-  ]);
+  openGemSelector(index: number) {
+    this.selectedSlot = index;
+    this.showGemSelector = true;
+  }
 
-  return [...tiers]
-    .sort((a, b) => Number(a) - Number(b))
-    .map(tier => {
-      const parts: string[] = [];
+  closeGemSelector() {
+    this.selectedSlot = -1;
+    this.showGemSelector = false;
+  }
 
-      const baseValues = set.baseValuesPerTier[tier];
-      if (baseValues) {
-        for (const [statType, value] of Object.entries(baseValues)) {
-          parts.push(`+ ${value} ${this.formatStatName(statType)}`);
-        }
-      }
-
-      const relativeValues = set.relativeValuesPerTier[tier];
-      if (relativeValues) {
-        for (const [statType, value] of Object.entries(relativeValues)) {
-          parts.push(`+ ${value}% ${this.formatStatName(statType)}`);
-        }
-      }
-
-      const description = set.descriptionPerTier[tier];
-      if (description) {
-        parts.push(description);
-      }
-
-      return `(${tier}): ${parts.join('\n')}`;
-    });
-}
-
-
+  confirmGemSelection(gem: GemInstanceDTO) {
+    this.gems[this.selectedSlot] = gem;
+    this.closeGemSelector();
+  }
 
   cancel() {
     this.cancelled.emit();
@@ -311,31 +244,14 @@ getSetBonusStrings(setType: string): string[] {
         this.editedBaseValues.map((stat) => [stat.type, stat.value]),
       ) as Partial<Record<StatType, number>>;
 
-      if (Object.keys(this.uniqueBaseValues).length > 0)
-        {
-          this.item.uniqueBaseValues = this.uniqueBaseValues;
-        } 
+      if (Object.keys(this.uniqueBaseValues).length > 0) {
+        this.item.uniqueBaseValues = this.uniqueBaseValues;
+      }
 
-      if (this.uniqueEnchantments.length > 0)
-        {
-          this.item.uniqueEnchantments = this.uniqueEnchantments;
-        } 
+      if (this.uniqueEnchantments.length > 0) {
+        this.item.uniqueEnchantments = this.uniqueEnchantments;
+      }
     }
     this.confirmed.emit(this.item);
   }
-
-  openGemSelector(index: number) {
-      this.selectedSlot = index;
-      this.showGemSelector = true;
-    }
-  
-    closeGemSelector() {
-      this.selectedSlot = -1;
-      this.showGemSelector = false;
-    }
-  
-    confirmGemSelection(gem: GemInstanceDTO) {
-      this.gems[this.selectedSlot] = gem;
-      this.closeGemSelector();
-    }
 }

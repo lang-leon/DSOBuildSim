@@ -1038,7 +1038,7 @@ export class BuildSimComponent implements OnInit {
   }
 
   canAddGem(gemType: string, editedGems: (GemInstanceDTO | null)[]): boolean {
-    const limitGroup = gemType === "OPAL" ? "OPAL" : this.gemLimitGroups[gemType];
+    const limitGroup = gemType === 'OPAL' ? 'OPAL' : this.gemLimitGroups[gemType];
 
     const equippedAmount = this.getEquippedGemAmount(this.selectedItemSlot, gemType);
 
@@ -1053,14 +1053,57 @@ export class BuildSimComponent implements OnInit {
   }
 
   getEquippedGemAmount(excludedItem: ItemSlot, gemType: string): number {
-    const limitGroup = gemType === "OPAL" ? "OPAL" : this.gemLimitGroups[gemType];
+    const limitGroup = gemType === 'OPAL' ? 'OPAL' : this.gemLimitGroups[gemType];
     return Object.entries(this.character.items)
       .filter(([slot]) => slot !== excludedItem)
       .map(([_, item]) => item)
       .filter((item) => item !== undefined)
       .flatMap((item) => item.gems)
       .filter((gem) => gem !== null)
-      .filter((gem) => 
-        gem.gemCategory === "OPAL" ? "OPAL" === limitGroup: this.gemLimitGroups[gem.gemType[0]] === limitGroup).length;
+      .filter((gem) =>
+        gem.gemCategory === 'OPAL'
+          ? 'OPAL' === limitGroup
+          : this.gemLimitGroups[gem.gemType[0]] === limitGroup,
+      ).length;
+  }
+
+  getEquippedSets(excludedItem: ItemSlot): Record<string, Set<string>> {
+    const equippedSets: Record<string, Set<string>> = {};
+
+    Object.entries(this.character.items)
+      .filter(([slot]) => slot !== excludedItem)
+      .forEach(([, item]) => {
+        if (!item) {
+          return;
+        }
+
+        const itemDefinition = this.gameData.items[this.character.characterClass]?.[item.itemType];
+
+        if (!itemDefinition) {
+          return;
+        }
+
+        if (itemDefinition.itemCategory !== 'SET' && itemDefinition.itemCategory !== 'MYTHIC') {
+          return;
+        }
+
+        if (!itemDefinition.set) {
+          return;
+        }
+
+        const items = equippedSets[itemDefinition.set] ?? new Set<string>();
+
+        items.add(item.itemType);
+        equippedSets[itemDefinition.set] = items;
+      });
+
+    return equippedSets;
+  }
+
+  getEquippedItems(excludedItem: ItemSlot): string[] {
+    return Object.entries(this.character.items)
+      .filter(([slot]) => slot !== excludedItem)
+      .map(([, item]) => item?.itemType)
+      .filter((itemType): itemType is string => itemType !== undefined);
   }
 }

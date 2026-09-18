@@ -1,3 +1,31 @@
+:root {
+  --color-default: #efd8b7;
+  --color-set: #6dd5ff;
+  --color-unique: #fee37e;
+  --color-mythic: #ff4f63;
+  --color-mythicplus: #efaa10;
+}
+
+.default {
+  color: var(--color-default) !important;
+}
+
+.set {
+  color: var(--color-set) !important;
+}
+
+.unique {
+  color: var(--color-unique) !important;
+}
+
+.mythic {
+  color: var(--color-mythic) !important;
+}
+
+.mythic-plus {
+  color: var(--color-mythicplus) !important;
+}
+
 html,
 body {
   background-color: black;

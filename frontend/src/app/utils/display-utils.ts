@@ -1,15 +1,16 @@
 import { StatType } from '../enums/StatType';
 
 const tierNames: Record<number, string> = {
-    0: "set",
-    1: 'common',
-    2: 'improved',
-    3: 'magic',
-    4: 'extraordinary',
-    5: 'legendary',
-    6: 'unique',
-    7: 'mythic',
-  };
+  0: 'set',
+  1: 'common',
+  2: 'improved',
+  3: 'magic',
+  4: 'extraordinary',
+  5: 'legendary',
+  6: 'unique',
+  7: 'mythic',
+  8: 'mythic+',
+};
 
 export function formatStatName(stat: StatType | string): string {
   return stat
@@ -36,8 +37,8 @@ export function formatStatValueAbsolute(value: number, digits: number): string {
   return '+ ' + value.toFixed(digits);
 }
 
-export function getIcon<T>(type: string | undefined, tier: number  | undefined) {
-  if(type === undefined || type === null) return "default.png"
+export function getIcon<T>(type: string | undefined, tier: number | undefined) {
+  if (type === undefined || type === null) return 'default.png';
   const typeName = type.toLowerCase().replaceAll('_', '-').replaceAll(' ', '-');
 
   let tierName = tierNames[tier ?? -1];
@@ -46,9 +47,9 @@ export function getIcon<T>(type: string | undefined, tier: number  | undefined) 
 }
 
 export function matchesSearch(text: string, search: string): boolean {
-    const searchWords = search.toLowerCase().trim().split(/\s+/);
+  const searchWords = search.toLowerCase().trim().split(/\s+/);
 
-    const textLower = text.toLowerCase();
+  const textLower = text.toLowerCase();
 
-    return searchWords.every((word) => textLower.includes(word));
-  }
+  return searchWords.every((word) => textLower.includes(word));
+}

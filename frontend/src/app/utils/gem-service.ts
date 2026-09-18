@@ -131,12 +131,12 @@ export class GemService {
   }
 
   getOpalDescription(opalGems: (GemInstanceDTO | null)[]): string {
-    let descr = "";
+    let descr = '';
     for (const gem of opalGems) {
-        const type = gem?.gemType;
-        const tier = gem?.tier;
-      if (type !== undefined && tier !== undefined){
-        descr += this.getGemDescription(this.gemConfig[type[0]], tier, true) +"\n";
+      const type = gem?.gemType;
+      const tier = gem?.tier;
+      if (type !== undefined && tier !== undefined) {
+        descr += this.getGemDescription(this.gemConfig[type[0]], tier, true) + '\n';
       }
     }
     return descr;
