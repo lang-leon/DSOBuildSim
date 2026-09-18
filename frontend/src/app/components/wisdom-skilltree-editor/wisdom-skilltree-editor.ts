@@ -144,31 +144,35 @@ export class WisdomSkilltreeEditor {
 
   resetWisdomGroup(wisdomGroupType: WisdomGroupType) {
     for (const skillType of this.wisdomGroupDefs[wisdomGroupType].wisdomSkills) {
-      this.wisdomSkills[skillType].currentLevel=0;
+      this.wisdomSkills[skillType].currentLevel = 0;
     }
   }
 
-  getTotalPointsLeft()
-  {
+  getTotalPointsLeft() {
     let count = 0;
-    for (const [skillType, skill] of Object.entries(this.wisdomSkills) as [WisdomSkillType, WisdomSkillInstanceDTO][]) {
-      count += skill.currentLevel*this.wisdomSkillDefs[skillType].costPerLevel;
+    for (const [skillType, skill] of Object.entries(this.wisdomSkills) as [
+      WisdomSkillType,
+      WisdomSkillInstanceDTO,
+    ][]) {
+      count += skill.currentLevel * this.wisdomSkillDefs[skillType].costPerLevel;
     }
-    return 2865-count;
+    return 2865 - count;
   }
 
-  onSkillClick(wisdomSkillType: WisdomSkillType, wisdomGroupType: WisdomGroupType)
-  {
-    if(this.wisdomSkills[wisdomSkillType].currentLevel < this.wisdomSkillDefs[wisdomSkillType].maxLevel 
-      && this.getCurrentOfGroup(wisdomGroupType) < this.wisdomGroupDefs[wisdomGroupType].maxLevel 
-      && this.getTotalPointsLeft() >= this.wisdomSkillDefs[wisdomSkillType].costPerLevel) 
+  onSkillClick(wisdomSkillType: WisdomSkillType, wisdomGroupType: WisdomGroupType) {
+    if (
+      this.wisdomSkills[wisdomSkillType].currentLevel <
+        this.wisdomSkillDefs[wisdomSkillType].maxLevel &&
+      this.getCurrentOfGroup(wisdomGroupType) < this.wisdomGroupDefs[wisdomGroupType].maxLevel &&
+      this.getTotalPointsLeft() >= this.wisdomSkillDefs[wisdomSkillType].costPerLevel
+    )
       this.wisdomSkills[wisdomSkillType].currentLevel++;
   }
 
-  onSkillRightClick(event: MouseEvent, wisdomSkillType: WisdomSkillType)
-  {
+  onSkillRightClick(event: MouseEvent, wisdomSkillType: WisdomSkillType) {
     event.preventDefault();
-    if(this.wisdomSkills[wisdomSkillType].currentLevel > 0) this.wisdomSkills[wisdomSkillType].currentLevel--;
+    if (this.wisdomSkills[wisdomSkillType].currentLevel > 0)
+      this.wisdomSkills[wisdomSkillType].currentLevel--;
   }
 
   cancel() {
