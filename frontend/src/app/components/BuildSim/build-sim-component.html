@@ -646,7 +646,7 @@
   @if (showDragonCrest) {
     <app-dragoncrest-trinket-editor
       [scale]="scale"
-      [character]="character"
+      [dragonCrest]="character.dragonCrest"
       [dragonStoneConfig]="gameData.dragonStones"
       (cancelled)="closeDragonCrestEditor()"
       (confirmed)="confirmDragonCrestSelection($event)"

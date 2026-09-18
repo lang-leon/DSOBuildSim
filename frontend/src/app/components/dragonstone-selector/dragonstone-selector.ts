@@ -2,31 +2,61 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DragonStoneInstanceDTO } from '../../models/instanceDTOs/DragonStoneInstanceDTO';
 import { DragonStoneDefinitionDTO } from '../../models/gamedataDTOs/DragonStoneDefinitionDTO';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
-import { getDragonStoneIcon } from '../../utils/display-utils';
-import { getDragonStoneName } from '../../utils/display-utils';
-import { getDragonStoneDescription } from '../../utils/display-utils';
+import { getIcon, matchesSearch } from '../../utils/display-utils';
+import { FormsModule } from '@angular/forms';
+import { DragonStoneService } from '../../utils/dragon-stone-service';
 
 @Component({
   selector: 'app-dragonstone-selector',
-  imports: [BuildSimButton],
+  imports: [BuildSimButton, FormsModule],
   templateUrl: './dragonstone-selector.html',
   styleUrl: './dragonstone-selector.scss',
 })
 export class DragonstoneSelectorComponent {
-  @Input() dragonStoneConfig!: DragonStoneDefinitionDTO[];
+  constructor(public dragonStoneService: DragonStoneService) {}
+
+  @Input() dragonStoneConfig!: Record<string, DragonStoneDefinitionDTO>;
 
   @Output() selected = new EventEmitter<DragonStoneInstanceDTO>();
 
   @Output() cancelled = new EventEmitter<void>();
 
-  getDragonStoneIcon = getDragonStoneIcon;
-  getDragonStoneName = getDragonStoneName;
-  getDragonStoneDescription = getDragonStoneDescription;
+  searchTerm = '';
+  maxTierOnly = true;
+
+  getIcon = getIcon;
+
+  ngOnInit() {
+    this.dragonStoneService.setDragonStoneConfig(this.dragonStoneConfig);
+  }
 
   getTiers(dragonStone: DragonStoneDefinitionDTO): number[] {
-    return Object.keys(dragonStone.stats)
-      .map(Number)
-      .sort((a, b) => a - b);
+    const tiers = Object.keys(dragonStone.description).map(Number);
+    const search = this.searchTerm.toLowerCase().trim();
+
+    if (this.maxTierOnly) return [tiers[tiers.length - 1]];
+
+    if (!search) {
+      return tiers;
+    }
+    return tiers.filter((tier) =>
+      matchesSearch(
+        this.dragonStoneService.getDragonStoneDefinitionName(dragonStone, tier),
+        search,
+      ),
+    );
+  }
+
+  getFilteredDragonStones(): DragonStoneDefinitionDTO[] {
+    const search = this.searchTerm.toLowerCase().trim();
+
+    return Object.values(this.dragonStoneConfig).filter(
+      (ds) =>
+        !search ||
+        this.getTiers(ds).some((tier) =>
+          matchesSearch(this.dragonStoneService.getDragonStoneDefinitionName(ds, tier), search),
+        ),
+    );
   }
 
   selectDragonStone(dragonStone: DragonStoneDefinitionDTO, tier: number) {

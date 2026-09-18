@@ -26,7 +26,8 @@ export function formatStatValueAbsolute(value: number, digits: number): string {
   return '+ ' + value.toFixed(digits);
 }
 
-export function getIcon<T>(type: string, tier: number) {
+export function getIcon<T>(type: string | undefined, tier: number  | undefined) {
+  if(type === undefined || type === null) return "default.png"
   const typeName = type.toLowerCase().replaceAll('_', '-').replaceAll(' ', '-');
 
   let tierName: string;
@@ -114,3 +115,11 @@ export function getDragonStoneName(dragonStoneType: string, tier: number) {
 export function getDragonStoneDescription(dragonStone: DragonStoneDefinitionDTO, tier: number) {
   return dragonStone.description[tier];
 }
+
+export function matchesSearch(text: string, search: string): boolean {
+    const searchWords = search.toLowerCase().trim().split(/\s+/);
+
+    const textLower = text.toLowerCase();
+
+    return searchWords.every((word) => textLower.includes(word));
+  }
