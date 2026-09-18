@@ -1,5 +1,15 @@
 import { StatType } from '../enums/StatType';
-import { DragonStoneDefinitionDTO } from '../models/gamedataDTOs/DragonStoneDefinitionDTO';
+
+const tierNames: Record<number, string> = {
+    0: "set",
+    1: 'common',
+    2: 'improved',
+    3: 'magic',
+    4: 'extraordinary',
+    5: 'legendary',
+    6: 'unique',
+    7: 'mythic',
+  };
 
 export function formatStatName(stat: StatType | string): string {
   return stat
@@ -30,90 +40,9 @@ export function getIcon<T>(type: string | undefined, tier: number  | undefined) 
   if(type === undefined || type === null) return "default.png"
   const typeName = type.toLowerCase().replaceAll('_', '-').replaceAll(' ', '-');
 
-  let tierName: string;
+  let tierName = tierNames[tier ?? -1];
 
-  switch (tier) {
-    case 0:
-      tierName = 'set';
-      break;
-    case 1:
-      tierName = 'common';
-      break;
-    case 2:
-      tierName = 'improved';
-      break;
-    case 3:
-      tierName = 'magic';
-      break;
-    case 4:
-      tierName = 'extraordinary';
-      break;
-    case 5:
-      tierName = 'legendary';
-      break;
-    case 6:
-      tierName = 'unique';
-      break;
-    case 7:
-      tierName = 'mythic';
-      break;
-    case 8:
-      tierName = 'mythic+';
-      break;
-    default:
-      return 'default.png';
-  }
   return `${typeName}-${tierName}.png`;
-}
-
-//Dragonstones
-
-export function getDragonStoneIcon(dragonStoneType: string, tier: number) {
-  const stoneType = dragonStoneType.toLowerCase().replace('_', '-');
-
-  let tierName: string;
-
-  switch (tier) {
-    case 3:
-      tierName = 'dragon-hatchlings';
-      break;
-    case 4:
-      tierName = 'mighty-dragons';
-      break;
-    case 5:
-      tierName = 'dragon-elders';
-      break;
-    default:
-      return 'dragon-stone-icons/empty-dragon-stone.png';
-  }
-
-  return `dragon-stone-icons/${tierName}-${stoneType}.png`;
-}
-
-export function getDragonStoneName(dragonStoneType: string, tier: number) {
-  const stoneType = formatName(dragonStoneType);
-
-  let tierName: string;
-
-  switch (tier) {
-    case 3:
-      tierName = "Dragon Hatchling's";
-      break;
-    case 4:
-      tierName = "Mighty Dragon's";
-      break;
-    case 5:
-      tierName = "Dragon Elder's";
-      break;
-    default:
-      return 'Empty';
-  }
-
-  return `${tierName} ${stoneType}`;
-}
-
-export function getDragonStoneDescription(dragonStone: DragonStoneDefinitionDTO, tier: number) {
-  return dragonStone.description[tier];
 }
 
 export function matchesSearch(text: string, search: string): boolean {

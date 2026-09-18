@@ -1,29 +1,25 @@
-<div class="jewel-trinket-overlay" [style.--popup-scale]="scale">
-  <div class="jewel-trinket-window scaled-popup-window">
+<div class="overlay" [style.--popup-scale]="scale">
+  <div class="window scaled-popup-window">
     <h1>Edit Jewel Trinket</h1>
 
-    <h2>Jewels</h2>
+    <h2>Jewels:</h2>
 
-    <div class="jewel-trinket-slots">
+    <div class="trinket-slots">
       @for (jewel of jewels; track $index) {
-        <div class="jewel-trinket-slot-wrapper">
+        <div class="trinket-slot-wrapper">
           <app-build-sim-button
-            class="jewel-trinket-slot"
-            [slotName]="
-              jewel !== null
-                ? ''
-                : 'Empty'
-            "
-            [tooltipTitle]="jewel !== null ? getJewelName($index) : ''"
-            [tooltipDescription]="getJewelDescription($index)"
-            [icon]="getJewelIcon(jewel)"
+            class="trinket-slot"
+            [slotName]="jewel !== null ? '' : 'Empty'"
+            [tooltipTitle]="jewel !== null ? jewelService.getJewelInstanceName(jewel) : ''"
+            [tooltipDescription]="jewelService.getJewelInstanceDescription(jewel)"
+            [icon]="jewelService.getJewelInstanceIcon(jewel)"
             (clicked)="openJewelSelector($index)"
           ></app-build-sim-button>
 
           @if (jewel !== null) {
             <!-- Delete -->
             <button
-              class="jewel-trinket-slot-action delete-button"
+              class="trinket-slot-action delete-button"
               (click)="deleteJewel($index); $event.stopPropagation()"
             >
               <img src="utility-icons/cancel-square.png" alt="Delete" />
@@ -33,7 +29,7 @@
             <!-- Copy -->
             @if (hasEmptyJewelSlot() && canSelectJewel(jewel.jewelType)) {
               <button
-                class="jewel-trinket-slot-action copy-button"
+                class="trinket-slot-action copy-button"
                 (click)="copyJewel($index); $event.stopPropagation()"
               >
                 <img src="utility-icons/copy.png" alt="Copy" />
@@ -45,7 +41,7 @@
       }
     </div>
 
-    <div class="jewel-trinket-buttons">
+    <div class="cc-buttons">
       <button class="accept-button" (click)="confirm()">
         <img src="utility-icons/confirm.png" alt="Confirm" />
         <span class="tooltip">Confirm</span>
@@ -64,6 +60,7 @@
     [jewelConfig]="jewelConfig"
     [canSelectJewel]="canSelectJewel.bind(this)"
     (cancelled)="closeJewelSelector()"
-    (selected)="confirmJewelSelection($event)">
+    (selected)="confirmJewelSelection($event)"
+  >
   </app-jewel-selector>
 }
