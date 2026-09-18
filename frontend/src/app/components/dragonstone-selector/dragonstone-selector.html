@@ -17,12 +17,12 @@
       </label>
     </div>
 
-    <div class="jewel-grid-container">
+    <div class="selection-grid-container">
       <div class="selection-grid">
         @for (dragonStone of getFilteredDragonStones(); track dragonStone.dragonStoneType) {
           @for (tier of getTiers(dragonStone); track tier) {
             <app-build-sim-button
-              class="dragonstone-selection-button"
+              class="selection-button"
               [tooltipTitle]="dragonStoneService.getDragonStoneDefinitionName(dragonStone, tier)"
               [tooltipDescription]="
                 dragonStoneService.getDragonStoneDefinitionDescription(dragonStone, tier)

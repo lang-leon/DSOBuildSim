@@ -47,26 +47,26 @@ export class DragonStoneService {
     return this.dragonStoneConfig[dragonStone.dragonStoneType].description[dragonStone.tier];
   }
 
-  private getDragonStoneIcon(dragonStoneType: string, tier: number): string {
-    const tierName = this.tierNames[tier];
-    if (!tierName) {
-      return 'dragonStone-icons/default.png';
+    private getDragonStoneIcon(dragonStoneType: string, tier: number): string {
+      const tierName = this.tierNames[tier];
+      if (!tierName) {
+        return 'dragonStone-icons/default.png';
+      }
+      return (
+        'dragonStone-icons/' +
+        dragonStoneType.toLowerCase().replaceAll(' ', '-').replaceAll('_', '-') +
+        '-' +
+        tierName.toLowerCase().replaceAll(' ', '-').replaceAll('\'', '') +
+        '.png'
+      );
     }
-    return (
-      'dragonStone-icons/' +
-      dragonStoneType.toLowerCase().replaceAll(' ', '-').replaceAll('_', '-') +
-      '-' +
-      tierName.toLowerCase().replaceAll(' ', '-').replaceAll("'", '') +
-      '.png'
-    );
-  }
 
-  getDragonStoneDefinitionIcon(dragonStone: DragonStoneDefinitionDTO, tier: number): string {
-    return this.getDragonStoneIcon(dragonStone.dragonStoneType, tier);
-  }
+    getDragonStoneDefinitionIcon(dragonStone: DragonStoneDefinitionDTO, tier: number): string {
+      return this.getDragonStoneIcon(dragonStone.dragonStoneType, tier);
+    }
 
-  getDragonStoneInstanceIcon(dragonStone: DragonStoneInstanceDTO | null): string {
-    if (dragonStone === null) return 'dragonStone-icons/default.png';
-    return this.getDragonStoneIcon(dragonStone.dragonStoneType, dragonStone.tier);
-  }
+    getDragonStoneInstanceIcon(dragonStone: DragonStoneInstanceDTO | null): string {
+      if (dragonStone === null) return 'dragonStone-icons/default.png';
+        return this.getDragonStoneIcon(dragonStone.dragonStoneType, dragonStone.tier)
+      }
 }

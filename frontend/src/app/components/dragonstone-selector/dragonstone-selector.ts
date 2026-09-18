@@ -51,10 +51,10 @@ export class DragonstoneSelectorComponent {
     const search = this.searchTerm.toLowerCase().trim();
 
     return Object.values(this.dragonStoneConfig).filter(
-      (ds) =>
+      (dragonStone) =>
         !search ||
-        this.getTiers(ds).some((tier) =>
-          matchesSearch(this.dragonStoneService.getDragonStoneDefinitionName(ds, tier), search),
+        this.getTiers(dragonStone).some((tier) =>
+          matchesSearch(this.dragonStoneService.getDragonStoneDefinitionName(dragonStone, tier), search),
         ),
     );
   }

@@ -1,8 +1,12 @@
 .overlay {
-    z-index: 2000;
+  z-index: 2000;
 }
 
 .window {
-    width: 700px;
-    height: 420px;
+  width: 720px;
+  height: 420px;
+}
+
+.selection-grid-container {
+  height: 230px;
 }
