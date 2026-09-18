@@ -763,6 +763,22 @@ h4 {
   font-weight: bold;
 }
 
+.stat-description {
+  margin-top: 15px;
+  padding-top: 10px;
+
+  border-top: 1px solid #543a23;
+
+  color: #b9a58c;
+
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.4;
+
+  text-align: left;
+  white-space: pre-line;
+}
+
 .none-selected {
   height: 100%;
 
