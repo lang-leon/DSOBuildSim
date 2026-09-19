@@ -1,9 +1,19 @@
 :root {
   --color-default: #efd8b7;
   --color-set: #6dd5ff;
+  --color-common: #B4B9C5;
+  --color-improved: #578A67;
+  --color-magic: #38488A;
+  --color-extraordinary: #904672;
+  --color-legendary: #C68347;
   --color-unique: #fee37e;
   --color-mythic: #ff4f63;
   --color-mythicplus: #efaa10;
+
+  --color-ice: #7EDBF6;
+  --color-fire: #CD4304;
+  --color-lightning: #A8E1D6;
+  --color-poison: #B0D222;
 }
 
 .default {
@@ -12,6 +22,26 @@
 
 .set {
   color: var(--color-set) !important;
+}
+
+.common {
+  color: var(--color-common) !important;
+}
+
+.improved {
+  color: var(--color-improved) !important;
+}
+
+.magic {
+  color: var(--color-magic) !important;
+}
+
+.extraordinary {
+  color: var(--color-extraordinary) !important;
+}
+
+.legendary {
+  color: var(--color-legendary) !important;
 }
 
 .unique {
@@ -24,6 +54,22 @@
 
 .mythic-plus {
   color: var(--color-mythicplus) !important;
+}
+
+.ice {
+  color: var(--color-ice) !important;
+}
+
+.fire {
+  color: var(--color-fire) !important;
+}
+
+.lightning {
+  color: var(--color-lightning) !important;
+}
+
+.poison {
+  color: var(--color-poison) !important;
 }
 
 html,
@@ -273,12 +319,38 @@ h4 {
 }
 
 .tooltip-simple {
+  position: absolute;
+  
+  font-style: normal;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: normal;
+
+  bottom: 100%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  margin-bottom: 8px;
+  padding: 5px 10px;
+
+  background: #222;
+
+  color: #efd8b7;
+
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+
   white-space: nowrap;
 
-  text-align: center;
+  opacity: 0;
+  visibility: hidden;
 
-  font-family: initial;
-  font-size: 18px;
+  transition: opacity 0.15s ease;
+
+  pointer-events: none;
+
+  z-index: 1000;
 }
 
 .tooltip-overlay {
@@ -314,7 +386,7 @@ h4 {
 
 .tooltip-name {
   font-style: normal;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   line-height: normal;
 }
@@ -329,7 +401,7 @@ h4 {
 .tooltip-description {
   white-space: pre-line;
   font-family: initial;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.3;
 
   text-align: center;

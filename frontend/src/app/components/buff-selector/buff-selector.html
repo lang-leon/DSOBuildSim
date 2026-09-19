@@ -9,9 +9,9 @@
 
           <select id="select" [(ngModel)]="selectedBuff" (ngModelChange)="onBuffChange($event)">
             <option [ngValue]="null">No {{ formatStatName(buffCategory) }}</option>
-            @for (buff of buffs; track buff.type) {
-              <option [ngValue]="buff">
-                {{ buff.name }}
+            @for (entry of buffConfig | keyvalue; track entry.key) {
+              <option [ngValue]="entry.value">
+                {{ entry.value.name }}
               </option>
             }
           </select>

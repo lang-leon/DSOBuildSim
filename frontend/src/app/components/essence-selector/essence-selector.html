@@ -13,9 +13,9 @@
             (ngModelChange)="onEssenceChange($event)"
           >
             <option [ngValue]="null">No Essence</option>
-            @for (essence of essences; track essence.essenceType) {
-              <option [ngValue]="essence">
-                {{ essence.name }}
+            @for (entry of essenceConfig | keyvalue; track entry.key) {
+              <option [ngValue]="entry.value">
+                {{ entry.value.name }}
               </option>
             }
           </select>
@@ -52,7 +52,7 @@
           </div>
 
           <div class="stat-description">
-            {{ selectedEssence.description[selectedTier] }}
+            {{ (selectedEssence.description[selectedTier] !== undefined ? selectedEssence.description[selectedTier]+"\n" : "" ) + "No effect in official arenas." }}
           </div>
         } @else {
           <div class="none-selected">No Essence selected!</div>

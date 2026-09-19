@@ -25,7 +25,7 @@
   <div class="tooltip-overlay">
     @if (tooltipTitle) {
       <div class="structured-tooltip">
-        <div class="tooltip-name">
+        <div class="tooltip-name" [ngClass]="tooltipTitleClass">
           {{ tooltipTitle }}
         </div>
 
@@ -47,7 +47,7 @@
         }
       </div>
     } @else if (slotName) {
-      <div class="tooltip-simple">
+      <div class="tooltip-name">
         {{ slotName }}
       </div>
     }

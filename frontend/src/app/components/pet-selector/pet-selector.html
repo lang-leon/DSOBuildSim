@@ -9,9 +9,9 @@
 
           <select id="select" [(ngModel)]="selectedPet" (ngModelChange)="onPetChange($event)">
             <option [ngValue]="null">No Pet</option>
-            @for (pet of pets; track pet.petType) {
-              <option [ngValue]="pet">
-                {{ pet.name }}
+            @for (entry of petConfig | keyvalue; track entry.key) {
+              <option [ngValue]="entry.value">
+                {{ entry.value.name }}
               </option>
             }
           </select>

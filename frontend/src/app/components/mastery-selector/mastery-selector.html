@@ -13,28 +13,28 @@
               (click)="onMasteryChange(MasteryType.POISON)"
             >
               <img [src]="getMasteryIcon(MasteryType.POISON)" />
-              <span class="tooltip">Poison Mastery</span>
+                  <div class="tooltip-simple poison">Poison Mastery</div>
             </button>
             <button
               [class.selected]="selectedMastery === MasteryType.FIRE"
               (click)="onMasteryChange(MasteryType.FIRE)"
             >
               <img [src]="getMasteryIcon(MasteryType.FIRE)" />
-              <span class="tooltip">Fire Mastery</span>
+              <span class="tooltip-simple fire">Fire Mastery</span>
             </button>
             <button
               [class.selected]="selectedMastery === MasteryType.ICE"
               (click)="onMasteryChange(MasteryType.ICE)"
             >
               <img [src]="getMasteryIcon(MasteryType.ICE)" />
-              <span class="tooltip">Ice Mastery</span>
+              <span class="tooltip-simple ice">Ice Mastery</span>
             </button>
             <button
               [class.selected]="selectedMastery === MasteryType.LIGHTNING"
               (click)="onMasteryChange(MasteryType.LIGHTNING)"
             >
               <img [src]="getMasteryIcon(MasteryType.LIGHTNING)" />
-              <span class="tooltip">Lightning Mastery</span>
+              <span class="tooltip-simple lightning">Lightning Mastery</span>
             </button>
           </div>
         </div>

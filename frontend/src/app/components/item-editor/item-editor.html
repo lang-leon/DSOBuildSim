@@ -92,9 +92,9 @@
               >
                 <option [ngValue]="null">No Enchantment</option>
 
-                @for (available of enchantmentConfig; track available.statType) {
-                  <option [ngValue]="available.statType">
-                    {{ formatStatName(available.statType) }}
+                @for (entry of enchantmentConfig | keyvalue; track entry.key) {
+                  <option [ngValue]="entry.key">
+                    {{ formatStatName(entry.key) }}
                   </option>
                 }
               </select>

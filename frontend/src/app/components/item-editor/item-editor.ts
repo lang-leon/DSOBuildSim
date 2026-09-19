@@ -49,7 +49,7 @@ export class ItemEditor {
 
   @Input() gemConfig!: Record<string, GemDefinitionDTO>;
 
-  @Input() enchantmentConfig!: EnchantmentDTO[];
+  @Input() enchantmentConfig!: Partial<Record<StatType, EnchantmentDTO>>;
 
   @Input() canAddGem!: (gemType: string, gems: (GemInstanceDTO | null)[]) => boolean;
 
@@ -150,7 +150,7 @@ export class ItemEditor {
       return;
     }
 
-    const config = this.enchantmentConfig.find((enchantment) => enchantment.statType === statType);
+    const config = this.enchantmentConfig[statType];
 
     this.enchantments[index] = config ? { ...config } : null;
   }

@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CharacterDTO } from '../../models/instanceDTOs/CharacterDTO';
 import { PetDefinitionDTO } from '../../models/gamedataDTOs/PetDefinitionDTO';
 import { FormsModule } from '@angular/forms';
 import { PetInstanceDTO } from '../../models/instanceDTOs/PetInstanceDTO';
@@ -15,9 +14,9 @@ import { formatStatName, formatStatValueRelative } from '../../utils/display-uti
 export class PetSelector {
   @Input() scale = 1;
 
-  @Input() pets!: PetDefinitionDTO[];
+  @Input() petConfig!: Record<string, PetDefinitionDTO>;
 
-  @Input() character!: CharacterDTO;
+  @Input() pet!: PetInstanceDTO | null;
 
   @Output() cancelled = new EventEmitter<void>();
 
@@ -33,11 +32,9 @@ export class PetSelector {
   formatStatValue = formatStatValueRelative;
 
   ngOnInit() {
-    if (this.character.pet) {
-      this.selectedPet =
-        this.pets.find((pet) => pet.petType === this.character.pet!.petType) ?? null;
-
-      this.selectedTier = this.character.pet.tier;
+    if (this.pet) {
+      this.selectedPet = this.petConfig[this.pet.petType];
+      this.selectedTier = this.pet.tier;
     }
   }
 
@@ -45,7 +42,6 @@ export class PetSelector {
     if (!this.selectedPet) {
       return [];
     }
-
     return Object.keys(this.selectedPet.stats)
       .map(Number)
       .sort((a, b) => a - b);

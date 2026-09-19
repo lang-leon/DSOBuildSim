@@ -48,6 +48,10 @@ import { GemInstanceDTO } from '../../models/instanceDTOs/GemInstanceDTO';
 import { ItemDefinitionDTO } from '../../models/gamedataDTOs/ItemDefinitionDTO';
 import { ItemEditor } from '../item-editor/item-editor';
 import { ItemInstanceDTO } from '../../models/instanceDTOs/ItemInstanceDTO';
+import { getMasteryDescription, getTierName } from '../../utils/tooltip-utils';
+import { PetService } from '../../utils/pet-service';
+import { EssenceService } from '../../utils/essence-service';
+import { BuffService } from '../../utils/buff-service';
 
 @Component({
   selector: 'app-character',
@@ -117,6 +121,9 @@ export class BuildSimComponent implements OnInit {
   showShadowSoulEquipment = false;
 
   formatStatName = formatStatName;
+  getMasteryDescription = getMasteryDescription;
+  getTierName = getTierName;
+  MasteryType = MasteryType;
   BuffCategory = BuffCategory;
   ClassSkillType = ClassSkillType;
   ItemSlot = ItemSlot;
@@ -125,6 +132,9 @@ export class BuildSimComponent implements OnInit {
     private statCalculationService: StatCalculationService,
     private gameDataService: GameDataService,
     private changeDetector: ChangeDetectorRef,
+    public petService: PetService,
+    public essenceService: EssenceService,
+    public buffService: BuffService,
   ) {}
 
   ngOnInit(): void {
@@ -176,10 +186,17 @@ export class BuildSimComponent implements OnInit {
 
         this.itemsByClassAndSlot[characterClass] = itemsBySlot;
       }
+
+      this.petService.setPetConfig(this.gameData.pets);
+      this.essenceService.setEssenceConfig(this.gameData.essences);
+      this.buffService.setTonicConfig(this.gameData.tonics);
+      this.buffService.setPhysicConfig(this.gameData.physics);
+
       this.character = this.createDefaultCharacter(CharacterClass.SPELLWEAVER);
       this.stats = { ...this.gameData.characterClassStats[CharacterClass.SPELLWEAVER] };
       this.changeDetector.detectChanges();
     });
+
   }
 
   ngOnDestroy() {

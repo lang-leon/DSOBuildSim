@@ -1,9 +1,10 @@
 import { ConnectedPosition, OverlayModule } from '@angular/cdk/overlay';
+import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-build-sim-button',
-  imports: [OverlayModule],
+  imports: [OverlayModule, NgClass],
   templateUrl: './build-sim-button.html',
   styleUrl: './build-sim-button.scss',
 })
@@ -16,6 +17,8 @@ export class BuildSimButton {
 
   @Input()
   tooltipTitle?: string;
+
+  @Input() tooltipTitleClass: string = '';
 
   @Input()
   tooltipDescription: string | string[] = [];

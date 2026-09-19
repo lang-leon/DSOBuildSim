@@ -32,7 +32,7 @@
 
 .character-window {
   width: 524px;
-  height: 780px;
+  height: 766px;
 
   background-color: #543a23;
   border: 3px solid #ac7443;
@@ -163,7 +163,11 @@
   background-color: #100d04;
   margin-top: 0;
   margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  font-size: 15px;
   text-align: center;
+  border: none;
 }
 
 .stat-row {
