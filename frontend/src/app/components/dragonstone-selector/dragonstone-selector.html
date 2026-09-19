@@ -27,7 +27,8 @@
               [tooltipDescription]="
                 dragonStoneService.getDragonStoneDefinitionDescription(dragonStone, tier)
               "
-              [icon]="'dragon-stone-icons/' + getIcon(dragonStone.dragonStoneType, tier)"
+              [tooltipTitleClass]="getTierName(tier)"
+              [icon]="dragonStoneService.getDragonStoneDefinitionIcon(dragonStone, tier)"
               (clicked)="selectDragonStone(dragonStone, tier)"
             ></app-build-sim-button>
           }

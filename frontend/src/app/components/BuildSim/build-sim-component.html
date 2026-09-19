@@ -382,42 +382,56 @@
             class="rune-trinket1"
             slotName="Rune Trinket 1"
             icon="inventory-icons/rune-trinket.png"
-            (clicked)="openRuneTrinketEditor(6)"
+            [runeTrinket]="character.runeTrinkets[0]"
+            [runeConfig]="gameData.runes"
+            (clicked)="openRuneTrinketEditor(0)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket2"
             slotName="Rune Trinket 2"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[1]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(1)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket3"
             slotName="Rune Trinket 3"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[2]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(2)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket4"
             slotName="Rune Trinket 4"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[3]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(3)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket5"
             slotName="Rune Trinket 5"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[4]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(4)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket6"
             slotName="Rune Trinket 6"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[5]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(5)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket7"
             slotName="Rune Trinket 7"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[6]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(6)"
           ></app-build-sim-button>
 
@@ -425,18 +439,24 @@
             class="jewel-trinket1"
             slotName="Jewel Trinket 1"
             icon="inventory-icons/jewel-trinket.png"
+            [jewelTrinket]="character.jewelTrinkets[0]"
+            [jewelConfig]="gameData.jewels[character.characterClass]"
             (clicked)="openJewelTrinketEditor(0)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="jewel-trinket2"
             slotName="Jewel Trinket 2"
             icon="inventory-icons/jewel-trinket.png"
+            [jewelTrinket]="character.jewelTrinkets[1]"
+            [jewelConfig]="gameData.jewels[character.characterClass]"
             (clicked)="openJewelTrinketEditor(1)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="jewel-trinket3"
             slotName="Jewel Trinket 3"
             icon="inventory-icons/jewel-trinket.png"
+            [jewelTrinket]="character.jewelTrinkets[2]"
+            [jewelConfig]="gameData.jewels[character.characterClass]"
             (clicked)="openJewelTrinketEditor(2)"
           ></app-build-sim-button>
 
@@ -444,6 +464,8 @@
             class="dragon-crest-trinket"
             slotName="Dragon Crest"
             icon="inventory-icons/dragon-crest.png"
+            [dragonCrestTrinket]="character.dragonCrest"
+            [dragonStoneConfig]="gameData.dragonStones"
             (clicked)="openDragonCrestEditor()"
           ></app-build-sim-button>
 
@@ -461,7 +483,9 @@
             slotName="Essence: None"
             [tooltipTitle]="essenceService.getEssenceInstanceName(character.essence)"
             [tooltipDescription]="essenceService.getEssenceInstanceDescription(character.essence)"
-            [tooltipTitleClass]="character.essence !== null ? getTierName(character.essence.tier) : ''"
+            [tooltipTitleClass]="
+              character.essence !== null ? getTierName(character.essence.tier) : ''
+            "
             [icon]="'inventory-icons/' + getInventoryIcon('essence', character.essence?.tier)"
             (clicked)="openEssenceSelector()"
           ></app-build-sim-button>
@@ -479,7 +503,9 @@
             slotName="Physic: None"
             [tooltipTitle]="buffService.getPhysicInstanceName(character.physic)"
             [tooltipDescription]="buffService.getPhysicInstanceDescription(character.physic)"
-            [tooltipTitleClass]="character.physic !== null ? getTierName(character.physic.tier) : ''"
+            [tooltipTitleClass]="
+              character.physic !== null ? getTierName(character.physic.tier) : ''
+            "
             [icon]="'inventory-icons/' + getInventoryIcon('physic', character.physic?.tier)"
             (clicked)="openPhysicSelector()"
           ></app-build-sim-button>
@@ -500,10 +526,19 @@
             <app-build-sim-button
               class="class-skill1"
               slotName="Immovable Wall"
-              [tooltipTitle]="character.classSkillLevel > 0 &&
-                character.classSkillType === ClassSkillType.IMMOVEABLE_WALL ? 'Immovable Wall' : ''"
-              [tooltipDescription]="character.classSkillLevel > 0 &&
-                character.classSkillType === ClassSkillType.IMMOVEABLE_WALL ? formatStatValueRelative(0.5+(character.classSkillLevel-1)*0.05, 2) + ' Armor Value' : ''"
+              [tooltipTitle]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.IMMOVEABLE_WALL
+                  ? 'Immovable Wall'
+                  : ''
+              "
+              [tooltipDescription]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.IMMOVEABLE_WALL
+                  ? formatStatValueRelative(0.5 + (character.classSkillLevel - 1) * 0.05, 2) +
+                    ' Armor Value'
+                  : ''
+              "
               [overlayText]="
                 character.classSkillLevel > 0 &&
                 character.classSkillType === ClassSkillType.IMMOVEABLE_WALL
@@ -517,10 +552,19 @@
             <app-build-sim-button
               class="class-skill2"
               slotName="Quick Striker"
-              [tooltipTitle]="character.classSkillLevel > 0 &&
-                character.classSkillType === ClassSkillType.QUICK_STRIKER ? 'Quick Striker' : ''"
-              [tooltipDescription]="character.classSkillLevel > 0 &&
-                character.classSkillType === ClassSkillType.QUICK_STRIKER ? formatStatValueRelative(0.3+(character.classSkillLevel-1)*0.05, 2) + ' Attack Speed' : ''"
+              [tooltipTitle]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.QUICK_STRIKER
+                  ? 'Quick Striker'
+                  : ''
+              "
+              [tooltipDescription]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.QUICK_STRIKER
+                  ? formatStatValueRelative(0.3 + (character.classSkillLevel - 1) * 0.05, 2) +
+                    ' Attack Speed'
+                  : ''
+              "
               [overlayText]="
                 character.classSkillLevel > 0 &&
                 character.classSkillType === ClassSkillType.QUICK_STRIKER
@@ -537,7 +581,12 @@
               class="class-skill3"
               slotName="Bloodmage"
               [tooltipTitle]="character.classSkillLevel > 0 ? 'Bloodmage' : ''"
-              [tooltipDescription]="character.classSkillLevel > 0 ? formatStatValueRelative(0.3+(character.classSkillLevel-1)*0.05, 2) + ' Damage' : ''"
+              [tooltipDescription]="
+                character.classSkillLevel > 0
+                  ? formatStatValueRelative(0.3 + (character.classSkillLevel - 1) * 0.05, 2) +
+                    ' Damage'
+                  : ''
+              "
               [icon]="getClassSkillIcon(ClassSkillType.BLOODMAGE)"
               [overlayText]="
                 character.classSkillLevel > 0 ? character.classSkillLevel + '/5' : '0/5'

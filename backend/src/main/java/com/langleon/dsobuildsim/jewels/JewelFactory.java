@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @Component
 public class JewelFactory {
@@ -42,7 +43,7 @@ public class JewelFactory {
     public List<Jewel> fromDTOList(List<JewelInstanceDTO> jewelDTOs, CharacterClass characterClass)
     {
         if (jewelDTOs==null) return List.of();
-        return jewelDTOs.stream().map(dto -> fromDTO(dto, characterClass)).toList();
+        return jewelDTOs.stream().filter(Objects::nonNull).map(dto -> fromDTO(dto, characterClass)).toList();
     }
 
     public JewelTrinket fromTrinketDTO(JewelTrinketDTO jewelTrinketDTO, CharacterClass characterClass){

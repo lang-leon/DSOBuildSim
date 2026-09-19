@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DragonStoneDefinitionDTO } from '../../models/gamedataDTOs/DragonStoneDefinitionDTO';
-import { CharacterDTO } from '../../models/instanceDTOs/CharacterDTO';
 import { DragonCrestTrinketDTO } from '../../models/instanceDTOs/DragonCrestTrinketDTO';
 import { DragonStoneInstanceDTO } from '../../models/instanceDTOs/DragonStoneInstanceDTO';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
 import { getIcon } from '../../utils/display-utils';
 import { DragonstoneSelectorComponent } from '../dragonstone-selector/dragonstone-selector';
 import { DragonStoneService } from '../../utils/dragon-stone-service';
+import { getTierName } from '../../utils/tooltip-utils';
 
 @Component({
   selector: 'app-dragoncrest-trinket-editor',
@@ -31,7 +31,7 @@ export class DragoncrestTrinketEditor {
   showDragonStoneSelector = false;
   selectedSlot = -1;
 
-  getIcon = getIcon;
+  getTierName = getTierName;
 
   ngOnInit(): void {
     this.dragonStoneService.setDragonStoneConfig(this.dragonStoneConfig);
@@ -79,7 +79,7 @@ export class DragoncrestTrinketEditor {
 
   confirm() {
     const dragonCrest: DragonCrestTrinketDTO = {
-      dragonStones: this.dragonStones.filter((stone) => stone !== null),
+      dragonStones: this.dragonStones,
     };
     this.confirmed.emit(dragonCrest);
   }

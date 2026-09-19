@@ -1,5 +1,5 @@
-import { DragonStoneInstanceDTO } from "./DragonStoneInstanceDTO";
+import { DragonStoneInstanceDTO } from './DragonStoneInstanceDTO';
 
 export interface DragonCrestTrinketDTO {
-    dragonStones: DragonStoneInstanceDTO[];
+  dragonStones: (DragonStoneInstanceDTO | null)[];
 }

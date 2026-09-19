@@ -5,6 +5,7 @@ import { JewelDefinitionDTO } from '../../models/gamedataDTOs/JewelDefinitionDTO
 import { JewelSelector } from '../jewel-selector/jewel-selector';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
 import { JewelService } from '../../utils/jewel-service';
+import { getTierName } from '../../utils/tooltip-utils';
 
 @Component({
   selector: 'app-jewel-trinket-editor',
@@ -30,6 +31,8 @@ export class JewelTrinketEditor {
   jewels: (JewelInstanceDTO | null)[] = Array(10).fill(null);
   showJewelSelector = false;
   selectedSlot = -1;
+
+  getTierName = getTierName;
 
   ngOnInit(): void {
     this.jewelService.setJewelConfig(this.jewelConfig);
@@ -83,7 +86,7 @@ export class JewelTrinketEditor {
 
   confirm() {
     const jewelTrinket: JewelTrinketDTO = {
-      jewels: this.jewels.filter((jewel) => jewel !== null),
+      jewels: this.jewels,
     };
     this.confirmed.emit(jewelTrinket);
   }

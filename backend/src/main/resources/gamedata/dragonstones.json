@@ -14,9 +14,9 @@
       }
     },
     "descriptionPerTier": {
-      "3": "+ 0.5% drop stack size of Andermant",
-      "4": "+ 1% drop stack size of Andermant",
-      "5": "+ 2% drop stack size of Andermant"
+      "3": "",
+      "4": "",
+      "5": ""
     }
   },
   "POWERSTONE": {
@@ -34,9 +34,9 @@
       }
     },
     "descriptionPerTier": {
-      "3": "+ 2.50% Health Points",
-      "4": "+ 5.00% Health Points",
-      "5": "+ 7.50% Health Points"
+      "3": "",
+      "4": "",
+      "5": ""
     }
   },
   "SLOTHSTONE": {
@@ -131,9 +131,9 @@
       }
     },
     "descriptionPerTier": {
-      "3": "+ 1.00% damage",
-      "4": "+ 2.00% damage",
-      "5": "+ 3.00% damage"
+      "3": "",
+      "4": "",
+      "5": ""
     }
   },
   "TIMESTONE": {

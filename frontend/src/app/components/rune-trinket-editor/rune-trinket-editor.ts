@@ -6,6 +6,7 @@ import { RuneDefinitionDTO } from '../../models/gamedataDTOs/RuneDefinitionDTO';
 import { RuneInstanceDTO } from '../../models/instanceDTOs/RuneInstanceDTO';
 import { formatName, formatStatName, getIcon } from '../../utils/display-utils';
 import { RuneService } from '../../utils/rune-service';
+import { getTierName } from '../../utils/tooltip-utils';
 
 @Component({
   selector: 'app-rune-trinket-editor',
@@ -32,14 +33,15 @@ export class RuneTrinketEditor {
   showRuneSelector = false;
   selectedSlot = -1;
 
+  getTierName = getTierName;
   getIcon = getIcon;
   formatName = formatName;
 
   ngOnInit(): void {
     this.runeService.setRuneConfig(this.runeConfig);
 
-    const existingStones = this.runeTrinket.runes ?? [];
-    this.runes = Array.from({ length: 10 }, (_, index) => existingStones[index] ?? null);
+    const existingRunes = this.runeTrinket.runes ?? [];
+    this.runes = Array.from({ length: 10 }, (_, index) => existingRunes[index] ?? null);
   }
 
   cancel() {
@@ -48,7 +50,7 @@ export class RuneTrinketEditor {
 
   confirm() {
     const runeTrinket: RuneTrinketDTO = {
-      runes: this.runes.filter((rune) => rune !== null),
+      runes: this.runes,
     };
     this.confirmed.emit(runeTrinket);
   }

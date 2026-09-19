@@ -11,6 +11,7 @@
             class="trinket-slot"
             [slotName]="rune !== null ? '' : 'Empty'"
             [tooltipTitle]="rune !== null ? runeService.getRuneInstanceName(rune) : ''"
+            [tooltipTitleClass]="rune !== null ? getTierName(rune.tier) : ''"
             [tooltipDescription]="runeService.getRuneInstanceDescription(rune)"
             [icon]="runeService.getRuneInstanceIcon(rune)"
             (clicked)="openRuneSelector($index)"

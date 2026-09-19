@@ -4,6 +4,7 @@ import { JewelInstanceDTO } from '../../models/instanceDTOs/JewelInstanceDTO';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
 import { FormsModule } from '@angular/forms';
 import { JewelService } from '../../utils/jewel-service';
+import { getTierName } from '../../utils/tooltip-utils';
 
 @Component({
   selector: 'app-jewel-selector',
@@ -24,6 +25,8 @@ export class JewelSelector {
 
   searchTerm = '';
   maxTierOnly = true;
+
+  getTierName = getTierName;
 
   ngOnInit() {
     this.jewelService.setJewelConfig(this.jewelConfig);

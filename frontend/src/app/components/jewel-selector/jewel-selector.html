@@ -24,6 +24,7 @@
             <app-build-sim-button
               class="selection-button"
               [tooltipTitle]="jewel.name"
+              [tooltipTitleClass]="getTierName(tier)"
               [tooltipDescription]="jewel.descriptionPerTier[tier]"
               [icon]="jewelService.getJewelDefinitionIcon(jewel, tier)"
               [disabled]="!canSelectJewel(jewel.jewelType)"

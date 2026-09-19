@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { DragonStoneDefinitionDTO } from '../models/gamedataDTOs/DragonStoneDefinitionDTO';
 import { DragonStoneInstanceDTO } from '../models/instanceDTOs/DragonStoneInstanceDTO';
-import { formatName, getIcon } from './display-utils';
+import { formatName, formatStatName, formatStatValueRelative, getIcon } from './display-utils';
+import { StatType } from '../enums/StatType';
 
 @Injectable({ providedIn: 'root' })
 export class DragonStoneService {
@@ -31,17 +32,30 @@ export class DragonStoneService {
     return this.getDragonStoneName(dragonStone.dragonStoneType, dragonStone.tier);
   }
 
+  private getDragonStoneDescription(dragonStone: DragonStoneDefinitionDTO, tier: number): string {
+    let desc = '';
+    desc += dragonStone.description[tier];
+
+    for (const [stat, value] of Object.entries(dragonStone.stats[tier]) as [StatType, number][]) {
+      desc += formatStatValueRelative(value, 2) + ' ' + formatStatName(stat) + '\n';
+    }
+    return desc.trim();
+  }
+
   getDragonStoneDefinitionDescription(dragonStone: DragonStoneDefinitionDTO, tier: number): string {
-    return dragonStone.description[tier];
+    return this.getDragonStoneDescription(dragonStone, tier);
   }
 
   getDragonStoneInstanceDescription(dragonStone: DragonStoneInstanceDTO | null): string {
     if (dragonStone === null) return '';
-    return this.dragonStoneConfig[dragonStone.dragonStoneType].description[dragonStone.tier];
+    return this.getDragonStoneDescription(
+      this.dragonStoneConfig[dragonStone.dragonStoneType],
+      dragonStone.tier,
+    );
   }
 
   private getDragonStoneIcon(dragonStoneType: string, tier: number): string {
-    return 'dragonStone-icons/' + getIcon(dragonStoneType, tier);
+    return 'dragon-stone-icons/' + getIcon(dragonStoneType, tier);
   }
 
   getDragonStoneDefinitionIcon(dragonStone: DragonStoneDefinitionDTO, tier: number): string {
@@ -49,7 +63,7 @@ export class DragonStoneService {
   }
 
   getDragonStoneInstanceIcon(dragonStone: DragonStoneInstanceDTO | null): string {
-    if (dragonStone === null) return 'dragonStone-icons/default.png';
+    if (dragonStone === null) return 'dragon-stone-icons/default.png';
     return this.getDragonStoneIcon(dragonStone.dragonStoneType, dragonStone.tier);
   }
 }

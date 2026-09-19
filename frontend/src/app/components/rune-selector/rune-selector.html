@@ -25,6 +25,7 @@
               class="selection-button"
               [tooltipTitle]="rune.name"
               [tooltipDescription]="runeService.getRuneDefinitionDescription(rune, tier)"
+              [tooltipTitleClass]="getTierName(tier)"
               [icon]="runeService.getRuneDefinitionIcon(rune, tier)"
               [disabled]="!canSelectRune(rune.runeType)"
               (clicked)="selectRune(rune, tier)"

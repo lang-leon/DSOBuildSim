@@ -5,6 +5,7 @@ import { BuildSimButton } from '../build-sim-button/build-sim-button';
 import { getIcon, matchesSearch } from '../../utils/display-utils';
 import { FormsModule } from '@angular/forms';
 import { DragonStoneService } from '../../utils/dragon-stone-service';
+import { getTierName } from '../../utils/tooltip-utils';
 
 @Component({
   selector: 'app-dragonstone-selector',
@@ -24,7 +25,7 @@ export class DragonstoneSelectorComponent {
   searchTerm = '';
   maxTierOnly = true;
 
-  getIcon = getIcon;
+  getTierName = getTierName;
 
   ngOnInit() {
     this.dragonStoneService.setDragonStoneConfig(this.dragonStoneConfig);

@@ -11,6 +11,7 @@
             class="trinket-slot"
             [slotName]="jewel !== null ? '' : 'Empty'"
             [tooltipTitle]="jewel !== null ? jewelService.getJewelInstanceName(jewel) : ''"
+            [tooltipTitleClass]="jewel !== null ? getTierName(jewel.tier) : ''"
             [tooltipDescription]="jewelService.getJewelInstanceDescription(jewel)"
             [icon]="jewelService.getJewelInstanceIcon(jewel)"
             (clicked)="openJewelSelector($index)"

@@ -197,7 +197,6 @@ export class BuildSimComponent implements OnInit {
       this.stats = { ...this.gameData.characterClassStats[CharacterClass.SPELLWEAVER] };
       this.changeDetector.detectChanges();
     });
-
   }
 
   ngOnDestroy() {
@@ -225,13 +224,13 @@ export class BuildSimComponent implements OnInit {
       classSkillType: ClassSkillType.NONE,
       classSkillLevel: 0,
       runeTrinkets: Array.from({ length: 7 }, () => ({
-        runes: [],
+        runes: ([] = Array(10).fill(null)),
       })),
       jewelTrinkets: Array.from({ length: 3 }, () => ({
-        jewels: [],
+        jewels: ([] = Array(10).fill(null)),
       })),
       dragonCrest: {
-        dragonStones: [],
+        dragonStones: ([] = Array(10).fill(null)),
       },
       items: {},
       pet: null,
@@ -549,7 +548,7 @@ export class BuildSimComponent implements OnInit {
       case 6:
         return prefix + '-unique.png';
       case 7:
-        return prefix + '-mythic.png'
+        return prefix + '-mythic.png';
       default:
         return prefix + '-default.png';
     }

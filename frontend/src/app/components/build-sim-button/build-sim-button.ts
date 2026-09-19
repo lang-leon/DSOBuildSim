@@ -1,10 +1,17 @@
 import { ConnectedPosition, OverlayModule } from '@angular/cdk/overlay';
 import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RuneTrinketDTO } from '../../models/instanceDTOs/RuneTrinketDTO';
+import { JewelTrinketDTO } from '../../models/instanceDTOs/JewelTrinketDTO';
+import { DragonCrestTrinketDTO } from '../../models/instanceDTOs/DragonCrestTrinketDTO';
+import { TrinketTooltip } from '../trinket-tooltip/trinket-tooltip';
+import { RuneDefinitionDTO } from '../../models/gamedataDTOs/RuneDefinitionDTO';
+import { JewelDefinitionDTO } from '../../models/gamedataDTOs/JewelDefinitionDTO';
+import { DragonStoneDefinitionDTO } from '../../models/gamedataDTOs/DragonStoneDefinitionDTO';
 
 @Component({
   selector: 'app-build-sim-button',
-  imports: [OverlayModule, NgClass],
+  imports: [OverlayModule, NgClass, TrinketTooltip],
   templateUrl: './build-sim-button.html',
   styleUrl: './build-sim-button.scss',
 })
@@ -22,6 +29,18 @@ export class BuildSimButton {
 
   @Input()
   tooltipDescription: string | string[] = [];
+
+  @Input() runeTrinket?: RuneTrinketDTO;
+
+  @Input() runeConfig?: Record<string, RuneDefinitionDTO>;
+
+  @Input() jewelTrinket?: JewelTrinketDTO;
+
+  @Input() jewelConfig?: Record<string, JewelDefinitionDTO>;
+
+  @Input() dragonCrestTrinket?: DragonCrestTrinketDTO;
+
+  @Input() dragonStoneConfig?: Record<string, DragonStoneDefinitionDTO>;
 
   @Input()
   overlayText?: string;

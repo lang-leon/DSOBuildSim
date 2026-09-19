@@ -10,13 +10,11 @@
           <app-build-sim-button
             class="trinket-slot"
             [slotName]="dragonStone !== null ? '' : 'Empty'"
-            [tooltipTitle]="
-              dragonStone !== null ? dragonStoneService.getDragonStoneInstanceName(dragonStone) : ''
-            "
+            [tooltipTitle]="dragonStone !== null ? dragonStoneService.getDragonStoneInstanceName(dragonStone) : ''"
+            [tooltipTitleClass]="dragonStone !== null ? getTierName(dragonStone.tier) : ''"
             [tooltipDescription]="dragonStoneService.getDragonStoneInstanceDescription(dragonStone)"
-            [icon]="
-              'dragon-stone-icons/' + getIcon(dragonStone?.dragonStoneType, dragonStone?.tier)
-            "
+            [icon]="dragonStoneService.getDragonStoneInstanceIcon(dragonStone)"
+            
             (clicked)="openDragonStoneSelector($index)"
           ></app-build-sim-button>
 

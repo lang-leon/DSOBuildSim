@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RuneInstanceDTO } from '../../models/instanceDTOs/RuneInstanceDTO';
 import { RuneDefinitionDTO } from '../../models/gamedataDTOs/RuneDefinitionDTO';
 import { RuneService } from '../../utils/rune-service';
+import { getTierName } from '../../utils/tooltip-utils';
 
 @Component({
   selector: 'app-rune-selector',
@@ -24,6 +25,8 @@ export class RuneSelector {
 
   searchTerm = '';
   maxTierOnly = true;
+
+  getTierName = getTierName;
 
   ngOnInit() {
     this.runeService.setRuneConfig(this.runeConfig);
