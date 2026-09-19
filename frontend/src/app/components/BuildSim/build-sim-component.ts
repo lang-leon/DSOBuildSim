@@ -201,7 +201,7 @@ export class BuildSimComponent implements OnInit {
   private createDefaultCharacter(characterClass: CharacterClass): CharacterDTO {
     return {
       characterClass,
-      name: 'Character',
+      name: '',
       masteryType: MasteryType.NONE,
       masteryLevel: 0,
       classSkillType: ClassSkillType.NONE,

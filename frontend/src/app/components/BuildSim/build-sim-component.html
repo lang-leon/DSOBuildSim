@@ -5,7 +5,7 @@
         <div class="character-header">
           <div class="character-info">
             <div class="character-title">
-              <h1>{{ character.name || 'Character' }}</h1>
+              <input type="text" [(ngModel)]="character.name" placeholder="Character" />
             </div>
             <div class="character-class">
               <span> {{ getCharacterClassName(character.characterClass) }} </span>
@@ -234,7 +234,7 @@
         <div class="import-export">
           <button (click)="openFilePicker()" class="import-export-button">
             <img src="utility-icons/upload.png" />
-            <span class="tooltip">Import Character</span>
+            <span class="tooltip">Upload Character</span>
           </button>
 
           <button
@@ -243,7 +243,7 @@
             [disabled]="isDefaultCharacter()"
           >
             <img src="utility-icons/download.png" />
-            <span class="tooltip">Export Character</span>
+            <span class="tooltip">Download Character</span>
           </button>
 
           <input #fileInput type="file" accept=".json" hidden (change)="onFileSelected($event)" />

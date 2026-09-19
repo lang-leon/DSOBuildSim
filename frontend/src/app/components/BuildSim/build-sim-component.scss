@@ -80,13 +80,17 @@
   );
 }
 
-.character-title h1 {
+.character-title input {
   margin: 0;
   padding: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  text-align: center;
+  font-size: 32px;
+  font-style: italic;
 
   width: 100%;
   height: 100%;
