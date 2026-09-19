@@ -37,7 +37,7 @@
               {{ tooltipDescription }}
             } @else {
               @for (line of tooltipDescription; track $index) {
-                @if($index > 0){
+                @if ($index > 0) {
                   <div class="tooltip-separator"></div>
                 }
                 <div>{{ line }}</div>

@@ -56,7 +56,7 @@ export class BuildSimButton {
   }
 
   onMouseEnter(): void {
-      this.showTooltip = true;
+    this.showTooltip = true;
   }
 
   onMouseLeave(): void {
