@@ -452,7 +452,7 @@
             [slotName]="
               character.pet ? 'Pet: ' + formatStatName(character.pet.petType) : 'Pet: None'
             "
-            [icon]="getPetIcon()"
+            [icon]="'inventory-icons/' + getInventoryIcon('pet', character.pet?.tier)"
             (clicked)="openPetSelector()"
           ></app-build-sim-button>
           <app-build-sim-button
@@ -462,7 +462,7 @@
                 ? 'Essence: ' + formatStatName(character.essence.essenceType)
                 : 'Essence: None'
             "
-            [icon]="getEssenceIcon()"
+            [icon]="'inventory-icons/' + getInventoryIcon('essence', character.essence?.tier)"
             (clicked)="openEssenceSelector()"
           ></app-build-sim-button>
           <app-build-sim-button
@@ -470,7 +470,7 @@
             [slotName]="
               character.tonic ? 'Tonic: ' + formatStatName(character.tonic.type) : 'Tonic: None'
             "
-            [icon]="getTonicIcon()"
+            [icon]="'inventory-icons/' + getInventoryIcon('tonic', character.tonic?.tier)"
             (clicked)="openTonicSelector()"
           ></app-build-sim-button>
           <app-build-sim-button
@@ -478,7 +478,7 @@
             [slotName]="
               character.physic ? 'Physic: ' + formatStatName(character.physic.type) : 'Physic: None'
             "
-            [icon]="getPhysicIcon()"
+            [icon]="'inventory-icons/' + getInventoryIcon('physic', character.physic?.tier)"
             (clicked)="openPhysicSelector()"
           ></app-build-sim-button>
           <app-build-sim-button
