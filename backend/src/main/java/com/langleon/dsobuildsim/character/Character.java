@@ -312,10 +312,6 @@ public class Character {
             }
         }
 
-        if (characterClass == CharacterClass.SPELLWEAVER && classSkillType == ClassSkillType.BLOODMAGE && classSkillLevel > 0){
-            relativeStats.put(StatType.DAMAGE, 0.3 + (classSkillLevel -1) * 0.05);
-        }
-
         if (elementalMasteryType == MasteryType.NONE || elementalMasteryLevel <= 0) {
             return relativeStats;
         }

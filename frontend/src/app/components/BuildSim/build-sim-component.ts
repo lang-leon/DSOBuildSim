@@ -23,7 +23,7 @@ import { PetSelector } from '../pet-selector/pet-selector';
 import { PetInstanceDTO } from '../../models/instanceDTOs/PetInstanceDTO';
 import { EssenceSelector } from '../essence-selector/essence-selector';
 import { EssenceInstanceDTO } from '../../models/instanceDTOs/EssenceInstanceDTO';
-import { formatStatName, getIcon } from '../../utils/display-utils';
+import { formatStatName, formatStatValueRelative, getIcon } from '../../utils/display-utils';
 import { BuffInstanceDTO } from '../../models/instanceDTOs/BuffInstanceDTO';
 import { BuffCategory } from '../../enums/BuffCategory';
 import { BuffSelector } from '../buff-selector/buff-selector';
@@ -121,6 +121,7 @@ export class BuildSimComponent implements OnInit {
   showShadowSoulEquipment = false;
 
   formatStatName = formatStatName;
+  formatStatValueRelative = formatStatValueRelative;
   getMasteryDescription = getMasteryDescription;
   getTierName = getTierName;
   MasteryType = MasteryType;
@@ -723,6 +724,7 @@ export class BuildSimComponent implements OnInit {
     if (this.character.classSkillType !== skillType) {
       this.character.classSkillType = skillType;
       this.character.classSkillLevel = 1;
+      this.calculate();
       return;
     }
     if (this.character.classSkillLevel < 5) {

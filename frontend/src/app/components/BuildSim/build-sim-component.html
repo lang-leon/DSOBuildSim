@@ -500,6 +500,10 @@
             <app-build-sim-button
               class="class-skill1"
               slotName="Immovable Wall"
+              [tooltipTitle]="character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.IMMOVEABLE_WALL ? 'Immovable Wall' : ''"
+              [tooltipDescription]="character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.IMMOVEABLE_WALL ? formatStatValueRelative(0.5+(character.classSkillLevel-1)*0.05, 2) + ' Armor Value' : ''"
               [overlayText]="
                 character.classSkillLevel > 0 &&
                 character.classSkillType === ClassSkillType.IMMOVEABLE_WALL
@@ -513,6 +517,10 @@
             <app-build-sim-button
               class="class-skill2"
               slotName="Quick Striker"
+              [tooltipTitle]="character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.QUICK_STRIKER ? 'Quick Striker' : ''"
+              [tooltipDescription]="character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.QUICK_STRIKER ? formatStatValueRelative(0.3+(character.classSkillLevel-1)*0.05, 2) + ' Attack Speed' : ''"
               [overlayText]="
                 character.classSkillLevel > 0 &&
                 character.classSkillType === ClassSkillType.QUICK_STRIKER
@@ -528,6 +536,8 @@
             <app-build-sim-button
               class="class-skill3"
               slotName="Bloodmage"
+              [tooltipTitle]="character.classSkillLevel > 0 ? 'Bloodmage' : ''"
+              [tooltipDescription]="character.classSkillLevel > 0 ? formatStatValueRelative(0.3+(character.classSkillLevel-1)*0.05, 2) + ' Damage' : ''"
               [icon]="getClassSkillIcon(ClassSkillType.BLOODMAGE)"
               [overlayText]="
                 character.classSkillLevel > 0 ? character.classSkillLevel + '/5' : '0/5'
