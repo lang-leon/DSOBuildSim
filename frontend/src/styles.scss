@@ -1,19 +1,19 @@
 :root {
   --color-default: #efd8b7;
   --color-set: #6dd5ff;
-  --color-common: #B4B9C5;
-  --color-improved: #578A67;
-  --color-magic: #38488A;
+  --color-common: #b4b9c5;
+  --color-improved: #578a67;
+  --color-magic: #38488a;
   --color-extraordinary: #904672;
-  --color-legendary: #C68347;
+  --color-legendary: #c68347;
   --color-unique: #fee37e;
   --color-mythic: #ff4f63;
   --color-mythicplus: #efaa10;
 
-  --color-ice: #7EDBF6;
-  --color-fire: #CD4304;
-  --color-lightning: #A8E1D6;
-  --color-poison: #B0D222;
+  --color-ice: #7edbf6;
+  --color-fire: #cd4304;
+  --color-lightning: #a8e1d6;
+  --color-poison: #b0d222;
 }
 
 .default {
@@ -320,7 +320,7 @@ h4 {
 
 .tooltip-simple {
   position: absolute;
-  
+
   font-style: normal;
   font-size: 20px;
   font-weight: bold;
@@ -396,6 +396,10 @@ h4 {
   height: 1px;
 
   background: #555;
+}
+
+.tooltip-content {
+  align-items: left;
 }
 
 .tooltip-description {

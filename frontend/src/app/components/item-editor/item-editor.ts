@@ -207,14 +207,6 @@ export class ItemEditor {
     return Object.keys(this.itemConfig[this.item.itemType].uniqueAbsoluteValues ?? {}).length > 0;
   }
 
-  getEquippedSetItemCount(): number {
-    if (this.item === undefined) return 0;
-    const count = this.equippedSets[this.itemConfig[this.item.itemType].set]?.size || 0;
-    return this.equippedSets[this.itemConfig[this.item.itemType].set].has(this.item.itemType)
-      ? count
-      : count + 1;
-  }
-
   openGemSelector(index: number) {
     this.selectedSlot = index;
     this.showGemSelector = true;
@@ -236,7 +228,7 @@ export class ItemEditor {
 
   confirm() {
     if (this.item !== undefined) {
-      this.item.gems = this.gems.filter((gem) => gem !== null) ?? [];
+      this.item.gems = this.gems ?? [];
       this.item.enchantments =
         this.enchantments.filter((enchantment) => enchantment !== null) ?? [];
 

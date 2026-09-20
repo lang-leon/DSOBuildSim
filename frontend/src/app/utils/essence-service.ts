@@ -15,9 +15,9 @@ export class EssenceService {
   {
     if (essence === null) return "";
     let desc = '';
-    desc += (essence.damage[tier] !== undefined && essence.damage[tier] > 0) ? formatStatValueRelative(essence.damage[tier], 2)+"\n" : "";
+    desc += (essence.damage[tier] !== undefined && essence.damage[tier] > 0) ? formatStatValueRelative(essence.damage[tier], 2) + " Damage" : "";
     if (essence.description[tier] !== undefined) 
-        desc += essence.description[tier];
+        desc += "\n" + essence.description[tier];
     desc+="\nNo effect in official arenas."
     return desc.trim();
   }

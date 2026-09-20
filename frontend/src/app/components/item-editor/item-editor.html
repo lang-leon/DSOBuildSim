@@ -70,7 +70,7 @@
                   canSelectGem(gem.gemCategory === 'OPAL' ? 'OPAL' : gem.gemType[0])
                 ) {
                   <button
-                    class="item-editor-slot-action copy-button"
+                    class="trinket-slot-action copy-button"
                     (click)="copyGem($index); $event.stopPropagation()"
                   >
                     <img src="utility-icons/copy.png" alt="Copy" />
@@ -206,7 +206,7 @@
             {{
               setConfig[itemConfig[item.itemType].set].name +
                 ' (' +
-                getEquippedSetItemCount() +
+                itemService.getEquippedSetItemCount(item, equippedSets) +
                 '/' +
                 setConfig[itemConfig[item.itemType].set].setItems.length +
                 '):'
