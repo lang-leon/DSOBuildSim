@@ -6,11 +6,6 @@ DSOBuildSim allows users to configure characters using equipment, enhancements, 
 
 The application consists of a **Spring Boot backend** providing the calculation engine and REST API, and an **Angular frontend** for interactive build configuration and visualization.
 
->**Current development:** The frontend is currently being developed on the `milestone-3-frontend` branch.
->The `master` branch currently contains the Spring Boot backend and REST API.
->The current frontend implementation is available on [`milestone-3-frontend`](../../tree/milestone-3-frontend).
->
-
 **Technologies:** Java, Spring Boot, REST API, Angular, TypeScript
 
 ---
