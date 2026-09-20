@@ -52,7 +52,7 @@ export class ItemEditor {
 
   @Input() enchantmentConfig!: Partial<Record<StatType, EnchantmentDTO>>;
 
-  @Input() canAddGem!: (gemType: string, gems: (GemInstanceDTO | null)[]) => boolean;
+  @Input() canAddGem!: (gemType: string, gems: (GemInstanceDTO | null)[], excludedSlot: number) => boolean;
 
   @Output() cancelled = new EventEmitter<void>();
 
@@ -273,7 +273,7 @@ export class ItemEditor {
     if (this.gems[index] === null) return;
     if (!this.hasEmptyGemSlot()) return;
     const gemType = this.gems[index].gemCategory === 'OPAL' ? 'OPAL' : this.gems[index].gemType[0];
-    if (!this.canAddGem(gemType, this.gems)) return;
+    if (!this.canAddGem(gemType, this.gems, -1)) return;
     for (let i = 0; i < 10; i++) {
       if (this.gems[i] === null) {
         this.gems[i] = this.gems[index];
@@ -287,7 +287,7 @@ export class ItemEditor {
   }
 
   canSelectGem(gemType: string) {
-    return this.canAddGem(gemType, this.gems);
+    return this.canAddGem(gemType, this.gems, this.selectedSlot);
   }
 
   getItemDefinition(itemType: string) {

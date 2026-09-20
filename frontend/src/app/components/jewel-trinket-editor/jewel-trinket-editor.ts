@@ -22,7 +22,7 @@ export class JewelTrinketEditor {
 
   @Input() jewelConfig!: Record<string, JewelDefinitionDTO>;
 
-  @Input() canAddJewel!: (jewelType: string, jewels: (JewelInstanceDTO | null)[]) => boolean;
+  @Input() canAddJewel!: (jewelType: string, jewels: (JewelInstanceDTO | null)[], excludedSlot: number) => boolean;
 
   @Output() cancelled = new EventEmitter<void>();
 
@@ -48,7 +48,7 @@ export class JewelTrinketEditor {
   copyJewel(index: number) {
     if (this.jewels[index] === null) return;
     if (!this.hasEmptyJewelSlot()) return;
-    if (!this.canAddJewel(this.jewels[index].jewelType, this.jewels)) return;
+    if (!this.canAddJewel(this.jewels[index].jewelType, this.jewels, -1)) return;
     for (let i = 0; i < 10; i++) {
       if (this.jewels[i] === null) {
         this.jewels[i] = this.jewels[index];
@@ -62,7 +62,7 @@ export class JewelTrinketEditor {
   }
 
   canSelectJewel(jewelType: string) {
-    return this.canAddJewel(jewelType, this.jewels);
+    return this.canAddJewel(jewelType, this.jewels, this.selectedSlot);
   }
 
   openJewelSelector(index: number) {

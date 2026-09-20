@@ -22,6 +22,16 @@
   color: #aaa;
 }
 
+.trinket-slot-wrapper {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.trinket-slot-wrapper.selected {
+  border-color: #d4af37;
+}
+
 .selection-grid-container.opal {
   height: 309px;
 }
