@@ -1,0 +1,22 @@
+.overlay {
+  z-index: 1000;
+}
+
+.window {
+  width: 700px;
+  min-height: 300px;
+}
+
+h2 {
+  margin: 0 0 12px 0;
+
+  padding-bottom: 8px;
+
+  color: #d4af37;
+
+  font-size: 18px;
+  font-style: italic;
+  text-align: center;
+
+  border-bottom: 1px solid #543a23;
+}

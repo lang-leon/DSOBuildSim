@@ -1,0 +1,70 @@
+.overlay {
+  z-index: 1000;
+}
+
+.window {
+  width: 700px;
+  min-height: 300px;
+}
+
+.select-mastery-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.select-mastery-buttons button {
+  position: relative;
+
+  width: 70px;
+  height: 70px;
+
+  padding: 0;
+
+  background: #222;
+
+  border: 0px solid #555;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  overflow: visible;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.1s ease;
+}
+
+.select-mastery-buttons button img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 6px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.select-mastery-buttons button:hover {
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.select-mastery-buttons button.selected {
+  border-radius: 6px;
+  border: 2px solid #d4af37;
+
+  box-shadow: 0 0 10px #d4af37;
+}
+
+.select-mastery-buttons button:active {
+  transform: translateY(1px);
+}
+
+.select-mastery-buttons button:hover .tooltip-simple {
+  opacity: 1;
+  visibility: visible;
+}

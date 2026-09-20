@@ -1,0 +1,25 @@
+<div class="overlay" [style.--popup-scale]="scale">
+  <div class="window scaled-popup-window">
+    <h1>{{ title }}</h1>
+
+    <p>{{ message }}</p>
+
+    @if (warning) {
+      <p class="warning">
+        {{ warning }}
+      </p>
+    }
+
+    <div class="cc-buttons">
+      <button class="confirm-button" (click)="confirm()">
+        <img src="utility-icons/confirm.png" alt="Confirm" />
+        <span class="tooltip">Confirm</span>
+      </button>
+
+      <button class="cancel-button" (click)="cancel()">
+        <img src="utility-icons/cancel.png" alt="Cancel" />
+        <span class="tooltip">Cancel</span>
+      </button>
+    </div>
+  </div>
+</div>

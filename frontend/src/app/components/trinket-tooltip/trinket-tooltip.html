@@ -1,0 +1,47 @@
+<div class="tooltip-overlay">
+  <div class="structured-tooltip">
+    <div class="tooltip-name">
+      {{ title }}
+    </div>
+    <div class="tooltip-separator"></div>
+    <div class="tooltip-content">
+      @if (runeTrinket) {
+        <div class="trinket-slots">
+          @for (rune of runeTrinket.runes; track $index) {
+            <img [src]="runeService.getRuneInstanceIcon(rune)" />
+          }
+        </div>
+        @if (getRuneTrinketDescription() !== '') {
+          <div class="tooltip-separator"></div>
+          <div class="tooltip-description">
+            {{ getRuneTrinketDescription() }}
+          </div>
+        }
+      } @else if (jewelTrinket) {
+        <div class="trinket-slots">
+          @for (jewel of jewelTrinket.jewels; track $index) {
+            <img [src]="jewelService.getJewelInstanceIcon(jewel)" />
+          }
+        </div>
+        @if (getJewelTrinketDescription() !== '') {
+          <div class="tooltip-separator"></div>
+          <div class="tooltip-description">
+            {{ getJewelTrinketDescription() }}
+          </div>
+        }
+      } @else if (dragonCrestTrinket) {
+        <div class="trinket-slots">
+          @for (dragonStone of dragonCrestTrinket.dragonStones; track $index) {
+            <img [src]="dragonStoneService.getDragonStoneInstanceIcon(dragonStone)" />
+          }
+        </div>
+        @if (getDragonStoneTrinketDescription() !== '') {
+          <div class="tooltip-separator"></div>
+          <div class="tooltip-description">
+            {{ getDragonStoneTrinketDescription() }}
+          </div>
+        }
+      }
+    </div>
+  </div>
+</div>

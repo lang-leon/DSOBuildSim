@@ -1,0 +1,37 @@
+.overlay {
+  z-index: 2000;
+}
+
+.window {
+  width: 720px;
+  height: 580px;
+}
+
+.opal-crafting {
+  border-bottom: 1px solid #555;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.crafting-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 60px;
+  color: #aaa;
+}
+
+.trinket-slot-wrapper {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.trinket-slot-wrapper.selected {
+  border-color: #d4af37;
+}
+
+.selection-grid-container.opal {
+  height: 309px;
+}

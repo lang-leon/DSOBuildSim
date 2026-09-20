@@ -1,0 +1,19 @@
+.overlay {
+  z-index: 1000;
+}
+
+.window {
+  width: 450px;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.warning {
+  color: #ff0000;
+
+  font-size: 24px;
+  font-weight: bold;
+}

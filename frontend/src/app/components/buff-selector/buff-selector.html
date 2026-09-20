@@ -1,0 +1,66 @@
+<div class="overlay" [style.--popup-scale]="scale">
+  <div class="window scaled-popup-window">
+    <h1>Select {{ formatStatName(buffCategory) }}</h1>
+
+    <div class="selection-content">
+      <div class="selection-controls">
+        <div class="selection">
+          <label for="select">{{ formatStatName(buffCategory) }}:</label>
+
+          <select id="select" [(ngModel)]="selectedBuff" (ngModelChange)="onBuffChange($event)">
+            <option [ngValue]="null">No {{ formatStatName(buffCategory) }}</option>
+            @for (entry of buffConfig | keyvalue; track entry.key) {
+              <option [ngValue]="entry.value">
+                {{ entry.value.name }}
+              </option>
+            }
+          </select>
+        </div>
+
+        <div class="tier-selection">
+          <label>Tier:</label>
+
+          <div class="tier-buttons">
+            @for (tier of [1, 2, 3, 4, 5]; track tier) {
+              <button
+                [disabled]="!availableTiers.includes(tier)"
+                [class.selected]="selectedTier === tier"
+                [class]="'tier' + tier"
+                (click)="selectedTier = tier"
+              >
+                T{{ tier }}
+              </button>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-preview">
+        <h4>Buff Stats:</h4>
+        @if (selectedBuff !== null) {
+          <div class="stats">
+            <div class="stat">
+              <span>{{ formatStatName(selectedBuff.statType) }}</span>
+              <span>
+                {{ formatBuffValue(selectedBuff.statsPerTier[selectedTier]) }}
+              </span>
+            </div>
+          </div>
+        } @else {
+          <div class="none-selected">No {{ formatStatName(buffCategory) }} selected!</div>
+        }
+      </div>
+
+      <div class="cc-buttons">
+        <button class="accept-button" (click)="confirm()">
+          <img src="utility-icons/confirm.png" alt="Accept" />
+          <span class="tooltip">Confirm</span>
+        </button>
+        <button class="cancel-button">
+          <img src="utility-icons/cancel.png" alt="Cancel" (click)="cancel()" />
+          <span class="tooltip">Cancel</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
