@@ -74,6 +74,20 @@ export class BuildSimButton {
 
   tooltipPositions: ConnectedPosition[] = [
     {
+      originX: 'end',
+      originY: 'center',
+      overlayX: 'start',
+      overlayY: 'center',
+      offsetX: 8,
+    },
+    {
+      originX: 'start',
+      originY: 'center',
+      overlayX: 'end',
+      overlayY: 'center',
+      offsetX: -8,
+    },
+    {
       originX: 'center',
       originY: 'top',
       overlayX: 'center',

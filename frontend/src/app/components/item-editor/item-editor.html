@@ -33,10 +33,16 @@
       @if (item) {
         <h2>Base Values:</h2>
         <div class="base-values">
-          @for (stat of editedBaseValues; track stat.type) {
+          @for (stat of editedBaseValues; track $index) {
             <div class="base-value">
               <span class="base-value-type">{{ formatStatName(stat.type) }}</span>
-              <input type="number" [(ngModel)]="stat.value" />
+              <input
+                type="number"
+                min="0"
+                [(ngModel)]="stat.value"
+                (ngModelChange)="onBaseValueChange($index, $event)"
+                (blur)="clampBaseValue($index, stat.type)"
+              />
             </div>
           }
         </div>
@@ -99,12 +105,18 @@
                 }
               </select>
 
-              <input
-                type="number"
-                [ngModel]="enchantment?.value ?? 0.0"
-                (ngModelChange)="onEnchantmentValueChange($index, $event)"
-                [disabled]="!enchantment"
-              />
+              <div class="enchantment-value">
+                <span>+</span>
+                <input
+                  type="number"
+                  min="0"
+                  [ngModel]="enchantment?.value ?? 0.0"
+                  (ngModelChange)="onEnchantmentValueChange($index, $event)"
+                  (blur)="clampEnchantmentValue($index)"
+                  [disabled]="!enchantment"
+                />
+                <span>%</span>
+              </div>
             </div>
           }
         </div>
@@ -125,6 +137,7 @@
                     type="number"
                     [ngModel]="uniqueBaseValue.value"
                     (ngModelChange)="onUniqueBaseValueChange(uniqueBaseValue.key, $event)"
+                    (blur)="clampUniqueBaseValue(uniqueBaseValue.key)"
                   />
                 </div>
               }
@@ -142,12 +155,17 @@
                   <span class="base-value-type">
                     {{ formatStatName(uniqueEnchantment.statType) }}
                   </span>
-
-                  <input
-                    type="number"
-                    [ngModel]="uniqueEnchantments[$index]?.value"
-                    (ngModelChange)="onUniqueEnchantmentChange($index, $event)"
-                  />
+                  <div class="enchantment-value">
+                    <span class="unique">+</span>
+                    <input
+                      type="number"
+                      min="0"
+                      [ngModel]="uniqueEnchantments[$index]?.value"
+                      (ngModelChange)="onUniqueEnchantmentChange($index, $event)"
+                      (blur)="clampUniqueEnchantmentValue($index)"
+                    />
+                    <span class="unique">%</span>
+                  </div>
                 </div>
               }
             </div>

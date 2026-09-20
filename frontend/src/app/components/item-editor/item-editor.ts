@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ItemInstanceDTO } from '../../models/instanceDTOs/ItemInstanceDTO';
 import { ItemDefinitionDTO } from '../../models/gamedataDTOs/ItemDefinitionDTO';
 import { ItemSlot } from '../../enums/ItemSlot';
@@ -27,6 +27,7 @@ export class ItemEditor {
   constructor(
     public itemService: ItemService,
     public gemService: GemService,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   @Input() scale = 1;
@@ -65,7 +66,7 @@ export class ItemEditor {
   editedBaseValues: { type: StatType; value: number }[] = [];
   gems: (GemInstanceDTO | null)[] = Array(10).fill(null);
   enchantments: (EnchantmentDTO | null)[] = Array(4).fill(null);
-  uniqueBaseValues: Record<string, number> = {};
+  uniqueBaseValues: Partial<Record<StatType, number>> = {};
   uniqueEnchantments: EnchantmentDTO[] = [];
   showGemSelector = false;
   selectedSlot = -1;
@@ -78,10 +79,17 @@ export class ItemEditor {
     this.gems = Array.from({ length: 10 }, (_, index) => existingGems[index] ?? null);
 
     const existingEnchantments = this.item?.enchantments ?? [];
-    this.enchantments = Array.from(
-      { length: 4 },
-      (_, index) => existingEnchantments[index] ?? null,
-    );
+
+    this.enchantments = Array.from({ length: 4 }, (_, index) => {
+      const enchantment = existingEnchantments[index];
+
+      return enchantment
+        ? {
+            ...enchantment,
+            value: Math.trunc(enchantment.value * 100 * 1000) / 1000,
+          }
+        : null;
+    });
 
     if (this.item) {
       this.editedBaseValues = Object.entries(this.item.baseValues).map(([type, value]) => ({
@@ -96,6 +104,7 @@ export class ItemEditor {
 
     this.uniqueEnchantments = (this.item?.uniqueEnchantments ?? []).map((enchantment) => ({
       ...enchantment,
+      value: enchantment.value * 100,
     }));
   }
 
@@ -141,7 +150,36 @@ export class ItemEditor {
 
     this.uniqueEnchantments = (definition.uniqueEnchantments ?? []).map((enchantment) => ({
       ...enchantment,
+      value: Math.trunc(enchantment.value * 100 * 1000) / 1000,
     }));
+  }
+
+  onBaseValueChange(index: number, value: number): void {
+    const baseValue = this.editedBaseValues[index];
+
+    if (baseValue !== null) {
+      baseValue.value = value;
+    }
+  }
+
+  clampBaseValue(index: number, statType: StatType): void {
+    const baseValue = this.editedBaseValues[index];
+
+    if (baseValue === null) {
+      return;
+    }
+
+    const maxValue = this.item
+      ? Math.trunc(
+          this.itemConfig[this.item.itemType].rawBaseValues[statType] *
+            (this.levelMultiplierTable.multipliersPerLevel[
+              this.itemConfig[this.item?.itemType].defaultLevel
+            ][statType] ?? 1) *
+            1000,
+        ) / 1000
+      : 0;
+
+    baseValue.value = Math.min(baseValue.value, maxValue);
   }
 
   onEnchantmentChange(index: number, statType: StatType | null) {
@@ -152,25 +190,79 @@ export class ItemEditor {
 
     const config = this.enchantmentConfig[statType];
 
-    this.enchantments[index] = config ? { ...config } : null;
+    this.enchantments[index] = config
+      ? { ...config, value: Math.trunc(config.value * 100 * 1000) / 1000 }
+      : null;
   }
 
-  onEnchantmentValueChange(index: number, value: number) {
+  onEnchantmentValueChange(index: number, value: number): void {
     const enchantment = this.enchantments[index];
 
-    if (enchantment) {
+    if (enchantment !== null) {
       enchantment.value = value;
     }
   }
 
+  clampEnchantmentValue(index: number): void {
+    const enchantment = this.enchantments[index];
+
+    if (enchantment === null) {
+      return;
+    }
+
+    enchantment.value = Math.min(enchantment.value, this.getEnchantmentMaxValue(index));
+  }
+
+  getEnchantmentMaxValue(index: number): number {
+    const enchantment = this.enchantments[index];
+
+    if (enchantment === null) {
+      return 0;
+    }
+
+    const maxValue = this.enchantmentConfig[enchantment.statType]?.value;
+
+    if (maxValue === undefined) {
+      return 0;
+    }
+
+    return Math.trunc(maxValue * 100 * 1000) / 1000;
+  }
+
   onUniqueBaseValueChange(key: string, value: number) {
-    this.uniqueBaseValues[key] = value;
+    const type = key as StatType;
+    this.uniqueBaseValues[type] = value;
+  }
+
+  clampUniqueBaseValue(key: string): void {
+    const type = key as StatType;
+    const maxValue = this.item
+      ? Math.trunc(this.itemConfig[this.item.itemType].uniqueBaseValues[type] * 1000) / 1000
+      : 0;
+    const currentValue = this.uniqueBaseValues[type] ?? 0;
+
+    this.uniqueBaseValues[type] = Math.min(currentValue, maxValue);
   }
 
   onUniqueEnchantmentChange(index: number, value: number) {
     if (this.uniqueEnchantments[index]) {
       this.uniqueEnchantments[index].value = value;
     }
+  }
+
+  clampUniqueEnchantmentValue(index: number): void {
+    const enchantment = this.uniqueEnchantments[index];
+
+    if (enchantment === null) {
+      return;
+    }
+    if (this.item?.itemType === undefined) return;
+    enchantment.value = Math.min(
+      enchantment.value,
+      Math.trunc(
+        this.itemConfig[this.item?.itemType].uniqueEnchantments[index].value * 100 * 1000,
+      ) / 1000,
+    );
   }
 
   deleteGem(index: number) {
@@ -229,8 +321,12 @@ export class ItemEditor {
   confirm() {
     if (this.item !== undefined) {
       this.item.gems = this.gems ?? [];
-      this.item.enchantments =
-        this.enchantments.filter((enchantment) => enchantment !== null) ?? [];
+      this.item.enchantments = this.enchantments
+        .filter((enchantment) => enchantment !== null)
+        .map((enchantment) => ({
+          ...enchantment,
+          value: enchantment.value / 100,
+        }));
 
       this.item.baseValues = Object.fromEntries(
         this.editedBaseValues.map((stat) => [stat.type, stat.value]),
@@ -241,7 +337,10 @@ export class ItemEditor {
       }
 
       if (this.uniqueEnchantments.length > 0) {
-        this.item.uniqueEnchantments = this.uniqueEnchantments;
+        this.item.uniqueEnchantments = this.uniqueEnchantments.map((enchantment) => ({
+          ...enchantment,
+          value: enchantment.value / 100,
+        }));
       }
     }
     this.confirmed.emit(this.item);

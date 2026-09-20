@@ -139,6 +139,12 @@ h3 {
   background: #6b4a2d;
 }
 
+.item-editor-content input::-webkit-inner-spin-button,
+.item-editor-content input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 // Base values
 
 .base-values {
@@ -246,7 +252,7 @@ h3 {
 
 .enchantment {
   display: grid;
-  grid-template-columns: 1fr 110px;
+  grid-template-columns: 1fr 105px;
   align-items: center;
 
   min-height: 36px;
@@ -301,10 +307,9 @@ h3 {
 }
 
 .enchantment input {
-  width: 100px;
+  width: 65px;
   height: 28px;
 
-  margin-left: 8px;
   padding: 3px 7px;
 
   box-sizing: border-box;
@@ -340,6 +345,17 @@ h3 {
   background: #181818;
   border-color: #3d3024;
   cursor: not-allowed;
+}
+
+.enchantment-value {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.enchantment-value span {
+  color: #efd8b7;
 }
 
 .additional-values {
