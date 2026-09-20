@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CharacterResetConfirmationWindow } from './confirmation-window';
+import { ConfirmationWindow } from './confirmation-window';
 
-describe('CharacterResetConfirmationWindow', () => {
-  let component: CharacterResetConfirmationWindow;
-  let fixture: ComponentFixture<CharacterResetConfirmationWindow>;
+describe('ConfirmationWindow', () => {
+  let component: ConfirmationWindow;
+  let fixture: ComponentFixture<ConfirmationWindow>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CharacterResetConfirmationWindow],
+      imports: [ConfirmationWindow],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CharacterResetConfirmationWindow);
+    fixture = TestBed.createComponent(ConfirmationWindow);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

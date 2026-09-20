@@ -22,7 +22,11 @@ export class JewelTrinketEditor {
 
   @Input() jewelConfig!: Record<string, JewelDefinitionDTO>;
 
-  @Input() canAddJewel!: (jewelType: string, jewels: (JewelInstanceDTO | null)[], excludedSlot: number) => boolean;
+  @Input() canAddJewel!: (
+    jewelType: string,
+    jewels: (JewelInstanceDTO | null)[],
+    excludedSlot: number,
+  ) => boolean;
 
   @Output() cancelled = new EventEmitter<void>();
 

@@ -23,7 +23,11 @@ export class RuneTrinketEditor {
 
   @Input() runeConfig!: Record<string, RuneDefinitionDTO>;
 
-  @Input() canAddRune!: (runeType: string, runes: (RuneInstanceDTO | null)[], excludedSlot: number) => boolean;
+  @Input() canAddRune!: (
+    runeType: string,
+    runes: (RuneInstanceDTO | null)[],
+    excludedSlot: number,
+  ) => boolean;
 
   @Output() cancelled = new EventEmitter<void>();
 

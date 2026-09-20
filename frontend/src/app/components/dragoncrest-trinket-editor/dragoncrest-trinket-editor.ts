@@ -3,14 +3,13 @@ import { DragonStoneDefinitionDTO } from '../../models/gamedataDTOs/DragonStoneD
 import { DragonCrestTrinketDTO } from '../../models/instanceDTOs/DragonCrestTrinketDTO';
 import { DragonStoneInstanceDTO } from '../../models/instanceDTOs/DragonStoneInstanceDTO';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
-import { getIcon } from '../../utils/display-utils';
-import { DragonstoneSelectorComponent } from '../dragonstone-selector/dragonstone-selector';
+import { DragonstoneSelector } from '../dragonstone-selector/dragonstone-selector';
 import { DragonStoneService } from '../../utils/dragon-stone-service';
 import { getTierName } from '../../utils/tooltip-utils';
 
 @Component({
   selector: 'app-dragoncrest-trinket-editor',
-  imports: [BuildSimButton, DragonstoneSelectorComponent],
+  imports: [BuildSimButton, DragonstoneSelector],
   templateUrl: './dragoncrest-trinket-editor.html',
   styleUrl: './dragoncrest-trinket-editor.scss',
 })

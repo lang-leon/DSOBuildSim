@@ -1,4 +1,4 @@
 export enum BuffCategory {
-    PHYSIC = "PHYSIC",
-    TONIC = "TONIC"
+  PHYSIC = 'PHYSIC',
+  TONIC = 'TONIC',
 }

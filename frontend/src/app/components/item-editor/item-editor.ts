@@ -52,7 +52,11 @@ export class ItemEditor {
 
   @Input() enchantmentConfig!: Partial<Record<StatType, EnchantmentDTO>>;
 
-  @Input() canAddGem!: (gemType: string, gems: (GemInstanceDTO | null)[], excludedSlot: number) => boolean;
+  @Input() canAddGem!: (
+    gemType: string,
+    gems: (GemInstanceDTO | null)[],
+    excludedSlot: number,
+  ) => boolean;
 
   @Output() cancelled = new EventEmitter<void>();
 

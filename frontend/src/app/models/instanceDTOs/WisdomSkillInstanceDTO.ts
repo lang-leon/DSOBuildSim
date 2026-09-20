@@ -1,6 +1,6 @@
-import { WisdomSkillType } from "../../enums/WisdomSkillType";
+import { WisdomSkillType } from '../../enums/WisdomSkillType';
 
 export interface WisdomSkillInstanceDTO {
-    type: WisdomSkillType;
-    currentLevel: number;
+  type: WisdomSkillType;
+  currentLevel: number;
 }

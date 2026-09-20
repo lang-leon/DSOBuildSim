@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
-import { formatStatName, formatStatValueAbsolute, formatStatValueRelative } from "./display-utils";
-import { BuffDefinitionDTO } from "../models/gamedataDTOs/BuffDefinitionDTO";
-import { BuffInstanceDTO } from "../models/instanceDTOs/BuffInstanceDTO";
+import { Injectable } from '@angular/core';
+import { formatStatName, formatStatValueAbsolute, formatStatValueRelative } from './display-utils';
+import { BuffDefinitionDTO } from '../models/gamedataDTOs/BuffDefinitionDTO';
+import { BuffInstanceDTO } from '../models/instanceDTOs/BuffInstanceDTO';
 
 @Injectable({ providedIn: 'root' })
 export class BuffService {
@@ -12,15 +12,17 @@ export class BuffService {
     this.tonicConfig = config;
   }
 
-    setPhysicConfig(config: Record<string, BuffDefinitionDTO>) {
+  setPhysicConfig(config: Record<string, BuffDefinitionDTO>) {
     this.physicConfig = config;
   }
 
-  private getTonicDescription(tonic: BuffDefinitionDTO | null, tier: number)
-  {
-    if (tonic === null) return "";
+  private getTonicDescription(tonic: BuffDefinitionDTO | null, tier: number) {
+    if (tonic === null) return '';
     let desc = '';
-    desc += (tonic.statsPerTier[tier] !== undefined) ? "+ " + tonic.statsPerTier[tier] + " " + formatStatName(tonic.statType) : "";
+    desc +=
+      tonic.statsPerTier[tier] !== undefined
+        ? '+ ' + tonic.statsPerTier[tier] + ' ' + formatStatName(tonic.statType)
+        : '';
     return desc.trim();
   }
 
@@ -29,11 +31,15 @@ export class BuffService {
     return this.getTonicDescription(this.tonicConfig[tonic.type], tonic.tier);
   }
 
-  private getPhysicDescription(physic: BuffDefinitionDTO | null, tier: number)
-  {
-    if (physic === null) return "";
+  private getPhysicDescription(physic: BuffDefinitionDTO | null, tier: number) {
+    if (physic === null) return '';
     let desc = '';
-    desc += (physic.statsPerTier[tier] !== undefined) ? formatStatValueRelative(physic.statsPerTier[tier], 2) + " " + formatStatName(physic.statType) : "";
+    desc +=
+      physic.statsPerTier[tier] !== undefined
+        ? formatStatValueRelative(physic.statsPerTier[tier], 2) +
+          ' ' +
+          formatStatName(physic.statType)
+        : '';
     return desc.trim();
   }
 
@@ -42,28 +48,23 @@ export class BuffService {
     return this.getPhysicDescription(this.physicConfig[physic.type], physic.tier);
   }
 
-  private getTonicName(tonicType: string | null): string
-  {
+  private getTonicName(tonicType: string | null): string {
     if (tonicType === null) return '';
     return this.tonicConfig[tonicType].name;
   }
 
-  getTonicInstanceName(tonic: BuffInstanceDTO | null): string
-  {
+  getTonicInstanceName(tonic: BuffInstanceDTO | null): string {
     if (tonic === null) return '';
     return this.getTonicName(tonic.type);
   }
 
-  private getPhysicName(physicType: string | null): string
-  {
+  private getPhysicName(physicType: string | null): string {
     if (physicType === null) return '';
     return this.physicConfig[physicType].name;
   }
 
-  getPhysicInstanceName(physic: BuffInstanceDTO | null): string
-  {
+  getPhysicInstanceName(physic: BuffInstanceDTO | null): string {
     if (physic === null) return '';
     return this.getPhysicName(physic.type);
   }
-
 }
