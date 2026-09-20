@@ -29,6 +29,9 @@ The application consists of a **Spring Boot backend** providing the calculation 
 
 ![Collector's Bag](docs/images/collector-bag-buff-selection.png)
 
+### Item Editor
+![Item Editor](docs/images/edit-item.png)
+
 Additional screenshots and feature documentation can be found in the [`docs`](docs/) directory.
 
 ---
@@ -59,7 +62,7 @@ The project follows a **backend + frontend architecture**.
 ```
 DSOBuildSim
 ├── backend   # Spring Boot REST API
-└── frontend  # Angular web application (planned)
+└── frontend  # Angular web application
 ```
 
 ### Backend Architecture
@@ -202,7 +205,7 @@ The REST API will start locally.
 
 ---
 
-### Frontend (planned)
+### Frontend
 
 **Requirements:**
 - Node.js  
