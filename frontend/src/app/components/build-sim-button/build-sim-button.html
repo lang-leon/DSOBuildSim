@@ -22,7 +22,16 @@
   [cdkConnectedOverlayOpen]="showTooltip"
   [cdkConnectedOverlayPositions]="tooltipPositions"
 >
-  @if (runeTrinket) {
+  @if (item) {
+    <app-item-tooltip
+      [item]="item"
+      [equippedItems]="equippedItems"
+      [equippedSets]="equippedSets"
+      [itemConfig]="itemConfig"
+      [setConfig]="setConfig"
+      [gemConfig]="gemConfig"
+    ></app-item-tooltip>
+  } @else if (runeTrinket) {
     <app-trinket-tooltip [title]="slotName" [runeTrinket]="runeTrinket" [runeConfig]="runeConfig" />
   } @else if (jewelTrinket) {
     <app-trinket-tooltip

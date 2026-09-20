@@ -8,10 +8,16 @@ import { TrinketTooltip } from '../trinket-tooltip/trinket-tooltip';
 import { RuneDefinitionDTO } from '../../models/gamedataDTOs/RuneDefinitionDTO';
 import { JewelDefinitionDTO } from '../../models/gamedataDTOs/JewelDefinitionDTO';
 import { DragonStoneDefinitionDTO } from '../../models/gamedataDTOs/DragonStoneDefinitionDTO';
+import { ItemDefinitionDTO } from '../../models/gamedataDTOs/ItemDefinitionDTO';
+import { SetDTO } from '../../models/gamedataDTOs/SetDTO';
+import { GemDefinitionDTO } from '../../models/gamedataDTOs/GemDefinitionDTO';
+import { ItemInstanceDTO } from '../../models/instanceDTOs/ItemInstanceDTO';
+import { ItemTooltip } from '../item-tooltip/item-tooltip';
+import { ItemSlot } from '../../enums/ItemSlot';
 
 @Component({
   selector: 'app-build-sim-button',
-  imports: [OverlayModule, NgClass, TrinketTooltip],
+  imports: [OverlayModule, NgClass, TrinketTooltip, ItemTooltip],
   templateUrl: './build-sim-button.html',
   styleUrl: './build-sim-button.scss',
 })
@@ -30,6 +36,25 @@ export class BuildSimButton {
   @Input()
   tooltipDescription: string | string[] = [];
 
+  @Input()
+  overlayText?: string;
+
+  @Input() disabled = false;
+
+  // Item tooltips
+  @Input() item?: ItemInstanceDTO;
+
+  @Input() equippedItems: Partial<Record<ItemSlot, ItemInstanceDTO>> = {};
+
+  @Input() equippedSets: Record<string, Set<string>> = {};
+
+  @Input() itemConfig?: Record<string, ItemDefinitionDTO>;
+
+  @Input() setConfig?: Record<string, SetDTO>;
+
+  @Input() gemConfig?: Record<string, GemDefinitionDTO>;
+
+  // Trinket tooltips
   @Input() runeTrinket?: RuneTrinketDTO;
 
   @Input() runeConfig?: Record<string, RuneDefinitionDTO>;
@@ -41,11 +66,6 @@ export class BuildSimButton {
   @Input() dragonCrestTrinket?: DragonCrestTrinketDTO;
 
   @Input() dragonStoneConfig?: Record<string, DragonStoneDefinitionDTO>;
-
-  @Input()
-  overlayText?: string;
-
-  @Input() disabled = false;
 
   @Output()
   clicked = new EventEmitter<void>();

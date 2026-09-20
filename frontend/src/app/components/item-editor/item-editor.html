@@ -203,14 +203,7 @@
 
         @if (item.itemCategory === 'SET' || item.itemCategory === 'MYTHIC') {
           <h2 class="set">
-            {{
-              setConfig[itemConfig[item.itemType].set].name +
-                ' (' +
-                itemService.getEquippedSetItemCount(item, equippedSets) +
-                '/' +
-                setConfig[itemConfig[item.itemType].set].setItems.length +
-                '):'
-            }}
+            {{ itemService.getItemSetHeader(item, equippedSets) }}
           </h2>
           <div class="additional-values">
             <div class="set-bonus">

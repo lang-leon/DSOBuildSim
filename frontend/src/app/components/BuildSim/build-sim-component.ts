@@ -529,6 +529,17 @@ export class BuildSimComponent implements OnInit {
     }
   }
 
+  hasTwoHand(): boolean {
+    const weapon = this.character.items[ItemSlot.MAIN_HAND];
+    if (weapon) {
+      return (
+        this.gameData.items[this.character.characterClass][weapon.itemType].itemSlotType ===
+        ItemSlotType.TWO_HAND_WEAPON
+      );
+    }
+    return false;
+  }
+
   getInventoryIcon(prefix: string, tier: number | undefined) {
     if (tier === undefined) {
       return prefix + '-default.png';

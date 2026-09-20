@@ -1,1 +1,81 @@
-<p>item-tooltip works!</p>
+<div class="tooltip-overlay">
+  <div class="structured-tooltip">
+    @if (item) {
+      <div class="tooltip-name" [ngClass]="getTierName(itemService.getItemInstanceTier(item))">
+        {{ itemService.getItemName(item.itemType) }}
+      </div>
+      <div class="tooltip-separator"></div>
+      <div item-content>
+        <h2>Base Values:</h2>
+        <div class="values">
+          {{ itemService.getItemInstanceBaseValues(item) }}
+        </div>
+        <div class="tooltip-separator"></div>
+        <h2>Gems:</h2>
+        @if (itemService.getItemInstanceGems(item) !== '') {
+          <div class="values gems">
+            {{ itemService.getItemInstanceGems(item) }}
+          </div>
+        }
+        <div class="trinket-slots">
+          @for (rune of item.gems; track $index) {
+            <img [src]="gemService.getGemInstanceIcon(rune)" />
+          }
+        </div>
+        <div class="tooltip-separator"></div>
+        <h2>Enchantments:</h2>
+        @if (itemService.getItemInstanceEnchantments(item) !== '') {
+          <div class="values">
+            {{ itemService.getItemInstanceEnchantments(item) }}
+          </div>
+        }
+        <div class="tooltip-separator"></div>
+        @if (item.itemCategory === 'UNIQUE' || item.itemCategory === 'MYTHIC') {
+          <h2 class="unique">Unique Values:</h2>
+          <div class="values unique">
+            {{ itemService.getItemInstanceUniqueValues(item) }}
+          </div>
+        }
+        @if (item.itemCategory === 'SET' || item.itemCategory === 'MYTHIC') {
+          <h2 class="set">
+            {{ itemService.getItemSetHeader(item, equippedSets) }}
+          </h2>
+          <div class="values">
+            <div class="set-bonus">
+              <div class="set-items">
+                @for (setItem of itemService.getItemInstanceSetItems(item); track setItem) {
+                  <div
+                    class="set-item"
+                    [class.disabled]="
+                      !Object.values(equippedItems).some(
+                        (equipped) => equipped.itemType === setItem
+                      ) && setItem !== item.itemType
+                    "
+                  >
+                    {{ itemService.getItemName(setItem) }}
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+
+          <h2 class="set">Set Bonus:</h2>
+          <div class="values">
+            <div class="set-bonuses">
+              @for (bonus of itemService.getItemInstanceBoni(item) | keyvalue; track bonus.key) {
+                <div
+                  class="set-bonus"
+                  [class.disabled]="
+                    itemService.getEquippedSetItemCount(item, equippedSets) < +bonus.key
+                  "
+                >
+                  {{ bonus.value }}
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

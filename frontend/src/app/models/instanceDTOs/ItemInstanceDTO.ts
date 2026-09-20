@@ -1,16 +1,16 @@
-import { StatType } from "../../enums/StatType";
-import { EnchantmentDTO } from "../gamedataDTOs/EnchantmentDTO";
-import { GemInstanceDTO } from "./GemInstanceDTO";
+import { StatType } from '../../enums/StatType';
+import { EnchantmentDTO } from '../gamedataDTOs/EnchantmentDTO';
+import { GemInstanceDTO } from './GemInstanceDTO';
 
 export interface ItemInstanceDTO {
-    itemCategory: string;
-    itemType: string;
-    level: number;
-    baseValues: Partial<Record<StatType, number>>;
-    gems: GemInstanceDTO[];
-    enchantments: EnchantmentDTO[];
+  itemCategory: string;
+  itemType: string;
+  level: number;
+  baseValues: Partial<Record<StatType, number>>;
+  gems: (GemInstanceDTO | null)[];
+  enchantments: EnchantmentDTO[];
 
-    //optional fields depending on item category
-    uniqueBaseValues: Record<string, number>;
-    uniqueEnchantments: EnchantmentDTO[];
+  //optional fields depending on item category
+  uniqueBaseValues: Record<string, number>;
+  uniqueEnchantments: EnchantmentDTO[];
 }
