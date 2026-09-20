@@ -96,7 +96,13 @@ export class GemService {
   }
 
   private getGemDescription(gem: GemDefinitionDTO, tier: number, opal: boolean): string {
-    if (opal) return '+ ' + gem.stats[tier] * 0.75 + ' ' + formatStatName(gem.statType);
+    if (opal)
+      return (
+        '+ ' +
+        Math.round(gem.stats[tier] * 0.75 * 100000) / 100000 +
+        ' ' +
+        formatStatName(gem.statType)
+      );
     return '+ ' + gem.stats[tier] + ' ' + formatStatName(gem.statType);
   }
 

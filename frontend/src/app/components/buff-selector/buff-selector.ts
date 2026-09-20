@@ -38,7 +38,6 @@ export class BuffSelector {
   StatType = StatType;
 
   ngOnInit() {
-
     if (this.buff) {
       this.selectedBuff = this.buffConfig[this.buff.type];
 

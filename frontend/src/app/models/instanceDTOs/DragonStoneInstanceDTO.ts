@@ -1,4 +1,4 @@
 export interface DragonStoneInstanceDTO {
-    dragonStoneType: string;
-    tier: number;
+  dragonStoneType: string;
+  tier: number;
 }

@@ -1,4 +1,4 @@
 export interface EssenceInstanceDTO {
-    essenceType: string;
-    tier: number;
+  essenceType: string;
+  tier: number;
 }

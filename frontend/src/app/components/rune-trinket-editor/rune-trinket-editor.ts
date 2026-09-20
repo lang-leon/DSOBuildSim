@@ -23,7 +23,11 @@ export class RuneTrinketEditor {
 
   @Input() runeConfig!: Record<string, RuneDefinitionDTO>;
 
-  @Input() canAddRune!: (runeType: string, runes: (RuneInstanceDTO | null)[]) => boolean;
+  @Input() canAddRune!: (
+    runeType: string,
+    runes: (RuneInstanceDTO | null)[],
+    excludedSlot: number,
+  ) => boolean;
 
   @Output() cancelled = new EventEmitter<void>();
 
@@ -62,7 +66,7 @@ export class RuneTrinketEditor {
   copyRune(index: number) {
     if (this.runes[index] === null) return;
     if (!this.hasEmptyRuneSlot()) return;
-    if (!this.canAddRune(this.runes[index].runeType, this.runes)) return;
+    if (!this.canAddRune(this.runes[index].runeType, this.runes, -1)) return;
     for (let i = 0; i < 10; i++) {
       if (this.runes[i] === null) {
         this.runes[i] = this.runes[index];
@@ -76,7 +80,7 @@ export class RuneTrinketEditor {
   }
 
   canSelectRune(runeType: string) {
-    return this.canAddRune(runeType, this.runes);
+    return this.canAddRune(runeType, this.runes, this.selectedSlot);
   }
 
   getRuneName(index: number) {

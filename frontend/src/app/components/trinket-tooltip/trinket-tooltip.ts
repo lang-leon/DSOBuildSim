@@ -10,8 +10,6 @@ import { JewelService } from '../../utils/jewel-service';
 import { DragonStoneService } from '../../utils/dragon-stone-service';
 import { StatType } from '../../enums/StatType';
 import { formatStatName, formatStatValueRelative } from '../../utils/display-utils';
-import { OverlayModule } from '@angular/cdk/overlay';
-import { RuneInstanceDTO } from '../../models/instanceDTOs/RuneInstanceDTO';
 
 @Component({
   selector: 'app-trinket-tooltip',

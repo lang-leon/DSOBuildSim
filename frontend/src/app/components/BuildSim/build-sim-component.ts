@@ -837,12 +837,17 @@ export class BuildSimComponent implements OnInit {
       .filter((jewel) => this.jewelLimitGroups[jewel.jewelType] === limitGroup).length;
   }
 
-  canAddJewel(jewelType: string, editedJewels: (JewelInstanceDTO | null)[]): boolean {
+  canAddJewel(
+    jewelType: string,
+    editedJewels: (JewelInstanceDTO | null)[],
+    excludedSlot: number,
+  ): boolean {
     const limitGroup = this.jewelLimitGroups[jewelType];
 
     const equippedAmount = this.getEquippedJewelAmount(this.selectedJewelTrinket, jewelType);
 
     const editedAmount = editedJewels
+      .filter((_, index) => index !== excludedSlot)
       .filter((jewel) => jewel !== null)
       .filter((jewel) => this.jewelLimitGroups[jewel.jewelType] === limitGroup).length;
 
@@ -875,12 +880,17 @@ export class BuildSimComponent implements OnInit {
       .filter((rune) => this.runeLimitGroups[rune.runeType] === limitGroup).length;
   }
 
-  canAddRune(runeType: string, editedRunes: (RuneInstanceDTO | null)[]): boolean {
+  canAddRune(
+    runeType: string,
+    editedRunes: (RuneInstanceDTO | null)[],
+    excludedSlot: number,
+  ): boolean {
     const limitGroup = this.runeLimitGroups[runeType];
 
     const equippedAmount = this.getEquippedRuneAmount(this.selectedRuneTrinket, runeType);
 
     const editedAmount = editedRunes
+      .filter((_, index) => index !== excludedSlot)
       .filter((rune) => rune !== null)
       .filter((rune) => this.runeLimitGroups[rune.runeType] === limitGroup).length;
 
@@ -1013,12 +1023,13 @@ export class BuildSimComponent implements OnInit {
     return filteredItems;
   }
 
-  canAddGem(gemType: string, editedGems: (GemInstanceDTO | null)[]): boolean {
+  canAddGem(gemType: string, editedGems: (GemInstanceDTO | null)[], excludedSlot: number): boolean {
     const limitGroup = gemType === 'OPAL' ? 'OPAL' : this.gemLimitGroups[gemType];
 
     const equippedAmount = this.getEquippedGemAmount(this.selectedItemSlot, gemType);
 
     const editedAmount = editedGems
+      .filter((_, index) => index !== excludedSlot)
       .filter((gem) => gem !== null)
       .filter((gem) =>
         gem.gemCategory === 'OPAL'

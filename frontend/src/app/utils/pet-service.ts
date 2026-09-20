@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
-import { PetDefinitionDTO } from "../models/gamedataDTOs/PetDefinitionDTO";
-import { formatStatName } from "./display-utils";
-import { PetInstanceDTO } from "../models/instanceDTOs/PetInstanceDTO";
+import { Injectable } from '@angular/core';
+import { PetDefinitionDTO } from '../models/gamedataDTOs/PetDefinitionDTO';
+import { formatStatName } from './display-utils';
+import { PetInstanceDTO } from '../models/instanceDTOs/PetInstanceDTO';
 
 @Injectable({ providedIn: 'root' })
 export class PetService {
@@ -11,15 +11,13 @@ export class PetService {
     this.petConfig = config;
   }
 
-  private getPetDescription(pet: PetDefinitionDTO | null, tier: number)
-  {
-    if (pet === null) return "";
+  private getPetDescription(pet: PetDefinitionDTO | null, tier: number) {
+    if (pet === null) return '';
     let desc = '';
     for (const [key, value] of Object.entries(pet.stats[tier])) {
-      desc += '+ ' + (value*100).toFixed(2) + "% " + formatStatName(key) + '\n';
+      desc += '+ ' + (value * 100).toFixed(2) + '% ' + formatStatName(key) + '\n';
     }
-    if (pet.description[tier] !== undefined) 
-        desc += pet.description[tier];
+    if (pet.description[tier] !== undefined) desc += pet.description[tier];
     return desc.trim();
   }
 
@@ -28,16 +26,13 @@ export class PetService {
     return this.getPetDescription(this.petConfig[pet.petType], pet.tier);
   }
 
-  private getPetName(petType: string | null): string
-  {
+  private getPetName(petType: string | null): string {
     if (petType === null) return '';
     return formatStatName(petType);
   }
 
-  getPetInstanceName(pet: PetInstanceDTO | null): string
-  {
+  getPetInstanceName(pet: PetInstanceDTO | null): string {
     if (pet === null) return '';
     return this.getPetName(pet.petType);
   }
-
 }

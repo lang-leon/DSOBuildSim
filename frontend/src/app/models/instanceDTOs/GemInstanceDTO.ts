@@ -1,5 +1,5 @@
 export interface GemInstanceDTO {
-    gemCategory: string;
-    gemType: string[];
-    tier: number;
+  gemCategory: string;
+  gemType: string[];
+  tier: number;
 }

@@ -1,4 +1,4 @@
 export interface BuffInstanceDTO {
-    type: string;
-    tier: number;
+  type: string;
+  tier: number;
 }

@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DragonStoneInstanceDTO } from '../../models/instanceDTOs/DragonStoneInstanceDTO';
 import { DragonStoneDefinitionDTO } from '../../models/gamedataDTOs/DragonStoneDefinitionDTO';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
-import { getIcon, matchesSearch } from '../../utils/display-utils';
+import { matchesSearch } from '../../utils/display-utils';
 import { FormsModule } from '@angular/forms';
 import { DragonStoneService } from '../../utils/dragon-stone-service';
 import { getTierName } from '../../utils/tooltip-utils';
@@ -13,7 +13,7 @@ import { getTierName } from '../../utils/tooltip-utils';
   templateUrl: './dragonstone-selector.html',
   styleUrl: './dragonstone-selector.scss',
 })
-export class DragonstoneSelectorComponent {
+export class DragonstoneSelector {
   constructor(public dragonStoneService: DragonStoneService) {}
 
   @Input() dragonStoneConfig!: Record<string, DragonStoneDefinitionDTO>;
@@ -55,7 +55,10 @@ export class DragonstoneSelectorComponent {
       (dragonStone) =>
         !search ||
         this.getTiers(dragonStone).some((tier) =>
-          matchesSearch(this.dragonStoneService.getDragonStoneDefinitionName(dragonStone, tier), search),
+          matchesSearch(
+            this.dragonStoneService.getDragonStoneDefinitionName(dragonStone, tier),
+            search,
+          ),
         ),
     );
   }

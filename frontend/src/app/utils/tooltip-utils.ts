@@ -1,6 +1,4 @@
 import { MasteryType } from '../enums/MasteryType';
-import { PetDefinitionDTO } from '../models/gamedataDTOs/PetDefinitionDTO';
-import { formatStatName } from './display-utils';
 
 export function getMasteryDescription(type: MasteryType, level: number): string {
   if (type === undefined) return '';
