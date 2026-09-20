@@ -4,18 +4,18 @@ import { JewelInstanceDTO } from '../../models/instanceDTOs/JewelInstanceDTO';
 import { JewelDefinitionDTO } from '../../models/gamedataDTOs/JewelDefinitionDTO';
 import { JewelSelector } from '../jewel-selector/jewel-selector';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
-import { formatName, getIcon } from '../../utils/display-utils';
+import { JewelService } from '../../utils/jewel-service';
+import { getTierName } from '../../utils/tooltip-utils';
 
 @Component({
   selector: 'app-jewel-trinket-editor',
-  imports: [
-    JewelSelector,
-    BuildSimButton
-  ],
+  imports: [JewelSelector, BuildSimButton],
   templateUrl: './jewel-trinket-editor.html',
   styleUrl: './jewel-trinket-editor.scss',
 })
 export class JewelTrinketEditor {
+  constructor(public jewelService: JewelService) {}
+
   @Input() scale = 1;
 
   @Input() jewelTrinket!: JewelTrinketDTO;
@@ -32,24 +32,13 @@ export class JewelTrinketEditor {
   showJewelSelector = false;
   selectedSlot = -1;
 
-  getIcon = getIcon;
-  formatName = formatName;
+  getTierName = getTierName;
 
   ngOnInit(): void {
-    const existingStones = this.jewelTrinket.jewels ?? [];
+    this.jewelService.setJewelConfig(this.jewelConfig);
 
-    this.jewels = Array.from({ length: 10 }, (_, index) => existingStones[index] ?? null);
-  }
-
-  cancel() {
-    this.cancelled.emit();
-  }
-
-  confirm() {
-    const jewelTrinket: JewelTrinketDTO = {
-      jewels: this.jewels.filter((jewel) => jewel !== null),
-    };
-    this.confirmed.emit(jewelTrinket);
+    const existingJewels = this.jewelTrinket.jewels ?? [];
+    this.jewels = Array.from({ length: 10 }, (_, index) => existingJewels[index] ?? null);
   }
 
   deleteJewel(index: number) {
@@ -72,29 +61,8 @@ export class JewelTrinketEditor {
     return this.jewels.some((stone) => stone === null);
   }
 
-  canSelectJewel(jewelType: string)
-  {
+  canSelectJewel(jewelType: string) {
     return this.canAddJewel(jewelType, this.jewels);
-  }
-
-  getJewelName(index: number){
-    if(this.jewels[index]===null) return "";
-    const jewel = this.jewelConfig[this.jewels[index]?.jewelType]
-    return jewel?.name;
-  }
-
-  getJewelDescription(index: number) {
-    if(this.jewels[index]===null) return "";
-    const jewel = this.jewelConfig[this.jewels[index]?.jewelType]
-    return jewel?.descriptionPerTier[this.jewels[index].tier];
-  }
-
-  getJewelIcon(jewel: JewelInstanceDTO | null)
-  {
-    if(jewel === null) return 'jewel-icons/default.png';
-
-    const jewelName = this.jewelConfig[jewel.jewelType].name;
-    return 'jewel-icons/'+this.getIcon(jewelName, jewel.tier);
   }
 
   openJewelSelector(index: number) {
@@ -110,5 +78,16 @@ export class JewelTrinketEditor {
   confirmJewelSelection(jewel: JewelInstanceDTO) {
     this.jewels[this.selectedSlot] = jewel;
     this.closeJewelSelector();
+  }
+
+  cancel() {
+    this.cancelled.emit();
+  }
+
+  confirm() {
+    const jewelTrinket: JewelTrinketDTO = {
+      jewels: this.jewels,
+    };
+    this.confirmed.emit(jewelTrinket);
   }
 }

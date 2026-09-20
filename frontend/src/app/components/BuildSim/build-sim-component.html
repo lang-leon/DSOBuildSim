@@ -5,7 +5,7 @@
         <div class="character-header">
           <div class="character-info">
             <div class="character-title">
-              <h1>{{ character.name || 'Character' }}</h1>
+              <input type="text" [(ngModel)]="character.name" placeholder="Character" />
             </div>
             <div class="character-class">
               <span> {{ getCharacterClassName(character.characterClass) }} </span>
@@ -234,7 +234,7 @@
         <div class="import-export">
           <button (click)="openFilePicker()" class="import-export-button">
             <img src="utility-icons/upload.png" />
-            <span class="tooltip">Import Character</span>
+            <span class="tooltip">Upload Character</span>
           </button>
 
           <button
@@ -243,7 +243,7 @@
             [disabled]="isDefaultCharacter()"
           >
             <img src="utility-icons/download.png" />
-            <span class="tooltip">Export Character</span>
+            <span class="tooltip">Download Character</span>
           </button>
 
           <input #fileInput type="file" accept=".json" hidden (change)="onFileSelected($event)" />
@@ -276,30 +276,60 @@
               class="amulet"
               [slotName]="getItemName(ItemSlot.AMULET, 'Amulet')"
               [icon]="getItemIcon(ItemSlot.AMULET)"
+              [item]="character.items[ItemSlot.AMULET]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.AMULET)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="cloak"
               [slotName]="getItemName(ItemSlot.CLOAK, 'Cloak')"
               [icon]="getItemIcon(ItemSlot.CLOAK)"
+              [item]="character.items[ItemSlot.CLOAK]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.CLOAK)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="belt"
               [slotName]="getItemName(ItemSlot.BELT, 'Belt')"
               [icon]="getItemIcon(ItemSlot.BELT)"
+              [item]="character.items[ItemSlot.BELT]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.BELT)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="ring1"
               [slotName]="getItemName(ItemSlot.RING1, 'Ring 1')"
               [icon]="getItemIcon(ItemSlot.RING1)"
+              [item]="character.items[ItemSlot.RING1]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.RING1)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="ring2"
               [slotName]="getItemName(ItemSlot.RING2, 'Ring 2')"
               [icon]="getItemIcon(ItemSlot.RING2)"
+              [item]="character.items[ItemSlot.RING2]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.RING2)"
             ></app-build-sim-button>
 
@@ -307,30 +337,60 @@
               class="helmet"
               [slotName]="getItemName(ItemSlot.HELMET, 'Helmet')"
               [icon]="getItemIcon(ItemSlot.HELMET)"
+              [item]="character.items[ItemSlot.HELMET]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.HELMET)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="shoulders"
               [slotName]="getItemName(ItemSlot.SHOULDERS, 'Shoulders')"
               [icon]="getItemIcon(ItemSlot.SHOULDERS)"
+              [item]="character.items[ItemSlot.SHOULDERS]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.SHOULDERS)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="torso"
               [slotName]="getItemName(ItemSlot.TORSO, 'Torso')"
               [icon]="getItemIcon(ItemSlot.TORSO)"
+              [item]="character.items[ItemSlot.TORSO]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.TORSO)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="gloves"
               [slotName]="getItemName(ItemSlot.GLOVES, 'Gloves')"
               [icon]="getItemIcon(ItemSlot.GLOVES)"
+              [item]="character.items[ItemSlot.GLOVES]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.GLOVES)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="boots"
               [slotName]="getItemName(ItemSlot.BOOTS, 'Boots')"
               [icon]="getItemIcon(ItemSlot.BOOTS)"
+              [item]="character.items[ItemSlot.BOOTS]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.BOOTS)"
             ></app-build-sim-button>
 
@@ -338,18 +398,40 @@
               class="adornment"
               [slotName]="getItemName(ItemSlot.WEAPON_ADORNMENT, 'Weapon Adornment')"
               [icon]="getItemIcon(ItemSlot.WEAPON_ADORNMENT)"
+              [item]="character.items[ItemSlot.WEAPON_ADORNMENT]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.WEAPON_ADORNMENT)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="main-hand"
               [slotName]="getItemName(ItemSlot.MAIN_HAND, 'Main Hand')"
               [icon]="getMainHandIcon()"
+              [item]="character.items[ItemSlot.MAIN_HAND]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.MAIN_HAND)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="off-hand"
               [slotName]="getItemName(ItemSlot.OFF_HAND, 'Off Hand')"
               [icon]="getOffHandIcon()"
+              [item]="
+                hasTwoHand()
+                  ? character.items[ItemSlot.MAIN_HAND]
+                  : character.items[ItemSlot.OFF_HAND]
+              "
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.OFF_HAND)"
             ></app-build-sim-button>
           </div>
@@ -360,18 +442,36 @@
               class="amulet"
               [slotName]="getItemName(ItemSlot.SOUL_COMPANION_AMULET, 'Amulet (Shadow Soul)')"
               [icon]="getItemIcon(ItemSlot.SOUL_COMPANION_AMULET)"
+              [item]="character.items[ItemSlot.SOUL_COMPANION_AMULET]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.SOUL_COMPANION_AMULET)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="cloak"
               [slotName]="getItemName(ItemSlot.SOUL_COMPANION_CLOAK, 'Cloak (Shadow Soul)')"
               [icon]="getItemIcon(ItemSlot.SOUL_COMPANION_CLOAK)"
+              [item]="character.items[ItemSlot.SOUL_COMPANION_CLOAK]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.SOUL_COMPANION_CLOAK)"
             ></app-build-sim-button>
             <app-build-sim-button
               class="belt"
               [slotName]="getItemName(ItemSlot.SOUL_COMPANION_BELT, 'Belt (Shadow Soul)')"
               [icon]="getItemIcon(ItemSlot.SOUL_COMPANION_BELT)"
+              [item]="character.items[ItemSlot.SOUL_COMPANION_BELT]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
               (clicked)="openItemEditor(ItemSlot.SOUL_COMPANION_BELT)"
             ></app-build-sim-button>
           </div>
@@ -382,42 +482,56 @@
             class="rune-trinket1"
             slotName="Rune Trinket 1"
             icon="inventory-icons/rune-trinket.png"
-            (clicked)="openRuneTrinketEditor(6)"
+            [runeTrinket]="character.runeTrinkets[0]"
+            [runeConfig]="gameData.runes"
+            (clicked)="openRuneTrinketEditor(0)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket2"
             slotName="Rune Trinket 2"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[1]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(1)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket3"
             slotName="Rune Trinket 3"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[2]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(2)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket4"
             slotName="Rune Trinket 4"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[3]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(3)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket5"
             slotName="Rune Trinket 5"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[4]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(4)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket6"
             slotName="Rune Trinket 6"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[5]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(5)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="rune-trinket7"
             slotName="Rune Trinket 7"
             icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[6]"
+            [runeConfig]="gameData.runes"
             (clicked)="openRuneTrinketEditor(6)"
           ></app-build-sim-button>
 
@@ -425,18 +539,24 @@
             class="jewel-trinket1"
             slotName="Jewel Trinket 1"
             icon="inventory-icons/jewel-trinket.png"
+            [jewelTrinket]="character.jewelTrinkets[0]"
+            [jewelConfig]="gameData.jewels[character.characterClass]"
             (clicked)="openJewelTrinketEditor(0)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="jewel-trinket2"
             slotName="Jewel Trinket 2"
             icon="inventory-icons/jewel-trinket.png"
+            [jewelTrinket]="character.jewelTrinkets[1]"
+            [jewelConfig]="gameData.jewels[character.characterClass]"
             (clicked)="openJewelTrinketEditor(1)"
           ></app-build-sim-button>
           <app-build-sim-button
             class="jewel-trinket3"
             slotName="Jewel Trinket 3"
             icon="inventory-icons/jewel-trinket.png"
+            [jewelTrinket]="character.jewelTrinkets[2]"
+            [jewelConfig]="gameData.jewels[character.characterClass]"
             (clicked)="openJewelTrinketEditor(2)"
           ></app-build-sim-button>
 
@@ -444,41 +564,49 @@
             class="dragon-crest-trinket"
             slotName="Dragon Crest"
             icon="inventory-icons/dragon-crest.png"
+            [dragonCrestTrinket]="character.dragonCrest"
+            [dragonStoneConfig]="gameData.dragonStones"
             (clicked)="openDragonCrestEditor()"
           ></app-build-sim-button>
 
           <app-build-sim-button
             class="pet"
-            [slotName]="
-              character.pet ? 'Pet: ' + formatStatName(character.pet.petType) : 'Pet: None'
-            "
-            [icon]="getPetIcon()"
+            slotName="Pet: None"
+            [tooltipTitle]="petService.getPetInstanceName(character.pet)"
+            [tooltipDescription]="petService.getPetInstanceDescription(character.pet)"
+            [tooltipTitleClass]="character.pet !== null ? getTierName(character.pet.tier) : ''"
+            [icon]="'inventory-icons/' + getInventoryIcon('pet', character.pet?.tier)"
             (clicked)="openPetSelector()"
           ></app-build-sim-button>
           <app-build-sim-button
             class="essence"
-            [slotName]="
-              character.essence
-                ? 'Essence: ' + formatStatName(character.essence.essenceType)
-                : 'Essence: None'
+            slotName="Essence: None"
+            [tooltipTitle]="essenceService.getEssenceInstanceName(character.essence)"
+            [tooltipDescription]="essenceService.getEssenceInstanceDescription(character.essence)"
+            [tooltipTitleClass]="
+              character.essence !== null ? getTierName(character.essence.tier) : ''
             "
-            [icon]="getEssenceIcon()"
+            [icon]="'inventory-icons/' + getInventoryIcon('essence', character.essence?.tier)"
             (clicked)="openEssenceSelector()"
           ></app-build-sim-button>
           <app-build-sim-button
             class="tonic"
-            [slotName]="
-              character.tonic ? 'Tonic: ' + formatStatName(character.tonic.type) : 'Tonic: None'
-            "
-            [icon]="getTonicIcon()"
+            slotName="Tonic: None"
+            [tooltipTitle]="buffService.getTonicInstanceName(character.tonic)"
+            [tooltipDescription]="buffService.getTonicInstanceDescription(character.tonic)"
+            [tooltipTitleClass]="character.tonic !== null ? getTierName(character.tonic.tier) : ''"
+            [icon]="'inventory-icons/' + getInventoryIcon('tonic', character.tonic?.tier)"
             (clicked)="openTonicSelector()"
           ></app-build-sim-button>
           <app-build-sim-button
             class="physic"
-            [slotName]="
-              character.physic ? 'Physic: ' + formatStatName(character.physic.type) : 'Physic: None'
+            slotName="Physic: None"
+            [tooltipTitle]="buffService.getPhysicInstanceName(character.physic)"
+            [tooltipDescription]="buffService.getPhysicInstanceDescription(character.physic)"
+            [tooltipTitleClass]="
+              character.physic !== null ? getTierName(character.physic.tier) : ''
             "
-            [icon]="getPhysicIcon()"
+            [icon]="'inventory-icons/' + getInventoryIcon('physic', character.physic?.tier)"
             (clicked)="openPhysicSelector()"
           ></app-build-sim-button>
           <app-build-sim-button
@@ -498,6 +626,19 @@
             <app-build-sim-button
               class="class-skill1"
               slotName="Immovable Wall"
+              [tooltipTitle]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.IMMOVEABLE_WALL
+                  ? 'Immovable Wall'
+                  : ''
+              "
+              [tooltipDescription]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.IMMOVEABLE_WALL
+                  ? formatStatValueRelative(0.5 + (character.classSkillLevel - 1) * 0.05, 2) +
+                    ' Armor Value'
+                  : ''
+              "
               [overlayText]="
                 character.classSkillLevel > 0 &&
                 character.classSkillType === ClassSkillType.IMMOVEABLE_WALL
@@ -511,6 +652,19 @@
             <app-build-sim-button
               class="class-skill2"
               slotName="Quick Striker"
+              [tooltipTitle]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.QUICK_STRIKER
+                  ? 'Quick Striker'
+                  : ''
+              "
+              [tooltipDescription]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.QUICK_STRIKER
+                  ? formatStatValueRelative(0.3 + (character.classSkillLevel - 1) * 0.05, 2) +
+                    ' Attack Speed'
+                  : ''
+              "
               [overlayText]="
                 character.classSkillLevel > 0 &&
                 character.classSkillType === ClassSkillType.QUICK_STRIKER
@@ -526,6 +680,13 @@
             <app-build-sim-button
               class="class-skill3"
               slotName="Bloodmage"
+              [tooltipTitle]="character.classSkillLevel > 0 ? 'Bloodmage' : ''"
+              [tooltipDescription]="
+                character.classSkillLevel > 0
+                  ? formatStatValueRelative(0.3 + (character.classSkillLevel - 1) * 0.05, 2) +
+                    ' Damage'
+                  : ''
+              "
               [icon]="getClassSkillIcon(ClassSkillType.BLOODMAGE)"
               [overlayText]="
                 character.classSkillLevel > 0 ? character.classSkillLevel + '/5' : '0/5'
@@ -537,6 +698,17 @@
           <app-build-sim-button
             class="mastery"
             [slotName]="'Mastery: ' + formatStatName(character.masteryType)"
+            [tooltipTitle]="
+              character.masteryType !== MasteryType.NONE
+                ? formatStatName(character.masteryType) + ' Mastery'
+                : ''
+            "
+            [tooltipTitleClass]="
+              character.masteryType !== MasteryType.NONE ? character.masteryType.toLowerCase() : ''
+            "
+            [tooltipDescription]="
+              getMasteryDescription(character.masteryType, character.masteryLevel)
+            "
             [icon]="getMasteryIcon()"
             [overlayText]="character.masteryLevel > 0 ? character.masteryLevel + '/10' : '0/10'"
             (clicked)="openMasterySelector()"
@@ -579,8 +751,8 @@
   @if (showPetSelector) {
     <app-pet-selector
       [scale]="scale"
-      [pets]="gameData.pets"
-      [character]="character"
+      [petConfig]="gameData.pets"
+      [pet]="character.pet"
       (cancelled)="closePetSelector()"
       (confirmed)="confirmPetSelection($event)"
     >
@@ -590,8 +762,8 @@
   @if (showEssenceSelector) {
     <app-essence-selector
       [scale]="scale"
-      [essences]="gameData.essences"
-      [character]="character"
+      [essenceConfig]="gameData.essences"
+      [essence]="character.essence"
       (cancelled)="closeEssenceSelector()"
       (confirmed)="confirmEssenceSelection($event)"
     >
@@ -601,8 +773,8 @@
   @if (showPhysicSelector) {
     <app-buff-selector
       [scale]="scale"
-      [buffs]="gameData.physics"
-      [character]="character"
+      [buffConfig]="gameData.physics"
+      [buff]="character.physic"
       [buffCategory]="BuffCategory.PHYSIC"
       (cancelled)="closePhysicSelector()"
       (confirmed)="confirmPhysicSelection($event)"
@@ -613,8 +785,8 @@
   @if (showTonicSelector) {
     <app-buff-selector
       [scale]="scale"
-      [buffs]="gameData.tonics"
-      [character]="character"
+      [buffConfig]="gameData.tonics"
+      [buff]="character.tonic"
       [buffCategory]="BuffCategory.TONIC"
       (cancelled)="closeTonicSelector()"
       (confirmed)="confirmTonicSelection($event)"
@@ -646,7 +818,7 @@
   @if (showDragonCrest) {
     <app-dragoncrest-trinket-editor
       [scale]="scale"
-      [character]="character"
+      [dragonCrest]="character.dragonCrest"
       [dragonStoneConfig]="gameData.dragonStones"
       (cancelled)="closeDragonCrestEditor()"
       (confirmed)="confirmDragonCrestSelection($event)"
@@ -696,7 +868,10 @@
       [scale]="scale"
       [item]="character.items[selectedItemSlot]"
       [slot]="selectedItemSlot"
+      [equippedSets]="getEquippedSets(selectedItemSlot)"
+      [equippedItems]="getEquippedItems(selectedItemSlot)"
       [itemConfig]="getItemsForSlot(selectedItemSlot)"
+      [fullItemConfig]="gameData.items[character.characterClass]"
       [setConfig]="gameData.sets[character.characterClass]"
       [levelMultiplierTable]="gameData.levelMultiplierTable"
       [gemConfig]="gameData.gems"

@@ -2,14 +2,19 @@ package com.langleon.dsobuildsim.gamedata;
 
 import com.langleon.dsobuildsim.buffs.BuffMapper;
 import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
+import com.langleon.dsobuildsim.buffs.enums.PhysicType;
+import com.langleon.dsobuildsim.buffs.enums.TonicType;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.collectorbagbonus.CollectorBagMapper;
 import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagCategoryBonusDefinitionDTO;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.dragonstones.DragonStoneType;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneMapper;
 import com.langleon.dsobuildsim.enchantments.EnchantmentMapper;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.essences.EssenceMapper;
+import com.langleon.dsobuildsim.essences.EssenceType;
 import com.langleon.dsobuildsim.essences.dto.EssenceDefinitionDTO;
 import com.langleon.dsobuildsim.gamedata.dto.GameDataDTO;
 import com.langleon.dsobuildsim.gamedata.dto.LevelMultiplierTableDTO;
@@ -24,6 +29,7 @@ import com.langleon.dsobuildsim.jewels.JewelMapper;
 import com.langleon.dsobuildsim.jewels.JewelType;
 import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
 import com.langleon.dsobuildsim.items.core.ItemDefinitionMapper;
+import com.langleon.dsobuildsim.pets.enums.PetType;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
 import com.langleon.dsobuildsim.sets.SetType;
@@ -81,7 +87,7 @@ public class GameDataMapper {
                         JewelLimitGroup::getLimit
                 ));
 
-        List<EnchantmentDTO> enchantments = config.enchantments().values().stream().map(EnchantmentMapper::from).toList();
+        Map<StatType, EnchantmentDTO> enchantments = config.enchantments().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> EnchantmentMapper.from(entry.getValue())));
 
         Map<GemType, GemDefinitionDTO> gems = config.gems().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> GemMapper.from(entry.getValue())));
 
@@ -99,15 +105,15 @@ public class GameDataMapper {
                         RuneLimitGroup::getLimit
                 ));
 
-        List<DragonStoneDefinitionDTO> dragonStones = config.dragonStones().values().stream().map(DragonStoneMapper::from).toList();
+        Map<DragonStoneType, DragonStoneDefinitionDTO> dragonStones = config.dragonStones().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> DragonStoneMapper.from(entry.getValue())));
 
-        List<PetDefinitionDTO> pets = config.pets().values().stream().map(PetMapper::from).toList();
+        Map<PetType, PetDefinitionDTO> pets = config.pets().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> PetMapper.from(entry.getValue())));
 
-        List<EssenceDefinitionDTO> essences = config.essences().values().stream().map(EssenceMapper::from).toList();
+        Map<EssenceType, EssenceDefinitionDTO> essences = config.essences().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> EssenceMapper.from(entry.getValue())));
 
-        List<BuffDefinitionDTO> tonics = config.buffConfig().tonics().values().stream().map(BuffMapper::from).toList();
+        Map<TonicType, BuffDefinitionDTO> tonics = config.buffConfig().tonics().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> BuffMapper.from(entry.getValue())));
 
-        List<BuffDefinitionDTO> physics = config.buffConfig().physics().values().stream().map(BuffMapper::from).toList();
+        Map<PhysicType, BuffDefinitionDTO> physics = config.buffConfig().physics().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> BuffMapper.from(entry.getValue())));
 
         LevelMultiplierTableDTO levelMultiplierTable = LevelMultiplierTableMapper.from(config.levelMultiplierTable());
 

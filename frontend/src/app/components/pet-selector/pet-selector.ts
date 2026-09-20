@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CharacterDTO } from '../../models/instanceDTOs/CharacterDTO';
 import { PetDefinitionDTO } from '../../models/gamedataDTOs/PetDefinitionDTO';
 import { FormsModule } from '@angular/forms';
 import { PetInstanceDTO } from '../../models/instanceDTOs/PetInstanceDTO';
@@ -8,20 +7,16 @@ import { formatStatName, formatStatValueRelative } from '../../utils/display-uti
 
 @Component({
   selector: 'app-pet-selector',
-  imports: [
-    FormsModule,
-    KeyValuePipe
-  ],
+  imports: [FormsModule, KeyValuePipe],
   templateUrl: './pet-selector.html',
   styleUrl: './pet-selector.scss',
 })
 export class PetSelector {
-  
   @Input() scale = 1;
-  
-  @Input() pets!: PetDefinitionDTO[];
 
-  @Input() character!: CharacterDTO;
+  @Input() petConfig!: Record<string, PetDefinitionDTO>;
+
+  @Input() pet!: PetInstanceDTO | null;
 
   @Output() cancelled = new EventEmitter<void>();
 
@@ -37,25 +32,16 @@ export class PetSelector {
   formatStatValue = formatStatValueRelative;
 
   ngOnInit() {
-    if (this.character.pet) {
-        this.selectedPet =
-            this.pets.find(
-                pet => pet.petType === this.character.pet!.petType
-            ) ?? null;
-
-        this.selectedTier = this.character.pet.tier;
+    if (this.pet) {
+      this.selectedPet = this.petConfig[this.pet.petType];
+      this.selectedTier = this.pet.tier;
     }
-}
-
-  get petTypes(): string[] {
-    return [...new Set(this.pets.map((pet) => pet.petType))];
   }
 
   get availableTiers(): number[] {
     if (!this.selectedPet) {
       return [];
     }
-
     return Object.keys(this.selectedPet.stats)
       .map(Number)
       .sort((a, b) => a - b);
@@ -70,17 +56,17 @@ export class PetSelector {
     this.cancelled.emit();
   }
 
-confirm() {
+  confirm() {
     if (!this.selectedPet) {
-        this.confirmed.emit(null);
-        return;
+      this.confirmed.emit(null);
+      return;
     }
 
     const pet: PetInstanceDTO = {
-        petType: this.selectedPet.petType,
-        tier: this.selectedTier
+      petType: this.selectedPet.petType,
+      tier: this.selectedTier,
     };
 
     this.confirmed.emit(pet);
-}
+  }
 }

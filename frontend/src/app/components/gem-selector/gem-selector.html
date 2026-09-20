@@ -1,5 +1,5 @@
-<div class="gem-selector-overlay">
-  <div class="gem-selector-window">
+<div class="overlay">
+  <div class="window">
     <button class="close-button" (click)="cancel()">
       <img src="utility-icons/cancel-square.png" alt="Close" />
       <span class="tooltip">Close</span>
@@ -7,29 +7,29 @@
 
     <h1>Select Gem</h1>
 
-    <div class="gem-filter-bar">
+    <div class="filter-bar">
       <input type="text" placeholder="Search gems..." [(ngModel)]="searchTerm" />
 
       <label class="toggle-switch">
-        <input type="checkbox" [(ngModel)]="craftOpal"/>
+        <input type="checkbox" [(ngModel)]="craftOpal" />
         <span class="slider"></span>
         Craft Opal
       </label>
 
       <label class="toggle-switch">
-        <input type="checkbox" [(ngModel)]="maxTierOnly"/>
+        <input type="checkbox" [(ngModel)]="maxTierOnly" />
         <span class="slider"></span>
         Max tier only
       </label>
     </div>
 
     @if (!craftOpal) {
-      <div class="gem-grid-container">
-        <div class="gem-grid">
+      <div class="selection-grid-container">
+        <div class="selection-grid">
           @for (gem of getFilteredGems(); track gem.gemType) {
             @for (tier of getTiers(gem); track tier) {
               <app-build-sim-button
-                class="gem-selection-button"
+                class="selection-button"
                 [tooltipTitle]="gemService.getGemDefinitionName(gem, tier)"
                 [tooltipDescription]="gemService.getGemDefinitionDescription(gem, tier)"
                 [icon]="gemService.getGemDefinitionIcon(gem, tier)"
@@ -40,64 +40,60 @@
           }
         </div>
       </div>
-    }
-
-    @if (craftOpal) {
+    } @else {
       <div class="opal-crafting">
-        <div class="craft-opal-header">
-          <div class="opal-gem-slots">
-            @for (gem of opalGems; track $index) {
-              <div class="opal-gem-slot-wrapper" [class.selected]="selectedOpalSlot === $index">
-                <app-build-sim-button
-                  class="opal-gem-slot"
-                  [slotName]="gem !== null ? '' : 'Empty'"
-                  [tooltipTitle]="gem !== null ? gemService.getGemInstanceName(gem) : ''"
-                  [tooltipDescription]="gemService.getGemInstanceDescription(gem)"
-                  [icon]="gemService.getGemInstanceIcon(gem)"
-                  (clicked)="selectOpalSlot($index)"
-                ></app-build-sim-button>
+        <div class="trinket-slots">
+          @for (gem of opalGems; track $index) {
+            <div class="trinket-slot-wrapper" [class.selected]="selectedOpalSlot === $index">
+              <app-build-sim-button
+                class="trinket-slot"
+                [slotName]="gem !== null ? '' : 'Empty'"
+                [tooltipTitle]="gem !== null ? gemService.getGemInstanceName(gem) : ''"
+                [tooltipDescription]="gemService.getGemInstanceDescription(gem)"
+                [icon]="gemService.getGemInstanceIcon(gem)"
+                (clicked)="selectOpalSlot($index)"
+              ></app-build-sim-button>
 
-                @if (gem !== null) {
-                  <!-- Delete -->
-                  <button
-                    class="opal-gem-slot-action delete-button"
-                    (click)="deleteOpalGem($index); $event.stopPropagation()"
-                  >
-                    <img src="utility-icons/cancel-square.png" alt="Delete" />
-                    <span class="tooltip">Delete</span>
-                  </button>
-                }
-              </div>
-            }
-
-            <span class="crafting-arrow">→</span>
-
-            <app-build-sim-button
-              class="opal-gem-slot"
-              [slotName]="opalGems[2] !== null ? '' : 'Empty'"
-              [tooltipTitle]="gemService.getOpalName(opalGems)"
-              [tooltipDescription]="gemService.getOpalDescription(opalGems)"
-              [icon]="gemService.getOpalIcon(opalGems)"
-              [disabled]="opalGems.includes(null) || !canSelectGem('OPAL')"
-              (clicked)="selectOpal()"
-            ></app-build-sim-button>
-          </div>
-        </div>
-        <div class="opal-grid-container">
-          <div class="opal-grid">
-            @for (gem of getFilteredOpalGems(); track gem.gemType) {
-              @for (tier of getAvailableOpalTiers(gem); track tier) {
-                <app-build-sim-button
-                  class="gem-selection-button"
-                  [tooltipTitle]="gemService.getGemDefinitionName(gem, tier)"
-                  [tooltipDescription]="gemService.getGemDefinitionDescription(gem, tier)"
-                  [icon]="gemService.getGemDefinitionIcon(gem, tier)"
-                  [disabled]="!canSelectOpalGem(gem.gemType)"
-                  (clicked)="selectOpalGem(gem, tier)"
-                ></app-build-sim-button>
+              @if (gem !== null) {
+                <!-- Delete -->
+                <button
+                  class="trinket-slot-action delete-button"
+                  (click)="deleteOpalGem($index); $event.stopPropagation()"
+                >
+                  <img src="utility-icons/cancel-square.png" alt="Delete" />
+                  <span class="tooltip">Delete</span>
+                </button>
               }
+            </div>
+          }
+
+          <span class="crafting-arrow">→</span>
+
+          <app-build-sim-button
+            class="trinket-slot"
+            [slotName]="opalGems[2] !== null ? '' : 'Empty'"
+            [tooltipTitle]="gemService.getOpalName(opalGems)"
+            [tooltipDescription]="gemService.getOpalDescription(opalGems)"
+            [icon]="gemService.getOpalIcon(opalGems)"
+            [disabled]="opalGems.includes(null) || !canSelectGem('OPAL')"
+            (clicked)="selectOpal()"
+          ></app-build-sim-button>
+        </div>
+      </div>
+      <div class="selection-grid-container opal">
+        <div class="selection-grid">
+          @for (gem of getFilteredOpalGems(); track gem.gemType) {
+            @for (tier of getAvailableOpalTiers(gem); track tier) {
+              <app-build-sim-button
+                class="selection-button"
+                [tooltipTitle]="gemService.getGemDefinitionName(gem, tier)"
+                [tooltipDescription]="gemService.getGemDefinitionDescription(gem, tier)"
+                [icon]="gemService.getGemDefinitionIcon(gem, tier)"
+                [disabled]="!canSelectOpalGem(gem.gemType)"
+                (clicked)="selectOpalGem(gem, tier)"
+              ></app-build-sim-button>
             }
-          </div>
+          }
         </div>
       </div>
     }

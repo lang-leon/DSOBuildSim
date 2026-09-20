@@ -2,8 +2,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { JewelDefinitionDTO } from '../../models/gamedataDTOs/JewelDefinitionDTO';
 import { JewelInstanceDTO } from '../../models/instanceDTOs/JewelInstanceDTO';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
-import { getIcon } from '../../utils/display-utils';
 import { FormsModule } from '@angular/forms';
+import { JewelService } from '../../utils/jewel-service';
+import { getTierName } from '../../utils/tooltip-utils';
 
 @Component({
   selector: 'app-jewel-selector',
@@ -12,7 +13,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './jewel-selector.scss',
 })
 export class JewelSelector {
-   @Input() jewelConfig!: Record<string, JewelDefinitionDTO>;
+  constructor(public jewelService: JewelService) {}
+
+  @Input() jewelConfig!: Record<string, JewelDefinitionDTO>;
 
   @Input() canSelectJewel!: (jewelType: string) => boolean;
 
@@ -23,14 +26,10 @@ export class JewelSelector {
   searchTerm = '';
   maxTierOnly = true;
 
-  getIcon = getIcon;
+  getTierName = getTierName;
 
-  ngOnInit()
-  {
-    for(const jewel of Object.values(this.jewelConfig))
-    {
-      console.log(jewel.name)
-    }
+  ngOnInit() {
+    this.jewelService.setJewelConfig(this.jewelConfig);
   }
 
   getTiers(jewel: JewelDefinitionDTO): number[] {
@@ -41,34 +40,23 @@ export class JewelSelector {
     return this.maxTierOnly ? [tiers[tiers.length - 1]] : tiers;
   }
 
+  getFilteredJewels(): JewelDefinitionDTO[] {
+    const search = this.searchTerm.toLowerCase().trim();
+
+    return Object.values(this.jewelConfig).filter((jewel) =>
+      jewel.name.toLowerCase().includes(search),
+    );
+  }
+
   selectJewel(jewel: JewelDefinitionDTO, tier: number) {
-    if (this.canSelectJewel(jewel.jewelType)) {
-      const instance: JewelInstanceDTO = {
-        jewelType: jewel.jewelType,
-        tier: tier,
-      };
-      this.selected.emit(instance);
-    }else{
-      
-    }
+    const instance: JewelInstanceDTO = {
+      jewelType: jewel.jewelType,
+      tier: tier,
+    };
+    this.selected.emit(instance);
   }
 
   cancel() {
     this.cancelled.emit();
-  }
-
-getFilteredJewels(): JewelDefinitionDTO[] {
-  const search = this.searchTerm.toLowerCase().trim();
-
-  return Object.values(this.jewelConfig)
-    .filter(jewel => jewel.name.toLowerCase().includes(search));
-}
-
-  getJewelIcon(jewel: JewelDefinitionDTO | null, tier: number)
-  {
-    if(jewel === null) return 'jewel-icons/default.png';
-
-    const jewelName = this.jewelConfig[jewel.jewelType].name;
-    return 'jewel-icons/'+this.getIcon(jewelName, tier);
   }
 }

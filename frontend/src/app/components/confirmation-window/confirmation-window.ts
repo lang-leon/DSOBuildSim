@@ -7,7 +7,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './confirmation-window.scss',
 })
 export class ConfirmationWindow {
-
   @Input() scale = 1;
 
   @Input() title = '';

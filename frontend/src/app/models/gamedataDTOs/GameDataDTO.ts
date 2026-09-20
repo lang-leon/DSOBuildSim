@@ -1,4 +1,5 @@
 import { CharacterClass } from "../../enums/CharacterClass";
+import { StatType } from "../../enums/StatType";
 import { WisdomGroupType } from "../../enums/WisdomGroupType";
 import { WisdomSkillType } from "../../enums/WisdomSkillType";
 import { BuffDefinitionDTO } from "./BuffDefinitionDTO";
@@ -23,16 +24,16 @@ export interface GameDataDTO {
     sets: Record<string, Record<string, SetDTO>>;
     jewels: Record<string, Record<string, JewelDefinitionDTO>>;
     jewelLimits: Record<string, number>;
-    enchantments: EnchantmentDTO[];
+    enchantments: Partial<Record<StatType, EnchantmentDTO>>;
     gems: Record<string, GemDefinitionDTO>;
     gemLimits: Record<string, number>;
     runes: Record<string, RuneDefinitionDTO>;
     runeLimits: Record<string, number>;
-    dragonStones: DragonStoneDefinitionDTO[];
-    pets: PetDefinitionDTO[];
-    essences: EssenceDefinitionDTO[];
-    tonics: BuffDefinitionDTO[];
-    physics: BuffDefinitionDTO[];
+    dragonStones: Record<string, DragonStoneDefinitionDTO>;
+    pets: Record<string, PetDefinitionDTO>;
+    essences: Record<string, EssenceDefinitionDTO>;
+    tonics: Record<string, BuffDefinitionDTO>;
+    physics: Record<string, BuffDefinitionDTO>;
     levelMultiplierTable: LevelMultiplierTableDTO;
     wisdomSkills: Record<WisdomSkillType, WisdomSkillDefinitionDTO>
     wisdomGroups: Record<WisdomGroupType, WisdomGroupDefinitionDTO>

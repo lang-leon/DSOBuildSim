@@ -8,7 +8,6 @@ import { CharacterClass } from '../../enums/CharacterClass';
   styleUrl: './class-change-window.scss',
 })
 export class ClassChangeWindow {
-
   @Input() scale = 1;
 
   @Output() cancelled = new EventEmitter<void>();

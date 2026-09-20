@@ -1,27 +1,28 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-import { CharacterDTO } from '../../models/instanceDTOs/CharacterDTO';
 import { BuffDefinitionDTO } from '../../models/gamedataDTOs/BuffDefinitionDTO';
 import { BuffInstanceDTO } from '../../models/instanceDTOs/BuffInstanceDTO';
-
-import { formatStatName, formatStatValueAbsolute, formatStatValueRelative } from '../../utils/display-utils';
+import {
+  formatStatName,
+  formatStatValueAbsolute,
+  formatStatValueRelative,
+} from '../../utils/display-utils';
 import { StatType } from '../../enums/StatType';
 import { BuffCategory } from '../../enums/BuffCategory';
+import { KeyValuePipe } from '@angular/common';
 
 @Component({
   selector: 'app-buff-selector',
-  imports: [FormsModule],
+  imports: [FormsModule, KeyValuePipe],
   templateUrl: './buff-selector.html',
   styleUrl: './buff-selector.scss',
 })
 export class BuffSelector {
-  
   @Input() scale = 1;
-  
-  @Input() buffs!: BuffDefinitionDTO[];
-  
-  @Input() character!: CharacterDTO;
+
+  @Input() buffConfig!: Record<string, BuffDefinitionDTO>;
+
+  @Input() buff!: BuffInstanceDTO | null;
 
   @Input() buffCategory!: BuffCategory;
 
@@ -37,25 +38,12 @@ export class BuffSelector {
   StatType = StatType;
 
   ngOnInit() {
-    const currentBuff =
-      this.buffCategory === BuffCategory.PHYSIC
-        ? this.character.physic
-        : this.character.tonic;
 
-    if (currentBuff) {
-      this.selectedBuff =
-        this.buffs.find(
-          buff => buff.type === currentBuff.type
-        ) ?? null;
+    if (this.buff) {
+      this.selectedBuff = this.buffConfig[this.buff.type];
 
-      this.selectedTier = currentBuff.tier;
+      this.selectedTier = this.buff.tier;
     }
-  }
-
-  get buffTypes(): string[] {
-    return [...new Set(
-      this.buffs.map(buff => buff.type)
-    )];
   }
 
   get availableTiers(): number[] {
@@ -78,6 +66,14 @@ export class BuffSelector {
     }
   }
 
+  formatBuffValue(value: number): string {
+    if (this.buffCategory === BuffCategory.TONIC) {
+      return formatStatValueAbsolute(value, 1);
+    }
+
+    return formatStatValueRelative(value, 2);
+  }
+
   cancel() {
     this.cancelled.emit();
   }
@@ -90,17 +86,9 @@ export class BuffSelector {
 
     const buff: BuffInstanceDTO = {
       type: this.selectedBuff.type,
-      tier: this.selectedTier
+      tier: this.selectedTier,
     };
 
     this.confirmed.emit(buff);
   }
-
-  formatBuffValue(value: number): string {
-    if (this.buffCategory === BuffCategory.TONIC) {
-        return formatStatValueAbsolute(value, 1);
-    }
-
-    return formatStatValueRelative(value, 2);
-}
 }

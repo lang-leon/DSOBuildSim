@@ -23,7 +23,7 @@ import { PetSelector } from '../pet-selector/pet-selector';
 import { PetInstanceDTO } from '../../models/instanceDTOs/PetInstanceDTO';
 import { EssenceSelector } from '../essence-selector/essence-selector';
 import { EssenceInstanceDTO } from '../../models/instanceDTOs/EssenceInstanceDTO';
-import { formatStatName, getIcon } from '../../utils/display-utils';
+import { formatStatName, formatStatValueRelative, getIcon } from '../../utils/display-utils';
 import { BuffInstanceDTO } from '../../models/instanceDTOs/BuffInstanceDTO';
 import { BuffCategory } from '../../enums/BuffCategory';
 import { BuffSelector } from '../buff-selector/buff-selector';
@@ -48,6 +48,10 @@ import { GemInstanceDTO } from '../../models/instanceDTOs/GemInstanceDTO';
 import { ItemDefinitionDTO } from '../../models/gamedataDTOs/ItemDefinitionDTO';
 import { ItemEditor } from '../item-editor/item-editor';
 import { ItemInstanceDTO } from '../../models/instanceDTOs/ItemInstanceDTO';
+import { getMasteryDescription, getTierName } from '../../utils/tooltip-utils';
+import { PetService } from '../../utils/pet-service';
+import { EssenceService } from '../../utils/essence-service';
+import { BuffService } from '../../utils/buff-service';
 
 @Component({
   selector: 'app-character',
@@ -117,6 +121,10 @@ export class BuildSimComponent implements OnInit {
   showShadowSoulEquipment = false;
 
   formatStatName = formatStatName;
+  formatStatValueRelative = formatStatValueRelative;
+  getMasteryDescription = getMasteryDescription;
+  getTierName = getTierName;
+  MasteryType = MasteryType;
   BuffCategory = BuffCategory;
   ClassSkillType = ClassSkillType;
   ItemSlot = ItemSlot;
@@ -125,6 +133,9 @@ export class BuildSimComponent implements OnInit {
     private statCalculationService: StatCalculationService,
     private gameDataService: GameDataService,
     private changeDetector: ChangeDetectorRef,
+    public petService: PetService,
+    public essenceService: EssenceService,
+    public buffService: BuffService,
   ) {}
 
   ngOnInit(): void {
@@ -176,6 +187,12 @@ export class BuildSimComponent implements OnInit {
 
         this.itemsByClassAndSlot[characterClass] = itemsBySlot;
       }
+
+      this.petService.setPetConfig(this.gameData.pets);
+      this.essenceService.setEssenceConfig(this.gameData.essences);
+      this.buffService.setTonicConfig(this.gameData.tonics);
+      this.buffService.setPhysicConfig(this.gameData.physics);
+
       this.character = this.createDefaultCharacter(CharacterClass.SPELLWEAVER);
       this.stats = { ...this.gameData.characterClassStats[CharacterClass.SPELLWEAVER] };
       this.changeDetector.detectChanges();
@@ -201,19 +218,19 @@ export class BuildSimComponent implements OnInit {
   private createDefaultCharacter(characterClass: CharacterClass): CharacterDTO {
     return {
       characterClass,
-      name: 'Character',
+      name: '',
       masteryType: MasteryType.NONE,
       masteryLevel: 0,
       classSkillType: ClassSkillType.NONE,
       classSkillLevel: 0,
       runeTrinkets: Array.from({ length: 7 }, () => ({
-        runes: [],
+        runes: ([] = Array(10).fill(null)),
       })),
       jewelTrinkets: Array.from({ length: 3 }, () => ({
-        jewels: [],
+        jewels: ([] = Array(10).fill(null)),
       })),
       dragonCrest: {
-        dragonStones: [],
+        dragonStones: ([] = Array(10).fill(null)),
       },
       items: {},
       pet: null,
@@ -512,6 +529,42 @@ export class BuildSimComponent implements OnInit {
     }
   }
 
+  hasTwoHand(): boolean {
+    const weapon = this.character.items[ItemSlot.MAIN_HAND];
+    if (weapon) {
+      return (
+        this.gameData.items[this.character.characterClass][weapon.itemType].itemSlotType ===
+        ItemSlotType.TWO_HAND_WEAPON
+      );
+    }
+    return false;
+  }
+
+  getInventoryIcon(prefix: string, tier: number | undefined) {
+    if (tier === undefined) {
+      return prefix + '-default.png';
+    }
+
+    switch (tier) {
+      case 1:
+        return prefix + '-common.png';
+      case 2:
+        return prefix + '-improved.png';
+      case 3:
+        return prefix + '-magic.png';
+      case 4:
+        return prefix + '-extraordinary.png';
+      case 5:
+        return prefix + '-legendary.png';
+      case 6:
+        return prefix + '-unique.png';
+      case 7:
+        return prefix + '-mythic.png';
+      default:
+        return prefix + '-default.png';
+    }
+  }
+
   getItemName(slot: ItemSlot, defaultSlotName: string): string {
     const item = this.character.items[slot];
     if (
@@ -605,27 +658,6 @@ export class BuildSimComponent implements OnInit {
     this.showPetSelector = false;
   }
 
-  getPetIcon(): string {
-    if (this.character.pet?.tier === undefined) {
-      return 'inventory-icons/pet.png';
-    }
-
-    switch (this.character.pet.tier) {
-      case 2:
-        return 'inventory-icons/pet-green.png';
-      case 3:
-        return 'inventory-icons/pet-blue.png';
-      case 4:
-        return 'inventory-icons/pet-purple.png';
-      case 5:
-        return 'inventory-icons/pet-orange.png';
-      case 6:
-        return 'inventory-icons/pet-yellow.png';
-      default:
-        return 'inventory-icons/pet.png';
-    }
-  }
-
   openEssenceSelector() {
     this.showEssenceSelector = true;
   }
@@ -638,25 +670,6 @@ export class BuildSimComponent implements OnInit {
     this.character.essence = essence;
     this.calculate();
     this.showEssenceSelector = false;
-  }
-
-  getEssenceIcon(): string {
-    if (this.character.essence?.tier === undefined) {
-      return 'inventory-icons/essence.png';
-    }
-
-    switch (this.character.essence.tier) {
-      case 2:
-        return 'inventory-icons/essence-green.png';
-      case 3:
-        return 'inventory-icons/essence-blue.png';
-      case 4:
-        return 'inventory-icons/essence-purple.png';
-      case 5:
-        return 'inventory-icons/essence-red.png';
-      default:
-        return 'inventory-icons/essence.png';
-    }
   }
 
   openPhysicSelector() {
@@ -673,25 +686,6 @@ export class BuildSimComponent implements OnInit {
     this.showPhysicSelector = false;
   }
 
-  getPhysicIcon(): string {
-    if (this.character.physic?.tier === undefined) {
-      return 'inventory-icons/physic.png';
-    }
-
-    switch (this.character.physic.tier) {
-      case 2:
-        return 'inventory-icons/physic-green.png';
-      case 3:
-        return 'inventory-icons/physic-blue.png';
-      case 4:
-        return 'inventory-icons/physic-purple.png';
-      case 5:
-        return 'inventory-icons/physic-orange.png';
-      default:
-        return 'inventory-icons/physic.png';
-    }
-  }
-
   openTonicSelector() {
     this.showTonicSelector = true;
   }
@@ -704,25 +698,6 @@ export class BuildSimComponent implements OnInit {
     this.character.tonic = tonic;
     this.calculate();
     this.showTonicSelector = false;
-  }
-
-  getTonicIcon(): string {
-    if (this.character.tonic?.tier === undefined) {
-      return 'inventory-icons/tonic.png';
-    }
-
-    switch (this.character.tonic.tier) {
-      case 2:
-        return 'inventory-icons/tonic-green.png';
-      case 3:
-        return 'inventory-icons/tonic-blue.png';
-      case 4:
-        return 'inventory-icons/tonic-purple.png';
-      case 5:
-        return 'inventory-icons/tonic-orange.png';
-      default:
-        return 'inventory-icons/tonic.png';
-    }
   }
 
   openMasterySelector() {
@@ -759,6 +734,7 @@ export class BuildSimComponent implements OnInit {
     if (this.character.classSkillType !== skillType) {
       this.character.classSkillType = skillType;
       this.character.classSkillLevel = 1;
+      this.calculate();
       return;
     }
     if (this.character.classSkillLevel < 5) {
@@ -1038,7 +1014,7 @@ export class BuildSimComponent implements OnInit {
   }
 
   canAddGem(gemType: string, editedGems: (GemInstanceDTO | null)[]): boolean {
-    const limitGroup = gemType === "OPAL" ? "OPAL" : this.gemLimitGroups[gemType];
+    const limitGroup = gemType === 'OPAL' ? 'OPAL' : this.gemLimitGroups[gemType];
 
     const equippedAmount = this.getEquippedGemAmount(this.selectedItemSlot, gemType);
 
@@ -1053,14 +1029,57 @@ export class BuildSimComponent implements OnInit {
   }
 
   getEquippedGemAmount(excludedItem: ItemSlot, gemType: string): number {
-    const limitGroup = gemType === "OPAL" ? "OPAL" : this.gemLimitGroups[gemType];
+    const limitGroup = gemType === 'OPAL' ? 'OPAL' : this.gemLimitGroups[gemType];
     return Object.entries(this.character.items)
       .filter(([slot]) => slot !== excludedItem)
       .map(([_, item]) => item)
       .filter((item) => item !== undefined)
       .flatMap((item) => item.gems)
       .filter((gem) => gem !== null)
-      .filter((gem) => 
-        gem.gemCategory === "OPAL" ? "OPAL" === limitGroup: this.gemLimitGroups[gem.gemType[0]] === limitGroup).length;
+      .filter((gem) =>
+        gem.gemCategory === 'OPAL'
+          ? 'OPAL' === limitGroup
+          : this.gemLimitGroups[gem.gemType[0]] === limitGroup,
+      ).length;
+  }
+
+  getEquippedSets(excludedItem: ItemSlot): Record<string, Set<string>> {
+    const equippedSets: Record<string, Set<string>> = {};
+
+    Object.entries(this.character.items)
+      .filter(([slot]) => slot !== excludedItem)
+      .forEach(([, item]) => {
+        if (!item) {
+          return;
+        }
+
+        const itemDefinition = this.gameData.items[this.character.characterClass]?.[item.itemType];
+
+        if (!itemDefinition) {
+          return;
+        }
+
+        if (itemDefinition.itemCategory !== 'SET' && itemDefinition.itemCategory !== 'MYTHIC') {
+          return;
+        }
+
+        if (!itemDefinition.set) {
+          return;
+        }
+
+        const items = equippedSets[itemDefinition.set] ?? new Set<string>();
+
+        items.add(item.itemType);
+        equippedSets[itemDefinition.set] = items;
+      });
+
+    return equippedSets;
+  }
+
+  getEquippedItems(excludedItem: ItemSlot): string[] {
+    return Object.entries(this.character.items)
+      .filter(([slot]) => slot !== excludedItem)
+      .map(([, item]) => item?.itemType)
+      .filter((itemType): itemType is string => itemType !== undefined);
   }
 }

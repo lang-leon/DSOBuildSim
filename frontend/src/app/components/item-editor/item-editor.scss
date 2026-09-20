@@ -1,83 +1,21 @@
-/* =========================================================
-   OVERLAY
-   ========================================================= */
-
-.item-editor-overlay {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100vw;
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: rgba(0, 0, 0, 0.65);
-
-    z-index: 1000;
+.overlay {
+  z-index: 1000;
 }
 
+.window {
+  width: 550px;
+  height: 75vh;
 
-/* =========================================================
-   MAIN WINDOW
-   ========================================================= */
-
-.item-editor-window {
-    position: relative;
-
-    width: 550px;
-    max-height: 75vh;
-
-    padding: 25px 30px;
-    box-sizing: border-box;
-
-    display:flex;
-    flex-direction: column;
-
-    background: #222;
-
-    border: 5px solid #543A23;
-    border-radius: 10px;
-
-    color: #EFD8B7;
-
-    text-align: center;
-
-    box-shadow:
-        0 0 10px rgba(212, 175, 55, 0.3),
-        0 0 25px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
 }
 
-
-/* =========================================================
-   TITLE
-   ========================================================= */
-
-.item-editor-window h1 {
-  width: 100%;
-
-  margin: 0 0 10px 0;
-  padding-bottom: 10px;
-
-  color: #EFD8B7;
-
-  font-size: 20;
-  font-style: italic;
-
-  text-align: center;
-
-  border-bottom: 1px solid #555;
-}
-
-.item-editor-window h3 {
+h2 {
   width: 100%;
 
   margin: 0 0 0 0;
 
-  color: #EFD8B7;
+  color: #efd8b7;
 
   font-size: 18px;
   font-style: italic;
@@ -85,630 +23,378 @@
   text-align: center;
 }
 
-.item-editor-window h4 {
+h3 {
   width: 100%;
 
   margin: 0 0 0 0;
 
-  color: #EFD8B7;
+  color: var(--color-unique);
 
   font-size: 15px;
 
   text-align: left;
 }
 
-/* =========================================================
-   ITEM SELECTION
-   ========================================================= */
+// Item selection
 
 .item-selection {
-    width: 100%;
+  width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    gap: 8px;
+  gap: 8px;
 
-    margin-bottom: 10px;
-    margin-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #555;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #555;
 }
 
 .item-selection label,
 .tier-selection > label {
-    color: #EFD8B7;
+  color: #efd8b7;
 
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .item-selection-content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 
-    gap: 30px;
-    margin-bottom: 20px;
+  gap: 30px;
+  margin-bottom: 20px;
 }
 
 .item-selection-controls {
-    width: 300px;
-    flex-shrink: 0;
+  width: 300px;
+  flex-shrink: 0;
 }
 
 .item-selection select {
-    width: 300px;
-    height: 40px;
+  width: 300px;
+  height: 40px;
 
-    padding: 5px 10px;
+  padding: 5px 10px;
 
-    background: #222;
-    color: #EFD8B7;
+  background: #222;
+  color: #efd8b7;
 
-    border: 2px solid #d4af37;
-    border-radius: 6px;
+  border: 2px solid #d4af37;
+  border-radius: 6px;
 
-    font-size: 16px;
+  font-size: 16px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    transition:
-        background 0.15s ease,
-        box-shadow 0.15s ease;
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .item-selection select:hover {
-    background: #2c2c2c;
+  background: #2c2c2c;
 }
 
 .item-selection select:focus {
-    outline: none;
+  outline: none;
 
-    box-shadow:
-        0 0 5px #d4af37;
+  box-shadow: 0 0 5px #d4af37;
 }
 
-
-/* =========================================================
-   ITEM CONTENT
-   ========================================================= */
-
+// Item content
 
 .item-editor-content {
-    flex: 1;
-    min-height: 0;
-    margin-bottom: 15px;
+  flex: 1;
+  min-height: 0;
+  margin-bottom: 15px;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 
-    padding-right: 8px;
-    box-sizing: border-box;
+  padding-right: 8px;
+  box-sizing: border-box;
 }
 
 .item-editor-content::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 .item-editor-content::-webkit-scrollbar-track {
-    background: #543A23;
-    border-radius: 5px;
+  background: #543a23;
+  border-radius: 5px;
 }
 
 .item-editor-content::-webkit-scrollbar-thumb {
-    background: #ac7443;
-    border-radius: 5px;
+  background: #ac7443;
+  border-radius: 5px;
 }
 
 .item-editor-content::-webkit-scrollbar-thumb:hover {
-    background: #6b4a2d;
+  background: #6b4a2d;
 }
 
+.item-editor-content input::-webkit-inner-spin-button,
+.item-editor-content input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-/* =========================================================
-   BASE VALUES
-   ========================================================= */
+// Base values
 
 .base-values {
-    width: 100%;
-    margin-top: 10px;
+  width: 100%;
+  margin-top: 10px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #555;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #555;
 }
 
 .base-value {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    width: 100%;
-    min-height: 34px;
+  width: 100%;
+  min-height: 34px;
 
-    padding: 4px 8px;
-    box-sizing: border-box;
+  padding: 4px 8px;
+  box-sizing: border-box;
 
-    background: #1b1b1b;
-    border: 1px solid #543A23;
-    border-radius: 4px;
+  background: #1b1b1b;
+  border: 1px solid #543a23;
+  border-radius: 4px;
 
-    color: #EFD8B7;
+  color: #efd8b7;
 
-    transition:
-        background 0.15s ease,
-        border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .base-value:hover {
-    background: #242424;
-    border-color: #806033;
+  background: #242424;
+  border-color: #806033;
 }
 
 .base-value-type {
-    flex: 1;
+  flex: 1;
 
-    text-align: left;
+  text-align: left;
 
-    font-size: 15px;
-    font-weight: bold;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .base-value input {
-    width: 100px;
-    height: 28px;
+  width: 100px;
+  height: 28px;
 
-    padding: 3px 7px;
-    box-sizing: border-box;
+  padding: 3px 7px;
+  box-sizing: border-box;
 
-    background: #222;
-    color: #EFD8B7;
+  background: #222;
+  color: #efd8b7;
 
-    border: 1px solid #76552f;
-    border-radius: 3px;
+  border: 1px solid #76552f;
+  border-radius: 3px;
 
-    font-size: 14px;
-    text-align: right;
+  font-size: 14px;
+  text-align: right;
 
-    outline: none;
+  outline: none;
 
-    transition:
-        border-color 0.15s ease,
-        box-shadow 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.base-value.unique input {
+  color: var(--color-unique);
 }
 
 .base-value input:hover {
-    border-color: #d4af37;
+  border-color: #d4af37;
 }
 
 .base-value input:focus {
-    border-color: #d4af37;
+  border-color: #d4af37;
 
-    box-shadow:
-        0 0 5px rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.45);
 }
 
-
-/* =========================================================
-   GEM SLOTS
-   ========================================================= */
-
-.item-editor-slots {
-    display: grid;
-
-    grid-template-columns: repeat(5, 70px);
-
-    justify-content: center;
-
-    gap: 15px;
-
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border-bottom: 1px solid #555;
+.trinket-slots {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-bottom: 1px solid #555;
 }
 
-.item-editor-slot {
-    width: 70px;
-    height: 70px;
-}
-
-
-.item-editor-slot-wrapper {
-    position: relative;
-
-    width: 70px;
-    height: 70px;
-}
-
-.item-editor-slot-wrapper:hover {
-    z-index: 100;
-}
-
-.item-editor-slot {
-    width: 100%;
-    height: 100%;
-}
-
-/* =========================================================
-   ENCHANTMENTS
-   ========================================================= */
+// Enchantments
 
 .enchantments {
-    width: 100%;
-    margin-top: 15px;
+  width: 100%;
+  margin-top: 15px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .enchantment {
-    display: grid;
-    grid-template-columns: 1fr 110px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 105px;
+  align-items: center;
 
-    min-height: 36px;
-    padding: 3px 6px;
+  min-height: 36px;
+  padding: 3px 6px;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    background: #1b1b1b;
-    border: 1px solid #543A23;
-    border-radius: 4px;
+  background: #1b1b1b;
+  border: 1px solid #543a23;
+  border-radius: 4px;
 
-    transition:
-        background 0.15s ease,
-        border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .enchantment:hover {
-    background: #242424;
-    border-color: #806033;
+  background: #242424;
+  border-color: #806033;
 }
 
-/* =========================================================
-   ENCHANTMENT SELECT
-   ========================================================= */
-
 .enchantment select {
-    width: 100%;
-    height: 30px;
+  width: 100%;
+  height: 30px;
 
-    padding: 3px 8px;
+  padding: 3px 8px;
 
-    background: #222;
-    color: #EFD8B7;
+  background: #222;
+  color: #efd8b7;
 
-    border: 1px solid #76552f;
-    border-radius: 3px;
+  border: 1px solid #76552f;
+  border-radius: 3px;
 
-    font-size: 14px;
-    cursor: pointer;
+  font-size: 14px;
+  cursor: pointer;
 
-    outline: none;
+  outline: none;
 
-    transition:
-        border-color 0.15s ease,
-        box-shadow 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .enchantment select:hover {
-    border-color: #d4af37;
+  border-color: #d4af37;
 }
 
 .enchantment select:focus {
-    border-color: #d4af37;
+  border-color: #d4af37;
 
-    box-shadow:
-        0 0 5px rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.45);
 }
 
-/* =========================================================
-   ENCHANTMENT VALUE
-   ========================================================= */
-
 .enchantment input {
-    width: 100px;
-    height: 28px;
+  width: 65px;
+  height: 28px;
 
-    margin-left: 8px;
-    padding: 3px 7px;
+  padding: 3px 7px;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    background: #222;
-    color: #EFD8B7;
+  background: #222;
+  color: #efd8b7;
 
-    border: 1px solid #76552f;
-    border-radius: 3px;
+  border: 1px solid #76552f;
+  border-radius: 3px;
 
-    font-size: 14px;
-    text-align: right;
+  font-size: 14px;
+  text-align: right;
 
-    outline: none;
+  outline: none;
 
-    transition:
-        border-color 0.15s ease,
-        box-shadow 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .enchantment input:hover:not(:disabled) {
-    border-color: #d4af37;
+  border-color: #d4af37;
 }
 
 .enchantment input:focus {
-    border-color: #d4af37;
+  border-color: #d4af37;
 
-    box-shadow:
-        0 0 5px rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.45);
 }
 
 .enchantment input:disabled {
-    color: #777;
-    background: #181818;
-    border-color: #3d3024;
-    cursor: not-allowed;
+  color: #777;
+  background: #181818;
+  border-color: #3d3024;
+  cursor: not-allowed;
 }
 
-/* =========================================================
-   UNIQUE VALUES
-   ========================================================= */
-
-.unique-values {
-    width: 100%;
-    margin-top: 5px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-
-    margin-bottom: 10px;
+.enchantment-value {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
 }
 
-/* =========================================================
-   SET BONUS
-   ========================================================= */
+.enchantment-value span {
+  color: #efd8b7;
+}
+
+.additional-values {
+  width: 100%;
+  margin-top: 5px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  margin-bottom: 10px;
+}
 
 .set-bonuses {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .set-bonus {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    white-space: pre-line;
-    width: 100%;
-    min-height: 34px;
-    padding: 4px 8px;
-    box-sizing: border-box;
-    background: #1b1b1b;
-    border: 1px solid #543A23;
-    border-radius: 4px;
-    color: #EFD8B7;
-}
-
-
-/* =========================================================
-   SLOT ACTION BUTTONS
-   ========================================================= */
-
-.item-editor-slot-action {
-    position: absolute;
-
-    width: 20px;
-    height: 20px;
-
-    padding: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #222;
-
-    border: 1px solid #543A23;
-    border-radius: 3px;
-
-    cursor: pointer;
-
-    z-index: 10;
-
-    box-sizing: border-box;
-
-    transition:
-        filter 0.15s ease,
-        transform 0.1s ease;
-}
-
-.item-editor-slot-action img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    border-radius: 2px;
-}
-
-
-/* Delete: top right */
-
-.item-editor-slot-action.delete-button {
-    top: -5px;
-    right: -5px;
-}
-
-
-/* Copy: directly underneath delete */
-
-.item-editor-slot-action.copy-button {
-    top: 16px;
-    right: -5px;
-}
-
-
-/* Hover only affects the icon */
-
-.item-editor-slot-action:hover img {
-    filter: brightness(1.4) drop-shadow(0 0 4px #d4af37);
-}
-
-.item-editor-slot-action:active {
-    transform: translateY(1px);
-}
-
-
-/* =========================================================
-   ACTION BUTTON TOOLTIPS
-   ========================================================= */
-
-.item-editor-slot-action .tooltip {
-    position: absolute;
-
-    bottom: 100%;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    margin-bottom: 5px;
-    padding: 5px 10px;
-
-    background: #222;
-    color: #EFD8B7;
-
-    border: 1px solid #d4af37;
-    border-radius: 4px;
-
-    white-space: nowrap;
-
-    font-size: 13px;
-    font-weight: normal;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: opacity 0.15s ease;
-
-    pointer-events: none;
-
-    z-index: 1000;
-}
-
-.item-editor-slot-action:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-}   
-
-
-
-/* Click */
-
-.item-editor-slot:active {
-  transform: translateY(1px);
-}
-
-
-/* =========================================================
-   CONFIRM / CANCEL BUTTONS
-   ========================================================= */
-
-.item-editor-buttons {
-    position: absolute;
-
-    left: 50%;
-    bottom: -41px;
-
-    transform: translateX(-50%);
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 15px;
-}
-
-
-.item-editor-buttons button {
-    position: relative;
-
-    width: 128px;
-    height: 62px;
-
-    padding: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: #222;
-
-    border: none;
-    border-radius: 3px;
-
-    cursor: pointer;
-
-    overflow: visible;
-
-    transition:
-        box-shadow 0.15s ease,
-        transform 0.1s ease;
-}
-
-
-/* Button image */
-
-.item-editor-buttons button img {
-  position: absolute;
-
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  white-space: pre-line;
   width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  border-radius: 5px;
-
-  transition:
-    filter 0.15s ease,
-    transform 0.15s ease;
+  min-height: 34px;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  background: #1b1b1b;
+  border: 1px solid #543a23;
+  border-radius: 4px;
+  color: var(--color-set);
 }
 
-
-/* Hover */
-
-.item-editor-buttons button:hover img {
-  filter:
-    brightness(1.4)
-    drop-shadow(0 0 5px #d4af37);
+.set-bonus.disabled {
+  filter: grayscale(1);
 }
 
-
-/* Click */
-
-.item-editor-buttons button:active {
-  transform: translateY(1px);
-}
-
-
-/* =========================================================
-   TOOLTIP
-   ========================================================= */
-
-
-
-.item-editor-buttons button:hover .tooltip {
-  opacity: 1;
-  visibility: visible;
+.set-item.disabled {
+  filter: grayscale(1);
 }

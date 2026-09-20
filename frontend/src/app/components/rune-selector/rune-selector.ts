@@ -3,7 +3,8 @@ import { BuildSimButton } from '../build-sim-button/build-sim-button';
 import { FormsModule } from '@angular/forms';
 import { RuneInstanceDTO } from '../../models/instanceDTOs/RuneInstanceDTO';
 import { RuneDefinitionDTO } from '../../models/gamedataDTOs/RuneDefinitionDTO';
-import { formatStatName, getIcon } from '../../utils/display-utils';
+import { RuneService } from '../../utils/rune-service';
+import { getTierName } from '../../utils/tooltip-utils';
 
 @Component({
   selector: 'app-rune-selector',
@@ -12,6 +13,8 @@ import { formatStatName, getIcon } from '../../utils/display-utils';
   styleUrl: './rune-selector.scss',
 })
 export class RuneSelector {
+  constructor(public runeService: RuneService) {}
+
   @Input() runeConfig!: Record<string, RuneDefinitionDTO>;
 
   @Input() canSelectRune!: (runeType: string) => boolean;
@@ -23,14 +26,10 @@ export class RuneSelector {
   searchTerm = '';
   maxTierOnly = true;
 
-  getIcon = getIcon;
+  getTierName = getTierName;
 
-  ngOnInit()
-  {
-    for(const rune of Object.values(this.runeConfig))
-    {
-      console.log(rune.name)
-    }
+  ngOnInit() {
+    this.runeService.setRuneConfig(this.runeConfig);
   }
 
   getTiers(rune: RuneDefinitionDTO): number[] {
@@ -41,6 +40,14 @@ export class RuneSelector {
     return this.maxTierOnly ? [tiers[tiers.length - 1]] : tiers;
   }
 
+  getFilteredRunes(): RuneDefinitionDTO[] {
+    const search = this.searchTerm.toLowerCase().trim();
+
+    return Object.values(this.runeConfig).filter((rune) =>
+      rune.name.toLowerCase().includes(search),
+    );
+  }
+
   selectRune(rune: RuneDefinitionDTO, tier: number) {
     if (this.canSelectRune(rune.runeType)) {
       const instance: RuneInstanceDTO = {
@@ -48,36 +55,11 @@ export class RuneSelector {
         tier: tier,
       };
       this.selected.emit(instance);
-    }else{
-
+    } else {
     }
   }
 
   cancel() {
     this.cancelled.emit();
-  }
-
-getFilteredRunes(): RuneDefinitionDTO[] {
-  const search = this.searchTerm.toLowerCase().trim();
-
-  return Object.values(this.runeConfig)
-    .filter(rune => rune.name.toLowerCase().includes(search));
-}
-
-getRuneDescription(rune: RuneDefinitionDTO, tier: number) {
-    let desc = rune?.description.replace('{tier}', String(tier));
-    
-    for (const [statType, value] of Object.entries(rune.statsPerTier[tier])) {
-      desc += `\n+${(value*100).toFixed(2)}% ${formatStatName(statType)}`;
-    }
-    return desc.trim();
-  }
-
-  getRuneIcon(rune: RuneDefinitionDTO | null, tier: number)
-  {
-    if(rune === null) return 'rune-icons/default.png';
-
-    const runeName = this.runeConfig[rune.runeType].name;
-    return 'rune-icons/'+this.getIcon(runeName, tier);
   }
 }

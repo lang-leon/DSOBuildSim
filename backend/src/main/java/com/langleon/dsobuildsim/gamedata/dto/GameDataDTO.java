@@ -1,15 +1,21 @@
 package com.langleon.dsobuildsim.gamedata.dto;
 
 import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
+import com.langleon.dsobuildsim.buffs.enums.PhysicType;
+import com.langleon.dsobuildsim.buffs.enums.TonicType;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagCategoryBonusDefinitionDTO;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.dragonstones.DragonStoneType;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
+import com.langleon.dsobuildsim.essences.EssenceType;
 import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
 import com.langleon.dsobuildsim.gems.enums.GemType;
 import com.langleon.dsobuildsim.items.core.enums.ItemType;
 import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
 import com.langleon.dsobuildsim.jewels.JewelLimitGroup;
 import com.langleon.dsobuildsim.jewels.JewelType;
+import com.langleon.dsobuildsim.pets.enums.PetType;
 import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
 import com.langleon.dsobuildsim.runes.enums.RuneType;
 import com.langleon.dsobuildsim.sets.SetType;
@@ -34,16 +40,16 @@ public record GameDataDTO (
         Map<CharacterClass, Map<SetType, SetDTO>> sets,
         Map<CharacterClass, Map<JewelType, JewelDefinitionDTO>> jewels,
         Map<JewelLimitGroup, Integer> jewelLimits,
-        List<EnchantmentDTO> enchantments,
+        Map<StatType, EnchantmentDTO> enchantments,
         Map<GemType, GemDefinitionDTO> gems,
         Map<GemLimitGroup, Integer> gemLimits,
         Map<RuneType, RuneDefinitionDTO> runes,
         Map<RuneLimitGroup, Integer> runeLimits,
-        List<DragonStoneDefinitionDTO> dragonStones,
-        List<PetDefinitionDTO> pets,
-        List<EssenceDefinitionDTO> essences,
-        List<BuffDefinitionDTO> tonics,
-        List<BuffDefinitionDTO> physics,
+        Map<DragonStoneType, DragonStoneDefinitionDTO> dragonStones,
+        Map<PetType, PetDefinitionDTO> pets,
+        Map<EssenceType, EssenceDefinitionDTO> essences,
+        Map<TonicType, BuffDefinitionDTO> tonics,
+        Map<PhysicType, BuffDefinitionDTO> physics,
         LevelMultiplierTableDTO levelMultiplierTable,
         Map<WisdomSkillType, WisdomSkillDefinitionDTO> wisdomSkills,
         Map<WisdomGroupType, WisdomGroupDefinitionDTO> wisdomGroups,

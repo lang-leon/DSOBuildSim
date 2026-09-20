@@ -4,6 +4,7 @@ import { GemInstanceDTO } from '../../models/instanceDTOs/GemInstanceDTO';
 import { GemService } from '../../utils/gem-service';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
 import { FormsModule } from '@angular/forms';
+import { matchesSearch } from '../../utils/display-utils';
 
 @Component({
   selector: 'app-gem-selector',
@@ -47,7 +48,19 @@ export class GemSelector {
       return tiers;
     }
     return tiers.filter((tier) =>
-      this.matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
+      matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
+    );
+  }
+
+  getFilteredGems(): GemDefinitionDTO[] {
+    const search = this.searchTerm.toLowerCase().trim();
+
+    return Object.values(this.gemConfig).filter(
+      (gem) =>
+        !search ||
+        this.getTiers(gem).some((tier) =>
+          matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
+        ),
     );
   }
 
@@ -60,30 +73,6 @@ export class GemSelector {
       };
       this.selected.emit(instance);
     }
-  }
-
-  cancel() {
-    this.cancelled.emit();
-  }
-
-  getFilteredGems(): GemDefinitionDTO[] {
-    const search = this.searchTerm.toLowerCase().trim();
-
-    return Object.values(this.gemConfig).filter(
-      (gem) =>
-        !search ||
-        this.getTiers(gem).some((tier) =>
-          this.matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
-        ),
-    );
-  }
-
-  private matchesSearch(text: string, search: string): boolean {
-    const searchWords = search.toLowerCase().trim().split(/\s+/);
-
-    const textLower = text.toLowerCase();
-
-    return searchWords.every((word) => textLower.includes(word));
   }
 
   //Opal crafting
@@ -123,7 +112,7 @@ export class GemSelector {
     }
 
     return tiers.filter((tier) =>
-      this.matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
+      matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
     );
   }
 
@@ -132,10 +121,21 @@ export class GemSelector {
 
     return Object.values(this.gemConfig).filter((gem) =>
       this.getAvailableOpalTiers(gem).some(
-        (tier) =>
-          !search || this.matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
+        (tier) => !search || matchesSearch(this.gemService.getGemDefinitionName(gem, tier), search),
       ),
     );
+  }
+
+  canSelectOpalGem(gemType: string): boolean {
+    for (const gem of this.opalGems) {
+      if (gem !== null && gem.gemType[0] == gemType) return false;
+    }
+    return true;
+  }
+
+  deleteOpalGem(index: number) {
+    this.opalGems[index] = null;
+    this.selectedOpalSlot = index;
   }
 
   selectOpal() {
@@ -154,15 +154,7 @@ export class GemSelector {
     this.selected.emit(instance);
   }
 
-  canSelectOpalGem(gemType: string): boolean {
-    for (const gem of this.opalGems) {
-      if (gem !== null && gem.gemType[0] == gemType) return false;
-    }
-    return true;
-  }
-
-  deleteOpalGem(index: number) {
-    this.opalGems[index] = null;
-    this.selectedOpalSlot = index;
+  cancel() {
+    this.cancelled.emit();
   }
 }

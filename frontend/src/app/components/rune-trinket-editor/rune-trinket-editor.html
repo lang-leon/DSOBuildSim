@@ -1,29 +1,26 @@
-<div class="rune-trinket-overlay" [style.--popup-scale]="scale">
-  <div class="rune-trinket-window scaled-popup-window">
+<div class="overlay" [style.--popup-scale]="scale">
+  <div class="window scaled-popup-window">
     <h1>Edit Rune Trinket</h1>
 
-    <h2>Runes</h2>
+    <h2>Runes:</h2>
 
-    <div class="rune-trinket-slots">
+    <div class="trinket-slots">
       @for (rune of runes; track $index) {
-        <div class="rune-trinket-slot-wrapper">
+        <div class="trinket-slot-wrapper">
           <app-build-sim-button
-            class="rune-trinket-slot"
-            [slotName]="
-              rune !== null
-                ? ''
-                : 'Empty'
-            "
-            [tooltipTitle]="rune !== null ? getRuneName($index) : ''"
-            [tooltipDescription]="getRuneDescription($index)"
-            [icon]="getRuneIcon(rune)"
+            class="trinket-slot"
+            [slotName]="rune !== null ? '' : 'Empty'"
+            [tooltipTitle]="rune !== null ? runeService.getRuneInstanceName(rune) : ''"
+            [tooltipTitleClass]="rune !== null ? getTierName(rune.tier) : ''"
+            [tooltipDescription]="runeService.getRuneInstanceDescription(rune)"
+            [icon]="runeService.getRuneInstanceIcon(rune)"
             (clicked)="openRuneSelector($index)"
           ></app-build-sim-button>
 
           @if (rune !== null) {
             <!-- Delete -->
             <button
-              class="rune-trinket-slot-action delete-button"
+              class="trinket-slot-action delete-button"
               (click)="deleteRune($index); $event.stopPropagation()"
             >
               <img src="utility-icons/cancel-square.png" alt="Delete" />
@@ -33,7 +30,7 @@
             <!-- Copy -->
             @if (hasEmptyRuneSlot() && canSelectRune(rune.runeType)) {
               <button
-                class="rune-trinket-slot-action copy-button"
+                class="trinket-slot-action copy-button"
                 (click)="copyRune($index); $event.stopPropagation()"
               >
                 <img src="utility-icons/copy.png" alt="Copy" />
@@ -45,7 +42,7 @@
       }
     </div>
 
-    <div class="rune-trinket-buttons">
+    <div class="cc-buttons">
       <button class="accept-button" (click)="confirm()">
         <img src="utility-icons/confirm.png" alt="Confirm" />
         <span class="tooltip">Confirm</span>
@@ -64,6 +61,7 @@
     [runeConfig]="runeConfig"
     [canSelectRune]="canSelectRune.bind(this)"
     (cancelled)="closeRuneSelector()"
-    (selected)="confirmRuneSelection($event)">
+    (selected)="confirmRuneSelection($event)"
+  >
   </app-rune-selector>
 }
