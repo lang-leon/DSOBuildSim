@@ -1,0 +1,66 @@
+.overlay {
+  z-index: 1000;
+}
+
+.window {
+  width: 1110px;
+  height: 620px;
+}
+
+.wisdom-groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.wisdom-group {
+  padding: 12px;
+  background: #222;
+  border: 3px solid #543a23;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  color: #efd8b7;
+}
+
+.group-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.group-points {
+  font-size: 14px;
+  color: #c9a875;
+}
+
+.group-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-grid {
+  flex: 1;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.wisdom-skill-button {
+  width: 70px;
+  height: 70px;
+}
+
+.reset-group-button {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+}

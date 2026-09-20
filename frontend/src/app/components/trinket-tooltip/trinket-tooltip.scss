@@ -1,0 +1,28 @@
+.structured-tooltip {
+  max-width: 480px;
+  min-width: 50px;
+}
+
+.tooltip-content .tooltip-separator {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.tooltip-description {
+  text-align: left;
+  margin-top: 1px;
+}
+
+.trinket-slots {
+  grid-template-columns: repeat(10, 32px);
+  gap: 5px;
+}
+
+.trinket-slots img {
+  width: 32px;
+  height: 32px;
+
+  object-fit: cover;
+
+  border-radius: 2px;
+}

@@ -1,4 +1,4 @@
 export interface JewelInstanceDTO {
-    jewelType: string;
-    tier: number;
+  jewelType: string;
+  tier: number;
 }

@@ -12,6 +12,7 @@ public record WisdomSkillDefinitionDTO(
         StatType statType,
         double increasePerLevel,
         double firstLevelBonus,
+        boolean statValueAbsolute,
         String description
 ) {
 }

@@ -1,51 +1,80 @@
-<button 
-class="item-slot"
+<button
+  class="item-slot"
   cdkOverlayOrigin
   #tooltipTrigger="cdkOverlayOrigin"
   [disabled]="disabled"
   (mouseenter)="onMouseEnter()"
   (mouseleave)="onMouseLeave()"
-(click)="onClick()">
-    <img [src]="icon">
+  (click)="onClick()"
+>
+  <img [src]="icon" />
 
-    @if (overlayText) {
-        <span class="slot-overlay">
-            {{ overlayText }}
-        </span>
-    }
+  @if (overlayText) {
+    <span class="slot-overlay">
+      {{ overlayText }}
+    </span>
+  }
 </button>
 
-
-
 <ng-template
-    cdkConnectedOverlay
-    [cdkConnectedOverlayOrigin]="tooltipTrigger"
-    [cdkConnectedOverlayOpen]="showTooltip"
-    [cdkConnectedOverlayPositions]="tooltipPositions"
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="tooltipTrigger"
+  [cdkConnectedOverlayOpen]="showTooltip"
+  [cdkConnectedOverlayPositions]="tooltipPositions"
 >
+  @if (item) {
+    <app-item-tooltip
+      [item]="item"
+      [equippedItems]="equippedItems"
+      [equippedSets]="equippedSets"
+      [itemConfig]="itemConfig"
+      [setConfig]="setConfig"
+      [gemConfig]="gemConfig"
+    ></app-item-tooltip>
+  } @else if (runeTrinket) {
+    <app-trinket-tooltip [title]="slotName" [runeTrinket]="runeTrinket" [runeConfig]="runeConfig" />
+  } @else if (jewelTrinket) {
+    <app-trinket-tooltip
+      [title]="slotName"
+      [jewelTrinket]="jewelTrinket"
+      [jewelConfig]="jewelConfig"
+    />
+  } @else if (dragonCrestTrinket) {
+    <app-trinket-tooltip
+      [title]="slotName"
+      [dragonCrestTrinket]="dragonCrestTrinket"
+      [dragonStoneConfig]="dragonStoneConfig"
+    />
+  } @else {
     <div class="tooltip-overlay">
+      @if (tooltipTitle) {
+        <div class="structured-tooltip">
+          <div class="tooltip-name" [ngClass]="tooltipTitleClass">
+            {{ tooltipTitle }}
+          </div>
 
-        @if (tooltipTitle) {
-            <div class="structured-tooltip">
+          @if (tooltipDescription) {
+            <div class="tooltip-separator"></div>
 
-                <div class="tooltip-name">
-                    {{ tooltipTitle }}
-                </div>
-
-                @if (tooltipDescription) {
+            <div class="tooltip-description">
+              @if (typeof tooltipDescription === 'string') {
+                {{ tooltipDescription }}
+              } @else {
+                @for (line of tooltipDescription; track $index) {
+                  @if ($index > 0) {
                     <div class="tooltip-separator"></div>
-
-                    <div class="tooltip-description">
-                        {{ tooltipDescription }}
-                    </div>
+                  }
+                  <div>{{ line }}</div>
                 }
-
+              }
             </div>
-        } @else if (slotName) {
-            <div class="tooltip-simple">
-                {{ slotName }}
-            </div>
-        }
-
+          }
+        </div>
+      } @else if (slotName) {
+        <div class="tooltip-name">
+          {{ slotName }}
+        </div>
+      }
     </div>
+  }
 </ng-template>

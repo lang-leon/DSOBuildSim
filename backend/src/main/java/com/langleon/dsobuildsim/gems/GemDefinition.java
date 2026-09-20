@@ -7,6 +7,6 @@ import com.langleon.dsobuildsim.gems.enums.GemUpgradeType;
 
 import java.util.Map;
 
-public record GemDefinition(GemType gemType, GemUpgradeType gemUpgradeType, GemLimitGroup gemLimitGroup, StatType statType,
+public record GemDefinition(GemType gemType, GemUpgradeType gemUpgradeType, String name, GemLimitGroup gemLimitGroup, StatType statType,
                             Map<Integer, Double> statsPerTier) {
 }

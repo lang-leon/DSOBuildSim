@@ -1,0 +1,71 @@
+.structured-tooltip {
+  max-width: 480px;
+  min-width: 50px;
+  width: 100%;
+}
+
+.tooltip-name {
+  text-align: center;
+}
+
+.item-content {
+  align-items: left;
+}
+
+h2 {
+  text-align: left;
+  font-size: 18px;
+  color: #b2b2b2;
+  margin: 0;
+}
+
+.values {
+  width: 100%;
+  text-align: left;
+  white-space: pre-line;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.values.gems {
+  padding-bottom: 0;
+}
+
+.enchantments {
+  text-align: left;
+  white-space: pre-line;
+}
+
+.trinket-slots {
+  grid-template-columns: repeat(10, 32px);
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.trinket-slots img {
+  width: 32px;
+  height: 32px;
+
+  object-fit: cover;
+
+  border-radius: 2px;
+}
+
+.set-bonus {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  white-space: pre-line;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--color-set);
+}
+
+.set-bonus.disabled {
+  filter: grayscale(1);
+}
+
+.set-item.disabled {
+  filter: grayscale(1);
+}

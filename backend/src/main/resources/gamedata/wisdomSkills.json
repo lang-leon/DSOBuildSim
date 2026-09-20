@@ -1,5 +1,4 @@
 {
-  "wisdomSkills": {
     "RISING_VIGOR": {
       "wisdomSkillType":"RISING_VIGOR",
       "name": "Rising Vigor",
@@ -8,6 +7,7 @@
       "statType": "HEALTH_POINTS",
       "increasePerLevel": 3250.0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "VIVACIOUS_VITALITY": {
@@ -18,6 +18,7 @@
       "statType": "HEALTH_PER_SECOND",
       "increasePerLevel": 165.0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "CONJURED_DISTILLATION": {
@@ -28,6 +29,7 @@
       "statType": "MANA",
       "increasePerLevel": 1.0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "RISING_POWER": {
@@ -38,6 +40,7 @@
       "statType": "DAMAGE",
       "increasePerLevel": 75.0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "DECISIVE_STRIKE": {
@@ -48,6 +51,7 @@
       "statType": "CRIT_VALUE",
       "increasePerLevel": 845.0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "HANGMANS_PRIDE": {
@@ -58,6 +62,7 @@
       "statType": null,
       "increasePerLevel": 165.0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": false,
       "description": "Regenerates %f Health Points per final Blow"
     },
     "STURDY_SHIELD": {
@@ -68,6 +73,7 @@
       "statType": "BLOCK_VALUE",
       "increasePerLevel": 845.0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "HARD_AS_A_ROCK": {
@@ -78,6 +84,7 @@
       "statType": "ARMOR_VALUE",
       "increasePerLevel": 545.0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "ELEMENTAL_PROTECTION": {
@@ -88,6 +95,7 @@
       "statType": "RESISTANCE_VALUE",
       "increasePerLevel": 545.0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "SECOND_CHANCE": {
@@ -98,27 +106,30 @@
       "statType": null,
       "increasePerLevel": 0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": "Saves you from death if your Health Points drop to 0."
     },
-    "EMERGENCY_RESERVES": {
-      "wisdomSkillType": "EMERGENCY_RESERVES",
-      "name": "Emergency Reserves",
+    "CLASS_SKILL_1": {
+      "wisdomSkillType": "CLASS_SKILL_1",
+      "name": "Class Skill 1",
       "maxLevel": 1,
       "costPerLevel": 300,
       "statType": null,
       "increasePerLevel": 0,
       "firstLevelBonus": 0,
-      "description": "Regenerates 15 Resource Points whenever you get hit while your Health Points are below 33%"
+      "statValueAbsolute": true,
+      "description": "Adamant Wall (dk)\nEmergency Reserves (sw)\nReckless Haste (rn)\nClose to Turret (sm)"
     },
-    "ENERGETIC_FORCE": {
-      "wisdomSkillType": "ENERGETIC_FORCE",
-      "name": "Energetic Force",
+    "CLASS_SKILL_2": {
+      "wisdomSkillType": "CLASS_SKILL_2",
+      "name": "Class Skill 2",
       "maxLevel": 1,
       "costPerLevel": 300,
       "statType": null,
       "increasePerLevel": 0,
       "firstLevelBonus": 0,
-      "description": "Each critical hit grants the Energetic Force buff"
+      "statValueAbsolute": true,
+      "description": "Inurement (dk)\nEnergetic Force (sw)\nStrategic Advantage (rn)\nCompensation (sm)"
     },
     "DEXTROUS_SMITING": {
       "wisdomSkillType": "DEXTROUS_SMITING",
@@ -128,6 +139,7 @@
       "statType": "ONE_HAND_DAMAGE",
       "increasePerLevel": 100.0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "DEXTROUS_AGILITY": {
@@ -138,6 +150,7 @@
       "statType": "ONE_HAND_ATTACK_SPEED",
       "increasePerLevel": 0.01,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "A_HANDFUL_OF_RESOURCES": {
@@ -148,7 +161,8 @@
       "statType": null,
       "increasePerLevel": 0.0025,
       "firstLevelBonus": 0.01,
-      "description": "Each final blow with an one-handed weapon grants the A Handful of Resources buff"
+      "statValueAbsolute": false,
+      "description": "Each final blow with an one-handed weapon grants the A Handful of Resources buff\n\nA Handful of Resources buff:\n- %f Resource cost for all skills\n- Lasts for 2.0 seconds"
     },
     "AMBIDEXTROUS_SMITING": {
       "wisdomSkillType": "AMBIDEXTROUS_SMITING",
@@ -158,6 +172,7 @@
       "statType": "TWO_HAND_DAMAGE",
       "increasePerLevel": 200.0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "AMBIDEXTROUS_AGILITY": {
@@ -168,6 +183,7 @@
       "statType": "TWO_HAND_ATTACK_SPEED",
       "increasePerLevel": 0.005,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": ""
     },
     "LIFETIME_THIEF": {
@@ -178,7 +194,8 @@
       "statType": null,
       "increasePerLevel": 0.0025,
       "firstLevelBonus": 0.01,
-      "description": "Each final blow with a two-handed weapon reduces your active skill cool-down times by %f%"
+      "statValueAbsolute": false,
+      "description": "Each final blow with a two-handed weapon reduces your active skill cool-down times by %f"
     },
     "BONANZA": {
       "wisdomSkillType": "BONANZA",
@@ -188,6 +205,7 @@
       "statType": "COIN_DROP_BONUS",
       "increasePerLevel": 0.007,
       "firstLevelBonus": 0.01,
+      "statValueAbsolute": false,
       "description": ""
     },
     "PEDDLER": {
@@ -198,6 +216,7 @@
       "statType": null,
       "increasePerLevel": 0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": "Unlocks o portable shop window to sell your items wherever you are."
     },
     "PORTABLE_WORKBENCH": {
@@ -208,6 +227,7 @@
       "statType": null,
       "increasePerLevel": 0,
       "firstLevelBonus": 0,
+      "statValueAbsolute": true,
       "description": "Unlocks a portable workbench for crafting wherever you are."
     },
     "HOME_SWEET_HOME": {
@@ -218,7 +238,8 @@
       "statType": null,
       "increasePerLevel": 0.02,
       "firstLevelBonus": 0.01,
-      "description": "%f% less time to use the Urban Area Teleportation"
+      "statValueAbsolute": false,
+      "description": "%f less time to use the Urban Area Teleportation"
     },
     "ON_HORSEBACK": {
       "wisdomSkillType": "ON_HORSEBACK",
@@ -228,7 +249,8 @@
       "statType": null,
       "increasePerLevel": 0.02,
       "firstLevelBonus": 0.01,
-      "description": "%f% less time to summon mounts"
+      "statValueAbsolute": false,
+      "description": "%f less time to summon mounts"
     },
     "RACING_SLIPPERS": {
       "wisdomSkillType": "RACING_SLIPPERS",
@@ -238,7 +260,7 @@
       "statType": null,
       "increasePerLevel": 0.02,
       "firstLevelBonus": 0.01,
-      "description": "%f% movement speed in hubs"
+      "statValueAbsolute": false,
+      "description": "%f movement speed in hubs"
     }
-  }
 }

@@ -1,6 +1,6 @@
-import { StatType } from "../../enums/StatType";
+import { StatType } from '../../enums/StatType';
 
 export interface EnchantmentDTO {
-    statType: StatType;
-    value: number;
+  statType: StatType;
+  value: number;
 }

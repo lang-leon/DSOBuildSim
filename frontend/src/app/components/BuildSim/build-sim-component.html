@@ -1,596 +1,884 @@
 @if (character && gameData) {
   <div class="build-layout" [style.transform]="'scale(' + scale + ')'">
-  <div class="left-panel">
-    <div class="character-window">
-      <div class="character-header">
-        <div class="character-info">
-          <div class="character-title">
-            <h1>{{ character.name || 'Character' }}</h1>
+    <div class="left-panel">
+      <div class="character-window">
+        <div class="character-header">
+          <div class="character-info">
+            <div class="character-title">
+              <input type="text" [(ngModel)]="character.name" placeholder="Character" />
+            </div>
+            <div class="character-class">
+              <span> {{ getCharacterClassName(character.characterClass) }} </span>
+            </div>
           </div>
-          <div class="character-class">
-            <span> {{ getCharacterClassName(character.characterClass) }} </span>
-          </div>
+
+          <img class="character-class-image" [src]="getCharacterClassImage()" />
         </div>
 
-        <img class="character-class-image" [src]="getCharacterClassImage()" />
-      </div>
+        <div class="stats-container">
+          <section class="stats-section">
+            <h3 class="offensive-stats">Offensive Values:</h3>
 
-      <div class="stats-container">
-        <section class="stats-section">
-          <h3 class="offensive-stats">Offensive Values:</h3>
+            <div class="stat-row">
+              <span class="stat-name">Damage</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.DAMAGE] ?? 0 | number: '1.0-0'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Damage</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.DAMAGE] ?? 0 | number: '1.0-0'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Attacks per Second:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.ATTACK_SPEED] ?? 0 | number: '1.3-3'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Attacks per Second:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.ATTACK_SPEED] ?? 0 | number: '1.3-3'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Critical Value:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.CRIT_VALUE] ?? 0 | number: '1.0-0'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Critical Value:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.CRIT_VALUE] ?? 0 | number: '1.0-0'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Mana Points:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.MANA] ?? 0 | number: '1.0-0'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Mana Points:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.MANA] ?? 0 | number: '1.0-0'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Mana Regeneration:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.MANA_PER_SECOND] ?? 0 | number: '1.2-2'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Mana Regeneration:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.MANA_PER_SECOND] ?? 0 | number: '1.2-2'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Movement Speed:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.MOVEMENT_SPEED] ?? 0 | number: '1.3-3'
+              }}</span>
+            </div>
+          </section>
 
-          <div class="stat-row">
-            <span class="stat-name">Movement Speed:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.MOVEMENT_SPEED] ?? 0 | number: '1.3-3'
-            }}</span>
-          </div>
-        </section>
+          <section class="stats-section">
+            <h3>Defensive Values:</h3>
 
-        <section class="stats-section">
-          <h3>Defensive Values:</h3>
+            <div class="stat-row">
+              <span class="stat-name">Health Points:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.HEALTH_POINTS] ?? 0 | number: '1.0-0'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Health Points:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.HEALTH_POINTS] ?? 0 | number: '1.0-0'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Health Points Regeneration:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.HEALTH_PER_SECOND] ?? 0 | number: '1.2-2'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Health Points Regeneration:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.HEALTH_PER_SECOND] ?? 0 | number: '1.2-2'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Block Value:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.BLOCK_VALUE] ?? 0 | number: '1.0-0'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Block Value:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.BLOCK_VALUE] ?? 0 | number: '1.0-0'
-            }}</span>
-          </div>
+            <h4>Armor & Elemental Resistances</h4>
 
-          <h4>Armor & Elemental Resistances</h4>
+            <div class="stat-row">
+              <span class="stat-name">Armor:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.ARMOR_VALUE] ?? 0 | number: '1.0-0'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Armor:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.ARMOR_VALUE] ?? 0 | number: '1.0-0'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Fire:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.FIRE_RESISTANCE] ?? 0 | number: '1.0-0'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Fire:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.FIRE_RESISTANCE] ?? 0 | number: '1.0-0'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Ice:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.ICE_RESISTANCE] ?? 0 | number: '1.0-0'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Ice:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.ICE_RESISTANCE] ?? 0 | number: '1.0-0'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Lightning:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.LIGHTNING_RESISTANCE] ?? 0 | number: '1.0-0'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Lightning:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.LIGHTNING_RESISTANCE] ?? 0 | number: '1.0-0'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Andermagic:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.ANDERMAGIC_RESISTANCE] ?? 0 | number: '1.0-0'
+              }}</span>
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Andermagic:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.ANDERMAGIC_RESISTANCE] ?? 0 | number: '1.0-0'
-            }}</span>
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Poison:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value">{{
+                stats?.absoluteStats?.[StatType.POISON_RESISTANCE] ?? 0 | number: '1.0-0'
+              }}</span>
+            </div>
+          </section>
 
-          <div class="stat-row">
-            <span class="stat-name">Poison:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value">{{
-              stats?.absoluteStats?.[StatType.POISON_RESISTANCE] ?? 0 | number: '1.0-0'
-            }}</span>
-          </div>
-        </section>
+          <section class="stats-section">
+            <h3>Other Values:</h3>
 
-        <section class="stats-section">
-          <h3>Other Values:</h3>
+            <div class="stat-row">
+              <span class="stat-name">XP Gain:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value"
+                >{{ stats?.absoluteStats?.[StatType.XP_GAIN] ?? 0 | number: '1.0-0' }} %</span
+              >
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">XP Gain:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value"
-              >{{ stats?.absoluteStats?.[StatType.XP_GAIN] ?? 0 | number: '1.0-0' }} %</span
-            >
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Honor Gain:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value"
+                >{{ stats?.absoluteStats?.[StatType.HONOR_GAIN] ?? 0 | number: '1.0-0' }} %</span
+              >
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Honor Gain:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value"
-              >{{ stats?.absoluteStats?.[StatType.HONOR_GAIN] ?? 0 | number: '1.0-0' }} %</span
-            >
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Andermant Drop Bonus:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value"
+                >+{{
+                  stats?.absoluteStats?.[StatType.ANDERMANT_DROP_BONUS] ?? 0 | number: '1.0-0'
+                }}
+                %</span
+              >
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Andermant Drop Bonus:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value"
-              >+{{
-                stats?.absoluteStats?.[StatType.ANDERMANT_DROP_BONUS] ?? 0 | number: '1.0-0'
-              }}
-              %</span
-            >
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Coin Drop Bonus:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value"
+                >+{{
+                  stats?.absoluteStats?.[StatType.COIN_DROP_BONUS] ?? 0 | number: '1.0-0'
+                }}
+                %</span
+              >
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Coin Drop Bonus:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value"
-              >+{{
-                stats?.absoluteStats?.[StatType.COIN_DROP_BONUS] ?? 0 | number: '1.0-0'
-              }}
-              %</span
-            >
-          </div>
+            <div class="stat-row">
+              <span class="stat-name">Wisdom Drop Bonus:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value"
+                >+{{
+                  stats?.absoluteStats?.[StatType.ANCIENT_WISDOM_DROP_BONUS] ?? 0 | number: '1.0-0'
+                }}
+                %</span
+              >
+            </div>
 
-          <div class="stat-row">
-            <span class="stat-name">Wisdom Drop Bonus:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value"
-              >+{{
-                stats?.absoluteStats?.[StatType.ANCIENT_WISDOM_DROP_BONUS] ?? 0 | number: '1.0-0'
-              }}
-              %</span
-            >
-          </div>
-
-          <div class="stat-row">
-            <span class="stat-name">Materi Fragment Drop Bonus:</span>
-            <span class="stat-info"></span>
-            <span class="stat-value"
-              >+{{
-                stats?.absoluteStats?.[StatType.MATERI_FRAGMENT_DROP_BONUS] ?? 0 | number: '1.0-0'
-              }}
-              %</span
-            >
-          </div>
-        </section>
+            <div class="stat-row">
+              <span class="stat-name">Materi Fragment Drop Bonus:</span>
+              <span class="stat-info"></span>
+              <span class="stat-value"
+                >+{{
+                  stats?.absoluteStats?.[StatType.MATERI_FRAGMENT_DROP_BONUS] ?? 0 | number: '1.0-0'
+                }}
+                %</span
+              >
+            </div>
+          </section>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="middle-panel">
-    <div class="utility-panel">
-      <!-- Change class-->
-      <div class="reset-character">
-        <button (click)="openChangeClassWindow()">
-          <img src="utility-icons/change-class.png" />
-          <span class="tooltip">Change Character Class</span>
-        </button>
-      </div>
+    <div class="middle-panel">
+      <div class="utility-panel">
+        <!-- Change class-->
+        <div class="reset-character">
+          <button (click)="openChangeClassWindow()">
+            <img src="utility-icons/change-class.png" />
+            <span class="tooltip">Change Character Class</span>
+          </button>
+        </div>
 
-      <!-- Reset -->
-      <div class="reset-character">
-        <button (click)="resetCharacter()" [disabled]="isDefaultCharacter()">
-          <img src="utility-icons/reset-character.png" />
-          <span class="tooltip">Reset Character</span>
-        </button>
-      </div>
+        <!-- Reset -->
+        <div class="reset-character">
+          <button (click)="resetCharacter()" [disabled]="isDefaultCharacter()">
+            <img src="utility-icons/reset-character.png" />
+            <span class="tooltip">Reset Character</span>
+          </button>
+        </div>
 
-      <!-- Import / Export -->
-      <div class="import-export">
-        <button (click)="openFilePicker()" class="import-export-button">
-          <img src="utility-icons/upload.png" />
-          <span class="tooltip">Import Character</span>
-        </button>
+        <!-- Import / Export -->
+        <div class="import-export">
+          <button (click)="openFilePicker()" class="import-export-button">
+            <img src="utility-icons/upload.png" />
+            <span class="tooltip">Upload Character</span>
+          </button>
 
-        <button
-          (click)="downloadCharacter()"
-          class="import-export-button"
-          [disabled]="isDefaultCharacter()"
-        >
-          <img src="utility-icons/download.png" />
-          <span class="tooltip">Export Character</span>
-        </button>
+          <button
+            (click)="downloadCharacter()"
+            class="import-export-button"
+            [disabled]="isDefaultCharacter()"
+          >
+            <img src="utility-icons/download.png" />
+            <span class="tooltip">Download Character</span>
+          </button>
 
-        <input #fileInput type="file" accept=".json" hidden (change)="onFileSelected($event)" />
+          <input #fileInput type="file" accept=".json" hidden (change)="onFileSelected($event)" />
+        </div>
       </div>
     </div>
-  </div>
-  <div class="right-panel">
-    <div class="inventory-window">
-      <div class="inventory-header">
-        <div class="inventory-header-button">
-          <button>Character</button>
+    <div class="right-panel">
+      <div class="inventory-window">
+        <div class="inventory-header">
+          <div class="inventory-header-button">
+            <button
+              [disabled]="!showShadowSoulEquipment"
+              (click)="showShadowSoulEquipment = !showShadowSoulEquipment"
+            >
+              Character
+            </button>
+          </div>
+          <div class="inventory-header-button">
+            <button
+              [disabled]="showShadowSoulEquipment"
+              (click)="showShadowSoulEquipment = !showShadowSoulEquipment"
+            >
+              Soul Companion
+            </button>
+          </div>
         </div>
-        <div class="inventory-header-button">
-          <button>Soul Companion</button>
-        </div>
-      </div>
-      <div class="equipment-grid">
-        <app-build-sim-button
-          class="amulet"
-          slotName="Amulet"
-          icon="inventory-icons/amulet.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="cloak"
-          slotName="Cloak"
-          icon="inventory-icons/cloak.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="belt"
-          slotName="Belt"
-          icon="inventory-icons/belt.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="ring1"
-          slotName="Ring 1"
-          icon="inventory-icons/ring.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="ring2"
-          slotName="Ring 2"
-          icon="inventory-icons/ring.png"
-        ></app-build-sim-button>
+        @if (!showShadowSoulEquipment) {
+          <div class="equipment-grid">
+            <app-build-sim-button
+              class="amulet"
+              [slotName]="getItemName(ItemSlot.AMULET, 'Amulet')"
+              [icon]="getItemIcon(ItemSlot.AMULET)"
+              [item]="character.items[ItemSlot.AMULET]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.AMULET)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="cloak"
+              [slotName]="getItemName(ItemSlot.CLOAK, 'Cloak')"
+              [icon]="getItemIcon(ItemSlot.CLOAK)"
+              [item]="character.items[ItemSlot.CLOAK]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.CLOAK)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="belt"
+              [slotName]="getItemName(ItemSlot.BELT, 'Belt')"
+              [icon]="getItemIcon(ItemSlot.BELT)"
+              [item]="character.items[ItemSlot.BELT]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.BELT)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="ring1"
+              [slotName]="getItemName(ItemSlot.RING1, 'Ring 1')"
+              [icon]="getItemIcon(ItemSlot.RING1)"
+              [item]="character.items[ItemSlot.RING1]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.RING1)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="ring2"
+              [slotName]="getItemName(ItemSlot.RING2, 'Ring 2')"
+              [icon]="getItemIcon(ItemSlot.RING2)"
+              [item]="character.items[ItemSlot.RING2]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.RING2)"
+            ></app-build-sim-button>
 
-        <app-build-sim-button
-          class="helmet"
-          slotName="Helmet"
-          icon="inventory-icons/helmet.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="shoulders"
-          slotName="Shoulders"
-          icon="inventory-icons/shoulders.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="torso"
-          slotName="Torso"
-          icon="inventory-icons/torso.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="gloves"
-          slotName="Gloves"
-          icon="inventory-icons/gloves.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="boots"
-          slotName="Boots"
-          icon="inventory-icons/boots.png"
-        ></app-build-sim-button>
+            <app-build-sim-button
+              class="helmet"
+              [slotName]="getItemName(ItemSlot.HELMET, 'Helmet')"
+              [icon]="getItemIcon(ItemSlot.HELMET)"
+              [item]="character.items[ItemSlot.HELMET]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.HELMET)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="shoulders"
+              [slotName]="getItemName(ItemSlot.SHOULDERS, 'Shoulders')"
+              [icon]="getItemIcon(ItemSlot.SHOULDERS)"
+              [item]="character.items[ItemSlot.SHOULDERS]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.SHOULDERS)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="torso"
+              [slotName]="getItemName(ItemSlot.TORSO, 'Torso')"
+              [icon]="getItemIcon(ItemSlot.TORSO)"
+              [item]="character.items[ItemSlot.TORSO]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.TORSO)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="gloves"
+              [slotName]="getItemName(ItemSlot.GLOVES, 'Gloves')"
+              [icon]="getItemIcon(ItemSlot.GLOVES)"
+              [item]="character.items[ItemSlot.GLOVES]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.GLOVES)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="boots"
+              [slotName]="getItemName(ItemSlot.BOOTS, 'Boots')"
+              [icon]="getItemIcon(ItemSlot.BOOTS)"
+              [item]="character.items[ItemSlot.BOOTS]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.BOOTS)"
+            ></app-build-sim-button>
 
-        <app-build-sim-button
-          class="adornment"
-          slotName="Weapon Adornment"
-          icon="inventory-icons/weapon-adornment.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="main-hand"
-          slotName="Main Hand"
-          [icon]="getMainHandIcon()"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="off-hand"
-          slotName="Off Hand"
-          [icon]="getOffHandIcon()"
-        ></app-build-sim-button>
-      </div>
-
-      <div class="selection-grid">
-        <app-build-sim-button
-          class="rune-trinket1"
-          slotName="Rune Trinket 1"
-          icon="inventory-icons/rune-trinket.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="rune-trinket2"
-          slotName="Rune Trinket 2"
-          icon="inventory-icons/rune-trinket.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="rune-trinket3"
-          slotName="Rune Trinket 3"
-          icon="inventory-icons/rune-trinket.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="rune-trinket4"
-          slotName="Rune Trinket 4"
-          icon="inventory-icons/rune-trinket.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="rune-trinket5"
-          slotName="Rune Trinket 5"
-          icon="inventory-icons/rune-trinket.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="rune-trinket6"
-          slotName="Rune Trinket 6"
-          icon="inventory-icons/rune-trinket.png"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="rune-trinket7"
-          slotName="Rune Trinket 7"
-          icon="inventory-icons/rune-trinket.png"
-        ></app-build-sim-button>
-
-        <app-build-sim-button
-          class="jewel-trinket1"
-          slotName="Jewel Trinket 1"
-          icon="inventory-icons/jewel-trinket.png"
-          (clicked)="openJewelTrinketEditor(0)"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="jewel-trinket2"
-          slotName="Jewel Trinket 2"
-          icon="inventory-icons/jewel-trinket.png"
-          (clicked)="openJewelTrinketEditor(1)"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="jewel-trinket3"
-          slotName="Jewel Trinket 3"
-          icon="inventory-icons/jewel-trinket.png"
-          (clicked)="openJewelTrinketEditor(2)"
-        ></app-build-sim-button>
-
-        <app-build-sim-button
-          class="dragon-crest-trinket"
-          slotName="Dragon Crest"
-          icon="inventory-icons/dragon-crest.png"
-          (clicked)="openDragonCrestEditor()"
-        ></app-build-sim-button>
-
-        <app-build-sim-button
-          class="pet"
-          [slotName]="character.pet ? 'Pet: ' + formatStatName(character.pet.petType) : 'Pet: None'"
-          [icon]="getPetIcon()"
-          (clicked)="openPetSelector()"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="essence"
-          [slotName]="
-            character.essence
-              ? 'Essence: ' + formatStatName(character.essence.essenceType)
-              : 'Essence: None'
-          "
-          [icon]="getEssenceIcon()"
-          (clicked)="openEssenceSelector()"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="tonic"
-          [slotName]="
-            character.tonic ? 'Tonic: ' + formatStatName(character.tonic.type) : 'Tonic: None'
-          "
-          [icon]="getTonicIcon()"
-          (clicked)="openTonicSelector()"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="physic"
-          [slotName]="
-            character.physic ? 'Physic: ' + formatStatName(character.physic.type) : 'Physic: None'
-          "
-          [icon]="getPhysicIcon()"
-          (clicked)="openPhysicSelector()"
-        ></app-build-sim-button>
-        <app-build-sim-button
-          class="collector-bag"
-          slotName="Collector-Bag"
-          icon="inventory-icons/collector-bag.png"
-          (clicked)="openCollectorBagSelector()"
-        ></app-build-sim-button>
-
-        <app-build-sim-button
-          class="wisdom-skill-tree"
-          slotName="Wisdom Skill Tree"
-          icon="inventory-icons/wisdom-skill-tree.png"
-        ></app-build-sim-button>
-        @if (character.characterClass === CharacterClass.DRAGONKNIGHT) {
-          <app-build-sim-button
-            class="class-skill1"
-            slotName="Immovable Wall"
-            [overlayText]="character.classSkillLevel > 0 && character.classSkillType === ClassSkillType.IMMOVEABLE_WALL ? character.classSkillLevel + '/5' : '0/5'"
-            [icon]="getClassSkillIcon(ClassSkillType.IMMOVEABLE_WALL)"
-            (clicked)="onClassSkillClick(ClassSkillType.IMMOVEABLE_WALL)"
-            (contextmenu)="onClassSkillRightClick($event, ClassSkillType.IMMOVEABLE_WALL)"
-          ></app-build-sim-button>
-          <app-build-sim-button
-            class="class-skill2"
-            slotName="Quick Striker"
-            [overlayText]="character.classSkillLevel > 0 && character.classSkillType === ClassSkillType.QUICK_STRIKER ? character.classSkillLevel + '/5' : '0/5'"
-            [icon]="getClassSkillIcon(ClassSkillType.QUICK_STRIKER)"
-            (clicked)="onClassSkillClick(ClassSkillType.QUICK_STRIKER)"
-            (contextmenu)="onClassSkillRightClick($event, ClassSkillType.QUICK_STRIKER)"
-          ></app-build-sim-button>
+            <app-build-sim-button
+              class="adornment"
+              [slotName]="getItemName(ItemSlot.WEAPON_ADORNMENT, 'Weapon Adornment')"
+              [icon]="getItemIcon(ItemSlot.WEAPON_ADORNMENT)"
+              [item]="character.items[ItemSlot.WEAPON_ADORNMENT]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.WEAPON_ADORNMENT)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="main-hand"
+              [slotName]="getItemName(ItemSlot.MAIN_HAND, 'Main Hand')"
+              [icon]="getMainHandIcon()"
+              [item]="character.items[ItemSlot.MAIN_HAND]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.MAIN_HAND)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="off-hand"
+              [slotName]="getItemName(ItemSlot.OFF_HAND, 'Off Hand')"
+              [icon]="getOffHandIcon()"
+              [item]="
+                hasTwoHand()
+                  ? character.items[ItemSlot.MAIN_HAND]
+                  : character.items[ItemSlot.OFF_HAND]
+              "
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.OFF_HAND)"
+            ></app-build-sim-button>
+          </div>
         }
-        @if (character.characterClass === CharacterClass.SPELLWEAVER) {
-          <app-build-sim-button
-            class="class-skill3"
-            slotName="Bloodmage"
-            [icon]="getClassSkillIcon(ClassSkillType.BLOODMAGE)"
-            [overlayText]="character.classSkillLevel > 0 ? character.classSkillLevel + '/5' : '0/5'"
-            (clicked)="onClassSkillClick(ClassSkillType.BLOODMAGE)"
-            (contextmenu)="onClassSkillRightClick($event, ClassSkillType.BLOODMAGE)"
-          ></app-build-sim-button>
+        @if (showShadowSoulEquipment) {
+          <div class="equipment-grid">
+            <app-build-sim-button
+              class="amulet"
+              [slotName]="getItemName(ItemSlot.SOUL_COMPANION_AMULET, 'Amulet (Shadow Soul)')"
+              [icon]="getItemIcon(ItemSlot.SOUL_COMPANION_AMULET)"
+              [item]="character.items[ItemSlot.SOUL_COMPANION_AMULET]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.SOUL_COMPANION_AMULET)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="cloak"
+              [slotName]="getItemName(ItemSlot.SOUL_COMPANION_CLOAK, 'Cloak (Shadow Soul)')"
+              [icon]="getItemIcon(ItemSlot.SOUL_COMPANION_CLOAK)"
+              [item]="character.items[ItemSlot.SOUL_COMPANION_CLOAK]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.SOUL_COMPANION_CLOAK)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="belt"
+              [slotName]="getItemName(ItemSlot.SOUL_COMPANION_BELT, 'Belt (Shadow Soul)')"
+              [icon]="getItemIcon(ItemSlot.SOUL_COMPANION_BELT)"
+              [item]="character.items[ItemSlot.SOUL_COMPANION_BELT]"
+              [equippedItems]="character.items"
+              [equippedSets]="getEquippedSets(ItemSlot.NONE)"
+              [itemConfig]="gameData.items[character.characterClass]"
+              [setConfig]="gameData.sets[character.characterClass]"
+              [gemConfig]="gameData.gems"
+              (clicked)="openItemEditor(ItemSlot.SOUL_COMPANION_BELT)"
+            ></app-build-sim-button>
+          </div>
         }
-        <app-build-sim-button
-          class="mastery"
-          [slotName]="'Mastery: ' + formatStatName(character.masteryType)"
-          [icon]="getMasteryIcon()"
-          [overlayText]="character.masteryLevel > 0 ? character.masteryLevel + '/10' : '0/10'"
-          (clicked)="openMasterySelector()"
-        ></app-build-sim-button>
+
+        <div class="selection-grid">
+          <app-build-sim-button
+            class="rune-trinket1"
+            slotName="Rune Trinket 1"
+            icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[0]"
+            [runeConfig]="gameData.runes"
+            (clicked)="openRuneTrinketEditor(0)"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="rune-trinket2"
+            slotName="Rune Trinket 2"
+            icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[1]"
+            [runeConfig]="gameData.runes"
+            (clicked)="openRuneTrinketEditor(1)"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="rune-trinket3"
+            slotName="Rune Trinket 3"
+            icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[2]"
+            [runeConfig]="gameData.runes"
+            (clicked)="openRuneTrinketEditor(2)"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="rune-trinket4"
+            slotName="Rune Trinket 4"
+            icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[3]"
+            [runeConfig]="gameData.runes"
+            (clicked)="openRuneTrinketEditor(3)"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="rune-trinket5"
+            slotName="Rune Trinket 5"
+            icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[4]"
+            [runeConfig]="gameData.runes"
+            (clicked)="openRuneTrinketEditor(4)"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="rune-trinket6"
+            slotName="Rune Trinket 6"
+            icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[5]"
+            [runeConfig]="gameData.runes"
+            (clicked)="openRuneTrinketEditor(5)"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="rune-trinket7"
+            slotName="Rune Trinket 7"
+            icon="inventory-icons/rune-trinket.png"
+            [runeTrinket]="character.runeTrinkets[6]"
+            [runeConfig]="gameData.runes"
+            (clicked)="openRuneTrinketEditor(6)"
+          ></app-build-sim-button>
+
+          <app-build-sim-button
+            class="jewel-trinket1"
+            slotName="Jewel Trinket 1"
+            icon="inventory-icons/jewel-trinket.png"
+            [jewelTrinket]="character.jewelTrinkets[0]"
+            [jewelConfig]="gameData.jewels[character.characterClass]"
+            (clicked)="openJewelTrinketEditor(0)"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="jewel-trinket2"
+            slotName="Jewel Trinket 2"
+            icon="inventory-icons/jewel-trinket.png"
+            [jewelTrinket]="character.jewelTrinkets[1]"
+            [jewelConfig]="gameData.jewels[character.characterClass]"
+            (clicked)="openJewelTrinketEditor(1)"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="jewel-trinket3"
+            slotName="Jewel Trinket 3"
+            icon="inventory-icons/jewel-trinket.png"
+            [jewelTrinket]="character.jewelTrinkets[2]"
+            [jewelConfig]="gameData.jewels[character.characterClass]"
+            (clicked)="openJewelTrinketEditor(2)"
+          ></app-build-sim-button>
+
+          <app-build-sim-button
+            class="dragon-crest-trinket"
+            slotName="Dragon Crest"
+            icon="inventory-icons/dragon-crest.png"
+            [dragonCrestTrinket]="character.dragonCrest"
+            [dragonStoneConfig]="gameData.dragonStones"
+            (clicked)="openDragonCrestEditor()"
+          ></app-build-sim-button>
+
+          <app-build-sim-button
+            class="pet"
+            slotName="Pet: None"
+            [tooltipTitle]="petService.getPetInstanceName(character.pet)"
+            [tooltipDescription]="petService.getPetInstanceDescription(character.pet)"
+            [tooltipTitleClass]="character.pet !== null ? getTierName(character.pet.tier) : ''"
+            [icon]="'inventory-icons/' + getInventoryIcon('pet', character.pet?.tier)"
+            (clicked)="openPetSelector()"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="essence"
+            slotName="Essence: None"
+            [tooltipTitle]="essenceService.getEssenceInstanceName(character.essence)"
+            [tooltipDescription]="essenceService.getEssenceInstanceDescription(character.essence)"
+            [tooltipTitleClass]="
+              character.essence !== null ? getTierName(character.essence.tier) : ''
+            "
+            [icon]="'inventory-icons/' + getInventoryIcon('essence', character.essence?.tier)"
+            (clicked)="openEssenceSelector()"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="tonic"
+            slotName="Tonic: None"
+            [tooltipTitle]="buffService.getTonicInstanceName(character.tonic)"
+            [tooltipDescription]="buffService.getTonicInstanceDescription(character.tonic)"
+            [tooltipTitleClass]="character.tonic !== null ? getTierName(character.tonic.tier) : ''"
+            [icon]="'inventory-icons/' + getInventoryIcon('tonic', character.tonic?.tier)"
+            (clicked)="openTonicSelector()"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="physic"
+            slotName="Physic: None"
+            [tooltipTitle]="buffService.getPhysicInstanceName(character.physic)"
+            [tooltipDescription]="buffService.getPhysicInstanceDescription(character.physic)"
+            [tooltipTitleClass]="
+              character.physic !== null ? getTierName(character.physic.tier) : ''
+            "
+            [icon]="'inventory-icons/' + getInventoryIcon('physic', character.physic?.tier)"
+            (clicked)="openPhysicSelector()"
+          ></app-build-sim-button>
+          <app-build-sim-button
+            class="collector-bag"
+            slotName="Collector-Bag"
+            icon="inventory-icons/collector-bag.png"
+            (clicked)="openCollectorBagSelector()"
+          ></app-build-sim-button>
+
+          <app-build-sim-button
+            class="wisdom-skill-tree"
+            slotName="Wisdom Skill Tree"
+            icon="inventory-icons/wisdom-skill-tree.png"
+            (clicked)="openWisdomSkillTreeEditor()"
+          ></app-build-sim-button>
+          @if (character.characterClass === CharacterClass.DRAGONKNIGHT) {
+            <app-build-sim-button
+              class="class-skill1"
+              slotName="Immovable Wall"
+              [tooltipTitle]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.IMMOVEABLE_WALL
+                  ? 'Immovable Wall'
+                  : ''
+              "
+              [tooltipDescription]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.IMMOVEABLE_WALL
+                  ? formatStatValueRelative(0.5 + (character.classSkillLevel - 1) * 0.05, 2) +
+                    ' Armor Value'
+                  : ''
+              "
+              [overlayText]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.IMMOVEABLE_WALL
+                  ? character.classSkillLevel + '/5'
+                  : '0/5'
+              "
+              [icon]="getClassSkillIcon(ClassSkillType.IMMOVEABLE_WALL)"
+              (clicked)="onClassSkillClick(ClassSkillType.IMMOVEABLE_WALL)"
+              (contextmenu)="onClassSkillRightClick($event, ClassSkillType.IMMOVEABLE_WALL)"
+            ></app-build-sim-button>
+            <app-build-sim-button
+              class="class-skill2"
+              slotName="Quick Striker"
+              [tooltipTitle]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.QUICK_STRIKER
+                  ? 'Quick Striker'
+                  : ''
+              "
+              [tooltipDescription]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.QUICK_STRIKER
+                  ? formatStatValueRelative(0.3 + (character.classSkillLevel - 1) * 0.05, 2) +
+                    ' Attack Speed'
+                  : ''
+              "
+              [overlayText]="
+                character.classSkillLevel > 0 &&
+                character.classSkillType === ClassSkillType.QUICK_STRIKER
+                  ? character.classSkillLevel + '/5'
+                  : '0/5'
+              "
+              [icon]="getClassSkillIcon(ClassSkillType.QUICK_STRIKER)"
+              (clicked)="onClassSkillClick(ClassSkillType.QUICK_STRIKER)"
+              (contextmenu)="onClassSkillRightClick($event, ClassSkillType.QUICK_STRIKER)"
+            ></app-build-sim-button>
+          }
+          @if (character.characterClass === CharacterClass.SPELLWEAVER) {
+            <app-build-sim-button
+              class="class-skill3"
+              slotName="Bloodmage"
+              [tooltipTitle]="character.classSkillLevel > 0 ? 'Bloodmage' : ''"
+              [tooltipDescription]="
+                character.classSkillLevel > 0
+                  ? formatStatValueRelative(0.3 + (character.classSkillLevel - 1) * 0.05, 2) +
+                    ' Damage'
+                  : ''
+              "
+              [icon]="getClassSkillIcon(ClassSkillType.BLOODMAGE)"
+              [overlayText]="
+                character.classSkillLevel > 0 ? character.classSkillLevel + '/5' : '0/5'
+              "
+              (clicked)="onClassSkillClick(ClassSkillType.BLOODMAGE)"
+              (contextmenu)="onClassSkillRightClick($event, ClassSkillType.BLOODMAGE)"
+            ></app-build-sim-button>
+          }
+          <app-build-sim-button
+            class="mastery"
+            [slotName]="'Mastery: ' + formatStatName(character.masteryType)"
+            [tooltipTitle]="
+              character.masteryType !== MasteryType.NONE
+                ? formatStatName(character.masteryType) + ' Mastery'
+                : ''
+            "
+            [tooltipTitleClass]="
+              character.masteryType !== MasteryType.NONE ? character.masteryType.toLowerCase() : ''
+            "
+            [tooltipDescription]="
+              getMasteryDescription(character.masteryType, character.masteryLevel)
+            "
+            [icon]="getMasteryIcon()"
+            [overlayText]="character.masteryLevel > 0 ? character.masteryLevel + '/10' : '0/10'"
+            (clicked)="openMasterySelector()"
+          ></app-build-sim-button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-@if (showResetConfirmation) {
-  <app-confirmation-window
-    [scale]="scale"
-    title="Reset Character?"
-    message="Are you sure you want to reset your character?"
-    warning="All current changes will be lost!"
-    (confirmed)="confirmResetCharacter()"
-    (cancelled)="cancelResetCharacter()"
-  />
-}
+  @if (showResetConfirmation) {
+    <app-confirmation-window
+      [scale]="scale"
+      title="Reset Character?"
+      message="Are you sure you want to reset your character?"
+      warning="All current changes will be lost!"
+      (confirmed)="confirmResetCharacter()"
+      (cancelled)="cancelResetCharacter()"
+    />
+  }
 
-@if (showClassChangeScreen) {
-  <app-class-change-window
-    [scale]="scale"
-    (cancelled)="cancelClassChange()"
-    (classSelected)="changeClass($event)"
-  />
-}
+  @if (showClassChangeScreen) {
+    <app-class-change-window
+      [scale]="scale"
+      (cancelled)="cancelClassChange()"
+      (classSelected)="changeClass($event)"
+    />
+  }
 
-@if (slowClassChangeConfirmation) {
-  <app-confirmation-window
-    [scale]="scale"
-    title="Change Character Class?"
-    message="Are you sure you want to change your character class?"
-    warning="All current changes will be lost!"
-    (confirmed)="confirmClassChange()"
-    (cancelled)="cancelClassChange()"
-  />
-}
+  @if (slowClassChangeConfirmation) {
+    <app-confirmation-window
+      [scale]="scale"
+      title="Change Character Class?"
+      message="Are you sure you want to change your character class?"
+      warning="All current changes will be lost!"
+      (confirmed)="confirmClassChange()"
+      (cancelled)="cancelClassChange()"
+    />
+  }
 
-@if (showPetSelector) {
-  <app-pet-selector
-  [scale]="scale"
-    [pets]="gameData.pets"
-    [character]="character"
-    (cancelled)="closePetSelector()"
-    (confirmed)="confirmPetSelection($event)"
-  >
-  </app-pet-selector>
-}
+  @if (showPetSelector) {
+    <app-pet-selector
+      [scale]="scale"
+      [petConfig]="gameData.pets"
+      [pet]="character.pet"
+      (cancelled)="closePetSelector()"
+      (confirmed)="confirmPetSelection($event)"
+    >
+    </app-pet-selector>
+  }
 
-@if (showEssenceSelector) {
-  <app-essence-selector
-  [scale]="scale"
-    [essences]="gameData.essences"
-    [character]="character"
-    (cancelled)="closeEssenceSelector()"
-    (confirmed)="confirmEssenceSelection($event)"
-  >
-  </app-essence-selector>
-}
+  @if (showEssenceSelector) {
+    <app-essence-selector
+      [scale]="scale"
+      [essenceConfig]="gameData.essences"
+      [essence]="character.essence"
+      (cancelled)="closeEssenceSelector()"
+      (confirmed)="confirmEssenceSelection($event)"
+    >
+    </app-essence-selector>
+  }
 
-@if (showPhysicSelector) {
-  <app-buff-selector
-  [scale]="scale"
-    [buffs]="gameData.physics"
-    [character]="character"
-    [buffCategory]="BuffCategory.PHYSIC"
-    (cancelled)="closePhysicSelector()"
-    (confirmed)="confirmPhysicSelection($event)"
-  >
-  </app-buff-selector>
-}
+  @if (showPhysicSelector) {
+    <app-buff-selector
+      [scale]="scale"
+      [buffConfig]="gameData.physics"
+      [buff]="character.physic"
+      [buffCategory]="BuffCategory.PHYSIC"
+      (cancelled)="closePhysicSelector()"
+      (confirmed)="confirmPhysicSelection($event)"
+    >
+    </app-buff-selector>
+  }
 
-@if (showTonicSelector) {
-  <app-buff-selector
-    [scale]="scale"
-    [buffs]="gameData.tonics"
-    [character]="character"
-    [buffCategory]="BuffCategory.TONIC"
-    (cancelled)="closeTonicSelector()"
-    (confirmed)="confirmTonicSelection($event)"
-  >
-  </app-buff-selector>
-}
+  @if (showTonicSelector) {
+    <app-buff-selector
+      [scale]="scale"
+      [buffConfig]="gameData.tonics"
+      [buff]="character.tonic"
+      [buffCategory]="BuffCategory.TONIC"
+      (cancelled)="closeTonicSelector()"
+      (confirmed)="confirmTonicSelection($event)"
+    >
+    </app-buff-selector>
+  }
 
-@if (showMasterySelector) {
-  <app-mastery-selector
-    [scale]="scale"
-    [character]="character"
-    (cancelled)="closeMasterySelector()"
-    (confirmed)="confirmMasterySelection($event)">
-  </app-mastery-selector>
-}
+  @if (showMasterySelector) {
+    <app-mastery-selector
+      [scale]="scale"
+      [character]="character"
+      (cancelled)="closeMasterySelector()"
+      (confirmed)="confirmMasterySelection($event)"
+    >
+    </app-mastery-selector>
+  }
 
-@if (showCollectorBagSelector) {
-  <app-collector-bag-selector
-  [scale]="scale"
-  [character]="character"
-  [categoryBonuses]="gameData.collectorBagBuffs"
-  (cancelled)="closeCollectorBagSelector()"
-  (confirmed)="confirmCollectorBagSelection($event)">
-  </app-collector-bag-selector>
-}
+  @if (showCollectorBagSelector) {
+    <app-collector-bag-selector
+      [scale]="scale"
+      [character]="character"
+      [categoryBonuses]="gameData.collectorBagBuffs"
+      (cancelled)="closeCollectorBagSelector()"
+      (confirmed)="confirmCollectorBagSelection($event)"
+    >
+    </app-collector-bag-selector>
+  }
 
-@if (showDragonCrest) {
-  <app-dragoncrest-trinket-editor
-  [scale]="scale"
-  [character]="character"
-  [dragonStoneConfig]="gameData.dragonStones"
-  (cancelled)="closeDragonCrestEditor()"
-  (confirmed)="confirmDragonCrestSelection($event)">
-  </app-dragoncrest-trinket-editor>
-}
+  @if (showDragonCrest) {
+    <app-dragoncrest-trinket-editor
+      [scale]="scale"
+      [dragonCrest]="character.dragonCrest"
+      [dragonStoneConfig]="gameData.dragonStones"
+      (cancelled)="closeDragonCrestEditor()"
+      (confirmed)="confirmDragonCrestSelection($event)"
+    >
+    </app-dragoncrest-trinket-editor>
+  }
 
-@if (showJewelTrinket) {
-  <app-jewel-trinket-editor
-  [scale]="scale"
-  [jewelTrinket]="character.jewelTrinkets[selectedJewelTrinket]"
-  [jewelConfig]="gameData.jewels[character.characterClass]"
-  [canAddJewel]="canAddJewel.bind(this)"
-  (cancelled)="closeJewelTrinketEditor()"
-  (confirmed)="confirmJewelTrinketSelection($event)">
-  </app-jewel-trinket-editor>
-}
+  @if (showJewelTrinket) {
+    <app-jewel-trinket-editor
+      [scale]="scale"
+      [jewelTrinket]="character.jewelTrinkets[selectedJewelTrinket]"
+      [jewelConfig]="gameData.jewels[character.characterClass]"
+      [canAddJewel]="canAddJewel.bind(this)"
+      (cancelled)="closeJewelTrinketEditor()"
+      (confirmed)="confirmJewelTrinketSelection($event)"
+    >
+    </app-jewel-trinket-editor>
+  }
 
+  @if (showRuneTrinket) {
+    <app-rune-trinket-editor
+      [scale]="scale"
+      [runeTrinket]="character.runeTrinkets[selectedRuneTrinket]"
+      [runeConfig]="gameData.runes"
+      [canAddRune]="canAddRune.bind(this)"
+      (cancelled)="closeRuneTrinketEditor()"
+      (confirmed)="confirmRuneTrinketSelection($event)"
+    >
+    </app-rune-trinket-editor>
+  }
+
+  @if (showWisdomSkillTreeEditor) {
+    <app-wisdom-skilltree
+      [scale]="scale"
+      [characterClass]="character.characterClass"
+      [wisdomSkills]="character.wisdomSkills"
+      [wisdomSkillDefs]="gameData.wisdomSkills"
+      [wisdomGroupDefs]="gameData.wisdomGroups"
+      (cancelled)="closeWisdomSkillTreeEditor()"
+      (confirmed)="confirmWisdomSkillTreeSelection($event)"
+    >
+    </app-wisdom-skilltree>
+  }
+
+  @if (showItemEditor) {
+    <app-item-editor
+      [scale]="scale"
+      [item]="character.items[selectedItemSlot]"
+      [slot]="selectedItemSlot"
+      [equippedSets]="getEquippedSets(selectedItemSlot)"
+      [equippedItems]="getEquippedItems(selectedItemSlot)"
+      [itemConfig]="getItemsForSlot(selectedItemSlot)"
+      [fullItemConfig]="gameData.items[character.characterClass]"
+      [setConfig]="gameData.sets[character.characterClass]"
+      [levelMultiplierTable]="gameData.levelMultiplierTable"
+      [gemConfig]="gameData.gems"
+      [enchantmentConfig]="gameData.enchantments"
+      [canAddGem]="canAddGem.bind(this)"
+      (cancelled)="closeItemEditor()"
+      (confirmed)="confirmItemSelection($event)"
+    ></app-item-editor>
+  }
 }

@@ -1,28 +1,24 @@
-<div class="buff-selection-overlay" [style.--popup-scale]="scale">
-  <div class="buff-selection-window scaled-popup-window">
-    <h1>Select {{formatStatName(buffCategory)}}</h1>
+<div class="overlay" [style.--popup-scale]="scale">
+  <div class="window scaled-popup-window">
+    <h1>Select {{ formatStatName(buffCategory) }}</h1>
 
-    <div class="buff-selection-content">
-      <div class="buff-selection-controls">
-        <div class="buff-selection">
-          <label for="buff-select">{{formatStatName(buffCategory)}}</label>
+    <div class="selection-content">
+      <div class="selection-controls">
+        <div class="selection">
+          <label for="select">{{ formatStatName(buffCategory) }}:</label>
 
-          <select
-            id="buff-select"
-            [(ngModel)]="selectedBuff"
-            (ngModelChange)="onBuffChange($event)"
-          >
-            <option [ngValue]="null">No {{formatStatName(buffCategory)}}</option>
-            @for (buff of buffs; track buff.type) {
-              <option [ngValue]="buff">
-                {{ buff.name }}
+          <select id="select" [(ngModel)]="selectedBuff" (ngModelChange)="onBuffChange($event)">
+            <option [ngValue]="null">No {{ formatStatName(buffCategory) }}</option>
+            @for (entry of buffConfig | keyvalue; track entry.key) {
+              <option [ngValue]="entry.value">
+                {{ entry.value.name }}
               </option>
             }
           </select>
         </div>
 
         <div class="tier-selection">
-          <label>Tier</label>
+          <label>Tier:</label>
 
           <div class="tier-buttons">
             @for (tier of [1, 2, 3, 4, 5]; track tier) {
@@ -39,28 +35,23 @@
         </div>
       </div>
 
-      @if (selectedBuff !== null) {
-        <div class="buff-stats-preview">
-          <h2>Buff Stats:</h2>
-
-          <div class="buff-stats">
-            <div class="buff-stat">
+      <div class="stats-preview">
+        <h4>Buff Stats:</h4>
+        @if (selectedBuff !== null) {
+          <div class="stats">
+            <div class="stat">
               <span>{{ formatStatName(selectedBuff.statType) }}</span>
               <span>
                 {{ formatBuffValue(selectedBuff.statsPerTier[selectedTier]) }}
               </span>
             </div>
           </div>
-        </div>
-      } @else {
-        <div class="buff-stats-preview">
-          <h2>Buff Stats:</h2>
+        } @else {
+          <div class="none-selected">No {{ formatStatName(buffCategory) }} selected!</div>
+        }
+      </div>
 
-          <div class="no-buff-selected">No {{formatStatName(buffCategory)}} selected!</div>
-        </div>
-      }
-
-      <div class="buff-selection-buttons">
+      <div class="cc-buttons">
         <button class="accept-button" (click)="confirm()">
           <img src="utility-icons/confirm.png" alt="Accept" />
           <span class="tooltip">Confirm</span>
@@ -73,4 +64,3 @@
     </div>
   </div>
 </div>
-<p>buff-selector works!</p>

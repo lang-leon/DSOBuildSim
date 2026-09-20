@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @Component
 public class RuneFactory {
@@ -41,6 +42,7 @@ public class RuneFactory {
     {
         if (dtos == null) return List.of();
         return dtos.stream()
+                .filter(Objects::nonNull)
                 .map(this::fromDTO)
                 .toList();
     }

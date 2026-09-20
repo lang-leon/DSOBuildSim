@@ -2,26 +2,36 @@ package com.langleon.dsobuildsim.gamedata;
 
 import com.langleon.dsobuildsim.buffs.BuffMapper;
 import com.langleon.dsobuildsim.buffs.dto.BuffDefinitionDTO;
+import com.langleon.dsobuildsim.buffs.enums.PhysicType;
+import com.langleon.dsobuildsim.buffs.enums.TonicType;
 import com.langleon.dsobuildsim.character.CharacterClass;
 import com.langleon.dsobuildsim.collectorbagbonus.CollectorBagMapper;
-import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagBonusDefinitionDTO;
 import com.langleon.dsobuildsim.collectorbagbonus.dto.definition.CollectorBagCategoryBonusDefinitionDTO;
+import com.langleon.dsobuildsim.common.StatType;
+import com.langleon.dsobuildsim.dragonstones.DragonStoneType;
 import com.langleon.dsobuildsim.dragonstones.dto.DragonStoneDefinitionDTO;
 import com.langleon.dsobuildsim.dragonstones.DragonStoneMapper;
 import com.langleon.dsobuildsim.enchantments.EnchantmentMapper;
 import com.langleon.dsobuildsim.enchantments.dto.EnchantmentDTO;
 import com.langleon.dsobuildsim.essences.EssenceMapper;
+import com.langleon.dsobuildsim.essences.EssenceType;
 import com.langleon.dsobuildsim.essences.dto.EssenceDefinitionDTO;
 import com.langleon.dsobuildsim.gamedata.dto.GameDataDTO;
 import com.langleon.dsobuildsim.gamedata.dto.LevelMultiplierTableDTO;
 import com.langleon.dsobuildsim.gems.GemMapper;
 import com.langleon.dsobuildsim.gems.dto.GemDefinitionDTO;
+import com.langleon.dsobuildsim.gems.enums.GemLimitGroup;
+import com.langleon.dsobuildsim.gems.enums.GemType;
+import com.langleon.dsobuildsim.items.core.enums.ItemType;
 import com.langleon.dsobuildsim.items.dto.ItemDefinitionDTO;
 import com.langleon.dsobuildsim.jewels.JewelLimitGroup;
 import com.langleon.dsobuildsim.jewels.JewelMapper;
 import com.langleon.dsobuildsim.jewels.JewelType;
 import com.langleon.dsobuildsim.jewels.dto.JewelDefinitionDTO;
 import com.langleon.dsobuildsim.items.core.ItemDefinitionMapper;
+import com.langleon.dsobuildsim.pets.enums.PetType;
+import com.langleon.dsobuildsim.runes.enums.RuneLimitGroup;
+import com.langleon.dsobuildsim.runes.enums.RuneType;
 import com.langleon.dsobuildsim.sets.SetType;
 import com.langleon.dsobuildsim.wisdomskilltree.WisdomSkillTreeMapper;
 import com.langleon.dsobuildsim.pets.PetMapper;
@@ -30,7 +40,10 @@ import com.langleon.dsobuildsim.runes.RuneMapper;
 import com.langleon.dsobuildsim.runes.dto.RuneDefinitionDTO;
 import com.langleon.dsobuildsim.sets.SetMapper;
 import com.langleon.dsobuildsim.sets.dto.SetDTO;
-import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillTreeDefinitionDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomGroupDefinitionDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.dto.definition.WisdomSkillDefinitionDTO;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomgroup.WisdomGroupType;
+import com.langleon.dsobuildsim.wisdomskilltree.wisdomskill.WisdomSkillType;
 
 import java.util.Arrays;
 import java.util.List;
@@ -44,7 +57,7 @@ public class GameDataMapper {
 
     public static GameDataDTO toDTO(GameDataConfig config)
     {
-        Map<CharacterClass, List<ItemDefinitionDTO>> items =
+        Map<CharacterClass, Map<ItemType, ItemDefinitionDTO>> items =
                 Arrays.stream(CharacterClass.values())
                         .collect(Collectors.toMap(
                                 clazz -> clazz,
@@ -56,7 +69,10 @@ public class GameDataMapper {
                                         .filter(Objects::nonNull)
                                         .flatMap(map -> map.values().stream())
                                         .map(ItemDefinitionMapper::from)
-                                        .toList()
+                                        .collect(Collectors.toMap(
+                                                ItemDefinitionDTO::itemType,
+                                                Function.identity()
+                                        ))
                         ));
 
         Map<CharacterClass, Map<SetType, SetDTO>> sets =
@@ -71,29 +87,43 @@ public class GameDataMapper {
                         JewelLimitGroup::getLimit
                 ));
 
-        List<EnchantmentDTO> enchantments = config.enchantments().values().stream().map(EnchantmentMapper::from).toList();
+        Map<StatType, EnchantmentDTO> enchantments = config.enchantments().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> EnchantmentMapper.from(entry.getValue())));
 
-        List<GemDefinitionDTO> gems = config.gems().values().stream().map(GemMapper::from).toList();
+        Map<GemType, GemDefinitionDTO> gems = config.gems().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> GemMapper.from(entry.getValue())));
 
-        List<RuneDefinitionDTO> runes = config.runes().values().stream().map(RuneMapper::from).toList();
+        Map<GemLimitGroup, Integer> gemLimits = Arrays.stream(GemLimitGroup.values())
+                .collect(Collectors.toMap(
+                        group -> group,
+                        GemLimitGroup::getLimit
+                ));
 
-        List<DragonStoneDefinitionDTO> dragonStones = config.dragonStones().values().stream().map(DragonStoneMapper::from).toList();
+        Map<RuneType, RuneDefinitionDTO> runes = config.runes().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> RuneMapper.from(entry.getValue())));
 
-        List<PetDefinitionDTO> pets = config.pets().values().stream().map(PetMapper::from).toList();
+        Map<RuneLimitGroup, Integer> runeLimits = Arrays.stream(RuneLimitGroup.values())
+                .collect(Collectors.toMap(
+                        group -> group,
+                        RuneLimitGroup::getLimit
+                ));
 
-        List<EssenceDefinitionDTO> essences = config.essences().values().stream().map(EssenceMapper::from).toList();
+        Map<DragonStoneType, DragonStoneDefinitionDTO> dragonStones = config.dragonStones().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> DragonStoneMapper.from(entry.getValue())));
 
-        List<BuffDefinitionDTO> tonics = config.buffConfig().tonics().values().stream().map(BuffMapper::from).toList();
+        Map<PetType, PetDefinitionDTO> pets = config.pets().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> PetMapper.from(entry.getValue())));
 
-        List<BuffDefinitionDTO> physics = config.buffConfig().physics().values().stream().map(BuffMapper::from).toList();
+        Map<EssenceType, EssenceDefinitionDTO> essences = config.essences().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> EssenceMapper.from(entry.getValue())));
+
+        Map<TonicType, BuffDefinitionDTO> tonics = config.buffConfig().tonics().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> BuffMapper.from(entry.getValue())));
+
+        Map<PhysicType, BuffDefinitionDTO> physics = config.buffConfig().physics().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> BuffMapper.from(entry.getValue())));
 
         LevelMultiplierTableDTO levelMultiplierTable = LevelMultiplierTableMapper.from(config.levelMultiplierTable());
 
-        WisdomSkillTreeDefinitionDTO wisdomSkillTree = WisdomSkillTreeMapper.from(config.wisdomSkillConfig());
+        Map<WisdomSkillType, WisdomSkillDefinitionDTO> wisdomSkills = WisdomSkillTreeMapper.fromSkills(config.wisdomSkills());
+
+        Map<WisdomGroupType, WisdomGroupDefinitionDTO> wisdomGroups = WisdomSkillTreeMapper.fromGroups(config.wisdomGroups());
 
         List<CollectorBagCategoryBonusDefinitionDTO> collectorBagBuffs = config.collectorBagConfig().categoryBonuses().values().stream().map(categoryBonus -> CollectorBagMapper.from(categoryBonus, config.collectorBagConfig())).toList();
 
-        return new GameDataDTO(config.classStats(), items, sets, jewels, jewelLimits, enchantments, gems, runes, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkillTree, collectorBagBuffs);
+        return new GameDataDTO(config.classStats(), items, sets, jewels, jewelLimits, enchantments, gems, gemLimits, runes, runeLimits, dragonStones, pets, essences, tonics, physics, levelMultiplierTable, wisdomSkills, wisdomGroups, collectorBagBuffs);
     }
 
     private static <K, S, T> Map<CharacterClass, Map<K, T>> mapPerClass(

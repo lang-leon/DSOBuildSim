@@ -4,25 +4,29 @@ import { JewelInstanceDTO } from '../../models/instanceDTOs/JewelInstanceDTO';
 import { JewelDefinitionDTO } from '../../models/gamedataDTOs/JewelDefinitionDTO';
 import { JewelSelector } from '../jewel-selector/jewel-selector';
 import { BuildSimButton } from '../build-sim-button/build-sim-button';
-import { formatName, getIcon } from '../../utils/display-utils';
+import { JewelService } from '../../utils/jewel-service';
+import { getTierName } from '../../utils/tooltip-utils';
 
 @Component({
   selector: 'app-jewel-trinket-editor',
-  imports: [
-    JewelSelector,
-    BuildSimButton
-  ],
+  imports: [JewelSelector, BuildSimButton],
   templateUrl: './jewel-trinket-editor.html',
   styleUrl: './jewel-trinket-editor.scss',
 })
 export class JewelTrinketEditor {
+  constructor(public jewelService: JewelService) {}
+
   @Input() scale = 1;
 
   @Input() jewelTrinket!: JewelTrinketDTO;
 
   @Input() jewelConfig!: Record<string, JewelDefinitionDTO>;
 
-  @Input() canAddJewel!: (jewelType: string, jewels: (JewelInstanceDTO | null)[]) => boolean;
+  @Input() canAddJewel!: (
+    jewelType: string,
+    jewels: (JewelInstanceDTO | null)[],
+    excludedSlot: number,
+  ) => boolean;
 
   @Output() cancelled = new EventEmitter<void>();
 
@@ -32,24 +36,13 @@ export class JewelTrinketEditor {
   showJewelSelector = false;
   selectedSlot = -1;
 
-  getIcon = getIcon;
-  formatName = formatName;
+  getTierName = getTierName;
 
   ngOnInit(): void {
-    const existingStones = this.jewelTrinket.jewels ?? [];
+    this.jewelService.setJewelConfig(this.jewelConfig);
 
-    this.jewels = Array.from({ length: 10 }, (_, index) => existingStones[index] ?? null);
-  }
-
-  cancel() {
-    this.cancelled.emit();
-  }
-
-  confirm() {
-    const jewelTrinket: JewelTrinketDTO = {
-      jewels: this.jewels.filter((jewel) => jewel !== null),
-    };
-    this.confirmed.emit(jewelTrinket);
+    const existingJewels = this.jewelTrinket.jewels ?? [];
+    this.jewels = Array.from({ length: 10 }, (_, index) => existingJewels[index] ?? null);
   }
 
   deleteJewel(index: number) {
@@ -59,7 +52,7 @@ export class JewelTrinketEditor {
   copyJewel(index: number) {
     if (this.jewels[index] === null) return;
     if (!this.hasEmptyJewelSlot()) return;
-    if (!this.canAddJewel(this.jewels[index].jewelType, this.jewels)) return;
+    if (!this.canAddJewel(this.jewels[index].jewelType, this.jewels, -1)) return;
     for (let i = 0; i < 10; i++) {
       if (this.jewels[i] === null) {
         this.jewels[i] = this.jewels[index];
@@ -72,29 +65,8 @@ export class JewelTrinketEditor {
     return this.jewels.some((stone) => stone === null);
   }
 
-  canSelectJewel(jewelType: string)
-  {
-    return this.canAddJewel(jewelType, this.jewels);
-  }
-
-  getJewelName(index: number){
-    if(this.jewels[index]===null) return "";
-    const jewel = this.jewelConfig[this.jewels[index]?.jewelType]
-    return jewel?.name;
-  }
-
-  getJewelDescription(index: number) {
-    if(this.jewels[index]===null) return "";
-    const jewel = this.jewelConfig[this.jewels[index]?.jewelType]
-    return jewel?.descriptionPerTier[this.jewels[index].tier];
-  }
-
-  getJewelIcon(jewel: JewelInstanceDTO | null)
-  {
-    if(jewel === null) return 'jewel-icons/default.png';
-
-    const jewelName = this.jewelConfig[jewel.jewelType].name;
-    return 'jewel-icons/'+this.getIcon(jewelName, jewel.tier);
+  canSelectJewel(jewelType: string) {
+    return this.canAddJewel(jewelType, this.jewels, this.selectedSlot);
   }
 
   openJewelSelector(index: number) {
@@ -110,5 +82,16 @@ export class JewelTrinketEditor {
   confirmJewelSelection(jewel: JewelInstanceDTO) {
     this.jewels[this.selectedSlot] = jewel;
     this.closeJewelSelector();
+  }
+
+  cancel() {
+    this.cancelled.emit();
+  }
+
+  confirm() {
+    const jewelTrinket: JewelTrinketDTO = {
+      jewels: this.jewels,
+    };
+    this.confirmed.emit(jewelTrinket);
   }
 }

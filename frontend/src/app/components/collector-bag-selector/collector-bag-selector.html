@@ -1,17 +1,17 @@
-<div class="collector-bag-selection-overlay" [style.--popup-scale]="scale">
-  <div class="collector-bag-selection-window scaled-popup-window">
+<div class="overlay" [style.--popup-scale]="scale">
+  <div class="window scaled-popup-window">
     <h1>Select Collector Bag Buffs</h1>
 
-    <div class="collector-bag-selection-content">
+    <div class="selection-content">
       <!-- LEFT SIDE: category selection -->
-      <div class="collector-bag-selection-controls">
+      <div class="selection-controls">
         <div class="collector-bag-selection">
           <label>Categories</label>
 
           <div class="collector-bag-categories">
             @for (category of categoryBonuses; track $index) {
               <div class="collector-bag-category">
-                <h3>{{ formatStatName(category.category) }}</h3>
+                <h3>{{ formatStatName(category.category) }}:</h3>
 
                 <div>
                   Tier:
@@ -19,6 +19,7 @@
                 </div>
 
                 <input
+                  class="tier-slider"
                   type="range"
                   min="0"
                   [max]="getMaxTier(category.category)"
@@ -31,14 +32,13 @@
         </div>
       </div>
 
-      <!-- RIGHT SIDE: total stats preview -->
-      <div class="collector-bag-stats-preview">
-        <h2>Buff Stats:</h2>
+      <div class="stats-preview">
+        <h4>Buff Stats:</h4>
 
         @if (hasSelectedBuffs()) {
-          <div class="collector-bag-stats">
+          <div class="stats">
             @for (stat of getSelectedStats(); track stat.type) {
-              <div class="collector-bag-stat">
+              <div class="stat">
                 <span>
                   {{ formatStatName(stat.type) }}
                 </span>
@@ -50,13 +50,13 @@
             }
           </div>
         } @else {
-          <div class="no-collector-bag-selected">No Buffs selected!</div>
+          <div class="none-selected">No Buffs selected!</div>
         }
       </div>
     </div>
 
     <!-- BOTTOM: buttons -->
-    <div class="collector-bag-selection-buttons">
+    <div class="cc-buttons">
       <button class="accept-button" (click)="confirm()">
         <img src="utility-icons/confirm.png" alt="Accept" />
 

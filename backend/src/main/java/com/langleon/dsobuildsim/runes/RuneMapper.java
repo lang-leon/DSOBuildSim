@@ -6,6 +6,6 @@ public class RuneMapper {
 
     public static RuneDefinitionDTO from(RuneDefinition runeDefinition)
     {
-        return new RuneDefinitionDTO(runeDefinition.runeType(), runeDefinition.runeLimitGroup(), runeDefinition.defaultTier(), runeDefinition.statsPerTier(), runeDefinition.description());
+        return new RuneDefinitionDTO(runeDefinition.runeType(), runeDefinition.name(), runeDefinition.runeLimitGroup(), runeDefinition.defaultTier(), runeDefinition.statsPerTier(), runeDefinition.description());
     }
 }

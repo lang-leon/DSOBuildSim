@@ -5,22 +5,20 @@ import { FormsModule } from '@angular/forms';
 import { EssenceInstanceDTO } from '../../models/instanceDTOs/EssenceInstanceDTO';
 import { formatStatName, formatStatValueRelative } from '../../utils/display-utils';
 import { StatType } from '../../enums/StatType';
+import { KeyValuePipe } from '@angular/common';
 
 @Component({
   selector: 'app-essence-selector',
-  imports: [
-    FormsModule
-  ],
+  imports: [FormsModule, KeyValuePipe],
   templateUrl: './essence-selector.html',
   styleUrl: './essence-selector.scss',
 })
 export class EssenceSelector {
-  
   @Input() scale = 1;
-  
-  @Input() essences!: EssenceDefinitionDTO[];
 
-  @Input() character!: CharacterDTO;
+  @Input() essenceConfig!: Record<string, EssenceDefinitionDTO>;
+
+  @Input() essence!: EssenceInstanceDTO | null;
 
   @Output() cancelled = new EventEmitter<void>();
 
@@ -37,18 +35,11 @@ export class EssenceSelector {
   StatType = StatType;
 
   ngOnInit() {
-    if (this.character.essence) {
-        this.selectedEssence =
-            this.essences.find(
-                essence => essence.essenceType === this.character.essence!.essenceType
-            ) ?? null;
+    if (this.essence) {
+      this.selectedEssence = this.essenceConfig[this.essence.essenceType];
 
-        this.selectedTier = this.character.essence.tier;
+      this.selectedTier = this.essence.tier;
     }
-}
-
-  get essenceTypes(): string[] {
-    return [...new Set(this.essences.map((essence) => essence.essenceType))];
   }
 
   get availableTiers(): number[] {
@@ -70,17 +61,17 @@ export class EssenceSelector {
     this.cancelled.emit();
   }
 
-confirm() {
+  confirm() {
     if (!this.selectedEssence) {
-        this.confirmed.emit(null);
-        return;
+      this.confirmed.emit(null);
+      return;
     }
 
     const essence: EssenceInstanceDTO = {
-        essenceType: this.selectedEssence.essenceType,
-        tier: this.selectedTier
+      essenceType: this.selectedEssence.essenceType,
+      tier: this.selectedTier,
     };
 
     this.confirmed.emit(essence);
-}
+  }
 }

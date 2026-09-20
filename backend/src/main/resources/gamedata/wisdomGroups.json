@@ -1,5 +1,4 @@
 {
-  "wisdomGroups": {
     "HEALTH_RESOURCE": {
       "wisdomGroupType": "HEALTH_RESOURCE",
       "name": "Health/Resource",
@@ -36,8 +35,8 @@
       "maxLevel": 1,
       "wisdomSkills": [
         "SECOND_CHANCE",
-        "EMERGENCY_RESERVES",
-        "ENERGETIC_FORCE"
+        "CLASS_SKILL_1",
+        "CLASS_SKILL_2"
       ]
     },
     "ONE_HANDED_WEAPON": {
@@ -80,5 +79,4 @@
         "RACING_SLIPPERS"
       ]
     }
-  }
 }
